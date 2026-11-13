@@ -6,14 +6,14 @@ if isinstance(items, dict):
     items = items.get('products', [])
 by_id = { (x.get('id') or x.get('sku')): x for x in items if (x.get('id') or x.get('sku')) }
 
-# 1. Update static JSON files
+# 1. Overwrite static JSON files
 os.makedirs('public/data', exist_ok=True)
 with open('public/data/products_308.json', 'w', encoding='utf-8') as f:
     json.dump(items, f, indent=2, ensure_ascii=False)
 if os.path.exists('catalog.json'):
     shutil.copyfile(src, 'catalog.json')
 
-# 2. Update EVERY source file (.ts, .tsx, .js, .jsx, .html, .json) that has the old Atta data
+# 2. Patch EVERY source file (.ts, .tsx, .js, .jsx, .html, .json) in src/ and root
 for root, dirs, files in os.walk('.'):
     dirs[:] = [d for d in dirs if d not in ('.git', 'node_modules', 'dist', 'build')]
     for fn in files:
