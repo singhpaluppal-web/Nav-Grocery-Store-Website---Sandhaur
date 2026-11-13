@@ -16,3 +16,6 @@ _backup_before_web_update/
 *.py
 .env*
 .aistudio/
+
+saved_scripts/
+31_PDF_Batches/
