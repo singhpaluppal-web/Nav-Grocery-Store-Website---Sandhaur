@@ -1,0 +1,23 @@
+import csv, json, os
+
+src = 'public/catalog.json' if os.path.exists('public/catalog.json') else 'FINAL_LOCKED_BUILD/locked_golden_308_catalog.json'
+items = json.load(open(src, encoding='utf-8'))
+if isinstance(items, dict):
+    items = items.get('products', [])
+
+cols = ['sku', 'id', 'name', 'brand', 'category', 'mrp', 'price', 'stock', 'weight', 'image', 'description']
+with open('products_308.csv', 'w', newline='', encoding='utf-8') as f:
+    w = csv.DictWriter(f, fieldnames=cols, extrasaction='ignore')
+    w.writeheader()
+    for it in items:
+        row = dict(it)
+        row['sku'] = row.get('sku') or row.get('id', '')
+        row['id'] = row.get('id') or row.get('sku', '')
+        row['name'] = row.get('name') or row.get('title', '')
+        row['mrp'] = row.get('mrp') or row.get('originalPrice', 100)
+        row['price'] = row.get('price') or row.get('salePrice') or round(float(row['mrp']) * 0.88)
+        row['stock'] = row.get('stock', 50)
+        row['image'] = row.get('image') or f"/products/{row['sku']}.jpg"
+        w.writerow(row)
+
+print("CREATED products_308.csv WITH", len(items), "SKUS")
