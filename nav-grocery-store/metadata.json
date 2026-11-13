@@ -1,6 +1,0 @@
-{
-  "name": "NavKart",
-  "description": "NavKart — Official marketplace for Nav Grocery Store & Sandhaur retail. Sealed groceries at flat 12% wholesale discount, clothing, electronics & seller portal.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
