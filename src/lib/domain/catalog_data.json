@@ -10,9 +10,9 @@
     "id": "NAV001",
     "image": "/products/NAV001.jpg",
     "isVerifiedSeller": true,
-    "mrp": 520,
+    "mrp": 85,
     "name": "Maharaja's Spice Co. Chana Masala 100g",
-    "price": 458,
+    "price": 75,
     "sale": 458,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -20,7 +20,10 @@
     "sku": "NAV001",
     "title": "Maharaja's Spice Co. Chana Masala 100g",
     "imageUrl": "/products/NAV001.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -33,9 +36,9 @@
     "id": "NAV002",
     "image": "/products/NAV002.jpg",
     "isVerifiedSeller": true,
-    "mrp": 460,
+    "mrp": 120,
     "name": "Premium Quality Black Eyed Peas Lobia Beans 500g",
-    "price": 405,
+    "price": 106,
     "sale": 405,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -43,7 +46,10 @@
     "sku": "NAV002",
     "title": "Premium Quality Black Eyed Peas Lobia Beans 500g",
     "imageUrl": "/products/NAV002.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -56,9 +62,9 @@
     "id": "NAV003",
     "image": "/products/NAV003.jpg",
     "isVerifiedSeller": true,
-    "mrp": 440,
+    "mrp": 155,
     "name": "Premium Urad Dal Washed Split Black Gram 1kg",
-    "price": 387,
+    "price": 136,
     "sale": 387,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -66,7 +72,10 @@
     "sku": "NAV003",
     "title": "Premium Urad Dal Washed Split Black Gram 1kg",
     "imageUrl": "/products/NAV003.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 155,
+    "salePrice": 136,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -79,9 +88,9 @@
     "id": "NAV004",
     "image": "/products/NAV004.jpg",
     "isVerifiedSeller": true,
-    "mrp": 430,
+    "mrp": 85,
     "name": "Premium Quality Black Pepper Ground 100g",
-    "price": 378,
+    "price": 75,
     "sale": 378,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -89,7 +98,10 @@
     "sku": "NAV004",
     "title": "Premium Quality Black Pepper Ground 100g",
     "imageUrl": "/products/NAV004.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -102,9 +114,9 @@
     "id": "NAV005",
     "image": "/products/NAV005.jpg",
     "isVerifiedSeller": true,
-    "mrp": 495,
+    "mrp": 120,
     "name": "Premium Black Salt Table Sprinkler 200g",
-    "price": 436,
+    "price": 106,
     "sale": 436,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -112,7 +124,10 @@
     "sku": "NAV005",
     "title": "Premium Black Salt Table Sprinkler 200g",
     "imageUrl": "/products/NAV005.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -125,9 +140,9 @@
     "id": "NAV006",
     "image": "/products/NAV006.jpg",
     "isVerifiedSeller": true,
-    "mrp": 450,
+    "mrp": 120,
     "name": "Spice Harvest Carom Seeds Ajwain 100g",
-    "price": 396,
+    "price": 106,
     "sale": 396,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -135,7 +150,10 @@
     "sku": "NAV006",
     "title": "Spice Harvest Carom Seeds Ajwain 100g",
     "imageUrl": "/products/NAV006.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -148,9 +166,9 @@
     "id": "NAV007",
     "image": "/products/NAV007.jpg",
     "isVerifiedSeller": true,
-    "mrp": 620,
+    "mrp": 85,
     "name": "Desi Spice Route Chaat Masala 100g",
-    "price": 546,
+    "price": 75,
     "sale": 546,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -158,7 +176,10 @@
     "sku": "NAV007",
     "title": "Desi Spice Route Chaat Masala 100g",
     "imageUrl": "/products/NAV007.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -171,9 +192,9 @@
     "id": "NAV008",
     "image": "/products/NAV008.jpg",
     "isVerifiedSeller": true,
-    "mrp": 410,
+    "mrp": 120,
     "name": "Taste of China Chinese Hot and Sour Soup 70g",
-    "price": 361,
+    "price": 106,
     "sale": 361,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -181,7 +202,10 @@
     "sku": "NAV008",
     "title": "Taste of China Chinese Hot and Sour Soup 70g",
     "imageUrl": "/products/NAV008.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -194,9 +218,9 @@
     "id": "NAV009",
     "image": "/products/NAV009.jpg",
     "isVerifiedSeller": true,
-    "mrp": 125,
+    "mrp": 120,
     "name": "Chocolate Scoops Cereal 375g",
-    "price": 110,
+    "price": 106,
     "sale": 110,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -204,7 +228,10 @@
     "sku": "NAV009",
     "title": "Chocolate Scoops Cereal 375g",
     "imageUrl": "/products/NAV009.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -217,9 +244,9 @@
     "id": "NAV010",
     "image": "/products/NAV010.jpg",
     "isVerifiedSeller": true,
-    "mrp": 130,
+    "mrp": 45,
     "name": "Cloudy Lemon Drink 750ml",
-    "price": 114,
+    "price": 40,
     "sale": 114,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -227,7 +254,10 @@
     "sku": "NAV010",
     "title": "Cloudy Lemon Drink 750ml",
     "imageUrl": "/products/NAV010.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 45,
+    "salePrice": 40,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -240,9 +270,9 @@
     "id": "NAV011",
     "image": "/products/NAV011.jpg",
     "isVerifiedSeller": true,
-    "mrp": 45,
+    "mrp": 120,
     "name": "Pure Grains Coarse Semolina Sooji Rava 500g",
-    "price": 40,
+    "price": 106,
     "sale": 40,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -250,7 +280,10 @@
     "sku": "NAV011",
     "title": "Pure Grains Coarse Semolina Sooji Rava 500g",
     "imageUrl": "/products/NAV011.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -263,9 +296,9 @@
     "id": "NAV012",
     "image": "/products/NAV012.jpg",
     "isVerifiedSeller": true,
-    "mrp": 40,
+    "mrp": 120,
     "name": "Sunshine Grains Crispy Golden Corn Flakes 475g",
-    "price": 35,
+    "price": 106,
     "sale": 35,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -273,7 +306,10 @@
     "sku": "NAV012",
     "title": "Sunshine Grains Crispy Golden Corn Flakes 475g",
     "imageUrl": "/products/NAV012.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -286,9 +322,9 @@
     "id": "NAV013",
     "image": "/products/NAV013.jpg",
     "isVerifiedSeller": true,
-    "mrp": 48,
+    "mrp": 45,
     "name": "Cola Original Taste 750ml",
-    "price": 42,
+    "price": 40,
     "sale": 42,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -296,7 +332,10 @@
     "sku": "NAV013",
     "title": "Cola Original Taste 750ml",
     "imageUrl": "/products/NAV013.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 45,
+    "salePrice": 40,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -309,9 +348,9 @@
     "id": "NAV014",
     "image": "/products/NAV014.jpg",
     "isVerifiedSeller": true,
-    "mrp": 199,
+    "mrp": 120,
     "name": "Kasuri Methi Dried Fenugreek Leaves 50g",
-    "price": 175,
+    "price": 106,
     "sale": 175,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -319,7 +358,10 @@
     "sku": "NAV014",
     "title": "Kasuri Methi Dried Fenugreek Leaves 50g",
     "imageUrl": "/products/NAV014.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -332,9 +374,9 @@
     "id": "NAV015",
     "image": "/products/NAV015.jpg",
     "isVerifiedSeller": true,
-    "mrp": 385,
+    "mrp": 120,
     "name": "Pasta Natura Elbow Macaroni Chiocciole 500g",
-    "price": 339,
+    "price": 106,
     "sale": 339,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -342,7 +384,10 @@
     "sku": "NAV015",
     "title": "Pasta Natura Elbow Macaroni Chiocciole 500g",
     "imageUrl": "/products/NAV015.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -355,9 +400,9 @@
     "id": "NAV016",
     "image": "/products/NAV016.jpg",
     "isVerifiedSeller": true,
-    "mrp": 185,
+    "mrp": 110,
     "name": "Volt Energy Drink Can 350ml",
-    "price": 163,
+    "price": 97,
     "sale": 163,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -365,7 +410,10 @@
     "sku": "NAV016",
     "title": "Volt Energy Drink Can 350ml",
     "imageUrl": "/products/NAV016.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 110,
+    "salePrice": 97,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -378,9 +426,9 @@
     "id": "NAV017",
     "image": "/products/NAV017.jpg",
     "isVerifiedSeller": true,
-    "mrp": 140,
+    "mrp": 580,
     "name": "Premium Quality Extra Long Grain Indian Basmati Rice 5kg",
-    "price": 123,
+    "price": 510,
     "sale": 123,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -388,7 +436,10 @@
     "sku": "NAV017",
     "title": "Premium Quality Extra Long Grain Indian Basmati Rice 5kg",
     "imageUrl": "/products/NAV017.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 580,
+    "salePrice": 510,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -401,9 +452,9 @@
     "id": "NAV018",
     "image": "/products/NAV018.jpg",
     "isVerifiedSeller": true,
-    "mrp": 175,
+    "mrp": 45,
     "name": "Orange Fizz Drink 750ml",
-    "price": 154,
+    "price": 40,
     "sale": 154,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -411,7 +462,10 @@
     "sku": "NAV018",
     "title": "Orange Fizz Drink 750ml",
     "imageUrl": "/products/NAV018.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 45,
+    "salePrice": 40,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -424,9 +478,9 @@
     "id": "NAV019",
     "image": "/products/NAV019.jpg",
     "isVerifiedSeller": true,
-    "mrp": 165,
+    "mrp": 120,
     "name": "Floral Musk & Lily Incense Sticks",
-    "price": 145,
+    "price": 106,
     "sale": 145,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -434,7 +488,10 @@
     "sku": "NAV019",
     "title": "Floral Musk & Lily Incense Sticks",
     "imageUrl": "/products/NAV019.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -447,9 +504,9 @@
     "id": "NAV020",
     "image": "/products/NAV020.jpg",
     "isVerifiedSeller": true,
-    "mrp": 180,
+    "mrp": 265,
     "name": "Premium Quality Chakki Fresh Atta Whole Wheat 5kg",
-    "price": 158,
+    "price": 233,
     "sale": 158,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -457,7 +514,10 @@
     "sku": "NAV020",
     "title": "Premium Quality Chakki Fresh Atta Whole Wheat 5kg",
     "imageUrl": "/products/NAV020.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 265,
+    "salePrice": 233,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -470,9 +530,9 @@
     "id": "NAV021",
     "image": "/products/NAV021.jpg",
     "isVerifiedSeller": true,
-    "mrp": 190,
+    "mrp": 145,
     "name": "Desi Kitchen Aloo Tikki Crispy & Spicy Potato Patties 400g",
-    "price": 167,
+    "price": 128,
     "sale": 167,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -480,7 +540,10 @@
     "sku": "NAV021",
     "title": "Desi Kitchen Aloo Tikki Crispy & Spicy Potato Patties 400g",
     "imageUrl": "/products/NAV021.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 145,
+    "salePrice": 128,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -493,9 +556,9 @@
     "id": "NAV022",
     "image": "/products/NAV022.jpg",
     "isVerifiedSeller": true,
-    "mrp": 135,
+    "mrp": 145,
     "name": "Golden Cuts Crispy French Fries Natural Cut 750g",
-    "price": 119,
+    "price": 128,
     "sale": 119,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -503,7 +566,10 @@
     "sku": "NAV022",
     "title": "Golden Cuts Crispy French Fries Natural Cut 750g",
     "imageUrl": "/products/NAV022.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 145,
+    "salePrice": 128,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -516,9 +582,9 @@
     "id": "NAV023",
     "image": "/products/NAV023.jpg",
     "isVerifiedSeller": true,
-    "mrp": 195,
+    "mrp": 145,
     "name": "Frontera Natural Crispy Veg Nuggets 400g",
-    "price": 172,
+    "price": 128,
     "sale": 172,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -526,7 +592,10 @@
     "sku": "NAV023",
     "title": "Frontera Natural Crispy Veg Nuggets 400g",
     "imageUrl": "/products/NAV023.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 145,
+    "salePrice": 128,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -539,9 +608,9 @@
     "id": "NAV024",
     "image": "/products/NAV024.jpg",
     "isVerifiedSeller": true,
-    "mrp": 130,
+    "mrp": 145,
     "name": "Premium Quality Frozen Green Peas 500g",
-    "price": 114,
+    "price": 128,
     "sale": 114,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -549,7 +618,10 @@
     "sku": "NAV024",
     "title": "Premium Quality Frozen Green Peas 500g",
     "imageUrl": "/products/NAV024.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 145,
+    "salePrice": 128,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -562,9 +634,9 @@
     "id": "NAV025",
     "image": "/products/NAV025.jpg",
     "isVerifiedSeller": true,
-    "mrp": 210,
+    "mrp": 145,
     "name": "Lachha Paratha Flaky & Layered Flatbread 4 Pieces 400g",
-    "price": 185,
+    "price": 128,
     "sale": 185,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -572,7 +644,10 @@
     "sku": "NAV025",
     "title": "Lachha Paratha Flaky & Layered Flatbread 4 Pieces 400g",
     "imageUrl": "/products/NAV025.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 145,
+    "salePrice": 128,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -585,9 +660,9 @@
     "id": "NAV026",
     "image": "/products/NAV026.jpg",
     "isVerifiedSeller": true,
-    "mrp": 225,
+    "mrp": 145,
     "name": "Malabar Paratha Authentic & Flaky Frozen 5 Pack",
-    "price": 198,
+    "price": 128,
     "sale": 198,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -595,7 +670,10 @@
     "sku": "NAV026",
     "title": "Malabar Paratha Authentic & Flaky Frozen 5 Pack",
     "imageUrl": "/products/NAV026.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 145,
+    "salePrice": 128,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -608,9 +686,9 @@
     "id": "NAV027",
     "image": "/products/NAV027.jpg",
     "isVerifiedSeller": true,
-    "mrp": 180,
+    "mrp": 145,
     "name": "Nature's Harvest Frozen Mixed Vegetables 500g",
-    "price": 158,
+    "price": 128,
     "sale": 158,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -618,7 +696,10 @@
     "sku": "NAV027",
     "title": "Nature's Harvest Frozen Mixed Vegetables 500g",
     "imageUrl": "/products/NAV027.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 145,
+    "salePrice": 128,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -631,9 +712,9 @@
     "id": "NAV028",
     "image": "/products/NAV028.jpg",
     "isVerifiedSeller": true,
-    "mrp": 160,
+    "mrp": 145,
     "name": "Desi Treats Frozen Punjabi Samosas 500g",
-    "price": 141,
+    "price": 128,
     "sale": 141,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -641,7 +722,10 @@
     "sku": "NAV028",
     "title": "Desi Treats Frozen Punjabi Samosas 500g",
     "imageUrl": "/products/NAV028.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 145,
+    "salePrice": 128,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -654,9 +738,9 @@
     "id": "NAV029",
     "image": "/products/NAV029.jpg",
     "isVerifiedSeller": true,
-    "mrp": 110,
+    "mrp": 145,
     "name": "Harvest Gold Frozen Sweet Corn Kernels 500g",
-    "price": 97,
+    "price": 128,
     "sale": 97,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -664,7 +748,10 @@
     "sku": "NAV029",
     "title": "Harvest Gold Frozen Sweet Corn Kernels 500g",
     "imageUrl": "/products/NAV029.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 145,
+    "salePrice": 128,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -677,9 +764,9 @@
     "id": "NAV030",
     "image": "/products/NAV030.jpg",
     "isVerifiedSeller": true,
-    "mrp": 168,
+    "mrp": 145,
     "name": "Veg Momos Vegetable Dumplings 500g",
-    "price": 148,
+    "price": 128,
     "sale": 148,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -687,7 +774,10 @@
     "sku": "NAV030",
     "title": "Veg Momos Vegetable Dumplings 500g",
     "imageUrl": "/products/NAV030.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 145,
+    "salePrice": 128,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -700,9 +790,9 @@
     "id": "NAV031",
     "image": "/products/NAV031.jpg",
     "isVerifiedSeller": true,
-    "mrp": 640,
+    "mrp": 120,
     "name": "Natural Blends Premium Green Tea 100% Organic 25 Tea Bags",
-    "price": 563,
+    "price": 106,
     "sale": 563,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -710,7 +800,10 @@
     "sku": "NAV031",
     "title": "Natural Blends Premium Green Tea 100% Organic 25 Tea Bags",
     "imageUrl": "/products/NAV031.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -723,9 +816,9 @@
     "id": "NAV032",
     "image": "/products/NAV032.jpg",
     "isVerifiedSeller": true,
-    "mrp": 630,
+    "mrp": 165,
     "name": "Pure Hing Asafoetida Powder 50g",
-    "price": 554,
+    "price": 145,
     "sale": 554,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -733,7 +826,10 @@
     "sku": "NAV032",
     "title": "Pure Hing Asafoetida Powder 50g",
     "imageUrl": "/products/NAV032.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 165,
+    "salePrice": 145,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -746,9 +842,9 @@
     "id": "NAV033",
     "image": "/products/NAV033.jpg",
     "isVerifiedSeller": true,
-    "mrp": 650,
+    "mrp": 120,
     "name": "Summer Brew Lemon Iced Tea Mix 400g",
-    "price": 572,
+    "price": 106,
     "sale": 572,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -756,7 +852,10 @@
     "sku": "NAV033",
     "title": "Summer Brew Lemon Iced Tea Mix 400g",
     "imageUrl": "/products/NAV033.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -769,9 +868,9 @@
     "id": "NAV034",
     "image": "/products/NAV034.jpg",
     "isVerifiedSeller": true,
-    "mrp": 660,
+    "mrp": 340,
     "name": "Roast & Co. Instant Coffee Rich & Intense 100g",
-    "price": 581,
+    "price": 299,
     "sale": 581,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -779,7 +878,10 @@
     "sku": "NAV034",
     "title": "Roast & Co. Instant Coffee Rich & Intense 100g",
     "imageUrl": "/products/NAV034.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 340,
+    "salePrice": 299,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -792,9 +894,9 @@
     "id": "NAV035",
     "image": "/products/NAV035.jpg",
     "isVerifiedSeller": true,
-    "mrp": 650,
+    "mrp": 120,
     "name": "Taste of Asia Curry Noodles 4 Pack",
-    "price": 572,
+    "price": 106,
     "sale": 572,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -802,7 +904,10 @@
     "sku": "NAV035",
     "title": "Taste of Asia Curry Noodles 4 Pack",
     "imageUrl": "/products/NAV035.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -815,9 +920,9 @@
     "id": "NAV036",
     "image": "/products/NAV036.jpg",
     "isVerifiedSeller": true,
-    "mrp": 165,
+    "mrp": 120,
     "name": "Souper Instant Tomato Soup 4x20g Sachets",
-    "price": 145,
+    "price": 106,
     "sale": 145,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -825,7 +930,10 @@
     "sku": "NAV036",
     "title": "Souper Instant Tomato Soup 4x20g Sachets",
     "imageUrl": "/products/NAV036.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -838,9 +946,9 @@
     "id": "NAV037",
     "image": "/products/NAV037.jpg",
     "isVerifiedSeller": true,
-    "mrp": 155,
+    "mrp": 45,
     "name": "Lemon Lime Sparkling Soda 750ml",
-    "price": 136,
+    "price": 40,
     "sale": 136,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -848,7 +956,10 @@
     "sku": "NAV037",
     "title": "Lemon Lime Sparkling Soda 750ml",
     "imageUrl": "/products/NAV037.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 45,
+    "salePrice": 40,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -861,9 +972,9 @@
     "id": "NAV038",
     "image": "/products/NAV038.jpg",
     "isVerifiedSeller": true,
-    "mrp": 145,
+    "mrp": 140,
     "name": "Masala Instant Noodles Value Pack 4 Pack 280g",
-    "price": 128,
+    "price": 123,
     "sale": 128,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -871,7 +982,10 @@
     "sku": "NAV038",
     "title": "Masala Instant Noodles Value Pack 4 Pack 280g",
     "imageUrl": "/products/NAV038.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 140,
+    "salePrice": 123,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -884,9 +998,9 @@
     "id": "NAV039",
     "image": "/products/NAV039.jpg",
     "isVerifiedSeller": true,
-    "mrp": 185,
+    "mrp": 85,
     "name": "Bombay Spices Mumbai Style Pav Bhaji Masala 100g",
-    "price": 163,
+    "price": 75,
     "sale": 163,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -894,7 +1008,10 @@
     "sku": "NAV039",
     "title": "Bombay Spices Mumbai Style Pav Bhaji Masala 100g",
     "imageUrl": "/products/NAV039.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -907,9 +1024,9 @@
     "id": "NAV040",
     "image": "/products/NAV040.jpg",
     "isVerifiedSeller": true,
-    "mrp": 160,
+    "mrp": 120,
     "name": "Mustard Seeds Rai 100g",
-    "price": 141,
+    "price": 106,
     "sale": 141,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -917,7 +1034,10 @@
     "sku": "NAV040",
     "title": "Mustard Seeds Rai 100g",
     "imageUrl": "/products/NAV040.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -930,9 +1050,9 @@
     "id": "NAV041",
     "image": "/products/NAV041.jpg",
     "isVerifiedSeller": true,
-    "mrp": 150,
+    "mrp": 120,
     "name": "Natural Dhoop Cones 24 Pack",
-    "price": 132,
+    "price": 106,
     "sale": 132,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -940,7 +1060,10 @@
     "sku": "NAV041",
     "title": "Natural Dhoop Cones 24 Pack",
     "imageUrl": "/products/NAV041.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -953,9 +1076,9 @@
     "id": "NAV042",
     "image": "/products/NAV042.jpg",
     "isVerifiedSeller": true,
-    "mrp": 190,
+    "mrp": 85,
     "name": "Royal Spices Chicken Curry Masala 100g",
-    "price": 167,
+    "price": 75,
     "sale": 167,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -963,7 +1086,10 @@
     "sku": "NAV042",
     "title": "Royal Spices Chicken Curry Masala 100g",
     "imageUrl": "/products/NAV042.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -976,9 +1102,9 @@
     "id": "NAV043",
     "image": "/products/NAV043.jpg",
     "isVerifiedSeller": true,
-    "mrp": 215,
+    "mrp": 120,
     "name": "Pure Tender Coconut Water 200ml",
-    "price": 189,
+    "price": 106,
     "sale": 189,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -986,7 +1112,10 @@
     "sku": "NAV043",
     "title": "Pure Tender Coconut Water 200ml",
     "imageUrl": "/products/NAV043.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -999,9 +1128,9 @@
     "id": "NAV044",
     "image": "/products/NAV044.jpg",
     "isVerifiedSeller": true,
-    "mrp": 140,
+    "mrp": 120,
     "name": "Casa D'oro Penne Rigate Pasta 500g",
-    "price": 123,
+    "price": 106,
     "sale": 123,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1009,7 +1138,10 @@
     "sku": "NAV044",
     "title": "Casa D'oro Penne Rigate Pasta 500g",
     "imageUrl": "/products/NAV044.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1022,9 +1154,9 @@
     "id": "NAV045",
     "image": "/products/NAV045.jpg",
     "isVerifiedSeller": true,
-    "mrp": 130,
+    "mrp": 110,
     "name": "Volt High Caffeine Energy Drink 250ml",
-    "price": 114,
+    "price": 97,
     "sale": 114,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1032,7 +1164,10 @@
     "sku": "NAV045",
     "title": "Volt High Caffeine Energy Drink 250ml",
     "imageUrl": "/products/NAV045.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 110,
+    "salePrice": 97,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1045,9 +1180,9 @@
     "id": "NAV046",
     "image": "/products/NAV046.jpg",
     "isVerifiedSeller": true,
-    "mrp": 28,
+    "mrp": 340,
     "name": "Premium Instant Coffee Dark & Rich Roast 100% Arabica 100g",
-    "price": 25,
+    "price": 299,
     "sale": 25,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1055,7 +1190,10 @@
     "sku": "NAV046",
     "title": "Premium Instant Coffee Dark & Rich Roast 100% Arabica 100g",
     "imageUrl": "/products/NAV046.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 340,
+    "salePrice": 299,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1068,9 +1206,9 @@
     "id": "NAV047",
     "image": "/products/NAV047.jpg",
     "isVerifiedSeller": true,
-    "mrp": 45,
+    "mrp": 120,
     "name": "Natural Flora Premium Bathi Incense Sticks",
-    "price": 40,
+    "price": 106,
     "sale": 40,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1078,7 +1216,10 @@
     "sku": "NAV047",
     "title": "Natural Flora Premium Bathi Incense Sticks",
     "imageUrl": "/products/NAV047.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1091,9 +1232,9 @@
     "id": "NAV048",
     "image": "/products/NAV048.jpg",
     "isVerifiedSeller": true,
-    "mrp": 99,
+    "mrp": 120,
     "name": "Puja Ghee Diya Wicks Round Cotton Batti 50 Pieces",
-    "price": 87,
+    "price": 106,
     "sale": 87,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1101,7 +1242,10 @@
     "sku": "NAV048",
     "title": "Puja Ghee Diya Wicks Round Cotton Batti 50 Pieces",
     "imageUrl": "/products/NAV048.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1114,9 +1258,9 @@
     "id": "NAV049",
     "image": "/products/NAV049.jpg",
     "isVerifiedSeller": true,
-    "mrp": 92,
+    "mrp": 120,
     "name": "Pure Pearl Millet Bajra Flour 1kg",
-    "price": 81,
+    "price": 106,
     "sale": 81,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1124,7 +1268,10 @@
     "sku": "NAV049",
     "title": "Pure Pearl Millet Bajra Flour 1kg",
     "imageUrl": "/products/NAV049.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1137,9 +1284,9 @@
     "id": "NAV050",
     "image": "/products/NAV050.jpg",
     "isVerifiedSeller": true,
-    "mrp": 42,
+    "mrp": 120,
     "name": "Pure Puja Camphor Kapoor 100g",
-    "price": 37,
+    "price": 106,
     "sale": 37,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1147,7 +1294,10 @@
     "sku": "NAV050",
     "title": "Pure Puja Camphor Kapoor 100g",
     "imageUrl": "/products/NAV050.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1160,9 +1310,9 @@
     "id": "NAV051",
     "image": "/products/NAV051.jpg",
     "isVerifiedSeller": true,
-    "mrp": 44,
+    "mrp": 120,
     "name": "Desi Treats Pani Puri Magic Treat Kit 220g",
-    "price": 39,
+    "price": 106,
     "sale": 39,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1170,7 +1320,10 @@
     "sku": "NAV051",
     "title": "Desi Treats Pani Puri Magic Treat Kit 220g",
     "imageUrl": "/products/NAV051.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1183,9 +1336,9 @@
     "id": "NAV052",
     "image": "/products/NAV052.jpg",
     "isVerifiedSeller": true,
-    "mrp": 98,
+    "mrp": 110,
     "name": "Volt Energy Drink Can 250ml",
-    "price": 86,
+    "price": 97,
     "sale": 86,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1193,7 +1346,10 @@
     "sku": "NAV052",
     "title": "Volt Energy Drink Can 250ml",
     "imageUrl": "/products/NAV052.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 110,
+    "salePrice": 97,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1206,9 +1362,9 @@
     "id": "NAV053",
     "image": "/products/NAV053.jpg",
     "isVerifiedSeller": true,
-    "mrp": 88,
+    "mrp": 120,
     "name": "Natural Grains Maida Refined All Purpose Flour 1kg",
-    "price": 77,
+    "price": 106,
     "sale": 77,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1216,7 +1372,10 @@
     "sku": "NAV053",
     "title": "Natural Grains Maida Refined All Purpose Flour 1kg",
     "imageUrl": "/products/NAV053.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1229,9 +1388,9 @@
     "id": "NAV054",
     "image": "/products/NAV054.jpg",
     "isVerifiedSeller": true,
-    "mrp": 76,
+    "mrp": 110,
     "name": "Power Up Energy Drink 250ml",
-    "price": 67,
+    "price": 97,
     "sale": 67,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1239,7 +1398,10 @@
     "sku": "NAV054",
     "title": "Power Up Energy Drink 250ml",
     "imageUrl": "/products/NAV054.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 110,
+    "salePrice": 97,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1252,9 +1414,9 @@
     "id": "NAV055",
     "image": "/products/NAV055.jpg",
     "isVerifiedSeller": true,
-    "mrp": 90,
+    "mrp": 120,
     "name": "Premium Rich Chocolate Ice Cream 700ml",
-    "price": 79,
+    "price": 106,
     "sale": 79,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1262,7 +1424,10 @@
     "sku": "NAV055",
     "title": "Premium Rich Chocolate Ice Cream 700ml",
     "imageUrl": "/products/NAV055.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1275,9 +1440,9 @@
     "id": "NAV056",
     "image": "/products/NAV056.jpg",
     "isVerifiedSeller": true,
-    "mrp": 88,
+    "mrp": 295,
     "name": "Premium Roasted Almonds 250g",
-    "price": 77,
+    "price": 260,
     "sale": 77,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1285,7 +1450,10 @@
     "sku": "NAV056",
     "title": "Premium Roasted Almonds 250g",
     "imageUrl": "/products/NAV056.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 295,
+    "salePrice": 260,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1298,9 +1466,9 @@
     "id": "NAV057",
     "image": "/products/NAV057.jpg",
     "isVerifiedSeller": true,
-    "mrp": 84,
+    "mrp": 120,
     "name": "Roasted Seviyan Vermicelli Fine Cut 400g",
-    "price": 74,
+    "price": 106,
     "sale": 74,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1308,7 +1476,10 @@
     "sku": "NAV057",
     "title": "Roasted Seviyan Vermicelli Fine Cut 400g",
     "imageUrl": "/products/NAV057.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1321,9 +1492,9 @@
     "id": "NAV058",
     "image": "/products/NAV058.jpg",
     "isVerifiedSeller": true,
-    "mrp": 82,
+    "mrp": 120,
     "name": "Sendha Namak 100% Natural Rock Salt 1kg",
-    "price": 72,
+    "price": 106,
     "sale": 72,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1331,7 +1502,10 @@
     "sku": "NAV058",
     "title": "Sendha Namak 100% Natural Rock Salt 1kg",
     "imageUrl": "/products/NAV058.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1344,9 +1518,9 @@
     "id": "NAV059",
     "image": "/products/NAV059.jpg",
     "isVerifiedSeller": true,
-    "mrp": 94,
+    "mrp": 35,
     "name": "Sacred Gangajal Holy Water 250ml",
-    "price": 83,
+    "price": 31,
     "sale": 83,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1354,7 +1528,10 @@
     "sku": "NAV059",
     "title": "Sacred Gangajal Holy Water 250ml",
     "imageUrl": "/products/NAV059.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 35,
+    "salePrice": 31,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1367,9 +1544,9 @@
     "id": "NAV060",
     "image": "/products/NAV060.jpg",
     "isVerifiedSeller": true,
-    "mrp": 68,
+    "mrp": 120,
     "name": "Puja Mauli Kalawa Red & Yellow Cotton Thread",
-    "price": 60,
+    "price": 106,
     "sale": 60,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1377,7 +1554,10 @@
     "sku": "NAV060",
     "title": "Puja Mauli Kalawa Red & Yellow Cotton Thread",
     "imageUrl": "/products/NAV060.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1390,9 +1570,9 @@
     "id": "NAV061",
     "image": "/products/NAV061.jpg",
     "isVerifiedSeller": true,
-    "mrp": 65,
+    "mrp": 120,
     "name": "Earth's Harvest Sorghum Jowar Flour 1kg",
-    "price": 57,
+    "price": 106,
     "sale": 57,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1400,7 +1580,10 @@
     "sku": "NAV061",
     "title": "Earth's Harvest Sorghum Jowar Flour 1kg",
     "imageUrl": "/products/NAV061.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1413,9 +1596,9 @@
     "id": "NAV062",
     "image": "/products/NAV062.jpg",
     "isVerifiedSeller": true,
-    "mrp": 98,
+    "mrp": 85,
     "name": "Rasa Authentic South Indian Sambar Masala 100g",
-    "price": 86,
+    "price": 75,
     "sale": 86,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1423,7 +1606,10 @@
     "sku": "NAV062",
     "title": "Rasa Authentic South Indian Sambar Masala 100g",
     "imageUrl": "/products/NAV062.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1436,9 +1622,9 @@
     "id": "NAV063",
     "image": "/products/NAV063.jpg",
     "isVerifiedSeller": true,
-    "mrp": 68,
+    "mrp": 155,
     "name": "Natural Harvest Split Green Moong Dal Chilka 1kg",
-    "price": 60,
+    "price": 136,
     "sale": 60,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1446,7 +1632,10 @@
     "sku": "NAV063",
     "title": "Natural Harvest Split Green Moong Dal Chilka 1kg",
     "imageUrl": "/products/NAV063.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 155,
+    "salePrice": 136,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1459,9 +1648,9 @@
     "id": "NAV064",
     "image": "/products/NAV064.jpg",
     "isVerifiedSeller": true,
-    "mrp": 115,
+    "mrp": 45,
     "name": "Force Cola Extra Fizz 750ml",
-    "price": 101,
+    "price": 40,
     "sale": 101,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1469,7 +1658,10 @@
     "sku": "NAV064",
     "title": "Force Cola Extra Fizz 750ml",
     "imageUrl": "/products/NAV064.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 45,
+    "salePrice": 40,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1482,9 +1674,9 @@
     "id": "NAV065",
     "image": "/products/NAV065.jpg",
     "isVerifiedSeller": true,
-    "mrp": 55,
+    "mrp": 580,
     "name": "Royal Heritage Traditional Aromatic Basmati Rice 5kg",
-    "price": 48,
+    "price": 510,
     "sale": 48,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1492,7 +1684,10 @@
     "sku": "NAV065",
     "title": "Royal Heritage Traditional Aromatic Basmati Rice 5kg",
     "imageUrl": "/products/NAV065.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 580,
+    "salePrice": 510,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1505,9 +1700,9 @@
     "id": "NAV066",
     "image": "/products/NAV066.jpg",
     "isVerifiedSeller": true,
-    "mrp": 96,
+    "mrp": 120,
     "name": "Traditional Herbal Havan Samagri 500g",
-    "price": 84,
+    "price": 106,
     "sale": 84,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1515,7 +1710,10 @@
     "sku": "NAV066",
     "title": "Traditional Herbal Havan Samagri 500g",
     "imageUrl": "/products/NAV066.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1528,9 +1726,9 @@
     "id": "NAV067",
     "image": "/products/NAV067.jpg",
     "isVerifiedSeller": true,
-    "mrp": 62,
+    "mrp": 85,
     "name": "Chandan Natural Sandalwood Agarbatti Incense Sticks",
-    "price": 55,
+    "price": 75,
     "sale": 55,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1538,7 +1736,10 @@
     "sku": "NAV067",
     "title": "Chandan Natural Sandalwood Agarbatti Incense Sticks",
     "imageUrl": "/products/NAV067.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1551,9 +1752,9 @@
     "id": "NAV068",
     "image": "/products/NAV068.jpg",
     "isVerifiedSeller": true,
-    "mrp": 85,
+    "mrp": 120,
     "name": "Traditional Malai Kulfi 4 Pack",
-    "price": 75,
+    "price": 106,
     "sale": 75,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1561,7 +1762,10 @@
     "sku": "NAV068",
     "title": "Traditional Malai Kulfi 4 Pack",
     "imageUrl": "/products/NAV068.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1574,9 +1778,9 @@
     "id": "NAV069",
     "image": "/products/NAV069.jpg",
     "isVerifiedSeller": true,
-    "mrp": 42,
+    "mrp": 120,
     "name": "Traditional Natural Sambrani Dhoop Cups 12 Pieces",
-    "price": 37,
+    "price": 106,
     "sale": 37,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1584,7 +1788,10 @@
     "sku": "NAV069",
     "title": "Traditional Natural Sambrani Dhoop Cups 12 Pieces",
     "imageUrl": "/products/NAV069.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1607,7 +1814,10 @@
     "sku": "NAV070",
     "title": "Premium Traditional Sharbati Wheat Flour 5kg",
     "imageUrl": "/products/NAV070.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1620,9 +1830,9 @@
     "id": "NAV071",
     "image": "/products/NAV071.jpg",
     "isVerifiedSeller": true,
-    "mrp": 45,
+    "mrp": 120,
     "name": "Vanilla Ice Cream Tub 700ml",
-    "price": 40,
+    "price": 106,
     "sale": 40,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1630,7 +1840,10 @@
     "sku": "NAV071",
     "title": "Vanilla Ice Cream Tub 700ml",
     "imageUrl": "/products/NAV071.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1643,9 +1856,9 @@
     "id": "NAV072",
     "image": "/products/NAV072.jpg",
     "isVerifiedSeller": true,
-    "mrp": 65,
+    "mrp": 120,
     "name": "Pure Cotton Wicks Puja Batti 100 Pcs",
-    "price": 57,
+    "price": 106,
     "sale": 57,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1653,7 +1866,10 @@
     "sku": "NAV072",
     "title": "Pure Cotton Wicks Puja Batti 100 Pcs",
     "imageUrl": "/products/NAV072.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1666,9 +1882,9 @@
     "id": "NAV073",
     "image": "/products/NAV073.jpg",
     "isVerifiedSeller": true,
-    "mrp": 52,
+    "mrp": 155,
     "name": "Premium Quality Kabuli Chana White Chickpeas 1kg",
-    "price": 46,
+    "price": 136,
     "sale": 46,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1676,7 +1892,10 @@
     "sku": "NAV073",
     "title": "Premium Quality Kabuli Chana White Chickpeas 1kg",
     "imageUrl": "/products/NAV073.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 155,
+    "salePrice": 136,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1689,9 +1908,9 @@
     "id": "NAV074",
     "image": "/products/NAV074.jpg",
     "isVerifiedSeller": true,
-    "mrp": 88,
+    "mrp": 165,
     "name": "Premium Natural Whole Aromatic Cloves Laung 50g",
-    "price": 77,
+    "price": 145,
     "sale": 77,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1699,7 +1918,10 @@
     "sku": "NAV074",
     "title": "Premium Natural Whole Aromatic Cloves Laung 50g",
     "imageUrl": "/products/NAV074.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 165,
+    "salePrice": 145,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1712,9 +1934,9 @@
     "id": "NAV075",
     "image": "/products/NAV075.jpg",
     "isVerifiedSeller": true,
-    "mrp": 110,
+    "mrp": 85,
     "name": "Premium Whole Black Pepper 100g",
-    "price": 97,
+    "price": 75,
     "sale": 97,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1722,7 +1944,10 @@
     "sku": "NAV075",
     "title": "Premium Whole Black Pepper 100g",
     "imageUrl": "/products/NAV075.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1735,9 +1960,9 @@
     "id": "NAV076",
     "image": "/products/NAV076.jpg",
     "isVerifiedSeller": true,
-    "mrp": 160,
+    "mrp": 85,
     "name": "Natural Whole Cinnamon Sticks Dalchini 100g",
-    "price": 141,
+    "price": 75,
     "sale": 141,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1745,7 +1970,10 @@
     "sku": "NAV076",
     "title": "Natural Whole Cinnamon Sticks Dalchini 100g",
     "imageUrl": "/products/NAV076.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1758,9 +1986,9 @@
     "id": "NAV077",
     "image": "/products/NAV077.jpg",
     "isVerifiedSeller": true,
-    "mrp": 85,
+    "mrp": 120,
     "name": "100% Natural Whole Cumin Seeds Jeera 200g",
-    "price": 75,
+    "price": 106,
     "sale": 75,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1768,7 +1996,10 @@
     "sku": "NAV077",
     "title": "100% Natural Whole Cumin Seeds Jeera 200g",
     "imageUrl": "/products/NAV077.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1781,9 +2012,9 @@
     "id": "NAV078",
     "image": "/products/NAV078.jpg",
     "isVerifiedSeller": true,
-    "mrp": 95,
+    "mrp": 165,
     "name": "Premium Whole Green Cardamom Elaichi 50g",
-    "price": 84,
+    "price": 145,
     "sale": 84,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1791,7 +2022,10 @@
     "sku": "NAV078",
     "title": "Premium Whole Green Cardamom Elaichi 50g",
     "imageUrl": "/products/NAV078.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 165,
+    "salePrice": 145,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1804,9 +2038,9 @@
     "id": "NAV079",
     "image": "/products/NAV079.jpg",
     "isVerifiedSeller": true,
-    "mrp": 210,
+    "mrp": 120,
     "name": "Natural Grains Yellow Maize Flour Makki Atta 1kg",
-    "price": 185,
+    "price": 106,
     "sale": 185,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1814,7 +2048,10 @@
     "sku": "NAV079",
     "title": "Natural Grains Yellow Maize Flour Makki Atta 1kg",
     "imageUrl": "/products/NAV079.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1827,9 +2064,9 @@
     "id": "NAV080",
     "image": "/products/NAV080.jpg",
     "isVerifiedSeller": true,
-    "mrp": 98,
+    "mrp": 155,
     "name": "Organic Yellow Moong Dal Washed 1kg",
-    "price": 86,
+    "price": 136,
     "sale": 86,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1837,7 +2074,10 @@
     "sku": "NAV080",
     "title": "Organic Yellow Moong Dal Washed 1kg",
     "imageUrl": "/products/NAV080.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 155,
+    "salePrice": 136,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1850,9 +2090,9 @@
     "id": "NAV081",
     "image": "/products/NAV081.jpg",
     "isVerifiedSeller": true,
-    "mrp": 125,
+    "mrp": 155,
     "name": "Premium Toor Dal Arhar Dal 1kg",
-    "price": 110,
+    "price": 136,
     "sale": 110,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1860,7 +2100,10 @@
     "sku": "NAV081",
     "title": "Premium Toor Dal Arhar Dal 1kg",
     "imageUrl": "/products/NAV081.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 155,
+    "salePrice": 136,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1873,9 +2116,9 @@
     "id": "NAV082",
     "image": "/products/NAV082.jpg",
     "isVerifiedSeller": true,
-    "mrp": 130,
+    "mrp": 145,
     "name": "Frozen Green Peas 100% Natural 500g",
-    "price": 114,
+    "price": 128,
     "sale": 114,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1883,7 +2126,10 @@
     "sku": "NAV082",
     "title": "Frozen Green Peas 100% Natural 500g",
     "imageUrl": "/products/NAV082.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 145,
+    "salePrice": 128,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1896,9 +2142,9 @@
     "id": "NAV083",
     "image": "/products/NAV083.jpg",
     "isVerifiedSeller": true,
-    "mrp": 145,
+    "mrp": 265,
     "name": "Aashirvaad Select Sharbati Atta 5kg Pack A",
-    "price": 128,
+    "price": 233,
     "sale": 128,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1906,7 +2152,10 @@
     "sku": "NAV083",
     "title": "Aashirvaad Select Sharbati Atta 5kg Pack A",
     "imageUrl": "/products/NAV083.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 265,
+    "salePrice": 233,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1919,9 +2168,9 @@
     "id": "NAV084",
     "image": "/products/NAV084.jpg",
     "isVerifiedSeller": true,
-    "mrp": 135,
+    "mrp": 265,
     "name": "Aashirvaad Select Sharbati Atta 5kg Pack B",
-    "price": 119,
+    "price": 233,
     "sale": 119,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1929,7 +2178,10 @@
     "sku": "NAV084",
     "title": "Aashirvaad Select Sharbati Atta 5kg Pack B",
     "imageUrl": "/products/NAV084.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 265,
+    "salePrice": 233,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1942,9 +2194,9 @@
     "id": "NAV085",
     "image": "/products/NAV085.jpg",
     "isVerifiedSeller": true,
-    "mrp": 110,
+    "mrp": 265,
     "name": "Aashirvaad Multigrain Atta Nine Natural Grains 5kg",
-    "price": 97,
+    "price": 233,
     "sale": 97,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1952,7 +2204,10 @@
     "sku": "NAV085",
     "title": "Aashirvaad Multigrain Atta Nine Natural Grains 5kg",
     "imageUrl": "/products/NAV085.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 265,
+    "salePrice": 233,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1965,9 +2220,9 @@
     "id": "NAV086",
     "image": "/products/NAV086.jpg",
     "isVerifiedSeller": true,
-    "mrp": 260,
+    "mrp": 265,
     "name": "Aashirvaad Chakki Fresh Multigrain Atta 5kg",
-    "price": 229,
+    "price": 233,
     "sale": 229,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1975,7 +2230,10 @@
     "sku": "NAV086",
     "title": "Aashirvaad Chakki Fresh Multigrain Atta 5kg",
     "imageUrl": "/products/NAV086.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 265,
+    "salePrice": 233,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -1988,9 +2246,9 @@
     "id": "NAV087",
     "image": "/products/NAV087.jpg",
     "isVerifiedSeller": true,
-    "mrp": 54,
+    "mrp": 620,
     "name": "Amul Pure Ghee Tin 1 Litre",
-    "price": 48,
+    "price": 546,
     "sale": 48,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -1998,7 +2256,10 @@
     "sku": "NAV087",
     "title": "Amul Pure Ghee Tin 1 Litre",
     "imageUrl": "/products/NAV087.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 620,
+    "salePrice": 546,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2011,9 +2272,9 @@
     "id": "NAV088",
     "image": "/products/NAV088.jpg",
     "isVerifiedSeller": true,
-    "mrp": 310,
+    "mrp": 620,
     "name": "Amul Pure Ghee Jar 1L",
-    "price": 273,
+    "price": 546,
     "sale": 273,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2021,7 +2282,10 @@
     "sku": "NAV088",
     "title": "Amul Pure Ghee Jar 1L",
     "imageUrl": "/products/NAV088.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 620,
+    "salePrice": 546,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2034,9 +2298,9 @@
     "id": "NAV089",
     "image": "/products/NAV089.jpg",
     "isVerifiedSeller": true,
-    "mrp": 280,
+    "mrp": 95,
     "name": "Amul Malai Paneer Pouch 200g",
-    "price": 246,
+    "price": 84,
     "sale": 246,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2044,7 +2308,10 @@
     "sku": "NAV089",
     "title": "Amul Malai Paneer Pouch 200g",
     "imageUrl": "/products/NAV089.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 95,
+    "salePrice": 84,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2057,9 +2324,9 @@
     "id": "NAV090",
     "image": "/products/NAV090.jpg",
     "isVerifiedSeller": true,
-    "mrp": 295,
+    "mrp": 95,
     "name": "Amul Malai Paneer Fresh Soft Cheese Cubes Pack 200g",
-    "price": 260,
+    "price": 84,
     "sale": 260,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2067,7 +2334,10 @@
     "sku": "NAV090",
     "title": "Amul Malai Paneer Fresh Soft Cheese Cubes Pack 200g",
     "imageUrl": "/products/NAV090.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 95,
+    "salePrice": 84,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2080,9 +2350,9 @@
     "id": "NAV091",
     "image": "/products/NAV091.jpg",
     "isVerifiedSeller": true,
-    "mrp": 340,
+    "mrp": 45,
     "name": "Amul Taaza Milk Tetra Pack 1 Litre Pack A",
-    "price": 299,
+    "price": 40,
     "sale": 299,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2090,7 +2360,10 @@
     "sku": "NAV091",
     "title": "Amul Taaza Milk Tetra Pack 1 Litre Pack A",
     "imageUrl": "/products/NAV091.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 45,
+    "salePrice": 40,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2103,9 +2376,9 @@
     "id": "NAV092",
     "image": "/products/NAV092.jpg",
     "isVerifiedSeller": true,
-    "mrp": 390,
+    "mrp": 45,
     "name": "Amul Taaza Toned Milk Tetra Pack 1L Pack B",
-    "price": 343,
+    "price": 40,
     "sale": 343,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2113,7 +2386,10 @@
     "sku": "NAV092",
     "title": "Amul Taaza Toned Milk Tetra Pack 1L Pack B",
     "imageUrl": "/products/NAV092.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 45,
+    "salePrice": 40,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2126,9 +2402,9 @@
     "id": "NAV093",
     "image": "/products/NAV093.jpg",
     "isVerifiedSeller": true,
-    "mrp": 270,
+    "mrp": 45,
     "name": "Amul Gold Full Cream Milk Tetra Pack 1 Litre Pack A",
-    "price": 238,
+    "price": 40,
     "sale": 238,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2136,7 +2412,10 @@
     "sku": "NAV093",
     "title": "Amul Gold Full Cream Milk Tetra Pack 1 Litre Pack A",
     "imageUrl": "/products/NAV093.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 45,
+    "salePrice": 40,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2149,9 +2428,9 @@
     "id": "NAV094",
     "image": "/products/NAV094.jpg",
     "isVerifiedSeller": true,
-    "mrp": 360,
+    "mrp": 45,
     "name": "Amul Gold Full Cream Milk Tetra Pack 1L Pack B",
-    "price": 317,
+    "price": 40,
     "sale": 317,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2159,7 +2438,10 @@
     "sku": "NAV094",
     "title": "Amul Gold Full Cream Milk Tetra Pack 1L Pack B",
     "imageUrl": "/products/NAV094.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 45,
+    "salePrice": 40,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2172,9 +2454,9 @@
     "id": "NAV095",
     "image": "/products/NAV095.jpg",
     "isVerifiedSeller": true,
-    "mrp": 230,
+    "mrp": 285,
     "name": "Amul Pasteurised Butter Carton 500g Pack A",
-    "price": 202,
+    "price": 251,
     "sale": 202,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2182,7 +2464,10 @@
     "sku": "NAV095",
     "title": "Amul Pasteurised Butter Carton 500g Pack A",
     "imageUrl": "/products/NAV095.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 285,
+    "salePrice": 251,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2195,9 +2480,9 @@
     "id": "NAV096",
     "image": "/products/NAV096.jpg",
     "isVerifiedSeller": true,
-    "mrp": 440,
+    "mrp": 285,
     "name": "Amul Pasteurised Butter Carton 500g Pack B",
-    "price": 387,
+    "price": 251,
     "sale": 387,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2205,7 +2490,10 @@
     "sku": "NAV096",
     "title": "Amul Pasteurised Butter Carton 500g Pack B",
     "imageUrl": "/products/NAV096.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 285,
+    "salePrice": 251,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2218,9 +2506,9 @@
     "id": "NAV097",
     "image": "/products/NAV097.jpg",
     "isVerifiedSeller": true,
-    "mrp": 450,
+    "mrp": 60,
     "name": "Amul Salted Pasteurised Butter Pack 100g Pack A",
-    "price": 396,
+    "price": 53,
     "sale": 396,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2228,7 +2516,10 @@
     "sku": "NAV097",
     "title": "Amul Salted Pasteurised Butter Pack 100g Pack A",
     "imageUrl": "/products/NAV097.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 60,
+    "salePrice": 53,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2241,9 +2532,9 @@
     "id": "NAV098",
     "image": "/products/NAV098.jpg",
     "isVerifiedSeller": true,
-    "mrp": 265,
+    "mrp": 60,
     "name": "Amul Salted Pasteurised Butter Pack 100g Pack B",
-    "price": 233,
+    "price": 53,
     "sale": 233,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2251,7 +2542,10 @@
     "sku": "NAV098",
     "title": "Amul Salted Pasteurised Butter Pack 100g Pack B",
     "imageUrl": "/products/NAV098.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 60,
+    "salePrice": 53,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2264,9 +2558,9 @@
     "id": "NAV099",
     "image": "/products/NAV099.jpg",
     "isVerifiedSeller": true,
-    "mrp": 185,
+    "mrp": 120,
     "name": "Amul Masti Dahi Cup 400g Pack A",
-    "price": 163,
+    "price": 106,
     "sale": 163,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2274,7 +2568,10 @@
     "sku": "NAV099",
     "title": "Amul Masti Dahi Cup 400g Pack A",
     "imageUrl": "/products/NAV099.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2287,9 +2584,9 @@
     "id": "NAV100",
     "image": "/products/NAV100.jpg",
     "isVerifiedSeller": true,
-    "mrp": 145,
+    "mrp": 120,
     "name": "Amul Masti Dahi Premium Curd Tub 400g Pack B",
-    "price": 128,
+    "price": 106,
     "sale": 128,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2297,7 +2594,10 @@
     "sku": "NAV100",
     "title": "Amul Masti Dahi Premium Curd Tub 400g Pack B",
     "imageUrl": "/products/NAV100.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2310,9 +2610,9 @@
     "id": "NAV101",
     "image": "/products/NAV101.jpg",
     "isVerifiedSeller": true,
-    "mrp": 155,
+    "mrp": 35,
     "name": "Amul Lassi Mango 250ml",
-    "price": 136,
+    "price": 31,
     "sale": 136,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2320,7 +2620,10 @@
     "sku": "NAV101",
     "title": "Amul Lassi Mango 250ml",
     "imageUrl": "/products/NAV101.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 35,
+    "salePrice": 31,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2333,9 +2636,9 @@
     "id": "NAV102",
     "image": "/products/NAV102.jpg",
     "isVerifiedSeller": true,
-    "mrp": 170,
+    "mrp": 35,
     "name": "Amul Lassi Mango & Rose 250ml",
-    "price": 150,
+    "price": 31,
     "sale": 150,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2343,7 +2646,10 @@
     "sku": "NAV102",
     "title": "Amul Lassi Mango & Rose 250ml",
     "imageUrl": "/products/NAV102.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 35,
+    "salePrice": 31,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2356,9 +2662,9 @@
     "id": "NAV103",
     "image": "/products/NAV103.jpg",
     "isVerifiedSeller": true,
-    "mrp": 410,
+    "mrp": 120,
     "name": "Amul Mithai Mate 400g Pack A",
-    "price": 361,
+    "price": 106,
     "sale": 361,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2366,7 +2672,10 @@
     "sku": "NAV103",
     "title": "Amul Mithai Mate 400g Pack A",
     "imageUrl": "/products/NAV103.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2379,9 +2688,9 @@
     "id": "NAV104",
     "image": "/products/NAV104.jpg",
     "isVerifiedSeller": true,
-    "mrp": 399,
+    "mrp": 120,
     "name": "Amul Mithai Mate Sweetened Condensed Milk 400g Pack B",
-    "price": 351,
+    "price": 106,
     "sale": 351,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2389,7 +2698,10 @@
     "sku": "NAV104",
     "title": "Amul Mithai Mate Sweetened Condensed Milk 400g Pack B",
     "imageUrl": "/products/NAV104.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2402,9 +2714,9 @@
     "id": "NAV105",
     "image": "/products/NAV105.jpg",
     "isVerifiedSeller": true,
-    "mrp": 235,
+    "mrp": 580,
     "name": "Daawat Basmati Rice Premium 5kg",
-    "price": 207,
+    "price": 510,
     "sale": 207,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2412,7 +2724,10 @@
     "sku": "NAV105",
     "title": "Daawat Basmati Rice Premium 5kg",
     "imageUrl": "/products/NAV105.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 580,
+    "salePrice": 510,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2425,9 +2740,9 @@
     "id": "NAV106",
     "image": "/products/NAV106.jpg",
     "isVerifiedSeller": true,
-    "mrp": 168,
+    "mrp": 580,
     "name": "Royal Harvest Premium Basmati Rice 5kg",
-    "price": 148,
+    "price": 510,
     "sale": 148,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2435,7 +2750,10 @@
     "sku": "NAV106",
     "title": "Royal Harvest Premium Basmati Rice 5kg",
     "imageUrl": "/products/NAV106.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 580,
+    "salePrice": 510,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2448,9 +2766,9 @@
     "id": "NAV107",
     "image": "/products/NAV107.jpg",
     "isVerifiedSeller": true,
-    "mrp": 60,
+    "mrp": 275,
     "name": "Cadbury Bournvita 500g Pack A",
-    "price": 53,
+    "price": 242,
     "sale": 53,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2458,7 +2776,10 @@
     "sku": "NAV107",
     "title": "Cadbury Bournvita 500g Pack A",
     "imageUrl": "/products/NAV107.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 275,
+    "salePrice": 242,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2471,9 +2792,9 @@
     "id": "NAV108",
     "image": "/products/NAV108.jpg",
     "isVerifiedSeller": true,
-    "mrp": 55,
+    "mrp": 275,
     "name": "Cadbury Bournvita Chocolate Malt Drink 500g Pack B",
-    "price": 48,
+    "price": 242,
     "sale": 48,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2481,7 +2802,10 @@
     "sku": "NAV108",
     "title": "Cadbury Bournvita Chocolate Malt Drink 500g Pack B",
     "imageUrl": "/products/NAV108.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 275,
+    "salePrice": 242,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2494,9 +2818,9 @@
     "id": "NAV109",
     "image": "/products/NAV109.jpg",
     "isVerifiedSeller": true,
-    "mrp": 90,
+    "mrp": 45,
     "name": "Bisleri Packaged Drinking Water 1 Litre Pack A",
-    "price": 79,
+    "price": 40,
     "sale": 79,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2504,7 +2828,10 @@
     "sku": "NAV109",
     "title": "Bisleri Packaged Drinking Water 1 Litre Pack A",
     "imageUrl": "/products/NAV109.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 45,
+    "salePrice": 40,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2517,9 +2844,9 @@
     "id": "NAV110",
     "image": "/products/NAV110.jpg",
     "isVerifiedSeller": true,
-    "mrp": 140,
+    "mrp": 45,
     "name": "Bisleri Packaged Drinking Water 1L Pack B",
-    "price": 123,
+    "price": 40,
     "sale": 123,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2527,7 +2854,10 @@
     "sku": "NAV110",
     "title": "Bisleri Packaged Drinking Water 1L Pack B",
     "imageUrl": "/products/NAV110.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 45,
+    "salePrice": 40,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2540,9 +2870,9 @@
     "id": "NAV111",
     "image": "/products/NAV111.jpg",
     "isVerifiedSeller": true,
-    "mrp": 150,
+    "mrp": 120,
     "name": "Britannia Good Day Cashew 600g Pack A",
-    "price": 132,
+    "price": 106,
     "sale": 132,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2550,7 +2880,10 @@
     "sku": "NAV111",
     "title": "Britannia Good Day Cashew 600g Pack A",
     "imageUrl": "/products/NAV111.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2563,9 +2896,9 @@
     "id": "NAV112",
     "image": "/products/NAV112.jpg",
     "isVerifiedSeller": true,
-    "mrp": 145,
+    "mrp": 120,
     "name": "Britannia Good Day Cashew Butter Cookies 600g Pack B",
-    "price": 128,
+    "price": 106,
     "sale": 128,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2573,7 +2906,10 @@
     "sku": "NAV112",
     "title": "Britannia Good Day Cashew Butter Cookies 600g Pack B",
     "imageUrl": "/products/NAV112.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2586,9 +2922,9 @@
     "id": "NAV113",
     "image": "/products/NAV113.jpg",
     "isVerifiedSeller": true,
-    "mrp": 160,
+    "mrp": 120,
     "name": "Britannia Milk Bikis 500g Pack A",
-    "price": 141,
+    "price": 106,
     "sale": 141,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2596,7 +2932,10 @@
     "sku": "NAV113",
     "title": "Britannia Milk Bikis 500g Pack A",
     "imageUrl": "/products/NAV113.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2609,9 +2948,9 @@
     "id": "NAV114",
     "image": "/products/NAV114.jpg",
     "isVerifiedSeller": true,
-    "mrp": 95,
+    "mrp": 120,
     "name": "Britannia Milk Bikis 500g Pack B",
-    "price": 84,
+    "price": 106,
     "sale": 84,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2619,7 +2958,10 @@
     "sku": "NAV114",
     "title": "Britannia Milk Bikis 500g Pack B",
     "imageUrl": "/products/NAV114.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2632,9 +2974,9 @@
     "id": "NAV115",
     "image": "/products/NAV115.jpg",
     "isVerifiedSeller": true,
-    "mrp": 75,
+    "mrp": 120,
     "name": "Britannia Milk Bikis 500g Pack C",
-    "price": 66,
+    "price": 106,
     "sale": 66,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2642,7 +2984,10 @@
     "sku": "NAV115",
     "title": "Britannia Milk Bikis 500g Pack C",
     "imageUrl": "/products/NAV115.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2655,9 +3000,9 @@
     "id": "NAV116",
     "image": "/products/NAV116.jpg",
     "isVerifiedSeller": true,
-    "mrp": 85,
+    "mrp": 260,
     "name": "Bikano Bhujia Namkeen 1kg Pack A",
-    "price": 75,
+    "price": 229,
     "sale": 75,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2665,7 +3010,10 @@
     "sku": "NAV116",
     "title": "Bikano Bhujia Namkeen 1kg Pack A",
     "imageUrl": "/products/NAV116.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 260,
+    "salePrice": 229,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2678,9 +3026,9 @@
     "id": "NAV117",
     "image": "/products/NAV117.jpg",
     "isVerifiedSeller": true,
-    "mrp": 270,
+    "mrp": 260,
     "name": "Bikano Bhujia Fine Crispy Savoury Mixture 1kg Pack B",
-    "price": 238,
+    "price": 229,
     "sale": 238,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2688,7 +3036,10 @@
     "sku": "NAV117",
     "title": "Bikano Bhujia Fine Crispy Savoury Mixture 1kg Pack B",
     "imageUrl": "/products/NAV117.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 260,
+    "salePrice": 229,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2711,7 +3062,10 @@
     "sku": "NAV118",
     "title": "Bikano Bhujia Fine Crispy Savoury Mixture 1kg Pack C",
     "imageUrl": "/products/NAV118.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 260,
+    "salePrice": 229,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2724,9 +3078,9 @@
     "id": "NAV119",
     "image": "/products/NAV119.jpg",
     "isVerifiedSeller": true,
-    "mrp": 275,
+    "mrp": 260,
     "name": "Brooke Bond Red Label Tea 500g",
-    "price": 242,
+    "price": 229,
     "sale": 242,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2734,7 +3088,10 @@
     "sku": "NAV119",
     "title": "Brooke Bond Red Label Tea 500g",
     "imageUrl": "/products/NAV119.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 260,
+    "salePrice": 229,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2747,9 +3104,9 @@
     "id": "NAV120",
     "image": "/products/NAV120.jpg",
     "isVerifiedSeller": true,
-    "mrp": 145,
+    "mrp": 260,
     "name": "Brooke Bond Red Label Natural Care Tea 500g",
-    "price": 128,
+    "price": 229,
     "sale": 128,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2757,7 +3114,10 @@
     "sku": "NAV120",
     "title": "Brooke Bond Red Label Natural Care Tea 500g",
     "imageUrl": "/products/NAV120.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 260,
+    "salePrice": 229,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2770,9 +3130,9 @@
     "id": "NAV121",
     "image": "/products/NAV121.jpg",
     "isVerifiedSeller": true,
-    "mrp": 115,
+    "mrp": 120,
     "name": "Bay Leaves Tej Patta 100g Pack A",
-    "price": 101,
+    "price": 106,
     "sale": 101,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2780,7 +3140,10 @@
     "sku": "NAV121",
     "title": "Bay Leaves Tej Patta 100g Pack A",
     "imageUrl": "/products/NAV121.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2793,9 +3156,9 @@
     "id": "NAV122",
     "image": "/products/NAV122.jpg",
     "isVerifiedSeller": true,
-    "mrp": 50,
+    "mrp": 120,
     "name": "Bay Leaves Tej Patta 100g Pack B",
-    "price": 44,
+    "price": 106,
     "sale": 44,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2803,7 +3166,10 @@
     "sku": "NAV122",
     "title": "Bay Leaves Tej Patta 100g Pack B",
     "imageUrl": "/products/NAV122.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2816,9 +3182,9 @@
     "id": "NAV123",
     "image": "/products/NAV123.jpg",
     "isVerifiedSeller": true,
-    "mrp": 50,
+    "mrp": 120,
     "name": "Bay Leaves Tej Patta 100g Pack C",
-    "price": 44,
+    "price": 106,
     "sale": 44,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2826,7 +3192,10 @@
     "sku": "NAV123",
     "title": "Bay Leaves Tej Patta 100g Pack C",
     "imageUrl": "/products/NAV123.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2839,9 +3208,9 @@
     "id": "NAV124",
     "image": "/products/NAV124.jpg",
     "isVerifiedSeller": true,
-    "mrp": 50,
+    "mrp": 120,
     "name": "Catch Baking Soda Meetha Soda 100g",
-    "price": 44,
+    "price": 106,
     "sale": 44,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2849,7 +3218,10 @@
     "sku": "NAV124",
     "title": "Catch Baking Soda Meetha Soda 100g",
     "imageUrl": "/products/NAV124.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2862,9 +3234,9 @@
     "id": "NAV125",
     "image": "/products/NAV125.jpg",
     "isVerifiedSeller": true,
-    "mrp": 195,
+    "mrp": 120,
     "name": "Baking Soda Premium Quality 100g Pack A",
-    "price": 172,
+    "price": 106,
     "sale": 172,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2872,7 +3244,10 @@
     "sku": "NAV125",
     "title": "Baking Soda Premium Quality 100g Pack A",
     "imageUrl": "/products/NAV125.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2885,9 +3260,9 @@
     "id": "NAV126",
     "image": "/products/NAV126.jpg",
     "isVerifiedSeller": true,
-    "mrp": 680,
+    "mrp": 120,
     "name": "Baking Soda Premium Quality 100g Pack B",
-    "price": 598,
+    "price": 106,
     "sale": 598,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2895,7 +3270,10 @@
     "sku": "NAV126",
     "title": "Baking Soda Premium Quality 100g Pack B",
     "imageUrl": "/products/NAV126.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2908,9 +3286,9 @@
     "id": "NAV127",
     "image": "/products/NAV127.jpg",
     "isVerifiedSeller": true,
-    "mrp": 495,
+    "mrp": 155,
     "name": "Chana Dal Bengal Gram Split 1kg",
-    "price": 436,
+    "price": 136,
     "sale": 436,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2918,7 +3296,10 @@
     "sku": "NAV127",
     "title": "Chana Dal Bengal Gram Split 1kg",
     "imageUrl": "/products/NAV127.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 155,
+    "salePrice": 136,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2931,9 +3312,9 @@
     "id": "NAV128",
     "image": "/products/NAV128.jpg",
     "isVerifiedSeller": true,
-    "mrp": 640,
+    "mrp": 155,
     "name": "Annapurna Chana Dal Split Gram Lentils 1kg",
-    "price": 563,
+    "price": 136,
     "sale": 563,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2941,7 +3322,10 @@
     "sku": "NAV128",
     "title": "Annapurna Chana Dal Split Gram Lentils 1kg",
     "imageUrl": "/products/NAV128.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 155,
+    "salePrice": 136,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2954,9 +3338,9 @@
     "id": "NAV129",
     "image": "/products/NAV129.jpg",
     "isVerifiedSeller": true,
-    "mrp": 580,
+    "mrp": 140,
     "name": "Catch Turmeric Powder Haldi Powder 200g Pack A",
-    "price": 510,
+    "price": 123,
     "sale": 510,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2964,7 +3348,10 @@
     "sku": "NAV129",
     "title": "Catch Turmeric Powder Haldi Powder 200g Pack A",
     "imageUrl": "/products/NAV129.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 140,
+    "salePrice": 123,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -2977,9 +3364,9 @@
     "id": "NAV130",
     "image": "/products/NAV130.jpg",
     "isVerifiedSeller": true,
-    "mrp": 390,
+    "mrp": 140,
     "name": "Catch Turmeric Powder Haldi Powder 200g Pack B",
-    "price": 343,
+    "price": 123,
     "sale": 343,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -2987,7 +3374,10 @@
     "sku": "NAV130",
     "title": "Catch Turmeric Powder Haldi Powder 200g Pack B",
     "imageUrl": "/products/NAV130.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 140,
+    "salePrice": 123,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3000,9 +3390,9 @@
     "id": "NAV131",
     "image": "/products/NAV131.jpg",
     "isVerifiedSeller": true,
-    "mrp": 440,
+    "mrp": 140,
     "name": "Catch Turmeric Powder Haldi Powder 200g Pack C",
-    "price": 387,
+    "price": 123,
     "sale": 387,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3010,7 +3400,10 @@
     "sku": "NAV131",
     "title": "Catch Turmeric Powder Haldi Powder 200g Pack C",
     "imageUrl": "/products/NAV131.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 140,
+    "salePrice": 123,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3023,9 +3416,9 @@
     "id": "NAV132",
     "image": "/products/NAV132.jpg",
     "isVerifiedSeller": true,
-    "mrp": 399,
+    "mrp": 140,
     "name": "Catch Red Chilli Powder Lal Mirch 200g Pack A",
-    "price": 351,
+    "price": 123,
     "sale": 351,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3033,7 +3426,10 @@
     "sku": "NAV132",
     "title": "Catch Red Chilli Powder Lal Mirch 200g Pack A",
     "imageUrl": "/products/NAV132.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 140,
+    "salePrice": 123,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3046,9 +3442,9 @@
     "id": "NAV133",
     "image": "/products/NAV133.jpg",
     "isVerifiedSeller": true,
-    "mrp": 40,
+    "mrp": 140,
     "name": "Catch Finest Quality Red Chilli Powder 200g Pack B",
-    "price": 35,
+    "price": 123,
     "sale": 35,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3056,7 +3452,10 @@
     "sku": "NAV133",
     "title": "Catch Finest Quality Red Chilli Powder 200g Pack B",
     "imageUrl": "/products/NAV133.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 140,
+    "salePrice": 123,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3069,9 +3468,9 @@
     "id": "NAV134",
     "image": "/products/NAV134.jpg",
     "isVerifiedSeller": true,
-    "mrp": 42,
+    "mrp": 140,
     "name": "Catch Finest Quality Red Chilli Powder 200g Pack C",
-    "price": 37,
+    "price": 123,
     "sale": 37,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3079,7 +3478,10 @@
     "sku": "NAV134",
     "title": "Catch Finest Quality Red Chilli Powder 200g Pack C",
     "imageUrl": "/products/NAV134.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 140,
+    "salePrice": 123,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3092,9 +3494,9 @@
     "id": "NAV135",
     "image": "/products/NAV135.jpg",
     "isVerifiedSeller": true,
-    "mrp": 190,
+    "mrp": 140,
     "name": "Catch Coriander Powder Dhaniya 200g Pack A",
-    "price": 167,
+    "price": 123,
     "sale": 167,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3102,7 +3504,10 @@
     "sku": "NAV135",
     "title": "Catch Coriander Powder Dhaniya 200g Pack A",
     "imageUrl": "/products/NAV135.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 140,
+    "salePrice": 123,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3115,9 +3520,9 @@
     "id": "NAV136",
     "image": "/products/NAV136.jpg",
     "isVerifiedSeller": true,
-    "mrp": 220,
+    "mrp": 140,
     "name": "Catch Coriander Powder Ground Spices Jar 200g Pack B",
-    "price": 194,
+    "price": 123,
     "sale": 194,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3125,7 +3530,10 @@
     "sku": "NAV136",
     "title": "Catch Coriander Powder Ground Spices Jar 200g Pack B",
     "imageUrl": "/products/NAV136.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 140,
+    "salePrice": 123,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3138,9 +3546,9 @@
     "id": "NAV137",
     "image": "/products/NAV137.jpg",
     "isVerifiedSeller": true,
-    "mrp": 395,
+    "mrp": 140,
     "name": "Catch Coriander Powder Ground Spices Jar 200g Pack C",
-    "price": 348,
+    "price": 123,
     "sale": 348,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3148,7 +3556,10 @@
     "sku": "NAV137",
     "title": "Catch Coriander Powder Ground Spices Jar 200g Pack C",
     "imageUrl": "/products/NAV137.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 140,
+    "salePrice": 123,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3161,9 +3572,9 @@
     "id": "NAV138",
     "image": "/products/NAV138.jpg",
     "isVerifiedSeller": true,
-    "mrp": 185,
+    "mrp": 85,
     "name": "Catch Expert Garam Masala 100g Pack A",
-    "price": 163,
+    "price": 75,
     "sale": 163,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3171,7 +3582,10 @@
     "sku": "NAV138",
     "title": "Catch Expert Garam Masala 100g Pack A",
     "imageUrl": "/products/NAV138.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3184,9 +3598,9 @@
     "id": "NAV139",
     "image": "/products/NAV139.jpg",
     "isVerifiedSeller": true,
-    "mrp": 399,
+    "mrp": 85,
     "name": "Catch Garam Masala Authentic Indian Spice Blend 100g Pack B",
-    "price": 351,
+    "price": 75,
     "sale": 351,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3194,7 +3608,10 @@
     "sku": "NAV139",
     "title": "Catch Garam Masala Authentic Indian Spice Blend 100g Pack B",
     "imageUrl": "/products/NAV139.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3207,9 +3624,9 @@
     "id": "NAV140",
     "image": "/products/NAV140.jpg",
     "isVerifiedSeller": true,
-    "mrp": 340,
+    "mrp": 85,
     "name": "Catch Garam Masala Authentic Indian Spice Blend 100g Pack C",
-    "price": 299,
+    "price": 75,
     "sale": 299,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3217,7 +3634,10 @@
     "sku": "NAV140",
     "title": "Catch Garam Masala Authentic Indian Spice Blend 100g Pack C",
     "imageUrl": "/products/NAV140.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3230,9 +3650,9 @@
     "id": "NAV141",
     "image": "/products/NAV141.jpg",
     "isVerifiedSeller": true,
-    "mrp": 240,
+    "mrp": 120,
     "name": "Colgate Strong Teeth Toothpaste 500g Pack A",
-    "price": 211,
+    "price": 106,
     "sale": 211,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3240,7 +3660,10 @@
     "sku": "NAV141",
     "title": "Colgate Strong Teeth Toothpaste 500g Pack A",
     "imageUrl": "/products/NAV141.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3253,9 +3676,9 @@
     "id": "NAV142",
     "image": "/products/NAV142.jpg",
     "isVerifiedSeller": true,
-    "mrp": 190,
+    "mrp": 120,
     "name": "Colgate Strong Teeth Fluoride + Calcium Boost 500g Pack B",
-    "price": 167,
+    "price": 106,
     "sale": 167,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3263,7 +3686,10 @@
     "sku": "NAV142",
     "title": "Colgate Strong Teeth Fluoride + Calcium Boost 500g Pack B",
     "imageUrl": "/products/NAV142.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3276,9 +3702,9 @@
     "id": "NAV143",
     "image": "/products/NAV143.jpg",
     "isVerifiedSeller": true,
-    "mrp": 290,
+    "mrp": 120,
     "name": "Colgate Strong Teeth Fluoride + Calcium Boost 500g Pack C",
-    "price": 255,
+    "price": 106,
     "sale": 255,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3286,7 +3712,10 @@
     "sku": "NAV143",
     "title": "Colgate Strong Teeth Fluoride + Calcium Boost 500g Pack C",
     "imageUrl": "/products/NAV143.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3299,9 +3728,9 @@
     "id": "NAV144",
     "image": "/products/NAV144.jpg",
     "isVerifiedSeller": true,
-    "mrp": 285,
+    "mrp": 120,
     "name": "Comfort Fabric Conditioner 860ml Pack A",
-    "price": 251,
+    "price": 106,
     "sale": 251,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3309,7 +3738,10 @@
     "sku": "NAV144",
     "title": "Comfort Fabric Conditioner 860ml Pack A",
     "imageUrl": "/products/NAV144.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3322,9 +3754,9 @@
     "id": "NAV145",
     "image": "/products/NAV145.jpg",
     "isVerifiedSeller": true,
-    "mrp": 210,
+    "mrp": 120,
     "name": "Comfort After Wash Fabric Conditioner 860ml Pack B",
-    "price": 185,
+    "price": 106,
     "sale": 185,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3332,7 +3764,10 @@
     "sku": "NAV145",
     "title": "Comfort After Wash Fabric Conditioner 860ml Pack B",
     "imageUrl": "/products/NAV145.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3345,9 +3780,9 @@
     "id": "NAV146",
     "image": "/products/NAV146.jpg",
     "isVerifiedSeller": true,
-    "mrp": 195,
+    "mrp": 120,
     "name": "Cadbury Dairy Milk Silk 150g Pack A",
-    "price": 172,
+    "price": 106,
     "sale": 172,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3355,7 +3790,10 @@
     "sku": "NAV146",
     "title": "Cadbury Dairy Milk Silk 150g Pack A",
     "imageUrl": "/products/NAV146.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3368,9 +3806,9 @@
     "id": "NAV147",
     "image": "/products/NAV147.jpg",
     "isVerifiedSeller": true,
-    "mrp": 220,
+    "mrp": 120,
     "name": "Cadbury Dairy Milk Silk 150g Pack B",
-    "price": 194,
+    "price": 106,
     "sale": 194,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3378,7 +3816,10 @@
     "sku": "NAV147",
     "title": "Cadbury Dairy Milk Silk 150g Pack B",
     "imageUrl": "/products/NAV147.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3391,9 +3832,9 @@
     "id": "NAV148",
     "image": "/products/NAV148.jpg",
     "isVerifiedSeller": true,
-    "mrp": 150,
+    "mrp": 45,
     "name": "Coca-Cola Bottle 1 Litre Pack A",
-    "price": 132,
+    "price": 40,
     "sale": 132,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3401,7 +3842,10 @@
     "sku": "NAV148",
     "title": "Coca-Cola Bottle 1 Litre Pack A",
     "imageUrl": "/products/NAV148.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 45,
+    "salePrice": 40,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3414,9 +3858,9 @@
     "id": "NAV149",
     "image": "/products/NAV149.jpg",
     "isVerifiedSeller": true,
-    "mrp": 260,
+    "mrp": 45,
     "name": "Coca-Cola Original Taste Bottle 1 Litre Pack B",
-    "price": 229,
+    "price": 40,
     "sale": 229,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3424,7 +3868,10 @@
     "sku": "NAV149",
     "title": "Coca-Cola Original Taste Bottle 1 Litre Pack B",
     "imageUrl": "/products/NAV149.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 45,
+    "salePrice": 40,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3437,9 +3884,9 @@
     "id": "NAV150",
     "image": "/products/NAV150.jpg",
     "isVerifiedSeller": true,
-    "mrp": 210,
+    "mrp": 120,
     "name": "Dettol Antiseptic Liquid 550ml Pack A",
-    "price": 185,
+    "price": 106,
     "sale": 185,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3447,7 +3894,10 @@
     "sku": "NAV150",
     "title": "Dettol Antiseptic Liquid 550ml Pack A",
     "imageUrl": "/products/NAV150.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3460,9 +3910,9 @@
     "id": "NAV151",
     "image": "/products/NAV151.jpg",
     "isVerifiedSeller": true,
-    "mrp": 195,
+    "mrp": 120,
     "name": "Dettol Antiseptic Liquid 550ml Pack B",
-    "price": 172,
+    "price": 106,
     "sale": 172,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3470,7 +3920,10 @@
     "sku": "NAV151",
     "title": "Dettol Antiseptic Liquid 550ml Pack B",
     "imageUrl": "/products/NAV151.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3483,9 +3936,9 @@
     "id": "NAV152",
     "image": "/products/NAV152.jpg",
     "isVerifiedSeller": true,
-    "mrp": 175,
+    "mrp": 120,
     "name": "Dettol Original Soap 125g",
-    "price": 154,
+    "price": 106,
     "sale": 154,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3493,7 +3946,10 @@
     "sku": "NAV152",
     "title": "Dettol Original Soap 125g",
     "imageUrl": "/products/NAV152.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3506,9 +3962,9 @@
     "id": "NAV153",
     "image": "/products/NAV153.jpg",
     "isVerifiedSeller": true,
-    "mrp": 240,
+    "mrp": 120,
     "name": "Dettol Original Germ Protection Soap Multipack 3x125g",
-    "price": 211,
+    "price": 106,
     "sale": 211,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3516,7 +3972,10 @@
     "sku": "NAV153",
     "title": "Dettol Original Germ Protection Soap Multipack 3x125g",
     "imageUrl": "/products/NAV153.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3529,9 +3988,9 @@
     "id": "NAV154",
     "image": "/products/NAV154.jpg",
     "isVerifiedSeller": true,
-    "mrp": 180,
+    "mrp": 120,
     "name": "Dabur Red Ayurvedic Toothpaste 300g Pack A",
-    "price": 158,
+    "price": 106,
     "sale": 158,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3539,7 +3998,10 @@
     "sku": "NAV154",
     "title": "Dabur Red Ayurvedic Toothpaste 300g Pack A",
     "imageUrl": "/products/NAV154.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3552,9 +4014,9 @@
     "id": "NAV155",
     "image": "/products/NAV155.jpg",
     "isVerifiedSeller": true,
-    "mrp": 599,
+    "mrp": 120,
     "name": "Dabur Red Ayurvedic Toothpaste Gel 300g Pack B",
-    "price": 527,
+    "price": 106,
     "sale": 527,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3562,7 +4024,10 @@
     "sku": "NAV155",
     "title": "Dabur Red Ayurvedic Toothpaste Gel 300g Pack B",
     "imageUrl": "/products/NAV155.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3575,9 +4040,9 @@
     "id": "NAV156",
     "image": "/products/NAV156.jpg",
     "isVerifiedSeller": true,
-    "mrp": 399,
+    "mrp": 240,
     "name": "Dabur Pure Honey 500g Pack A",
-    "price": 351,
+    "price": 211,
     "sale": 351,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3585,7 +4050,10 @@
     "sku": "NAV156",
     "title": "Dabur Pure Honey 500g Pack A",
     "imageUrl": "/products/NAV156.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 240,
+    "salePrice": 211,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3598,9 +4066,9 @@
     "id": "NAV157",
     "image": "/products/NAV157.jpg",
     "isVerifiedSeller": true,
-    "mrp": 440,
+    "mrp": 240,
     "name": "Dabur Honey Purest & Finest 500g Pack B",
-    "price": 387,
+    "price": 211,
     "sale": 387,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3608,7 +4076,10 @@
     "sku": "NAV157",
     "title": "Dabur Honey Purest & Finest 500g Pack B",
     "imageUrl": "/products/NAV157.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 240,
+    "salePrice": 211,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3621,9 +4092,9 @@
     "id": "NAV158",
     "image": "/products/NAV158.jpg",
     "isVerifiedSeller": true,
-    "mrp": 560,
+    "mrp": 395,
     "name": "Dabur Chyawanprash Ayurvedic Health Supplement 1kg Pack A",
-    "price": 493,
+    "price": 348,
     "sale": 493,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3631,7 +4102,10 @@
     "sku": "NAV158",
     "title": "Dabur Chyawanprash Ayurvedic Health Supplement 1kg Pack A",
     "imageUrl": "/products/NAV158.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 395,
+    "salePrice": 348,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3644,9 +4118,9 @@
     "id": "NAV159",
     "image": "/products/NAV159.jpg",
     "isVerifiedSeller": true,
-    "mrp": 580,
+    "mrp": 395,
     "name": "Dabur Chyawanprash Immunity Booster 1kg Pack B",
-    "price": 510,
+    "price": 348,
     "sale": 510,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3654,7 +4128,10 @@
     "sku": "NAV159",
     "title": "Dabur Chyawanprash Immunity Booster 1kg Pack B",
     "imageUrl": "/products/NAV159.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 395,
+    "salePrice": 348,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3667,9 +4144,9 @@
     "id": "NAV160",
     "image": "/products/NAV160.jpg",
     "isVerifiedSeller": true,
-    "mrp": 210,
+    "mrp": 120,
     "name": "Dabur Amla Hair Oil 275ml Pack A",
-    "price": 185,
+    "price": 106,
     "sale": 185,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3677,7 +4154,10 @@
     "sku": "NAV160",
     "title": "Dabur Amla Hair Oil 275ml Pack A",
     "imageUrl": "/products/NAV160.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3690,9 +4170,9 @@
     "id": "NAV161",
     "image": "/products/NAV161.jpg",
     "isVerifiedSeller": true,
-    "mrp": 340,
+    "mrp": 120,
     "name": "Dabur Amla Hair Oil Strengthens & Nourishes 275ml Pack B",
-    "price": 299,
+    "price": 106,
     "sale": 299,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3700,7 +4180,10 @@
     "sku": "NAV161",
     "title": "Dabur Amla Hair Oil Strengthens & Nourishes 275ml Pack B",
     "imageUrl": "/products/NAV161.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3713,9 +4196,9 @@
     "id": "NAV162",
     "image": "/products/NAV162.jpg",
     "isVerifiedSeller": true,
-    "mrp": 230,
+    "mrp": 1150,
     "name": "Disano Extra Virgin Olive Oil Bottle 1 Litre Pack A",
-    "price": 202,
+    "price": 1012,
     "sale": 202,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3723,7 +4206,10 @@
     "sku": "NAV162",
     "title": "Disano Extra Virgin Olive Oil Bottle 1 Litre Pack A",
     "imageUrl": "/products/NAV162.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 1150,
+    "salePrice": 1012,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3736,9 +4222,9 @@
     "id": "NAV163",
     "image": "/products/NAV163.jpg",
     "isVerifiedSeller": true,
-    "mrp": 399,
+    "mrp": 1150,
     "name": "Disano Extra Virgin Olive Oil 1L Pack B",
-    "price": 351,
+    "price": 1012,
     "sale": 351,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3746,7 +4232,10 @@
     "sku": "NAV163",
     "title": "Disano Extra Virgin Olive Oil 1L Pack B",
     "imageUrl": "/products/NAV163.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 1150,
+    "salePrice": 1012,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3759,9 +4248,9 @@
     "id": "NAV164",
     "image": "/products/NAV164.jpg",
     "isVerifiedSeller": true,
-    "mrp": 380,
+    "mrp": 120,
     "name": "Sunfeast Dark Fantasy Choco Filled 300g Pack A",
-    "price": 334,
+    "price": 106,
     "sale": 334,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3769,7 +4258,10 @@
     "sku": "NAV164",
     "title": "Sunfeast Dark Fantasy Choco Filled 300g Pack A",
     "imageUrl": "/products/NAV164.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3782,9 +4274,9 @@
     "id": "NAV165",
     "image": "/products/NAV165.jpg",
     "isVerifiedSeller": true,
-    "mrp": 240,
+    "mrp": 120,
     "name": "Sunfeast Dark Fantasy Choco Fills 300g Pack B",
-    "price": 211,
+    "price": 106,
     "sale": 211,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3792,7 +4284,10 @@
     "sku": "NAV165",
     "title": "Sunfeast Dark Fantasy Choco Fills 300g Pack B",
     "imageUrl": "/products/NAV165.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3805,9 +4300,9 @@
     "id": "NAV166",
     "image": "/products/NAV166.jpg",
     "isVerifiedSeller": true,
-    "mrp": 936,
+    "mrp": 540,
     "name": "Dove Intense Repair Shampoo 650ml Pack A",
-    "price": 824,
+    "price": 475,
     "sale": 824,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3815,7 +4310,10 @@
     "sku": "NAV166",
     "title": "Dove Intense Repair Shampoo 650ml Pack A",
     "imageUrl": "/products/NAV166.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 540,
+    "salePrice": 475,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3828,9 +4326,9 @@
     "id": "NAV167",
     "image": "/products/NAV167.jpg",
     "isVerifiedSeller": true,
-    "mrp": 828,
+    "mrp": 540,
     "name": "Dove Intense Repair Shampoo With Keratin Repair Actives 650ml Pack B",
-    "price": 729,
+    "price": 475,
     "sale": 729,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3838,7 +4336,10 @@
     "sku": "NAV167",
     "title": "Dove Intense Repair Shampoo With Keratin Repair Actives 650ml Pack B",
     "imageUrl": "/products/NAV167.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 540,
+    "salePrice": 475,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3851,9 +4352,9 @@
     "id": "NAV168",
     "image": "/products/NAV168.jpg",
     "isVerifiedSeller": true,
-    "mrp": 792,
+    "mrp": 165,
     "name": "Domex Toilet Cleaner 1 Litre Pack A",
-    "price": 697,
+    "price": 145,
     "sale": 697,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3861,7 +4362,10 @@
     "sku": "NAV168",
     "title": "Domex Toilet Cleaner 1 Litre Pack A",
     "imageUrl": "/products/NAV168.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 165,
+    "salePrice": 145,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3874,9 +4378,9 @@
     "id": "NAV169",
     "image": "/products/NAV169.jpg",
     "isVerifiedSeller": true,
-    "mrp": 774,
+    "mrp": 165,
     "name": "Domex Toilet Cleaner Hygienic Clean & Shine 1L Pack B",
-    "price": 681,
+    "price": 145,
     "sale": 681,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3884,7 +4388,10 @@
     "sku": "NAV169",
     "title": "Domex Toilet Cleaner Hygienic Clean & Shine 1L Pack B",
     "imageUrl": "/products/NAV169.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 165,
+    "salePrice": 145,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3897,9 +4404,9 @@
     "id": "NAV170",
     "image": "/products/NAV170.jpg",
     "isVerifiedSeller": true,
-    "mrp": 891,
+    "mrp": 120,
     "name": "Everyuth Naturals Purifying Neem Face Wash 150g Pack A",
-    "price": 784,
+    "price": 106,
     "sale": 784,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3907,7 +4414,10 @@
     "sku": "NAV170",
     "title": "Everyuth Naturals Purifying Neem Face Wash 150g Pack A",
     "imageUrl": "/products/NAV170.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3920,9 +4430,9 @@
     "id": "NAV171",
     "image": "/products/NAV171.jpg",
     "isVerifiedSeller": true,
-    "mrp": 810,
+    "mrp": 120,
     "name": "Everyuth Naturals Purifying Neem Face Wash Soap-Free 150g Pack B",
-    "price": 713,
+    "price": 106,
     "sale": 713,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3930,7 +4440,10 @@
     "sku": "NAV171",
     "title": "Everyuth Naturals Purifying Neem Face Wash Soap-Free 150g Pack B",
     "imageUrl": "/products/NAV171.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3943,9 +4456,9 @@
     "id": "NAV172",
     "image": "/products/NAV172.jpg",
     "isVerifiedSeller": true,
-    "mrp": 1116,
+    "mrp": 120,
     "name": "Eno Fruit Salt Antacid 100g Pack A",
-    "price": 982,
+    "price": 106,
     "sale": 982,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3953,7 +4466,10 @@
     "sku": "NAV172",
     "title": "Eno Fruit Salt Antacid 100g Pack A",
     "imageUrl": "/products/NAV172.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3966,9 +4482,9 @@
     "id": "NAV173",
     "image": "/products/NAV173.jpg",
     "isVerifiedSeller": true,
-    "mrp": 738,
+    "mrp": 120,
     "name": "Eno Fruit Salt Antacid Powder Regular 100g Pack B",
-    "price": 649,
+    "price": 106,
     "sale": 649,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3976,7 +4492,10 @@
     "sku": "NAV173",
     "title": "Eno Fruit Salt Antacid Powder Regular 100g Pack B",
     "imageUrl": "/products/NAV173.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -3989,9 +4508,9 @@
     "id": "NAV174",
     "image": "/products/NAV174.jpg",
     "isVerifiedSeller": true,
-    "mrp": 225,
+    "mrp": 85,
     "name": "Everest Garam Masala Blended Spices 100g Pack A",
-    "price": 198,
+    "price": 75,
     "sale": 198,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -3999,7 +4518,10 @@
     "sku": "NAV174",
     "title": "Everest Garam Masala Blended Spices 100g Pack A",
     "imageUrl": "/products/NAV174.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4012,9 +4534,9 @@
     "id": "NAV175",
     "image": "/products/NAV175.jpg",
     "isVerifiedSeller": true,
-    "mrp": 234,
+    "mrp": 85,
     "name": "Everest Garam Masala 100g Pack B",
-    "price": 206,
+    "price": 75,
     "sale": 206,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4022,7 +4544,10 @@
     "sku": "NAV175",
     "title": "Everest Garam Masala 100g Pack B",
     "imageUrl": "/products/NAV175.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4035,9 +4560,9 @@
     "id": "NAV176",
     "image": "/products/NAV176.jpg",
     "isVerifiedSeller": true,
-    "mrp": 81,
+    "mrp": 85,
     "name": "Everest Chhole Masala 100g Pack A",
-    "price": 71,
+    "price": 75,
     "sale": 71,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4045,7 +4570,10 @@
     "sku": "NAV176",
     "title": "Everest Chhole Masala 100g Pack A",
     "imageUrl": "/products/NAV176.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4058,9 +4586,9 @@
     "id": "NAV177",
     "image": "/products/NAV177.jpg",
     "isVerifiedSeller": true,
-    "mrp": 72,
+    "mrp": 85,
     "name": "Everest Chhole Masala Blended Spices 100g Pack B",
-    "price": 63,
+    "price": 75,
     "sale": 63,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4068,7 +4596,10 @@
     "sku": "NAV177",
     "title": "Everest Chhole Masala Blended Spices 100g Pack B",
     "imageUrl": "/products/NAV177.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4081,9 +4612,9 @@
     "id": "NAV178",
     "image": "/products/NAV178.jpg",
     "isVerifiedSeller": true,
-    "mrp": 86,
+    "mrp": 85,
     "name": "Everest Kitchen King Masala 100g Pack A",
-    "price": 76,
+    "price": 75,
     "sale": 76,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4091,7 +4622,10 @@
     "sku": "NAV178",
     "title": "Everest Kitchen King Masala 100g Pack A",
     "imageUrl": "/products/NAV178.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4104,9 +4638,9 @@
     "id": "NAV179",
     "image": "/products/NAV179.jpg",
     "isVerifiedSeller": true,
-    "mrp": 358,
+    "mrp": 85,
     "name": "Everest Meat Masala 100g Pack A",
-    "price": 315,
+    "price": 75,
     "sale": 315,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4114,7 +4648,10 @@
     "sku": "NAV179",
     "title": "Everest Meat Masala 100g Pack A",
     "imageUrl": "/products/NAV179.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4127,9 +4664,9 @@
     "id": "NAV180",
     "image": "/products/NAV180.jpg",
     "isVerifiedSeller": true,
-    "mrp": 693,
+    "mrp": 85,
     "name": "Everest Kitchen King Masala The Ultimate Blend 100g Pack B",
-    "price": 610,
+    "price": 75,
     "sale": 610,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4137,7 +4674,10 @@
     "sku": "NAV180",
     "title": "Everest Kitchen King Masala The Ultimate Blend 100g Pack B",
     "imageUrl": "/products/NAV180.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4150,9 +4690,9 @@
     "id": "NAV181",
     "image": "/products/NAV181.jpg",
     "isVerifiedSeller": true,
-    "mrp": 333,
+    "mrp": 85,
     "name": "Everest Meat Masala Spice Mix 100g Pack B",
-    "price": 293,
+    "price": 75,
     "sale": 293,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4160,7 +4700,10 @@
     "sku": "NAV181",
     "title": "Everest Meat Masala Spice Mix 100g Pack B",
     "imageUrl": "/products/NAV181.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4173,9 +4716,9 @@
     "id": "NAV182",
     "image": "/products/NAV182.jpg",
     "isVerifiedSeller": true,
-    "mrp": 252,
+    "mrp": 120,
     "name": "Everest Kasuri Methi Dried Fenugreek Leaves 50g Pack A",
-    "price": 222,
+    "price": 106,
     "sale": 222,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4183,7 +4726,10 @@
     "sku": "NAV182",
     "title": "Everest Kasuri Methi Dried Fenugreek Leaves 50g Pack A",
     "imageUrl": "/products/NAV182.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4196,9 +4742,9 @@
     "id": "NAV183",
     "image": "/products/NAV183.jpg",
     "isVerifiedSeller": true,
-    "mrp": 315,
+    "mrp": 120,
     "name": "Everest Kasuri Methi Dried Fenugreek Leaves 50g Pack B",
-    "price": 277,
+    "price": 106,
     "sale": 277,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4206,7 +4752,10 @@
     "sku": "NAV183",
     "title": "Everest Kasuri Methi Dried Fenugreek Leaves 50g Pack B",
     "imageUrl": "/products/NAV183.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4219,9 +4768,9 @@
     "id": "NAV184",
     "image": "/products/NAV184.jpg",
     "isVerifiedSeller": true,
-    "mrp": 297,
+    "mrp": 120,
     "name": "Elite Fruit Cake 250g Pack A",
-    "price": 261,
+    "price": 106,
     "sale": 261,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4229,7 +4778,10 @@
     "sku": "NAV184",
     "title": "Elite Fruit Cake 250g Pack A",
     "imageUrl": "/products/NAV184.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4242,9 +4794,9 @@
     "id": "NAV185",
     "image": "/products/NAV185.jpg",
     "isVerifiedSeller": true,
-    "mrp": 324,
+    "mrp": 120,
     "name": "Elite Fruit Cake Rich Plum Cake 250g Pack B",
-    "price": 285,
+    "price": 106,
     "sale": 285,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4252,7 +4804,10 @@
     "sku": "NAV185",
     "title": "Elite Fruit Cake Rich Plum Cake 250g Pack B",
     "imageUrl": "/products/NAV185.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4265,9 +4820,9 @@
     "id": "NAV186",
     "image": "/products/NAV186.jpg",
     "isVerifiedSeller": true,
-    "mrp": 342,
+    "mrp": 165,
     "name": "Fortune Sunlite Refined Sunflower Oil 1L Pack A",
-    "price": 301,
+    "price": 145,
     "sale": 301,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4275,7 +4830,10 @@
     "sku": "NAV186",
     "title": "Fortune Sunlite Refined Sunflower Oil 1L Pack A",
     "imageUrl": "/products/NAV186.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 165,
+    "salePrice": 145,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4288,9 +4846,9 @@
     "id": "NAV187",
     "image": "/products/NAV187.jpg",
     "isVerifiedSeller": true,
-    "mrp": 243,
+    "mrp": 165,
     "name": "Fortune Sunlite Refined Sunflower Oil 1 Litre Pack B",
-    "price": 214,
+    "price": 145,
     "sale": 214,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4298,7 +4856,10 @@
     "sku": "NAV187",
     "title": "Fortune Sunlite Refined Sunflower Oil 1 Litre Pack B",
     "imageUrl": "/products/NAV187.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 165,
+    "salePrice": 145,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4311,9 +4872,9 @@
     "id": "NAV188",
     "image": "/products/NAV188.jpg",
     "isVerifiedSeller": true,
-    "mrp": 351,
+    "mrp": 165,
     "name": "Fortune Kachi Ghani Mustard Oil Bottle 1 Litre Pack A",
-    "price": 309,
+    "price": 145,
     "sale": 309,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4321,7 +4882,10 @@
     "sku": "NAV188",
     "title": "Fortune Kachi Ghani Mustard Oil Bottle 1 Litre Pack A",
     "imageUrl": "/products/NAV188.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 165,
+    "salePrice": 145,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4334,9 +4898,9 @@
     "id": "NAV189",
     "image": "/products/NAV189.jpg",
     "isVerifiedSeller": true,
-    "mrp": 234,
+    "mrp": 165,
     "name": "Fortune Kachi Ghani Mustard Oil 1 Litre Pack B",
-    "price": 206,
+    "price": 145,
     "sale": 206,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4344,7 +4908,10 @@
     "sku": "NAV189",
     "title": "Fortune Kachi Ghani Mustard Oil 1 Litre Pack B",
     "imageUrl": "/products/NAV189.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 165,
+    "salePrice": 145,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4357,9 +4924,9 @@
     "id": "NAV190",
     "image": "/products/NAV190.jpg",
     "isVerifiedSeller": true,
-    "mrp": 378,
+    "mrp": 155,
     "name": "Fortune Arhar Dal 1kg Pack A",
-    "price": 333,
+    "price": 136,
     "sale": 333,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4367,7 +4934,10 @@
     "sku": "NAV190",
     "title": "Fortune Arhar Dal 1kg Pack A",
     "imageUrl": "/products/NAV190.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 155,
+    "salePrice": 136,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4380,9 +4950,9 @@
     "id": "NAV191",
     "image": "/products/NAV191.jpg",
     "isVerifiedSeller": true,
-    "mrp": 405,
+    "mrp": 155,
     "name": "Fortune Arhar Dal Toor Dal 1kg Pack B",
-    "price": 356,
+    "price": 136,
     "sale": 356,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4390,7 +4960,10 @@
     "sku": "NAV191",
     "title": "Fortune Arhar Dal Toor Dal 1kg Pack B",
     "imageUrl": "/products/NAV191.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 155,
+    "salePrice": 136,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4403,9 +4976,9 @@
     "id": "NAV192",
     "image": "/products/NAV192.jpg",
     "isVerifiedSeller": true,
-    "mrp": 324,
+    "mrp": 120,
     "name": "Fortune Besan Gram Flour 1kg Pack A",
-    "price": 285,
+    "price": 106,
     "sale": 285,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4413,7 +4986,10 @@
     "sku": "NAV192",
     "title": "Fortune Besan Gram Flour 1kg Pack A",
     "imageUrl": "/products/NAV192.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4426,9 +5002,9 @@
     "id": "NAV193",
     "image": "/products/NAV193.jpg",
     "isVerifiedSeller": true,
-    "mrp": 288,
+    "mrp": 120,
     "name": "Fortune Besan Gram Flour 1kg Pack B",
-    "price": 253,
+    "price": 106,
     "sale": 253,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4436,7 +5012,10 @@
     "sku": "NAV193",
     "title": "Fortune Besan Gram Flour 1kg Pack B",
     "imageUrl": "/products/NAV193.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4449,9 +5028,9 @@
     "id": "NAV194",
     "image": "/products/NAV194.jpg",
     "isVerifiedSeller": true,
-    "mrp": 198,
+    "mrp": 165,
     "name": "Fortune Refined Soyabean Oil Pouch 1L Pack A",
-    "price": 174,
+    "price": 145,
     "sale": 174,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4459,7 +5038,10 @@
     "sku": "NAV194",
     "title": "Fortune Refined Soyabean Oil Pouch 1L Pack A",
     "imageUrl": "/products/NAV194.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 165,
+    "salePrice": 145,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4472,9 +5054,9 @@
     "id": "NAV195",
     "image": "/products/NAV195.jpg",
     "isVerifiedSeller": true,
-    "mrp": 302,
+    "mrp": 165,
     "name": "Fortune Refined Soyabean Oil 1 Litre Pack B",
-    "price": 266,
+    "price": 145,
     "sale": 266,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4482,7 +5064,10 @@
     "sku": "NAV195",
     "title": "Fortune Refined Soyabean Oil 1 Litre Pack B",
     "imageUrl": "/products/NAV195.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 165,
+    "salePrice": 145,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4495,9 +5080,9 @@
     "id": "NAV196",
     "image": "/products/NAV196.jpg",
     "isVerifiedSeller": true,
-    "mrp": 1152,
+    "mrp": 35,
     "name": "Fiama Shower Gel + Beads 250ml",
-    "price": 1014,
+    "price": 31,
     "sale": 1014,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4505,7 +5090,10 @@
     "sku": "NAV196",
     "title": "Fiama Shower Gel + Beads 250ml",
     "imageUrl": "/products/NAV196.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 35,
+    "salePrice": 31,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4518,9 +5106,9 @@
     "id": "NAV197",
     "image": "/products/NAV197.jpg",
     "isVerifiedSeller": true,
-    "mrp": 1134,
+    "mrp": 35,
     "name": "Fiama Shower Gel Peach & Avocado 250ml",
-    "price": 998,
+    "price": 31,
     "sale": 998,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4528,7 +5116,10 @@
     "sku": "NAV197",
     "title": "Fiama Shower Gel Peach & Avocado 250ml",
     "imageUrl": "/products/NAV197.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 35,
+    "salePrice": 31,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4541,9 +5132,9 @@
     "id": "NAV198",
     "image": "/products/NAV198.jpg",
     "isVerifiedSeller": true,
-    "mrp": 1170,
+    "mrp": 45,
     "name": "Frooti Mango Drink Tetra Pack 1L Pack A",
-    "price": 1030,
+    "price": 40,
     "sale": 1030,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4551,7 +5142,10 @@
     "sku": "NAV198",
     "title": "Frooti Mango Drink Tetra Pack 1L Pack A",
     "imageUrl": "/products/NAV198.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 45,
+    "salePrice": 40,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4564,9 +5158,9 @@
     "id": "NAV199",
     "image": "/products/NAV199.jpg",
     "isVerifiedSeller": true,
-    "mrp": 1188,
+    "mrp": 45,
     "name": "Frooti Mango Drink 1 Litre Pack B",
-    "price": 1045,
+    "price": 40,
     "sale": 1045,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4574,7 +5168,10 @@
     "sku": "NAV199",
     "title": "Frooti Mango Drink 1 Litre Pack B",
     "imageUrl": "/products/NAV199.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 45,
+    "salePrice": 40,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4587,9 +5184,9 @@
     "id": "NAV200",
     "image": "/products/NAV200.jpg",
     "isVerifiedSeller": true,
-    "mrp": 1170,
+    "mrp": 620,
     "name": "Gharwal Desi Ghee 1L",
-    "price": 1030,
+    "price": 546,
     "sale": 1030,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4597,7 +5194,10 @@
     "sku": "NAV200",
     "title": "Gharwal Desi Ghee 1L",
     "imageUrl": "/products/NAV200.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 620,
+    "salePrice": 546,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4610,9 +5210,9 @@
     "id": "NAV201",
     "image": "/products/NAV201.jpg",
     "isVerifiedSeller": true,
-    "mrp": 297,
+    "mrp": 620,
     "name": "Gharwal Pure Cow Desi Ghee 1 Litre",
-    "price": 261,
+    "price": 546,
     "sale": 261,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4620,7 +5220,10 @@
     "sku": "NAV201",
     "title": "Gharwal Pure Cow Desi Ghee 1 Litre",
     "imageUrl": "/products/NAV201.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 620,
+    "salePrice": 546,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4633,9 +5236,9 @@
     "id": "NAV202",
     "image": "/products/NAV202.jpg",
     "isVerifiedSeller": true,
-    "mrp": 279,
+    "mrp": 120,
     "name": "Gillette Guard Single Blade Shaving System Razor 1 Razor Pack A",
-    "price": 246,
+    "price": 106,
     "sale": 246,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4643,7 +5246,10 @@
     "sku": "NAV202",
     "title": "Gillette Guard Single Blade Shaving System Razor 1 Razor Pack A",
     "imageUrl": "/products/NAV202.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4656,9 +5262,9 @@
     "id": "NAV203",
     "image": "/products/NAV203.jpg",
     "isVerifiedSeller": true,
-    "mrp": 261,
+    "mrp": 120,
     "name": "Gillette Guard Razor 1 Razor Pack B",
-    "price": 230,
+    "price": 106,
     "sale": 230,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4666,7 +5272,10 @@
     "sku": "NAV203",
     "title": "Gillette Guard Razor 1 Razor Pack B",
     "imageUrl": "/products/NAV203.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4679,9 +5288,9 @@
     "id": "NAV204",
     "image": "/products/NAV204.jpg",
     "isVerifiedSeller": true,
-    "mrp": 333,
+    "mrp": 120,
     "name": "Gillette Classic Shaving Foam Regular 200g Pack A",
-    "price": 293,
+    "price": 106,
     "sale": 293,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4689,7 +5298,10 @@
     "sku": "NAV204",
     "title": "Gillette Classic Shaving Foam Regular 200g Pack A",
     "imageUrl": "/products/NAV204.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4702,9 +5314,9 @@
     "id": "NAV205",
     "image": "/products/NAV205.jpg",
     "isVerifiedSeller": true,
-    "mrp": 288,
+    "mrp": 120,
     "name": "Gillette Shaving Foam Regular 200g Pack B",
-    "price": 253,
+    "price": 106,
     "sale": 253,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4712,7 +5324,10 @@
     "sku": "NAV205",
     "title": "Gillette Shaving Foam Regular 200g Pack B",
     "imageUrl": "/products/NAV205.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4725,9 +5340,9 @@
     "id": "NAV206",
     "image": "/products/NAV206.jpg",
     "isVerifiedSeller": true,
-    "mrp": 270,
+    "mrp": 85,
     "name": "Godrej No.1 Sandalwood & Turmeric Soap Multipack 4x100g",
-    "price": 238,
+    "price": 75,
     "sale": 238,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4735,7 +5350,10 @@
     "sku": "NAV206",
     "title": "Godrej No.1 Sandalwood & Turmeric Soap Multipack 4x100g",
     "imageUrl": "/products/NAV206.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4748,9 +5366,9 @@
     "id": "NAV207",
     "image": "/products/NAV207.jpg",
     "isVerifiedSeller": true,
-    "mrp": 342,
+    "mrp": 120,
     "name": "Godrej No.1 Neem & Aloe Vera Soap Pack of 4",
-    "price": 301,
+    "price": 106,
     "sale": 301,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4758,7 +5376,10 @@
     "sku": "NAV207",
     "title": "Godrej No.1 Neem & Aloe Vera Soap Pack of 4",
     "imageUrl": "/products/NAV207.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4771,9 +5392,9 @@
     "id": "NAV208",
     "image": "/products/NAV208.jpg",
     "isVerifiedSeller": true,
-    "mrp": 387,
+    "mrp": 120,
     "name": "Good Knight Gold Flash Mosquito Repellent Liquid Refill 45ml Pack A",
-    "price": 341,
+    "price": 106,
     "sale": 341,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4781,7 +5402,10 @@
     "sku": "NAV208",
     "title": "Good Knight Gold Flash Mosquito Repellent Liquid Refill 45ml Pack A",
     "imageUrl": "/products/NAV208.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4794,9 +5418,9 @@
     "id": "NAV209",
     "image": "/products/NAV209.jpg",
     "isVerifiedSeller": true,
-    "mrp": 252,
+    "mrp": 120,
     "name": "Good Knight Gold Flash Liquid Vaporiser Refill 45ml Pack B",
-    "price": 222,
+    "price": 106,
     "sale": 222,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4804,7 +5428,10 @@
     "sku": "NAV209",
     "title": "Good Knight Gold Flash Liquid Vaporiser Refill 45ml Pack B",
     "imageUrl": "/products/NAV209.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4817,9 +5444,9 @@
     "id": "NAV210",
     "image": "/products/NAV210.jpg",
     "isVerifiedSeller": true,
-    "mrp": 234,
+    "mrp": 245,
     "name": "Gullak Premium Quality Refined Sugar 5kg Pack A",
-    "price": 206,
+    "price": 216,
     "sale": 206,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4827,7 +5454,10 @@
     "sku": "NAV210",
     "title": "Gullak Premium Quality Refined Sugar 5kg Pack A",
     "imageUrl": "/products/NAV210.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 245,
+    "salePrice": 216,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4840,9 +5470,9 @@
     "id": "NAV211",
     "image": "/products/NAV211.jpg",
     "isVerifiedSeller": true,
-    "mrp": 50,
+    "mrp": 245,
     "name": "Gullak Refined Sulphurless Sugar 5kg Pack B",
-    "price": 44,
+    "price": 216,
     "sale": 44,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4850,7 +5480,10 @@
     "sku": "NAV211",
     "title": "Gullak Refined Sulphurless Sugar 5kg Pack B",
     "imageUrl": "/products/NAV211.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 245,
+    "salePrice": 216,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4863,9 +5496,9 @@
     "id": "NAV212",
     "image": "/products/NAV212.jpg",
     "isVerifiedSeller": true,
-    "mrp": 81,
+    "mrp": 120,
     "name": "Garlic Powder Lehsun Powder 100g Pack A",
-    "price": 71,
+    "price": 106,
     "sale": 71,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4873,7 +5506,10 @@
     "sku": "NAV212",
     "title": "Garlic Powder Lehsun Powder 100g Pack A",
     "imageUrl": "/products/NAV212.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4886,9 +5522,9 @@
     "id": "NAV213",
     "image": "/products/NAV213.jpg",
     "isVerifiedSeller": true,
-    "mrp": 178,
+    "mrp": 120,
     "name": "Garlic Powder Lehsun Powder 100g Pack B",
-    "price": 157,
+    "price": 106,
     "sale": 157,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4896,7 +5532,10 @@
     "sku": "NAV213",
     "title": "Garlic Powder Lehsun Powder 100g Pack B",
     "imageUrl": "/products/NAV213.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4909,9 +5548,9 @@
     "id": "NAV214",
     "image": "/products/NAV214.jpg",
     "isVerifiedSeller": true,
-    "mrp": 166,
+    "mrp": 120,
     "name": "Dabur Ginger Garlic Paste 200g Pack A",
-    "price": 146,
+    "price": 106,
     "sale": 146,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4919,7 +5558,10 @@
     "sku": "NAV214",
     "title": "Dabur Ginger Garlic Paste 200g Pack A",
     "imageUrl": "/products/NAV214.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4932,9 +5574,9 @@
     "id": "NAV215",
     "image": "/products/NAV215.jpg",
     "isVerifiedSeller": true,
-    "mrp": 76,
+    "mrp": 120,
     "name": "Dabur Ginger Garlic Paste Ready to Cook 200g Pack B",
-    "price": 67,
+    "price": 106,
     "sale": 67,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4942,7 +5584,10 @@
     "sku": "NAV215",
     "title": "Dabur Ginger Garlic Paste Ready to Cook 200g Pack B",
     "imageUrl": "/products/NAV215.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4955,9 +5600,9 @@
     "id": "NAV216",
     "image": "/products/NAV216.jpg",
     "isVerifiedSeller": true,
-    "mrp": 79,
+    "mrp": 260,
     "name": "Haldiram's Nagpur Bhujia Sev Namkeen 1kg Pack A",
-    "price": 70,
+    "price": 229,
     "sale": 70,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4965,7 +5610,10 @@
     "sku": "NAV216",
     "title": "Haldiram's Nagpur Bhujia Sev Namkeen 1kg Pack A",
     "imageUrl": "/products/NAV216.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 260,
+    "salePrice": 229,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -4978,9 +5626,9 @@
     "id": "NAV217",
     "image": "/products/NAV217.jpg",
     "isVerifiedSeller": true,
-    "mrp": 176,
+    "mrp": 260,
     "name": "Haldiram's Bhujia Sev Namkeen 1kg Pack B",
-    "price": 155,
+    "price": 229,
     "sale": 155,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -4988,7 +5636,10 @@
     "sku": "NAV217",
     "title": "Haldiram's Bhujia Sev Namkeen 1kg Pack B",
     "imageUrl": "/products/NAV217.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 260,
+    "salePrice": 229,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5001,9 +5652,9 @@
     "id": "NAV218",
     "image": "/products/NAV218.jpg",
     "isVerifiedSeller": true,
-    "mrp": 158,
+    "mrp": 250,
     "name": "Haldiram's Nagpur Rasgulla 1kg Pack A",
-    "price": 139,
+    "price": 220,
     "sale": 139,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5011,7 +5662,10 @@
     "sku": "NAV218",
     "title": "Haldiram's Nagpur Rasgulla 1kg Pack A",
     "imageUrl": "/products/NAV218.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 250,
+    "salePrice": 220,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5024,9 +5678,9 @@
     "id": "NAV219",
     "image": "/products/NAV219.jpg",
     "isVerifiedSeller": true,
-    "mrp": 137,
+    "mrp": 250,
     "name": "Haldiram's Rasgulla Cottage Cheese Balls in Syrup 1kg Pack B",
-    "price": 121,
+    "price": 220,
     "sale": 121,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5034,7 +5688,10 @@
     "sku": "NAV219",
     "title": "Haldiram's Rasgulla Cottage Cheese Balls in Syrup 1kg Pack B",
     "imageUrl": "/products/NAV219.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 250,
+    "salePrice": 220,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5047,9 +5704,9 @@
     "id": "NAV220",
     "image": "/products/NAV220.jpg",
     "isVerifiedSeller": true,
-    "mrp": 162,
+    "mrp": 250,
     "name": "Haldiram's Gulab Jamun Ready to Eat Sweet 1kg Pack A",
-    "price": 143,
+    "price": 220,
     "sale": 143,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5057,7 +5714,10 @@
     "sku": "NAV220",
     "title": "Haldiram's Gulab Jamun Ready to Eat Sweet 1kg Pack A",
     "imageUrl": "/products/NAV220.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 250,
+    "salePrice": 220,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5070,9 +5730,9 @@
     "id": "NAV221",
     "image": "/products/NAV221.jpg",
     "isVerifiedSeller": true,
-    "mrp": 158,
+    "mrp": 250,
     "name": "Haldiram's Gulab Jamun in Sugar Syrup 1kg Pack B",
-    "price": 139,
+    "price": 220,
     "sale": 139,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5080,7 +5740,10 @@
     "sku": "NAV221",
     "title": "Haldiram's Gulab Jamun in Sugar Syrup 1kg Pack B",
     "imageUrl": "/products/NAV221.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 250,
+    "salePrice": 220,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5093,9 +5756,9 @@
     "id": "NAV222",
     "image": "/products/NAV222.jpg",
     "isVerifiedSeller": true,
-    "mrp": 151,
+    "mrp": 120,
     "name": "Haldiram's Nagpur Soan Papdi Traditional Indian Sweet 500g Pack A",
-    "price": 133,
+    "price": 106,
     "sale": 133,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5103,7 +5766,10 @@
     "sku": "NAV222",
     "title": "Haldiram's Nagpur Soan Papdi Traditional Indian Sweet 500g Pack A",
     "imageUrl": "/products/NAV222.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5116,9 +5782,9 @@
     "id": "NAV223",
     "image": "/products/NAV223.jpg",
     "isVerifiedSeller": true,
-    "mrp": 148,
+    "mrp": 120,
     "name": "Haldiram's Soan Papdi Made with Desi Ghee 500g Pack B",
-    "price": 130,
+    "price": 106,
     "sale": 130,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5126,7 +5792,10 @@
     "sku": "NAV223",
     "title": "Haldiram's Soan Papdi Made with Desi Ghee 500g Pack B",
     "imageUrl": "/products/NAV223.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5139,9 +5808,9 @@
     "id": "NAV224",
     "image": "/products/NAV224.jpg",
     "isVerifiedSeller": true,
-    "mrp": 169,
+    "mrp": 120,
     "name": "Haldiram's All in One Namkeen 1kg Pack A",
-    "price": 149,
+    "price": 106,
     "sale": 149,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5149,7 +5818,10 @@
     "sku": "NAV224",
     "title": "Haldiram's All in One Namkeen 1kg Pack A",
     "imageUrl": "/products/NAV224.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5162,9 +5834,9 @@
     "id": "NAV225",
     "image": "/products/NAV225.jpg",
     "isVerifiedSeller": true,
-    "mrp": 122,
+    "mrp": 120,
     "name": "Haldiram's All in One Mixture 1kg Pack B",
-    "price": 107,
+    "price": 106,
     "sale": 107,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5172,7 +5844,10 @@
     "sku": "NAV225",
     "title": "Haldiram's All in One Mixture 1kg Pack B",
     "imageUrl": "/products/NAV225.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5185,9 +5860,9 @@
     "id": "NAV226",
     "image": "/products/NAV226.jpg",
     "isVerifiedSeller": true,
-    "mrp": 117,
+    "mrp": 165,
     "name": "Harpic Toilet Cleaner Active Fresh Original 1L",
-    "price": 103,
+    "price": 145,
     "sale": 103,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5195,7 +5870,10 @@
     "sku": "NAV226",
     "title": "Harpic Toilet Cleaner Active Fresh Original 1L",
     "imageUrl": "/products/NAV226.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 165,
+    "salePrice": 145,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5208,9 +5886,9 @@
     "id": "NAV227",
     "image": "/products/NAV227.jpg",
     "isVerifiedSeller": true,
-    "mrp": 176,
+    "mrp": 165,
     "name": "Harpic Toilet Cleaner Power Plus 1 Litre",
-    "price": 155,
+    "price": 145,
     "sale": 155,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5218,7 +5896,10 @@
     "sku": "NAV227",
     "title": "Harpic Toilet Cleaner Power Plus 1 Litre",
     "imageUrl": "/products/NAV227.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 165,
+    "salePrice": 145,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5231,9 +5912,9 @@
     "id": "NAV228",
     "image": "/products/NAV228.jpg",
     "isVerifiedSeller": true,
-    "mrp": 122,
+    "mrp": 540,
     "name": "Head & Shoulders Anti-Dandruff Shampoo Classic Clean 650ml",
-    "price": 107,
+    "price": 475,
     "sale": 107,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5241,7 +5922,10 @@
     "sku": "NAV228",
     "title": "Head & Shoulders Anti-Dandruff Shampoo Classic Clean 650ml",
     "imageUrl": "/products/NAV228.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 540,
+    "salePrice": 475,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5254,9 +5938,9 @@
     "id": "NAV229",
     "image": "/products/NAV229.jpg",
     "isVerifiedSeller": true,
-    "mrp": 207,
+    "mrp": 540,
     "name": "Head & Shoulders Anti-Dandruff Shampoo Cool Menthol 650ml",
-    "price": 182,
+    "price": 475,
     "sale": 182,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5264,7 +5948,10 @@
     "sku": "NAV229",
     "title": "Head & Shoulders Anti-Dandruff Shampoo Cool Menthol 650ml",
     "imageUrl": "/products/NAV229.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 540,
+    "salePrice": 475,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5277,9 +5964,9 @@
     "id": "NAV230",
     "image": "/products/NAV230.jpg",
     "isVerifiedSeller": true,
-    "mrp": 99,
+    "mrp": 120,
     "name": "Himalaya Purifying Neem Face Wash 150ml Pack A",
-    "price": 87,
+    "price": 106,
     "sale": 87,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5287,7 +5974,10 @@
     "sku": "NAV230",
     "title": "Himalaya Purifying Neem Face Wash 150ml Pack A",
     "imageUrl": "/products/NAV230.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5300,9 +5990,9 @@
     "id": "NAV231",
     "image": "/products/NAV231.jpg",
     "isVerifiedSeller": true,
-    "mrp": 173,
+    "mrp": 120,
     "name": "Himalaya Purifying Neem Face Wash 150ml Pack B",
-    "price": 152,
+    "price": 106,
     "sale": 152,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5310,7 +6000,10 @@
     "sku": "NAV231",
     "title": "Himalaya Purifying Neem Face Wash 150ml Pack B",
     "imageUrl": "/products/NAV231.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5323,9 +6016,9 @@
     "id": "NAV232",
     "image": "/products/NAV232.jpg",
     "isVerifiedSeller": true,
-    "mrp": 112,
+    "mrp": 275,
     "name": "Horlicks Health Drink Classic Malt 500g Pack A",
-    "price": 99,
+    "price": 242,
     "sale": 99,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5333,7 +6026,10 @@
     "sku": "NAV232",
     "title": "Horlicks Health Drink Classic Malt 500g Pack A",
     "imageUrl": "/products/NAV232.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 275,
+    "salePrice": 242,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5346,9 +6042,9 @@
     "id": "NAV233",
     "image": "/products/NAV233.jpg",
     "isVerifiedSeller": true,
-    "mrp": 153,
+    "mrp": 275,
     "name": "Horlicks Health Drink Malt-based Nutrition 500g Pack B",
-    "price": 135,
+    "price": 242,
     "sale": 135,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5356,7 +6052,10 @@
     "sku": "NAV233",
     "title": "Horlicks Health Drink Malt-based Nutrition 500g Pack B",
     "imageUrl": "/products/NAV233.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 275,
+    "salePrice": 242,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5369,9 +6068,9 @@
     "id": "NAV234",
     "image": "/products/NAV234.jpg",
     "isVerifiedSeller": true,
-    "mrp": 76,
+    "mrp": 120,
     "name": "Himalaya Baby Soap Extra Moisturizing 125g",
-    "price": 67,
+    "price": 106,
     "sale": 67,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5379,7 +6078,10 @@
     "sku": "NAV234",
     "title": "Himalaya Baby Soap Extra Moisturizing 125g",
     "imageUrl": "/products/NAV234.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5392,9 +6094,9 @@
     "id": "NAV235",
     "image": "/products/NAV235.jpg",
     "isVerifiedSeller": true,
-    "mrp": 216,
+    "mrp": 580,
     "name": "India Gate Feast Rozzana Basmati Rice 5kg Pack A",
-    "price": 190,
+    "price": 510,
     "sale": 190,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5402,7 +6104,10 @@
     "sku": "NAV235",
     "title": "India Gate Feast Rozzana Basmati Rice 5kg Pack A",
     "imageUrl": "/products/NAV235.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 580,
+    "salePrice": 510,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5415,9 +6120,9 @@
     "id": "NAV236",
     "image": "/products/NAV236.jpg",
     "isVerifiedSeller": true,
-    "mrp": 81,
+    "mrp": 580,
     "name": "India Gate Feast Rozzana Basmati Rice 5kg Pack B",
-    "price": 71,
+    "price": 510,
     "sale": 71,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5425,7 +6130,10 @@
     "sku": "NAV236",
     "title": "India Gate Feast Rozzana Basmati Rice 5kg Pack B",
     "imageUrl": "/products/NAV236.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 580,
+    "salePrice": 510,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5438,9 +6146,9 @@
     "id": "NAV237",
     "image": "/products/NAV237.jpg",
     "isVerifiedSeller": true,
-    "mrp": 117,
+    "mrp": 420,
     "name": "India Gate Dubar Rice 5kg",
-    "price": 103,
+    "price": 370,
     "sale": 103,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5448,7 +6156,10 @@
     "sku": "NAV237",
     "title": "India Gate Dubar Rice 5kg",
     "imageUrl": "/products/NAV237.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 420,
+    "salePrice": 370,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5461,9 +6172,9 @@
     "id": "NAV238",
     "image": "/products/NAV238.jpg",
     "isVerifiedSeller": true,
-    "mrp": 94,
+    "mrp": 580,
     "name": "India Gate Tibar Select Basmati Rice 5kg",
-    "price": 83,
+    "price": 510,
     "sale": 83,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5471,7 +6182,10 @@
     "sku": "NAV238",
     "title": "India Gate Tibar Select Basmati Rice 5kg",
     "imageUrl": "/products/NAV238.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 580,
+    "salePrice": 510,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5484,9 +6198,9 @@
     "id": "NAV239",
     "image": "/products/NAV239.jpg",
     "isVerifiedSeller": true,
-    "mrp": 158,
+    "mrp": 120,
     "name": "Tata Salt Iodized Salt 1kg",
-    "price": 139,
+    "price": 106,
     "sale": 139,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5494,7 +6208,10 @@
     "sku": "NAV239",
     "title": "Tata Salt Iodized Salt 1kg",
     "imageUrl": "/products/NAV239.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5507,9 +6224,9 @@
     "id": "NAV240",
     "image": "/products/NAV240.jpg",
     "isVerifiedSeller": true,
-    "mrp": 198,
+    "mrp": 120,
     "name": "Imperial Leather Classic Original Bath Soap Multipack 3x100g",
-    "price": 174,
+    "price": 106,
     "sale": 174,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5517,7 +6234,10 @@
     "sku": "NAV240",
     "title": "Imperial Leather Classic Original Bath Soap Multipack 3x100g",
     "imageUrl": "/products/NAV240.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5530,9 +6250,9 @@
     "id": "NAV241",
     "image": "/products/NAV241.jpg",
     "isVerifiedSeller": true,
-    "mrp": 288,
+    "mrp": 120,
     "name": "Iodex Pain Relief Balm 40g",
-    "price": 253,
+    "price": 106,
     "sale": 253,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5540,7 +6260,10 @@
     "sku": "NAV241",
     "title": "Iodex Pain Relief Balm 40g",
     "imageUrl": "/products/NAV241.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5553,9 +6276,9 @@
     "id": "NAV242",
     "image": "/products/NAV242.jpg",
     "isVerifiedSeller": true,
-    "mrp": 153,
+    "mrp": 120,
     "name": "Organic Jaggery Gur 1kg",
-    "price": 135,
+    "price": 106,
     "sale": 135,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5563,7 +6286,10 @@
     "sku": "NAV242",
     "title": "Organic Jaggery Gur 1kg",
     "imageUrl": "/products/NAV242.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5576,9 +6302,9 @@
     "id": "NAV243",
     "image": "/products/NAV243.jpg",
     "isVerifiedSeller": true,
-    "mrp": 171,
+    "mrp": 120,
     "name": "Bajaj Jasmine Hair Oil 200ml",
-    "price": 150,
+    "price": 106,
     "sale": 150,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5586,7 +6312,10 @@
     "sku": "NAV243",
     "title": "Bajaj Jasmine Hair Oil 200ml",
     "imageUrl": "/products/NAV243.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5599,9 +6328,9 @@
     "id": "NAV244",
     "image": "/products/NAV244.jpg",
     "isVerifiedSeller": true,
-    "mrp": 378,
+    "mrp": 120,
     "name": "Johnson's Baby Powder 200g",
-    "price": 333,
+    "price": 106,
     "sale": 333,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5609,7 +6338,10 @@
     "sku": "NAV244",
     "title": "Johnson's Baby Powder 200g",
     "imageUrl": "/products/NAV244.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5622,9 +6354,9 @@
     "id": "NAV245",
     "image": "/products/NAV245.jpg",
     "isVerifiedSeller": true,
-    "mrp": 176,
+    "mrp": 120,
     "name": "Johnson's Baby Soap 100g",
-    "price": 155,
+    "price": 106,
     "sale": 155,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5632,7 +6364,10 @@
     "sku": "NAV245",
     "title": "Johnson's Baby Soap 100g",
     "imageUrl": "/products/NAV245.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5645,9 +6380,9 @@
     "id": "NAV246",
     "image": "/products/NAV246.jpg",
     "isVerifiedSeller": true,
-    "mrp": 225,
+    "mrp": 265,
     "name": "Jiwa Whole Wheat Atta 5kg",
-    "price": 198,
+    "price": 233,
     "sale": 198,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5655,7 +6390,10 @@
     "sku": "NAV246",
     "title": "Jiwa Whole Wheat Atta 5kg",
     "imageUrl": "/products/NAV246.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 265,
+    "salePrice": 233,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5668,9 +6406,9 @@
     "id": "NAV247",
     "image": "/products/NAV247.jpg",
     "isVerifiedSeller": true,
-    "mrp": 234,
+    "mrp": 120,
     "name": "Kissan Tomato Ketchup 1kg",
-    "price": 206,
+    "price": 106,
     "sale": 206,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5678,7 +6416,10 @@
     "sku": "NAV247",
     "title": "Kissan Tomato Ketchup 1kg",
     "imageUrl": "/products/NAV247.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5691,9 +6432,9 @@
     "id": "NAV248",
     "image": "/products/NAV248.jpg",
     "isVerifiedSeller": true,
-    "mrp": 261,
+    "mrp": 120,
     "name": "Kissan Mixed Fruit Jam 500g",
-    "price": 230,
+    "price": 106,
     "sale": 230,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5701,7 +6442,10 @@
     "sku": "NAV248",
     "title": "Kissan Mixed Fruit Jam 500g",
     "imageUrl": "/products/NAV248.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5714,9 +6458,9 @@
     "id": "NAV249",
     "image": "/products/NAV249.jpg",
     "isVerifiedSeller": true,
-    "mrp": 243,
+    "mrp": 120,
     "name": "Kellogg's Corn Flakes Golden Toasted 875g",
-    "price": 214,
+    "price": 106,
     "sale": 214,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5724,7 +6468,10 @@
     "sku": "NAV249",
     "title": "Kellogg's Corn Flakes Golden Toasted 875g",
     "imageUrl": "/products/NAV249.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5737,9 +6484,9 @@
     "id": "NAV250",
     "image": "/products/NAV250.jpg",
     "isVerifiedSeller": true,
-    "mrp": 198,
+    "mrp": 85,
     "name": "Kurkure Masala Munch 100g",
-    "price": 174,
+    "price": 75,
     "sale": 174,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5747,7 +6494,10 @@
     "sku": "NAV250",
     "title": "Kurkure Masala Munch 100g",
     "imageUrl": "/products/NAV250.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5760,9 +6510,9 @@
     "id": "NAV251",
     "image": "/products/NAV251.jpg",
     "isVerifiedSeller": true,
-    "mrp": 468,
+    "mrp": 120,
     "name": "Knorr Classic Cream of Tomato Soup",
-    "price": 412,
+    "price": 106,
     "sale": 412,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5770,7 +6520,10 @@
     "sku": "NAV251",
     "title": "Knorr Classic Cream of Tomato Soup",
     "imageUrl": "/products/NAV251.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5783,9 +6536,9 @@
     "id": "NAV252",
     "image": "/products/NAV252.jpg",
     "isVerifiedSeller": true,
-    "mrp": 97,
+    "mrp": 85,
     "name": "Kasturi Turmeric Powder Haldi Powder 100g",
-    "price": 85,
+    "price": 75,
     "sale": 85,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5793,7 +6546,10 @@
     "sku": "NAV252",
     "title": "Kasturi Turmeric Powder Haldi Powder 100g",
     "imageUrl": "/products/NAV252.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5806,9 +6562,9 @@
     "id": "NAV253",
     "image": "/products/NAV253.jpg",
     "isVerifiedSeller": true,
-    "mrp": 558,
+    "mrp": 155,
     "name": "Nature's Harvest Kala Chana Whole Brown Chickpeas 1kg",
-    "price": 491,
+    "price": 136,
     "sale": 491,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5816,7 +6572,10 @@
     "sku": "NAV253",
     "title": "Nature's Harvest Kala Chana Whole Brown Chickpeas 1kg",
     "imageUrl": "/products/NAV253.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 155,
+    "salePrice": 136,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5829,9 +6588,9 @@
     "id": "NAV254",
     "image": "/products/NAV254.jpg",
     "isVerifiedSeller": true,
-    "mrp": 504,
+    "mrp": 85,
     "name": "Lay's India's Magic Masala Potato Chips 100g",
-    "price": 444,
+    "price": 75,
     "sale": 444,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5839,7 +6598,10 @@
     "sku": "NAV254",
     "title": "Lay's India's Magic Masala Potato Chips 100g",
     "imageUrl": "/products/NAV254.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5852,9 +6614,9 @@
     "id": "NAV255",
     "image": "/products/NAV255.jpg",
     "isVerifiedSeller": true,
-    "mrp": 531,
+    "mrp": 120,
     "name": "Lay's Cream & Onion Potato Chips 100g",
-    "price": 467,
+    "price": 106,
     "sale": 467,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5862,7 +6624,10 @@
     "sku": "NAV255",
     "title": "Lay's Cream & Onion Potato Chips 100g",
     "imageUrl": "/products/NAV255.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5875,9 +6640,9 @@
     "id": "NAV256",
     "image": "/products/NAV256.jpg",
     "isVerifiedSeller": true,
-    "mrp": 612,
+    "mrp": 120,
     "name": "Lux Soft Touch French Rose & Almond Oil Soap Bars 4x100g",
-    "price": 539,
+    "price": 106,
     "sale": 539,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5885,7 +6650,10 @@
     "sku": "NAV256",
     "title": "Lux Soft Touch French Rose & Almond Oil Soap Bars 4x100g",
     "imageUrl": "/products/NAV256.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5898,9 +6666,9 @@
     "id": "NAV257",
     "image": "/products/NAV257.jpg",
     "isVerifiedSeller": true,
-    "mrp": 702,
+    "mrp": 120,
     "name": "Liril Lime & Mint Soap 125g",
-    "price": 618,
+    "price": 106,
     "sale": 618,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5908,7 +6676,10 @@
     "sku": "NAV257",
     "title": "Liril Lime & Mint Soap 125g",
     "imageUrl": "/products/NAV257.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5921,9 +6692,9 @@
     "id": "NAV258",
     "image": "/products/NAV258.jpg",
     "isVerifiedSeller": true,
-    "mrp": 486,
+    "mrp": 120,
     "name": "Lipton Pure & Light Green Tea 100 Tea Bags",
-    "price": 428,
+    "price": 106,
     "sale": 428,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5931,7 +6702,10 @@
     "sku": "NAV258",
     "title": "Lipton Pure & Light Green Tea 100 Tea Bags",
     "imageUrl": "/products/NAV258.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5944,9 +6718,9 @@
     "id": "NAV259",
     "image": "/products/NAV259.jpg",
     "isVerifiedSeller": true,
-    "mrp": 648,
+    "mrp": 45,
     "name": "Lizol Floor Cleaner Pine & Lemon 1L",
-    "price": 570,
+    "price": 40,
     "sale": 570,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5954,7 +6728,10 @@
     "sku": "NAV259",
     "title": "Lizol Floor Cleaner Pine & Lemon 1L",
     "imageUrl": "/products/NAV259.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 45,
+    "salePrice": 40,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5967,9 +6744,9 @@
     "id": "NAV260",
     "image": "/products/NAV260.jpg",
     "isVerifiedSeller": true,
-    "mrp": 414,
+    "mrp": 45,
     "name": "Lifebuoy Total Protect Hand Wash Refill Pouch 750ml",
-    "price": 364,
+    "price": 40,
     "sale": 364,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -5977,7 +6754,10 @@
     "sku": "NAV260",
     "title": "Lifebuoy Total Protect Hand Wash Refill Pouch 750ml",
     "imageUrl": "/products/NAV260.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 45,
+    "salePrice": 40,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -5990,9 +6770,9 @@
     "id": "NAV261",
     "image": "/products/NAV261.jpg",
     "isVerifiedSeller": true,
-    "mrp": 792,
+    "mrp": 140,
     "name": "Maggi 2-Minute Masala Noodles Family Pack 560g",
-    "price": 697,
+    "price": 123,
     "sale": 697,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6000,7 +6780,10 @@
     "sku": "NAV261",
     "title": "Maggi 2-Minute Masala Noodles Family Pack 560g",
     "imageUrl": "/products/NAV261.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 140,
+    "salePrice": 123,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6013,9 +6796,9 @@
     "id": "NAV262",
     "image": "/products/NAV262.jpg",
     "isVerifiedSeller": true,
-    "mrp": 810,
+    "mrp": 85,
     "name": "MDH Degi Mirch Chilli Powder 100g",
-    "price": 713,
+    "price": 75,
     "sale": 713,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6023,7 +6806,10 @@
     "sku": "NAV262",
     "title": "MDH Degi Mirch Chilli Powder 100g",
     "imageUrl": "/products/NAV262.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6036,9 +6822,9 @@
     "id": "NAV263",
     "image": "/products/NAV263.jpg",
     "isVerifiedSeller": true,
-    "mrp": 477,
+    "mrp": 85,
     "name": "MDH Chunky Chat Masala 100g",
-    "price": 420,
+    "price": 75,
     "sale": 420,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6046,7 +6832,10 @@
     "sku": "NAV263",
     "title": "MDH Chunky Chat Masala 100g",
     "imageUrl": "/products/NAV263.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6059,9 +6848,9 @@
     "id": "NAV264",
     "image": "/products/NAV264.jpg",
     "isVerifiedSeller": true,
-    "mrp": 333,
+    "mrp": 85,
     "name": "MDH Kitchen King Sabzi Masala 100g",
-    "price": 293,
+    "price": 75,
     "sale": 293,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6069,7 +6858,10 @@
     "sku": "NAV264",
     "title": "MDH Kitchen King Sabzi Masala 100g",
     "imageUrl": "/products/NAV264.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6082,9 +6874,9 @@
     "id": "NAV265",
     "image": "/products/NAV265.jpg",
     "isVerifiedSeller": true,
-    "mrp": 261,
+    "mrp": 85,
     "name": "MDH Garam Masala 100g",
-    "price": 230,
+    "price": 75,
     "sale": 230,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6092,7 +6884,10 @@
     "sku": "NAV265",
     "title": "MDH Garam Masala 100g",
     "imageUrl": "/products/NAV265.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 85,
+    "salePrice": 75,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6105,9 +6900,9 @@
     "id": "NAV266",
     "image": "/products/NAV266.jpg",
     "isVerifiedSeller": true,
-    "mrp": 279,
+    "mrp": 620,
     "name": "Mother Dairy Pure Ghee 1 Litre",
-    "price": 246,
+    "price": 546,
     "sale": 246,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6115,7 +6910,10 @@
     "sku": "NAV266",
     "title": "Mother Dairy Pure Ghee 1 Litre",
     "imageUrl": "/products/NAV266.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 620,
+    "salePrice": 546,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6128,9 +6926,9 @@
     "id": "NAV267",
     "image": "/products/NAV267.jpg",
     "isVerifiedSeller": true,
-    "mrp": 306,
+    "mrp": 95,
     "name": "Mother Dairy Fresh Paneer 200g",
-    "price": 269,
+    "price": 84,
     "sale": 269,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6138,7 +6936,10 @@
     "sku": "NAV267",
     "title": "Mother Dairy Fresh Paneer 200g",
     "imageUrl": "/products/NAV267.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 95,
+    "salePrice": 84,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6151,9 +6952,9 @@
     "id": "NAV268",
     "image": "/products/NAV268.jpg",
     "isVerifiedSeller": true,
-    "mrp": 738,
+    "mrp": 155,
     "name": "Harvest Gold Yellow Split Moong Dal 1kg",
-    "price": 649,
+    "price": 136,
     "sale": 649,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6161,7 +6962,10 @@
     "sku": "NAV268",
     "title": "Harvest Gold Yellow Split Moong Dal 1kg",
     "imageUrl": "/products/NAV268.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 155,
+    "salePrice": 136,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6174,9 +6978,9 @@
     "id": "NAV269",
     "image": "/products/NAV269.jpg",
     "isVerifiedSeller": true,
-    "mrp": 718,
+    "mrp": 155,
     "name": "Organic Harvest Moong Whole Green Mung Beans 1kg",
-    "price": 632,
+    "price": 136,
     "sale": 632,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6184,7 +6988,10 @@
     "sku": "NAV269",
     "title": "Organic Harvest Moong Whole Green Mung Beans 1kg",
     "imageUrl": "/products/NAV269.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 155,
+    "salePrice": 136,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6197,9 +7004,9 @@
     "id": "NAV270",
     "image": "/products/NAV270.jpg",
     "isVerifiedSeller": true,
-    "mrp": 423,
+    "mrp": 155,
     "name": "Royal Harvest Masoor Dal Red Lentils Split 1kg",
-    "price": 372,
+    "price": 136,
     "sale": 372,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6207,7 +7014,10 @@
     "sku": "NAV270",
     "title": "Royal Harvest Masoor Dal Red Lentils Split 1kg",
     "imageUrl": "/products/NAV270.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 155,
+    "salePrice": 136,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6220,9 +7030,9 @@
     "id": "NAV271",
     "image": "/products/NAV271.jpg",
     "isVerifiedSeller": true,
-    "mrp": 302,
+    "mrp": 120,
     "name": "Navratna Ayurvedic Cool Hair Oil 300ml",
-    "price": 266,
+    "price": 106,
     "sale": 266,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6230,7 +7040,10 @@
     "sku": "NAV271",
     "title": "Navratna Ayurvedic Cool Hair Oil 300ml",
     "imageUrl": "/products/NAV271.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6243,9 +7056,9 @@
     "id": "NAV272",
     "image": "/products/NAV272.jpg",
     "isVerifiedSeller": true,
-    "mrp": 108,
+    "mrp": 120,
     "name": "Nivea Soft Moisturising Cream 200ml",
-    "price": 95,
+    "price": 106,
     "sale": 95,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6253,7 +7066,10 @@
     "sku": "NAV272",
     "title": "Nivea Soft Moisturising Cream 200ml",
     "imageUrl": "/products/NAV272.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6266,9 +7082,9 @@
     "id": "NAV273",
     "image": "/products/NAV273.jpg",
     "isVerifiedSeller": true,
-    "mrp": 99,
+    "mrp": 120,
     "name": "Nivea Body Lotion Deep Moisture Serum 400ml",
-    "price": 87,
+    "price": 106,
     "sale": 87,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6276,7 +7092,10 @@
     "sku": "NAV273",
     "title": "Nivea Body Lotion Deep Moisture Serum 400ml",
     "imageUrl": "/products/NAV273.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6289,9 +7108,9 @@
     "id": "NAV274",
     "image": "/products/NAV274.jpg",
     "isVerifiedSeller": true,
-    "mrp": 162,
+    "mrp": 165,
     "name": "Nirma Washing Powder Super Whitening Power 1kg",
-    "price": 143,
+    "price": 145,
     "sale": 143,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6299,7 +7118,10 @@
     "sku": "NAV274",
     "title": "Nirma Washing Powder Super Whitening Power 1kg",
     "imageUrl": "/products/NAV274.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 165,
+    "salePrice": 145,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6312,9 +7134,9 @@
     "id": "NAV275",
     "image": "/products/NAV275.jpg",
     "isVerifiedSeller": true,
-    "mrp": 252,
+    "mrp": 340,
     "name": "Nescafe Classic Instant Coffee 100g",
-    "price": 222,
+    "price": 299,
     "sale": 222,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6322,7 +7144,10 @@
     "sku": "NAV275",
     "title": "Nescafe Classic Instant Coffee 100g",
     "imageUrl": "/products/NAV275.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 340,
+    "salePrice": 299,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6335,9 +7160,9 @@
     "id": "NAV276",
     "image": "/products/NAV276.jpg",
     "isVerifiedSeller": true,
-    "mrp": 270,
+    "mrp": 120,
     "name": "Nestle Everyday Dairy Whitener 400g",
-    "price": 238,
+    "price": 106,
     "sale": 238,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6345,7 +7170,10 @@
     "sku": "NAV276",
     "title": "Nestle Everyday Dairy Whitener 400g",
     "imageUrl": "/products/NAV276.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6358,9 +7186,9 @@
     "id": "NAV277",
     "image": "/products/NAV277.jpg",
     "isVerifiedSeller": true,
-    "mrp": 261,
+    "mrp": 120,
     "name": "Nutrela Soya Chunks High Protein 1kg",
-    "price": 230,
+    "price": 106,
     "sale": 230,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6368,7 +7196,10 @@
     "sku": "NAV277",
     "title": "Nutrela Soya Chunks High Protein 1kg",
     "imageUrl": "/products/NAV277.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6381,9 +7212,9 @@
     "id": "NAV278",
     "image": "/products/NAV278.jpg",
     "isVerifiedSeller": true,
-    "mrp": 288,
+    "mrp": 120,
     "name": "Swaad Nylon Sabudana Tapioca Sago 500g",
-    "price": 253,
+    "price": 106,
     "sale": 253,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6391,7 +7222,10 @@
     "sku": "NAV278",
     "title": "Swaad Nylon Sabudana Tapioca Sago 500g",
     "imageUrl": "/products/NAV278.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6404,9 +7238,9 @@
     "id": "NAV279",
     "image": "/products/NAV279.jpg",
     "isVerifiedSeller": true,
-    "mrp": 171,
+    "mrp": 120,
     "name": "Saffola Real Oats Whole Grain 1kg",
-    "price": 150,
+    "price": 106,
     "sale": 150,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6414,7 +7248,10 @@
     "sku": "NAV279",
     "title": "Saffola Real Oats Whole Grain 1kg",
     "imageUrl": "/products/NAV279.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6427,9 +7264,9 @@
     "id": "NAV280",
     "image": "/products/NAV280.jpg",
     "isVerifiedSeller": true,
-    "mrp": 135,
+    "mrp": 120,
     "name": "Kellogg's Whole Grain Rolled Oats 1kg",
-    "price": 119,
+    "price": 106,
     "sale": 119,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6437,7 +7274,10 @@
     "sku": "NAV280",
     "title": "Kellogg's Whole Grain Rolled Oats 1kg",
     "imageUrl": "/products/NAV280.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6450,9 +7290,9 @@
     "id": "NAV281",
     "image": "/products/NAV281.jpg",
     "isVerifiedSeller": true,
-    "mrp": 153,
+    "mrp": 120,
     "name": "Odonil Room Air Freshener Block Floral Bouquet 75g",
-    "price": 135,
+    "price": 106,
     "sale": 135,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6460,7 +7300,10 @@
     "sku": "NAV281",
     "title": "Odonil Room Air Freshener Block Floral Bouquet 75g",
     "imageUrl": "/products/NAV281.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6473,9 +7316,9 @@
     "id": "NAV282",
     "image": "/products/NAV282.jpg",
     "isVerifiedSeller": true,
-    "mrp": 486,
+    "mrp": 120,
     "name": "Oral-B CrossAction Medium Toothbrushes 2 Pack",
-    "price": 428,
+    "price": 106,
     "sale": 428,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6483,7 +7326,10 @@
     "sku": "NAV282",
     "title": "Oral-B CrossAction Medium Toothbrushes 2 Pack",
     "imageUrl": "/products/NAV282.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6496,9 +7342,9 @@
     "id": "NAV283",
     "image": "/products/NAV283.jpg",
     "isVerifiedSeller": true,
-    "mrp": 468,
+    "mrp": 120,
     "name": "Oreo Chocolate Creme Sandwich Biscuits 300g",
-    "price": 412,
+    "price": 106,
     "sale": 412,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6506,7 +7352,10 @@
     "sku": "NAV283",
     "title": "Oreo Chocolate Creme Sandwich Biscuits 300g",
     "imageUrl": "/products/NAV283.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6519,9 +7368,9 @@
     "id": "NAV284",
     "image": "/products/NAV284.jpg",
     "isVerifiedSeller": true,
-    "mrp": 495,
+    "mrp": 120,
     "name": "The Spice Merchant Onion Powder 100g",
-    "price": 436,
+    "price": 106,
     "sale": 436,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6529,7 +7378,10 @@
     "sku": "NAV284",
     "title": "The Spice Merchant Onion Powder 100g",
     "imageUrl": "/products/NAV284.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6542,9 +7394,9 @@
     "id": "NAV285",
     "image": "/products/NAV285.jpg",
     "isVerifiedSeller": true,
-    "mrp": 261,
+    "mrp": 120,
     "name": "Parle-G Original Glucose Biscuits 800g",
-    "price": 230,
+    "price": 106,
     "sale": 230,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6552,7 +7404,10 @@
     "sku": "NAV285",
     "title": "Parle-G Original Glucose Biscuits 800g",
     "imageUrl": "/products/NAV285.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6565,9 +7420,9 @@
     "id": "NAV286",
     "image": "/products/NAV286.jpg",
     "isVerifiedSeller": true,
-    "mrp": 207,
+    "mrp": 120,
     "name": "Parachute Advansed 100% Pure Coconut Oil 600ml",
-    "price": 182,
+    "price": 106,
     "sale": 182,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6575,7 +7430,10 @@
     "sku": "NAV286",
     "title": "Parachute Advansed 100% Pure Coconut Oil 600ml",
     "imageUrl": "/products/NAV286.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6588,9 +7446,9 @@
     "id": "NAV287",
     "image": "/products/NAV287.jpg",
     "isVerifiedSeller": true,
-    "mrp": 90,
+    "mrp": 120,
     "name": "Patanjali Dant Kanti Dental Cream Toothpaste 200g",
-    "price": 79,
+    "price": 106,
     "sale": 79,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6598,7 +7456,10 @@
     "sku": "NAV287",
     "title": "Patanjali Dant Kanti Dental Cream Toothpaste 200g",
     "imageUrl": "/products/NAV287.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6611,9 +7472,9 @@
     "id": "NAV288",
     "image": "/products/NAV288.jpg",
     "isVerifiedSeller": true,
-    "mrp": 90,
+    "mrp": 620,
     "name": "Patanjali Pure Cow Ghee 1 Litre",
-    "price": 79,
+    "price": 546,
     "sale": 79,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6621,7 +7482,10 @@
     "sku": "NAV288",
     "title": "Patanjali Pure Cow Ghee 1 Litre",
     "imageUrl": "/products/NAV288.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 620,
+    "salePrice": 546,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6634,9 +7498,9 @@
     "id": "NAV289",
     "image": "/products/NAV289.jpg",
     "isVerifiedSeller": true,
-    "mrp": 90,
+    "mrp": 120,
     "name": "Pears Pure & Gentle Transparent Soap Multipack 4x125g",
-    "price": 79,
+    "price": 106,
     "sale": 79,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6644,7 +7508,10 @@
     "sku": "NAV289",
     "title": "Pears Pure & Gentle Transparent Soap Multipack 4x125g",
     "imageUrl": "/products/NAV289.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6657,9 +7524,9 @@
     "id": "NAV290",
     "image": "/products/NAV290.jpg",
     "isVerifiedSeller": true,
-    "mrp": 351,
+    "mrp": 120,
     "name": "Pepsodent Germicheck Toothpaste 300g",
-    "price": 309,
+    "price": 106,
     "sale": 309,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6667,7 +7534,10 @@
     "sku": "NAV290",
     "title": "Pepsodent Germicheck Toothpaste 300g",
     "imageUrl": "/products/NAV290.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6680,9 +7550,9 @@
     "id": "NAV291",
     "image": "/products/NAV291.jpg",
     "isVerifiedSeller": true,
-    "mrp": 1224,
+    "mrp": 899,
     "name": "Pampers All Round Protection Baby Diapers Large 64 Count",
-    "price": 1077,
+    "price": 791,
     "sale": 1077,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6690,7 +7560,10 @@
     "sku": "NAV291",
     "title": "Pampers All Round Protection Baby Diapers Large 64 Count",
     "imageUrl": "/products/NAV291.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 899,
+    "salePrice": 791,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6703,9 +7576,9 @@
     "id": "NAV292",
     "image": "/products/NAV292.jpg",
     "isVerifiedSeller": true,
-    "mrp": 891,
+    "mrp": 120,
     "name": "Pril Kraft-Gel Dishwash Liquid 500ml",
-    "price": 784,
+    "price": 106,
     "sale": 784,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6713,7 +7586,10 @@
     "sku": "NAV292",
     "title": "Pril Kraft-Gel Dishwash Liquid 500ml",
     "imageUrl": "/products/NAV292.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6726,9 +7602,9 @@
     "id": "NAV293",
     "image": "/products/NAV293.jpg",
     "isVerifiedSeller": true,
-    "mrp": 1152,
+    "mrp": 165,
     "name": "Sri Dharma Pooja Lamp Oil 1 Litre",
-    "price": 1014,
+    "price": 145,
     "sale": 1014,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6736,7 +7612,10 @@
     "sku": "NAV293",
     "title": "Sri Dharma Pooja Lamp Oil 1 Litre",
     "imageUrl": "/products/NAV293.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 165,
+    "salePrice": 145,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6749,9 +7628,9 @@
     "id": "NAV294",
     "image": "/products/NAV294.jpg",
     "isVerifiedSeller": true,
-    "mrp": 1044,
+    "mrp": 120,
     "name": "Tradition Harvest Premium Thick Poha Flattened Rice 1kg",
-    "price": 919,
+    "price": 106,
     "sale": 919,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6759,7 +7638,10 @@
     "sku": "NAV294",
     "title": "Tradition Harvest Premium Thick Poha Flattened Rice 1kg",
     "imageUrl": "/products/NAV294.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6772,9 +7654,9 @@
     "id": "NAV295",
     "image": "/products/NAV295.jpg",
     "isVerifiedSeller": true,
-    "mrp": 702,
+    "mrp": 120,
     "name": "Quaker Whole Grain Rolled Oats 1kg",
-    "price": 618,
+    "price": 106,
     "sale": 618,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6782,7 +7664,10 @@
     "sku": "NAV295",
     "title": "Quaker Whole Grain Rolled Oats 1kg",
     "imageUrl": "/products/NAV295.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6795,9 +7680,9 @@
     "id": "NAV296",
     "image": "/products/NAV296.jpg",
     "isVerifiedSeller": true,
-    "mrp": 792,
+    "mrp": 260,
     "name": "Quick Tatkal CTC Black Tea 500g",
-    "price": 697,
+    "price": 229,
     "sale": 697,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6805,7 +7690,10 @@
     "sku": "NAV296",
     "title": "Quick Tatkal CTC Black Tea 500g",
     "imageUrl": "/products/NAV296.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 260,
+    "salePrice": 229,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6818,9 +7706,9 @@
     "id": "NAV297",
     "image": "/products/NAV297.jpg",
     "isVerifiedSeller": true,
-    "mrp": 718,
+    "mrp": 120,
     "name": "Swadist Whole Cumin Seeds Jeera 100g",
-    "price": 632,
+    "price": 106,
     "sale": 632,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6828,7 +7716,10 @@
     "sku": "NAV297",
     "title": "Swadist Whole Cumin Seeds Jeera 100g",
     "imageUrl": "/products/NAV297.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6841,9 +7732,9 @@
     "id": "NAV298",
     "image": "/products/NAV298.jpg",
     "isVerifiedSeller": true,
-    "mrp": 72,
+    "mrp": 155,
     "name": "Navratna Spices Premium Red Chitra Rajma Kidney Beans 1kg",
-    "price": 63,
+    "price": 136,
     "sale": 63,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6851,7 +7742,10 @@
     "sku": "NAV298",
     "title": "Navratna Spices Premium Red Chitra Rajma Kidney Beans 1kg",
     "imageUrl": "/products/NAV298.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 155,
+    "salePrice": 136,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6864,9 +7758,9 @@
     "id": "NAV299",
     "image": "/products/NAV299.jpg",
     "isVerifiedSeller": true,
-    "mrp": 76,
+    "mrp": 155,
     "name": "Jammu Rajma Dark Red Kidney Beans 1kg",
-    "price": 67,
+    "price": 136,
     "sale": 67,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6874,7 +7768,10 @@
     "sku": "NAV299",
     "title": "Jammu Rajma Dark Red Kidney Beans 1kg",
     "imageUrl": "/products/NAV299.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 155,
+    "salePrice": 136,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6887,9 +7784,9 @@
     "id": "NAV300",
     "image": "/products/NAV300.jpg",
     "isVerifiedSeller": true,
-    "mrp": 342,
+    "mrp": 145,
     "name": "Rin Detergent Powder New Brightness Formula 1kg",
-    "price": 301,
+    "price": 128,
     "sale": 301,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6897,7 +7794,10 @@
     "sku": "NAV300",
     "title": "Rin Detergent Powder New Brightness Formula 1kg",
     "imageUrl": "/products/NAV300.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 145,
+    "salePrice": 128,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6910,9 +7810,9 @@
     "id": "NAV301",
     "image": "/products/NAV301.jpg",
     "isVerifiedSeller": true,
-    "mrp": 396,
+    "mrp": 145,
     "name": "Rin Detergent Bar Power White 250g",
-    "price": 348,
+    "price": 128,
     "sale": 348,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6920,7 +7820,10 @@
     "sku": "NAV301",
     "title": "Rin Detergent Bar Power White 250g",
     "imageUrl": "/products/NAV301.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 145,
+    "salePrice": 128,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6933,9 +7836,9 @@
     "id": "NAV302",
     "image": "/products/NAV302.jpg",
     "isVerifiedSeller": true,
-    "mrp": 711,
+    "mrp": 260,
     "name": "Brooke Bond Red Label Natural Care Tea with Ayurvedic Actives 500g",
-    "price": 626,
+    "price": 229,
     "sale": 626,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6943,7 +7846,10 @@
     "sku": "NAV302",
     "title": "Brooke Bond Red Label Natural Care Tea with Ayurvedic Actives 500g",
     "imageUrl": "/products/NAV302.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 260,
+    "salePrice": 229,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6956,9 +7862,9 @@
     "id": "NAV303",
     "image": "/products/NAV303.jpg",
     "isVerifiedSeller": true,
-    "mrp": 333,
+    "mrp": 45,
     "name": "Real Activ Mixed Fruit Juice No Added Sugar 1 Litre",
-    "price": 293,
+    "price": 40,
     "sale": 293,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6966,7 +7872,10 @@
     "sku": "NAV303",
     "title": "Real Activ Mixed Fruit Juice No Added Sugar 1 Litre",
     "imageUrl": "/products/NAV303.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 45,
+    "salePrice": 40,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -6979,9 +7888,9 @@
     "id": "NAV304",
     "image": "/products/NAV304.jpg",
     "isVerifiedSeller": true,
-    "mrp": 718,
+    "mrp": 120,
     "name": "Annapurna Rice Flour Chawal Ka Atta 1kg",
-    "price": 632,
+    "price": 106,
     "sale": 632,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -6989,7 +7898,10 @@
     "sku": "NAV304",
     "title": "Annapurna Rice Flour Chawal Ka Atta 1kg",
     "imageUrl": "/products/NAV304.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 120,
+    "salePrice": 106,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -7002,9 +7914,9 @@
     "id": "NAV305",
     "image": "/products/NAV305.jpg",
     "isVerifiedSeller": true,
-    "mrp": 612,
+    "mrp": 45,
     "name": "Hamdard Rooh Afza Sharbat Concentrate 750ml",
-    "price": 539,
+    "price": 40,
     "sale": 539,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -7012,7 +7924,10 @@
     "sku": "NAV305",
     "title": "Hamdard Rooh Afza Sharbat Concentrate 750ml",
     "imageUrl": "/products/NAV305.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 45,
+    "salePrice": 40,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -7025,9 +7940,9 @@
     "id": "NAV306",
     "image": "/products/NAV306.jpg",
     "isVerifiedSeller": true,
-    "mrp": 432,
+    "mrp": 145,
     "name": "Surf Excel Easy Wash Detergent Powder 1kg",
-    "price": 380,
+    "price": 128,
     "sale": 380,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -7035,7 +7950,10 @@
     "sku": "NAV306",
     "title": "Surf Excel Easy Wash Detergent Powder 1kg",
     "imageUrl": "/products/NAV306.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 145,
+    "salePrice": 128,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -7048,9 +7966,9 @@
     "id": "NAV307",
     "image": "/products/NAV307.jpg",
     "isVerifiedSeller": true,
-    "mrp": 342,
+    "mrp": 165,
     "name": "Surf Excel Matic Front Load Washing Powder 1kg",
-    "price": 301,
+    "price": 145,
     "sale": 301,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -7058,7 +7976,10 @@
     "sku": "NAV307",
     "title": "Surf Excel Matic Front Load Washing Powder 1kg",
     "imageUrl": "/products/NAV307.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 165,
+    "salePrice": 145,
+    "discount": 12
   },
   {
     "approvalStatus": "APPROVED",
@@ -7071,9 +7992,9 @@
     "id": "NAV308",
     "image": "/products/NAV308.jpg",
     "isVerifiedSeller": true,
-    "mrp": 522,
+    "mrp": 165,
     "name": "Saffola Gold Multisource Edible Oil Pouch 1 Litre",
-    "price": 459,
+    "price": 145,
     "sale": 459,
     "sellerId": "SELLER_NAV_STORE",
     "sellerName": "Nav Grocery Store",
@@ -7081,6 +8002,9 @@
     "sku": "NAV308",
     "title": "Saffola Gold Multisource Edible Oil Pouch 1 Litre",
     "imageUrl": "/products/NAV308.jpg",
-    "inStock": true
+    "inStock": true,
+    "originalPrice": 165,
+    "salePrice": 145,
+    "discount": 12
   }
 ]
