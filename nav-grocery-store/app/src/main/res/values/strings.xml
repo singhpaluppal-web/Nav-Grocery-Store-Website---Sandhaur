@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">NavKart</string>
+    <string name="store_name_punjabi">ਨਵਕਾਰਟ (ਨਵ ਗ੍ਰੋਸਰੀ ਸਟੋਰ)</string>
+    <string name="store_tagline">100% Sealed Packaged &amp; Cold-Chain Groceries &amp; Multi-Store Marketplace</string>
+    <string name="wholesale_discount_badge">Flat 12% OFF on MRP</string>
+    <string name="store_location">Main Bazaar, Sandhaur, District Malerkotla, Punjab 148020</string>
+    <string name="helpline_phone">+91 8847370905</string>
+    <string name="admin_email">singhpaluppal@gmail.com</string>
+    <string name="gstin">03AHPPU6185N1ZF</string>
+    <string name="instagram_handle">@nav_grocery_store</string>
+    <string name="store_hours">8:00 AM – 9:30 PM Daily</string>
+    <string name="delivery_estimate">~2 Hours Home Delivery across Sandhaur &amp; nearby villages</string>
+    <string name="pickup_estimate">30-min Store Pickup at Main Bazaar</string>
+</resources>

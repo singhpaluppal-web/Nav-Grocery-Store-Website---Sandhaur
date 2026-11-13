@@ -1,0 +1,309 @@
+SKU,Barcode,Product_Name,Brand,Category,MRP,Wholesale_Sale_12Pct_Off,Stock,Photo_Status
+NAV001,890100000001,Aashirvaad Superior MP Sharbati Atta 10kg,AASHIRVAAD,Atta & Dals,520,458,25,VERIFIED_PHOTO
+NAV002,890100000002,Fortune Chakki Fresh Atta 10kg,FORTUNE,Atta & Dals,460,405,25,VERIFIED_PHOTO
+NAV003,890100000003,Patanjali Whole Wheat Chakki Atta 10kg,PATANJALI,Atta & Dals,440,387,25,VERIFIED_PHOTO
+NAV004,890100000004,Nature Fresh Sampoorna Chakki Atta 10kg,NATURE FRESH,Atta & Dals,430,378,25,VERIFIED_PHOTO
+NAV005,890100000005,India Gate Feast Rozzana Basmati Rice 5kg,INDIA GATE,Atta & Dals,495,436,25,VERIFIED_PHOTO
+NAV006,890100000006,Fortune Everyday Full Grain Basmati Rice 5kg,FORTUNE,Atta & Dals,450,396,25,VERIFIED_PHOTO
+NAV007,890100000007,Daawat Super Long Grain Basmati Rice 5kg,DAAWAT,Atta & Dals,620,546,25,VERIFIED_PHOTO
+NAV008,890100000008,Daawat Rozana Gold Basmati Rice 5kg,DAAWAT,Atta & Dals,410,361,25,VERIFIED_PHOTO
+NAV009,890100000009,Rajdhani Pure Gram Flour Besan 1kg,RAJDHANI,Atta & Dals,125,110,25,VERIFIED_PHOTO
+NAV010,890100000010,Fortune Fine Besan 1kg,FORTUNE,Atta & Dals,130,114,25,VERIFIED_PHOTO
+NAV011,890100000011,Rajdhani Sooji Fine Semolina 500g,RAJDHANI,Atta & Dals,45,40,25,VERIFIED_PHOTO
+NAV012,890100000012,Rajdhani Fresh Maida 500g,RAJDHANI,Atta & Dals,40,35,25,VERIFIED_PHOTO
+NAV013,890100000013,Patanjali Roasted Daliya Porridge 500g,PATANJALI,Atta & Dals,48,42,25,VERIFIED_PHOTO
+NAV014,890100000014,Quaker Whole Grain Rolled White Oats 1kg,QUAKER,Atta & Dals,199,175,25,VERIFIED_PHOTO
+NAV015,890100000015,Kelloggs Corn Flakes Real Almond Honey 1kg,KELLOGGS,Atta & Dals,385,339,25,VERIFIED_PHOTO
+NAV016,890100000016,Tata Sampann Unpolished Toor Arhar Dal 1kg,TATA,Atta & Dals,185,163,25,VERIFIED_PHOTO
+NAV017,890100000017,Tata Sampann Premium Chana Dal 1kg,TATA,Atta & Dals,140,123,25,VERIFIED_PHOTO
+NAV018,890100000018,Tata Sampann High Protein Moong Dal Dhuli 1kg,TATA,Atta & Dals,175,154,25,VERIFIED_PHOTO
+NAV019,890100000019,Tata Sampann Whole Green Moong Sabut 1kg,TATA,Atta & Dals,165,145,25,VERIFIED_PHOTO
+NAV020,890100000020,Tata Sampann Urad Dal Split Chilka 1kg,TATA,Atta & Dals,180,158,25,VERIFIED_PHOTO
+NAV021,890100000021,Tata Sampann Urad Sabut Whole Black Dal 1kg,TATA,Atta & Dals,190,167,25,VERIFIED_PHOTO
+NAV022,890100000022,Tata Sampann Red Masoor Malka Dal 1kg,TATA,Atta & Dals,135,119,25,VERIFIED_PHOTO
+NAV023,890100000023,Tata Sampann Premium Kabuli Chana Chickpeas 1kg,TATA,Atta & Dals,195,172,25,VERIFIED_PHOTO
+NAV024,890100000024,Tata Sampann Natural Kala Chana 1kg,TATA,Atta & Dals,130,114,25,VERIFIED_PHOTO
+NAV025,890100000025,Tata Sampann Kashmiri Rajma Red Kidney Beans 1kg,TATA,Atta & Dals,210,185,25,VERIFIED_PHOTO
+NAV026,890100000026,Tata Sampann Premium Chitra Rajma 1kg,TATA,Atta & Dals,225,198,25,VERIFIED_PHOTO
+NAV027,890100000027,Rajdhani Pure Kabuli Chana 1kg,RAJDHANI,Atta & Dals,180,158,25,VERIFIED_PHOTO
+NAV028,890100000028,Rajdhani Green Moong Dal Split 1kg,RAJDHANI,Atta & Dals,160,141,25,VERIFIED_PHOTO
+NAV029,890100000029,Rajdhani Roasted Chana Salted 500g,RAJDHANI,Atta & Dals,110,97,25,VERIFIED_PHOTO
+NAV030,890100000030,Patanjali Unpolished Yellow Moong Dal 1kg,PATANJALI,Atta & Dals,168,148,25,VERIFIED_PHOTO
+NAV031,890100000031,Verka Pure Desi Ghee Tin 1L,VERKA,Desi Ghee & Oils,640,563,25,VERIFIED_PHOTO
+NAV032,890100000032,Amul Pure Milk Desi Ghee Carton 1L,AMUL,Desi Ghee & Oils,630,554,25,VERIFIED_PHOTO
+NAV033,890100000033,Mother Dairy Pure Cow Desi Ghee 1L,MOTHER DAIRY,Desi Ghee & Oils,650,572,25,VERIFIED_PHOTO
+NAV034,890100000034,Patanjali Pure Cow Desi Ghee Tin 1L,PATANJALI,Desi Ghee & Oils,660,581,25,VERIFIED_PHOTO
+NAV035,890100000035,Verka Special Cow Desi Ghee 1L,VERKA,Desi Ghee & Oils,650,572,25,VERIFIED_PHOTO
+NAV036,890100000036,Fortune Kachi Ghani Pure Mustard Oil Pouch 1L,FORTUNE,Desi Ghee & Oils,165,145,25,VERIFIED_PHOTO
+NAV037,890100000037,Fortune Sunlite Refined Sunflower Oil Pouch 1L,FORTUNE,Desi Ghee & Oils,155,136,25,VERIFIED_PHOTO
+NAV038,890100000038,Fortune Plus Refined Soyabean Oil Pouch 1L,FORTUNE,Desi Ghee & Oils,145,128,25,VERIFIED_PHOTO
+NAV039,890100000039,Engine Brand Pure Mustard Oil Bottle 1L,ENGINE,Desi Ghee & Oils,185,163,25,VERIFIED_PHOTO
+NAV040,890100000040,Dhara Kachi Ghani Mustard Oil Pouch 1L,DHARA,Desi Ghee & Oils,160,141,25,VERIFIED_PHOTO
+NAV041,890100000041,Dhara Refined Sunflower Oil Pouch 1L,DHARA,Desi Ghee & Oils,150,132,25,VERIFIED_PHOTO
+NAV042,890100000042,Saffola Gold Pro Healthy Lifestyle Blended Oil 1L,SAFFOLA,Desi Ghee & Oils,190,167,25,VERIFIED_PHOTO
+NAV043,890100000043,Saffola Total Pro Heart Care Edible Oil 1L,SAFFOLA,Desi Ghee & Oils,215,189,25,VERIFIED_PHOTO
+NAV044,890100000044,Fortune Cottonseed Refined Cooking Oil 1L,FORTUNE,Desi Ghee & Oils,140,123,25,VERIFIED_PHOTO
+NAV045,890100000045,Dalda Pure Vanaspati Ghee Pouch 1L,DALDA,Desi Ghee & Oils,130,114,25,VERIFIED_PHOTO
+NAV046,890100000046,Tata Salt Vacuum Evaporated Iodized 1kg,TATA,Spices,28,25,25,VERIFIED_PHOTO
+NAV047,890100000047,Tata Salt Lite Low Sodium 1kg,TATA,Spices,45,40,25,VERIFIED_PHOTO
+NAV048,890100000048,Tata Salt Himalayan Pink Rock Salt 1kg,TATA,Spices,99,87,25,VERIFIED_PHOTO
+NAV049,890100000049,MDH Deggi Mirch Kashmiri Red Chilli Powder 100g,MDH,Spices,92,81,25,VERIFIED_PHOTO
+NAV050,890100000050,MDH Agmark Haldi Turmeric Powder 100g,MDH,Spices,42,37,25,VERIFIED_PHOTO
+NAV051,890100000051,MDH Agmark Dhania Coriander Powder 100g,MDH,Spices,44,39,25,VERIFIED_PHOTO
+NAV052,890100000052,MDH Special Garam Masala Blend 100g,MDH,Spices,98,86,25,VERIFIED_PHOTO
+NAV053,890100000053,MDH Chana Masala Seasoning 100g,MDH,Spices,88,77,25,VERIFIED_PHOTO
+NAV054,890100000054,MDH Chunky Chat Masala 100g,MDH,Spices,76,67,25,VERIFIED_PHOTO
+NAV055,890100000055,MDH Kitchen King All Purpose Sabji Masala 100g,MDH,Spices,90,79,25,VERIFIED_PHOTO
+NAV056,890100000056,MDH Shahi Paneer Masala 100g,MDH,Spices,88,77,25,VERIFIED_PHOTO
+NAV057,890100000057,MDH Pav Bhaji Masala 100g,MDH,Spices,84,74,25,VERIFIED_PHOTO
+NAV058,890100000058,MDH Sambhar Masala 100g,MDH,Spices,82,72,25,VERIFIED_PHOTO
+NAV059,890100000059,MDH Meat Curry Special Masala 100g,MDH,Spices,94,83,25,VERIFIED_PHOTO
+NAV060,890100000060,MDH Kasoori Methi Fenugreek Leaves 100g,MDH,Spices,68,60,25,VERIFIED_PHOTO
+NAV061,890100000061,Catch Pure Turmeric Powder 200g,CATCH,Spices,65,57,25,VERIFIED_PHOTO
+NAV062,890100000062,Catch Red Chilli Powder Teja Hot 200g,CATCH,Spices,98,86,25,VERIFIED_PHOTO
+NAV063,890100000063,Catch Coriander Powder Fresh Aroma 200g,CATCH,Spices,68,60,25,VERIFIED_PHOTO
+NAV064,890100000064,Catch Table Black Pepper Sprinkler 100g,CATCH,Spices,115,101,25,VERIFIED_PHOTO
+NAV065,890100000065,Catch Table Rock Salt Sprinkler 100g,CATCH,Spices,55,48,25,VERIFIED_PHOTO
+NAV066,890100000066,Everest Royal Garam Masala 100g,EVEREST,Spices,96,84,25,VERIFIED_PHOTO
+NAV067,890100000067,Everest Tikhalal Hot Red Chilli Powder 100g,EVEREST,Spices,62,55,25,VERIFIED_PHOTO
+NAV068,890100000068,Everest Chhole Special Masala 100g,EVEREST,Spices,85,75,25,VERIFIED_PHOTO
+NAV069,890100000069,Everest Kastoori Methi Leaves 50g,EVEREST,Spices,42,37,25,VERIFIED_PHOTO
+NAV070,890100000070,Patanjali Pure Agmark Whole Cumin Jeera 200g,PATANJALI,Spices,120,106,25,VERIFIED_PHOTO
+NAV071,890100000071,Patanjali Whole Mustard Seeds Rai 200g,PATANJALI,Spices,45,40,25,VERIFIED_PHOTO
+NAV072,890100000072,Patanjali Carom Seeds Ajwain 200g,PATANJALI,Spices,65,57,25,VERIFIED_PHOTO
+NAV073,890100000073,Patanjali Asafoetida Bandhani Hing 25g,PATANJALI,Spices,52,46,25,VERIFIED_PHOTO
+NAV074,890100000074,LG Compounded Natural Asafoetida Powder 50g,LG,Spices,88,77,25,VERIFIED_PHOTO
+NAV075,890100000075,Keya Authentic Italian Mixed Herbs Seasoning 45g,KEYA,Spices,110,97,25,VERIFIED_PHOTO
+NAV076,890100000076,Safal Frozen Fresh Tender Green Peas 1kg,SAFAL,Frozen Foods,160,141,25,VERIFIED_PHOTO
+NAV077,890100000077,Safal Frozen American Sweet Corn Kernels 500g,SAFAL,Frozen Foods,85,75,25,VERIFIED_PHOTO
+NAV078,890100000078,Safal Frozen Mixed Country Vegetables 500g,SAFAL,Frozen Foods,95,84,25,VERIFIED_PHOTO
+NAV079,890100000079,Amul Malai Fresh Frozen Paneer Block 500g,AMUL,Frozen Foods,210,185,25,VERIFIED_PHOTO
+NAV080,890100000080,Mother Dairy Classic Frozen Paneer Cubes 200g,MOTHER DAIRY,Frozen Foods,98,86,25,VERIFIED_PHOTO
+NAV081,890100000081,McCain Crispy French Fries Pack 420g,MCCAIN,Frozen Foods,125,110,25,VERIFIED_PHOTO
+NAV082,890100000082,McCain Crunchy Aloo Tikki Patty 400g,MCCAIN,Frozen Foods,130,114,25,VERIFIED_PHOTO
+NAV083,890100000083,McCain Veggie Burger Patty 360g,MCCAIN,Frozen Foods,145,128,25,VERIFIED_PHOTO
+NAV084,890100000084,McCain Golden Smiles Mashed Potato Shapes 375g,MCCAIN,Frozen Foods,135,119,25,VERIFIED_PHOTO
+NAV085,890100000085,Safal Frozen Soya Chaap Sticks 500g,SAFAL,Frozen Foods,110,97,25,VERIFIED_PHOTO
+NAV086,890100000086,Madhur Pure Hygienic Sparkling Sugar 5kg,MADHUR,Grocery & Staples,260,229,25,VERIFIED_PHOTO
+NAV087,890100000087,Madhur Refined Sulphur Free Sugar 1kg,MADHUR,Grocery & Staples,54,48,25,VERIFIED_PHOTO
+NAV088,890100000088,Tata Tea Gold Rich Taste Leaves 500g,TATA,Grocery & Staples,310,273,25,VERIFIED_PHOTO
+NAV089,890100000089,Tata Tea Premium Desh Ki Chai 500g,TATA,Grocery & Staples,280,246,25,VERIFIED_PHOTO
+NAV090,890100000090,Brooke Bond Red Label Strong CTC Tea 500g,RED LABEL,Grocery & Staples,295,260,25,VERIFIED_PHOTO
+NAV091,890100000091,Brooke Bond Red Label Natural Care Cardamom Ginger 500g,RED LABEL,Grocery & Staples,340,299,25,VERIFIED_PHOTO
+NAV092,890100000092,Brooke Bond Taj Mahal Rich Fresh Tea 500g,TAJ MAHAL,Grocery & Staples,390,343,25,VERIFIED_PHOTO
+NAV093,890100000093,Wagh Bakri Strong Premium Leaf Tea 500g,WAGH BAKRI,Grocery & Staples,270,238,25,VERIFIED_PHOTO
+NAV094,890100000094,Nescafe Classic Pure Instant Coffee Jar 100g,NESCAFE,Grocery & Staples,360,317,25,VERIFIED_PHOTO
+NAV095,890100000095,Bru Instant Roasted Coffee Chicory Blend Jar 100g,BRU,Grocery & Staples,230,202,25,VERIFIED_PHOTO
+NAV096,890100000096,Bournvita Chocolate Nutrition Health Drink 1kg,CADBURY,Grocery & Staples,440,387,25,VERIFIED_PHOTO
+NAV097,890100000097,Horlicks Classic Malt Health Nutrition Jar 1kg,HORLICKS,Grocery & Staples,450,396,25,VERIFIED_PHOTO
+NAV098,890100000098,Boost Energy Chocolate Sports Health Drink 500g,BOOST,Grocery & Staples,265,233,25,VERIFIED_PHOTO
+NAV099,890100000099,Rooh Afza Herbal Concentrated Syrup Sharbat 750ml,HAMDARD,Grocery & Staples,185,163,25,VERIFIED_PHOTO
+NAV100,890100000100,Kissan Fresh Tomato Ketchup Bottle 1kg,KISSAN,Grocery & Staples,145,128,25,VERIFIED_PHOTO
+NAV101,890100000101,Maggi Rich Tomato Sauce Pitcher Bottle 1kg,MAGGI,Grocery & Staples,155,136,25,VERIFIED_PHOTO
+NAV102,890100000102,Kissan Mixed Fruit Sweet Jam Glass Jar 500g,KISSAN,Grocery & Staples,170,150,25,VERIFIED_PHOTO
+NAV103,890100000103,Nutella Hazelnut Cocoa Creamy Bread Spread 350g,NUTELLA,Grocery & Staples,410,361,25,VERIFIED_PHOTO
+NAV104,890100000104,Pintola All Natural Creamy Peanut Butter 1kg,PINTOLA,Grocery & Staples,399,351,25,VERIFIED_PHOTO
+NAV105,890100000105,Dabur 100 Percent Pure Squeezy Honey 500g,DABUR,Grocery & Staples,235,207,25,VERIFIED_PHOTO
+NAV106,890100000106,Maggi 2 Minute Masala Instant Noodles 12 Pack 840g,MAGGI,Grocery & Staples,168,148,25,VERIFIED_PHOTO
+NAV107,890100000107,Yippee Mood Masala Instant Noodles 4 Pack 280g,SUNFEAST,Grocery & Staples,60,53,25,VERIFIED_PHOTO
+NAV108,890100000108,Chings Secret Schezwan Noodles 4 Pack 240g,CHINGS,Grocery & Staples,55,48,25,VERIFIED_PHOTO
+NAV109,890100000109,Parle G Original Glucose Biscuits Value Pack 800g,PARLE,Grocery & Staples,90,79,25,VERIFIED_PHOTO
+NAV110,890100000110,Britannia Good Day Butter Cookies Multipack 600g,BRITANNIA,Grocery & Staples,140,123,25,VERIFIED_PHOTO
+NAV111,890100000111,Britannia Good Day Cashew Almond Cookies 600g,BRITANNIA,Grocery & Staples,150,132,25,VERIFIED_PHOTO
+NAV112,890100000112,Britannia Marie Gold Crisp Tea Biscuits 1kg,BRITANNIA,Grocery & Staples,145,128,25,VERIFIED_PHOTO
+NAV113,890100000113,Sunfeast Dark Fantasy Choco Fills Multipack 300g,SUNFEAST,Grocery & Staples,160,141,25,VERIFIED_PHOTO
+NAV114,890100000114,Oreo Original Vanilla Creme Sandwich Biscuits 300g,CADBURY,Grocery & Staples,95,84,25,VERIFIED_PHOTO
+NAV115,890100000115,Britannia Bourbon Chocolate Cream Biscuits 300g,BRITANNIA,Grocery & Staples,75,66,25,VERIFIED_PHOTO
+NAV116,890100000116,Britannia Milk Bikis Creamy Calcium Biscuits 400g,BRITANNIA,Grocery & Staples,85,75,25,VERIFIED_PHOTO
+NAV117,890100000117,Haldirams Nagpur Aloo Bhujia Namkeen 1kg,HALDIRAMS,Grocery & Staples,270,238,25,VERIFIED_PHOTO
+NAV118,890100000118,Haldirams Bhujia Sev Crispy Snack 1kg,HALDIRAMS,Grocery & Staples,260,229,25,VERIFIED_PHOTO
+NAV119,890100000119,Haldirams All In One Mixture Spicy Snack 1kg,HALDIRAMS,Grocery & Staples,275,242,25,VERIFIED_PHOTO
+NAV120,890100000120,Haldirams Moong Dal Salted Fried Lentil 400g,HALDIRAMS,Grocery & Staples,145,128,25,VERIFIED_PHOTO
+NAV121,890100000121,Haldirams Khatta Meetha Sweet Sour Mixture 400g,HALDIRAMS,Grocery & Staples,115,101,25,VERIFIED_PHOTO
+NAV122,890100000122,Lays India Magic Masala Potato Chips Party Pack 115g,LAYS,Grocery & Staples,50,44,25,VERIFIED_PHOTO
+NAV123,890100000123,Kurkure Masala Munch Crunchy Spicy Snack 115g,KURKURE,Grocery & Staples,50,44,25,VERIFIED_PHOTO
+NAV124,890100000124,Uncle Chipps Spicy Treat Salted Potato Chips 100g,UNCLE CHIPPS,Grocery & Staples,50,44,25,VERIFIED_PHOTO
+NAV125,890100000125,Cadbury Dairy Milk Silk Chocolate Bar 150g,CADBURY,Grocery & Staples,195,172,25,VERIFIED_PHOTO
+NAV126,890100000126,Surf Excel Easy Wash Detergent Powder Bag 5kg,SURF EXCEL,Grocery & Staples,680,598,25,VERIFIED_PHOTO
+NAV127,890100000127,Surf Excel Matic Front Load Liquid Detergent 2L,SURF EXCEL,Grocery & Staples,495,436,25,VERIFIED_PHOTO
+NAV128,890100000128,Ariel Complete Floral Fragrance Detergent Powder 4kg,ARIEL,Grocery & Staples,640,563,25,VERIFIED_PHOTO
+NAV129,890100000129,Tide Plus Extra Power Lemon Mint Detergent 5kg,TIDE,Grocery & Staples,580,510,25,VERIFIED_PHOTO
+NAV130,890100000130,Rin Advanced Fresh Crisp Detergent Powder 4kg,RIN,Grocery & Staples,390,343,25,VERIFIED_PHOTO
+NAV131,890100000131,Comfort After Wash Fabric Softener Lily Blue 2L,COMFORT,Grocery & Staples,440,387,25,VERIFIED_PHOTO
+NAV132,890100000132,Vim Dishwash Liquid Gel Lemon Concentrate 2L,VIM,Grocery & Staples,399,351,25,VERIFIED_PHOTO
+NAV133,890100000133,Vim Dishwash Lemon Fragrance Bar Tub 500g,VIM,Grocery & Staples,40,35,25,VERIFIED_PHOTO
+NAV134,890100000134,Exo Round Anti Bacterial Touch Dishwash Bar 500g,EXO,Grocery & Staples,42,37,25,VERIFIED_PHOTO
+NAV135,890100000135,Pril Kraft Concentrated Dishwash Liquid Green Lime 750ml,PRIL,Grocery & Staples,190,167,25,VERIFIED_PHOTO
+NAV136,890100000136,Harpic Power Plus Disinfectant Toilet Cleaner Original 1L,HARPIC,Grocery & Staples,220,194,25,VERIFIED_PHOTO
+NAV137,890100000137,Lizol Disinfectant Surface Cleaner Citrus Floral 2L,LIZOL,Grocery & Staples,395,348,25,VERIFIED_PHOTO
+NAV138,890100000138,Colin Glass and Appliance Shine Surface Cleaner 1L,COLIN,Grocery & Staples,185,163,25,VERIFIED_PHOTO
+NAV139,890100000139,Dettol Original Anti Bacterial Liquid Antiseptic 1L,DETTOL,Grocery & Staples,399,351,25,VERIFIED_PHOTO
+NAV140,890100000140,Savlon Moisture Shield Anti Bacterial Liquid 1L,SAVLON,Grocery & Staples,340,299,25,VERIFIED_PHOTO
+NAV141,890100000141,Dettol Original Germ Protection Bathing Soap 4x125g,DETTOL,Grocery & Staples,240,211,25,VERIFIED_PHOTO
+NAV142,890100000142,Lifebuoy Total 10 Infection Defense Bathing Soap 4x125g,LIFEBUOY,Grocery & Staples,190,167,25,VERIFIED_PHOTO
+NAV143,890100000143,Dove Cream Beauty Bathing Bar Moisturizing Soap 3x125g,DOVE,Grocery & Staples,290,255,25,VERIFIED_PHOTO
+NAV144,890100000144,Pears Pure and Gentle Glycerine Bathing Soap 3x125g,PEARS,Grocery & Staples,285,251,25,VERIFIED_PHOTO
+NAV145,890100000145,Lux Velvet Glow Jasmine Sweet Almond Oil Soap 4x125g,LUX,Grocery & Staples,210,185,25,VERIFIED_PHOTO
+NAV146,890100000146,Santoor Sandalwood & Turmeric Nourishing Soap 4x125g,SANTOOR,Grocery & Staples,195,172,25,VERIFIED_PHOTO
+NAV147,890100000147,Medimix 18 Herbs Ayurvedic Herbal Protection Soap 4x125g,MEDIMIX,Grocery & Staples,220,194,25,VERIFIED_PHOTO
+NAV148,890100000148,Godrej No 1 Grade 1 Lime Aloe Vera Soap 4x125g,GODREJ,Grocery & Staples,150,132,25,VERIFIED_PHOTO
+NAV149,890100000149,Colgate Strong Teeth Calcium Dental Cream Toothpaste 500g,COLGATE,Grocery & Staples,260,229,25,VERIFIED_PHOTO
+NAV150,890100000150,Colgate MaxFresh Peppermint Cooling Crystals Toothpaste 300g,COLGATE,Grocery & Staples,210,185,25,VERIFIED_PHOTO
+NAV151,890100000151,Close Up Everfresh Red Hot Gel Toothpaste 300g,CLOSE UP,Grocery & Staples,195,172,25,VERIFIED_PHOTO
+NAV152,890100000152,Pepsodent Germi Check 12 Hour Cavity Protection 300g,PEPSODENT,Grocery & Staples,175,154,25,VERIFIED_PHOTO
+NAV153,890100000153,Sensodyne Daily Fresh Sensitive Teeth Toothpaste 150g,SENSODYNE,Grocery & Staples,240,211,25,VERIFIED_PHOTO
+NAV154,890100000154,Dabur Red Ayurvedic Herbs Toothpaste 300g,DABUR,Grocery & Staples,180,158,25,VERIFIED_PHOTO
+NAV155,890100000155,Head & Shoulders Anti Dandruff Smooth Silky Shampoo 650ml,HEAD SHOULDERS,Grocery & Staples,599,527,25,VERIFIED_PHOTO
+NAV156,890100000156,Clinic Plus Strong & Long Health Shampoo Milk Protein 650ml,CLINIC PLUS,Grocery & Staples,399,351,25,VERIFIED_PHOTO
+NAV157,890100000157,Sunsilk Black Shine Amla Pearl Extract Shampoo 650ml,SUNSILK,Grocery & Staples,440,387,25,VERIFIED_PHOTO
+NAV158,890100000158,Pantene Pro V Advanced Hairfall Control Shampoo 650ml,PANTENE,Grocery & Staples,560,493,25,VERIFIED_PHOTO
+NAV159,890100000159,Dove Intense Repair Keratin Actives Shampoo 650ml,DOVE,Grocery & Staples,580,510,25,VERIFIED_PHOTO
+NAV160,890100000160,Parachute 100 Percent Pure Coconut Edible Hair Oil 500ml,PARACHUTE,Grocery & Staples,210,185,25,VERIFIED_PHOTO
+NAV161,890100000161,Bajaj Almond Drops Non Sticky Vitamin E Hair Oil 500ml,BAJAJ,Grocery & Staples,340,299,25,VERIFIED_PHOTO
+NAV162,890100000162,Dabur Amla Pure Vitamin C Nourishing Hair Oil 450ml,DABUR,Grocery & Staples,230,202,25,VERIFIED_PHOTO
+NAV163,890100000163,Nivea Soft Light Moisturizing Refreshing Cream Tub 300ml,NIVEA,Grocery & Staples,399,351,25,VERIFIED_PHOTO
+NAV164,890100000164,Vaseline Intensive Care Deep Moisture Body Lotion 400ml,VASELINE,Grocery & Staples,380,334,25,VERIFIED_PHOTO
+NAV165,890100000165,Ponds Cold Cream Moisturizing Soft Glowing Skin 200g,PONDS,Grocery & Staples,240,211,25,VERIFIED_PHOTO
+NAV166,890100000166,Aashirvaad Superior MP Sharbati Atta 10kg Value Pack,AASHIRVAAD,Atta & Dals,936,824,25,VERIFIED_PHOTO
+NAV167,890100000167,Fortune Chakki Fresh Atta 10kg Value Pack,FORTUNE,Atta & Dals,828,729,25,VERIFIED_PHOTO
+NAV168,890100000168,Patanjali Whole Wheat Chakki Atta 10kg Value Pack,PATANJALI,Atta & Dals,792,697,25,VERIFIED_PHOTO
+NAV169,890100000169,Nature Fresh Sampoorna Chakki Atta 10kg Value Pack,NATURE FRESH,Atta & Dals,774,681,25,VERIFIED_PHOTO
+NAV170,890100000170,India Gate Feast Rozzana Basmati Rice 5kg Value Pack,INDIA GATE,Atta & Dals,891,784,25,VERIFIED_PHOTO
+NAV171,890100000171,Fortune Everyday Full Grain Basmati Rice 5kg Value Pack,FORTUNE,Atta & Dals,810,713,25,VERIFIED_PHOTO
+NAV172,890100000172,Daawat Super Long Grain Basmati Rice 5kg Value Pack,DAAWAT,Atta & Dals,1116,982,25,VERIFIED_PHOTO
+NAV173,890100000173,Daawat Rozana Gold Basmati Rice 5kg Value Pack,DAAWAT,Atta & Dals,738,649,25,VERIFIED_PHOTO
+NAV174,890100000174,Rajdhani Pure Gram Flour Besan 1kg Value Pack,RAJDHANI,Atta & Dals,225,198,25,VERIFIED_PHOTO
+NAV175,890100000175,Fortune Fine Besan 1kg Value Pack,FORTUNE,Atta & Dals,234,206,25,VERIFIED_PHOTO
+NAV176,890100000176,Rajdhani Sooji Fine Semolina 500g Value Pack,RAJDHANI,Atta & Dals,81,71,25,VERIFIED_PHOTO
+NAV177,890100000177,Rajdhani Fresh Maida 500g Value Pack,RAJDHANI,Atta & Dals,72,63,25,VERIFIED_PHOTO
+NAV178,890100000178,Patanjali Roasted Daliya Porridge 500g Value Pack,PATANJALI,Atta & Dals,86,76,25,VERIFIED_PHOTO
+NAV179,890100000179,Quaker Whole Grain Rolled White Oats 1kg Value Pack,QUAKER,Atta & Dals,358,315,25,VERIFIED_PHOTO
+NAV180,890100000180,Kelloggs Corn Flakes Real Almond Honey 1kg Value Pack,KELLOGGS,Atta & Dals,693,610,25,VERIFIED_PHOTO
+NAV181,890100000181,Tata Sampann Unpolished Toor Arhar Dal 1kg Value Pack,TATA,Atta & Dals,333,293,25,VERIFIED_PHOTO
+NAV182,890100000182,Tata Sampann Premium Chana Dal 1kg Value Pack,TATA,Atta & Dals,252,222,25,VERIFIED_PHOTO
+NAV183,890100000183,Tata Sampann High Protein Moong Dal Dhuli 1kg Value Pack,TATA,Atta & Dals,315,277,25,VERIFIED_PHOTO
+NAV184,890100000184,Tata Sampann Whole Green Moong Sabut 1kg Value Pack,TATA,Atta & Dals,297,261,25,VERIFIED_PHOTO
+NAV185,890100000185,Tata Sampann Urad Dal Split Chilka 1kg Value Pack,TATA,Atta & Dals,324,285,25,VERIFIED_PHOTO
+NAV186,890100000186,Tata Sampann Urad Sabut Whole Black Dal 1kg Value Pack,TATA,Atta & Dals,342,301,25,VERIFIED_PHOTO
+NAV187,890100000187,Tata Sampann Red Masoor Malka Dal 1kg Value Pack,TATA,Atta & Dals,243,214,25,VERIFIED_PHOTO
+NAV188,890100000188,Tata Sampann Premium Kabuli Chana Chickpeas 1kg Value Pack,TATA,Atta & Dals,351,309,25,VERIFIED_PHOTO
+NAV189,890100000189,Tata Sampann Natural Kala Chana 1kg Value Pack,TATA,Atta & Dals,234,206,25,VERIFIED_PHOTO
+NAV190,890100000190,Tata Sampann Kashmiri Rajma Red Kidney Beans 1kg Value Pack,TATA,Atta & Dals,378,333,25,VERIFIED_PHOTO
+NAV191,890100000191,Tata Sampann Premium Chitra Rajma 1kg Value Pack,TATA,Atta & Dals,405,356,25,VERIFIED_PHOTO
+NAV192,890100000192,Rajdhani Pure Kabuli Chana 1kg Value Pack,RAJDHANI,Atta & Dals,324,285,25,VERIFIED_PHOTO
+NAV193,890100000193,Rajdhani Green Moong Dal Split 1kg Value Pack,RAJDHANI,Atta & Dals,288,253,25,VERIFIED_PHOTO
+NAV194,890100000194,Rajdhani Roasted Chana Salted 500g Value Pack,RAJDHANI,Atta & Dals,198,174,25,VERIFIED_PHOTO
+NAV195,890100000195,Patanjali Unpolished Yellow Moong Dal 1kg Value Pack,PATANJALI,Atta & Dals,302,266,25,VERIFIED_PHOTO
+NAV196,890100000196,Verka Pure Desi Ghee Tin 1L Value Pack,VERKA,Desi Ghee & Oils,1152,1014,25,VERIFIED_PHOTO
+NAV197,890100000197,Amul Pure Milk Desi Ghee Carton 1L Value Pack,AMUL,Desi Ghee & Oils,1134,998,25,VERIFIED_PHOTO
+NAV198,890100000198,Mother Dairy Pure Cow Desi Ghee 1L Value Pack,MOTHER DAIRY,Desi Ghee & Oils,1170,1030,25,VERIFIED_PHOTO
+NAV199,890100000199,Patanjali Pure Cow Desi Ghee Tin 1L Value Pack,PATANJALI,Desi Ghee & Oils,1188,1045,25,VERIFIED_PHOTO
+NAV200,890100000200,Verka Special Cow Desi Ghee 1L Value Pack,VERKA,Desi Ghee & Oils,1170,1030,25,VERIFIED_PHOTO
+NAV201,890100000201,Fortune Kachi Ghani Pure Mustard Oil Pouch 1L Value Pack,FORTUNE,Desi Ghee & Oils,297,261,25,VERIFIED_PHOTO
+NAV202,890100000202,Fortune Sunlite Refined Sunflower Oil Pouch 1L Value Pack,FORTUNE,Desi Ghee & Oils,279,246,25,VERIFIED_PHOTO
+NAV203,890100000203,Fortune Plus Refined Soyabean Oil Pouch 1L Value Pack,FORTUNE,Desi Ghee & Oils,261,230,25,VERIFIED_PHOTO
+NAV204,890100000204,Engine Brand Pure Mustard Oil Bottle 1L Value Pack,ENGINE,Desi Ghee & Oils,333,293,25,VERIFIED_PHOTO
+NAV205,890100000205,Dhara Kachi Ghani Mustard Oil Pouch 1L Value Pack,DHARA,Desi Ghee & Oils,288,253,25,VERIFIED_PHOTO
+NAV206,890100000206,Dhara Refined Sunflower Oil Pouch 1L Value Pack,DHARA,Desi Ghee & Oils,270,238,25,VERIFIED_PHOTO
+NAV207,890100000207,Saffola Gold Pro Healthy Lifestyle Blended Oil 1L Value Pack,SAFFOLA,Desi Ghee & Oils,342,301,25,VERIFIED_PHOTO
+NAV208,890100000208,Saffola Total Pro Heart Care Edible Oil 1L Value Pack,SAFFOLA,Desi Ghee & Oils,387,341,25,VERIFIED_PHOTO
+NAV209,890100000209,Fortune Cottonseed Refined Cooking Oil 1L Value Pack,FORTUNE,Desi Ghee & Oils,252,222,25,VERIFIED_PHOTO
+NAV210,890100000210,Dalda Pure Vanaspati Ghee Pouch 1L Value Pack,DALDA,Desi Ghee & Oils,234,206,25,VERIFIED_PHOTO
+NAV211,890100000211,Tata Salt Vacuum Evaporated Iodized 1kg Value Pack,TATA,Spices,50,44,25,VERIFIED_PHOTO
+NAV212,890100000212,Tata Salt Lite Low Sodium 1kg Value Pack,TATA,Spices,81,71,25,VERIFIED_PHOTO
+NAV213,890100000213,Tata Salt Himalayan Pink Rock Salt 1kg Value Pack,TATA,Spices,178,157,25,VERIFIED_PHOTO
+NAV214,890100000214,MDH Deggi Mirch Kashmiri Red Chilli Powder 100g Value Pack,MDH,Spices,166,146,25,VERIFIED_PHOTO
+NAV215,890100000215,MDH Agmark Haldi Turmeric Powder 100g Value Pack,MDH,Spices,76,67,25,VERIFIED_PHOTO
+NAV216,890100000216,MDH Agmark Dhania Coriander Powder 100g Value Pack,MDH,Spices,79,70,25,VERIFIED_PHOTO
+NAV217,890100000217,MDH Special Garam Masala Blend 100g Value Pack,MDH,Spices,176,155,25,VERIFIED_PHOTO
+NAV218,890100000218,MDH Chana Masala Seasoning 100g Value Pack,MDH,Spices,158,139,25,VERIFIED_PHOTO
+NAV219,890100000219,MDH Chunky Chat Masala 100g Value Pack,MDH,Spices,137,121,25,VERIFIED_PHOTO
+NAV220,890100000220,MDH Kitchen King All Purpose Sabji Masala 100g Value Pack,MDH,Spices,162,143,25,VERIFIED_PHOTO
+NAV221,890100000221,MDH Shahi Paneer Masala 100g Value Pack,MDH,Spices,158,139,25,VERIFIED_PHOTO
+NAV222,890100000222,MDH Pav Bhaji Masala 100g Value Pack,MDH,Spices,151,133,25,VERIFIED_PHOTO
+NAV223,890100000223,MDH Sambhar Masala 100g Value Pack,MDH,Spices,148,130,25,VERIFIED_PHOTO
+NAV224,890100000224,MDH Meat Curry Special Masala 100g Value Pack,MDH,Spices,169,149,25,VERIFIED_PHOTO
+NAV225,890100000225,MDH Kasoori Methi Fenugreek Leaves 100g Value Pack,MDH,Spices,122,107,25,VERIFIED_PHOTO
+NAV226,890100000226,Catch Pure Turmeric Powder 200g Value Pack,CATCH,Spices,117,103,25,VERIFIED_PHOTO
+NAV227,890100000227,Catch Red Chilli Powder Teja Hot 200g Value Pack,CATCH,Spices,176,155,25,VERIFIED_PHOTO
+NAV228,890100000228,Catch Coriander Powder Fresh Aroma 200g Value Pack,CATCH,Spices,122,107,25,VERIFIED_PHOTO
+NAV229,890100000229,Catch Table Black Pepper Sprinkler 100g Value Pack,CATCH,Spices,207,182,25,VERIFIED_PHOTO
+NAV230,890100000230,Catch Table Rock Salt Sprinkler 100g Value Pack,CATCH,Spices,99,87,25,VERIFIED_PHOTO
+NAV231,890100000231,Everest Royal Garam Masala 100g Value Pack,EVEREST,Spices,173,152,25,VERIFIED_PHOTO
+NAV232,890100000232,Everest Tikhalal Hot Red Chilli Powder 100g Value Pack,EVEREST,Spices,112,99,25,VERIFIED_PHOTO
+NAV233,890100000233,Everest Chhole Special Masala 100g Value Pack,EVEREST,Spices,153,135,25,VERIFIED_PHOTO
+NAV234,890100000234,Everest Kastoori Methi Leaves 50g Value Pack,EVEREST,Spices,76,67,25,VERIFIED_PHOTO
+NAV235,890100000235,Patanjali Pure Agmark Whole Cumin Jeera 200g Value Pack,PATANJALI,Spices,216,190,25,VERIFIED_PHOTO
+NAV236,890100000236,Patanjali Whole Mustard Seeds Rai 200g Value Pack,PATANJALI,Spices,81,71,25,VERIFIED_PHOTO
+NAV237,890100000237,Patanjali Carom Seeds Ajwain 200g Value Pack,PATANJALI,Spices,117,103,25,VERIFIED_PHOTO
+NAV238,890100000238,Patanjali Asafoetida Bandhani Hing 25g Value Pack,PATANJALI,Spices,94,83,25,VERIFIED_PHOTO
+NAV239,890100000239,LG Compounded Natural Asafoetida Powder 50g Value Pack,LG,Spices,158,139,25,VERIFIED_PHOTO
+NAV240,890100000240,Keya Authentic Italian Mixed Herbs Seasoning 45g Value Pack,KEYA,Spices,198,174,25,VERIFIED_PHOTO
+NAV241,890100000241,Safal Frozen Fresh Tender Green Peas 1kg Value Pack,SAFAL,Frozen Foods,288,253,25,VERIFIED_PHOTO
+NAV242,890100000242,Safal Frozen American Sweet Corn Kernels 500g Value Pack,SAFAL,Frozen Foods,153,135,25,VERIFIED_PHOTO
+NAV243,890100000243,Safal Frozen Mixed Country Vegetables 500g Value Pack,SAFAL,Frozen Foods,171,150,25,VERIFIED_PHOTO
+NAV244,890100000244,Amul Malai Fresh Frozen Paneer Block 500g Value Pack,AMUL,Frozen Foods,378,333,25,VERIFIED_PHOTO
+NAV245,890100000245,Mother Dairy Classic Frozen Paneer Cubes 200g Value Pack,MOTHER DAIRY,Frozen Foods,176,155,25,VERIFIED_PHOTO
+NAV246,890100000246,McCain Crispy French Fries Pack 420g Value Pack,MCCAIN,Frozen Foods,225,198,25,VERIFIED_PHOTO
+NAV247,890100000247,McCain Crunchy Aloo Tikki Patty 400g Value Pack,MCCAIN,Frozen Foods,234,206,25,VERIFIED_PHOTO
+NAV248,890100000248,McCain Veggie Burger Patty 360g Value Pack,MCCAIN,Frozen Foods,261,230,25,VERIFIED_PHOTO
+NAV249,890100000249,McCain Golden Smiles Mashed Potato Shapes 375g Value Pack,MCCAIN,Frozen Foods,243,214,25,VERIFIED_PHOTO
+NAV250,890100000250,Safal Frozen Soya Chaap Sticks 500g Value Pack,SAFAL,Frozen Foods,198,174,25,VERIFIED_PHOTO
+NAV251,890100000251,Madhur Pure Hygienic Sparkling Sugar 5kg Value Pack,MADHUR,Grocery & Staples,468,412,25,VERIFIED_PHOTO
+NAV252,890100000252,Madhur Refined Sulphur Free Sugar 1kg Value Pack,MADHUR,Grocery & Staples,97,85,25,VERIFIED_PHOTO
+NAV253,890100000253,Tata Tea Gold Rich Taste Leaves 500g Value Pack,TATA,Grocery & Staples,558,491,25,VERIFIED_PHOTO
+NAV254,890100000254,Tata Tea Premium Desh Ki Chai 500g Value Pack,TATA,Grocery & Staples,504,444,25,VERIFIED_PHOTO
+NAV255,890100000255,Brooke Bond Red Label Strong CTC Tea 500g Value Pack,RED LABEL,Grocery & Staples,531,467,25,VERIFIED_PHOTO
+NAV256,890100000256,Brooke Bond Red Label Natural Care Cardamom Ginger 500g Value Pack,RED LABEL,Grocery & Staples,612,539,25,VERIFIED_PHOTO
+NAV257,890100000257,Brooke Bond Taj Mahal Rich Fresh Tea 500g Value Pack,TAJ MAHAL,Grocery & Staples,702,618,25,VERIFIED_PHOTO
+NAV258,890100000258,Wagh Bakri Strong Premium Leaf Tea 500g Value Pack,WAGH BAKRI,Grocery & Staples,486,428,25,VERIFIED_PHOTO
+NAV259,890100000259,Nescafe Classic Pure Instant Coffee Jar 100g Value Pack,NESCAFE,Grocery & Staples,648,570,25,VERIFIED_PHOTO
+NAV260,890100000260,Bru Instant Roasted Coffee Chicory Blend Jar 100g Value Pack,BRU,Grocery & Staples,414,364,25,VERIFIED_PHOTO
+NAV261,890100000261,Bournvita Chocolate Nutrition Health Drink 1kg Value Pack,CADBURY,Grocery & Staples,792,697,25,VERIFIED_PHOTO
+NAV262,890100000262,Horlicks Classic Malt Health Nutrition Jar 1kg Value Pack,HORLICKS,Grocery & Staples,810,713,25,VERIFIED_PHOTO
+NAV263,890100000263,Boost Energy Chocolate Sports Health Drink 500g Value Pack,BOOST,Grocery & Staples,477,420,25,VERIFIED_PHOTO
+NAV264,890100000264,Rooh Afza Herbal Concentrated Syrup Sharbat 750ml Value Pack,HAMDARD,Grocery & Staples,333,293,25,VERIFIED_PHOTO
+NAV265,890100000265,Kissan Fresh Tomato Ketchup Bottle 1kg Value Pack,KISSAN,Grocery & Staples,261,230,25,VERIFIED_PHOTO
+NAV266,890100000266,Maggi Rich Tomato Sauce Pitcher Bottle 1kg Value Pack,MAGGI,Grocery & Staples,279,246,25,VERIFIED_PHOTO
+NAV267,890100000267,Kissan Mixed Fruit Sweet Jam Glass Jar 500g Value Pack,KISSAN,Grocery & Staples,306,269,25,VERIFIED_PHOTO
+NAV268,890100000268,Nutella Hazelnut Cocoa Creamy Bread Spread 350g Value Pack,NUTELLA,Grocery & Staples,738,649,25,VERIFIED_PHOTO
+NAV269,890100000269,Pintola All Natural Creamy Peanut Butter 1kg Value Pack,PINTOLA,Grocery & Staples,718,632,25,VERIFIED_PHOTO
+NAV270,890100000270,Dabur 100 Percent Pure Squeezy Honey 500g Value Pack,DABUR,Grocery & Staples,423,372,25,VERIFIED_PHOTO
+NAV271,890100000271,Maggi 2 Minute Masala Instant Noodles 12 Pack 840g Value Pack,MAGGI,Grocery & Staples,302,266,25,VERIFIED_PHOTO
+NAV272,890100000272,Yippee Mood Masala Instant Noodles 4 Pack 280g Value Pack,SUNFEAST,Grocery & Staples,108,95,25,VERIFIED_PHOTO
+NAV273,890100000273,Chings Secret Schezwan Noodles 4 Pack 240g Value Pack,CHINGS,Grocery & Staples,99,87,25,VERIFIED_PHOTO
+NAV274,890100000274,Parle G Original Glucose Biscuits Value Pack 800g Value Pack,PARLE,Grocery & Staples,162,143,25,VERIFIED_PHOTO
+NAV275,890100000275,Britannia Good Day Butter Cookies Multipack 600g Value Pack,BRITANNIA,Grocery & Staples,252,222,25,VERIFIED_PHOTO
+NAV276,890100000276,Britannia Good Day Cashew Almond Cookies 600g Value Pack,BRITANNIA,Grocery & Staples,270,238,25,VERIFIED_PHOTO
+NAV277,890100000277,Britannia Marie Gold Crisp Tea Biscuits 1kg Value Pack,BRITANNIA,Grocery & Staples,261,230,25,VERIFIED_PHOTO
+NAV278,890100000278,Sunfeast Dark Fantasy Choco Fills Multipack 300g Value Pack,SUNFEAST,Grocery & Staples,288,253,25,VERIFIED_PHOTO
+NAV279,890100000279,Oreo Original Vanilla Creme Sandwich Biscuits 300g Value Pack,CADBURY,Grocery & Staples,171,150,25,VERIFIED_PHOTO
+NAV280,890100000280,Britannia Bourbon Chocolate Cream Biscuits 300g Value Pack,BRITANNIA,Grocery & Staples,135,119,25,VERIFIED_PHOTO
+NAV281,890100000281,Britannia Milk Bikis Creamy Calcium Biscuits 400g Value Pack,BRITANNIA,Grocery & Staples,153,135,25,VERIFIED_PHOTO
+NAV282,890100000282,Haldirams Nagpur Aloo Bhujia Namkeen 1kg Value Pack,HALDIRAMS,Grocery & Staples,486,428,25,VERIFIED_PHOTO
+NAV283,890100000283,Haldirams Bhujia Sev Crispy Snack 1kg Value Pack,HALDIRAMS,Grocery & Staples,468,412,25,VERIFIED_PHOTO
+NAV284,890100000284,Haldirams All In One Mixture Spicy Snack 1kg Value Pack,HALDIRAMS,Grocery & Staples,495,436,25,VERIFIED_PHOTO
+NAV285,890100000285,Haldirams Moong Dal Salted Fried Lentil 400g Value Pack,HALDIRAMS,Grocery & Staples,261,230,25,VERIFIED_PHOTO
+NAV286,890100000286,Haldirams Khatta Meetha Sweet Sour Mixture 400g Value Pack,HALDIRAMS,Grocery & Staples,207,182,25,VERIFIED_PHOTO
+NAV287,890100000287,Lays India Magic Masala Potato Chips Party Pack 115g Value Pack,LAYS,Grocery & Staples,90,79,25,VERIFIED_PHOTO
+NAV288,890100000288,Kurkure Masala Munch Crunchy Spicy Snack 115g Value Pack,KURKURE,Grocery & Staples,90,79,25,VERIFIED_PHOTO
+NAV289,890100000289,Uncle Chipps Spicy Treat Salted Potato Chips 100g Value Pack,UNCLE CHIPPS,Grocery & Staples,90,79,25,VERIFIED_PHOTO
+NAV290,890100000290,Cadbury Dairy Milk Silk Chocolate Bar 150g Value Pack,CADBURY,Grocery & Staples,351,309,25,VERIFIED_PHOTO
+NAV291,890100000291,Surf Excel Easy Wash Detergent Powder Bag 5kg Value Pack,SURF EXCEL,Grocery & Staples,1224,1077,25,VERIFIED_PHOTO
+NAV292,890100000292,Surf Excel Matic Front Load Liquid Detergent 2L Value Pack,SURF EXCEL,Grocery & Staples,891,784,25,VERIFIED_PHOTO
+NAV293,890100000293,Ariel Complete Floral Fragrance Detergent Powder 4kg Value Pack,ARIEL,Grocery & Staples,1152,1014,25,VERIFIED_PHOTO
+NAV294,890100000294,Tide Plus Extra Power Lemon Mint Detergent 5kg Value Pack,TIDE,Grocery & Staples,1044,919,25,VERIFIED_PHOTO
+NAV295,890100000295,Rin Advanced Fresh Crisp Detergent Powder 4kg Value Pack,RIN,Grocery & Staples,702,618,25,VERIFIED_PHOTO
+NAV296,890100000296,Comfort After Wash Fabric Softener Lily Blue 2L Value Pack,COMFORT,Grocery & Staples,792,697,25,VERIFIED_PHOTO
+NAV297,890100000297,Vim Dishwash Liquid Gel Lemon Concentrate 2L Value Pack,VIM,Grocery & Staples,718,632,25,VERIFIED_PHOTO
+NAV298,890100000298,Vim Dishwash Lemon Fragrance Bar Tub 500g Value Pack,VIM,Grocery & Staples,72,63,25,VERIFIED_PHOTO
+NAV299,890100000299,Exo Round Anti Bacterial Touch Dishwash Bar 500g Value Pack,EXO,Grocery & Staples,76,67,25,VERIFIED_PHOTO
+NAV300,890100000300,Pril Kraft Concentrated Dishwash Liquid Green Lime 750ml Value Pack,PRIL,Grocery & Staples,342,301,25,VERIFIED_PHOTO
+NAV301,890100000301,Harpic Power Plus Disinfectant Toilet Cleaner Original 1L Value Pack,HARPIC,Grocery & Staples,396,348,25,VERIFIED_PHOTO
+NAV302,890100000302,Lizol Disinfectant Surface Cleaner Citrus Floral 2L Value Pack,LIZOL,Grocery & Staples,711,626,25,VERIFIED_PHOTO
+NAV303,890100000303,Colin Glass and Appliance Shine Surface Cleaner 1L Value Pack,COLIN,Grocery & Staples,333,293,25,VERIFIED_PHOTO
+NAV304,890100000304,Dettol Original Anti Bacterial Liquid Antiseptic 1L Value Pack,DETTOL,Grocery & Staples,718,632,25,VERIFIED_PHOTO
+NAV305,890100000305,Savlon Moisture Shield Anti Bacterial Liquid 1L Value Pack,SAVLON,Grocery & Staples,612,539,25,VERIFIED_PHOTO
+NAV306,890100000306,Dettol Original Germ Protection Bathing Soap 4x125g Value Pack,DETTOL,Grocery & Staples,432,380,25,VERIFIED_PHOTO
+NAV307,890100000307,Lifebuoy Total 10 Infection Defense Bathing Soap 4x125g Value Pack,LIFEBUOY,Grocery & Staples,342,301,25,VERIFIED_PHOTO
+NAV308,890100000308,Dove Cream Beauty Bathing Bar Moisturizing Soap 3x125g Value Pack,DOVE,Grocery & Staples,522,459,25,VERIFIED_PHOTO

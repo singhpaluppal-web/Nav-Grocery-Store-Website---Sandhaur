@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --brand-green: #0F3D28;
+  --brand-green-deep: #0A2A1B;
+  --brand-cream: #F8F7F2;
+  --brand-surface: #FFFFFF;
+  --brand-gold: #E6A817;
+  --brand-ink: #14221B;
+  --brand-muted: #526058;
+}
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #F8F7F2;
+    color: #14221B;
+    scroll-behavior: smooth;
+  }
+
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .font-mono-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes shimmerSweep {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    #EFECE2 0%,
+    #F8F7F2 45%,
+    #EFECE2 90%
+  );
+  background-size: 200% 100%;
+  animation: shimmerSweep 1.35s ease-in-out infinite;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

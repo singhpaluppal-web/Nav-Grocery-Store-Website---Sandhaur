@@ -1,0 +1,2165 @@
+﻿{
+    "store":  "Nav Grocery Store",
+    "location":  "Sandhaur, Punjab",
+    "website":  "www.navgrocerystore.com",
+    "phone":  "8847370905",
+    "total_products":  308,
+    "products":  [
+                     {
+                         "SKU":  "001",
+                         "Image":  "001.png",
+                         "Item Name":  "Aashirvaad Whole Wheat Atta",
+                         "Pack Size":  "5 kg",
+                         "Price_INR":  275
+                     },
+                     {
+                         "SKU":  "002",
+                         "Image":  "002.png",
+                         "Item Name":  "Aashirvaad Select Sharbati Atta",
+                         "Pack Size":  "5 kg",
+                         "Price_INR":  335
+                     },
+                     {
+                         "SKU":  "003",
+                         "Image":  "003.png",
+                         "Item Name":  "Pillsbury Chakki Fresh Atta",
+                         "Pack Size":  "5 kg",
+                         "Price_INR":  265
+                     },
+                     {
+                         "SKU":  "004",
+                         "Image":  "004.png",
+                         "Item Name":  "Nature Fresh Sampoorna Atta",
+                         "Pack Size":  "5 kg",
+                         "Price_INR":  285
+                     },
+                     {
+                         "SKU":  "005",
+                         "Image":  "005.png",
+                         "Item Name":  "Premium Whole Wheat Sharbati Atta",
+                         "Pack Size":  "5 kg",
+                         "Price_INR":  270
+                     },
+                     {
+                         "SKU":  "006",
+                         "Image":  "006.png",
+                         "Item Name":  "Nav Store Multi-Grain Atta",
+                         "Pack Size":  "5 kg",
+                         "Price_INR":  295
+                     },
+                     {
+                         "SKU":  "007",
+                         "Image":  "007.png",
+                         "Item Name":  "India Gate Classic Basmati Rice",
+                         "Pack Size":  "5 kg",
+                         "Price_INR":  620
+                     },
+                     {
+                         "SKU":  "008",
+                         "Image":  "008.png",
+                         "Item Name":  "India Gate Dubar Basmati Rice",
+                         "Pack Size":  "5 kg",
+                         "Price_INR":  545
+                     },
+                     {
+                         "SKU":  "009",
+                         "Image":  "009.png",
+                         "Item Name":  "Daawat Rozana Gold Basmati",
+                         "Pack Size":  "5 kg",
+                         "Price_INR":  575
+                     },
+                     {
+                         "SKU":  "010",
+                         "Image":  "010.png",
+                         "Item Name":  "Daawat Traditional Basmati",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  135
+                     },
+                     {
+                         "SKU":  "011",
+                         "Image":  "011.png",
+                         "Item Name":  "Nav Store Premium Basmati",
+                         "Pack Size":  "5 kg",
+                         "Price_INR":  549
+                     },
+                     {
+                         "SKU":  "012",
+                         "Image":  "012.png",
+                         "Item Name":  "Nav Store Daily Cooking Rice",
+                         "Pack Size":  "10 kg",
+                         "Price_INR":  620
+                     },
+                     {
+                         "SKU":  "013",
+                         "Image":  "013.png",
+                         "Item Name":  "Premium Toor Dal Arhar",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  165
+                     },
+                     {
+                         "SKU":  "014",
+                         "Image":  "014.png",
+                         "Item Name":  "Moong Dal Dhuli",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  145
+                     },
+                     {
+                         "SKU":  "015",
+                         "Image":  "015.png",
+                         "Item Name":  "Moong Dal Chilka",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  138
+                     },
+                     {
+                         "SKU":  "016",
+                         "Image":  "016.png",
+                         "Item Name":  "Masoor Dal",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  118
+                     },
+                     {
+                         "SKU":  "017",
+                         "Image":  "017.png",
+                         "Item Name":  "Nav Special Premium Chana Dal",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  110
+                     },
+                     {
+                         "SKU":  "018",
+                         "Image":  "018.png",
+                         "Item Name":  "Urad Dal Dhuli",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  175
+                     },
+                     {
+                         "SKU":  "019",
+                         "Image":  "019.png",
+                         "Item Name":  "Rajma Chitra",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  165
+                     },
+                     {
+                         "SKU":  "020",
+                         "Image":  "020.png",
+                         "Item Name":  "Kabuli Chana",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  130
+                     },
+                     {
+                         "SKU":  "021",
+                         "Image":  "021.png",
+                         "Item Name":  "Lobia Black Eyed Beans",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  68
+                     },
+                     {
+                         "SKU":  "022",
+                         "Image":  "022.png",
+                         "Item Name":  "Gram Flour Besan",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  68
+                     },
+                     {
+                         "SKU":  "023",
+                         "Image":  "023.png",
+                         "Item Name":  "Refined Flour Maida",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  52
+                     },
+                     {
+                         "SKU":  "024",
+                         "Image":  "024.png",
+                         "Item Name":  "Semolina Sooji",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  38
+                     },
+                     {
+                         "SKU":  "025",
+                         "Image":  "025.png",
+                         "Item Name":  "Bajra Flour",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  62
+                     },
+                     {
+                         "SKU":  "026",
+                         "Image":  "026.png",
+                         "Item Name":  "Makki Atta Maize Flour",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  58
+                     },
+                     {
+                         "SKU":  "027",
+                         "Image":  "027.png",
+                         "Item Name":  "Jowar Atta",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  68
+                     },
+                     {
+                         "SKU":  "028",
+                         "Image":  "028.png",
+                         "Item Name":  "Ragi Flour",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  55
+                     },
+                     {
+                         "SKU":  "029",
+                         "Image":  "029.png",
+                         "Item Name":  "Weikfield Gluten Free Corn Starch",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  40
+                     },
+                     {
+                         "SKU":  "030",
+                         "Image":  "030.png",
+                         "Item Name":  "MDH Soyatein Textured Soy Granules",
+                         "Pack Size":  "200 g",
+                         "Price_INR":  50
+                     },
+                     {
+                         "SKU":  "031",
+                         "Image":  "031.png",
+                         "Item Name":  "Refined Sugar",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  48
+                     },
+                     {
+                         "SKU":  "032",
+                         "Image":  "032.png",
+                         "Item Name":  "Tata Salt Iodised",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  28
+                     },
+                     {
+                         "SKU":  "033",
+                         "Image":  "033.png",
+                         "Item Name":  "Dairy Mohan Pure Desi Ghee",
+                         "Pack Size":  "1 Litre",
+                         "Price_INR":  580
+                     },
+                     {
+                         "SKU":  "034",
+                         "Image":  "034.png",
+                         "Item Name":  "Amul Pure Cow Ghee",
+                         "Pack Size":  "1 Litre",
+                         "Price_INR":  620
+                     },
+                     {
+                         "SKU":  "035",
+                         "Image":  "035.png",
+                         "Item Name":  "Verka Pure Desi Ghee",
+                         "Pack Size":  "1 Litre",
+                         "Price_INR":  595
+                     },
+                     {
+                         "SKU":  "036",
+                         "Image":  "036.png",
+                         "Item Name":  "Nav Premium 100% Desi Ghee",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  690
+                     },
+                     {
+                         "SKU":  "037",
+                         "Image":  "037.png",
+                         "Item Name":  "Milkfood Desi Ghee Tin",
+                         "Pack Size":  "1 Litre",
+                         "Price_INR":  640
+                     },
+                     {
+                         "SKU":  "038",
+                         "Image":  "038.png",
+                         "Item Name":  "Nav Desi Ghee Bulk Tin",
+                         "Pack Size":  "5 Litre",
+                         "Price_INR":  3100
+                     },
+                     {
+                         "SKU":  "039",
+                         "Image":  "039.png",
+                         "Item Name":  "Kachi Ghani Mustard Oil",
+                         "Pack Size":  "1 Litre",
+                         "Price_INR":  172
+                     },
+                     {
+                         "SKU":  "040",
+                         "Image":  "040.png",
+                         "Item Name":  "Fortune Kachi Ghani Mustard Oil",
+                         "Pack Size":  "1 Litre",
+                         "Price_INR":  185
+                     },
+                     {
+                         "SKU":  "041",
+                         "Image":  "041.png",
+                         "Item Name":  "Saffola Gold Blended Oil",
+                         "Pack Size":  "1 Litre",
+                         "Price_INR":  195
+                     },
+                     {
+                         "SKU":  "042",
+                         "Image":  "042.png",
+                         "Item Name":  "Fortune Refined Sunflower Oil",
+                         "Pack Size":  "1 Litre",
+                         "Price_INR":  148
+                     },
+                     {
+                         "SKU":  "043",
+                         "Image":  "043.png",
+                         "Item Name":  "Saffola Active Oil",
+                         "Pack Size":  "1 Litre",
+                         "Price_INR":  165
+                     },
+                     {
+                         "SKU":  "044",
+                         "Image":  "044.png",
+                         "Item Name":  "Refined Soyabean Oil",
+                         "Pack Size":  "1 Litre",
+                         "Price_INR":  142
+                     },
+                     {
+                         "SKU":  "045",
+                         "Image":  "045.png",
+                         "Item Name":  "Filtered Groundnut Oil",
+                         "Pack Size":  "1 Litre",
+                         "Price_INR":  198
+                     },
+                     {
+                         "SKU":  "046",
+                         "Image":  "046.png",
+                         "Item Name":  "Parachute Coconut Oil",
+                         "Pack Size":  "500 ml",
+                         "Price_INR":  210
+                     },
+                     {
+                         "SKU":  "047",
+                         "Image":  "047.png",
+                         "Item Name":  "Rice Bran Oil",
+                         "Pack Size":  "1 Litre",
+                         "Price_INR":  175
+                     },
+                     {
+                         "SKU":  "048",
+                         "Image":  "048.png",
+                         "Item Name":  "Extra Virgin Olive Oil",
+                         "Pack Size":  "500 ml",
+                         "Price_INR":  620
+                     },
+                     {
+                         "SKU":  "049",
+                         "Image":  "049.png",
+                         "Item Name":  "Refined Oil Family Jar",
+                         "Pack Size":  "5 Litre",
+                         "Price_INR":  720
+                     },
+                     {
+                         "SKU":  "050",
+                         "Image":  "050.png",
+                         "Item Name":  "Nav Desi Ghee Jar",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  355
+                     },
+                     {
+                         "SKU":  "051",
+                         "Image":  "051.png",
+                         "Item Name":  "Dalda Vanaspati Ghee",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  165
+                     },
+                     {
+                         "SKU":  "052",
+                         "Image":  "052.png",
+                         "Item Name":  "Kachi Ghani Mustard Oil Bulk",
+                         "Pack Size":  "5 Litre",
+                         "Price_INR":  830
+                     },
+                     {
+                         "SKU":  "053",
+                         "Image":  "053.png",
+                         "Item Name":  "Til Sesame Oil",
+                         "Pack Size":  "500 ml",
+                         "Price_INR":  175
+                     },
+                     {
+                         "SKU":  "054",
+                         "Image":  "054.png",
+                         "Item Name":  "Amul Cow Ghee Small Jar",
+                         "Pack Size":  "200 ml",
+                         "Price_INR":  145
+                     },
+                     {
+                         "SKU":  "055",
+                         "Image":  "055.png",
+                         "Item Name":  "MDH Deggi Mirch",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  65
+                     },
+                     {
+                         "SKU":  "056",
+                         "Image":  "056.png",
+                         "Item Name":  "MDH Garam Masala",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  72
+                     },
+                     {
+                         "SKU":  "057",
+                         "Image":  "057.png",
+                         "Item Name":  "MDH Chana Masala",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  62
+                     },
+                     {
+                         "SKU":  "058",
+                         "Image":  "058.png",
+                         "Item Name":  "MDH Kitchen King Masala",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  78
+                     },
+                     {
+                         "SKU":  "059",
+                         "Image":  "059.png",
+                         "Item Name":  "MDH Sambar Masala",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  60
+                     },
+                     {
+                         "SKU":  "060",
+                         "Image":  "060.png",
+                         "Item Name":  "MDH Pav Bhaji Masala",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  65
+                     },
+                     {
+                         "SKU":  "061",
+                         "Image":  "061.png",
+                         "Item Name":  "Everest Turmeric Powder",
+                         "Pack Size":  "200 g",
+                         "Price_INR":  72
+                     },
+                     {
+                         "SKU":  "062",
+                         "Image":  "062.png",
+                         "Item Name":  "Everest Coriander Powder",
+                         "Pack Size":  "200 g",
+                         "Price_INR":  55
+                     },
+                     {
+                         "SKU":  "063",
+                         "Image":  "063.png",
+                         "Item Name":  "Everest Garam Masala",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  78
+                     },
+                     {
+                         "SKU":  "064",
+                         "Image":  "064.png",
+                         "Item Name":  "Everest Chicken Masala",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  75
+                     },
+                     {
+                         "SKU":  "065",
+                         "Image":  "065.png",
+                         "Item Name":  "Catch Sprinkler Table Black Salt",
+                         "Pack Size":  "200 g",
+                         "Price_INR":  45
+                     },
+                     {
+                         "SKU":  "066",
+                         "Image":  "066.png",
+                         "Item Name":  "Catch Sprinkler Chaat Masala",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  42
+                     },
+                     {
+                         "SKU":  "067",
+                         "Image":  "067.png",
+                         "Item Name":  "Catch Sprinkler Black Pepper",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  95
+                     },
+                     {
+                         "SKU":  "068",
+                         "Image":  "068.png",
+                         "Item Name":  "Tata Rock Salt",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  35
+                     },
+                     {
+                         "SKU":  "069",
+                         "Image":  "069.png",
+                         "Item Name":  "Cumin Seeds Jeera",
+                         "Pack Size":  "200 g",
+                         "Price_INR":  96
+                     },
+                     {
+                         "SKU":  "070",
+                         "Image":  "070.png",
+                         "Item Name":  "Mustard Seeds Rai",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  25
+                     },
+                     {
+                         "SKU":  "071",
+                         "Image":  "071.png",
+                         "Item Name":  "Fenugreek Seeds Methi",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  30
+                     },
+                     {
+                         "SKU":  "072",
+                         "Image":  "072.png",
+                         "Item Name":  "Hing Asafoetida",
+                         "Pack Size":  "50 g",
+                         "Price_INR":  88
+                     },
+                     {
+                         "SKU":  "073",
+                         "Image":  "073.png",
+                         "Item Name":  "Black Pepper Whole",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  130
+                     },
+                     {
+                         "SKU":  "074",
+                         "Image":  "074.png",
+                         "Item Name":  "Green Cardamom",
+                         "Pack Size":  "50 g",
+                         "Price_INR":  175
+                     },
+                     {
+                         "SKU":  "075",
+                         "Image":  "075.png",
+                         "Item Name":  "Cloves Laung",
+                         "Pack Size":  "50 g",
+                         "Price_INR":  95
+                     },
+                     {
+                         "SKU":  "076",
+                         "Image":  "076.png",
+                         "Item Name":  "Cinnamon Sticks Dalchini",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  78
+                     },
+                     {
+                         "SKU":  "077",
+                         "Image":  "077.png",
+                         "Item Name":  "Bay Leaves Tej Patta",
+                         "Pack Size":  "50 g",
+                         "Price_INR":  32
+                     },
+                     {
+                         "SKU":  "078",
+                         "Image":  "078.png",
+                         "Item Name":  "Carom Seeds Ajwain",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  28
+                     },
+                     {
+                         "SKU":  "079",
+                         "Image":  "079.png",
+                         "Item Name":  "Frozen Green Peas",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  88
+                     },
+                     {
+                         "SKU":  "080",
+                         "Image":  "080.png",
+                         "Item Name":  "Frozen Sweet Corn",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  95
+                     },
+                     {
+                         "SKU":  "081",
+                         "Image":  "081.png",
+                         "Item Name":  "Frozen Mix Vegetables",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  98
+                     },
+                     {
+                         "SKU":  "082",
+                         "Image":  "082.png",
+                         "Item Name":  "Frozen French Fries",
+                         "Pack Size":  "750 g",
+                         "Price_INR":  175
+                     },
+                     {
+                         "SKU":  "083",
+                         "Image":  "083.png",
+                         "Item Name":  "Frozen Aloo Tikki",
+                         "Pack Size":  "400 g",
+                         "Price_INR":  130
+                     },
+                     {
+                         "SKU":  "084",
+                         "Image":  "084.png",
+                         "Item Name":  "Frozen Malabar Paratha",
+                         "Pack Size":  "5 pcs",
+                         "Price_INR":  105
+                     },
+                     {
+                         "SKU":  "085",
+                         "Image":  "085.png",
+                         "Item Name":  "Frozen Lachha Paratha",
+                         "Pack Size":  "4 pcs",
+                         "Price_INR":  99
+                     },
+                     {
+                         "SKU":  "086",
+                         "Image":  "086.png",
+                         "Item Name":  "Veg Nuggets",
+                         "Pack Size":  "400 g",
+                         "Price_INR":  165
+                     },
+                     {
+                         "SKU":  "087",
+                         "Image":  "087.png",
+                         "Item Name":  "Veg Spring Rolls",
+                         "Pack Size":  "400 g",
+                         "Price_INR":  155
+                     },
+                     {
+                         "SKU":  "088",
+                         "Image":  "088.png",
+                         "Item Name":  "Pani Puri Magic Treat Kit",
+                         "Pack Size":  "220 g",
+                         "Price_INR":  55
+                     },
+                     {
+                         "SKU":  "089",
+                         "Image":  "089.png",
+                         "Item Name":  "Frozen Veg Momos",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  145
+                     },
+                     {
+                         "SKU":  "090",
+                         "Image":  "090.png",
+                         "Item Name":  "Frozen Pizza Base",
+                         "Pack Size":  "2 pcs",
+                         "Price_INR":  58
+                     },
+                     {
+                         "SKU":  "091",
+                         "Image":  "091.png",
+                         "Item Name":  "Frozen Punjabi Samosa",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  138
+                     },
+                     {
+                         "SKU":  "092",
+                         "Image":  "092.png",
+                         "Item Name":  "Cheese Corn Balls",
+                         "Pack Size":  "400 g",
+                         "Price_INR":  175
+                     },
+                     {
+                         "SKU":  "093",
+                         "Image":  "093.png",
+                         "Item Name":  "Vanilla Ice Cream Tub",
+                         "Pack Size":  "700 ml",
+                         "Price_INR":  185
+                     },
+                     {
+                         "SKU":  "094",
+                         "Image":  "094.png",
+                         "Item Name":  "Chocolate Ice Cream Tub",
+                         "Pack Size":  "700 ml",
+                         "Price_INR":  195
+                     },
+                     {
+                         "SKU":  "095",
+                         "Image":  "095.png",
+                         "Item Name":  "Malai Kulfi Sticks",
+                         "Pack Size":  "4 pcs",
+                         "Price_INR":  120
+                     },
+                     {
+                         "SKU":  "096",
+                         "Image":  "096.png",
+                         "Item Name":  "Frozen Mixed Berries",
+                         "Pack Size":  "300 g",
+                         "Price_INR":  245
+                     },
+                     {
+                         "SKU":  "097",
+                         "Image":  "097.png",
+                         "Item Name":  "Frozen Green Peas Family Pack",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  168
+                     },
+                     {
+                         "SKU":  "098",
+                         "Image":  "098.png",
+                         "Item Name":  "Frozen Spinach Puree",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  92
+                     },
+                     {
+                         "SKU":  "099",
+                         "Image":  "099.png",
+                         "Item Name":  "Frozen Cheese Slices",
+                         "Pack Size":  "200 g",
+                         "Price_INR":  135
+                     },
+                     {
+                         "SKU":  "100",
+                         "Image":  "100.png",
+                         "Item Name":  "Frozen Veg Pulao Mix",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  115
+                     },
+                     {
+                         "SKU":  "101",
+                         "Image":  "101.png",
+                         "Item Name":  "Kellogg\u0027s Corn Flakes",
+                         "Pack Size":  "475 g",
+                         "Price_INR":  195
+                     },
+                     {
+                         "SKU":  "102",
+                         "Image":  "102.png",
+                         "Item Name":  "Kellogg\u0027s Chocos",
+                         "Pack Size":  "375 g",
+                         "Price_INR":  185
+                     },
+                     {
+                         "SKU":  "103",
+                         "Image":  "103.png",
+                         "Item Name":  "Savour Whole Grain White Oats",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  95
+                     },
+                     {
+                         "SKU":  "104",
+                         "Image":  "104.png",
+                         "Item Name":  "Quaker Oats",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  110
+                     },
+                     {
+                         "SKU":  "105",
+                         "Image":  "105.png",
+                         "Item Name":  "Bagrry\u0027s Corn Flakes",
+                         "Pack Size":  "475 g",
+                         "Price_INR":  175
+                     },
+                     {
+                         "SKU":  "106",
+                         "Image":  "106.png",
+                         "Item Name":  "Fruit Nut Muesli",
+                         "Pack Size":  "400 g",
+                         "Price_INR":  245
+                     },
+                     {
+                         "SKU":  "107",
+                         "Image":  "107.png",
+                         "Item Name":  "Bregano Suji Elbow Macaroni",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  55
+                     },
+                     {
+                         "SKU":  "108",
+                         "Image":  "108.png",
+                         "Item Name":  "Bregano Penne Pasta",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  58
+                     },
+                     {
+                         "SKU":  "109",
+                         "Image":  "109.png",
+                         "Item Name":  "Bambino Elbow Macaroni",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  52
+                     },
+                     {
+                         "SKU":  "110",
+                         "Image":  "110.png",
+                         "Item Name":  "Maggi 2-Minute Noodles 12 Pack",
+                         "Pack Size":  "12x70 g",
+                         "Price_INR":  168
+                     },
+                     {
+                         "SKU":  "111",
+                         "Image":  "111.png",
+                         "Item Name":  "Maggi Masala Noodles",
+                         "Pack Size":  "280 g",
+                         "Price_INR":  48
+                     },
+                     {
+                         "SKU":  "112",
+                         "Image":  "112.png",
+                         "Item Name":  "Sunfeast Yippee Noodles",
+                         "Pack Size":  "4x70 g",
+                         "Price_INR":  60
+                     },
+                     {
+                         "SKU":  "113",
+                         "Image":  "113.png",
+                         "Item Name":  "Top Ramen Curry Noodles",
+                         "Pack Size":  "4 pack",
+                         "Price_INR":  56
+                     },
+                     {
+                         "SKU":  "114",
+                         "Image":  "114.png",
+                         "Item Name":  "Knorr Classic Soup Combo",
+                         "Pack Size":  "4 pack",
+                         "Price_INR":  120
+                     },
+                     {
+                         "SKU":  "115",
+                         "Image":  "115.png",
+                         "Item Name":  "Ching\u0027s Secret Hot Sour Soup",
+                         "Pack Size":  "2 pack",
+                         "Price_INR":  62
+                     },
+                     {
+                         "SKU":  "116",
+                         "Image":  "116.png",
+                         "Item Name":  "Red Pasta Sauce",
+                         "Pack Size":  "400 g",
+                         "Price_INR":  115
+                     },
+                     {
+                         "SKU":  "117",
+                         "Image":  "117.png",
+                         "Item Name":  "Bambino Vermicelli",
+                         "Pack Size":  "400 g",
+                         "Price_INR":  42
+                     },
+                     {
+                         "SKU":  "118",
+                         "Image":  "118.png",
+                         "Item Name":  "Poha Flattened Rice",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  38
+                     },
+                     {
+                         "SKU":  "119",
+                         "Image":  "119.png",
+                         "Item Name":  "Daliya Broken Wheat",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  42
+                     },
+                     {
+                         "SKU":  "120",
+                         "Image":  "120.png",
+                         "Item Name":  "Idli Rava",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  45
+                     },
+                     {
+                         "SKU":  "121",
+                         "Image":  "121.png",
+                         "Item Name":  "Universal Aloo Bukhara Sharbat",
+                         "Pack Size":  "750 ml",
+                         "Price_INR":  290
+                     },
+                     {
+                         "SKU":  "122",
+                         "Image":  "122.png",
+                         "Item Name":  "Rooh Afza Sharbat",
+                         "Pack Size":  "750 ml",
+                         "Price_INR":  175
+                     },
+                     {
+                         "SKU":  "123",
+                         "Image":  "123.png",
+                         "Item Name":  "Rasna Orange Instant Drink Mix",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  145
+                     },
+                     {
+                         "SKU":  "124",
+                         "Image":  "124.png",
+                         "Item Name":  "Rasna Mango Instant Drink Mix",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  145
+                     },
+                     {
+                         "SKU":  "125",
+                         "Image":  "125.png",
+                         "Item Name":  "Campa Power Up Energy Drink",
+                         "Pack Size":  "250 ml",
+                         "Price_INR":  20
+                     },
+                     {
+                         "SKU":  "126",
+                         "Image":  "126.png",
+                         "Item Name":  "Hell Energy Drink Classic",
+                         "Pack Size":  "250 ml",
+                         "Price_INR":  60
+                     },
+                     {
+                         "SKU":  "127",
+                         "Image":  "127.png",
+                         "Item Name":  "Sting Energy Drink",
+                         "Pack Size":  "250 ml",
+                         "Price_INR":  25
+                     },
+                     {
+                         "SKU":  "128",
+                         "Image":  "128.png",
+                         "Item Name":  "Red Bull Energy Drink",
+                         "Pack Size":  "250 ml",
+                         "Price_INR":  125
+                     },
+                     {
+                         "SKU":  "129",
+                         "Image":  "129.png",
+                         "Item Name":  "Monster Energy Drink",
+                         "Pack Size":  "350 ml",
+                         "Price_INR":  145
+                     },
+                     {
+                         "SKU":  "130",
+                         "Image":  "130.png",
+                         "Item Name":  "Coca-Cola",
+                         "Pack Size":  "750 ml",
+                         "Price_INR":  42
+                     },
+                     {
+                         "SKU":  "131",
+                         "Image":  "131.png",
+                         "Item Name":  "Pepsi",
+                         "Pack Size":  "750 ml",
+                         "Price_INR":  42
+                     },
+                     {
+                         "SKU":  "132",
+                         "Image":  "132.png",
+                         "Item Name":  "Sprite",
+                         "Pack Size":  "750 ml",
+                         "Price_INR":  42
+                     },
+                     {
+                         "SKU":  "133",
+                         "Image":  "133.png",
+                         "Item Name":  "Thums Up",
+                         "Pack Size":  "750 ml",
+                         "Price_INR":  42
+                     },
+                     {
+                         "SKU":  "134",
+                         "Image":  "134.png",
+                         "Item Name":  "Fanta Orange",
+                         "Pack Size":  "750 ml",
+                         "Price_INR":  42
+                     },
+                     {
+                         "SKU":  "135",
+                         "Image":  "135.png",
+                         "Item Name":  "Limca",
+                         "Pack Size":  "750 ml",
+                         "Price_INR":  40
+                     },
+                     {
+                         "SKU":  "136",
+                         "Image":  "136.png",
+                         "Item Name":  "Real Orange Juice",
+                         "Pack Size":  "1 L",
+                         "Price_INR":  118
+                     },
+                     {
+                         "SKU":  "137",
+                         "Image":  "137.png",
+                         "Item Name":  "Real Mixed Fruit Juice",
+                         "Pack Size":  "1 L",
+                         "Price_INR":  125
+                     },
+                     {
+                         "SKU":  "138",
+                         "Image":  "138.png",
+                         "Item Name":  "Tropicana Orange Juice",
+                         "Pack Size":  "1 L",
+                         "Price_INR":  135
+                     },
+                     {
+                         "SKU":  "139",
+                         "Image":  "139.png",
+                         "Item Name":  "Mango Juice Drink",
+                         "Pack Size":  "1 L",
+                         "Price_INR":  92
+                     },
+                     {
+                         "SKU":  "140",
+                         "Image":  "140.png",
+                         "Item Name":  "Packaged Tender Coconut Water",
+                         "Pack Size":  "200 ml",
+                         "Price_INR":  45
+                     },
+                     {
+                         "SKU":  "141",
+                         "Image":  "141.png",
+                         "Item Name":  "Packaged Soda Water",
+                         "Pack Size":  "750 ml",
+                         "Price_INR":  25
+                     },
+                     {
+                         "SKU":  "142",
+                         "Image":  "142.png",
+                         "Item Name":  "Packaged Lemon Drink",
+                         "Pack Size":  "500 ml",
+                         "Price_INR":  35
+                     },
+                     {
+                         "SKU":  "143",
+                         "Image":  "143.png",
+                         "Item Name":  "Tata Tea Premium",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  265
+                     },
+                     {
+                         "SKU":  "144",
+                         "Image":  "144.png",
+                         "Item Name":  "Red Label Natural Care Tea",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  285
+                     },
+                     {
+                         "SKU":  "145",
+                         "Image":  "145.png",
+                         "Item Name":  "Society Masala Tea",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  310
+                     },
+                     {
+                         "SKU":  "146",
+                         "Image":  "146.png",
+                         "Item Name":  "Taj Mahal Tea",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  295
+                     },
+                     {
+                         "SKU":  "147",
+                         "Image":  "147.png",
+                         "Item Name":  "Green Tea Bags",
+                         "Pack Size":  "25 bags",
+                         "Price_INR":  215
+                     },
+                     {
+                         "SKU":  "148",
+                         "Image":  "148.png",
+                         "Item Name":  "Nestea Iced Tea Mix",
+                         "Pack Size":  "400 g",
+                         "Price_INR":  185
+                     },
+                     {
+                         "SKU":  "149",
+                         "Image":  "149.png",
+                         "Item Name":  "Nescafe Classic Coffee",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  285
+                     },
+                     {
+                         "SKU":  "150",
+                         "Image":  "150.png",
+                         "Item Name":  "Bru Instant Coffee",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  245
+                     },
+                     {
+                         "SKU":  "151",
+                         "Image":  "151.png",
+                         "Item Name":  "Nescafe Gold Coffee",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  445
+                     },
+                     {
+                         "SKU":  "152",
+                         "Image":  "152.png",
+                         "Item Name":  "Country Bean Instant Coffee",
+                         "Pack Size":  "60 g",
+                         "Price_INR":  385
+                     },
+                     {
+                         "SKU":  "153",
+                         "Image":  "153.png",
+                         "Item Name":  "Parle-G Biscuits",
+                         "Pack Size":  "800 g",
+                         "Price_INR":  90
+                     },
+                     {
+                         "SKU":  "154",
+                         "Image":  "154.png",
+                         "Item Name":  "Britannia Good Day Cashew",
+                         "Pack Size":  "600 g",
+                         "Price_INR":  115
+                     },
+                     {
+                         "SKU":  "155",
+                         "Image":  "155.png",
+                         "Item Name":  "Britannia Marie Gold",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  85
+                     },
+                     {
+                         "SKU":  "156",
+                         "Image":  "156.png",
+                         "Item Name":  "Oreo Chocolate Biscuits",
+                         "Pack Size":  "300 g",
+                         "Price_INR":  85
+                     },
+                     {
+                         "SKU":  "157",
+                         "Image":  "157.png",
+                         "Item Name":  "Sunfeast Dark Fantasy",
+                         "Pack Size":  "300 g",
+                         "Price_INR":  135
+                     },
+                     {
+                         "SKU":  "158",
+                         "Image":  "158.png",
+                         "Item Name":  "Cadbury Dairy Milk",
+                         "Pack Size":  "110 g",
+                         "Price_INR":  60
+                     },
+                     {
+                         "SKU":  "159",
+                         "Image":  "159.png",
+                         "Item Name":  "Cadbury Celebrations Pack",
+                         "Pack Size":  "180 g",
+                         "Price_INR":  195
+                     },
+                     {
+                         "SKU":  "160",
+                         "Image":  "160.png",
+                         "Item Name":  "Britannia Bread Loaf",
+                         "Pack Size":  "400 g",
+                         "Price_INR":  45
+                     },
+                     {
+                         "SKU":  "161",
+                         "Image":  "161.png",
+                         "Item Name":  "Nav Bakery Rusk Toast",
+                         "Pack Size":  "400 g",
+                         "Price_INR":  65
+                     },
+                     {
+                         "SKU":  "162",
+                         "Image":  "162.png",
+                         "Item Name":  "Haldiram Bhujia",
+                         "Pack Size":  "400 g",
+                         "Price_INR":  110
+                     },
+                     {
+                         "SKU":  "163",
+                         "Image":  "163.png",
+                         "Item Name":  "Lay\u0027s Classic Salted Chips",
+                         "Pack Size":  "90 g",
+                         "Price_INR":  40
+                     },
+                     {
+                         "SKU":  "164",
+                         "Image":  "164.png",
+                         "Item Name":  "Roasted Almonds",
+                         "Pack Size":  "250 g",
+                         "Price_INR":  285
+                     },
+                     {
+                         "SKU":  "165",
+                         "Image":  "165.png",
+                         "Item Name":  "Driishyam Incense Sticks Musk Lily",
+                         "Pack Size":  "1 pack",
+                         "Price_INR":  70
+                     },
+                     {
+                         "SKU":  "166",
+                         "Image":  "166.png",
+                         "Item Name":  "Driishyam Ever Green Premium Incense",
+                         "Pack Size":  "1 pack",
+                         "Price_INR":  70
+                     },
+                     {
+                         "SKU":  "167",
+                         "Image":  "167.png",
+                         "Item Name":  "Driishyam Sandal Incense Sticks",
+                         "Pack Size":  "1 pack",
+                         "Price_INR":  75
+                     },
+                     {
+                         "SKU":  "168",
+                         "Image":  "168.png",
+                         "Item Name":  "Cycle Pure Agarbatti",
+                         "Pack Size":  "1 pack",
+                         "Price_INR":  55
+                     },
+                     {
+                         "SKU":  "169",
+                         "Image":  "169.png",
+                         "Item Name":  "Mangaldeep Agarbatti",
+                         "Pack Size":  "1 pack",
+                         "Price_INR":  60
+                     },
+                     {
+                         "SKU":  "170",
+                         "Image":  "170.png",
+                         "Item Name":  "Satya Nag Champa Incense",
+                         "Pack Size":  "1 pack",
+                         "Price_INR":  95
+                     },
+                     {
+                         "SKU":  "171",
+                         "Image":  "171.png",
+                         "Item Name":  "Puja Deepak Oil",
+                         "Pack Size":  "500 ml",
+                         "Price_INR":  88
+                     },
+                     {
+                         "SKU":  "172",
+                         "Image":  "172.png",
+                         "Item Name":  "Puja Ghee Wicks Batti",
+                         "Pack Size":  "50 pcs",
+                         "Price_INR":  40
+                     },
+                     {
+                         "SKU":  "173",
+                         "Image":  "173.png",
+                         "Item Name":  "Puja Cotton Wicks",
+                         "Pack Size":  "100 pcs",
+                         "Price_INR":  35
+                     },
+                     {
+                         "SKU":  "174",
+                         "Image":  "174.png",
+                         "Item Name":  "Puja Camphor Kapoor",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  85
+                     },
+                     {
+                         "SKU":  "175",
+                         "Image":  "175.png",
+                         "Item Name":  "Havan Samagri Mix",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  145
+                     },
+                     {
+                         "SKU":  "176",
+                         "Image":  "176.png",
+                         "Item Name":  "Puja Roli Kalava Pack",
+                         "Pack Size":  "1 pack",
+                         "Price_INR":  30
+                     },
+                     {
+                         "SKU":  "177",
+                         "Image":  "177.png",
+                         "Item Name":  "Gangajal Bottle",
+                         "Pack Size":  "250 ml",
+                         "Price_INR":  45
+                     },
+                     {
+                         "SKU":  "178",
+                         "Image":  "178.png",
+                         "Item Name":  "Puja Thali Set",
+                         "Pack Size":  "1 set",
+                         "Price_INR":  385
+                     },
+                     {
+                         "SKU":  "179",
+                         "Image":  "179.png",
+                         "Item Name":  "Dhoop Cones Pack",
+                         "Pack Size":  "24 pcs",
+                         "Price_INR":  65
+                     },
+                     {
+                         "SKU":  "180",
+                         "Image":  "180.png",
+                         "Item Name":  "Sambrani Cup",
+                         "Pack Size":  "12 pcs",
+                         "Price_INR":  75
+                     },
+                     {
+                         "SKU":  "181",
+                         "Image":  "181.png",
+                         "Item Name":  "Puja Matchbox Bundle",
+                         "Pack Size":  "10 pcs",
+                         "Price_INR":  25
+                     },
+                     {
+                         "SKU":  "182",
+                         "Image":  "182.png",
+                         "Item Name":  "Aashirvaad Whole Wheat Atta",
+                         "Pack Size":  "10 kg Value Pack",
+                         "Price_INR":  530
+                     },
+                     {
+                         "SKU":  "183",
+                         "Image":  "183.png",
+                         "Item Name":  "Pillsbury Chakki Fresh Atta",
+                         "Pack Size":  "10 kg Value Pack",
+                         "Price_INR":  515
+                     },
+                     {
+                         "SKU":  "184",
+                         "Image":  "184.png",
+                         "Item Name":  "Fortune Sunlite Sunflower Oil",
+                         "Pack Size":  "5 Litre Can",
+                         "Price_INR":  730
+                     },
+                     {
+                         "SKU":  "185",
+                         "Image":  "185.png",
+                         "Item Name":  "Emami Healthy \u0026 Tasty Mustard Oil",
+                         "Pack Size":  "1 Litre",
+                         "Price_INR":  165
+                     },
+                     {
+                         "SKU":  "186",
+                         "Image":  "186.png",
+                         "Item Name":  "Dhara Mustard Oil",
+                         "Pack Size":  "1 Litre Pouch",
+                         "Price_INR":  160
+                     },
+                     {
+                         "SKU":  "187",
+                         "Image":  "187.png",
+                         "Item Name":  "Fortune Pure Mustard Oil",
+                         "Pack Size":  "1 Litre Bottle",
+                         "Price_INR":  175
+                     },
+                     {
+                         "SKU":  "188",
+                         "Image":  "188.png",
+                         "Item Name":  "Amul Taaza Homogenised Toned Milk",
+                         "Pack Size":  "1 Litre",
+                         "Price_INR":  74
+                     },
+                     {
+                         "SKU":  "189",
+                         "Image":  "189.png",
+                         "Item Name":  "Amul Gold Full Cream Milk",
+                         "Pack Size":  "1 Litre Tetra",
+                         "Price_INR":  82
+                     },
+                     {
+                         "SKU":  "190",
+                         "Image":  "190.png",
+                         "Item Name":  "Amul Malai Paneer",
+                         "Pack Size":  "200 g Pack",
+                         "Price_INR":  95
+                     },
+                     {
+                         "SKU":  "191",
+                         "Image":  "191.png",
+                         "Item Name":  "Amul Pasteurised Butter",
+                         "Pack Size":  "500 g Block",
+                         "Price_INR":  275
+                     },
+                     {
+                         "SKU":  "192",
+                         "Image":  "192.png",
+                         "Item Name":  "Amul Pasteurised Butter",
+                         "Pack Size":  "100 g Pack",
+                         "Price_INR":  58
+                     },
+                     {
+                         "SKU":  "193",
+                         "Image":  "193.png",
+                         "Item Name":  "Amul Delicious Table Margarine",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  125
+                     },
+                     {
+                         "SKU":  "194",
+                         "Image":  "194.png",
+                         "Item Name":  "Verka Pasteurised Table Butter",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  270
+                     },
+                     {
+                         "SKU":  "195",
+                         "Image":  "195.png",
+                         "Item Name":  "Mother Dairy Pure Ghee",
+                         "Pack Size":  "1 Litre Ceka Pack",
+                         "Price_INR":  610
+                     },
+                     {
+                         "SKU":  "196",
+                         "Image":  "196.png",
+                         "Item Name":  "Patanjali Cow Ghee",
+                         "Pack Size":  "1 Litre Tin",
+                         "Price_INR":  630
+                     },
+                     {
+                         "SKU":  "197",
+                         "Image":  "197.png",
+                         "Item Name":  "Tata Sampann High Protein Chana Dal",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  125
+                     },
+                     {
+                         "SKU":  "198",
+                         "Image":  "198.png",
+                         "Item Name":  "Tata Sampann Unpolished Toor Dal",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  175
+                     },
+                     {
+                         "SKU":  "199",
+                         "Image":  "199.png",
+                         "Item Name":  "Tata Sampann Moong Dal Dhuli",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  155
+                     },
+                     {
+                         "SKU":  "200",
+                         "Image":  "200.png",
+                         "Item Name":  "Tata Sampann Urad Dal",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  185
+                     },
+                     {
+                         "SKU":  "201",
+                         "Image":  "201.png",
+                         "Item Name":  "Fortune Biryani Special Basmati Rice",
+                         "Pack Size":  "5 kg",
+                         "Price_INR":  650
+                     },
+                     {
+                         "SKU":  "202",
+                         "Image":  "202.png",
+                         "Item Name":  "Kohinoor Super Silver Basmati Rice",
+                         "Pack Size":  "5 kg",
+                         "Price_INR":  590
+                     },
+                     {
+                         "SKU":  "203",
+                         "Image":  "203.png",
+                         "Item Name":  "Aeroplane White Sella Basmati Rice",
+                         "Pack Size":  "5 kg",
+                         "Price_INR":  560
+                     },
+                     {
+                         "SKU":  "204",
+                         "Image":  "204.png",
+                         "Item Name":  "Lal Qilla Traditional Basmati Rice",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  160
+                     },
+                     {
+                         "SKU":  "205",
+                         "Image":  "205.png",
+                         "Item Name":  "Tata Tea Gold",
+                         "Pack Size":  "500 g Pack",
+                         "Price_INR":  315
+                     },
+                     {
+                         "SKU":  "206",
+                         "Image":  "206.png",
+                         "Item Name":  "Tata Tea Agni",
+                         "Pack Size":  "500 g Value Pack",
+                         "Price_INR":  175
+                     },
+                     {
+                         "SKU":  "207",
+                         "Image":  "207.png",
+                         "Item Name":  "Wagh Bakri Premium Leaf Tea",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  290
+                     },
+                     {
+                         "SKU":  "208",
+                         "Image":  "208.png",
+                         "Item Name":  "Brooke Bond Taaza Tea",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  130
+                     },
+                     {
+                         "SKU":  "209",
+                         "Image":  "209.png",
+                         "Item Name":  "Lipton Clear Green Tea",
+                         "Pack Size":  "100 g Box",
+                         "Price_INR":  150
+                     },
+                     {
+                         "SKU":  "210",
+                         "Image":  "210.png",
+                         "Item Name":  "Nescafe Classic Dawn Jar",
+                         "Pack Size":  "50 g",
+                         "Price_INR":  155
+                     },
+                     {
+                         "SKU":  "211",
+                         "Image":  "211.png",
+                         "Item Name":  "Bru Gold 100% Pure Coffee",
+                         "Pack Size":  "100 g Jar",
+                         "Price_INR":  330
+                     },
+                     {
+                         "SKU":  "212",
+                         "Image":  "212.png",
+                         "Item Name":  "Tata Coffee Grand",
+                         "Pack Size":  "100 g Jar",
+                         "Price_INR":  240
+                     },
+                     {
+                         "SKU":  "213",
+                         "Image":  "213.png",
+                         "Item Name":  "Cadbury Bournvita Health Drink",
+                         "Pack Size":  "500 g Jar",
+                         "Price_INR":  245
+                     },
+                     {
+                         "SKU":  "214",
+                         "Image":  "214.png",
+                         "Item Name":  "Horlicks Classic Malt Jar",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  265
+                     },
+                     {
+                         "SKU":  "215",
+                         "Image":  "215.png",
+                         "Item Name":  "Boost Energy Drink Refill",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  260
+                     },
+                     {
+                         "SKU":  "216",
+                         "Image":  "216.png",
+                         "Item Name":  "Complan Royale Chocolate Refill",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  310
+                     },
+                     {
+                         "SKU":  "217",
+                         "Image":  "217.png",
+                         "Item Name":  "Kissan Fresh Tomato Ketchup",
+                         "Pack Size":  "950 g Squeezy",
+                         "Price_INR":  135
+                     },
+                     {
+                         "SKU":  "218",
+                         "Image":  "218.png",
+                         "Item Name":  "Maggi Rich Tomato Sauce",
+                         "Pack Size":  "1 kg Bottle",
+                         "Price_INR":  140
+                     },
+                     {
+                         "SKU":  "219",
+                         "Image":  "219.png",
+                         "Item Name":  "Ching\u0027s Secret Red Chilli Sauce",
+                         "Pack Size":  "200 g",
+                         "Price_INR":  55
+                     },
+                     {
+                         "SKU":  "220",
+                         "Image":  "220.png",
+                         "Item Name":  "Ching\u0027s Secret Dark Soy Sauce",
+                         "Pack Size":  "200 g",
+                         "Price_INR":  55
+                     },
+                     {
+                         "SKU":  "221",
+                         "Image":  "221.png",
+                         "Item Name":  "Ching\u0027s Secret Green Chilli Sauce",
+                         "Pack Size":  "200 g",
+                         "Price_INR":  55
+                     },
+                     {
+                         "SKU":  "222",
+                         "Image":  "222.png",
+                         "Item Name":  "Tops Mixed Fruit Jam",
+                         "Pack Size":  "500 g Jar",
+                         "Price_INR":  135
+                     },
+                     {
+                         "SKU":  "223",
+                         "Image":  "223.png",
+                         "Item Name":  "Patanjali Mixed Fruit Jam",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  120
+                     },
+                     {
+                         "SKU":  "224",
+                         "Image":  "224.png",
+                         "Item Name":  "Sundrop Peanut Butter Crunchy",
+                         "Pack Size":  "462 g",
+                         "Price_INR":  175
+                     },
+                     {
+                         "SKU":  "225",
+                         "Image":  "225.png",
+                         "Item Name":  "Pintola All Natural Peanut Butter",
+                         "Pack Size":  "350 g",
+                         "Price_INR":  199
+                     },
+                     {
+                         "SKU":  "226",
+                         "Image":  "226.png",
+                         "Item Name":  "Dabur 100% Pure Honey Squeezy",
+                         "Pack Size":  "400 g",
+                         "Price_INR":  195
+                     },
+                     {
+                         "SKU":  "227",
+                         "Image":  "227.png",
+                         "Item Name":  "Patanjali Pure Honey",
+                         "Pack Size":  "500 g Jar",
+                         "Price_INR":  165
+                     },
+                     {
+                         "SKU":  "228",
+                         "Image":  "228.png",
+                         "Item Name":  "Nutella Hazelnut Cocoa Spread",
+                         "Pack Size":  "350 g Jar",
+                         "Price_INR":  380
+                     },
+                     {
+                         "SKU":  "229",
+                         "Image":  "229.png",
+                         "Item Name":  "Hershey\u0027s Chocolate Syrup",
+                         "Pack Size":  "623 g Bottle",
+                         "Price_INR":  220
+                     },
+                     {
+                         "SKU":  "230",
+                         "Image":  "230.png",
+                         "Item Name":  "Veeba Veg Mayonnaise",
+                         "Pack Size":  "250 g Pouch",
+                         "Price_INR":  60
+                     },
+                     {
+                         "SKU":  "231",
+                         "Image":  "231.png",
+                         "Item Name":  "Funfoods Veg Mayonnaise Original",
+                         "Pack Size":  "800 g Jar",
+                         "Price_INR":  185
+                     },
+                     {
+                         "SKU":  "232",
+                         "Image":  "232.png",
+                         "Item Name":  "Dr. Oetker Funfoods Pasta Sauce",
+                         "Pack Size":  "450 g",
+                         "Price_INR":  125
+                     },
+                     {
+                         "SKU":  "233",
+                         "Image":  "233.png",
+                         "Item Name":  "Borges Extra Light Olive Oil",
+                         "Pack Size":  "1 Litre",
+                         "Price_INR":  950
+                     },
+                     {
+                         "SKU":  "234",
+                         "Image":  "234.png",
+                         "Item Name":  "Figaro Pure Olive Oil Tin",
+                         "Pack Size":  "500 ml",
+                         "Price_INR":  590
+                     },
+                     {
+                         "SKU":  "235",
+                         "Image":  "235.png",
+                         "Item Name":  "Catch Super Garam Masala",
+                         "Pack Size":  "200 g Box",
+                         "Price_INR":  145
+                     },
+                     {
+                         "SKU":  "236",
+                         "Image":  "236.png",
+                         "Item Name":  "Everest Sabji Masala",
+                         "Pack Size":  "100 g Box",
+                         "Price_INR":  68
+                     },
+                     {
+                         "SKU":  "237",
+                         "Image":  "237.png",
+                         "Item Name":  "MDH Meat Masala",
+                         "Pack Size":  "100 g Box",
+                         "Price_INR":  75
+                     },
+                     {
+                         "SKU":  "238",
+                         "Image":  "238.png",
+                         "Item Name":  "MDH Kasoori Methi",
+                         "Pack Size":  "100 g Box",
+                         "Price_INR":  90
+                     },
+                     {
+                         "SKU":  "239",
+                         "Image":  "239.png",
+                         "Item Name":  "Catch Kasuri Methi Leaves",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  85
+                     },
+                     {
+                         "SKU":  "240",
+                         "Image":  "240.png",
+                         "Item Name":  "Tata Sampann Coriander Powder",
+                         "Pack Size":  "200 g",
+                         "Price_INR":  65
+                     },
+                     {
+                         "SKU":  "241",
+                         "Image":  "241.png",
+                         "Item Name":  "Tata Sampann Turmeric Powder",
+                         "Pack Size":  "200 g",
+                         "Price_INR":  78
+                     },
+                     {
+                         "SKU":  "242",
+                         "Image":  "242.png",
+                         "Item Name":  "Tata Sampann Red Chilli Powder",
+                         "Pack Size":  "200 g",
+                         "Price_INR":  85
+                     },
+                     {
+                         "SKU":  "243",
+                         "Image":  "243.png",
+                         "Item Name":  "Dabur Gulabari Rose Water",
+                         "Pack Size":  "250 ml Bottle",
+                         "Price_INR":  80
+                     },
+                     {
+                         "SKU":  "244",
+                         "Image":  "244.png",
+                         "Item Name":  "Dabur Amla Hair Oil",
+                         "Pack Size":  "275 ml Bottle",
+                         "Price_INR":  145
+                     },
+                     {
+                         "SKU":  "245",
+                         "Image":  "245.png",
+                         "Item Name":  "Johnson\u0027s Baby Powder",
+                         "Pack Size":  "200 g Pack",
+                         "Price_INR":  175
+                     },
+                     {
+                         "SKU":  "246",
+                         "Image":  "246.png",
+                         "Item Name":  "Aashirvaad Select Sharbati Atta",
+                         "Pack Size":  "10 kg Variant",
+                         "Price_INR":  640
+                     },
+                     {
+                         "SKU":  "247",
+                         "Image":  "247.png",
+                         "Item Name":  "Universal Aloo Bukhara Sharbat Family Bottle",
+                         "Pack Size":  "1 Litre",
+                         "Price_INR":  360
+                     },
+                     {
+                         "SKU":  "248",
+                         "Image":  "248.png",
+                         "Item Name":  "Kissan Mixed Fruit Jam",
+                         "Pack Size":  "500 g Glass Jar",
+                         "Price_INR":  160
+                     },
+                     {
+                         "SKU":  "249",
+                         "Image":  "249.png",
+                         "Item Name":  "Kellogg\u0027s Corn Flakes Real Almond Honey",
+                         "Pack Size":  "300 g",
+                         "Price_INR":  195
+                     },
+                     {
+                         "SKU":  "250",
+                         "Image":  "250.png",
+                         "Item Name":  "Kellogg\u0027s Muesli 0% Added Sugar",
+                         "Pack Size":  "400 g",
+                         "Price_INR":  275
+                     },
+                     {
+                         "SKU":  "251",
+                         "Image":  "251.png",
+                         "Item Name":  "Savour White Oats Family Saver",
+                         "Pack Size":  "1 kg Jar",
+                         "Price_INR":  180
+                     },
+                     {
+                         "SKU":  "252",
+                         "Image":  "252.png",
+                         "Item Name":  "Nav Store Special Besan Fine Ground",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  130
+                     },
+                     {
+                         "SKU":  "253",
+                         "Image":  "253.png",
+                         "Item Name":  "Tata Sampann Unpolished Moong Chilka Dal",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  150
+                     },
+                     {
+                         "SKU":  "254",
+                         "Image":  "254.png",
+                         "Item Name":  "Lay\u0027s India\u0027s Magic Masala Blue Pack",
+                         "Pack Size":  "90 g",
+                         "Price_INR":  40
+                     },
+                     {
+                         "SKU":  "255",
+                         "Image":  "255.png",
+                         "Item Name":  "Lay\u0027s American Style Cream Onion Green Pack",
+                         "Pack Size":  "90 g",
+                         "Price_INR":  40
+                     },
+                     {
+                         "SKU":  "256",
+                         "Image":  "256.png",
+                         "Item Name":  "Britannia Milk Bikis Biscuits",
+                         "Pack Size":  "300 g Family Pack",
+                         "Price_INR":  45
+                     },
+                     {
+                         "SKU":  "257",
+                         "Image":  "257.png",
+                         "Item Name":  "Lizol Surface Cleaner Citrus Floor Liquid",
+                         "Pack Size":  "500 ml",
+                         "Price_INR":  110
+                     },
+                     {
+                         "SKU":  "258",
+                         "Image":  "258.png",
+                         "Item Name":  "Dettol Liquid Handwash Original Pump",
+                         "Pack Size":  "200 ml",
+                         "Price_INR":  99
+                     },
+                     {
+                         "SKU":  "259",
+                         "Image":  "259.png",
+                         "Item Name":  "Comfort After Wash Morning Fresh Fabric Conditioner",
+                         "Pack Size":  "860 ml",
+                         "Price_INR":  235
+                     },
+                     {
+                         "SKU":  "260",
+                         "Image":  "260.png",
+                         "Item Name":  "Surf Excel Easy Wash Detergent Powder",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  145
+                     },
+                     {
+                         "SKU":  "261",
+                         "Image":  "261.png",
+                         "Item Name":  "Ariel Complete Matic Detergent Powder",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  240
+                     },
+                     {
+                         "SKU":  "262",
+                         "Image":  "262.png",
+                         "Item Name":  "Catch Italian Mixed Herb Seasoning Sprinkler",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  115
+                     },
+                     {
+                         "SKU":  "263",
+                         "Image":  "263.png",
+                         "Item Name":  "Haldiram Classic Salted Peanuts",
+                         "Pack Size":  "200 g",
+                         "Price_INR":  55
+                     },
+                     {
+                         "SKU":  "264",
+                         "Image":  "264.png",
+                         "Item Name":  "Haldiram Aloo Bhujia Spicy Namkeen",
+                         "Pack Size":  "400 g Box",
+                         "Price_INR":  115
+                     },
+                     {
+                         "SKU":  "265",
+                         "Image":  "265.png",
+                         "Item Name":  "Bikano Khatta Meetha Mixture",
+                         "Pack Size":  "400 g Box",
+                         "Price_INR":  105
+                     },
+                     {
+                         "SKU":  "266",
+                         "Image":  "266.png",
+                         "Item Name":  "Tata Rock Salt Himalayan Pink Salt Grinder",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  120
+                     },
+                     {
+                         "SKU":  "267",
+                         "Image":  "267.png",
+                         "Item Name":  "Fortune Sunlite Refined Sunflower Oil Pouch",
+                         "Pack Size":  "1 Litre",
+                         "Price_INR":  148
+                     },
+                     {
+                         "SKU":  "268",
+                         "Image":  "268.png",
+                         "Item Name":  "Rajdhani Fine Sooji Semolina",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  40
+                     },
+                     {
+                         "SKU":  "269",
+                         "Image":  "269.png",
+                         "Item Name":  "Rajdhani Chakki Fresh Maida",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  54
+                     },
+                     {
+                         "SKU":  "270",
+                         "Image":  "270.png",
+                         "Item Name":  "Rajdhani Besan Super Fine",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  72
+                     },
+                     {
+                         "SKU":  "271",
+                         "Image":  "271.png",
+                         "Item Name":  "Dabur Chyawanprash Awaleha 2X Immunity",
+                         "Pack Size":  "500 g",
+                         "Price_INR":  225
+                     },
+                     {
+                         "SKU":  "272",
+                         "Image":  "272.png",
+                         "Item Name":  "Vaseline Original Pure Skin Jelly",
+                         "Pack Size":  "100 ml",
+                         "Price_INR":  135
+                     },
+                     {
+                         "SKU":  "273",
+                         "Image":  "273.png",
+                         "Item Name":  "Nivea Soft Light Moisturizing Cream",
+                         "Pack Size":  "100 ml",
+                         "Price_INR":  190
+                     },
+                     {
+                         "SKU":  "274",
+                         "Image":  "274.png",
+                         "Item Name":  "Kurkure Masala Munch Crunchy Snacks",
+                         "Pack Size":  "90 g",
+                         "Price_INR":  30
+                     },
+                     {
+                         "SKU":  "275",
+                         "Image":  "275.png",
+                         "Item Name":  "Nescafe Classic Dawn Instant Coffee Glass Jar",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  290
+                     },
+                     {
+                         "SKU":  "276",
+                         "Image":  "276.png",
+                         "Item Name":  "Tata Salt Lite Low Sodium Iodised Salt",
+                         "Pack Size":  "1 kg",
+                         "Price_INR":  45
+                     },
+                     {
+                         "SKU":  "277",
+                         "Image":  "277.png",
+                         "Item Name":  "Nutrela Soya Chunks Rich In 52% Protein",
+                         "Pack Size":  "200 g",
+                         "Price_INR":  50
+                     },
+                     {
+                         "SKU":  "278",
+                         "Image":  "278.png",
+                         "Item Name":  "Catch Super Garam Masala Powder Box",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  78
+                     },
+                     {
+                         "SKU":  "279",
+                         "Image":  "279.png",
+                         "Item Name":  "Quaker Rolled Oats High Fiber",
+                         "Pack Size":  "1 kg Jar",
+                         "Price_INR":  210
+                     },
+                     {
+                         "SKU":  "280",
+                         "Image":  "280.png",
+                         "Item Name":  "Haldiram Moong Dal Fried Salted",
+                         "Pack Size":  "200 g",
+                         "Price_INR":  60
+                     },
+                     {
+                         "SKU":  "281",
+                         "Image":  "281.png",
+                         "Item Name":  "Haldiram Panchratan Mixture",
+                         "Pack Size":  "200 g",
+                         "Price_INR":  65
+                     },
+                     {
+                         "SKU":  "282",
+                         "Image":  "282.png",
+                         "Item Name":  "Bikaji Bhujia Sev Bikaneri",
+                         "Pack Size":  "400 g",
+                         "Price_INR":  120
+                     },
+                     {
+                         "SKU":  "283",
+                         "Image":  "283.png",
+                         "Item Name":  "Bingo Mad Angles Achaari Masti",
+                         "Pack Size":  "75 g",
+                         "Price_INR":  20
+                     },
+                     {
+                         "SKU":  "284",
+                         "Image":  "284.png",
+                         "Item Name":  "Doritos Cheese Nachos",
+                         "Pack Size":  "60 g",
+                         "Price_INR":  30
+                     },
+                     {
+                         "SKU":  "285",
+                         "Image":  "285.png",
+                         "Item Name":  "Pringles Original Potato Crisps",
+                         "Pack Size":  "107 g Can",
+                         "Price_INR":  115
+                     },
+                     {
+                         "SKU":  "286",
+                         "Image":  "286.png",
+                         "Item Name":  "Pringles Sour Cream \u0026 Onion",
+                         "Pack Size":  "107 g Can",
+                         "Price_INR":  115
+                     },
+                     {
+                         "SKU":  "287",
+                         "Image":  "287.png",
+                         "Item Name":  "Act II Instant Golden Sizzle Popcorn",
+                         "Pack Size":  "3x60 g",
+                         "Price_INR":  60
+                     },
+                     {
+                         "SKU":  "288",
+                         "Image":  "288.png",
+                         "Item Name":  "Parle Hide \u0026 Seek Chocolate Chip Biscuits",
+                         "Pack Size":  "120 g",
+                         "Price_INR":  35
+                     },
+                     {
+                         "SKU":  "289",
+                         "Image":  "289.png",
+                         "Item Name":  "Britannia Bourbon Chocolate Cream Biscuits",
+                         "Pack Size":  "150 g",
+                         "Price_INR":  35
+                     },
+                     {
+                         "SKU":  "290",
+                         "Image":  "290.png",
+                         "Item Name":  "Sunfeast Mom\u0027s Magic Cashew \u0026 Almond",
+                         "Pack Size":  "300 g",
+                         "Price_INR":  60
+                     },
+                     {
+                         "SKU":  "291",
+                         "Image":  "291.png",
+                         "Item Name":  "Cadbury 5 Star Chocolate Bar",
+                         "Pack Size":  "40 g",
+                         "Price_INR":  20
+                     },
+                     {
+                         "SKU":  "292",
+                         "Image":  "292.png",
+                         "Item Name":  "Nestle KitKat 4 Finger Chocolate",
+                         "Pack Size":  "38 g",
+                         "Price_INR":  30
+                     },
+                     {
+                         "SKU":  "293",
+                         "Image":  "293.png",
+                         "Item Name":  "Snickers Peanut Chocolate Bar",
+                         "Pack Size":  "45 g",
+                         "Price_INR":  40
+                     },
+                     {
+                         "SKU":  "294",
+                         "Image":  "294.png",
+                         "Item Name":  "Dettol Original Bathing Soap Bar",
+                         "Pack Size":  "3x125 g",
+                         "Price_INR":  165
+                     },
+                     {
+                         "SKU":  "295",
+                         "Image":  "295.png",
+                         "Item Name":  "Lifebuoy Total 10 Soap Bar",
+                         "Pack Size":  "4x125 g",
+                         "Price_INR":  140
+                     },
+                     {
+                         "SKU":  "296",
+                         "Image":  "296.png",
+                         "Item Name":  "Dove Cream Beauty Bathing Bar",
+                         "Pack Size":  "3x100 g",
+                         "Price_INR":  220
+                     },
+                     {
+                         "SKU":  "297",
+                         "Image":  "297.png",
+                         "Item Name":  "Pears Pure \u0026 Gentle Glycerin Soap",
+                         "Pack Size":  "3x125 g",
+                         "Price_INR":  240
+                     },
+                     {
+                         "SKU":  "298",
+                         "Image":  "298.png",
+                         "Item Name":  "Colgate Strong Teeth Dental Cream",
+                         "Pack Size":  "200 g",
+                         "Price_INR":  110
+                     },
+                     {
+                         "SKU":  "299",
+                         "Image":  "299.png",
+                         "Item Name":  "Colgate MaxFresh Peppermint Blue Gel",
+                         "Pack Size":  "150 g",
+                         "Price_INR":  115
+                     },
+                     {
+                         "SKU":  "300",
+                         "Image":  "300.png",
+                         "Item Name":  "Sensodyne Fresh Mint Toothpaste",
+                         "Pack Size":  "100 g",
+                         "Price_INR":  195
+                     },
+                     {
+                         "SKU":  "301",
+                         "Image":  "301.png",
+                         "Item Name":  "Dabur Red Ayurvedic Toothpaste",
+                         "Pack Size":  "200 g",
+                         "Price_INR":  125
+                     },
+                     {
+                         "SKU":  "302",
+                         "Image":  "302.png",
+                         "Item Name":  "Head \u0026 Shoulders Cool Menthol Shampoo",
+                         "Pack Size":  "340 ml",
+                         "Price_INR":  280
+                     },
+                     {
+                         "SKU":  "303",
+                         "Image":  "303.png",
+                         "Item Name":  "Clinic Plus Strong \u0026 Long Shampoo",
+                         "Pack Size":  "340 ml",
+                         "Price_INR":  215
+                     },
+                     {
+                         "SKU":  "304",
+                         "Image":  "304.png",
+                         "Item Name":  "Vim Dishwash Gel Lemon Lemon",
+                         "Pack Size":  "500 ml Bottle",
+                         "Price_INR":  125
+                     },
+                     {
+                         "SKU":  "305",
+                         "Image":  "305.png",
+                         "Item Name":  "Pril Kraft Dishwash Liquid",
+                         "Pack Size":  "425 ml",
+                         "Price_INR":  115
+                     },
+                     {
+                         "SKU":  "306",
+                         "Image":  "306.png",
+                         "Item Name":  "Harpic Power Plus Original Toilet Cleaner",
+                         "Pack Size":  "500 ml",
+                         "Price_INR":  99
+                     },
+                     {
+                         "SKU":  "307",
+                         "Image":  "307.png",
+                         "Item Name":  "Colin Glass \u0026 Household Surface Cleaner",
+                         "Pack Size":  "500 ml",
+                         "Price_INR":  105
+                     },
+                     {
+                         "SKU":  "308",
+                         "Image":  "308.png",
+                         "Item Name":  "Odonil Room Air Freshener Blocks",
+                         "Pack Size":  "4x50 g",
+                         "Price_INR":  180
+                     }
+                 ]
+}

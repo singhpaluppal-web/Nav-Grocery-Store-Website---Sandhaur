@@ -1,0 +1,18 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+*.zip
+FINAL_LOCKED_BUILD/
+New folder/
+new update 1/
+
+_backup_before_web_update/
+*.py
+.env*
+.aistudio/

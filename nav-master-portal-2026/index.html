@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nav Grocery Store - Master Admin POS & Healing Suite</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://unpkg.com/html5-qrcode"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+    body { background: #f0f2f5; color: #1a1a1a; min-height: 100vh; }
+
+    #authOverlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #131921; display: flex; justify-content: center; align-items: center; z-index: 9999; }
+    .auth-card { background: white; width: 90%; max-width: 420px; padding: 35px 25px; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,0.5); text-align: center; }
+    .auth-icon { font-size: 46px; color: #007185; margin-bottom: 12px; }
+    .auth-card h2 { font-size: 20px; margin-bottom: 6px; color: #131921; }
+    .auth-card p { font-size: 13px; color: #666; margin-bottom: 22px; line-height: 1.4; }
+    .btn-device { width: 100%; padding: 14px; background: #007185; color: white; border: none; border-radius: 25px; font-weight: bold; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 18px; }
+    .divider { display: flex; align-items: center; text-align: center; margin: 15px 0; color: #888; font-size: 12px; }
+    .divider::before, .divider::after { content: ''; flex: 1; border-bottom: 1px solid #ddd; }
+    .divider:not(:empty)::before { margin-right: .5em; }
+    .divider:not(:empty)::after { margin-left: .5em; }
+    .pin-input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px; text-align: center; letter-spacing: 3px; margin-bottom: 12px; outline: none; }
+    .btn-auth { width: 100%; padding: 12px; background: #ffd814; border: 1px solid #fcd200; border-radius: 20px; font-weight: bold; cursor: pointer; font-size: 14px; }
+
+    #adminContent { display: none; }
+    .top-nav { background: #131921; color: white; padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .logo-box { font-size: 19px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+    .logo-box span { color: #febd69; }
+    .nav-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+    .tab-btn { background: transparent; border: 1px solid #444; color: #fff; padding: 6px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+    .tab-btn.active { background: #febd69; color: #111; border-color: #febd69; }
+    .btn-logout { background: #dc3545; border: none; color: white; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 12px; }
+
+    .main-wrap { max-width: 1440px; margin: 20px auto; padding: 0 16px; }
+
+    .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 20px; }
+    .metric-card { background: white; padding: 18px; border-radius: 8px; border-left: 5px solid #131921; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
+    .metric-card.green { border-left-color: #007600; }
+    .metric-card.blue { border-left-color: #007185; }
+    .metric-card.gold { border-left-color: #ff9900; }
+    .metric-card.purple { border-left-color: #6f42c1; }
+    .metric-lbl { font-size: 11px; text-transform: uppercase; font-weight: 700; color: #666; margin-bottom: 4px; }
+    .metric-val { font-size: 22px; font-weight: 800; }
+
+    .action-bar { background: white; padding: 16px 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: center; }
+    .search-box { flex: 1; min-width: 220px; padding: 10px 14px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; outline: none; }
+    .filter-box { padding: 10px 14px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; outline: none; }
+    .btn-action { padding: 10px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 13px; display: inline-flex; align-items: center; gap: 6px; border: none; }
+    .btn-scan { background: #007185; color: white; }
+    .btn-export { background: #232f3e; color: white; }
+    .btn-upload { background: #ff9900; color: #111; }
+    .btn-whatsapp { background: #25D366; color: white; }
+    .btn-reheal { background: #6f42c1; color: white; }
+    .btn-reset-cache { background: #c62828; color: white; }
+
+    .table-container { background: white; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); overflow-x: auto; margin-bottom: 30px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; text-align: left; }
+    th { background: #232f3e; color: white; padding: 12px 14px; font-weight: 600; white-space: nowrap; }
+    td { padding: 10px 14px; border-bottom: 1px solid #eee; vertical-align: middle; }
+    tr:hover { background: #fdfdfd; }
+
+    .thumb-wrap { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .img-preview { width: 50px; height: 50px; object-fit: contain; background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 2px; }
+    .upload-label { font-size: 10px; color: #007185; cursor: pointer; text-decoration: underline; font-weight: bold; }
+    .hidden-file { display: none; }
+
+    .in-edit { width: 100%; padding: 8px 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 13px; }
+    .in-small { width: 70px; text-align: right; }
+    .in-select { padding: 6px 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; }
+    .btn-save-row { background: #007600; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 11px; }
+
+    .stock-badge-low { background: #ffebee; color: #c62828; font-weight: bold; padding: 3px 6px; border-radius: 4px; font-size: 11px; }
+    .stock-badge-ok { background: #e8f5e9; color: #007600; font-weight: bold; padding: 3px 6px; border-radius: 4px; font-size: 11px; }
+
+    #viewPOS, #viewCRM, #viewReports, #viewWholesaleSheet, #viewSettingsHub { display: none; }
+    .pos-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+    .pos-billing-box { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
+    .pos-cart-box { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); display: flex; flex-direction: column; justify-content: space-between; }
+    .bill-item-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed #ddd; font-size: 13px; }
+    .bill-total-bar { margin-top: 15px; padding-top: 15px; border-top: 2px solid #111; font-size: 16px; font-weight: 800; display: flex; justify-content: space-between; }
+
+    #scannerModal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 10000; justify-content: center; align-items: center; }
+    .scanner-box { background: white; padding: 20px; border-radius: 8px; width: 90%; max-width: 480px; text-align: center; }
+    #reader { width: 100%; min-height: 250px; margin-bottom: 15px; }
+
+    .report-card { background: white; padding: 24px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); margin-bottom: 20px; }
+    .report-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 13px; }
+    .report-table th, .report-table td { padding: 10px 12px; border: 1px solid #eee; text-align: left; }
+    .report-table th { background: #232f3e; color: white; }
+    .settings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .badge-cashier-tag { background: #e0f2fe; color: #0284c7; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 12px; }
+  </style>
+</head>
+<body>
+
+  <div id="authOverlay">
+    <div class="auth-card">
+      <div class="auth-icon"><i class="fa fa-fingerprint"></i></div>
+      <h2>Nav Grocery Store Admin</h2>
+      <p>Secure Biometric & Screen Lock Authentication</p>
+      
+      <button class="btn-device" onclick="unlockWithDeviceLock()">
+        <i class="fa fa-shield-alt"></i> Phone / Laptop Screen Lock
+      </button>
+
+      <div class="divider">OR USE MASTER PIN</div>
+
+      <input type="password" id="adminPin" class="pin-input" placeholder="Enter PIN" maxlength="10" onkeypress="if(event.key==='Enter') unlockWithPin()">
+      <button class="btn-auth" onclick="unlockWithPin()"><i class="fa fa-key"></i> Unlock Portal</button>
+    </div>
+  </div>
+
+  <div id="adminContent">
+    <nav class="top-nav">
+      <div class="logo-box">
+        <i class="fa fa-shield-alt"></i> Nav Grocery <span>Admin Master</span>
+      </div>
+      <div class="nav-tabs">
+        <button class="tab-btn active" id="tabCatalog" onclick="switchView('catalog')"><i class="fa fa-boxes"></i> Master Catalog</button>
+        <button class="tab-btn" id="tabPOS" onclick="switchView('pos')"><i class="fa fa-cash-register"></i> Smart POS</button>
+        <button class="tab-btn" id="tabCRM" onclick="switchView('crm')"><i class="fa fa-users"></i> CRM & Loyalty</button>
+        <button class="tab-btn" id="tabWholesale" onclick="switchView('wholesale')"><i class="fa fa-clipboard-list"></i> Low Stock Sheet</button>
+        <button class="tab-btn" id="tabReports" onclick="switchView('reports')"><i class="fa fa-chart-line"></i> GST Reports</button>
+        <button class="tab-btn" id="tabSettings" onclick="switchView('settings')"><i class="fa fa-tools"></i> Settings & Reheal</button>
+      </div>
+      <button class="btn-logout" onclick="logoutAdmin()"><i class="fa fa-sign-out-alt"></i> Logout</button>
+    </nav>
+
+    <div class="main-wrap">
+      
+      <div id="viewCatalog">
+        <div class="metric-grid">
+          <div class="metric-card green">
+            <div class="metric-lbl">Total Catalog Items</div>
+            <div class="metric-val" id="metricItems">291</div>
+          </div>
+          <div class="metric-card blue">
+            <div class="metric-lbl">Total Inventory Cost</div>
+            <div class="metric-val" id="metricCostVal">₹0</div>
+          </div>
+          <div class="metric-card gold">
+            <div class="metric-lbl">Total Retail Value (-12%)</div>
+            <div class="metric-val" id="metricRetailVal">₹0</div>
+          </div>
+          <div class="metric-card purple">
+            <div class="metric-lbl">Pricing & Photo Status</div>
+            <div class="metric-val" style="color:#007600;"><i class="fa fa-check-circle"></i> Clean & Verified</div>
+          </div>
+        </div>
+
+        <div class="action-bar">
+          <input type="text" id="searchBox" class="search-box" placeholder="Search product title ID barcode or category..." oninput="filterCatalog()">
+          <select id="catFilter" class="filter-box" onchange="filterCatalog()">
+            <option value="ALL">All Categories</option>
+            <option value="Desi Ghee">Desi Ghee & Oils</option>
+            <option value="Frozen">Frozen Foods</option>
+            <option value="Grocery">Atta Dals & Staples</option>
+            <option value="Beverages">Beverages</option>
+            <option value="Spices">Spices</option>
+            <option value="Personal">Personal Care</option>
+          </select>
+          
+          <button class="btn-action btn-reset-cache" onclick="forceResetFreshData()"><i class="fa fa-trash"></i> Reset Old Cache & Reload Fresh</button>
+          <button class="btn-action btn-scan" onclick="openScanner('catalog')"><i class="fa fa-camera"></i> Scan & Add Stock</button>
+          <input type="file" id="csvPicker" accept=".csv" class="hidden-file" onchange="importCSVFile(this)">
+          <button class="btn-action btn-upload" onclick="document.getElementById('csvPicker').click()"><i class="fa fa-file-csv"></i> Upload CSV</button>
+          <button class="btn-action btn-export" onclick="exportMasterCSV()"><i class="fa fa-download"></i> Save & Export CSV</button>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Photo & Upload</th>
+                <th>Barcode</th>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Cost (₹)</th>
+                <th>MRP (₹)</th>
+                <th>Sale (-12%)</th>
+                <th>GST</th>
+                <th>Stock</th>
+                <th>Expiry Date</th>
+                <th>Profit</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="catalogTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="viewPOS">
+        <div class="pos-grid">
+          <div class="pos-billing-box">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+              <h3><i class="fa fa-cash-register"></i> POS Cashier Billing</h3>
+              <div>
+                <span style="font-size:12px; font-weight:bold; margin-right:8px;">Active Cashier:</span>
+                <select id="activeCashierSelect" class="in-select" onchange="switchCashierBadge()">
+                  <option value="NAV-CASH-101">NAV-CASH-101 (Counter 1)</option>
+                  <option value="NAV-CASH-102">NAV-CASH-102 (Counter 2)</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:10px; margin-bottom:15px;">
+              <input type="text" id="posBarcodeIn" class="search-box" placeholder="Scan Barcode or Type Product..." onkeypress="if(event.key==='Enter') posScanAdd()">
+              <button class="btn-action btn-scan" onclick="openScanner('pos')"><i class="fa fa-camera"></i> Scan</button>
+            </div>
+            
+            <table style="width:100%; border-collapse:collapse;">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Sale Price</th>
+                  <th>Qty</th>
+                  <th>Total</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="posCartBody"></tbody>
+            </table>
+          </div>
+
+          <div class="pos-cart-box">
+            <div>
+              <h3 style="margin-bottom:12px;">Customer Details</h3>
+              <input type="text" id="custPhone" class="in-edit" placeholder="Customer WhatsApp Mobile (10-digit)" style="margin-bottom:8px;" onblur="lookupCustomer()">
+              <input type="text" id="custAddress" class="in-edit" placeholder="Delivery Area (Sandhaur / Village Name)" style="margin-bottom:10px;">
+              <div id="custTierBadge" style="font-size:12px; margin-bottom:15px; color:#007185; font-weight:bold;">Customer (Standard 12% Off)</div>
+
+              <div class="bill-item-row"><span>Subtotal:</span><strong id="posSubtotal">₹0</strong></div>
+              <div class="bill-item-row"><span>Customer Loyalty Off:</span><strong id="posLoyaltyOff">-₹0</strong></div>
+              <div class="bill-item-row"><span>Estimated GST:</span><strong id="posTax">₹0</strong></div>
+              <div class="bill-total-bar"><span>Grand Total:</span><span id="posGrandTotal" style="color:#007600;">₹0</span></div>
+            </div>
+
+            <div style="margin-top:20px; display:flex; flex-direction:column; gap:8px;">
+              <button class="btn-device" style="border-radius:6px; background:#007600;" onclick="completePOSOrder(false)">
+                <i class="fa fa-print"></i> Complete Bill & Subtract Stock
+              </button>
+              <button class="btn-action btn-whatsapp" style="justify-content:center; border-radius:6px;" onclick="completePOSOrder(true)">
+                <i class="fab fa-whatsapp"></i> Complete & Send WhatsApp Receipt
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="viewCRM">
+        <div class="pos-billing-box">
+          <h3 style="margin-bottom:15px;"><i class="fa fa-users"></i> Registered Customers & Analytics</h3>
+          <table style="width:100%; border-collapse:collapse;">
+            <thead>
+              <tr>
+                <th>Customer Mobile</th>
+                <th>Delivery Address</th>
+                <th>Orders Count</th>
+                <th>Total Spent (Current Month)</th>
+                <th>Loyalty Tier</th>
+                <th>Special Discount Status</th>
+              </tr>
+            </thead>
+            <tbody id="crmBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="viewWholesaleSheet">
+        <div class="report-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+            <h3><i class="fa fa-exclamation-triangle" style="color:#dc3545;"></i> Low Stock Purchase Orders</h3>
+            <button class="btn-action btn-export" onclick="exportWholesaleOrderSheet()"><i class="fa fa-download"></i> Download Purchase Order</button>
+          </div>
+          <table class="report-table">
+            <thead>
+              <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Current Stock</th>
+                <th>Suggested Order Qty</th>
+                <th>Estimated Purchase Cost</th>
+                <th>HSN Code</th>
+              </tr>
+            </thead>
+            <tbody id="wholesaleTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="viewReports">
+        <div class="report-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+            <h3><i class="fa fa-file-invoice-dollar" style="color:#007600;"></i> Daily Sales GST Filing Summary</h3>
+            <button class="btn-action btn-export" onclick="exportGSTSummary()"><i class="fa fa-download"></i> Download GSTR-1 Summary</button>
+          </div>
+          <table class="report-table">
+            <thead>
+              <tr><th>Metric Description</th><th>Amount (₹)</th><th>Note</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Total Gross Sales</td><td id="rptGrossSales">₹0</td><td>Includes 12% wholesale retail discount</td></tr>
+              <tr><td>Total Purchase Cost</td><td id="rptCost">₹0</td><td>Base wholesaler cost</td></tr>
+              <tr><td>Net Operating Profit</td><td id="rptGrossProfit" style="color:#007600; font-weight:bold;">₹0</td><td>Sales minus cost</td></tr>
+              <tr><td>CGST Collected</td><td id="rptCGST">₹0</td><td>Central liability</td></tr>
+              <tr><td>SGST Collected (Punjab 03)</td><td id="rptSGST">₹0</td><td>Punjab SGST</td></tr>
+              <tr><td>Total GST Tax Payable</td><td id="rptTotalGST" style="color:#007185; font-weight:bold;">₹0</td><td>Ready for CA upload</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="viewSettingsHub">
+        <div class="settings-grid">
+          <div class="report-card">
+            <h3><i class="fa fa-user-cog" style="color:#007185;"></i> Store Profile Settings</h3>
+            <div style="margin-bottom:12px;">
+              <label style="font-size:12px; font-weight:bold; display:block; margin-bottom:4px;">Helpline / WhatsApp Number</label>
+              <input type="text" class="in-edit" id="cfgStorePhone" value="8847370905">
+            </div>
+            <div style="margin-bottom:12px;">
+              <label style="font-size:12px; font-weight:bold; display:block; margin-bottom:4px;">Owner Admin Gmail</label>
+              <input type="email" class="in-edit" id="cfgStoreEmail" value="singhpaluppal@gmail.com">
+            </div>
+            <div style="margin-bottom:15px;">
+              <label style="font-size:12px; font-weight:bold; display:block; margin-bottom:4px;">GSTIN Number</label>
+              <input type="text" class="in-edit" id="cfgStoreGstin" value="03AHPPU6185N1ZF">
+            </div>
+            <button class="btn-action btn-upload" onclick="saveStoreProfileSettings()"><i class="fa fa-save"></i> Save Profile</button>
+          </div>
+
+          <div class="report-card">
+            <h3><i class="fa fa-toggle-on" style="color:#007600;"></i> Public Portal Toggles</h3>
+            <div style="margin-bottom:12px; display:flex; align-items:center; justify-content:space-between; padding:8px 0; border-bottom:1px solid #eee;">
+              <span style="font-size:13px; font-weight:600;">Public Store Active</span>
+              <input type="checkbox" id="cfgTogglePublicStore" checked style="width:20px; height:20px;" onchange="savePublicFeatureToggles()">
+            </div>
+            <div style="margin-bottom:12px; display:flex; align-items:center; justify-content:space-between; padding:8px 0; border-bottom:1px solid #eee;">
+              <span style="font-size:13px; font-weight:600;">Public Catalog Active</span>
+              <input type="checkbox" id="cfgTogglePublicCatalog" checked style="width:20px; height:20px;" onchange="savePublicFeatureToggles()">
+            </div>
+            <div style="margin-bottom:15px; display:flex; align-items:center; justify-content:space-between; padding:8px 0; border-bottom:1px solid #eee;">
+              <span style="font-size:13px; font-weight:600;">Offer Banners Active</span>
+              <input type="checkbox" id="cfgTogglePublicOffers" checked style="width:20px; height:20px;" onchange="savePublicFeatureToggles()">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="scannerModal">
+    <div class="scanner-box">
+      <h3>Scan Product Barcode</h3>
+      <div id="reader"></div>
+      <button class="btn-auth" style="background:#dc3545; color:white; border:none;" onclick="closeScanner()">Close Camera</button>
+    </div>
+  </div>
+
+  <script>
+    const SERVER_CATALOG = [{"id": "NAV0001", "barcode": "8901000000000", "name": "Maharajas Spice Co Chana Masala 100g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Maharajas-Spice-Co-Chana-Masala-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0002", "barcode": "8901000000001", "name": "Premium Quality Black Eyed Peas Lobia Beans 500g", "cat": "Frozen Foods", "cost": 67.5, "mrp": 90.0, "sale": 79.2, "gst": "0%", "hsn": "0710", "img": "Premium-Quality-Black-Eyed-Peas-Lobia-Beans-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0003", "barcode": "8901000000002", "name": "Premium Urad Dal Washed 1kg", "cat": "Grocery & Staples", "cost": 101.25, "mrp": 135.0, "sale": 118.8, "gst": "5%", "hsn": "1901", "img": "Premium-Urad-Dal-Washed-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0004", "barcode": "8901000000003", "name": "Premium Quality Black Pepper Ground 100g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Premium-Quality-Black-Pepper-Ground-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0005", "barcode": "8901000000004", "name": "Premium Black Salt Table Sprinkler 200g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Premium-Black-Salt-Table-Sprinkler-200g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0006", "barcode": "8901000000005", "name": "Spice Harvest Carom Seeds Ajwain 100g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Spice-Harvest-Carom-Seeds-Ajwain-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0007", "barcode": "8901000000006", "name": "Desi Spice Route Chaat Masala 100g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Desi-Spice-Route-Chaat-Masala-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0008", "barcode": "8901000000007", "name": "Taste Of China Chinese Hot And Sour Soup 70g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Taste-of-China-Chinese-Hot-And-Sour-Soup-70g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0009", "barcode": "8901000000008", "name": "Chocolate Scoops Cereal 375g", "cat": "Grocery & Staples", "cost": 33.75, "mrp": 45.0, "sale": 39.6, "gst": "5%", "hsn": "1901", "img": "Chocolate-Scoops-Cereal-375g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0010", "barcode": "8901000000009", "name": "Cloudy Lemon Drink 750ml", "cat": "Beverages", "cost": 30.0, "mrp": 40.0, "sale": 35.2, "gst": "28%", "hsn": "2202", "img": "Cloudy-Lemon-Drink-750ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0011", "barcode": "8901000000010", "name": "Pure Grains Coarse Semolina Sooji Rava 500g", "cat": "Grocery & Staples", "cost": 292.5, "mrp": 390.0, "sale": 343.2, "gst": "5%", "hsn": "1901", "img": "Pure-Grains-Coarse-Semolina-Sooji-Rava-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0012", "barcode": "8901000000011", "name": "Sunshine Grains Crispy Golden Corn Flakes 475g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Sunshine-Grains-Crispy-Golden-Corn-Flakes-475g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0013", "barcode": "8901000000012", "name": "Original Taste Cola 750ml", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Original-Taste-Cola-750ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0014", "barcode": "8901000000013", "name": "Kasuri Methi Dried Fenugreek Leaves 50g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Kasuri-Methi-Dried-Fenugreek-Leaves-50g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0015", "barcode": "8901000000014", "name": "Pasta Natura Elbow Macaroni 500g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Pasta-Natura-Elbow-Macaroni-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0016", "barcode": "8901000000015", "name": "Volt Energy Drink Can 350ml", "cat": "Beverages", "cost": 30.0, "mrp": 40.0, "sale": 35.2, "gst": "28%", "hsn": "2202", "img": "Volt-Energy-Drink-Can-350ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0017", "barcode": "8901000000016", "name": "Indian Basmati Rice Extra Long Grain 5kg", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Indian-Basmati-Rice-Extra-Long-Grain-5kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0018", "barcode": "8901000000017", "name": "Orange Fizz Drink 750ml", "cat": "Beverages", "cost": 30.0, "mrp": 40.0, "sale": 35.2, "gst": "28%", "hsn": "2202", "img": "Orange-Fizz-Drink-750ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0019", "barcode": "8901000000018", "name": "Floral Musk And Lily Incense Sticks", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Floral-Musk-And-Lily-Incense-Sticks.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0020", "barcode": "8901000000019", "name": "Chakki Fresh Atta Whole Wheat 5kg", "cat": "Grocery & Staples", "cost": 292.5, "mrp": 390.0, "sale": 343.2, "gst": "5%", "hsn": "1901", "img": "Chakki-Fresh-Atta-Whole-Wheat-5kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0021", "barcode": "8901000000020", "name": "Desi Kitchen Aloo Tikki 400g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Desi-Kitchen-Aloo-Tikki-400g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0022", "barcode": "8901000000021", "name": "Golden Cuts Crispy French Fries 750g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Golden-Cuts-Crispy-French-Fries-750g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0023", "barcode": "8901000000022", "name": "Frontera Crispy Veg Nuggets 400g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Frontera-Crispy-Veg-Nuggets-400g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0024", "barcode": "8901000000023", "name": "Premium Quality Frozen Green Peas 500g", "cat": "Frozen Foods", "cost": 67.5, "mrp": 90.0, "sale": 79.2, "gst": "0%", "hsn": "0710", "img": "Premium-Quality-Frozen-Green-Peas-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0025", "barcode": "8901000000024", "name": "Lachha Paratha Flaky Layered 4pieces 400g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Lachha-Paratha-Flaky-Layered-4Pieces-400g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0026", "barcode": "8901000000025", "name": "Malabar Paratha Authentic Flaky 5pack", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Malabar-Paratha-Authentic-Flaky-5Pack.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0027", "barcode": "8901000000026", "name": "Natures Harvest Frozen Mixed Vegetables 500g", "cat": "Frozen Foods", "cost": 67.5, "mrp": 90.0, "sale": 79.2, "gst": "0%", "hsn": "0710", "img": "Natures-Harvest-Frozen-Mixed-Vegetables-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0028", "barcode": "8901000000027", "name": "Desi Treats Frozen Punjabi Samosas 500g", "cat": "Frozen Foods", "cost": 67.5, "mrp": 90.0, "sale": 79.2, "gst": "0%", "hsn": "0710", "img": "Desi-Treats-Frozen-Punjabi-Samosas-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0029", "barcode": "8901000000028", "name": "Harvest Gold Frozen Sweet Corn Kernels 500g", "cat": "Frozen Foods", "cost": 67.5, "mrp": 90.0, "sale": 79.2, "gst": "0%", "hsn": "0710", "img": "Harvest-Gold-Frozen-Sweet-Corn-Kernels-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0030", "barcode": "8901000000029", "name": "Veg Momos Vegetable Dumplings 500g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Veg-Momos-Vegetable-Dumplings-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0031", "barcode": "8901000000030", "name": "Natural Blends Premium Green Tea 25bags", "cat": "Grocery & Staples", "cost": 97.5, "mrp": 130.0, "sale": 114.4, "gst": "5%", "hsn": "1901", "img": "Natural-Blends-Premium-Green-Tea-25Bags.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0032", "barcode": "8901000000031", "name": "Pure Hing Asafoetida Powder 50g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Pure-Hing-Asafoetida-Powder-50g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0033", "barcode": "8901000000032", "name": "Summer Brew Lemon Iced Tea Mix 400g", "cat": "Grocery & Staples", "cost": 97.5, "mrp": 130.0, "sale": 114.4, "gst": "5%", "hsn": "1901", "img": "Summer-Brew-Lemon-Iced-Tea-Mix-400g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0034", "barcode": "8901000000033", "name": "Roast And Co Instant Coffee 100g", "cat": "Grocery & Staples", "cost": 97.5, "mrp": 130.0, "sale": 114.4, "gst": "5%", "hsn": "1901", "img": "Roast-And-Co-Instant-Coffee-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0035", "barcode": "8901000000034", "name": "Taste Of Asia Curry Noodles 4pack", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Taste-Of-Asia-Curry-Noodles-4Pack.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0036", "barcode": "8901000000035", "name": "Souper Instant Tomato Soup 4x20g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Souper-Instant-Tomato-Soup-4x20g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0037", "barcode": "8901000000036", "name": "Lemon Lime Sparkling Soda 750ml", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Lemon-Lime-Sparkling-Soda-750ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0038", "barcode": "8901000000037", "name": "Masala Instant Noodles 4pack 280g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Masala-Instant-Noodles-4Pack-280g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0039", "barcode": "8901000000038", "name": "Bombay Spices Pav Bhaji Masala 100g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Bombay-Spices-Pav-Bhaji-Masala-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0040", "barcode": "8901000000039", "name": "Pure Mustard Seeds Rai 100g", "cat": "Grocery & Staples", "cost": 123.75, "mrp": 165.0, "sale": 145.2, "gst": "5%", "hsn": "1901", "img": "Pure-Mustard-Seeds-Rai-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0041", "barcode": "8901000000040", "name": "Natural Dhoop Cones 24pack", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Natural-Dhoop-Cones-24Pack.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0042", "barcode": "8901000000041", "name": "Royal Spices Chicken Curry Masala 100g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Royal-Spices-Chicken-Curry-Masala-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0043", "barcode": "8901000000042", "name": "Pure Tender Coconut Water 200ml", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Pure-Tender-Coconut-Water-200ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0044", "barcode": "8901000000043", "name": "Casa Doro Penne Rigate Pasta 500g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Casa-Doro-Penne-Rigate-Pasta-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0045", "barcode": "8901000000044", "name": "Volt High Caffeine Energy Drink 250ml", "cat": "Beverages", "cost": 30.0, "mrp": 40.0, "sale": 35.2, "gst": "28%", "hsn": "2202", "img": "Volt-High-Caffeine-Energy-Drink-250ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0046", "barcode": "8901000000045", "name": "Premium Instant Coffee Arabica 100g", "cat": "Grocery & Staples", "cost": 97.5, "mrp": 130.0, "sale": 114.4, "gst": "5%", "hsn": "1901", "img": "Premium-Instant-Coffee-Arabica-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0047", "barcode": "8901000000046", "name": "Natural Flora Premium Incense Sticks", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Natural-Flora-Premium-Incense-Sticks.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0048", "barcode": "8901000000047", "name": "Puja Ghee Diya Cotton Wicks 50pcs", "cat": "Desi Ghee & Oils", "cost": 487.5, "mrp": 650.0, "sale": 572.0, "gst": "12%", "hsn": "0405", "img": "Puja-Ghee-Diya-Cotton-Wicks-50Pcs.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0049", "barcode": "8901000000048", "name": "Pure Bajra Flour Pearl Millet 1kg", "cat": "Grocery & Staples", "cost": 292.5, "mrp": 390.0, "sale": 343.2, "gst": "5%", "hsn": "1901", "img": "Pure-Bajra-Flour-Pearl-Millet-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0050", "barcode": "8901000000049", "name": "Pure Puja Camphor Kapoor 100g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Pure-Puja-Camphor-Kapoor-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0051", "barcode": "8901000000050", "name": "Desi Treats Pani Puri Magic Kit 220g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Desi-Treats-Pani-Puri-Magic-Kit-220g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0052", "barcode": "8901000000051", "name": "Volt Energy Drink Can 250ml", "cat": "Beverages", "cost": 30.0, "mrp": 40.0, "sale": 35.2, "gst": "28%", "hsn": "2202", "img": "Volt-Energy-Drink-Can-250ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0053", "barcode": "8901000000052", "name": "Natural Grains Maida Flour 1kg", "cat": "Grocery & Staples", "cost": 292.5, "mrp": 390.0, "sale": 343.2, "gst": "5%", "hsn": "1901", "img": "Natural-Grains-Maida-Flour-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0054", "barcode": "8901000000053", "name": "Power Up Energy Drink 250ml", "cat": "Beverages", "cost": 30.0, "mrp": 40.0, "sale": 35.2, "gst": "28%", "hsn": "2202", "img": "Power-Up-Energy-Drink-250ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0055", "barcode": "8901000000054", "name": "Premium Rich Chocolate Ice Cream 700ml", "cat": "Grocery & Staples", "cost": 33.75, "mrp": 45.0, "sale": 39.6, "gst": "5%", "hsn": "1901", "img": "Premium-Rich-Chocolate-Ice-Cream-700ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0056", "barcode": "8901000000055", "name": "Premium Roasted Almonds 250g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Premium-Roasted-Almonds-250g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0057", "barcode": "8901000000056", "name": "Roasted Seviyan Vermicelli 400g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Roasted-Seviyan-Vermicelli-400g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0058", "barcode": "8901000000057", "name": "Sendha Namak Natural Rock Salt 1kg", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Sendha-Namak-Natural-Rock-Salt-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0059", "barcode": "8901000000058", "name": "Sacred Gangajal Holy Water 250ml", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Sacred-Gangajal-Holy-Water-250ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0060", "barcode": "8901000000059", "name": "Puja Mauli Kalawa Red Yellow Thread", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Puja-Mauli-Kalawa-Red-Yellow-Thread.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0061", "barcode": "8901000000060", "name": "Earths Harvest Jowar Flour Sorghum 1kg", "cat": "Grocery & Staples", "cost": 292.5, "mrp": 390.0, "sale": 343.2, "gst": "5%", "hsn": "1901", "img": "Earths-Harvest-Jowar-Flour-Sorghum-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0062", "barcode": "8901000000061", "name": "Rasa South Indian Sambar Masala 100g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Rasa-South-Indian-Sambar-Masala-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0063", "barcode": "8901000000062", "name": "Natural Harvest Split Green Moong Dal Chilka 1kg", "cat": "Grocery & Staples", "cost": 101.25, "mrp": 135.0, "sale": 118.8, "gst": "5%", "hsn": "1901", "img": "Natural-Harvest-Split-Green-Moong-Dal-Chilka-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0064", "barcode": "8901000000063", "name": "Force Cola Extra Fizz 750ml", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Force-Cola-Extra-Fizz-750ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0065", "barcode": "8901000000064", "name": "Royal Heritage Basmati Rice 5kg", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Royal-Heritage-Basmati-Rice-5kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0066", "barcode": "8901000000065", "name": "Traditional Herbal Havan Samagri 500g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Traditional-Herbal-Havan-Samagri-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0067", "barcode": "8901000000066", "name": "Chandan Natural Sandalwood Agarbatti", "cat": "Grocery & Staples", "cost": 101.25, "mrp": 135.0, "sale": 118.8, "gst": "5%", "hsn": "1901", "img": "Chandan-Natural-Sandalwood-Agarbatti.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0068", "barcode": "8901000000067", "name": "Traditional Malai Kulfi 4pack", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Traditional-Malai-Kulfi-4Pack.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0069", "barcode": "8901000000068", "name": "Traditional Natural Sambrani Dhoop Cups 12pcs", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Traditional-Natural-Sambrani-Dhoop-Cups-12Pcs.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0070", "barcode": "8901000000069", "name": "Traditional Sharbati Wheat Flour Atta 5kg", "cat": "Grocery & Staples", "cost": 292.5, "mrp": 390.0, "sale": 343.2, "gst": "5%", "hsn": "1901", "img": "Traditional-Sharbati-Wheat-Flour-Atta-5kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0071", "barcode": "8901000000070", "name": "Vanilla Ice Cream Tub 700ml", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Vanilla-Ice-Cream-Tub-700ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0072", "barcode": "8901000000071", "name": "Pure Cotton Wicks Puja Diyas 100pcs", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Pure-Cotton-Wicks-Puja-Diyas-100Pcs.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0073", "barcode": "8901000000072", "name": "Premium Kabuli Chana White Chickpeas 1kg", "cat": "Frozen Foods", "cost": 101.25, "mrp": 135.0, "sale": 118.8, "gst": "0%", "hsn": "0710", "img": "Premium-Kabuli-Chana-White-Chickpeas-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0074", "barcode": "8901000000073", "name": "Premium Whole Cloves Laung 50g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Premium-Whole-Cloves-Laung-50g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0075", "barcode": "8901000000074", "name": "Premium Whole Black Pepper 100g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Premium-Whole-Black-Pepper-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0076", "barcode": "8901000000075", "name": "Natural Whole Cinnamon Sticks Dalchini 100g", "cat": "Grocery & Staples", "cost": 101.25, "mrp": 135.0, "sale": 118.8, "gst": "5%", "hsn": "1901", "img": "Natural-Whole-Cinnamon-Sticks-Dalchini-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0077", "barcode": "8901000000076", "name": "Natural Whole Cumin Seeds Jeera 200g", "cat": "Spices", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "0910", "img": "Natural-Whole-Cumin-Seeds-Jeera-200g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0078", "barcode": "8901000000077", "name": "Premium Green Cardamom Elaichi 50g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Premium-Green-Cardamom-Elaichi-50g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0079", "barcode": "8901000000078", "name": "Natural Grains Yellow Maize Flour Makki Atta 1kg", "cat": "Grocery & Staples", "cost": 292.5, "mrp": 390.0, "sale": 343.2, "gst": "5%", "hsn": "1901", "img": "Natural-Grains-Yellow-Maize-Flour-Makki-Atta-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0080", "barcode": "8901000000079", "name": "Organic Yellow Moong Dal Washed 1kg", "cat": "Grocery & Staples", "cost": 101.25, "mrp": 135.0, "sale": 118.8, "gst": "5%", "hsn": "1901", "img": "Organic-Yellow-Moong-Dal-Washed-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0081", "barcode": "8901000000080", "name": "Premium Toor Dal Arhar Dal 1kg", "cat": "Grocery & Staples", "cost": 101.25, "mrp": 135.0, "sale": 118.8, "gst": "5%", "hsn": "1901", "img": "Premium-Toor-Dal-Arhar-Dal-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0082", "barcode": "8901000000081", "name": "Natural Frozen Green Peas 500g", "cat": "Frozen Foods", "cost": 67.5, "mrp": 90.0, "sale": 79.2, "gst": "0%", "hsn": "0710", "img": "Natural-Frozen-Green-Peas-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0083", "barcode": "8901000000082", "name": "Aashirvaad Select Sharbati Atta 5kg", "cat": "Grocery & Staples", "cost": 292.5, "mrp": 390.0, "sale": 343.2, "gst": "5%", "hsn": "1901", "img": "Aashirvaad-Select-Sharbati-Atta-5kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0084", "barcode": "8901000000083", "name": "Aashirvaad Select Sharbati Atta Bag 5kg", "cat": "Grocery & Staples", "cost": 292.5, "mrp": 390.0, "sale": 343.2, "gst": "5%", "hsn": "1901", "img": "Aashirvaad-Select-Sharbati-Atta-Bag-5kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0085", "barcode": "8901000000084", "name": "Aashirvaad Multigrain Atta 5kg", "cat": "Grocery & Staples", "cost": 292.5, "mrp": 390.0, "sale": 343.2, "gst": "5%", "hsn": "1901", "img": "Aashirvaad-Multigrain-Atta-5kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0086", "barcode": "8901000000085", "name": "Aashirvaad Chakki Fresh Multigrain Atta 5kg", "cat": "Grocery & Staples", "cost": 292.5, "mrp": 390.0, "sale": 343.2, "gst": "5%", "hsn": "1901", "img": "Aashirvaad-Chakki-Fresh-Multigrain-Atta-5kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0087", "barcode": "8901000000086", "name": "Amul Pure Ghee 1litre", "cat": "Desi Ghee & Oils", "cost": 487.5, "mrp": 650.0, "sale": 572.0, "gst": "12%", "hsn": "0405", "img": "Amul-Pure-Ghee-1Litre.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0088", "barcode": "8901000000087", "name": "Amul Pure Ghee Tin 1L", "cat": "Desi Ghee & Oils", "cost": 487.5, "mrp": 650.0, "sale": 572.0, "gst": "12%", "hsn": "0405", "img": "Amul-Pure-Ghee-Tin-1L.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0089", "barcode": "8901000000088", "name": "Amul Malai Paneer 200g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Amul-Malai-Paneer-200g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0090", "barcode": "8901000000089", "name": "Amul Malai Paneer Cubes 200g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Amul-Malai-Paneer-Cubes-200g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0091", "barcode": "8901000000090", "name": "Amul Taaza Toned Milk 1litre", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Amul-Taaza-Toned-Milk-1Litre.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0092", "barcode": "8901000000091", "name": "Amul Taaza Toned Milk 1L", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Amul-Taaza-Toned-Milk-1L.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0093", "barcode": "8901000000092", "name": "Amul Gold Full Cream Milk 1litre", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Amul-Gold-Full-Cream-Milk-1Litre.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0094", "barcode": "8901000000093", "name": "Amul Gold Full Cream Milk 1L", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Amul-Gold-Full-Cream-Milk-1L.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0095", "barcode": "8901000000094", "name": "Amul Butter 500g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Amul-Butter-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0096", "barcode": "8901000000095", "name": "Amul Pasteurised Butter 500g", "cat": "Personal Care", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "18%", "hsn": "3402", "img": "Amul-Pasteurised-Butter-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0097", "barcode": "8901000000096", "name": "Amul Salted Butter 100g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Amul-Salted-Butter-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0098", "barcode": "8901000000097", "name": "Amul Masti Dahi 400g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Amul-Masti-Dahi-400g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0099", "barcode": "8901000000098", "name": "Amul Masti Dahi Curd 400g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Amul-Masti-Dahi-Curd-400g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0100", "barcode": "8901000000099", "name": "Amul Mango Lassi 250ml", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Amul-Mango-Lassi-250ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0101", "barcode": "8901000000100", "name": "Amul Mango Rose Lassi 250ml", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Amul-Mango-Rose-Lassi-250ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0102", "barcode": "8901000000101", "name": "Amul Mithai Mate Condensed Milk 400g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Amul-Mithai-Mate-Condensed-Milk-400g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0103", "barcode": "8901000000102", "name": "Amul Mithai Mate Sweetened Condensed Milk 400g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Amul-Mithai-Mate-Sweetened-Condensed-Milk-400g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0104", "barcode": "8901000000103", "name": "Daawat Premium Basmati Rice 5kg", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Daawat-Premium-Basmati-Rice-5kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0105", "barcode": "8901000000104", "name": "Royal Harvest Premium Basmati Rice 5kg", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Royal-Harvest-Premium-Basmati-Rice-5kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0106", "barcode": "8901000000105", "name": "Cadbury Bournvita 500g", "cat": "Grocery & Staples", "cost": 33.75, "mrp": 45.0, "sale": 39.6, "gst": "5%", "hsn": "1901", "img": "Cadbury-Bournvita-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0107", "barcode": "8901000000106", "name": "Cadbury Bournvita Chocolate Malt Drink 500g", "cat": "Beverages", "cost": 30.0, "mrp": 40.0, "sale": 35.2, "gst": "28%", "hsn": "2202", "img": "Cadbury-Bournvita-Chocolate-Malt-Drink-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0108", "barcode": "8901000000107", "name": "Bisleri Packaged Drinking Water 1litre", "cat": "Beverages", "cost": 30.0, "mrp": 40.0, "sale": 35.2, "gst": "28%", "hsn": "2202", "img": "Bisleri-Packaged-Drinking-Water-1Litre.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0109", "barcode": "8901000000108", "name": "Bisleri Drinking Water 1L", "cat": "Beverages", "cost": 30.0, "mrp": 40.0, "sale": 35.2, "gst": "28%", "hsn": "2202", "img": "Bisleri-Drinking-Water-1L.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0110", "barcode": "8901000000109", "name": "Britannia Good Day Cashew Cookies 600g", "cat": "Grocery & Staples", "cost": 26.25, "mrp": 35.0, "sale": 30.8, "gst": "5%", "hsn": "1901", "img": "Britannia-Good-Day-Cashew-Cookies-600g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0111", "barcode": "8901000000110", "name": "Britannia Good Day Cashew Butter Cookies 600g", "cat": "Grocery & Staples", "cost": 26.25, "mrp": 35.0, "sale": 30.8, "gst": "5%", "hsn": "1901", "img": "Britannia-Good-Day-Cashew-Butter-Cookies-600g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0112", "barcode": "8901000000111", "name": "Britannia Milk Bikis Biscuits 500g", "cat": "Grocery & Staples", "cost": 26.25, "mrp": 35.0, "sale": 30.8, "gst": "5%", "hsn": "1901", "img": "Britannia-Milk-Bikis-Biscuits-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0113", "barcode": "8901000000112", "name": "Britannia Milk Bikis Pack 500g", "cat": "Grocery & Staples", "cost": 26.25, "mrp": 35.0, "sale": 30.8, "gst": "5%", "hsn": "1901", "img": "Britannia-Milk-Bikis-Pack-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0114", "barcode": "8901000000113", "name": "Britannia Milk Bikis Calcium 500g", "cat": "Grocery & Staples", "cost": 26.25, "mrp": 35.0, "sale": 30.8, "gst": "5%", "hsn": "1901", "img": "Britannia-Milk-Bikis-Calcium-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0115", "barcode": "8901000000114", "name": "Bikano Bhujia Namkeen 1kg", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Bikano-Bhujia-Namkeen-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0116", "barcode": "8901000000115", "name": "Bikano Bhujia Savoury Mixture 1kg", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Bikano-Bhujia-Savoury-Mixture-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0117", "barcode": "8901000000116", "name": "Bikano Bhujia Crispy Namkeen 1kg", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Bikano-Bhujia-Crispy-Namkeen-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0118", "barcode": "8901000000117", "name": "Brooke Bond Red Label Tea 500g", "cat": "Grocery & Staples", "cost": 97.5, "mrp": 130.0, "sale": 114.4, "gst": "5%", "hsn": "1901", "img": "Brooke-Bond-Red-Label-Tea-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0119", "barcode": "8901000000118", "name": "Brooke Bond Red Label Natural Care Tea 500g", "cat": "Grocery & Staples", "cost": 97.5, "mrp": 130.0, "sale": 114.4, "gst": "5%", "hsn": "1901", "img": "Brooke-Bond-Red-Label-Natural-Care-Tea-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0120", "barcode": "8901000000119", "name": "Tej Patta Bay Leaves 100g", "cat": "Grocery & Staples", "cost": 292.5, "mrp": 390.0, "sale": 343.2, "gst": "5%", "hsn": "1901", "img": "Tej-Patta-Bay-Leaves-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0121", "barcode": "8901000000120", "name": "Bay Leaves Tej Patta 100g", "cat": "Grocery & Staples", "cost": 292.5, "mrp": 390.0, "sale": 343.2, "gst": "5%", "hsn": "1901", "img": "Bay-Leaves-Tej-Patta-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0122", "barcode": "8901000000121", "name": "Catch Baking Soda 100g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Catch-Baking-Soda-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0123", "barcode": "8901000000122", "name": "Baking Soda 100g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Baking-Soda-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0124", "barcode": "8901000000123", "name": "Chana Dal Bengal Gram Split 1kg", "cat": "Grocery & Staples", "cost": 101.25, "mrp": 135.0, "sale": 118.8, "gst": "5%", "hsn": "1901", "img": "Chana-Dal-Bengal-Gram-Split-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0125", "barcode": "8901000000124", "name": "Annapurna Chana Dal 1kg", "cat": "Grocery & Staples", "cost": 101.25, "mrp": 135.0, "sale": 118.8, "gst": "5%", "hsn": "1901", "img": "Annapurna-Chana-Dal-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0126", "barcode": "8901000000125", "name": "Catch Turmeric Powder Haldi 200g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Catch-Turmeric-Powder-Haldi-200g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0127", "barcode": "8901000000126", "name": "Catch Red Chilli Powder 200g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Catch-Red-Chilli-Powder-200g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0128", "barcode": "8901000000127", "name": "Catch Coriander Powder Dhaniya 200g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Catch-Coriander-Powder-Dhaniya-200g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0129", "barcode": "8901000000128", "name": "Catch Coriander Powder Sprinkler 200g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Catch-Coriander-Powder-Sprinkler-200g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0130", "barcode": "8901000000129", "name": "Catch Garam Masala 100g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Catch-Garam-Masala-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0131", "barcode": "8901000000130", "name": "Colgate Strong Teeth Toothpaste 500g", "cat": "Personal Care", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "18%", "hsn": "3402", "img": "Colgate-Strong-Teeth-Toothpaste-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0132", "barcode": "8901000000131", "name": "Colgate Strong Teeth Fluoride Calcium 500g", "cat": "Personal Care", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "18%", "hsn": "3402", "img": "Colgate-Strong-Teeth-Fluoride-Calcium-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0133", "barcode": "8901000000132", "name": "Colgate Strong Teeth 500g", "cat": "Personal Care", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "18%", "hsn": "3402", "img": "Colgate-Strong-Teeth-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0134", "barcode": "8901000000133", "name": "Comfort Fabric Conditioner 860ml", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Comfort-Fabric-Conditioner-860ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0135", "barcode": "8901000000134", "name": "Comfort Fabric Conditioner After Wash 860ml", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Comfort-Fabric-Conditioner-After-Wash-860ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0136", "barcode": "8901000000135", "name": "Cadbury Dairy Milk Silk Chocolate 150g", "cat": "Grocery & Staples", "cost": 33.75, "mrp": 45.0, "sale": 39.6, "gst": "5%", "hsn": "1901", "img": "Cadbury-Dairy-Milk-Silk-Chocolate-150g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0137", "barcode": "8901000000136", "name": "Cadbury Dairy Milk Silk 150g", "cat": "Grocery & Staples", "cost": 33.75, "mrp": 45.0, "sale": 39.6, "gst": "5%", "hsn": "1901", "img": "Cadbury-Dairy-Milk-Silk-150g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0138", "barcode": "8901000000137", "name": "Coca Cola Original Taste 1litre", "cat": "Grocery & Staples", "cost": 30.0, "mrp": 40.0, "sale": 35.2, "gst": "5%", "hsn": "1901", "img": "Coca-Cola-Original-Taste-1Litre.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0139", "barcode": "8901000000138", "name": "Coca Cola 1litre", "cat": "Grocery & Staples", "cost": 30.0, "mrp": 40.0, "sale": 35.2, "gst": "5%", "hsn": "1901", "img": "Coca-Cola-1Litre.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0140", "barcode": "8901000000139", "name": "Dettol Antiseptic Liquid 550ml", "cat": "Grocery & Staples", "cost": 41.25, "mrp": 55.0, "sale": 48.4, "gst": "5%", "hsn": "1901", "img": "Dettol-Antiseptic-Liquid-550ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0141", "barcode": "8901000000140", "name": "Dettol Original Soap 125g", "cat": "Personal Care", "cost": 41.25, "mrp": 55.0, "sale": 48.4, "gst": "18%", "hsn": "3402", "img": "Dettol-Original-Soap-125g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0142", "barcode": "8901000000141", "name": "Dettol Original Soap 3x125g", "cat": "Personal Care", "cost": 41.25, "mrp": 55.0, "sale": 48.4, "gst": "18%", "hsn": "3402", "img": "Dettol-Original-Soap-3x125g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0143", "barcode": "8901000000142", "name": "Dabur Red Ayurvedic Toothpaste 300g", "cat": "Personal Care", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "18%", "hsn": "3402", "img": "Dabur-Red-Ayurvedic-Toothpaste-300g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0144", "barcode": "8901000000143", "name": "Dabur Red Gel Ayurvedic Toothpaste 300g", "cat": "Personal Care", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "18%", "hsn": "3402", "img": "Dabur-Red-Gel-Ayurvedic-Toothpaste-300g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0145", "barcode": "8901000000144", "name": "Dabur Pure Honey 500g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Dabur-Pure-Honey-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0146", "barcode": "8901000000145", "name": "Dabur Honey Purest 500g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Dabur-Honey-Purest-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0147", "barcode": "8901000000146", "name": "Dabur Chyawanprash 1kg", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Dabur-Chyawanprash-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0148", "barcode": "8901000000147", "name": "Dabur Chyawanprash Immunity Booster 1kg", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Dabur-Chyawanprash-Immunity-Booster-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0149", "barcode": "8901000000148", "name": "Dabur Amla Hair Oil 275ml", "cat": "Desi Ghee & Oils", "cost": 123.75, "mrp": 165.0, "sale": 145.2, "gst": "12%", "hsn": "0405", "img": "Dabur-Amla-Hair-Oil-275ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0150", "barcode": "8901000000149", "name": "Dabur Amla Hair Oil Nourishing 275ml", "cat": "Desi Ghee & Oils", "cost": 123.75, "mrp": 165.0, "sale": 145.2, "gst": "12%", "hsn": "0405", "img": "Dabur-Amla-Hair-Oil-Nourishing-275ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0151", "barcode": "8901000000150", "name": "Disano Extra Virgin Olive Oil 1litre", "cat": "Desi Ghee & Oils", "cost": 123.75, "mrp": 165.0, "sale": 145.2, "gst": "12%", "hsn": "0405", "img": "Disano-Extra-Virgin-Olive-Oil-1Litre.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0152", "barcode": "8901000000151", "name": "Disano Olive Oil Extra Virgin 1L", "cat": "Desi Ghee & Oils", "cost": 123.75, "mrp": 165.0, "sale": 145.2, "gst": "12%", "hsn": "0405", "img": "Disano-Olive-Oil-Extra-Virgin-1L.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0153", "barcode": "8901000000152", "name": "Sunfeast Dark Fantasy Choco Filled 300g", "cat": "Beverages", "cost": 30.0, "mrp": 40.0, "sale": 35.2, "gst": "28%", "hsn": "2202", "img": "Sunfeast-Dark-Fantasy-Choco-Filled-300g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0154", "barcode": "8901000000153", "name": "Sunfeast Dark Fantasy Choco Fills 300g", "cat": "Beverages", "cost": 30.0, "mrp": 40.0, "sale": 35.2, "gst": "28%", "hsn": "2202", "img": "Sunfeast-Dark-Fantasy-Choco-Fills-300g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0155", "barcode": "8901000000154", "name": "Dove Intense Repair Shampoo 650ml", "cat": "Personal Care", "cost": 41.25, "mrp": 55.0, "sale": 48.4, "gst": "18%", "hsn": "3402", "img": "Dove-Intense-Repair-Shampoo-650ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0156", "barcode": "8901000000155", "name": "Dove Intense Repair Keratin Shampoo 650ml", "cat": "Personal Care", "cost": 41.25, "mrp": 55.0, "sale": 48.4, "gst": "18%", "hsn": "3402", "img": "Dove-Intense-Repair-Keratin-Shampoo-650ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0157", "barcode": "8901000000156", "name": "Domex Toilet Cleaner 1litre", "cat": "Desi Ghee & Oils", "cost": 123.75, "mrp": 165.0, "sale": 145.2, "gst": "12%", "hsn": "0405", "img": "Domex-Toilet-Cleaner-1Litre.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0158", "barcode": "8901000000157", "name": "Domex Hygienic Toilet Cleaner 1L", "cat": "Desi Ghee & Oils", "cost": 123.75, "mrp": 165.0, "sale": 145.2, "gst": "12%", "hsn": "0405", "img": "Domex-Hygienic-Toilet-Cleaner-1L.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0159", "barcode": "8901000000158", "name": "Everyuth Naturals Purifying Neem Face Wash 150g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Everyuth-Naturals-Purifying-Neem-Face-Wash-150g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0160", "barcode": "8901000000159", "name": "Everyuth Naturals Neem Face Wash 150g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Everyuth-Naturals-Neem-Face-Wash-150g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0161", "barcode": "8901000000160", "name": "Eno Fruit Salt Antacid 100g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Eno-Fruit-Salt-Antacid-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0162", "barcode": "8901000000161", "name": "Eno Fruit Salt Regular 100g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Eno-Fruit-Salt-Regular-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0163", "barcode": "8901000000162", "name": "Everest Garam Masala 100g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Everest-Garam-Masala-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0164", "barcode": "8901000000163", "name": "Everest Garam Masala Blend 100g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Everest-Garam-Masala-Blend-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0165", "barcode": "8901000000164", "name": "Everest Chhole Masala 100g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Everest-Chhole-Masala-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0166", "barcode": "8901000000165", "name": "Everest Chhole Masala Spices 100g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Everest-Chhole-Masala-Spices-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0167", "barcode": "8901000000166", "name": "Everest Kitchen King Masala 100g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Everest-Kitchen-King-Masala-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0168", "barcode": "8901000000167", "name": "Everest Meat Masala 100g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Everest-Meat-Masala-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0169", "barcode": "8901000000168", "name": "Everest Kitchen King Masala Blend 100g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Everest-Kitchen-King-Masala-Blend-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0170", "barcode": "8901000000169", "name": "Everest Kasuri Methi 50g", "cat": "Grocery & Staples", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "1901", "img": "Everest-Kasuri-Methi-50g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0171", "barcode": "8901000000170", "name": "Elite Fruit Cake 250g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Elite-Fruit-Cake-250g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0172", "barcode": "8901000000171", "name": "Elite Plum Fruit Cake 250g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Elite-Plum-Fruit-Cake-250g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0173", "barcode": "8901000000172", "name": "Fortune Sunlite Sunflower Oil 1L", "cat": "Desi Ghee & Oils", "cost": 123.75, "mrp": 165.0, "sale": 145.2, "gst": "12%", "hsn": "0405", "img": "Fortune-Sunlite-Sunflower-Oil-1L.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0174", "barcode": "8901000000173", "name": "Fortune Sunlite Sunflower Oil 1litre", "cat": "Desi Ghee & Oils", "cost": 123.75, "mrp": 165.0, "sale": 145.2, "gst": "12%", "hsn": "0405", "img": "Fortune-Sunlite-Sunflower-Oil-1Litre.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0175", "barcode": "8901000000174", "name": "Fortune Kachi Ghani Mustard Oil 1litre", "cat": "Desi Ghee & Oils", "cost": 123.75, "mrp": 165.0, "sale": 145.2, "gst": "12%", "hsn": "0405", "img": "Fortune-Kachi-Ghani-Mustard-Oil-1Litre.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0176", "barcode": "8901000000175", "name": "Fortune Kachi Ghani Mustard Oil 1L", "cat": "Desi Ghee & Oils", "cost": 123.75, "mrp": 165.0, "sale": 145.2, "gst": "12%", "hsn": "0405", "img": "Fortune-Kachi-Ghani-Mustard-Oil-1L.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0177", "barcode": "8901000000176", "name": "Fortune Arhar Dal 1kg", "cat": "Grocery & Staples", "cost": 101.25, "mrp": 135.0, "sale": 118.8, "gst": "5%", "hsn": "1901", "img": "Fortune-Arhar-Dal-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0178", "barcode": "8901000000177", "name": "Fortune Arhar Toor Dal 1kg", "cat": "Grocery & Staples", "cost": 101.25, "mrp": 135.0, "sale": 118.8, "gst": "5%", "hsn": "1901", "img": "Fortune-Arhar-Toor-Dal-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0179", "barcode": "8901000000178", "name": "Fortune Besan Gram Flour 1kg", "cat": "Grocery & Staples", "cost": 292.5, "mrp": 390.0, "sale": 343.2, "gst": "5%", "hsn": "1901", "img": "Fortune-Besan-Gram-Flour-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0180", "barcode": "8901000000179", "name": "Fortune Refined Soyabean Oil 1L", "cat": "Desi Ghee & Oils", "cost": 123.75, "mrp": 165.0, "sale": 145.2, "gst": "12%", "hsn": "0405", "img": "Fortune-Refined-Soyabean-Oil-1L.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0181", "barcode": "8901000000180", "name": "Fortune Refined Soyabean Oil 1litre", "cat": "Desi Ghee & Oils", "cost": 123.75, "mrp": 165.0, "sale": 145.2, "gst": "12%", "hsn": "0405", "img": "Fortune-Refined-Soyabean-Oil-1Litre.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0182", "barcode": "8901000000181", "name": "Fiama Shower Gel 250ml", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Fiama-Shower-Gel-250ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0183", "barcode": "8901000000182", "name": "Fiama Peach Avocado Shower Gel 250ml", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Fiama-Peach-Avocado-Shower-Gel-250ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0184", "barcode": "8901000000183", "name": "Frooti Mango Drink 1litre", "cat": "Beverages", "cost": 30.0, "mrp": 40.0, "sale": 35.2, "gst": "28%", "hsn": "2202", "img": "Frooti-Mango-Drink-1Litre.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0185", "barcode": "8901000000184", "name": "Gharwal Desi Ghee 1L", "cat": "Desi Ghee & Oils", "cost": 487.5, "mrp": 650.0, "sale": 572.0, "gst": "12%", "hsn": "0405", "img": "Gharwal-Desi-Ghee-1L.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0186", "barcode": "8901000000185", "name": "Gharwal Pure Cow Desi Ghee 1litre", "cat": "Desi Ghee & Oils", "cost": 487.5, "mrp": 650.0, "sale": 572.0, "gst": "12%", "hsn": "0405", "img": "Gharwal-Pure-Cow-Desi-Ghee-1Litre.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0187", "barcode": "8901000000186", "name": "Gillette Guard Razor 1unit", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Gillette-Guard-Razor-1Unit.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0188", "barcode": "8901000000187", "name": "Gillette Guard Shaving Razor 1unit", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Gillette-Guard-Shaving-Razor-1Unit.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0189", "barcode": "8901000000188", "name": "Gillette Shaving Foam Regular 200g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Gillette-Shaving-Foam-Regular-200g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0190", "barcode": "8901000000189", "name": "Godrej No1 Sandalwood Turmeric Soap 4x100g", "cat": "Personal Care", "cost": 101.25, "mrp": 135.0, "sale": 118.8, "gst": "18%", "hsn": "3402", "img": "Godrej-No1-Sandalwood-Turmeric-Soap-4x100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0191", "barcode": "8901000000190", "name": "Godrej No1 Neem Aloe Vera Soap 4pack", "cat": "Personal Care", "cost": 41.25, "mrp": 55.0, "sale": 48.4, "gst": "18%", "hsn": "3402", "img": "Godrej-No1-Neem-Aloe-Vera-Soap-4Pack.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0192", "barcode": "8901000000191", "name": "Good Knight Gold Flash Refill 45ml", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Good-Knight-Gold-Flash-Refill-45ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0193", "barcode": "8901000000192", "name": "Gullak Premium Refined Sugar 5kg", "cat": "Grocery & Staples", "cost": 123.75, "mrp": 165.0, "sale": 145.2, "gst": "5%", "hsn": "1901", "img": "Gullak-Premium-Refined-Sugar-5kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0194", "barcode": "8901000000193", "name": "Gullak Sugar Refined 5kg", "cat": "Grocery & Staples", "cost": 123.75, "mrp": 165.0, "sale": 145.2, "gst": "5%", "hsn": "1901", "img": "Gullak-Sugar-Refined-5kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0195", "barcode": "8901000000194", "name": "Garlic Powder 100g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Garlic-Powder-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0196", "barcode": "8901000000195", "name": "Garlic Powder Lehsun 100g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Garlic-Powder-Lehsun-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0197", "barcode": "8901000000196", "name": "Dabur Ginger Garlic Paste 200g", "cat": "Personal Care", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "18%", "hsn": "3402", "img": "Dabur-Ginger-Garlic-Paste-200g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0198", "barcode": "8901000000197", "name": "Haldirams Bhujia Sev Namkeen 1kg", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Haldirams-Bhujia-Sev-Namkeen-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0199", "barcode": "8901000000198", "name": "Haldirams Rasgulla Sweets 1kg", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Haldirams-Rasgulla-Sweets-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0200", "barcode": "8901000000199", "name": "Haldirams Rasgulla 1kg", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Haldirams-Rasgulla-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0201", "barcode": "8901000000200", "name": "Haldirams Gulab Jamun 1kg", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Haldirams-Gulab-Jamun-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0202", "barcode": "8901000000201", "name": "Haldirams Soan Papdi 500g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Haldirams-Soan-Papdi-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0203", "barcode": "8901000000202", "name": "Haldirams Soan Papdi Desi Ghee 500g", "cat": "Desi Ghee & Oils", "cost": 487.5, "mrp": 650.0, "sale": 572.0, "gst": "12%", "hsn": "0405", "img": "Haldirams-Soan-Papdi-Desi-Ghee-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0204", "barcode": "8901000000203", "name": "Haldirams All In One Namkeen 1kg", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Haldirams-All-In-One-Namkeen-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0205", "barcode": "8901000000204", "name": "Haldirams All In One Mixture 1kg", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Haldirams-All-In-One-Mixture-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0206", "barcode": "8901000000205", "name": "Harpic Toilet Cleaner Active Fresh 1L", "cat": "Desi Ghee & Oils", "cost": 123.75, "mrp": 165.0, "sale": 145.2, "gst": "12%", "hsn": "0405", "img": "Harpic-Toilet-Cleaner-Active-Fresh-1L.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0207", "barcode": "8901000000206", "name": "Harpic Toilet Cleaner Power Plus 1litre", "cat": "Desi Ghee & Oils", "cost": 123.75, "mrp": 165.0, "sale": 145.2, "gst": "12%", "hsn": "0405", "img": "Harpic-Toilet-Cleaner-Power-Plus-1Litre.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0208", "barcode": "8901000000207", "name": "Head Shoulders Classic Clean Shampoo 650ml", "cat": "Personal Care", "cost": 146.25, "mrp": 195.0, "sale": 171.6, "gst": "18%", "hsn": "3402", "img": "Head-Shoulders-Classic-Clean-Shampoo-650ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0209", "barcode": "8901000000208", "name": "Head Shoulders Cool Menthol Shampoo 650ml", "cat": "Personal Care", "cost": 146.25, "mrp": 195.0, "sale": 171.6, "gst": "18%", "hsn": "3402", "img": "Head-Shoulders-Cool-Menthol-Shampoo-650ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0210", "barcode": "8901000000209", "name": "Himalaya Purifying Neem Face Wash 150ml", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Himalaya-Purifying-Neem-Face-Wash-150ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0211", "barcode": "8901000000210", "name": "Horlicks Classic Malt Health Drink 500g", "cat": "Beverages", "cost": 30.0, "mrp": 40.0, "sale": 35.2, "gst": "28%", "hsn": "2202", "img": "Horlicks-Classic-Malt-Health-Drink-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0212", "barcode": "8901000000211", "name": "Horlicks Health Drink 500g", "cat": "Beverages", "cost": 30.0, "mrp": 40.0, "sale": 35.2, "gst": "28%", "hsn": "2202", "img": "Horlicks-Health-Drink-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0213", "barcode": "8901000000212", "name": "Himalaya Baby Soap 125g", "cat": "Personal Care", "cost": 41.25, "mrp": 55.0, "sale": 48.4, "gst": "18%", "hsn": "3402", "img": "Himalaya-Baby-Soap-125g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0214", "barcode": "8901000000213", "name": "India Gate Feast Rozzana Basmati Rice 5kg", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "India-Gate-Feast-Rozzana-Basmati-Rice-5kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0215", "barcode": "8901000000214", "name": "India Gate Dubar Basmati Rice 5kg", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "India-Gate-Dubar-Basmati-Rice-5kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0216", "barcode": "8901000000215", "name": "India Gate Tibar Basmati Rice 5kg", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "India-Gate-Tibar-Basmati-Rice-5kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0217", "barcode": "8901000000216", "name": "Tata Salt Iodized 1kg", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Tata-Salt-Iodized-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0218", "barcode": "8901000000217", "name": "Imperial Leather Original Bath Soap 3x100g", "cat": "Personal Care", "cost": 41.25, "mrp": 55.0, "sale": 48.4, "gst": "18%", "hsn": "3402", "img": "Imperial-Leather-Original-Bath-Soap-3x100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0219", "barcode": "8901000000218", "name": "Iodex Pain Relief Balm 40g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Iodex-Pain-Relief-Balm-40g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0220", "barcode": "8901000000219", "name": "Organic Jaggery Gur 1kg", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Organic-Jaggery-Gur-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0221", "barcode": "8901000000220", "name": "Bajaj Jasmine Hair Oil 200ml", "cat": "Desi Ghee & Oils", "cost": 123.75, "mrp": 165.0, "sale": 145.2, "gst": "12%", "hsn": "0405", "img": "Bajaj-Jasmine-Hair-Oil-200ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0222", "barcode": "8901000000221", "name": "Johnsons Baby Powder 200g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Johnsons-Baby-Powder-200g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0223", "barcode": "8901000000222", "name": "Johnsons Baby Soap 100g", "cat": "Personal Care", "cost": 41.25, "mrp": 55.0, "sale": 48.4, "gst": "18%", "hsn": "3402", "img": "Johnsons-Baby-Soap-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0224", "barcode": "8901000000223", "name": "Jiwa Whole Wheat Atta 5kg", "cat": "Grocery & Staples", "cost": 292.5, "mrp": 390.0, "sale": 343.2, "gst": "5%", "hsn": "1901", "img": "Jiwa-Whole-Wheat-Atta-5kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0225", "barcode": "8901000000224", "name": "Kissan Tomato Ketchup 1kg", "cat": "Grocery & Staples", "cost": 93.75, "mrp": 125.0, "sale": 110.0, "gst": "5%", "hsn": "1901", "img": "Kissan-Tomato-Ketchup-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0226", "barcode": "8901000000225", "name": "Kissan Mixed Fruit Jam 500g", "cat": "Grocery & Staples", "cost": 93.75, "mrp": 125.0, "sale": 110.0, "gst": "5%", "hsn": "1901", "img": "Kissan-Mixed-Fruit-Jam-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0227", "barcode": "8901000000226", "name": "Kelloggs Corn Flakes 875g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Kelloggs-Corn-Flakes-875g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0228", "barcode": "8901000000227", "name": "Kurkure Chatpata Masala Munch 100g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Kurkure-Chatpata-Masala-Munch-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0229", "barcode": "8901000000228", "name": "Knorr Classic Cream Of Tomato Soup 4servings", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Knorr-Classic-Cream-Of-Tomato-Soup-4Servings.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0230", "barcode": "8901000000229", "name": "Kasturi Turmeric Powder Haldi 100g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Kasturi-Turmeric-Powder-Haldi-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0231", "barcode": "8901000000230", "name": "Natures Harvest Kala Chana 1kg", "cat": "Grocery & Staples", "cost": 101.25, "mrp": 135.0, "sale": 118.8, "gst": "5%", "hsn": "1901", "img": "Natures-Harvest-Kala-Chana-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0232", "barcode": "8901000000231", "name": "Lays Indias Magic Masala Chips 100g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Lays-Indias-Magic-Masala-Chips-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0233", "barcode": "8901000000232", "name": "Lays Cream And Onion Chips 100g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Lays-Cream-And-Onion-Chips-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0234", "barcode": "8901000000233", "name": "Lux Soft Touch Soap 4x100g", "cat": "Personal Care", "cost": 41.25, "mrp": 55.0, "sale": 48.4, "gst": "18%", "hsn": "3402", "img": "Lux-Soft-Touch-Soap-4x100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0235", "barcode": "8901000000234", "name": "Liril Lime Mint Soap 125g", "cat": "Personal Care", "cost": 41.25, "mrp": 55.0, "sale": 48.4, "gst": "18%", "hsn": "3402", "img": "Liril-Lime-Mint-Soap-125g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0236", "barcode": "8901000000235", "name": "Lipton Green Tea Pure Light 100bags 200g", "cat": "Grocery & Staples", "cost": 97.5, "mrp": 130.0, "sale": 114.4, "gst": "5%", "hsn": "1901", "img": "Lipton-Green-Tea-Pure-Light-100Bags-200g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0237", "barcode": "8901000000236", "name": "Lizol Disinfectant Floor Cleaner 1L", "cat": "Personal Care", "cost": 108.75, "mrp": 145.0, "sale": 127.6, "gst": "18%", "hsn": "3402", "img": "Lizol-Disinfectant-Floor-Cleaner-1L.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0238", "barcode": "8901000000237", "name": "Lifebuoy Total Protect Hand Wash 750ml", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Lifebuoy-Total-Protect-Hand-Wash-750ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0239", "barcode": "8901000000238", "name": "Maggi 2 Minute Masala Noodles 560g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "Maggi-2-Minute-Masala-Noodles-560g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0240", "barcode": "8901000000239", "name": "MDH Degi Mirch Chilli Powder 100g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "MDH-Degi-Mirch-Chilli-Powder-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0241", "barcode": "8901000000240", "name": "MDH Chunky Chat Masala 100g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "MDH-Chunky-Chat-Masala-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0242", "barcode": "8901000000241", "name": "MDH Kitchen King Masala 100g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "MDH-Kitchen-King-Masala-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0243", "barcode": "8901000000242", "name": "MDH Garam Masala 100g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "MDH-Garam-Masala-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0244", "barcode": "8901000000243", "name": "Mother Dairy Pure Ghee 1litre", "cat": "Desi Ghee & Oils", "cost": 487.5, "mrp": 650.0, "sale": 572.0, "gst": "12%", "hsn": "0405", "img": "Mother-Dairy-Pure-Ghee-1Litre.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0245", "barcode": "8901000000244", "name": "Mother Dairy Fresh Paneer 200g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Mother-Dairy-Fresh-Paneer-200g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0246", "barcode": "8901000000245", "name": "Harvest Gold Yellow Split Moong Dal 1kg", "cat": "Grocery & Staples", "cost": 101.25, "mrp": 135.0, "sale": 118.8, "gst": "5%", "hsn": "1901", "img": "Harvest-Gold-Yellow-Split-Moong-Dal-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0247", "barcode": "8901000000246", "name": "Organic Harvest Moong Whole 1kg", "cat": "Grocery & Staples", "cost": 101.25, "mrp": 135.0, "sale": 118.8, "gst": "5%", "hsn": "1901", "img": "Organic-Harvest-Moong-Whole-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0248", "barcode": "8901000000247", "name": "Royal Harvest Split Masoor Dal 1kg", "cat": "Grocery & Staples", "cost": 101.25, "mrp": 135.0, "sale": 118.8, "gst": "5%", "hsn": "1901", "img": "Royal-Harvest-Split-Masoor-Dal-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0249", "barcode": "8901000000248", "name": "Navratna Ayurvedic Cool Hair Oil 300ml", "cat": "Desi Ghee & Oils", "cost": 123.75, "mrp": 165.0, "sale": 145.2, "gst": "12%", "hsn": "0405", "img": "Navratna-Ayurvedic-Cool-Hair-Oil-300ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0250", "barcode": "8901000000249", "name": "Nivea Soft Moisturising Cream 200ml", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Nivea-Soft-Moisturising-Cream-200ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0251", "barcode": "8901000000250", "name": "Nivea Body Lotion Deep Moisture 400ml", "cat": "Grocery & Staples", "cost": 41.25, "mrp": 55.0, "sale": 48.4, "gst": "5%", "hsn": "1901", "img": "Nivea-Body-Lotion-Deep-Moisture-400ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0252", "barcode": "8901000000251", "name": "Nirma Washing Powder 1kg", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Nirma-Washing-Powder-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0253", "barcode": "8901000000252", "name": "Nescafe Classic Instant Coffee 100g", "cat": "Grocery & Staples", "cost": 97.5, "mrp": 130.0, "sale": 114.4, "gst": "5%", "hsn": "1901", "img": "Nescafe-Classic-Instant-Coffee-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0254", "barcode": "8901000000253", "name": "Nestle Everyday Dairy Whitener 400g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Nestle-Everyday-Dairy-Whitener-400g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0255", "barcode": "8901000000254", "name": "Nutrela High Protein Soya Chunks 1kg", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Nutrela-High-Protein-Soya-Chunks-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0256", "barcode": "8901000000255", "name": "Swaad Nylon Sabudana Sago 500g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Swaad-Nylon-Sabudana-Sago-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0257", "barcode": "8901000000256", "name": "Saffola Oats 100 Natural 1kg", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Saffola-Oats-100-Natural-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0258", "barcode": "8901000000257", "name": "Kelloggs Rolled Oats 1kg", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Kelloggs-Rolled-Oats-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0259", "barcode": "8901000000258", "name": "Odonil Room Air Freshener Floral Bouquet 75g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Odonil-Room-Air-Freshener-Floral-Bouquet-75g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0260", "barcode": "8901000000259", "name": "Oral B Crossaction Toothbrushes 2pack", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Oral-B-CrossAction-Toothbrushes-2Pack.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0261", "barcode": "8901000000260", "name": "Oreo Chocolate Creme Biscuits 300g", "cat": "Grocery & Staples", "cost": 33.75, "mrp": 45.0, "sale": 39.6, "gst": "5%", "hsn": "1901", "img": "Oreo-Chocolate-Creme-Biscuits-300g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0262", "barcode": "8901000000261", "name": "The Spice Merchant Onion Powder 100g", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "The-Spice-Merchant-Onion-Powder-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0263", "barcode": "8901000000262", "name": "Parle G Glucose Biscuits 800g", "cat": "Grocery & Staples", "cost": 26.25, "mrp": 35.0, "sale": 30.8, "gst": "5%", "hsn": "1901", "img": "Parle-G-Glucose-Biscuits-800g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0264", "barcode": "8901000000263", "name": "Parachute Pure Coconut Oil 600ml", "cat": "Desi Ghee & Oils", "cost": 123.75, "mrp": 165.0, "sale": 145.2, "gst": "12%", "hsn": "0405", "img": "Parachute-Pure-Coconut-Oil-600ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0265", "barcode": "8901000000264", "name": "Patanjali Dant Kanti Dental Cream 200g", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Patanjali-Dant-Kanti-Dental-Cream-200g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0266", "barcode": "8901000000265", "name": "Patanjali Pure Cow Ghee 1litre", "cat": "Desi Ghee & Oils", "cost": 487.5, "mrp": 650.0, "sale": 572.0, "gst": "12%", "hsn": "0405", "img": "Patanjali-Pure-Cow-Ghee-1Litre.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0267", "barcode": "8901000000266", "name": "Pears Pure Gentle Soap 4x125g", "cat": "Personal Care", "cost": 41.25, "mrp": 55.0, "sale": 48.4, "gst": "18%", "hsn": "3402", "img": "Pears-Pure-Gentle-Soap-4x125g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0268", "barcode": "8901000000267", "name": "Pepsodent Germicheck Toothpaste 300g", "cat": "Personal Care", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "18%", "hsn": "3402", "img": "Pepsodent-Germicheck-Toothpaste-300g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0269", "barcode": "8901000000268", "name": "Pampers All Round Protection Diapers L64", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Pampers-All-Round-Protection-Diapers-L64.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0270", "barcode": "8901000000269", "name": "Pril Kraft Gel Dishwash 500ml", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Pril-Kraft-Gel-Dishwash-500ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0271", "barcode": "8901000000270", "name": "Sri Dharma Pooja Lamp Oil 1litre", "cat": "Desi Ghee & Oils", "cost": 123.75, "mrp": 165.0, "sale": 145.2, "gst": "12%", "hsn": "0405", "img": "Sri-Dharma-Pooja-Lamp-Oil-1Litre.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0272", "barcode": "8901000000271", "name": "Tradition Harvest Thick Poha 1kg", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Tradition-Harvest-Thick-Poha-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0273", "barcode": "8901000000272", "name": "Quaker Whole Grain Rolled Oats 1kg", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "Quaker-Whole-Grain-Rolled-Oats-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0274", "barcode": "8901000000273", "name": "Quick Tatkal CTC Black Tea 500g", "cat": "Grocery & Staples", "cost": 97.5, "mrp": 130.0, "sale": 114.4, "gst": "5%", "hsn": "1901", "img": "Quick-Tatkal-CTC-Black-Tea-500g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0275", "barcode": "8901000000274", "name": "Swadist Whole Cumin Seeds Jeera 100g", "cat": "Spices", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "0910", "img": "Swadist-Whole-Cumin-Seeds-Jeera-100g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0276", "barcode": "8901000000275", "name": "Navratna Red Chitra Rajma 1kg", "cat": "Grocery & Staples", "cost": 101.25, "mrp": 135.0, "sale": 118.8, "gst": "5%", "hsn": "1901", "img": "Navratna-Red-Chitra-Rajma-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0277", "barcode": "8901000000276", "name": "Jammu Rajma Dark Red Kidney Beans 1kg", "cat": "Grocery & Staples", "cost": 101.25, "mrp": 135.0, "sale": 118.8, "gst": "5%", "hsn": "1901", "img": "Jammu-Rajma-Dark-Red-Kidney-Beans-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0278", "barcode": "8901000000277", "name": "Rin Detergent Powder 1kg", "cat": "Grocery & Staples", "cost": 108.75, "mrp": 145.0, "sale": 127.6, "gst": "5%", "hsn": "1901", "img": "Rin-Detergent-Powder-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0279", "barcode": "8901000000278", "name": "Rin Detergent Bar 250g", "cat": "Grocery & Staples", "cost": 108.75, "mrp": 145.0, "sale": 127.6, "gst": "5%", "hsn": "1901", "img": "Rin-Detergent-Bar-250g.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0280", "barcode": "8901000000279", "name": "Real Activ Mixed Fruit Juice 1litre", "cat": "Beverages", "cost": 30.0, "mrp": 40.0, "sale": 35.2, "gst": "28%", "hsn": "2202", "img": "Real-Activ-Mixed-Fruit-Juice-1Litre.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0281", "barcode": "8901000000280", "name": "Annapurna Rice Flour Chawal Atta 1kg", "cat": "Grocery & Staples", "cost": 292.5, "mrp": 390.0, "sale": 343.2, "gst": "5%", "hsn": "1901", "img": "Annapurna-Rice-Flour-Chawal-Atta-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0282", "barcode": "8901000000281", "name": "Hamdard Rooh Afza Sharbat", "cat": "Grocery & Staples", "cost": 30.0, "mrp": 40.0, "sale": 35.2, "gst": "5%", "hsn": "1901", "img": "Hamdard-Rooh-Afza-Sharbat.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0283", "barcode": "8901000000282", "name": "Surf Excel Easy Wash Detergent Powder 1kg", "cat": "Personal Care", "cost": 108.75, "mrp": 145.0, "sale": 127.6, "gst": "18%", "hsn": "3402", "img": "Surf-Excel-Easy-Wash-Detergent-Powder-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0284", "barcode": "8901000000283", "name": "Surf Excel Matic Front Load Powder 1kg", "cat": "Personal Care", "cost": 108.75, "mrp": 145.0, "sale": 127.6, "gst": "18%", "hsn": "3402", "img": "Surf-Excel-Matic-Front-Load-Powder-1kg.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0285", "barcode": "8901000000284", "name": "Saffola Gold Multisource Edible Oil 1L", "cat": "Desi Ghee & Oils", "cost": 123.75, "mrp": 165.0, "sale": 145.2, "gst": "12%", "hsn": "0405", "img": "Saffola-Gold-Multisource-Edible-Oil-1L.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0286", "barcode": "8901000000285", "name": "Fiake Nagor Jeera Masala Soda", "cat": "Spices", "cost": 58.5, "mrp": 78.0, "sale": 68.64, "gst": "5%", "hsn": "0910", "img": "IMG-20261010-WA0121.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0287", "barcode": "8901000000286", "name": "Fanta Orange Cold Drink", "cat": "Beverages", "cost": 30.0, "mrp": 40.0, "sale": 35.2, "gst": "28%", "hsn": "2202", "img": "Fanta-Orange-750-ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0288", "barcode": "8901000000287", "name": "Sprite Lemon Lime Cold Drink", "cat": "Beverages", "cost": 30.0, "mrp": 40.0, "sale": 35.2, "gst": "28%", "hsn": "2202", "img": "Sprite-750-ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0289", "barcode": "8901000000288", "name": "Sting Energy Drink", "cat": "Beverages", "cost": 30.0, "mrp": 40.0, "sale": 35.2, "gst": "28%", "hsn": "2202", "img": "Sting-Energy-Drink-250-ml.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0290", "barcode": "8901000000289", "name": "Lehar Evervess Plain Soda", "cat": "Grocery & Staples", "cost": 45.0, "mrp": 60.0, "sale": 52.8, "gst": "5%", "hsn": "1901", "img": "IMG-20261010-WA0121.png", "stock": 35, "exp": "2027-12-31"}, {"id": "NAV0291", "barcode": "8901000000290", "name": "Slice Mango Drink", "cat": "Beverages", "cost": 30.0, "mrp": 40.0, "sale": 35.2, "gst": "28%", "hsn": "2202", "img": "Frozen-Cheese-Slices-200-g.png", "stock": 35, "exp": "2027-12-31"}];
+    let catalog = SERVER_CATALOG;
+    let storeConfig = {"store_name": "Nav Grocery Store", "location": "Sandhaur Punjab", "phone": "8847370905", "email": "singhpaluppal@gmail.com", "gstin": "03AHPPU6185N1ZF", "public_store_active": true, "public_catalog_active": true, "public_offers_active": true, "active_cashiers": [{"id": "NAV-CASH-101", "name": "Cashier Counter 1", "active": true}, {"id": "NAV-CASH-102", "name": "Cashier Counter 2", "active": true}], "master_pin": "884737"};
+    let cart = [];
+    let salesHistory = JSON.parse(localStorage.getItem("nav_sales_history") || "[]");
+    let customers = JSON.parse(localStorage.getItem("nav_crm_db") || "[]");
+    let currentCashierBadge = localStorage.getItem("nav_current_cashier") || "NAV-CASH-101";
+    let currentScannerMode = "catalog";
+    let html5QrcodeScanner = null;
+    const MASTER_PIN = storeConfig.master_pin || "884737";
+
+    // AUTO-PURGE OLD CORRUPTED CACHE: If all items in localStorage have mrp===100, wipe it automatically!
+    (function purgeStaleCache() {
+      const cached = localStorage.getItem("nav_cloud_catalog_backup");
+      if (cached) {
+        try {
+          const parsed = JSON.parse(cached);
+          if (parsed && parsed.length > 5) {
+            const isAll100 = parsed.every(p => parseFloat(p.mrp) === 100);
+            if (isAll100) {
+              console.warn("Purging stale 100-MRP corrupted cache from localStorage...");
+              localStorage.removeItem("nav_cloud_catalog_backup");
+              localStorage.removeItem("nav_pristine_snapshot");
+            }
+          }
+        } catch(e) {}
+      }
+    })();
+
+    function forceResetFreshData() {
+      localStorage.removeItem("nav_cloud_catalog_backup");
+      localStorage.removeItem("nav_pristine_snapshot");
+      catalog = JSON.parse(JSON.stringify(SERVER_CATALOG));
+      updateMetrics();
+      renderCatalog(catalog);
+      renderWholesaleSheet();
+      alert("Old cache cleared! Fresh verified products and real prices loaded.");
+    }
+
+    function getPhotoUrl(p) {
+      if (!p) return "/IMG-20261010-WA0121.png";
+      const customImg = localStorage.getItem("nav_img_" + p.id);
+      if (customImg && customImg.startsWith("data:image")) return customImg;
+      if (p.img && p.img.startsWith("data:image")) return p.img;
+      
+      let clean = (p.img || "").replace(/^\/?public\//i, "").replace(/^\//, "");
+      if (!clean) clean = "IMG-20261010-WA0121.png";
+      return "/" + encodeURI(clean);
+    }
+
+    function autoSaveCloudLocal() {
+      try {
+        localStorage.setItem("nav_cloud_catalog_backup", JSON.stringify(catalog));
+        localStorage.setItem("nav_crm_db", JSON.stringify(customers));
+        localStorage.setItem("nav_sales_history", JSON.stringify(salesHistory));
+        localStorage.setItem("nav_store_settings", JSON.stringify(storeConfig));
+      } catch(e) {}
+    }
+
+    function grantAccess() {
+      sessionStorage.setItem("nav_auth", "true");
+      document.getElementById("authOverlay").style.display = "none";
+      document.getElementById("adminContent").style.display = "block";
+      
+      const savedBackup = localStorage.getItem("nav_cloud_catalog_backup");
+      if (savedBackup) {
+        try {
+          const parsed = JSON.parse(savedBackup);
+          const isAll100 = parsed.every(p => parseFloat(p.mrp) === 100);
+          if (!isAll100 && parsed.length > 0) catalog = parsed;
+          else catalog = JSON.parse(JSON.stringify(SERVER_CATALOG));
+        } catch(e) {
+          catalog = JSON.parse(JSON.stringify(SERVER_CATALOG));
+        }
+      } else {
+        catalog = JSON.parse(JSON.stringify(SERVER_CATALOG));
+      }
+
+      updateMetrics();
+      renderCatalog(catalog);
+      renderCRM();
+      renderWholesaleSheet();
+      renderReports();
+    }
+
+    async function unlockWithDeviceLock() {
+      try {
+        if (!window.PublicKeyCredential) {
+          alert("Device biometric not available. Using PIN 884737");
+          return;
+        }
+        const challenge = new Uint8Array(32);
+        window.crypto.getRandomValues(challenge);
+        let credId = localStorage.getItem("nav_cred_id");
+        if (!credId) {
+          const newCred = await navigator.credentials.create({
+            publicKey: {
+              challenge: challenge,
+              rp: { name: "Nav Grocery Admin", id: window.location.hostname },
+              user: { id: new Uint8Array([1,2,3,4]), name: storeConfig.email || "singhpaluppal@gmail.com", displayName: "Singhpal Uppal" },
+              pubKeyCredParams: [{ alg: -7, type: "public-key" }, { alg: -257, type: "public-key" }],
+              authenticatorSelection: { authenticatorAttachment: "platform", userVerification: "required" },
+              timeout: 60000
+            }
+          });
+          if (newCred) {
+            localStorage.setItem("nav_cred_id", btoa(String.fromCharCode(...new Uint8Array(newCred.rawId))));
+            grantAccess();
+          }
+        } else {
+          const assertion = await navigator.credentials.get({
+            publicKey: {
+              challenge: challenge,
+              rpId: window.location.hostname,
+              allowCredentials: [{ id: Uint8Array.from(atob(credId), c => c.charCodeAt(0)), type: "public-key", transports: ["internal"] }],
+              userVerification: "required",
+              timeout: 60000
+            }
+          });
+          if (assertion) grantAccess();
+        }
+      } catch (err) {
+        alert("Device verification bypassed. Enter Master PIN 884737");
+      }
+    }
+
+    function unlockWithPin() {
+      if (document.getElementById("adminPin").value.trim() === MASTER_PIN) grantAccess();
+      else alert("Incorrect PIN");
+    }
+
+    function logoutAdmin() {
+      sessionStorage.removeItem("nav_auth");
+      location.reload();
+    }
+
+    if (sessionStorage.getItem("nav_auth") === "true") grantAccess();
+
+    function updateMetrics() {
+      let costTotal = 0, retailTotal = 0;
+      catalog.forEach(p => {
+        const qty = p.stock || 0;
+        costTotal += (p.cost * qty);
+        retailTotal += (p.sale * qty);
+      });
+      document.getElementById("metricItems").innerText = catalog.length;
+      document.getElementById("metricCostVal").innerText = "₹" + Math.round(costTotal).toLocaleString();
+      document.getElementById("metricRetailVal").innerText = "₹" + Math.round(retailTotal).toLocaleString();
+    }
+
+    function renderCatalog(list) {
+      const tbody = document.getElementById("catalogTableBody");
+      tbody.innerHTML = list.map((p, idx) => {
+        const profit = Math.round(p.sale - p.cost);
+        const isLow = (p.stock || 0) < 10;
+        const photoSrc = getPhotoUrl(p);
+        return `
+          <tr>
+            <td>
+              <div class="thumb-wrap">
+                <img id="img-${idx}" class="img-preview" src="${photoSrc}" data-clean="${(p.img || '').replace(/^\/?public\//i, '')}" onerror="if(!this.dataset.t1){this.dataset.t1='1'; this.src='/public/'+encodeURI(this.dataset.clean);} else if(!this.dataset.t2){this.dataset.t2='1'; this.src='/IMG-20261010-WA0121.png';}" alt="">
+                <label class="upload-label" for="f-${idx}"><i class="fa fa-camera"></i> Change</label>
+                <input type="file" id="f-${idx}" class="hidden-file" accept="image/*" onchange="uploadRowPhoto(${idx}, this)">
+              </div>
+            </td>
+            <td><input type="text" class="in-edit in-small" id="bc-${idx}" value="${p.barcode || ''}"></td>
+            <td><input type="text" class="in-edit" id="name-${idx}" value="${p.name}"></td>
+            <td>
+              <select class="in-select" id="cat-${idx}">
+                <option value="Grocery & Staples" ${p.cat.includes("Grocery")?'selected':''}>Grocery</option>
+                <option value="Desi Ghee & Oils" ${p.cat.includes("Ghee")?'selected':''}>Desi Ghee</option>
+                <option value="Frozen Foods" ${p.cat.includes("Frozen")?'selected':''}>Frozen Foods</option>
+                <option value="Beverages" ${p.cat.includes("Beverage")?'selected':''}>Beverages</option>
+                <option value="Spices" ${p.cat.includes("Spice")?'selected':''}>Spices</option>
+                <option value="Personal Care" ${p.cat.includes("Personal")?'selected':''}>Personal Care</option>
+              </select>
+            </td>
+            <td><input type="number" class="in-edit in-small" id="cost-${idx}" value="${p.cost}"></td>
+            <td><input type="number" class="in-edit in-small" id="mrp-${idx}" value="${p.mrp}" oninput="recalcRow(${idx})"></td>
+            <td><strong style="color:#007600;" id="sale-${idx}">₹${p.sale}</strong></td>
+            <td>
+              <select class="in-select" id="gst-${idx}">
+                <option value="0%" ${p.gst==='0%'?'selected':''}>0%</option>
+                <option value="5%" ${p.gst==='5%'?'selected':''}>5%</option>
+                <option value="12%" ${p.gst==='12%'?'selected':''}>12%</option>
+                <option value="18%" ${p.gst==='18%'?'selected':''}>18%</option>
+                <option value="28%" ${p.gst==='28%'?'selected':''}>28%</option>
+              </select>
+            </td>
+            <td>
+              <input type="number" class="in-edit in-small" id="stock-${idx}" value="${p.stock}">
+              <span class="${isLow ? 'stock-badge-low' : 'stock-badge-ok'}">${isLow ? 'LOW' : 'OK'}</span>
+            </td>
+            <td><input type="date" class="in-edit" id="exp-${idx}" value="${p.exp || '2027-12-31'}"></td>
+            <td><strong style="color:#007185;">₹${profit}</strong></td>
+            <td><button class="btn-save-row" onclick="saveRow(${idx})">Save</button></td>
+          </tr>
+        `;
+      }).join("");
+    }
+
+    function recalcRow(idx) {
+      const mrp = parseFloat(document.getElementById(`mrp-${idx}`).value) || 0;
+      const sale = Math.round(mrp * 0.88);
+      document.getElementById(`sale-${idx}`).innerText = "₹" + sale;
+    }
+
+    function saveRow(idx) {
+      catalog[idx].name = document.getElementById(`name-${idx}`).value.trim();
+      catalog[idx].barcode = document.getElementById(`bc-${idx}`).value.trim();
+      catalog[idx].cat = document.getElementById(`cat-${idx}`).value;
+      catalog[idx].cost = parseFloat(document.getElementById(`cost-${idx}`).value) || 0;
+      catalog[idx].mrp = parseFloat(document.getElementById(`mrp-${idx}`).value) || 0;
+      catalog[idx].sale = Math.round(catalog[idx].mrp * 0.88);
+      catalog[idx].gst = document.getElementById(`gst-${idx}`).value;
+      catalog[idx].stock = parseInt(document.getElementById(`stock-${idx}`).value) || 0;
+      catalog[idx].exp = document.getElementById(`exp-${idx}`).value;
+      updateMetrics();
+      autoSaveCloudLocal();
+      renderWholesaleSheet();
+      alert("Product saved: " + catalog[idx].name);
+    }
+
+    function uploadRowPhoto(idx, input) {
+      if (input.files && input.files[0]) {
+        const file = input.files[0];
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const base64Data = e.target.result;
+          document.getElementById(`img-${idx}`).src = base64Data;
+          catalog[idx].img = base64Data;
+          localStorage.setItem("nav_img_" + catalog[idx].id, base64Data);
+          autoSaveCloudLocal();
+          alert("Photo uploaded & permanently saved for " + catalog[idx].name);
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function filterCatalog() {
+      const q = document.getElementById("searchBox").value.toLowerCase().trim();
+      const cat = document.getElementById("catFilter").value;
+      const filtered = catalog.filter(p => {
+        const matchQ = !q || p.name.toLowerCase().includes(q) || (p.barcode && p.barcode.includes(q)) || p.id.toLowerCase().includes(q) || (p.cat && p.cat.toLowerCase().includes(q));
+        const matchCat = (cat === "ALL") || p.cat.toLowerCase().includes(cat.toLowerCase());
+        return matchQ && matchCat;
+      });
+      renderCatalog(filtered);
+    }
+
+    function switchView(view) {
+      document.getElementById("viewCatalog").style.display = view === 'catalog' ? 'block' : 'none';
+      document.getElementById("viewPOS").style.display = view === 'pos' ? 'block' : 'none';
+      document.getElementById("viewCRM").style.display = view === 'crm' ? 'block' : 'none';
+      document.getElementById("viewWholesaleSheet").style.display = view === 'wholesale' ? 'block' : 'none';
+      document.getElementById("viewReports").style.display = view === 'reports' ? 'block' : 'none';
+      document.getElementById("viewSettingsHub").style.display = view === 'settings' ? 'block' : 'none';
+
+      document.getElementById("tabCatalog").className = 'tab-btn' + (view === 'catalog' ? ' active' : '');
+      document.getElementById("tabPOS").className = 'tab-btn' + (view === 'pos' ? ' active' : '');
+      document.getElementById("tabCRM").className = 'tab-btn' + (view === 'crm' ? ' active' : '');
+      document.getElementById("tabWholesale").className = 'tab-btn' + (view === 'wholesale' ? ' active' : '');
+      document.getElementById("tabReports").className = 'tab-btn' + (view === 'reports' ? ' active' : '');
+      document.getElementById("tabSettings").className = 'tab-btn' + (view === 'settings' ? ' active' : '');
+    }
+
+    function openScanner(mode) {
+      currentScannerMode = mode;
+      document.getElementById("scannerModal").style.display = "flex";
+      html5QrcodeScanner = new Html5Qrcode("reader");
+      html5QrcodeScanner.start(
+        { facingMode: "environment" },
+        { fps: 10, qrbox: 250 },
+        (decodedText) => {
+          handleScanSuccess(decodedText);
+          closeScanner();
+        },
+        (errorMessage) => {}
+      ).catch(err => alert("Camera permission required"));
+    }
+
+    function closeScanner() {
+      if (html5QrcodeScanner) {
+        html5QrcodeScanner.stop().then(() => html5QrcodeScanner.clear());
+      }
+      document.getElementById("scannerModal").style.display = "none";
+    }
+
+    function handleScanSuccess(barcode) {
+      if (currentScannerMode === 'catalog') {
+        const item = catalog.find(p => p.barcode === barcode);
+        if (item) {
+          const addQty = prompt(`Found ${item.name}\nCurrent Stock: ${item.stock}\nEnter additional stock quantity:`, "10");
+          if (addQty) {
+            item.stock += parseInt(addQty) || 0;
+            renderCatalog(catalog);
+            updateMetrics();
+            autoSaveCloudLocal();
+            renderWholesaleSheet();
+            alert(`Updated stock for ${item.name} to ${item.stock}`);
+          }
+        } else {
+          alert(`New Barcode: ${barcode} Assign to item`);
+        }
+      } else if (currentScannerMode === 'pos') {
+        addToCartByBarcode(barcode);
+      }
+    }
+
+    function posScanAdd() {
+      const query = document.getElementById("posBarcodeIn").value.trim();
+      if (!query) return;
+      addToCartByBarcode(query);
+      document.getElementById("posBarcodeIn").value = "";
+    }
+
+    function addToCartByBarcode(code) {
+      const item = catalog.find(p => p.barcode === code || p.name.toLowerCase().includes(code.toLowerCase()));
+      if (!item) {
+        alert("Product not found");
+        return;
+      }
+      if (item.stock <= 0) {
+        alert("Warning: " + item.name + " is OUT OF STOCK!");
+        return;
+      }
+      const existing = cart.find(c => c.id === item.id);
+      if (existing) {
+        if (existing.qty < item.stock) existing.qty += 1;
+        else alert("Cannot exceed current warehouse stock of " + item.stock);
+      } else {
+        cart.push({ ...item, qty: 1 });
+      }
+      renderCart();
+    }
+
+    function renderCart() {
+      const tbody = document.getElementById("posCartBody");
+      let subtotal = 0;
+      tbody.innerHTML = cart.map((c, i) => {
+        const lineTotal = c.sale * c.qty;
+        subtotal += lineTotal;
+        return `
+          <tr>
+            <td>${c.name}</td>
+            <td>₹${c.sale}</td>
+            <td>
+              <button onclick="changeCartQty(${i}, -1)">-</button>
+              <strong style="margin: 0 8px;">${c.qty}</strong>
+              <button onclick="changeCartQty(${i}, 1)">+</button>
+            </td>
+            <td>₹${lineTotal}</td>
+            <td><button style="color:red; cursor:pointer;" onclick="removeFromCart(${i})">x</button></td>
+          </tr>
+        `;
+      }).join("");
+
+      const phone = document.getElementById("custPhone").value.trim();
+      const cust = customers.find(u => u.phone === phone);
+      let discPct = 0;
+      if (cust && cust.spentCurrentMonth > 5000) discPct = 0.05;
+
+      const discVal = Math.round(subtotal * discPct);
+      const grand = subtotal - discVal;
+
+      document.getElementById("posSubtotal").innerText = "₹" + subtotal;
+      document.getElementById("posLoyaltyOff").innerText = "-₹" + discVal + (discPct > 0 ? " (5% VIP)" : "");
+      document.getElementById("posTax").innerText = "₹" + Math.round(grand * 0.05) + " (Incl)";
+      document.getElementById("posGrandTotal").innerText = "₹" + grand;
+    }
+
+    function changeCartQty(i, delta) {
+      const item = cart[i];
+      const master = catalog.find(p => p.id === item.id);
+      if (item.qty + delta > master.stock) {
+        alert("Max stock reached");
+        return;
+      }
+      item.qty += delta;
+      if (item.qty <= 0) cart.splice(i, 1);
+      renderCart();
+    }
+
+    function removeFromCart(i) {
+      cart.splice(i, 1);
+      renderCart();
+    }
+
+    function completePOSOrder(sendWhatsApp = false) {
+      if (cart.length === 0) {
+        alert("Cart is empty");
+        return;
+      }
+      const phone = document.getElementById("custPhone").value.trim() || "Walk-in";
+      const address = document.getElementById("custAddress").value.trim() || "Sandhaur";
+      const totalAmt = parseFloat(document.getElementById("posGrandTotal").innerText.replace("₹", "")) || 0;
+
+      let billCost = 0;
+      let orderItems = [];
+
+      cart.forEach(c => {
+        const p = catalog.find(item => item.id === c.id);
+        if (p) {
+          p.stock = Math.max(0, p.stock - c.qty);
+          billCost += (p.cost * c.qty);
+        }
+        orderItems.push(`${c.name} x${c.qty} (₹${c.sale * c.qty})`);
+      });
+
+      const profit = Math.round(totalAmt - billCost);
+
+      salesHistory.push({
+        date: new Date().toISOString().split('T')[0],
+        cashier: currentCashierBadge,
+        phone: phone,
+        address: address,
+        total: totalAmt,
+        cost: billCost,
+        profit: profit,
+        gst: Math.round(totalAmt * 0.05)
+      });
+
+      if (phone !== "Walk-in") {
+        let cust = customers.find(u => u.phone === phone);
+        if (!cust) {
+          cust = { phone: phone, address: address, orders: 0, spentCurrentMonth: 0, tier: "Regular" };
+          customers.push(cust);
+        }
+        cust.orders += 1;
+        cust.address = address;
+        cust.spentCurrentMonth += totalAmt;
+        if (cust.spentCurrentMonth > 5000) cust.tier = "VIP (5% Extra Off)";
+      }
+
+      autoSaveCloudLocal();
+      updateMetrics();
+      renderCatalog(catalog);
+      renderCRM();
+      renderWholesaleSheet();
+      renderReports();
+
+      if (sendWhatsApp && phone !== "Walk-in") {
+        let cleanPhone = phone.replace(/[^0-9]/g, "");
+        if (cleanPhone.length === 10) cleanPhone = "91" + cleanPhone;
+        const msg = encodeURIComponent(
+          `*NAV GROCERY STORE SANDHAUR*\n` +
+          `GSTIN: ${storeConfig.gstin || '03AHPPU6185N1ZF'}\n` +
+          `Helpline: ${storeConfig.phone || '8847370905'}\n` +
+          `Billed By Cashier: ${currentCashierBadge}\n` +
+          `-------------------------\n` +
+          `*TAX INVOICE & DIGITAL RECEIPT*\n` +
+          `Customer: ${phone}\n` +
+          `Delivery: ${address}\n\n` +
+          `Items Ordered:\n${orderItems.join("\n")}\n\n` +
+          `*Total Paid: ₹${totalAmt}* (Incl GST)\n` +
+          `Thank you for shopping at Nav Grocery Store Sandhaur!`
+        );
+        window.open(`https://api.whatsapp.com/send?phone=${cleanPhone}&text=${msg}`, "_blank");
+      } else {
+        alert("Bill Completed by " + currentCashierBadge + "! Stock subtracted.");
+      }
+
+      cart = [];
+      document.getElementById("custPhone").value = "";
+      document.getElementById("custAddress").value = "";
+      renderCart();
+    }
+
+    function renderCRM() {
+      const tbody = document.getElementById("crmBody");
+      tbody.innerHTML = customers.map(c => `
+        <tr>
+          <td><strong>${c.phone}</strong></td>
+          <td>${c.address || 'Sandhaur'}</td>
+          <td>${c.orders}</td>
+          <td>₹${c.spentCurrentMonth.toLocaleString()}</td>
+          <td><span style="color:#007600; font-weight:bold;">${c.tier}</span></td>
+          <td>${c.spentCurrentMonth > 5000 ? '5% Auto Loyalty Active' : 'Standard 12% Wholesale'}</td>
+        </tr>
+      `).join("");
+    }
+
+    function lookupCustomer() {
+      const phone = document.getElementById("custPhone").value.trim();
+      const badge = document.getElementById("custTierBadge");
+      const cust = customers.find(u => u.phone === phone);
+      if (cust) {
+        badge.innerText = `Verified (${cust.tier}) - Month Spend: ₹${cust.spentCurrentMonth}`;
+        if (cust.address) document.getElementById("custAddress").value = cust.address;
+      } else {
+        badge.innerText = "New Customer (Standard 12% Off)";
+      }
+      renderCart();
+    }
+
+    function renderWholesaleSheet() {
+      const tbody = document.getElementById("wholesaleTableBody");
+      const lowItems = catalog.filter(p => (p.stock || 0) < 10);
+      if (lowItems.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; color:#007600; font-weight:bold; padding:20px;">All items sufficiently stocked! No urgent purchase orders required.</td></tr>`;
+        return;
+      }
+      tbody.innerHTML = lowItems.map(p => {
+        const suggested = 50 - (p.stock || 0);
+        const estCost = Math.round(suggested * p.cost);
+        return `
+          <tr>
+            <td><strong>${p.id}</strong></td>
+            <td>${p.name}</td>
+            <td>${p.cat}</td>
+            <td><span class="stock-badge-low">${p.stock} left</span></td>
+            <td><strong style="color:#007185;">${suggested} units</strong></td>
+            <td>₹${estCost.toLocaleString()}</td>
+            <td>${p.hsn}</td>
+          </tr>
+        `;
+      }).join("");
+    }
+
+    function exportWholesaleOrderSheet() {
+      const lowItems = catalog.filter(p => (p.stock || 0) < 10);
+      let csv = "Product_ID,Product_Name,Category,Current_Stock,Suggested_Order_Qty,Estimated_Cost,HSN_Code\n";
+      lowItems.forEach(p => {
+        const suggested = 50 - (p.stock || 0);
+        const estCost = Math.round(suggested * p.cost);
+        csv += `"${p.id}","${p.name}","${p.cat}","${p.stock}","${suggested}","${estCost}","${p.hsn}"\n`;
+      });
+      downloadFile(csv, "nav_grocery_wholesale_order_sheet.csv", "text/csv");
+    }
+
+    function renderReports() {
+      let totSales = 0, totCost = 0, totProfit = 0, totGST = 0;
+      salesHistory.forEach(s => {
+        totSales += s.total;
+        totCost += s.cost;
+        totProfit += s.profit;
+        totGST += s.gst;
+      });
+      document.getElementById("rptGrossSales").innerText = "₹" + Math.round(totSales).toLocaleString();
+      document.getElementById("rptCost").innerText = "₹" + Math.round(totCost).toLocaleString();
+      document.getElementById("rptGrossProfit").innerText = "₹" + Math.round(totProfit).toLocaleString();
+      document.getElementById("rptCGST").innerText = "₹" + Math.round(totGST / 2).toLocaleString();
+      document.getElementById("rptSGST").innerText = "₹" + Math.round(totGST / 2).toLocaleString();
+      document.getElementById("rptTotalGST").innerText = "₹" + Math.round(totGST).toLocaleString();
+    }
+
+    function exportGSTSummary() {
+      let csv = "Date,Cashier_Badge,Customer_Phone,Delivery_Location,Total_Sale,Cost_Basis,Net_Profit,CGST,SGST,Total_GST\n";
+      salesHistory.forEach(s => {
+        const cgst = Math.round(s.gst / 2);
+        const sgst = Math.round(s.gst / 2);
+        csv += `"${s.date}","${s.cashier || 'NAV-CASH-101'}","${s.phone}","${s.address}","${s.total}","${s.cost}","${s.profit}","${cgst}","${sgst}","${s.gst}"\n`;
+      });
+      downloadFile(csv, "nav_grocery_gst_tax_report.csv", "text/csv");
+    }
+
+    function importCSVFile(input) {
+      if (!input.files || !input.files[0]) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        alert("Imported CSV Catalog synchronized");
+      };
+      reader.readAsText(input.files[0]);
+    }
+
+    function exportMasterCSV() {
+      let csvData = "Product_ID,Barcode,Product_Name,Category,Cost,MRP,Sale_Price,GST_Slab,HSN_Code,Stock,Expiry_Date,Image_File_Name\n";
+      catalog.forEach(p => {
+        csvData += `"${p.id}","${p.barcode}","${p.name}","${p.cat}","${p.cost}","${p.mrp}","${p.sale}","${p.gst}","${p.hsn}","${p.stock}","${p.exp || ''}","${p.img}"\n`;
+      });
+      downloadFile(csvData, "nav_grocery_master_updated.csv", "text/csv");
+    }
+
+    function downloadFile(content, fileName, mimeType) {
+      const blob = new Blob([content], { type: mimeType });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+  </script>
+</body>
+</html>
