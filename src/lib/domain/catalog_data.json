@@ -19,7 +19,8 @@
     "stock": 25,
     "sku": "NAV001",
     "title": "Maharaja's Spice Co. Chana Masala 100g",
-    "imageUrl": "/products/NAV001.jpg"
+    "imageUrl": "/products/NAV001.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -41,7 +42,8 @@
     "stock": 25,
     "sku": "NAV002",
     "title": "Premium Quality Black Eyed Peas Lobia Beans 500g",
-    "imageUrl": "/products/NAV002.jpg"
+    "imageUrl": "/products/NAV002.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -63,7 +65,8 @@
     "stock": 25,
     "sku": "NAV003",
     "title": "Premium Urad Dal Washed Split Black Gram 1kg",
-    "imageUrl": "/products/NAV003.jpg"
+    "imageUrl": "/products/NAV003.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -85,7 +88,8 @@
     "stock": 25,
     "sku": "NAV004",
     "title": "Premium Quality Black Pepper Ground 100g",
-    "imageUrl": "/products/NAV004.jpg"
+    "imageUrl": "/products/NAV004.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -107,7 +111,8 @@
     "stock": 25,
     "sku": "NAV005",
     "title": "Premium Black Salt Table Sprinkler 200g",
-    "imageUrl": "/products/NAV005.jpg"
+    "imageUrl": "/products/NAV005.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -129,7 +134,8 @@
     "stock": 25,
     "sku": "NAV006",
     "title": "Spice Harvest Carom Seeds Ajwain 100g",
-    "imageUrl": "/products/NAV006.jpg"
+    "imageUrl": "/products/NAV006.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -151,7 +157,8 @@
     "stock": 25,
     "sku": "NAV007",
     "title": "Desi Spice Route Chaat Masala 100g",
-    "imageUrl": "/products/NAV007.jpg"
+    "imageUrl": "/products/NAV007.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -173,7 +180,8 @@
     "stock": 25,
     "sku": "NAV008",
     "title": "Taste of China Chinese Hot and Sour Soup 70g",
-    "imageUrl": "/products/NAV008.jpg"
+    "imageUrl": "/products/NAV008.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -195,7 +203,8 @@
     "stock": 25,
     "sku": "NAV009",
     "title": "Chocolate Scoops Cereal 375g",
-    "imageUrl": "/products/NAV009.jpg"
+    "imageUrl": "/products/NAV009.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -217,7 +226,8 @@
     "stock": 25,
     "sku": "NAV010",
     "title": "Cloudy Lemon Drink 750ml",
-    "imageUrl": "/products/NAV010.jpg"
+    "imageUrl": "/products/NAV010.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -239,7 +249,8 @@
     "stock": 25,
     "sku": "NAV011",
     "title": "Pure Grains Coarse Semolina Sooji Rava 500g",
-    "imageUrl": "/products/NAV011.jpg"
+    "imageUrl": "/products/NAV011.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -261,7 +272,8 @@
     "stock": 25,
     "sku": "NAV012",
     "title": "Sunshine Grains Crispy Golden Corn Flakes 475g",
-    "imageUrl": "/products/NAV012.jpg"
+    "imageUrl": "/products/NAV012.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -283,7 +295,8 @@
     "stock": 25,
     "sku": "NAV013",
     "title": "Cola Original Taste 750ml",
-    "imageUrl": "/products/NAV013.jpg"
+    "imageUrl": "/products/NAV013.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -305,7 +318,8 @@
     "stock": 25,
     "sku": "NAV014",
     "title": "Kasuri Methi Dried Fenugreek Leaves 50g",
-    "imageUrl": "/products/NAV014.jpg"
+    "imageUrl": "/products/NAV014.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -327,7 +341,8 @@
     "stock": 25,
     "sku": "NAV015",
     "title": "Pasta Natura Elbow Macaroni Chiocciole 500g",
-    "imageUrl": "/products/NAV015.jpg"
+    "imageUrl": "/products/NAV015.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -349,7 +364,8 @@
     "stock": 25,
     "sku": "NAV016",
     "title": "Volt Energy Drink Can 350ml",
-    "imageUrl": "/products/NAV016.jpg"
+    "imageUrl": "/products/NAV016.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -371,7 +387,8 @@
     "stock": 25,
     "sku": "NAV017",
     "title": "Premium Quality Extra Long Grain Indian Basmati Rice 5kg",
-    "imageUrl": "/products/NAV017.jpg"
+    "imageUrl": "/products/NAV017.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -393,7 +410,8 @@
     "stock": 25,
     "sku": "NAV018",
     "title": "Orange Fizz Drink 750ml",
-    "imageUrl": "/products/NAV018.jpg"
+    "imageUrl": "/products/NAV018.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -415,7 +433,8 @@
     "stock": 25,
     "sku": "NAV019",
     "title": "Floral Musk & Lily Incense Sticks",
-    "imageUrl": "/products/NAV019.jpg"
+    "imageUrl": "/products/NAV019.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -437,7 +456,8 @@
     "stock": 25,
     "sku": "NAV020",
     "title": "Premium Quality Chakki Fresh Atta Whole Wheat 5kg",
-    "imageUrl": "/products/NAV020.jpg"
+    "imageUrl": "/products/NAV020.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -459,7 +479,8 @@
     "stock": 25,
     "sku": "NAV021",
     "title": "Desi Kitchen Aloo Tikki Crispy & Spicy Potato Patties 400g",
-    "imageUrl": "/products/NAV021.jpg"
+    "imageUrl": "/products/NAV021.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -481,7 +502,8 @@
     "stock": 25,
     "sku": "NAV022",
     "title": "Golden Cuts Crispy French Fries Natural Cut 750g",
-    "imageUrl": "/products/NAV022.jpg"
+    "imageUrl": "/products/NAV022.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -503,7 +525,8 @@
     "stock": 25,
     "sku": "NAV023",
     "title": "Frontera Natural Crispy Veg Nuggets 400g",
-    "imageUrl": "/products/NAV023.jpg"
+    "imageUrl": "/products/NAV023.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -525,7 +548,8 @@
     "stock": 25,
     "sku": "NAV024",
     "title": "Premium Quality Frozen Green Peas 500g",
-    "imageUrl": "/products/NAV024.jpg"
+    "imageUrl": "/products/NAV024.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -547,7 +571,8 @@
     "stock": 25,
     "sku": "NAV025",
     "title": "Lachha Paratha Flaky & Layered Flatbread 4 Pieces 400g",
-    "imageUrl": "/products/NAV025.jpg"
+    "imageUrl": "/products/NAV025.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -569,7 +594,8 @@
     "stock": 25,
     "sku": "NAV026",
     "title": "Malabar Paratha Authentic & Flaky Frozen 5 Pack",
-    "imageUrl": "/products/NAV026.jpg"
+    "imageUrl": "/products/NAV026.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -591,7 +617,8 @@
     "stock": 25,
     "sku": "NAV027",
     "title": "Nature's Harvest Frozen Mixed Vegetables 500g",
-    "imageUrl": "/products/NAV027.jpg"
+    "imageUrl": "/products/NAV027.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -613,7 +640,8 @@
     "stock": 25,
     "sku": "NAV028",
     "title": "Desi Treats Frozen Punjabi Samosas 500g",
-    "imageUrl": "/products/NAV028.jpg"
+    "imageUrl": "/products/NAV028.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -635,7 +663,8 @@
     "stock": 25,
     "sku": "NAV029",
     "title": "Harvest Gold Frozen Sweet Corn Kernels 500g",
-    "imageUrl": "/products/NAV029.jpg"
+    "imageUrl": "/products/NAV029.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -657,7 +686,8 @@
     "stock": 25,
     "sku": "NAV030",
     "title": "Veg Momos Vegetable Dumplings 500g",
-    "imageUrl": "/products/NAV030.jpg"
+    "imageUrl": "/products/NAV030.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -679,7 +709,8 @@
     "stock": 25,
     "sku": "NAV031",
     "title": "Natural Blends Premium Green Tea 100% Organic 25 Tea Bags",
-    "imageUrl": "/products/NAV031.jpg"
+    "imageUrl": "/products/NAV031.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -701,7 +732,8 @@
     "stock": 25,
     "sku": "NAV032",
     "title": "Pure Hing Asafoetida Powder 50g",
-    "imageUrl": "/products/NAV032.jpg"
+    "imageUrl": "/products/NAV032.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -723,7 +755,8 @@
     "stock": 25,
     "sku": "NAV033",
     "title": "Summer Brew Lemon Iced Tea Mix 400g",
-    "imageUrl": "/products/NAV033.jpg"
+    "imageUrl": "/products/NAV033.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -745,7 +778,8 @@
     "stock": 25,
     "sku": "NAV034",
     "title": "Roast & Co. Instant Coffee Rich & Intense 100g",
-    "imageUrl": "/products/NAV034.jpg"
+    "imageUrl": "/products/NAV034.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -767,7 +801,8 @@
     "stock": 25,
     "sku": "NAV035",
     "title": "Taste of Asia Curry Noodles 4 Pack",
-    "imageUrl": "/products/NAV035.jpg"
+    "imageUrl": "/products/NAV035.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -789,7 +824,8 @@
     "stock": 25,
     "sku": "NAV036",
     "title": "Souper Instant Tomato Soup 4x20g Sachets",
-    "imageUrl": "/products/NAV036.jpg"
+    "imageUrl": "/products/NAV036.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -811,7 +847,8 @@
     "stock": 25,
     "sku": "NAV037",
     "title": "Lemon Lime Sparkling Soda 750ml",
-    "imageUrl": "/products/NAV037.jpg"
+    "imageUrl": "/products/NAV037.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -833,7 +870,8 @@
     "stock": 25,
     "sku": "NAV038",
     "title": "Masala Instant Noodles Value Pack 4 Pack 280g",
-    "imageUrl": "/products/NAV038.jpg"
+    "imageUrl": "/products/NAV038.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -855,7 +893,8 @@
     "stock": 25,
     "sku": "NAV039",
     "title": "Bombay Spices Mumbai Style Pav Bhaji Masala 100g",
-    "imageUrl": "/products/NAV039.jpg"
+    "imageUrl": "/products/NAV039.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -877,7 +916,8 @@
     "stock": 25,
     "sku": "NAV040",
     "title": "Mustard Seeds Rai 100g",
-    "imageUrl": "/products/NAV040.jpg"
+    "imageUrl": "/products/NAV040.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -899,7 +939,8 @@
     "stock": 25,
     "sku": "NAV041",
     "title": "Natural Dhoop Cones 24 Pack",
-    "imageUrl": "/products/NAV041.jpg"
+    "imageUrl": "/products/NAV041.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -921,7 +962,8 @@
     "stock": 25,
     "sku": "NAV042",
     "title": "Royal Spices Chicken Curry Masala 100g",
-    "imageUrl": "/products/NAV042.jpg"
+    "imageUrl": "/products/NAV042.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -943,7 +985,8 @@
     "stock": 25,
     "sku": "NAV043",
     "title": "Pure Tender Coconut Water 200ml",
-    "imageUrl": "/products/NAV043.jpg"
+    "imageUrl": "/products/NAV043.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -965,7 +1008,8 @@
     "stock": 25,
     "sku": "NAV044",
     "title": "Casa D'oro Penne Rigate Pasta 500g",
-    "imageUrl": "/products/NAV044.jpg"
+    "imageUrl": "/products/NAV044.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -987,7 +1031,8 @@
     "stock": 25,
     "sku": "NAV045",
     "title": "Volt High Caffeine Energy Drink 250ml",
-    "imageUrl": "/products/NAV045.jpg"
+    "imageUrl": "/products/NAV045.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1009,7 +1054,8 @@
     "stock": 25,
     "sku": "NAV046",
     "title": "Premium Instant Coffee Dark & Rich Roast 100% Arabica 100g",
-    "imageUrl": "/products/NAV046.jpg"
+    "imageUrl": "/products/NAV046.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1031,7 +1077,8 @@
     "stock": 25,
     "sku": "NAV047",
     "title": "Natural Flora Premium Bathi Incense Sticks",
-    "imageUrl": "/products/NAV047.jpg"
+    "imageUrl": "/products/NAV047.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1053,7 +1100,8 @@
     "stock": 25,
     "sku": "NAV048",
     "title": "Puja Ghee Diya Wicks Round Cotton Batti 50 Pieces",
-    "imageUrl": "/products/NAV048.jpg"
+    "imageUrl": "/products/NAV048.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1075,7 +1123,8 @@
     "stock": 25,
     "sku": "NAV049",
     "title": "Pure Pearl Millet Bajra Flour 1kg",
-    "imageUrl": "/products/NAV049.jpg"
+    "imageUrl": "/products/NAV049.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1097,7 +1146,8 @@
     "stock": 25,
     "sku": "NAV050",
     "title": "Pure Puja Camphor Kapoor 100g",
-    "imageUrl": "/products/NAV050.jpg"
+    "imageUrl": "/products/NAV050.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1119,7 +1169,8 @@
     "stock": 25,
     "sku": "NAV051",
     "title": "Desi Treats Pani Puri Magic Treat Kit 220g",
-    "imageUrl": "/products/NAV051.jpg"
+    "imageUrl": "/products/NAV051.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1141,7 +1192,8 @@
     "stock": 25,
     "sku": "NAV052",
     "title": "Volt Energy Drink Can 250ml",
-    "imageUrl": "/products/NAV052.jpg"
+    "imageUrl": "/products/NAV052.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1163,7 +1215,8 @@
     "stock": 25,
     "sku": "NAV053",
     "title": "Natural Grains Maida Refined All Purpose Flour 1kg",
-    "imageUrl": "/products/NAV053.jpg"
+    "imageUrl": "/products/NAV053.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1185,7 +1238,8 @@
     "stock": 25,
     "sku": "NAV054",
     "title": "Power Up Energy Drink 250ml",
-    "imageUrl": "/products/NAV054.jpg"
+    "imageUrl": "/products/NAV054.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1207,7 +1261,8 @@
     "stock": 25,
     "sku": "NAV055",
     "title": "Premium Rich Chocolate Ice Cream 700ml",
-    "imageUrl": "/products/NAV055.jpg"
+    "imageUrl": "/products/NAV055.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1229,7 +1284,8 @@
     "stock": 25,
     "sku": "NAV056",
     "title": "Premium Roasted Almonds 250g",
-    "imageUrl": "/products/NAV056.jpg"
+    "imageUrl": "/products/NAV056.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1251,7 +1307,8 @@
     "stock": 25,
     "sku": "NAV057",
     "title": "Roasted Seviyan Vermicelli Fine Cut 400g",
-    "imageUrl": "/products/NAV057.jpg"
+    "imageUrl": "/products/NAV057.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1273,7 +1330,8 @@
     "stock": 25,
     "sku": "NAV058",
     "title": "Sendha Namak 100% Natural Rock Salt 1kg",
-    "imageUrl": "/products/NAV058.jpg"
+    "imageUrl": "/products/NAV058.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1295,7 +1353,8 @@
     "stock": 25,
     "sku": "NAV059",
     "title": "Sacred Gangajal Holy Water 250ml",
-    "imageUrl": "/products/NAV059.jpg"
+    "imageUrl": "/products/NAV059.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1317,7 +1376,8 @@
     "stock": 25,
     "sku": "NAV060",
     "title": "Puja Mauli Kalawa Red & Yellow Cotton Thread",
-    "imageUrl": "/products/NAV060.jpg"
+    "imageUrl": "/products/NAV060.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1339,7 +1399,8 @@
     "stock": 25,
     "sku": "NAV061",
     "title": "Earth's Harvest Sorghum Jowar Flour 1kg",
-    "imageUrl": "/products/NAV061.jpg"
+    "imageUrl": "/products/NAV061.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1361,7 +1422,8 @@
     "stock": 25,
     "sku": "NAV062",
     "title": "Rasa Authentic South Indian Sambar Masala 100g",
-    "imageUrl": "/products/NAV062.jpg"
+    "imageUrl": "/products/NAV062.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1383,7 +1445,8 @@
     "stock": 25,
     "sku": "NAV063",
     "title": "Natural Harvest Split Green Moong Dal Chilka 1kg",
-    "imageUrl": "/products/NAV063.jpg"
+    "imageUrl": "/products/NAV063.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1405,7 +1468,8 @@
     "stock": 25,
     "sku": "NAV064",
     "title": "Force Cola Extra Fizz 750ml",
-    "imageUrl": "/products/NAV064.jpg"
+    "imageUrl": "/products/NAV064.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1427,7 +1491,8 @@
     "stock": 25,
     "sku": "NAV065",
     "title": "Royal Heritage Traditional Aromatic Basmati Rice 5kg",
-    "imageUrl": "/products/NAV065.jpg"
+    "imageUrl": "/products/NAV065.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1449,7 +1514,8 @@
     "stock": 25,
     "sku": "NAV066",
     "title": "Traditional Herbal Havan Samagri 500g",
-    "imageUrl": "/products/NAV066.jpg"
+    "imageUrl": "/products/NAV066.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1471,7 +1537,8 @@
     "stock": 25,
     "sku": "NAV067",
     "title": "Chandan Natural Sandalwood Agarbatti Incense Sticks",
-    "imageUrl": "/products/NAV067.jpg"
+    "imageUrl": "/products/NAV067.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1493,7 +1560,8 @@
     "stock": 25,
     "sku": "NAV068",
     "title": "Traditional Malai Kulfi 4 Pack",
-    "imageUrl": "/products/NAV068.jpg"
+    "imageUrl": "/products/NAV068.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1515,7 +1583,8 @@
     "stock": 25,
     "sku": "NAV069",
     "title": "Traditional Natural Sambrani Dhoop Cups 12 Pieces",
-    "imageUrl": "/products/NAV069.jpg"
+    "imageUrl": "/products/NAV069.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1537,7 +1606,8 @@
     "stock": 25,
     "sku": "NAV070",
     "title": "Premium Traditional Sharbati Wheat Flour 5kg",
-    "imageUrl": "/products/NAV070.jpg"
+    "imageUrl": "/products/NAV070.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1559,7 +1629,8 @@
     "stock": 25,
     "sku": "NAV071",
     "title": "Vanilla Ice Cream Tub 700ml",
-    "imageUrl": "/products/NAV071.jpg"
+    "imageUrl": "/products/NAV071.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1581,7 +1652,8 @@
     "stock": 25,
     "sku": "NAV072",
     "title": "Pure Cotton Wicks Puja Batti 100 Pcs",
-    "imageUrl": "/products/NAV072.jpg"
+    "imageUrl": "/products/NAV072.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1603,7 +1675,8 @@
     "stock": 25,
     "sku": "NAV073",
     "title": "Premium Quality Kabuli Chana White Chickpeas 1kg",
-    "imageUrl": "/products/NAV073.jpg"
+    "imageUrl": "/products/NAV073.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1625,7 +1698,8 @@
     "stock": 25,
     "sku": "NAV074",
     "title": "Premium Natural Whole Aromatic Cloves Laung 50g",
-    "imageUrl": "/products/NAV074.jpg"
+    "imageUrl": "/products/NAV074.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1647,7 +1721,8 @@
     "stock": 25,
     "sku": "NAV075",
     "title": "Premium Whole Black Pepper 100g",
-    "imageUrl": "/products/NAV075.jpg"
+    "imageUrl": "/products/NAV075.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1669,7 +1744,8 @@
     "stock": 25,
     "sku": "NAV076",
     "title": "Natural Whole Cinnamon Sticks Dalchini 100g",
-    "imageUrl": "/products/NAV076.jpg"
+    "imageUrl": "/products/NAV076.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1691,7 +1767,8 @@
     "stock": 25,
     "sku": "NAV077",
     "title": "100% Natural Whole Cumin Seeds Jeera 200g",
-    "imageUrl": "/products/NAV077.jpg"
+    "imageUrl": "/products/NAV077.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1713,7 +1790,8 @@
     "stock": 25,
     "sku": "NAV078",
     "title": "Premium Whole Green Cardamom Elaichi 50g",
-    "imageUrl": "/products/NAV078.jpg"
+    "imageUrl": "/products/NAV078.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1735,7 +1813,8 @@
     "stock": 25,
     "sku": "NAV079",
     "title": "Natural Grains Yellow Maize Flour Makki Atta 1kg",
-    "imageUrl": "/products/NAV079.jpg"
+    "imageUrl": "/products/NAV079.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1757,7 +1836,8 @@
     "stock": 25,
     "sku": "NAV080",
     "title": "Organic Yellow Moong Dal Washed 1kg",
-    "imageUrl": "/products/NAV080.jpg"
+    "imageUrl": "/products/NAV080.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1779,7 +1859,8 @@
     "stock": 25,
     "sku": "NAV081",
     "title": "Premium Toor Dal Arhar Dal 1kg",
-    "imageUrl": "/products/NAV081.jpg"
+    "imageUrl": "/products/NAV081.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1801,7 +1882,8 @@
     "stock": 25,
     "sku": "NAV082",
     "title": "Frozen Green Peas 100% Natural 500g",
-    "imageUrl": "/products/NAV082.jpg"
+    "imageUrl": "/products/NAV082.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1823,7 +1905,8 @@
     "stock": 25,
     "sku": "NAV083",
     "title": "Aashirvaad Select Sharbati Atta 5kg Pack A",
-    "imageUrl": "/products/NAV083.jpg"
+    "imageUrl": "/products/NAV083.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1845,7 +1928,8 @@
     "stock": 25,
     "sku": "NAV084",
     "title": "Aashirvaad Select Sharbati Atta 5kg Pack B",
-    "imageUrl": "/products/NAV084.jpg"
+    "imageUrl": "/products/NAV084.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1867,7 +1951,8 @@
     "stock": 25,
     "sku": "NAV085",
     "title": "Aashirvaad Multigrain Atta Nine Natural Grains 5kg",
-    "imageUrl": "/products/NAV085.jpg"
+    "imageUrl": "/products/NAV085.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1889,7 +1974,8 @@
     "stock": 25,
     "sku": "NAV086",
     "title": "Aashirvaad Chakki Fresh Multigrain Atta 5kg",
-    "imageUrl": "/products/NAV086.jpg"
+    "imageUrl": "/products/NAV086.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1911,7 +1997,8 @@
     "stock": 25,
     "sku": "NAV087",
     "title": "Amul Pure Ghee Tin 1 Litre",
-    "imageUrl": "/products/NAV087.jpg"
+    "imageUrl": "/products/NAV087.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1933,7 +2020,8 @@
     "stock": 25,
     "sku": "NAV088",
     "title": "Amul Pure Ghee Jar 1L",
-    "imageUrl": "/products/NAV088.jpg"
+    "imageUrl": "/products/NAV088.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1955,7 +2043,8 @@
     "stock": 25,
     "sku": "NAV089",
     "title": "Amul Malai Paneer Pouch 200g",
-    "imageUrl": "/products/NAV089.jpg"
+    "imageUrl": "/products/NAV089.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1977,7 +2066,8 @@
     "stock": 25,
     "sku": "NAV090",
     "title": "Amul Malai Paneer Fresh Soft Cheese Cubes Pack 200g",
-    "imageUrl": "/products/NAV090.jpg"
+    "imageUrl": "/products/NAV090.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -1999,7 +2089,8 @@
     "stock": 25,
     "sku": "NAV091",
     "title": "Amul Taaza Milk Tetra Pack 1 Litre Pack A",
-    "imageUrl": "/products/NAV091.jpg"
+    "imageUrl": "/products/NAV091.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2021,7 +2112,8 @@
     "stock": 25,
     "sku": "NAV092",
     "title": "Amul Taaza Toned Milk Tetra Pack 1L Pack B",
-    "imageUrl": "/products/NAV092.jpg"
+    "imageUrl": "/products/NAV092.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2043,7 +2135,8 @@
     "stock": 25,
     "sku": "NAV093",
     "title": "Amul Gold Full Cream Milk Tetra Pack 1 Litre Pack A",
-    "imageUrl": "/products/NAV093.jpg"
+    "imageUrl": "/products/NAV093.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2065,7 +2158,8 @@
     "stock": 25,
     "sku": "NAV094",
     "title": "Amul Gold Full Cream Milk Tetra Pack 1L Pack B",
-    "imageUrl": "/products/NAV094.jpg"
+    "imageUrl": "/products/NAV094.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2087,7 +2181,8 @@
     "stock": 25,
     "sku": "NAV095",
     "title": "Amul Pasteurised Butter Carton 500g Pack A",
-    "imageUrl": "/products/NAV095.jpg"
+    "imageUrl": "/products/NAV095.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2109,7 +2204,8 @@
     "stock": 25,
     "sku": "NAV096",
     "title": "Amul Pasteurised Butter Carton 500g Pack B",
-    "imageUrl": "/products/NAV096.jpg"
+    "imageUrl": "/products/NAV096.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2131,7 +2227,8 @@
     "stock": 25,
     "sku": "NAV097",
     "title": "Amul Salted Pasteurised Butter Pack 100g Pack A",
-    "imageUrl": "/products/NAV097.jpg"
+    "imageUrl": "/products/NAV097.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2153,7 +2250,8 @@
     "stock": 25,
     "sku": "NAV098",
     "title": "Amul Salted Pasteurised Butter Pack 100g Pack B",
-    "imageUrl": "/products/NAV098.jpg"
+    "imageUrl": "/products/NAV098.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2175,7 +2273,8 @@
     "stock": 25,
     "sku": "NAV099",
     "title": "Amul Masti Dahi Cup 400g Pack A",
-    "imageUrl": "/products/NAV099.jpg"
+    "imageUrl": "/products/NAV099.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2197,7 +2296,8 @@
     "stock": 25,
     "sku": "NAV100",
     "title": "Amul Masti Dahi Premium Curd Tub 400g Pack B",
-    "imageUrl": "/products/NAV100.jpg"
+    "imageUrl": "/products/NAV100.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2219,7 +2319,8 @@
     "stock": 25,
     "sku": "NAV101",
     "title": "Amul Lassi Mango 250ml",
-    "imageUrl": "/products/NAV101.jpg"
+    "imageUrl": "/products/NAV101.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2241,7 +2342,8 @@
     "stock": 25,
     "sku": "NAV102",
     "title": "Amul Lassi Mango & Rose 250ml",
-    "imageUrl": "/products/NAV102.jpg"
+    "imageUrl": "/products/NAV102.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2263,7 +2365,8 @@
     "stock": 25,
     "sku": "NAV103",
     "title": "Amul Mithai Mate 400g Pack A",
-    "imageUrl": "/products/NAV103.jpg"
+    "imageUrl": "/products/NAV103.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2285,7 +2388,8 @@
     "stock": 25,
     "sku": "NAV104",
     "title": "Amul Mithai Mate Sweetened Condensed Milk 400g Pack B",
-    "imageUrl": "/products/NAV104.jpg"
+    "imageUrl": "/products/NAV104.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2307,7 +2411,8 @@
     "stock": 25,
     "sku": "NAV105",
     "title": "Daawat Basmati Rice Premium 5kg",
-    "imageUrl": "/products/NAV105.jpg"
+    "imageUrl": "/products/NAV105.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2329,7 +2434,8 @@
     "stock": 25,
     "sku": "NAV106",
     "title": "Royal Harvest Premium Basmati Rice 5kg",
-    "imageUrl": "/products/NAV106.jpg"
+    "imageUrl": "/products/NAV106.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2351,7 +2457,8 @@
     "stock": 25,
     "sku": "NAV107",
     "title": "Cadbury Bournvita 500g Pack A",
-    "imageUrl": "/products/NAV107.jpg"
+    "imageUrl": "/products/NAV107.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2373,7 +2480,8 @@
     "stock": 25,
     "sku": "NAV108",
     "title": "Cadbury Bournvita Chocolate Malt Drink 500g Pack B",
-    "imageUrl": "/products/NAV108.jpg"
+    "imageUrl": "/products/NAV108.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2395,7 +2503,8 @@
     "stock": 25,
     "sku": "NAV109",
     "title": "Bisleri Packaged Drinking Water 1 Litre Pack A",
-    "imageUrl": "/products/NAV109.jpg"
+    "imageUrl": "/products/NAV109.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2417,7 +2526,8 @@
     "stock": 25,
     "sku": "NAV110",
     "title": "Bisleri Packaged Drinking Water 1L Pack B",
-    "imageUrl": "/products/NAV110.jpg"
+    "imageUrl": "/products/NAV110.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2439,7 +2549,8 @@
     "stock": 25,
     "sku": "NAV111",
     "title": "Britannia Good Day Cashew 600g Pack A",
-    "imageUrl": "/products/NAV111.jpg"
+    "imageUrl": "/products/NAV111.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2461,7 +2572,8 @@
     "stock": 25,
     "sku": "NAV112",
     "title": "Britannia Good Day Cashew Butter Cookies 600g Pack B",
-    "imageUrl": "/products/NAV112.jpg"
+    "imageUrl": "/products/NAV112.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2483,7 +2595,8 @@
     "stock": 25,
     "sku": "NAV113",
     "title": "Britannia Milk Bikis 500g Pack A",
-    "imageUrl": "/products/NAV113.jpg"
+    "imageUrl": "/products/NAV113.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2505,7 +2618,8 @@
     "stock": 25,
     "sku": "NAV114",
     "title": "Britannia Milk Bikis 500g Pack B",
-    "imageUrl": "/products/NAV114.jpg"
+    "imageUrl": "/products/NAV114.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2527,7 +2641,8 @@
     "stock": 25,
     "sku": "NAV115",
     "title": "Britannia Milk Bikis 500g Pack C",
-    "imageUrl": "/products/NAV115.jpg"
+    "imageUrl": "/products/NAV115.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2549,7 +2664,8 @@
     "stock": 25,
     "sku": "NAV116",
     "title": "Bikano Bhujia Namkeen 1kg Pack A",
-    "imageUrl": "/products/NAV116.jpg"
+    "imageUrl": "/products/NAV116.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2571,7 +2687,8 @@
     "stock": 25,
     "sku": "NAV117",
     "title": "Bikano Bhujia Fine Crispy Savoury Mixture 1kg Pack B",
-    "imageUrl": "/products/NAV117.jpg"
+    "imageUrl": "/products/NAV117.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2593,7 +2710,8 @@
     "stock": 25,
     "sku": "NAV118",
     "title": "Bikano Bhujia Fine Crispy Savoury Mixture 1kg Pack C",
-    "imageUrl": "/products/NAV118.jpg"
+    "imageUrl": "/products/NAV118.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2615,7 +2733,8 @@
     "stock": 25,
     "sku": "NAV119",
     "title": "Brooke Bond Red Label Tea 500g",
-    "imageUrl": "/products/NAV119.jpg"
+    "imageUrl": "/products/NAV119.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2637,7 +2756,8 @@
     "stock": 25,
     "sku": "NAV120",
     "title": "Brooke Bond Red Label Natural Care Tea 500g",
-    "imageUrl": "/products/NAV120.jpg"
+    "imageUrl": "/products/NAV120.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2659,7 +2779,8 @@
     "stock": 25,
     "sku": "NAV121",
     "title": "Bay Leaves Tej Patta 100g Pack A",
-    "imageUrl": "/products/NAV121.jpg"
+    "imageUrl": "/products/NAV121.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2681,7 +2802,8 @@
     "stock": 25,
     "sku": "NAV122",
     "title": "Bay Leaves Tej Patta 100g Pack B",
-    "imageUrl": "/products/NAV122.jpg"
+    "imageUrl": "/products/NAV122.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2703,7 +2825,8 @@
     "stock": 25,
     "sku": "NAV123",
     "title": "Bay Leaves Tej Patta 100g Pack C",
-    "imageUrl": "/products/NAV123.jpg"
+    "imageUrl": "/products/NAV123.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2725,7 +2848,8 @@
     "stock": 25,
     "sku": "NAV124",
     "title": "Catch Baking Soda Meetha Soda 100g",
-    "imageUrl": "/products/NAV124.jpg"
+    "imageUrl": "/products/NAV124.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2747,7 +2871,8 @@
     "stock": 25,
     "sku": "NAV125",
     "title": "Baking Soda Premium Quality 100g Pack A",
-    "imageUrl": "/products/NAV125.jpg"
+    "imageUrl": "/products/NAV125.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2769,7 +2894,8 @@
     "stock": 25,
     "sku": "NAV126",
     "title": "Baking Soda Premium Quality 100g Pack B",
-    "imageUrl": "/products/NAV126.jpg"
+    "imageUrl": "/products/NAV126.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2791,7 +2917,8 @@
     "stock": 25,
     "sku": "NAV127",
     "title": "Chana Dal Bengal Gram Split 1kg",
-    "imageUrl": "/products/NAV127.jpg"
+    "imageUrl": "/products/NAV127.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2813,7 +2940,8 @@
     "stock": 25,
     "sku": "NAV128",
     "title": "Annapurna Chana Dal Split Gram Lentils 1kg",
-    "imageUrl": "/products/NAV128.jpg"
+    "imageUrl": "/products/NAV128.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2835,7 +2963,8 @@
     "stock": 25,
     "sku": "NAV129",
     "title": "Catch Turmeric Powder Haldi Powder 200g Pack A",
-    "imageUrl": "/products/NAV129.jpg"
+    "imageUrl": "/products/NAV129.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2857,7 +2986,8 @@
     "stock": 25,
     "sku": "NAV130",
     "title": "Catch Turmeric Powder Haldi Powder 200g Pack B",
-    "imageUrl": "/products/NAV130.jpg"
+    "imageUrl": "/products/NAV130.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2879,7 +3009,8 @@
     "stock": 25,
     "sku": "NAV131",
     "title": "Catch Turmeric Powder Haldi Powder 200g Pack C",
-    "imageUrl": "/products/NAV131.jpg"
+    "imageUrl": "/products/NAV131.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2901,7 +3032,8 @@
     "stock": 25,
     "sku": "NAV132",
     "title": "Catch Red Chilli Powder Lal Mirch 200g Pack A",
-    "imageUrl": "/products/NAV132.jpg"
+    "imageUrl": "/products/NAV132.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2923,7 +3055,8 @@
     "stock": 25,
     "sku": "NAV133",
     "title": "Catch Finest Quality Red Chilli Powder 200g Pack B",
-    "imageUrl": "/products/NAV133.jpg"
+    "imageUrl": "/products/NAV133.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2945,7 +3078,8 @@
     "stock": 25,
     "sku": "NAV134",
     "title": "Catch Finest Quality Red Chilli Powder 200g Pack C",
-    "imageUrl": "/products/NAV134.jpg"
+    "imageUrl": "/products/NAV134.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2967,7 +3101,8 @@
     "stock": 25,
     "sku": "NAV135",
     "title": "Catch Coriander Powder Dhaniya 200g Pack A",
-    "imageUrl": "/products/NAV135.jpg"
+    "imageUrl": "/products/NAV135.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -2989,7 +3124,8 @@
     "stock": 25,
     "sku": "NAV136",
     "title": "Catch Coriander Powder Ground Spices Jar 200g Pack B",
-    "imageUrl": "/products/NAV136.jpg"
+    "imageUrl": "/products/NAV136.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3011,7 +3147,8 @@
     "stock": 25,
     "sku": "NAV137",
     "title": "Catch Coriander Powder Ground Spices Jar 200g Pack C",
-    "imageUrl": "/products/NAV137.jpg"
+    "imageUrl": "/products/NAV137.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3033,7 +3170,8 @@
     "stock": 25,
     "sku": "NAV138",
     "title": "Catch Expert Garam Masala 100g Pack A",
-    "imageUrl": "/products/NAV138.jpg"
+    "imageUrl": "/products/NAV138.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3055,7 +3193,8 @@
     "stock": 25,
     "sku": "NAV139",
     "title": "Catch Garam Masala Authentic Indian Spice Blend 100g Pack B",
-    "imageUrl": "/products/NAV139.jpg"
+    "imageUrl": "/products/NAV139.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3077,7 +3216,8 @@
     "stock": 25,
     "sku": "NAV140",
     "title": "Catch Garam Masala Authentic Indian Spice Blend 100g Pack C",
-    "imageUrl": "/products/NAV140.jpg"
+    "imageUrl": "/products/NAV140.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3099,7 +3239,8 @@
     "stock": 25,
     "sku": "NAV141",
     "title": "Colgate Strong Teeth Toothpaste 500g Pack A",
-    "imageUrl": "/products/NAV141.jpg"
+    "imageUrl": "/products/NAV141.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3121,7 +3262,8 @@
     "stock": 25,
     "sku": "NAV142",
     "title": "Colgate Strong Teeth Fluoride + Calcium Boost 500g Pack B",
-    "imageUrl": "/products/NAV142.jpg"
+    "imageUrl": "/products/NAV142.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3143,7 +3285,8 @@
     "stock": 25,
     "sku": "NAV143",
     "title": "Colgate Strong Teeth Fluoride + Calcium Boost 500g Pack C",
-    "imageUrl": "/products/NAV143.jpg"
+    "imageUrl": "/products/NAV143.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3165,7 +3308,8 @@
     "stock": 25,
     "sku": "NAV144",
     "title": "Comfort Fabric Conditioner 860ml Pack A",
-    "imageUrl": "/products/NAV144.jpg"
+    "imageUrl": "/products/NAV144.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3187,7 +3331,8 @@
     "stock": 25,
     "sku": "NAV145",
     "title": "Comfort After Wash Fabric Conditioner 860ml Pack B",
-    "imageUrl": "/products/NAV145.jpg"
+    "imageUrl": "/products/NAV145.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3209,7 +3354,8 @@
     "stock": 25,
     "sku": "NAV146",
     "title": "Cadbury Dairy Milk Silk 150g Pack A",
-    "imageUrl": "/products/NAV146.jpg"
+    "imageUrl": "/products/NAV146.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3231,7 +3377,8 @@
     "stock": 25,
     "sku": "NAV147",
     "title": "Cadbury Dairy Milk Silk 150g Pack B",
-    "imageUrl": "/products/NAV147.jpg"
+    "imageUrl": "/products/NAV147.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3253,7 +3400,8 @@
     "stock": 25,
     "sku": "NAV148",
     "title": "Coca-Cola Bottle 1 Litre Pack A",
-    "imageUrl": "/products/NAV148.jpg"
+    "imageUrl": "/products/NAV148.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3275,7 +3423,8 @@
     "stock": 25,
     "sku": "NAV149",
     "title": "Coca-Cola Original Taste Bottle 1 Litre Pack B",
-    "imageUrl": "/products/NAV149.jpg"
+    "imageUrl": "/products/NAV149.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3297,7 +3446,8 @@
     "stock": 25,
     "sku": "NAV150",
     "title": "Dettol Antiseptic Liquid 550ml Pack A",
-    "imageUrl": "/products/NAV150.jpg"
+    "imageUrl": "/products/NAV150.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3319,7 +3469,8 @@
     "stock": 25,
     "sku": "NAV151",
     "title": "Dettol Antiseptic Liquid 550ml Pack B",
-    "imageUrl": "/products/NAV151.jpg"
+    "imageUrl": "/products/NAV151.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3341,7 +3492,8 @@
     "stock": 25,
     "sku": "NAV152",
     "title": "Dettol Original Soap 125g",
-    "imageUrl": "/products/NAV152.jpg"
+    "imageUrl": "/products/NAV152.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3363,7 +3515,8 @@
     "stock": 25,
     "sku": "NAV153",
     "title": "Dettol Original Germ Protection Soap Multipack 3x125g",
-    "imageUrl": "/products/NAV153.jpg"
+    "imageUrl": "/products/NAV153.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3385,7 +3538,8 @@
     "stock": 25,
     "sku": "NAV154",
     "title": "Dabur Red Ayurvedic Toothpaste 300g Pack A",
-    "imageUrl": "/products/NAV154.jpg"
+    "imageUrl": "/products/NAV154.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3407,7 +3561,8 @@
     "stock": 25,
     "sku": "NAV155",
     "title": "Dabur Red Ayurvedic Toothpaste Gel 300g Pack B",
-    "imageUrl": "/products/NAV155.jpg"
+    "imageUrl": "/products/NAV155.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3429,7 +3584,8 @@
     "stock": 25,
     "sku": "NAV156",
     "title": "Dabur Pure Honey 500g Pack A",
-    "imageUrl": "/products/NAV156.jpg"
+    "imageUrl": "/products/NAV156.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3451,7 +3607,8 @@
     "stock": 25,
     "sku": "NAV157",
     "title": "Dabur Honey Purest & Finest 500g Pack B",
-    "imageUrl": "/products/NAV157.jpg"
+    "imageUrl": "/products/NAV157.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3473,7 +3630,8 @@
     "stock": 25,
     "sku": "NAV158",
     "title": "Dabur Chyawanprash Ayurvedic Health Supplement 1kg Pack A",
-    "imageUrl": "/products/NAV158.jpg"
+    "imageUrl": "/products/NAV158.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3495,7 +3653,8 @@
     "stock": 25,
     "sku": "NAV159",
     "title": "Dabur Chyawanprash Immunity Booster 1kg Pack B",
-    "imageUrl": "/products/NAV159.jpg"
+    "imageUrl": "/products/NAV159.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3517,7 +3676,8 @@
     "stock": 25,
     "sku": "NAV160",
     "title": "Dabur Amla Hair Oil 275ml Pack A",
-    "imageUrl": "/products/NAV160.jpg"
+    "imageUrl": "/products/NAV160.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3539,7 +3699,8 @@
     "stock": 25,
     "sku": "NAV161",
     "title": "Dabur Amla Hair Oil Strengthens & Nourishes 275ml Pack B",
-    "imageUrl": "/products/NAV161.jpg"
+    "imageUrl": "/products/NAV161.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3561,7 +3722,8 @@
     "stock": 25,
     "sku": "NAV162",
     "title": "Disano Extra Virgin Olive Oil Bottle 1 Litre Pack A",
-    "imageUrl": "/products/NAV162.jpg"
+    "imageUrl": "/products/NAV162.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3583,7 +3745,8 @@
     "stock": 25,
     "sku": "NAV163",
     "title": "Disano Extra Virgin Olive Oil 1L Pack B",
-    "imageUrl": "/products/NAV163.jpg"
+    "imageUrl": "/products/NAV163.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3605,7 +3768,8 @@
     "stock": 25,
     "sku": "NAV164",
     "title": "Sunfeast Dark Fantasy Choco Filled 300g Pack A",
-    "imageUrl": "/products/NAV164.jpg"
+    "imageUrl": "/products/NAV164.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3627,7 +3791,8 @@
     "stock": 25,
     "sku": "NAV165",
     "title": "Sunfeast Dark Fantasy Choco Fills 300g Pack B",
-    "imageUrl": "/products/NAV165.jpg"
+    "imageUrl": "/products/NAV165.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3649,7 +3814,8 @@
     "stock": 25,
     "sku": "NAV166",
     "title": "Dove Intense Repair Shampoo 650ml Pack A",
-    "imageUrl": "/products/NAV166.jpg"
+    "imageUrl": "/products/NAV166.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3671,7 +3837,8 @@
     "stock": 25,
     "sku": "NAV167",
     "title": "Dove Intense Repair Shampoo With Keratin Repair Actives 650ml Pack B",
-    "imageUrl": "/products/NAV167.jpg"
+    "imageUrl": "/products/NAV167.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3693,7 +3860,8 @@
     "stock": 25,
     "sku": "NAV168",
     "title": "Domex Toilet Cleaner 1 Litre Pack A",
-    "imageUrl": "/products/NAV168.jpg"
+    "imageUrl": "/products/NAV168.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3715,7 +3883,8 @@
     "stock": 25,
     "sku": "NAV169",
     "title": "Domex Toilet Cleaner Hygienic Clean & Shine 1L Pack B",
-    "imageUrl": "/products/NAV169.jpg"
+    "imageUrl": "/products/NAV169.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3737,7 +3906,8 @@
     "stock": 25,
     "sku": "NAV170",
     "title": "Everyuth Naturals Purifying Neem Face Wash 150g Pack A",
-    "imageUrl": "/products/NAV170.jpg"
+    "imageUrl": "/products/NAV170.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3759,7 +3929,8 @@
     "stock": 25,
     "sku": "NAV171",
     "title": "Everyuth Naturals Purifying Neem Face Wash Soap-Free 150g Pack B",
-    "imageUrl": "/products/NAV171.jpg"
+    "imageUrl": "/products/NAV171.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3781,7 +3952,8 @@
     "stock": 25,
     "sku": "NAV172",
     "title": "Eno Fruit Salt Antacid 100g Pack A",
-    "imageUrl": "/products/NAV172.jpg"
+    "imageUrl": "/products/NAV172.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3803,7 +3975,8 @@
     "stock": 25,
     "sku": "NAV173",
     "title": "Eno Fruit Salt Antacid Powder Regular 100g Pack B",
-    "imageUrl": "/products/NAV173.jpg"
+    "imageUrl": "/products/NAV173.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3825,7 +3998,8 @@
     "stock": 25,
     "sku": "NAV174",
     "title": "Everest Garam Masala Blended Spices 100g Pack A",
-    "imageUrl": "/products/NAV174.jpg"
+    "imageUrl": "/products/NAV174.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3847,7 +4021,8 @@
     "stock": 25,
     "sku": "NAV175",
     "title": "Everest Garam Masala 100g Pack B",
-    "imageUrl": "/products/NAV175.jpg"
+    "imageUrl": "/products/NAV175.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3869,7 +4044,8 @@
     "stock": 25,
     "sku": "NAV176",
     "title": "Everest Chhole Masala 100g Pack A",
-    "imageUrl": "/products/NAV176.jpg"
+    "imageUrl": "/products/NAV176.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3891,7 +4067,8 @@
     "stock": 25,
     "sku": "NAV177",
     "title": "Everest Chhole Masala Blended Spices 100g Pack B",
-    "imageUrl": "/products/NAV177.jpg"
+    "imageUrl": "/products/NAV177.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3913,7 +4090,8 @@
     "stock": 25,
     "sku": "NAV178",
     "title": "Everest Kitchen King Masala 100g Pack A",
-    "imageUrl": "/products/NAV178.jpg"
+    "imageUrl": "/products/NAV178.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3935,7 +4113,8 @@
     "stock": 25,
     "sku": "NAV179",
     "title": "Everest Meat Masala 100g Pack A",
-    "imageUrl": "/products/NAV179.jpg"
+    "imageUrl": "/products/NAV179.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3957,7 +4136,8 @@
     "stock": 25,
     "sku": "NAV180",
     "title": "Everest Kitchen King Masala The Ultimate Blend 100g Pack B",
-    "imageUrl": "/products/NAV180.jpg"
+    "imageUrl": "/products/NAV180.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -3979,7 +4159,8 @@
     "stock": 25,
     "sku": "NAV181",
     "title": "Everest Meat Masala Spice Mix 100g Pack B",
-    "imageUrl": "/products/NAV181.jpg"
+    "imageUrl": "/products/NAV181.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4001,7 +4182,8 @@
     "stock": 25,
     "sku": "NAV182",
     "title": "Everest Kasuri Methi Dried Fenugreek Leaves 50g Pack A",
-    "imageUrl": "/products/NAV182.jpg"
+    "imageUrl": "/products/NAV182.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4023,7 +4205,8 @@
     "stock": 25,
     "sku": "NAV183",
     "title": "Everest Kasuri Methi Dried Fenugreek Leaves 50g Pack B",
-    "imageUrl": "/products/NAV183.jpg"
+    "imageUrl": "/products/NAV183.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4045,7 +4228,8 @@
     "stock": 25,
     "sku": "NAV184",
     "title": "Elite Fruit Cake 250g Pack A",
-    "imageUrl": "/products/NAV184.jpg"
+    "imageUrl": "/products/NAV184.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4067,7 +4251,8 @@
     "stock": 25,
     "sku": "NAV185",
     "title": "Elite Fruit Cake Rich Plum Cake 250g Pack B",
-    "imageUrl": "/products/NAV185.jpg"
+    "imageUrl": "/products/NAV185.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4089,7 +4274,8 @@
     "stock": 25,
     "sku": "NAV186",
     "title": "Fortune Sunlite Refined Sunflower Oil 1L Pack A",
-    "imageUrl": "/products/NAV186.jpg"
+    "imageUrl": "/products/NAV186.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4111,7 +4297,8 @@
     "stock": 25,
     "sku": "NAV187",
     "title": "Fortune Sunlite Refined Sunflower Oil 1 Litre Pack B",
-    "imageUrl": "/products/NAV187.jpg"
+    "imageUrl": "/products/NAV187.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4133,7 +4320,8 @@
     "stock": 25,
     "sku": "NAV188",
     "title": "Fortune Kachi Ghani Mustard Oil Bottle 1 Litre Pack A",
-    "imageUrl": "/products/NAV188.jpg"
+    "imageUrl": "/products/NAV188.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4155,7 +4343,8 @@
     "stock": 25,
     "sku": "NAV189",
     "title": "Fortune Kachi Ghani Mustard Oil 1 Litre Pack B",
-    "imageUrl": "/products/NAV189.jpg"
+    "imageUrl": "/products/NAV189.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4177,7 +4366,8 @@
     "stock": 25,
     "sku": "NAV190",
     "title": "Fortune Arhar Dal 1kg Pack A",
-    "imageUrl": "/products/NAV190.jpg"
+    "imageUrl": "/products/NAV190.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4199,7 +4389,8 @@
     "stock": 25,
     "sku": "NAV191",
     "title": "Fortune Arhar Dal Toor Dal 1kg Pack B",
-    "imageUrl": "/products/NAV191.jpg"
+    "imageUrl": "/products/NAV191.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4221,7 +4412,8 @@
     "stock": 25,
     "sku": "NAV192",
     "title": "Fortune Besan Gram Flour 1kg Pack A",
-    "imageUrl": "/products/NAV192.jpg"
+    "imageUrl": "/products/NAV192.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4243,7 +4435,8 @@
     "stock": 25,
     "sku": "NAV193",
     "title": "Fortune Besan Gram Flour 1kg Pack B",
-    "imageUrl": "/products/NAV193.jpg"
+    "imageUrl": "/products/NAV193.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4265,7 +4458,8 @@
     "stock": 25,
     "sku": "NAV194",
     "title": "Fortune Refined Soyabean Oil Pouch 1L Pack A",
-    "imageUrl": "/products/NAV194.jpg"
+    "imageUrl": "/products/NAV194.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4287,7 +4481,8 @@
     "stock": 25,
     "sku": "NAV195",
     "title": "Fortune Refined Soyabean Oil 1 Litre Pack B",
-    "imageUrl": "/products/NAV195.jpg"
+    "imageUrl": "/products/NAV195.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4309,7 +4504,8 @@
     "stock": 25,
     "sku": "NAV196",
     "title": "Fiama Shower Gel + Beads 250ml",
-    "imageUrl": "/products/NAV196.jpg"
+    "imageUrl": "/products/NAV196.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4331,7 +4527,8 @@
     "stock": 25,
     "sku": "NAV197",
     "title": "Fiama Shower Gel Peach & Avocado 250ml",
-    "imageUrl": "/products/NAV197.jpg"
+    "imageUrl": "/products/NAV197.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4353,7 +4550,8 @@
     "stock": 25,
     "sku": "NAV198",
     "title": "Frooti Mango Drink Tetra Pack 1L Pack A",
-    "imageUrl": "/products/NAV198.jpg"
+    "imageUrl": "/products/NAV198.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4375,7 +4573,8 @@
     "stock": 25,
     "sku": "NAV199",
     "title": "Frooti Mango Drink 1 Litre Pack B",
-    "imageUrl": "/products/NAV199.jpg"
+    "imageUrl": "/products/NAV199.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4397,7 +4596,8 @@
     "stock": 25,
     "sku": "NAV200",
     "title": "Gharwal Desi Ghee 1L",
-    "imageUrl": "/products/NAV200.jpg"
+    "imageUrl": "/products/NAV200.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4419,7 +4619,8 @@
     "stock": 25,
     "sku": "NAV201",
     "title": "Gharwal Pure Cow Desi Ghee 1 Litre",
-    "imageUrl": "/products/NAV201.jpg"
+    "imageUrl": "/products/NAV201.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4441,7 +4642,8 @@
     "stock": 25,
     "sku": "NAV202",
     "title": "Gillette Guard Single Blade Shaving System Razor 1 Razor Pack A",
-    "imageUrl": "/products/NAV202.jpg"
+    "imageUrl": "/products/NAV202.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4463,7 +4665,8 @@
     "stock": 25,
     "sku": "NAV203",
     "title": "Gillette Guard Razor 1 Razor Pack B",
-    "imageUrl": "/products/NAV203.jpg"
+    "imageUrl": "/products/NAV203.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4485,7 +4688,8 @@
     "stock": 25,
     "sku": "NAV204",
     "title": "Gillette Classic Shaving Foam Regular 200g Pack A",
-    "imageUrl": "/products/NAV204.jpg"
+    "imageUrl": "/products/NAV204.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4507,7 +4711,8 @@
     "stock": 25,
     "sku": "NAV205",
     "title": "Gillette Shaving Foam Regular 200g Pack B",
-    "imageUrl": "/products/NAV205.jpg"
+    "imageUrl": "/products/NAV205.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4529,7 +4734,8 @@
     "stock": 25,
     "sku": "NAV206",
     "title": "Godrej No.1 Sandalwood & Turmeric Soap Multipack 4x100g",
-    "imageUrl": "/products/NAV206.jpg"
+    "imageUrl": "/products/NAV206.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4551,7 +4757,8 @@
     "stock": 25,
     "sku": "NAV207",
     "title": "Godrej No.1 Neem & Aloe Vera Soap Pack of 4",
-    "imageUrl": "/products/NAV207.jpg"
+    "imageUrl": "/products/NAV207.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4573,7 +4780,8 @@
     "stock": 25,
     "sku": "NAV208",
     "title": "Good Knight Gold Flash Mosquito Repellent Liquid Refill 45ml Pack A",
-    "imageUrl": "/products/NAV208.jpg"
+    "imageUrl": "/products/NAV208.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4595,7 +4803,8 @@
     "stock": 25,
     "sku": "NAV209",
     "title": "Good Knight Gold Flash Liquid Vaporiser Refill 45ml Pack B",
-    "imageUrl": "/products/NAV209.jpg"
+    "imageUrl": "/products/NAV209.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4617,7 +4826,8 @@
     "stock": 25,
     "sku": "NAV210",
     "title": "Gullak Premium Quality Refined Sugar 5kg Pack A",
-    "imageUrl": "/products/NAV210.jpg"
+    "imageUrl": "/products/NAV210.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4639,7 +4849,8 @@
     "stock": 25,
     "sku": "NAV211",
     "title": "Gullak Refined Sulphurless Sugar 5kg Pack B",
-    "imageUrl": "/products/NAV211.jpg"
+    "imageUrl": "/products/NAV211.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4661,7 +4872,8 @@
     "stock": 25,
     "sku": "NAV212",
     "title": "Garlic Powder Lehsun Powder 100g Pack A",
-    "imageUrl": "/products/NAV212.jpg"
+    "imageUrl": "/products/NAV212.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4683,7 +4895,8 @@
     "stock": 25,
     "sku": "NAV213",
     "title": "Garlic Powder Lehsun Powder 100g Pack B",
-    "imageUrl": "/products/NAV213.jpg"
+    "imageUrl": "/products/NAV213.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4705,7 +4918,8 @@
     "stock": 25,
     "sku": "NAV214",
     "title": "Dabur Ginger Garlic Paste 200g Pack A",
-    "imageUrl": "/products/NAV214.jpg"
+    "imageUrl": "/products/NAV214.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4727,7 +4941,8 @@
     "stock": 25,
     "sku": "NAV215",
     "title": "Dabur Ginger Garlic Paste Ready to Cook 200g Pack B",
-    "imageUrl": "/products/NAV215.jpg"
+    "imageUrl": "/products/NAV215.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4749,7 +4964,8 @@
     "stock": 25,
     "sku": "NAV216",
     "title": "Haldiram's Nagpur Bhujia Sev Namkeen 1kg Pack A",
-    "imageUrl": "/products/NAV216.jpg"
+    "imageUrl": "/products/NAV216.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4771,7 +4987,8 @@
     "stock": 25,
     "sku": "NAV217",
     "title": "Haldiram's Bhujia Sev Namkeen 1kg Pack B",
-    "imageUrl": "/products/NAV217.jpg"
+    "imageUrl": "/products/NAV217.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4793,7 +5010,8 @@
     "stock": 25,
     "sku": "NAV218",
     "title": "Haldiram's Nagpur Rasgulla 1kg Pack A",
-    "imageUrl": "/products/NAV218.jpg"
+    "imageUrl": "/products/NAV218.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4815,7 +5033,8 @@
     "stock": 25,
     "sku": "NAV219",
     "title": "Haldiram's Rasgulla Cottage Cheese Balls in Syrup 1kg Pack B",
-    "imageUrl": "/products/NAV219.jpg"
+    "imageUrl": "/products/NAV219.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4837,7 +5056,8 @@
     "stock": 25,
     "sku": "NAV220",
     "title": "Haldiram's Gulab Jamun Ready to Eat Sweet 1kg Pack A",
-    "imageUrl": "/products/NAV220.jpg"
+    "imageUrl": "/products/NAV220.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4859,7 +5079,8 @@
     "stock": 25,
     "sku": "NAV221",
     "title": "Haldiram's Gulab Jamun in Sugar Syrup 1kg Pack B",
-    "imageUrl": "/products/NAV221.jpg"
+    "imageUrl": "/products/NAV221.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4881,7 +5102,8 @@
     "stock": 25,
     "sku": "NAV222",
     "title": "Haldiram's Nagpur Soan Papdi Traditional Indian Sweet 500g Pack A",
-    "imageUrl": "/products/NAV222.jpg"
+    "imageUrl": "/products/NAV222.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4903,7 +5125,8 @@
     "stock": 25,
     "sku": "NAV223",
     "title": "Haldiram's Soan Papdi Made with Desi Ghee 500g Pack B",
-    "imageUrl": "/products/NAV223.jpg"
+    "imageUrl": "/products/NAV223.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4925,7 +5148,8 @@
     "stock": 25,
     "sku": "NAV224",
     "title": "Haldiram's All in One Namkeen 1kg Pack A",
-    "imageUrl": "/products/NAV224.jpg"
+    "imageUrl": "/products/NAV224.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4947,7 +5171,8 @@
     "stock": 25,
     "sku": "NAV225",
     "title": "Haldiram's All in One Mixture 1kg Pack B",
-    "imageUrl": "/products/NAV225.jpg"
+    "imageUrl": "/products/NAV225.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4969,7 +5194,8 @@
     "stock": 25,
     "sku": "NAV226",
     "title": "Harpic Toilet Cleaner Active Fresh Original 1L",
-    "imageUrl": "/products/NAV226.jpg"
+    "imageUrl": "/products/NAV226.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -4991,7 +5217,8 @@
     "stock": 25,
     "sku": "NAV227",
     "title": "Harpic Toilet Cleaner Power Plus 1 Litre",
-    "imageUrl": "/products/NAV227.jpg"
+    "imageUrl": "/products/NAV227.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5013,7 +5240,8 @@
     "stock": 25,
     "sku": "NAV228",
     "title": "Head & Shoulders Anti-Dandruff Shampoo Classic Clean 650ml",
-    "imageUrl": "/products/NAV228.jpg"
+    "imageUrl": "/products/NAV228.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5035,7 +5263,8 @@
     "stock": 25,
     "sku": "NAV229",
     "title": "Head & Shoulders Anti-Dandruff Shampoo Cool Menthol 650ml",
-    "imageUrl": "/products/NAV229.jpg"
+    "imageUrl": "/products/NAV229.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5057,7 +5286,8 @@
     "stock": 25,
     "sku": "NAV230",
     "title": "Himalaya Purifying Neem Face Wash 150ml Pack A",
-    "imageUrl": "/products/NAV230.jpg"
+    "imageUrl": "/products/NAV230.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5079,7 +5309,8 @@
     "stock": 25,
     "sku": "NAV231",
     "title": "Himalaya Purifying Neem Face Wash 150ml Pack B",
-    "imageUrl": "/products/NAV231.jpg"
+    "imageUrl": "/products/NAV231.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5101,7 +5332,8 @@
     "stock": 25,
     "sku": "NAV232",
     "title": "Horlicks Health Drink Classic Malt 500g Pack A",
-    "imageUrl": "/products/NAV232.jpg"
+    "imageUrl": "/products/NAV232.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5123,7 +5355,8 @@
     "stock": 25,
     "sku": "NAV233",
     "title": "Horlicks Health Drink Malt-based Nutrition 500g Pack B",
-    "imageUrl": "/products/NAV233.jpg"
+    "imageUrl": "/products/NAV233.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5145,7 +5378,8 @@
     "stock": 25,
     "sku": "NAV234",
     "title": "Himalaya Baby Soap Extra Moisturizing 125g",
-    "imageUrl": "/products/NAV234.jpg"
+    "imageUrl": "/products/NAV234.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5167,7 +5401,8 @@
     "stock": 25,
     "sku": "NAV235",
     "title": "India Gate Feast Rozzana Basmati Rice 5kg Pack A",
-    "imageUrl": "/products/NAV235.jpg"
+    "imageUrl": "/products/NAV235.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5189,7 +5424,8 @@
     "stock": 25,
     "sku": "NAV236",
     "title": "India Gate Feast Rozzana Basmati Rice 5kg Pack B",
-    "imageUrl": "/products/NAV236.jpg"
+    "imageUrl": "/products/NAV236.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5211,7 +5447,8 @@
     "stock": 25,
     "sku": "NAV237",
     "title": "India Gate Dubar Rice 5kg",
-    "imageUrl": "/products/NAV237.jpg"
+    "imageUrl": "/products/NAV237.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5233,7 +5470,8 @@
     "stock": 25,
     "sku": "NAV238",
     "title": "India Gate Tibar Select Basmati Rice 5kg",
-    "imageUrl": "/products/NAV238.jpg"
+    "imageUrl": "/products/NAV238.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5255,7 +5493,8 @@
     "stock": 25,
     "sku": "NAV239",
     "title": "Tata Salt Iodized Salt 1kg",
-    "imageUrl": "/products/NAV239.jpg"
+    "imageUrl": "/products/NAV239.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5277,7 +5516,8 @@
     "stock": 25,
     "sku": "NAV240",
     "title": "Imperial Leather Classic Original Bath Soap Multipack 3x100g",
-    "imageUrl": "/products/NAV240.jpg"
+    "imageUrl": "/products/NAV240.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5299,7 +5539,8 @@
     "stock": 25,
     "sku": "NAV241",
     "title": "Iodex Pain Relief Balm 40g",
-    "imageUrl": "/products/NAV241.jpg"
+    "imageUrl": "/products/NAV241.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5321,7 +5562,8 @@
     "stock": 25,
     "sku": "NAV242",
     "title": "Organic Jaggery Gur 1kg",
-    "imageUrl": "/products/NAV242.jpg"
+    "imageUrl": "/products/NAV242.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5343,7 +5585,8 @@
     "stock": 25,
     "sku": "NAV243",
     "title": "Bajaj Jasmine Hair Oil 200ml",
-    "imageUrl": "/products/NAV243.jpg"
+    "imageUrl": "/products/NAV243.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5365,7 +5608,8 @@
     "stock": 25,
     "sku": "NAV244",
     "title": "Johnson's Baby Powder 200g",
-    "imageUrl": "/products/NAV244.jpg"
+    "imageUrl": "/products/NAV244.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5387,7 +5631,8 @@
     "stock": 25,
     "sku": "NAV245",
     "title": "Johnson's Baby Soap 100g",
-    "imageUrl": "/products/NAV245.jpg"
+    "imageUrl": "/products/NAV245.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5409,7 +5654,8 @@
     "stock": 25,
     "sku": "NAV246",
     "title": "Jiwa Whole Wheat Atta 5kg",
-    "imageUrl": "/products/NAV246.jpg"
+    "imageUrl": "/products/NAV246.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5431,7 +5677,8 @@
     "stock": 25,
     "sku": "NAV247",
     "title": "Kissan Tomato Ketchup 1kg",
-    "imageUrl": "/products/NAV247.jpg"
+    "imageUrl": "/products/NAV247.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5453,7 +5700,8 @@
     "stock": 25,
     "sku": "NAV248",
     "title": "Kissan Mixed Fruit Jam 500g",
-    "imageUrl": "/products/NAV248.jpg"
+    "imageUrl": "/products/NAV248.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5475,7 +5723,8 @@
     "stock": 25,
     "sku": "NAV249",
     "title": "Kellogg's Corn Flakes Golden Toasted 875g",
-    "imageUrl": "/products/NAV249.jpg"
+    "imageUrl": "/products/NAV249.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5497,7 +5746,8 @@
     "stock": 25,
     "sku": "NAV250",
     "title": "Kurkure Masala Munch 100g",
-    "imageUrl": "/products/NAV250.jpg"
+    "imageUrl": "/products/NAV250.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5519,7 +5769,8 @@
     "stock": 25,
     "sku": "NAV251",
     "title": "Knorr Classic Cream of Tomato Soup",
-    "imageUrl": "/products/NAV251.jpg"
+    "imageUrl": "/products/NAV251.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5541,7 +5792,8 @@
     "stock": 25,
     "sku": "NAV252",
     "title": "Kasturi Turmeric Powder Haldi Powder 100g",
-    "imageUrl": "/products/NAV252.jpg"
+    "imageUrl": "/products/NAV252.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5563,7 +5815,8 @@
     "stock": 25,
     "sku": "NAV253",
     "title": "Nature's Harvest Kala Chana Whole Brown Chickpeas 1kg",
-    "imageUrl": "/products/NAV253.jpg"
+    "imageUrl": "/products/NAV253.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5585,7 +5838,8 @@
     "stock": 25,
     "sku": "NAV254",
     "title": "Lay's India's Magic Masala Potato Chips 100g",
-    "imageUrl": "/products/NAV254.jpg"
+    "imageUrl": "/products/NAV254.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5607,7 +5861,8 @@
     "stock": 25,
     "sku": "NAV255",
     "title": "Lay's Cream & Onion Potato Chips 100g",
-    "imageUrl": "/products/NAV255.jpg"
+    "imageUrl": "/products/NAV255.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5629,7 +5884,8 @@
     "stock": 25,
     "sku": "NAV256",
     "title": "Lux Soft Touch French Rose & Almond Oil Soap Bars 4x100g",
-    "imageUrl": "/products/NAV256.jpg"
+    "imageUrl": "/products/NAV256.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5651,7 +5907,8 @@
     "stock": 25,
     "sku": "NAV257",
     "title": "Liril Lime & Mint Soap 125g",
-    "imageUrl": "/products/NAV257.jpg"
+    "imageUrl": "/products/NAV257.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5673,7 +5930,8 @@
     "stock": 25,
     "sku": "NAV258",
     "title": "Lipton Pure & Light Green Tea 100 Tea Bags",
-    "imageUrl": "/products/NAV258.jpg"
+    "imageUrl": "/products/NAV258.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5695,7 +5953,8 @@
     "stock": 25,
     "sku": "NAV259",
     "title": "Lizol Floor Cleaner Pine & Lemon 1L",
-    "imageUrl": "/products/NAV259.jpg"
+    "imageUrl": "/products/NAV259.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5717,7 +5976,8 @@
     "stock": 25,
     "sku": "NAV260",
     "title": "Lifebuoy Total Protect Hand Wash Refill Pouch 750ml",
-    "imageUrl": "/products/NAV260.jpg"
+    "imageUrl": "/products/NAV260.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5739,7 +5999,8 @@
     "stock": 25,
     "sku": "NAV261",
     "title": "Maggi 2-Minute Masala Noodles Family Pack 560g",
-    "imageUrl": "/products/NAV261.jpg"
+    "imageUrl": "/products/NAV261.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5761,7 +6022,8 @@
     "stock": 25,
     "sku": "NAV262",
     "title": "MDH Degi Mirch Chilli Powder 100g",
-    "imageUrl": "/products/NAV262.jpg"
+    "imageUrl": "/products/NAV262.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5783,7 +6045,8 @@
     "stock": 25,
     "sku": "NAV263",
     "title": "MDH Chunky Chat Masala 100g",
-    "imageUrl": "/products/NAV263.jpg"
+    "imageUrl": "/products/NAV263.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5805,7 +6068,8 @@
     "stock": 25,
     "sku": "NAV264",
     "title": "MDH Kitchen King Sabzi Masala 100g",
-    "imageUrl": "/products/NAV264.jpg"
+    "imageUrl": "/products/NAV264.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5827,7 +6091,8 @@
     "stock": 25,
     "sku": "NAV265",
     "title": "MDH Garam Masala 100g",
-    "imageUrl": "/products/NAV265.jpg"
+    "imageUrl": "/products/NAV265.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5849,7 +6114,8 @@
     "stock": 25,
     "sku": "NAV266",
     "title": "Mother Dairy Pure Ghee 1 Litre",
-    "imageUrl": "/products/NAV266.jpg"
+    "imageUrl": "/products/NAV266.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5871,7 +6137,8 @@
     "stock": 25,
     "sku": "NAV267",
     "title": "Mother Dairy Fresh Paneer 200g",
-    "imageUrl": "/products/NAV267.jpg"
+    "imageUrl": "/products/NAV267.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5893,7 +6160,8 @@
     "stock": 25,
     "sku": "NAV268",
     "title": "Harvest Gold Yellow Split Moong Dal 1kg",
-    "imageUrl": "/products/NAV268.jpg"
+    "imageUrl": "/products/NAV268.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5915,7 +6183,8 @@
     "stock": 25,
     "sku": "NAV269",
     "title": "Organic Harvest Moong Whole Green Mung Beans 1kg",
-    "imageUrl": "/products/NAV269.jpg"
+    "imageUrl": "/products/NAV269.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5937,7 +6206,8 @@
     "stock": 25,
     "sku": "NAV270",
     "title": "Royal Harvest Masoor Dal Red Lentils Split 1kg",
-    "imageUrl": "/products/NAV270.jpg"
+    "imageUrl": "/products/NAV270.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5959,7 +6229,8 @@
     "stock": 25,
     "sku": "NAV271",
     "title": "Navratna Ayurvedic Cool Hair Oil 300ml",
-    "imageUrl": "/products/NAV271.jpg"
+    "imageUrl": "/products/NAV271.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -5981,7 +6252,8 @@
     "stock": 25,
     "sku": "NAV272",
     "title": "Nivea Soft Moisturising Cream 200ml",
-    "imageUrl": "/products/NAV272.jpg"
+    "imageUrl": "/products/NAV272.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6003,7 +6275,8 @@
     "stock": 25,
     "sku": "NAV273",
     "title": "Nivea Body Lotion Deep Moisture Serum 400ml",
-    "imageUrl": "/products/NAV273.jpg"
+    "imageUrl": "/products/NAV273.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6025,7 +6298,8 @@
     "stock": 25,
     "sku": "NAV274",
     "title": "Nirma Washing Powder Super Whitening Power 1kg",
-    "imageUrl": "/products/NAV274.jpg"
+    "imageUrl": "/products/NAV274.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6047,7 +6321,8 @@
     "stock": 25,
     "sku": "NAV275",
     "title": "Nescafe Classic Instant Coffee 100g",
-    "imageUrl": "/products/NAV275.jpg"
+    "imageUrl": "/products/NAV275.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6069,7 +6344,8 @@
     "stock": 25,
     "sku": "NAV276",
     "title": "Nestle Everyday Dairy Whitener 400g",
-    "imageUrl": "/products/NAV276.jpg"
+    "imageUrl": "/products/NAV276.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6091,7 +6367,8 @@
     "stock": 25,
     "sku": "NAV277",
     "title": "Nutrela Soya Chunks High Protein 1kg",
-    "imageUrl": "/products/NAV277.jpg"
+    "imageUrl": "/products/NAV277.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6113,7 +6390,8 @@
     "stock": 25,
     "sku": "NAV278",
     "title": "Swaad Nylon Sabudana Tapioca Sago 500g",
-    "imageUrl": "/products/NAV278.jpg"
+    "imageUrl": "/products/NAV278.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6135,7 +6413,8 @@
     "stock": 25,
     "sku": "NAV279",
     "title": "Saffola Real Oats Whole Grain 1kg",
-    "imageUrl": "/products/NAV279.jpg"
+    "imageUrl": "/products/NAV279.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6157,7 +6436,8 @@
     "stock": 25,
     "sku": "NAV280",
     "title": "Kellogg's Whole Grain Rolled Oats 1kg",
-    "imageUrl": "/products/NAV280.jpg"
+    "imageUrl": "/products/NAV280.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6179,7 +6459,8 @@
     "stock": 25,
     "sku": "NAV281",
     "title": "Odonil Room Air Freshener Block Floral Bouquet 75g",
-    "imageUrl": "/products/NAV281.jpg"
+    "imageUrl": "/products/NAV281.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6201,7 +6482,8 @@
     "stock": 25,
     "sku": "NAV282",
     "title": "Oral-B CrossAction Medium Toothbrushes 2 Pack",
-    "imageUrl": "/products/NAV282.jpg"
+    "imageUrl": "/products/NAV282.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6223,7 +6505,8 @@
     "stock": 25,
     "sku": "NAV283",
     "title": "Oreo Chocolate Creme Sandwich Biscuits 300g",
-    "imageUrl": "/products/NAV283.jpg"
+    "imageUrl": "/products/NAV283.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6245,7 +6528,8 @@
     "stock": 25,
     "sku": "NAV284",
     "title": "The Spice Merchant Onion Powder 100g",
-    "imageUrl": "/products/NAV284.jpg"
+    "imageUrl": "/products/NAV284.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6267,7 +6551,8 @@
     "stock": 25,
     "sku": "NAV285",
     "title": "Parle-G Original Glucose Biscuits 800g",
-    "imageUrl": "/products/NAV285.jpg"
+    "imageUrl": "/products/NAV285.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6289,7 +6574,8 @@
     "stock": 25,
     "sku": "NAV286",
     "title": "Parachute Advansed 100% Pure Coconut Oil 600ml",
-    "imageUrl": "/products/NAV286.jpg"
+    "imageUrl": "/products/NAV286.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6311,7 +6597,8 @@
     "stock": 25,
     "sku": "NAV287",
     "title": "Patanjali Dant Kanti Dental Cream Toothpaste 200g",
-    "imageUrl": "/products/NAV287.jpg"
+    "imageUrl": "/products/NAV287.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6333,7 +6620,8 @@
     "stock": 25,
     "sku": "NAV288",
     "title": "Patanjali Pure Cow Ghee 1 Litre",
-    "imageUrl": "/products/NAV288.jpg"
+    "imageUrl": "/products/NAV288.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6355,7 +6643,8 @@
     "stock": 25,
     "sku": "NAV289",
     "title": "Pears Pure & Gentle Transparent Soap Multipack 4x125g",
-    "imageUrl": "/products/NAV289.jpg"
+    "imageUrl": "/products/NAV289.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6377,7 +6666,8 @@
     "stock": 25,
     "sku": "NAV290",
     "title": "Pepsodent Germicheck Toothpaste 300g",
-    "imageUrl": "/products/NAV290.jpg"
+    "imageUrl": "/products/NAV290.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6399,7 +6689,8 @@
     "stock": 25,
     "sku": "NAV291",
     "title": "Pampers All Round Protection Baby Diapers Large 64 Count",
-    "imageUrl": "/products/NAV291.jpg"
+    "imageUrl": "/products/NAV291.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6421,7 +6712,8 @@
     "stock": 25,
     "sku": "NAV292",
     "title": "Pril Kraft-Gel Dishwash Liquid 500ml",
-    "imageUrl": "/products/NAV292.jpg"
+    "imageUrl": "/products/NAV292.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6443,7 +6735,8 @@
     "stock": 25,
     "sku": "NAV293",
     "title": "Sri Dharma Pooja Lamp Oil 1 Litre",
-    "imageUrl": "/products/NAV293.jpg"
+    "imageUrl": "/products/NAV293.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6465,7 +6758,8 @@
     "stock": 25,
     "sku": "NAV294",
     "title": "Tradition Harvest Premium Thick Poha Flattened Rice 1kg",
-    "imageUrl": "/products/NAV294.jpg"
+    "imageUrl": "/products/NAV294.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6487,7 +6781,8 @@
     "stock": 25,
     "sku": "NAV295",
     "title": "Quaker Whole Grain Rolled Oats 1kg",
-    "imageUrl": "/products/NAV295.jpg"
+    "imageUrl": "/products/NAV295.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6509,7 +6804,8 @@
     "stock": 25,
     "sku": "NAV296",
     "title": "Quick Tatkal CTC Black Tea 500g",
-    "imageUrl": "/products/NAV296.jpg"
+    "imageUrl": "/products/NAV296.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6531,7 +6827,8 @@
     "stock": 25,
     "sku": "NAV297",
     "title": "Swadist Whole Cumin Seeds Jeera 100g",
-    "imageUrl": "/products/NAV297.jpg"
+    "imageUrl": "/products/NAV297.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6553,7 +6850,8 @@
     "stock": 25,
     "sku": "NAV298",
     "title": "Navratna Spices Premium Red Chitra Rajma Kidney Beans 1kg",
-    "imageUrl": "/products/NAV298.jpg"
+    "imageUrl": "/products/NAV298.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6575,7 +6873,8 @@
     "stock": 25,
     "sku": "NAV299",
     "title": "Jammu Rajma Dark Red Kidney Beans 1kg",
-    "imageUrl": "/products/NAV299.jpg"
+    "imageUrl": "/products/NAV299.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6597,7 +6896,8 @@
     "stock": 25,
     "sku": "NAV300",
     "title": "Rin Detergent Powder New Brightness Formula 1kg",
-    "imageUrl": "/products/NAV300.jpg"
+    "imageUrl": "/products/NAV300.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6619,7 +6919,8 @@
     "stock": 25,
     "sku": "NAV301",
     "title": "Rin Detergent Bar Power White 250g",
-    "imageUrl": "/products/NAV301.jpg"
+    "imageUrl": "/products/NAV301.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6641,7 +6942,8 @@
     "stock": 25,
     "sku": "NAV302",
     "title": "Brooke Bond Red Label Natural Care Tea with Ayurvedic Actives 500g",
-    "imageUrl": "/products/NAV302.jpg"
+    "imageUrl": "/products/NAV302.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6663,7 +6965,8 @@
     "stock": 25,
     "sku": "NAV303",
     "title": "Real Activ Mixed Fruit Juice No Added Sugar 1 Litre",
-    "imageUrl": "/products/NAV303.jpg"
+    "imageUrl": "/products/NAV303.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6685,7 +6988,8 @@
     "stock": 25,
     "sku": "NAV304",
     "title": "Annapurna Rice Flour Chawal Ka Atta 1kg",
-    "imageUrl": "/products/NAV304.jpg"
+    "imageUrl": "/products/NAV304.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6707,7 +7011,8 @@
     "stock": 25,
     "sku": "NAV305",
     "title": "Hamdard Rooh Afza Sharbat Concentrate 750ml",
-    "imageUrl": "/products/NAV305.jpg"
+    "imageUrl": "/products/NAV305.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6729,7 +7034,8 @@
     "stock": 25,
     "sku": "NAV306",
     "title": "Surf Excel Easy Wash Detergent Powder 1kg",
-    "imageUrl": "/products/NAV306.jpg"
+    "imageUrl": "/products/NAV306.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6751,7 +7057,8 @@
     "stock": 25,
     "sku": "NAV307",
     "title": "Surf Excel Matic Front Load Washing Powder 1kg",
-    "imageUrl": "/products/NAV307.jpg"
+    "imageUrl": "/products/NAV307.jpg",
+    "inStock": true
   },
   {
     "approvalStatus": "APPROVED",
@@ -6773,6 +7080,7 @@
     "stock": 25,
     "sku": "NAV308",
     "title": "Saffola Gold Multisource Edible Oil Pouch 1 Litre",
-    "imageUrl": "/products/NAV308.jpg"
+    "imageUrl": "/products/NAV308.jpg",
+    "inStock": true
   }
 ]
