@@ -20,4 +20,4 @@ with open('products_308.csv', 'w', newline='', encoding='utf-8') as f:
         row['image'] = row.get('image') or f"/products/{row['sku']}.jpg"
         w.writerow(row)
 
-print("CREATED products_308.csv WITH", len(items), "SKUS")
+print("CREATED products_308.csv WITH", len(items), "SKUS") 
