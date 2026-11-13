@@ -1,0 +1,57 @@
+name: Force Sync 308 SKUs Everywhere
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/main.yml'
+      - 'public/catalog.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  force-sync-all:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Sync 308 SKUs across all source files and Firebase
+        run: |
+          python - << 'EOF'
+          import json, os, re, urllib.request
+
+          src = 'public/catalog.json' if os.path.exists('public/catalog.json') else 'catalog.json'
+          data = json.load(open(src, encoding='utf-8'))
+          items = data if isinstance(data, list) else data.get('products', [])
+          by_id = { (x.get('id') or x.get('sku')): x for x in items if (x.get('id') or x.get('sku')) }
+          print(f"Loaded {len(by_id)} verified SKUs from {src}")
+
+          # 1. Sync Firebase RTDB directly
+          try:
+              req = urllib.request.Request(
+                  "https://nav-grocery-store-default-rtdb.firebaseio.com/products.json",
+                  data=json.dumps(items, ensure_ascii=False).encode('utf-8'),
+                  headers={'Content-Type': 'application/json'},
+                  method='PUT'
+              )
+              with urllib.request.urlopen(req, timeout=20) as resp:
+                  print("Firebase RTDB updated:", resp.status)
+          except Exception as e:
+              print("Firebase sync note:", e)
+
+          # 2. Scan every HTML/JS/TS/JSON file in repo for old product strings
+          for root, dirs, files in os.walk('.'):
+              if '.git' in dirs:
+                  dirs.remove('.git')
+              if 'node_modules' in dirs:
+                  dirs.remove('node_modules')
+              for f in files:
+                  if not f.endswith(('.html', '.js', '.jsx', '.ts
