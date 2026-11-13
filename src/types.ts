@@ -2,6 +2,12 @@ export type FulfillmentMode = 'delivery' | 'pickup';
 
 export type PaymentMethod = 'upi' | 'cod' | 'razorpay';
 
+export interface PublishingChannels {
+  navGroceryWeb: boolean;
+  navKartWeb: boolean;
+  androidApps: boolean;
+}
+
 export interface Product {
   id: string;
   name: string;
@@ -17,6 +23,13 @@ export interface Product {
   image: string;
   customImage?: string;
   description?: string;
+  channels?: PublishingChannels;
+  updatedAt?: string;
+  cost?: number;
+  sellerId?: string;
+  sellerName?: string;
+  approvalStatus?: string;
+  isVerifiedSeller?: boolean;
 }
 
 export interface CartItem {

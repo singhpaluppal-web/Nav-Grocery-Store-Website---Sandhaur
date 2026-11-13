@@ -37,7 +37,7 @@ import {
   matchesDepartmentCategory,
   matchesGroceryAisle,
 } from '../utils/aisles';
-import { resolveProductImage } from '../utils/brandPhotos';
+import { buildBrandPackageSvg, resolveProductImage } from '../utils/brandPhotos';
 import { StoreLogo } from './StoreLogo';
 import { HeroCarousel } from './HeroCarousel';
 import { ProductCard } from './ProductCard';
@@ -356,6 +356,13 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
                         alt={item.name}
                         className="w-9 h-9 rounded-lg object-contain bg-[#F8F7F2] shrink-0"
                         referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          const el = e.currentTarget;
+                          if (!el.dataset.svgFallback) {
+                            el.dataset.svgFallback = '1';
+                            el.src = buildBrandPackageSvg(item);
+                          }
+                        }}
                       />
                       <div className="min-w-0">
                         <p className="text-xs font-semibold truncate">{item.name}</p>

@@ -299,24 +299,7 @@
       const FIREBASE_BASE = 'https://nav-grocery-store-default-rtdb.firebaseio.com';
       const BATCH_SIZE = 24;
 
-      const STUDIO_FALLBACK = '/images/studio/studio_atta_aashirvaad.jpg';
-      const STUDIO_RULES = [
-        { kws: ['fries', 'tikki', 'patty', 'smiles', 'mccain'], url: '/images/studio/studio_mccain_fries.jpg' },
-        { kws: ['frozen', 'safal', 'paneer', 'peas', 'sweet corn', 'chaap'], url: '/images/studio/studio_frozen_peas.jpg' },
-        { kws: ['harpic', 'lizol', 'colin', 'vim', 'exo', 'pril', 'antiseptic', 'savlon', 'toilet cleaner', 'surface cleaner', 'dishwash'], url: '/images/studio/studio_harpic_cleaner.jpg' },
-        { kws: ['surf excel', 'ariel', 'tide', 'rin', 'comfort', 'detergent', 'softener'], url: '/images/studio/studio_detergent_bag.jpg' },
-        { kws: ['soap', 'bathing', 'toothpaste', 'dental cream', 'cavity', 'shampoo', 'hair oil', 'cold cream', 'moisturizing', 'body lotion', 'colgate', 'pepsodent', 'sensodyne', 'close up', 'dove', 'dettol', 'lifebuoy', 'pears', 'lux', 'santoor', 'medimix', 'godrej', 'nivea', 'vaseline', 'ponds', 'parachute', 'bajaj', 'head & shoulders', 'clinic plus', 'sunsilk', 'pantene'], url: '/images/studio/studio_personal_care.jpg' },
-        { kws: ['mustard oil', 'sunflower oil', 'soyabean oil', 'edible oil', 'blended oil', 'cooking oil', 'saffola'], url: '/images/studio/studio_cooking_oil.jpg' },
-        { kws: ['ghee', 'vanaspati'], url: '/images/studio/studio_desi_ghee.jpg' },
-        { kws: ['atta', 'besan', 'sooji', 'maida', 'daliya', 'oats', 'corn flakes'], url: '/images/studio/studio_atta_aashirvaad.jpg' },
-        { kws: ['haldiram', 'haldirams', 'bhujia', 'mixture', 'khatta meetha', 'lays', 'kurkure', 'uncle chipps'], url: '/images/studio/studio_biscuits_chocolate.jpg' },
-        { kws: ['rice', 'dal', 'chana', 'rajma', 'moong'], url: '/images/studio/studio_basmati_rice.jpg' },
-        { kws: ['noodle', 'noodles', 'maggi'], exclude: ['sauce', 'ketchup'], url: '/images/studio/studio_noodles_pack.jpg' },
-        { kws: ['ketchup', 'sauce', 'jam', 'nutella', 'peanut butter', 'honey'], url: '/images/studio/studio_ketchup_jam.jpg' },
-        { kws: ['tea', 'chai', 'red label', 'taj mahal', 'wagh bakri', 'coffee', 'nescafe', 'bru', 'bournvita', 'horlicks', 'boost', 'rooh afza', 'sugar'], url: '/images/studio/studio_tea_red_pack.jpg' },
-        { kws: ['biscuit', 'biscuits', 'cookie', 'cookies', 'chips', 'chocolate', 'fantasy', 'oreo', 'bourbon', 'milk bikis', 'parle'], url: '/images/studio/studio_biscuits_chocolate.jpg' },
-        { kws: ['masala', 'salt', 'haldi', 'mirch', 'coriander', 'pepper', 'methi', 'jeera', 'mustard seeds', 'ajwain', 'hing', 'asafoetida', 'herbs', 'mdh', 'everest', 'catch'], url: '/images/studio/studio_spices_masala.jpg' }
-      ];
+      const LEGACY_IMG_MARKERS = ['/images/studio/', 'batch_', '/images/verified/', 'placeholder'];
 
       const AISLES = [
         { id: 'all', label: 'All Store Items', shortLabel: '308 SKUs', desc: 'Complete packaged catalog' },
@@ -802,30 +785,56 @@
         return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
       }
 
-      function hasWord(haystack, keyword) {
-        const escaped = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        return new RegExp('\\b' + escaped + '\\b', 'i').test(haystack);
+      function isLegacyImg(url) {
+        const u = String(url || '').trim().toLowerCase();
+        if (!u) return true;
+        return LEGACY_IMG_MARKERS.some(m => u.includes(m));
+      }
+
+      function buildSkuSvgFallback(p) {
+        const sku = String(p.id || 'NAV').trim().toUpperCase().replace(/[<>&"]/g, '');
+        const brand = String(p.brand || 'NAV GROCERY').trim().toUpperCase().slice(0, 22).replace(/[<>&"]/g, '');
+        const raw = String(p.name || 'Sealed Pack').trim().replace(/[<>&"]/g, '');
+        const l1 = raw.slice(0, 22);
+        const l2 = raw.slice(22, 44);
+        const isFr = ((p.department || '') + ' ' + (p.category || '')).toLowerCase().includes('frozen');
+        const accent = isFr ? '#0369A1' : '#0B3B24';
+        const seal = isFr ? '-18°C COLD CHAIN' : 'SEALED WHOLESALE PACK';
+        const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><rect width="400" height="400" fill="#FFFFFF"/><rect x="34" y="28" width="332" height="344" rx="26" fill="#FAF8F3" stroke="${accent}" stroke-width="3"/><rect x="34" y="28" width="332" height="68" rx="22" fill="${accent}"/><rect x="34" y="72" width="332" height="24" fill="${accent}"/><text x="200" y="66" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" font-weight="800" fill="#D4AF37" letter-spacing="2">${brand}</text><rect x="132" y="118" width="136" height="34" rx="8" fill="#FFFFFF" stroke="#D4AF37" stroke-width="1.5"/><text x="200" y="140" text-anchor="middle" font-family="monospace" font-size="16" font-weight="700" fill="${accent}">${sku}</text><text x="200" y="206" text-anchor="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="700" fill="#14221B">${l1}</text><text x="200" y="236" text-anchor="middle" font-family="system-ui,sans-serif" font-size="19" font-weight="600" fill="#526058">${l2}</text><rect x="76" y="286" width="248" height="44" rx="12" fill="${accent}" fill-opacity="0.1"/><text x="200" y="313" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="800" fill="${accent}" letter-spacing="1">${seal}</text></svg>`;
+        return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+      }
+
+      function handleSkuImgError(imgEl, skuId) {
+        imgEl.onerror = null;
+        const p = allProducts.find(x => x.id === skuId) || { id: skuId, brand: 'NAV GROCERY', name: 'Sealed Grocery Pack', department: '' };
+        imgEl.src = buildSkuSvgFallback(p);
       }
 
       function resolveImg(p) {
+        const sku = String(p.id || '').trim().toUpperCase();
         const custom = String(p.customImage || '').trim();
-        if (custom.startsWith('/images/studio/') || custom.startsWith('data:image/jpeg') || custom.startsWith('data:image/png')) return custom;
-        const hay = (p.brand || '') + ' ' + (p.name || '');
-        for (const rule of STUDIO_RULES) {
-          if (rule.exclude && rule.exclude.some(ex => hasWord(hay, ex))) continue;
-          if (rule.kws.some(kw => hasWord(hay, kw))) return rule.url;
+        if (custom && !isLegacyImg(custom) && (custom.startsWith('data:image/') || custom.startsWith('https://') || custom.startsWith('http://') || custom.startsWith('/products/'))) {
+          return custom;
         }
         const cur = String(p.image || '').trim();
-        if (cur.startsWith('/images/studio/')) return cur;
-        return STUDIO_FALLBACK;
+        if (cur && !isLegacyImg(cur) && (cur.startsWith('data:image/') || cur.startsWith('https://') || cur.startsWith('http://'))) {
+          return cur;
+        }
+        const m = /^NAV(\d+)$/i.exec(sku);
+        if (m && parseInt(m[1], 10) >= 1 && parseInt(m[1], 10) <= 308) {
+          return '/products/' + sku + '.jpg';
+        }
+        if (cur && !isLegacyImg(cur)) return cur;
+        return buildSkuSvgFallback(p);
       }
 
       function isStrictGrocery308(p) {
         if (!p || !p.id) return false;
+        if (p.channels && p.channels.navGroceryWeb === false) return false;
         const m = /^NAV(\d+)$/i.exec(String(p.id).trim());
-        if (!m) return false;
-        const n = parseInt(m[1], 10);
-        if (n < 1 || n > 308) return false;
+        const isCore308 = Boolean(m && parseInt(m[1], 10) >= 1 && parseInt(m[1], 10) <= 308);
+        const isCustomPublished = Boolean(p.channels && p.channels.navGroceryWeb === true);
+        if (!isCore308 && !isCustomPublished) return false;
         const d = (p.department || '').toLowerCase();
         if (!(d.includes('grocer') || d.includes('frozen'))) return false;
         return !/fresh fruit|fresh vegetable|sabzi/i.test((p.name || '') + ' ' + (p.category || ''));
@@ -1217,7 +1226,7 @@
             <article class="group bg-white rounded-xl border border-[#0F3D28]/10 hover:border-[#0F3D28]/30 flex flex-col overflow-hidden transition-all">
               <div class="relative aspect-square bg-white border-b border-[#0F3D28]/8 w-full overflow-hidden">
                 <button type="button" onclick="openQuickView('${esc(p.id)}')" aria-label="Quick view ${esc(p.name)}" class="w-full h-full block text-left cursor-pointer">
-                  <img src="${esc(src)}" alt="${esc(p.name)}" loading="${idx < 6 ? 'eager' : 'lazy'}" decoding="async" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='${STUDIO_FALLBACK}';" class="w-full h-full object-contain p-3 transition-transform duration-200 group-hover:scale-[1.03]" />
+                  <img src="${esc(src)}" alt="${esc(p.name)}" loading="${idx < 6 ? 'eager' : 'lazy'}" decoding="async" referrerpolicy="no-referrer" onerror="handleSkuImgError(this, '${esc(p.id)}')" class="w-full h-full object-contain p-3 transition-transform duration-200 group-hover:scale-[1.03]" />
                   <span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-[#E6A817] text-[#14221B] text-[11px] font-bold pointer-events-none">-12% OFF</span>
                   ${isFrozen ? '<span class="absolute top-2 right-2 px-2 py-0.5 rounded bg-[#E0F2FE] text-[#0369A1] text-[11px] font-semibold pointer-events-none">-18°C</span>' : ''}
                   <span class="absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-md bg-[#0F3D28]/90 text-white text-[11px] font-semibold opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">${esc(t.quickViewLabel)}</span>
@@ -1472,7 +1481,7 @@
             <div class="overflow-y-auto grid grid-cols-1 md:grid-cols-12">
               <div class="md:col-span-5 bg-white p-6 flex flex-col items-center justify-between gap-4 border-b md:border-b-0 md:border-r border-[#0F3D28]/10">
                 <div class="relative aspect-square w-full max-h-60 bg-white border border-[#0F3D28]/10 rounded-xl p-3 flex items-center justify-center">
-                  <img src="${esc(src)}" alt="${esc(p.name)}" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='${STUDIO_FALLBACK}';" class="max-h-full object-contain" />
+                  <img src="${esc(src)}" alt="${esc(p.name)}" referrerpolicy="no-referrer" onerror="handleSkuImgError(this, '${esc(p.id)}')" class="max-h-full object-contain" />
                   <span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-[#E6A817] text-[#14221B] text-[11px] font-bold">-12% OFF</span>
                   ${spec.frozen ? '<span class="absolute top-2 right-2 px-2 py-0.5 rounded bg-[#E0F2FE] text-[#0369A1] text-[11px] font-semibold">-18°C</span>' : ''}
                 </div>

@@ -96,10 +96,14 @@ const BANNED_FRESH_TERMS = [
 
 export function isStrictlyGrocery308(product: Product): boolean {
   if (!product || !product.id) return false;
-  const match = /^NAV(\d+)$/i.exec(String(product.id).trim());
-  if (!match) return false;
-  const num = parseInt(match[1], 10);
-  if (num < 1 || num > 308) return false;
+  if (product.channels && product.channels.navGroceryWeb === false) return false;
+
+  const idStr = String(product.id).trim();
+  const match = /^NAV(\d+)$/i.exec(idStr);
+  const isCore308 = Boolean(match && parseInt(match[1], 10) >= 1 && parseInt(match[1], 10) <= 308);
+  const isAdminPublishedCustom = Boolean(product.channels?.navGroceryWeb === true);
+
+  if (!isCore308 && !isAdminPublishedCustom) return false;
 
   const dept = (product.department || '').toLowerCase();
   const allowedDept = dept.includes('grocery') || dept.includes('groceries') || dept.includes('frozen');

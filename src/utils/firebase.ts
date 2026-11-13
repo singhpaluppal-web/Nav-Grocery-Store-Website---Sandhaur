@@ -134,7 +134,11 @@ export async function fetchGroceryProducts(): Promise<Product[]> {
       const sorted = Array.from(mergedMap.values()).sort((a, b) =>
         a.id.localeCompare(b.id, undefined, { numeric: true })
       );
-      localStorage.setItem(LOCAL_KEYS.GROCERY, JSON.stringify(sorted));
+      try {
+        localStorage.setItem(LOCAL_KEYS.GROCERY, JSON.stringify(sorted));
+      } catch {
+        // ignore quota errors if many custom base64 photos are synced
+      }
       return sorted;
     }
   } catch {
@@ -156,6 +160,208 @@ export async function fetchGroceryProducts(): Promise<Product[]> {
   }
 
   return localCatalog.map((p) => ({ ...p, image: resolveProductImage(p) }));
+}
+
+export async function fetchVerified308Catalog(): Promise<Product[]> {
+  try {
+    const res = await fetch('/data/products_308.json', { cache: 'no-store' });
+    if (!res.ok) return [];
+    const list = parseArrayResponse(await res.json()).map((p) => {
+      const normalized = normalizeWholesalePricing(p);
+      return {
+        ...normalized,
+        image: `/products/${normalized.id}.jpg`,
+        channels: normalized.channels || {
+          navGroceryWeb: true,
+          navKartWeb: true,
+          androidApps: true,
+        },
+      };
+    });
+    return list.sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
+  } catch {
+    return [];
+  }
+}
+
+export async function fetchAllFirebaseProductsRaw(): Promise<{
+  products: Product[];
+  connected: boolean;
+}> {
+  try {
+    const remote = await fetchJsonWithTimeout(`${FIREBASE_RTDB_BASE}/products.json`, 10000);
+    const rawList = parseArrayResponse(remote).map((item) => {
+      const sku = String(item.id || '').trim().toUpperCase();
+      const mrp = Math.max(1, Math.round(Number(item.mrp) || 0));
+      const sale = Math.round(mrp * 0.88);
+      return {
+        ...item,
+        id: sku,
+        mrp,
+        sale,
+        price: sale,
+        stock: Number.isFinite(Number(item.stock)) ? Number(item.stock) : 25,
+        channels: item.channels || {
+          navGroceryWeb: true,
+          navKartWeb: true,
+          androidApps: true,
+        },
+        image: resolveProductImage({ ...item, id: sku }),
+      };
+    });
+    return {
+      products: rawList.sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true })),
+      connected: true,
+    };
+  } catch {
+    return { products: [], connected: false };
+  }
+}
+
+export async function syncAndroidFeedSnapshot(products: Product[]): Promise<boolean> {
+  try {
+    const androidItems = products
+      .filter((p) => p.channels?.androidApps !== false)
+      .map((p) => {
+        const mrp = Math.max(1, Math.round(Number(p.mrp) || 0));
+        const sale = Math.round(mrp * 0.88);
+        return {
+          id: p.id,
+          name: p.name,
+          brand: p.brand,
+          category: p.category,
+          department: p.department,
+          mrp,
+          sale,
+          price: sale,
+          stock: Number(p.stock ?? 0),
+          gst: p.gst || '5%',
+          barcode: p.barcode || '',
+          image: resolveProductImage(p),
+          customImage: p.customImage || '',
+          channels: p.channels || {
+            navGroceryWeb: true,
+            navKartWeb: true,
+            androidApps: true,
+          },
+          updatedAt: p.updatedAt || new Date().toISOString(),
+        };
+      });
+
+    const payload = {
+      store: 'Nav Grocery Store & NavKart',
+      updatedAt: new Date().toISOString(),
+      totalItems: androidItems.length,
+      items: androidItems,
+    };
+
+    const res = await fetch(`${FIREBASE_RTDB_BASE}/android_feed.json`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
+
+export async function upsertProductInFirebase(product: Product): Promise<{ ok: boolean }> {
+  const cleanSku = String(product.id || '').trim().toUpperCase();
+  if (!cleanSku) return { ok: false };
+  const mrp = Math.max(1, Math.round(Number(product.mrp) || 0));
+  const sale = Math.round(mrp * 0.88);
+  const payload: Product = {
+    ...product,
+    id: cleanSku,
+    mrp,
+    sale,
+    price: sale,
+    image: resolveProductImage({ ...product, id: cleanSku }),
+    channels: product.channels || {
+      navGroceryWeb: true,
+      navKartWeb: true,
+      androidApps: true,
+    },
+    updatedAt: new Date().toISOString(),
+  };
+
+  try {
+    const res = await fetch(`${FIREBASE_RTDB_BASE}/products/${encodeURIComponent(cleanSku)}.json`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    return { ok: res.ok };
+  } catch {
+    return { ok: false };
+  }
+}
+
+export async function deleteProductFromFirebase(productId: string): Promise<{ ok: boolean }> {
+  const cleanSku = String(productId || '').trim().toUpperCase();
+  if (!cleanSku) return { ok: false };
+  try {
+    const res = await fetch(`${FIREBASE_RTDB_BASE}/products/${encodeURIComponent(cleanSku)}.json`, {
+      method: 'DELETE',
+    });
+    return { ok: res.ok };
+  } catch {
+    return { ok: false };
+  }
+}
+
+export async function patchProductsInFirebase(
+  updatesBySku: Record<string, Product | null>
+): Promise<{ ok: boolean }> {
+  try {
+    const res = await fetch(`${FIREBASE_RTDB_BASE}/products.json`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(updatesBySku),
+    });
+    return { ok: res.ok };
+  } catch {
+    return { ok: false };
+  }
+}
+
+export async function replaceAllProductsInFirebase(products: Product[]): Promise<{ ok: boolean }> {
+  const keyed: Record<string, Product> = {};
+  const now = new Date().toISOString();
+  for (const p of products) {
+    const cleanSku = String(p.id || '').trim().toUpperCase();
+    if (!cleanSku) continue;
+    const mrp = Math.max(1, Math.round(Number(p.mrp) || 0));
+    const sale = Math.round(mrp * 0.88);
+    keyed[cleanSku] = {
+      ...p,
+      id: cleanSku,
+      mrp,
+      sale,
+      price: sale,
+      image: resolveProductImage({ ...p, id: cleanSku }),
+      channels: p.channels || {
+        navGroceryWeb: true,
+        navKartWeb: true,
+        androidApps: true,
+      },
+      updatedAt: now,
+    };
+  }
+  try {
+    const res = await fetch(`${FIREBASE_RTDB_BASE}/products.json`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(keyed),
+    });
+    if (res.ok) {
+      await syncAndroidFeedSnapshot(Object.values(keyed));
+    }
+    return { ok: res.ok };
+  } catch {
+    return { ok: false };
+  }
 }
 
 export async function fetchBrandingSettings(): Promise<BrandingSettings> {

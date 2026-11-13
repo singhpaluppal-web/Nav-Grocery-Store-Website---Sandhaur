@@ -28,13 +28,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   onQuickView,
 }) => {
   const t = getStoreTranslations(lang);
-  const [imgSrc, setImgSrc] = useState<string>(() => resolveProductImage(product));
+  const resolvedUrl = resolveProductImage(product);
+  const [imgSrc, setImgSrc] = useState<string>(resolvedUrl);
   const [loaded, setLoaded] = useState<boolean>(false);
 
   useEffect(() => {
-    setImgSrc(resolveProductImage(product));
-    setLoaded(false);
-  }, [product]);
+    if (resolvedUrl !== imgSrc) {
+      setImgSrc(resolvedUrl);
+      setLoaded(false);
+    }
+  }, [resolvedUrl, imgSrc]);
 
   const mrp = Math.round(Number(product.mrp) || 0);
   const sale = Math.round(Number(product.sale || product.price) || 0);
