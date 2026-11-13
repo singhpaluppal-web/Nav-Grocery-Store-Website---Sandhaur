@@ -1,15 +1,15 @@
 @echo off
 cd /d "D:\nav g store"
 echo ============================================================
-echo NAV GROCERY STORE - AUTOMATED SYNC AND LIVE DEPLOYMENT
+echo NAV GROCERY STORE - LOCKED PRODUCTION SYNC
 echo ============================================================
-python sync_308_catalog.py
+python verify_and_finalize.py
+if exist keep_sync.py python keep_sync.py
 git add -A
-git commit -m "Automated catalog and photo sync update"
+git commit -m "Locked production catalog sync"
 git push origin main --force
 echo ============================================================
-echo DEPLOYMENT COMPLETE!
-echo Live Store: https://www.navgrocerystore.com
-echo Admin Portal: https://www.navgrocerystore.com/admin (PIN: 148020)
+echo LIVE STORE: https://www.navgrocerystore.com
+echo ADMIN PORTAL: https://www.navgrocerystore.com/admin (PIN: 148020)
 echo ============================================================
 pause
