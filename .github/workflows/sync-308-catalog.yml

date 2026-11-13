@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Sync 308 SKUs into root and public HTML files
+      - name: Replace hardcoded catalog array in all HTML files
         run: |
           python - << 'EOF'
           import json, os, re
@@ -40,18 +40,34 @@ jobs:
                   continue
               txt = open(fn, encoding='utf-8').read()
               orig = txt
-              for s, it in by_id.items():
-                  nm = json.dumps(it.get('name') or it.get('title', ''))[1:-1]
-                  br = json.dumps(it.get('brand', ''))[1:-1]
-                  mr = int(float(it.get('mrp') or it.get('originalPrice', 100)))
-                  pr = int(float(it.get('price') or it.get('salePrice') or round(mr * 0.88)))
-                  txt = re.sub(r'(\b' + re.escape(s) + r'\b.{0,350}?(?:name|title)\s*:\s*[\"\'])[^\"\']*([\"\'])', r'\g<1>' + nm + r'\g<2>', txt, flags=re.S)
-                  txt = re.sub(r'(\b' + re.escape(s) + r'\b.{0,350}?brand\s*:\s*[\"\'])[^\"\']*([\"\'])', r'\g<1>' + br + r'\g<2>', txt, flags=re.S)
-                  txt = re.sub(r'(\b' + re.escape(s) + r'\b.{0,350}?(?:price|salePrice)\s*:\s*)\d+', r'\g<1>' + str(pr), txt, flags=re.S)
-                  txt = re.sub(r'(\b' + re.escape(s) + r'\b.{0,350}?(?:mrp|originalPrice)\s*:\s*)\d+', r'\g<1>' + str(mr), txt, flags=re.S)
+
+              # 1. Replace entire JS array containing NAV001 and Aashirvaad Superior MP
+              m = re.search(r'(\[\s*\{[^;]*?\bNAV001\b[^;]*?Aashirvaad Superior MP[^;]*?\}\s*\])', txt, flags=re.S)
+              if m:
+                  arr_json = json.dumps(items, ensure_ascii=False)
+                  txt = txt[:m.start(1)] + arr_json + txt[m.end(1):]
+                  print(f"Replaced full JS product array ({len(items)} SKUs) in {fn}")
+              else:
+                  # 2. Fallback: match any quote style (' " `) and key style around each SKU
+                  for s, it in by_id.items():
+                      nm = json.dumps(it.get('name') or it.get('title', ''))[1:-1]
+                      br = json.dumps(it.get('brand', ''))[1:-1]
+                      mr = int(float(it.get('mrp') or it.get('originalPrice', 100)))
+                      pr = int(float(it.get('price') or it.get('salePrice') or round(mr * 0.88)))
+                      txt = re.sub(r'(\b' + re.escape(s) + r'\b.{0,450}?["\']?(?:name|title)["\']?\s*:\s*["\'`])[^"\'`]*?(["\'`])', r'\g<1>' + nm + r'\g<2>', txt, flags=re.S)
+                      txt = re.sub(r'(\b' + re.escape(s) + r'\b.{0,450}?["\']?brand["\']?\s*:\s*["\'`])[^"\'`]*?(["\'`])', r'\g<1>' + br + r'\g<2>', txt, flags=re.S)
+                      txt = re.sub(r'(\b' + re.escape(s) + r'\b.{0,450}?["\']?(?:price|salePrice)["\']?\s*:\s*)\d+', r'\g<1>' + str(pr), txt, flags=re.S)
+                      txt = re.sub(r'(\b' + re.escape(s) + r'\b.{0,450}?["\']?(?:mrp|originalPrice)["\']?\s*:\s*)\d+', r'\g<1>' + str(mr), txt, flags=re.S)
+
+              # Also fix "306 verified grocery items" text to 308
+              txt = txt.replace('306 verified grocery items', f'{len(items)} verified grocery items')
+
               if txt != orig:
                   open(fn, 'w', encoding='utf-8').write(txt)
-                  print(f"Synced {len(by_id)} SKUs -> {fn}")
+                  print(f"SAVED UPDATED FILE: {fn}")
+              else:
+                  snip = re.search(r'.{0,180}Aashirvaad Superior MP.{0,180}', txt, flags=re.S)
+                  print(f"DEBUG {fn}:", repr(snip.group(0)) if snip else "String not found")
           EOF
 
       - name: Commit and push synced HTML files
