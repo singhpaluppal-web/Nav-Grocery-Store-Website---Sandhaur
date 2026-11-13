@@ -2,8 +2,8 @@
   {
     "id": "NAV001",
     "barcode": "890100000001",
-    "name": "Aashirvaad Superior MP Sharbati Atta 10kg",
-    "brand": "AASHIRVAAD",
+    "name": "Maharaja's Spice Co. Chana Masala 100g",
+    "brand": "Maharaja's",
     "category": "Atta & Dals",
     "cost": 390,
     "mrp": 520,
@@ -11,13 +11,16 @@
     "price": 458,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_1/1.png"
+    "image": "/products/NAV001.jpg",
+    "sku": "NAV001",
+    "title": "Maharaja's Spice Co. Chana Masala 100g",
+    "imageUrl": "/products/NAV001.jpg"
   },
   {
     "id": "NAV002",
     "barcode": "890100000002",
-    "name": "Fortune Chakki Fresh Atta 10kg",
-    "brand": "FORTUNE",
+    "name": "Premium Quality Black Eyed Peas Lobia Beans 500g",
+    "brand": "Premium",
     "category": "Atta & Dals",
     "cost": 345,
     "mrp": 460,
@@ -25,13 +28,16 @@
     "price": 405,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_1/2.png"
+    "image": "/products/NAV002.jpg",
+    "sku": "NAV002",
+    "title": "Premium Quality Black Eyed Peas Lobia Beans 500g",
+    "imageUrl": "/products/NAV002.jpg"
   },
   {
     "id": "NAV003",
     "barcode": "890100000003",
-    "name": "Patanjali Whole Wheat Chakki Atta 10kg",
-    "brand": "PATANJALI",
+    "name": "Premium Urad Dal Washed Split Black Gram 1kg",
+    "brand": "Premium",
     "category": "Atta & Dals",
     "cost": 330,
     "mrp": 440,
@@ -39,13 +45,16 @@
     "price": 387,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_1/3.png"
+    "image": "/products/NAV003.jpg",
+    "sku": "NAV003",
+    "title": "Premium Urad Dal Washed Split Black Gram 1kg",
+    "imageUrl": "/products/NAV003.jpg"
   },
   {
     "id": "NAV004",
     "barcode": "890100000004",
-    "name": "Nature Fresh Sampoorna Chakki Atta 10kg",
-    "brand": "NATURE FRESH",
+    "name": "Premium Quality Black Pepper Ground 100g",
+    "brand": "Premium",
     "category": "Atta & Dals",
     "cost": 322,
     "mrp": 430,
@@ -53,13 +62,16 @@
     "price": 378,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_1/4.png"
+    "image": "/products/NAV004.jpg",
+    "sku": "NAV004",
+    "title": "Premium Quality Black Pepper Ground 100g",
+    "imageUrl": "/products/NAV004.jpg"
   },
   {
     "id": "NAV005",
     "barcode": "890100000005",
-    "name": "India Gate Feast Rozzana Basmati Rice 5kg",
-    "brand": "INDIA GATE",
+    "name": "Premium Black Salt Table Sprinkler 200g",
+    "brand": "Premium",
     "category": "Atta & Dals",
     "cost": 371,
     "mrp": 495,
@@ -67,13 +79,16 @@
     "price": 436,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_1/5.png"
+    "image": "/products/NAV005.jpg",
+    "sku": "NAV005",
+    "title": "Premium Black Salt Table Sprinkler 200g",
+    "imageUrl": "/products/NAV005.jpg"
   },
   {
     "id": "NAV006",
     "barcode": "890100000006",
-    "name": "Fortune Everyday Full Grain Basmati Rice 5kg",
-    "brand": "FORTUNE",
+    "name": "Spice Harvest Carom Seeds Ajwain 100g",
+    "brand": "Spice",
     "category": "Atta & Dals",
     "cost": 338,
     "mrp": 450,
@@ -81,13 +96,16 @@
     "price": 396,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_1/6.png"
+    "image": "/products/NAV006.jpg",
+    "sku": "NAV006",
+    "title": "Spice Harvest Carom Seeds Ajwain 100g",
+    "imageUrl": "/products/NAV006.jpg"
   },
   {
     "id": "NAV007",
     "barcode": "890100000007",
-    "name": "Daawat Super Long Grain Basmati Rice 5kg",
-    "brand": "DAAWAT",
+    "name": "Desi Spice Route Chaat Masala 100g",
+    "brand": "Desi",
     "category": "Atta & Dals",
     "cost": 465,
     "mrp": 620,
@@ -95,13 +113,16 @@
     "price": 546,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_1/7.png"
+    "image": "/products/NAV007.jpg",
+    "sku": "NAV007",
+    "title": "Desi Spice Route Chaat Masala 100g",
+    "imageUrl": "/products/NAV007.jpg"
   },
   {
     "id": "NAV008",
     "barcode": "890100000008",
-    "name": "Daawat Rozana Gold Basmati Rice 5kg",
-    "brand": "DAAWAT",
+    "name": "Taste of China Chinese Hot and Sour Soup 70g",
+    "brand": "Taste",
     "category": "Atta & Dals",
     "cost": 308,
     "mrp": 410,
@@ -109,13 +130,16 @@
     "price": 361,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_1/8.png"
+    "image": "/products/NAV008.jpg",
+    "sku": "NAV008",
+    "title": "Taste of China Chinese Hot and Sour Soup 70g",
+    "imageUrl": "/products/NAV008.jpg"
   },
   {
     "id": "NAV009",
     "barcode": "890100000009",
-    "name": "Rajdhani Pure Gram Flour Besan 1kg",
-    "brand": "RAJDHANI",
+    "name": "Chocolate Scoops Cereal 375g",
+    "brand": "Chocolate",
     "category": "Atta & Dals",
     "cost": 94,
     "mrp": 125,
@@ -123,13 +147,16 @@
     "price": 110,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_1/9.png"
+    "image": "/products/NAV009.jpg",
+    "sku": "NAV009",
+    "title": "Chocolate Scoops Cereal 375g",
+    "imageUrl": "/products/NAV009.jpg"
   },
   {
     "id": "NAV010",
     "barcode": "890100000010",
-    "name": "Fortune Fine Besan 1kg",
-    "brand": "FORTUNE",
+    "name": "Cloudy Lemon Drink 750ml",
+    "brand": "Cloudy",
     "category": "Atta & Dals",
     "cost": 98,
     "mrp": 130,
@@ -137,13 +164,16 @@
     "price": 114,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_1/10.png"
+    "image": "/products/NAV010.jpg",
+    "sku": "NAV010",
+    "title": "Cloudy Lemon Drink 750ml",
+    "imageUrl": "/products/NAV010.jpg"
   },
   {
     "id": "NAV011",
     "barcode": "890100000011",
-    "name": "Rajdhani Sooji Fine Semolina 500g",
-    "brand": "RAJDHANI",
+    "name": "Pure Grains Coarse Semolina Sooji Rava 500g",
+    "brand": "Pure",
     "category": "Atta & Dals",
     "cost": 34,
     "mrp": 45,
@@ -151,13 +181,16 @@
     "price": 40,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_2/11.png"
+    "image": "/products/NAV011.jpg",
+    "sku": "NAV011",
+    "title": "Pure Grains Coarse Semolina Sooji Rava 500g",
+    "imageUrl": "/products/NAV011.jpg"
   },
   {
     "id": "NAV012",
     "barcode": "890100000012",
-    "name": "Rajdhani Fresh Maida 500g",
-    "brand": "RAJDHANI",
+    "name": "Sunshine Grains Crispy Golden Corn Flakes 475g",
+    "brand": "Sunshine",
     "category": "Atta & Dals",
     "cost": 30,
     "mrp": 40,
@@ -165,13 +198,16 @@
     "price": 35,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_2/12.png"
+    "image": "/products/NAV012.jpg",
+    "sku": "NAV012",
+    "title": "Sunshine Grains Crispy Golden Corn Flakes 475g",
+    "imageUrl": "/products/NAV012.jpg"
   },
   {
     "id": "NAV013",
     "barcode": "890100000013",
-    "name": "Patanjali Roasted Daliya Porridge 500g",
-    "brand": "PATANJALI",
+    "name": "Cola Original Taste 750ml",
+    "brand": "Cola",
     "category": "Atta & Dals",
     "cost": 36,
     "mrp": 48,
@@ -179,13 +215,16 @@
     "price": 42,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_2/13.png"
+    "image": "/products/NAV013.jpg",
+    "sku": "NAV013",
+    "title": "Cola Original Taste 750ml",
+    "imageUrl": "/products/NAV013.jpg"
   },
   {
     "id": "NAV014",
     "barcode": "890100000014",
-    "name": "Quaker Whole Grain Rolled White Oats 1kg",
-    "brand": "QUAKER",
+    "name": "Kasuri Methi Dried Fenugreek Leaves 50g",
+    "brand": "Kasuri",
     "category": "Atta & Dals",
     "cost": 149,
     "mrp": 199,
@@ -193,13 +232,16 @@
     "price": 175,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_2/14.png"
+    "image": "/products/NAV014.jpg",
+    "sku": "NAV014",
+    "title": "Kasuri Methi Dried Fenugreek Leaves 50g",
+    "imageUrl": "/products/NAV014.jpg"
   },
   {
     "id": "NAV015",
     "barcode": "890100000015",
-    "name": "Kelloggs Corn Flakes Real Almond Honey 1kg",
-    "brand": "KELLOGGS",
+    "name": "Pasta Natura Elbow Macaroni Chiocciole 500g",
+    "brand": "Pasta",
     "category": "Atta & Dals",
     "cost": 289,
     "mrp": 385,
@@ -207,13 +249,16 @@
     "price": 339,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_2/15.png"
+    "image": "/products/NAV015.jpg",
+    "sku": "NAV015",
+    "title": "Pasta Natura Elbow Macaroni Chiocciole 500g",
+    "imageUrl": "/products/NAV015.jpg"
   },
   {
     "id": "NAV016",
     "barcode": "890100000016",
-    "name": "Tata Sampann Unpolished Toor Arhar Dal 1kg",
-    "brand": "TATA",
+    "name": "Volt Energy Drink Can 350ml",
+    "brand": "Volt",
     "category": "Atta & Dals",
     "cost": 139,
     "mrp": 185,
@@ -221,13 +266,16 @@
     "price": 163,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_2/16.png"
+    "image": "/products/NAV016.jpg",
+    "sku": "NAV016",
+    "title": "Volt Energy Drink Can 350ml",
+    "imageUrl": "/products/NAV016.jpg"
   },
   {
     "id": "NAV017",
     "barcode": "890100000017",
-    "name": "Tata Sampann Premium Chana Dal 1kg",
-    "brand": "TATA",
+    "name": "Premium Quality Extra Long Grain Indian Basmati Rice 5kg",
+    "brand": "Premium",
     "category": "Atta & Dals",
     "cost": 105,
     "mrp": 140,
@@ -235,13 +283,16 @@
     "price": 123,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_2/17.png"
+    "image": "/products/NAV017.jpg",
+    "sku": "NAV017",
+    "title": "Premium Quality Extra Long Grain Indian Basmati Rice 5kg",
+    "imageUrl": "/products/NAV017.jpg"
   },
   {
     "id": "NAV018",
     "barcode": "890100000018",
-    "name": "Tata Sampann High Protein Moong Dal Dhuli 1kg",
-    "brand": "TATA",
+    "name": "Orange Fizz Drink 750ml",
+    "brand": "Orange",
     "category": "Atta & Dals",
     "cost": 131,
     "mrp": 175,
@@ -249,13 +300,16 @@
     "price": 154,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_2/18.png"
+    "image": "/products/NAV018.jpg",
+    "sku": "NAV018",
+    "title": "Orange Fizz Drink 750ml",
+    "imageUrl": "/products/NAV018.jpg"
   },
   {
     "id": "NAV019",
     "barcode": "890100000019",
-    "name": "Tata Sampann Whole Green Moong Sabut 1kg",
-    "brand": "TATA",
+    "name": "Floral Musk & Lily Incense Sticks",
+    "brand": "Floral",
     "category": "Atta & Dals",
     "cost": 124,
     "mrp": 165,
@@ -263,13 +317,16 @@
     "price": 145,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_2/19.png"
+    "image": "/products/NAV019.jpg",
+    "sku": "NAV019",
+    "title": "Floral Musk & Lily Incense Sticks",
+    "imageUrl": "/products/NAV019.jpg"
   },
   {
     "id": "NAV020",
     "barcode": "890100000020",
-    "name": "Tata Sampann Urad Dal Split Chilka 1kg",
-    "brand": "TATA",
+    "name": "Premium Quality Chakki Fresh Atta Whole Wheat 5kg",
+    "brand": "Premium",
     "category": "Atta & Dals",
     "cost": 135,
     "mrp": 180,
@@ -277,13 +334,16 @@
     "price": 158,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_2/20.png"
+    "image": "/products/NAV020.jpg",
+    "sku": "NAV020",
+    "title": "Premium Quality Chakki Fresh Atta Whole Wheat 5kg",
+    "imageUrl": "/products/NAV020.jpg"
   },
   {
     "id": "NAV021",
     "barcode": "890100000021",
-    "name": "Tata Sampann Urad Sabut Whole Black Dal 1kg",
-    "brand": "TATA",
+    "name": "Desi Kitchen Aloo Tikki Crispy & Spicy Potato Patties 400g",
+    "brand": "Desi",
     "category": "Atta & Dals",
     "cost": 142,
     "mrp": 190,
@@ -291,13 +351,16 @@
     "price": 167,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_3/21.png"
+    "image": "/products/NAV021.jpg",
+    "sku": "NAV021",
+    "title": "Desi Kitchen Aloo Tikki Crispy & Spicy Potato Patties 400g",
+    "imageUrl": "/products/NAV021.jpg"
   },
   {
     "id": "NAV022",
     "barcode": "890100000022",
-    "name": "Tata Sampann Red Masoor Malka Dal 1kg",
-    "brand": "TATA",
+    "name": "Golden Cuts Crispy French Fries Natural Cut 750g",
+    "brand": "Golden",
     "category": "Atta & Dals",
     "cost": 101,
     "mrp": 135,
@@ -305,13 +368,16 @@
     "price": 119,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_3/22.png"
+    "image": "/products/NAV022.jpg",
+    "sku": "NAV022",
+    "title": "Golden Cuts Crispy French Fries Natural Cut 750g",
+    "imageUrl": "/products/NAV022.jpg"
   },
   {
     "id": "NAV023",
     "barcode": "890100000023",
-    "name": "Tata Sampann Premium Kabuli Chana Chickpeas 1kg",
-    "brand": "TATA",
+    "name": "Frontera Natural Crispy Veg Nuggets 400g",
+    "brand": "Frontera",
     "category": "Atta & Dals",
     "cost": 146,
     "mrp": 195,
@@ -319,13 +385,16 @@
     "price": 172,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_3/23.png"
+    "image": "/products/NAV023.jpg",
+    "sku": "NAV023",
+    "title": "Frontera Natural Crispy Veg Nuggets 400g",
+    "imageUrl": "/products/NAV023.jpg"
   },
   {
     "id": "NAV024",
     "barcode": "890100000024",
-    "name": "Tata Sampann Natural Kala Chana 1kg",
-    "brand": "TATA",
+    "name": "Premium Quality Frozen Green Peas 500g",
+    "brand": "Premium",
     "category": "Atta & Dals",
     "cost": 98,
     "mrp": 130,
@@ -333,13 +402,16 @@
     "price": 114,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_3/24.png"
+    "image": "/products/NAV024.jpg",
+    "sku": "NAV024",
+    "title": "Premium Quality Frozen Green Peas 500g",
+    "imageUrl": "/products/NAV024.jpg"
   },
   {
     "id": "NAV025",
     "barcode": "890100000025",
-    "name": "Tata Sampann Kashmiri Rajma Red Kidney Beans 1kg",
-    "brand": "TATA",
+    "name": "Lachha Paratha Flaky & Layered Flatbread 4 Pieces 400g",
+    "brand": "Lachha",
     "category": "Atta & Dals",
     "cost": 158,
     "mrp": 210,
@@ -347,13 +419,16 @@
     "price": 185,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_3/25.png"
+    "image": "/products/NAV025.jpg",
+    "sku": "NAV025",
+    "title": "Lachha Paratha Flaky & Layered Flatbread 4 Pieces 400g",
+    "imageUrl": "/products/NAV025.jpg"
   },
   {
     "id": "NAV026",
     "barcode": "890100000026",
-    "name": "Tata Sampann Premium Chitra Rajma 1kg",
-    "brand": "TATA",
+    "name": "Malabar Paratha Authentic & Flaky Frozen 5 Pack",
+    "brand": "Malabar",
     "category": "Atta & Dals",
     "cost": 169,
     "mrp": 225,
@@ -361,13 +436,16 @@
     "price": 198,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_3/26.png"
+    "image": "/products/NAV026.jpg",
+    "sku": "NAV026",
+    "title": "Malabar Paratha Authentic & Flaky Frozen 5 Pack",
+    "imageUrl": "/products/NAV026.jpg"
   },
   {
     "id": "NAV027",
     "barcode": "890100000027",
-    "name": "Rajdhani Pure Kabuli Chana 1kg",
-    "brand": "RAJDHANI",
+    "name": "Nature's Harvest Frozen Mixed Vegetables 500g",
+    "brand": "Nature's",
     "category": "Atta & Dals",
     "cost": 135,
     "mrp": 180,
@@ -375,13 +453,16 @@
     "price": 158,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_3/27.png"
+    "image": "/products/NAV027.jpg",
+    "sku": "NAV027",
+    "title": "Nature's Harvest Frozen Mixed Vegetables 500g",
+    "imageUrl": "/products/NAV027.jpg"
   },
   {
     "id": "NAV028",
     "barcode": "890100000028",
-    "name": "Rajdhani Green Moong Dal Split 1kg",
-    "brand": "RAJDHANI",
+    "name": "Desi Treats Frozen Punjabi Samosas 500g",
+    "brand": "Desi",
     "category": "Atta & Dals",
     "cost": 120,
     "mrp": 160,
@@ -389,13 +470,16 @@
     "price": 141,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_3/28.png"
+    "image": "/products/NAV028.jpg",
+    "sku": "NAV028",
+    "title": "Desi Treats Frozen Punjabi Samosas 500g",
+    "imageUrl": "/products/NAV028.jpg"
   },
   {
     "id": "NAV029",
     "barcode": "890100000029",
-    "name": "Rajdhani Roasted Chana Salted 500g",
-    "brand": "RAJDHANI",
+    "name": "Harvest Gold Frozen Sweet Corn Kernels 500g",
+    "brand": "Harvest",
     "category": "Atta & Dals",
     "cost": 82,
     "mrp": 110,
@@ -403,13 +487,16 @@
     "price": 97,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_3/29.png"
+    "image": "/products/NAV029.jpg",
+    "sku": "NAV029",
+    "title": "Harvest Gold Frozen Sweet Corn Kernels 500g",
+    "imageUrl": "/products/NAV029.jpg"
   },
   {
     "id": "NAV030",
     "barcode": "890100000030",
-    "name": "Patanjali Unpolished Yellow Moong Dal 1kg",
-    "brand": "PATANJALI",
+    "name": "Veg Momos Vegetable Dumplings 500g",
+    "brand": "Veg",
     "category": "Atta & Dals",
     "cost": 126,
     "mrp": 168,
@@ -417,13 +504,16 @@
     "price": 148,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_3/30.png"
+    "image": "/products/NAV030.jpg",
+    "sku": "NAV030",
+    "title": "Veg Momos Vegetable Dumplings 500g",
+    "imageUrl": "/products/NAV030.jpg"
   },
   {
     "id": "NAV031",
     "barcode": "890100000031",
-    "name": "Verka Pure Desi Ghee Tin 1L",
-    "brand": "VERKA",
+    "name": "Natural Blends Premium Green Tea 100% Organic 25 Tea Bags",
+    "brand": "Natural",
     "category": "Desi Ghee & Oils",
     "cost": 480,
     "mrp": 640,
@@ -431,13 +521,16 @@
     "price": 563,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_4/31.png"
+    "image": "/products/NAV031.jpg",
+    "sku": "NAV031",
+    "title": "Natural Blends Premium Green Tea 100% Organic 25 Tea Bags",
+    "imageUrl": "/products/NAV031.jpg"
   },
   {
     "id": "NAV032",
     "barcode": "890100000032",
-    "name": "Amul Pure Milk Desi Ghee Carton 1L",
-    "brand": "AMUL",
+    "name": "Pure Hing Asafoetida Powder 50g",
+    "brand": "Pure",
     "category": "Desi Ghee & Oils",
     "cost": 472,
     "mrp": 630,
@@ -445,13 +538,16 @@
     "price": 554,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_4/32.png"
+    "image": "/products/NAV032.jpg",
+    "sku": "NAV032",
+    "title": "Pure Hing Asafoetida Powder 50g",
+    "imageUrl": "/products/NAV032.jpg"
   },
   {
     "id": "NAV033",
     "barcode": "890100000033",
-    "name": "Mother Dairy Pure Cow Desi Ghee 1L",
-    "brand": "MOTHER DAIRY",
+    "name": "Summer Brew Lemon Iced Tea Mix 400g",
+    "brand": "Summer",
     "category": "Desi Ghee & Oils",
     "cost": 488,
     "mrp": 650,
@@ -459,13 +555,16 @@
     "price": 572,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_4/33.png"
+    "image": "/products/NAV033.jpg",
+    "sku": "NAV033",
+    "title": "Summer Brew Lemon Iced Tea Mix 400g",
+    "imageUrl": "/products/NAV033.jpg"
   },
   {
     "id": "NAV034",
     "barcode": "890100000034",
-    "name": "Patanjali Pure Cow Desi Ghee Tin 1L",
-    "brand": "PATANJALI",
+    "name": "Roast & Co. Instant Coffee Rich & Intense 100g",
+    "brand": "Roast",
     "category": "Desi Ghee & Oils",
     "cost": 495,
     "mrp": 660,
@@ -473,13 +572,16 @@
     "price": 581,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_4/34.png"
+    "image": "/products/NAV034.jpg",
+    "sku": "NAV034",
+    "title": "Roast & Co. Instant Coffee Rich & Intense 100g",
+    "imageUrl": "/products/NAV034.jpg"
   },
   {
     "id": "NAV035",
     "barcode": "890100000035",
-    "name": "Verka Special Cow Desi Ghee 1L",
-    "brand": "VERKA",
+    "name": "Taste of Asia Curry Noodles 4 Pack",
+    "brand": "Taste",
     "category": "Desi Ghee & Oils",
     "cost": 488,
     "mrp": 650,
@@ -487,13 +589,16 @@
     "price": 572,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_4/35.png"
+    "image": "/products/NAV035.jpg",
+    "sku": "NAV035",
+    "title": "Taste of Asia Curry Noodles 4 Pack",
+    "imageUrl": "/products/NAV035.jpg"
   },
   {
     "id": "NAV036",
     "barcode": "890100000036",
-    "name": "Fortune Kachi Ghani Pure Mustard Oil Pouch 1L",
-    "brand": "FORTUNE",
+    "name": "Souper Instant Tomato Soup 4x20g Sachets",
+    "brand": "Souper",
     "category": "Desi Ghee & Oils",
     "cost": 124,
     "mrp": 165,
@@ -501,13 +606,16 @@
     "price": 145,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_4/36.png"
+    "image": "/products/NAV036.jpg",
+    "sku": "NAV036",
+    "title": "Souper Instant Tomato Soup 4x20g Sachets",
+    "imageUrl": "/products/NAV036.jpg"
   },
   {
     "id": "NAV037",
     "barcode": "890100000037",
-    "name": "Fortune Sunlite Refined Sunflower Oil Pouch 1L",
-    "brand": "FORTUNE",
+    "name": "Lemon Lime Sparkling Soda 750ml",
+    "brand": "Lemon",
     "category": "Desi Ghee & Oils",
     "cost": 116,
     "mrp": 155,
@@ -515,13 +623,16 @@
     "price": 136,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_4/37.png"
+    "image": "/products/NAV037.jpg",
+    "sku": "NAV037",
+    "title": "Lemon Lime Sparkling Soda 750ml",
+    "imageUrl": "/products/NAV037.jpg"
   },
   {
     "id": "NAV038",
     "barcode": "890100000038",
-    "name": "Fortune Plus Refined Soyabean Oil Pouch 1L",
-    "brand": "FORTUNE",
+    "name": "Masala Instant Noodles Value Pack 4 Pack 280g",
+    "brand": "Masala",
     "category": "Desi Ghee & Oils",
     "cost": 109,
     "mrp": 145,
@@ -529,13 +640,16 @@
     "price": 128,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_4/38.png"
+    "image": "/products/NAV038.jpg",
+    "sku": "NAV038",
+    "title": "Masala Instant Noodles Value Pack 4 Pack 280g",
+    "imageUrl": "/products/NAV038.jpg"
   },
   {
     "id": "NAV039",
     "barcode": "890100000039",
-    "name": "Engine Brand Pure Mustard Oil Bottle 1L",
-    "brand": "ENGINE",
+    "name": "Bombay Spices Mumbai Style Pav Bhaji Masala 100g",
+    "brand": "Bombay",
     "category": "Desi Ghee & Oils",
     "cost": 139,
     "mrp": 185,
@@ -543,13 +657,16 @@
     "price": 163,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_4/39.png"
+    "image": "/products/NAV039.jpg",
+    "sku": "NAV039",
+    "title": "Bombay Spices Mumbai Style Pav Bhaji Masala 100g",
+    "imageUrl": "/products/NAV039.jpg"
   },
   {
     "id": "NAV040",
     "barcode": "890100000040",
-    "name": "Dhara Kachi Ghani Mustard Oil Pouch 1L",
-    "brand": "DHARA",
+    "name": "Mustard Seeds Rai 100g",
+    "brand": "Mustard",
     "category": "Desi Ghee & Oils",
     "cost": 120,
     "mrp": 160,
@@ -557,13 +674,16 @@
     "price": 141,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_4/40.png"
+    "image": "/products/NAV040.jpg",
+    "sku": "NAV040",
+    "title": "Mustard Seeds Rai 100g",
+    "imageUrl": "/products/NAV040.jpg"
   },
   {
     "id": "NAV041",
     "barcode": "890100000041",
-    "name": "Dhara Refined Sunflower Oil Pouch 1L",
-    "brand": "DHARA",
+    "name": "Natural Dhoop Cones 24 Pack",
+    "brand": "Natural",
     "category": "Desi Ghee & Oils",
     "cost": 112,
     "mrp": 150,
@@ -571,13 +691,16 @@
     "price": 132,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_5/41.png"
+    "image": "/products/NAV041.jpg",
+    "sku": "NAV041",
+    "title": "Natural Dhoop Cones 24 Pack",
+    "imageUrl": "/products/NAV041.jpg"
   },
   {
     "id": "NAV042",
     "barcode": "890100000042",
-    "name": "Saffola Gold Pro Healthy Lifestyle Blended Oil 1L",
-    "brand": "SAFFOLA",
+    "name": "Royal Spices Chicken Curry Masala 100g",
+    "brand": "Royal",
     "category": "Desi Ghee & Oils",
     "cost": 142,
     "mrp": 190,
@@ -585,13 +708,16 @@
     "price": 167,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_5/42.png"
+    "image": "/products/NAV042.jpg",
+    "sku": "NAV042",
+    "title": "Royal Spices Chicken Curry Masala 100g",
+    "imageUrl": "/products/NAV042.jpg"
   },
   {
     "id": "NAV043",
     "barcode": "890100000043",
-    "name": "Saffola Total Pro Heart Care Edible Oil 1L",
-    "brand": "SAFFOLA",
+    "name": "Pure Tender Coconut Water 200ml",
+    "brand": "Pure",
     "category": "Desi Ghee & Oils",
     "cost": 161,
     "mrp": 215,
@@ -599,13 +725,16 @@
     "price": 189,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_5/43.png"
+    "image": "/products/NAV043.jpg",
+    "sku": "NAV043",
+    "title": "Pure Tender Coconut Water 200ml",
+    "imageUrl": "/products/NAV043.jpg"
   },
   {
     "id": "NAV044",
     "barcode": "890100000044",
-    "name": "Fortune Cottonseed Refined Cooking Oil 1L",
-    "brand": "FORTUNE",
+    "name": "Casa D'oro Penne Rigate Pasta 500g",
+    "brand": "Casa",
     "category": "Desi Ghee & Oils",
     "cost": 105,
     "mrp": 140,
@@ -613,13 +742,16 @@
     "price": 123,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_5/44.png"
+    "image": "/products/NAV044.jpg",
+    "sku": "NAV044",
+    "title": "Casa D'oro Penne Rigate Pasta 500g",
+    "imageUrl": "/products/NAV044.jpg"
   },
   {
     "id": "NAV045",
     "barcode": "890100000045",
-    "name": "Dalda Pure Vanaspati Ghee Pouch 1L",
-    "brand": "DALDA",
+    "name": "Volt High Caffeine Energy Drink 250ml",
+    "brand": "Volt",
     "category": "Desi Ghee & Oils",
     "cost": 98,
     "mrp": 130,
@@ -627,13 +759,16 @@
     "price": 114,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_5/45.png"
+    "image": "/products/NAV045.jpg",
+    "sku": "NAV045",
+    "title": "Volt High Caffeine Energy Drink 250ml",
+    "imageUrl": "/products/NAV045.jpg"
   },
   {
     "id": "NAV046",
     "barcode": "890100000046",
-    "name": "Tata Salt Vacuum Evaporated Iodized 1kg",
-    "brand": "TATA",
+    "name": "Premium Instant Coffee Dark & Rich Roast 100% Arabica 100g",
+    "brand": "Premium",
     "category": "Spices",
     "cost": 21,
     "mrp": 28,
@@ -641,13 +776,16 @@
     "price": 25,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_5/46.png"
+    "image": "/products/NAV046.jpg",
+    "sku": "NAV046",
+    "title": "Premium Instant Coffee Dark & Rich Roast 100% Arabica 100g",
+    "imageUrl": "/products/NAV046.jpg"
   },
   {
     "id": "NAV047",
     "barcode": "890100000047",
-    "name": "Tata Salt Lite Low Sodium 1kg",
-    "brand": "TATA",
+    "name": "Natural Flora Premium Bathi Incense Sticks",
+    "brand": "Natural",
     "category": "Spices",
     "cost": 34,
     "mrp": 45,
@@ -655,13 +793,16 @@
     "price": 40,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_5/47.png"
+    "image": "/products/NAV047.jpg",
+    "sku": "NAV047",
+    "title": "Natural Flora Premium Bathi Incense Sticks",
+    "imageUrl": "/products/NAV047.jpg"
   },
   {
     "id": "NAV048",
     "barcode": "890100000048",
-    "name": "Tata Salt Himalayan Pink Rock Salt 1kg",
-    "brand": "TATA",
+    "name": "Puja Ghee Diya Wicks Round Cotton Batti 50 Pieces",
+    "brand": "Puja",
     "category": "Spices",
     "cost": 74,
     "mrp": 99,
@@ -669,13 +810,16 @@
     "price": 87,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_5/48.png"
+    "image": "/products/NAV048.jpg",
+    "sku": "NAV048",
+    "title": "Puja Ghee Diya Wicks Round Cotton Batti 50 Pieces",
+    "imageUrl": "/products/NAV048.jpg"
   },
   {
     "id": "NAV049",
     "barcode": "890100000049",
-    "name": "MDH Deggi Mirch Kashmiri Red Chilli Powder 100g",
-    "brand": "MDH",
+    "name": "Pure Pearl Millet Bajra Flour 1kg",
+    "brand": "Pure",
     "category": "Spices",
     "cost": 69,
     "mrp": 92,
@@ -683,13 +827,16 @@
     "price": 81,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_5/49.png"
+    "image": "/products/NAV049.jpg",
+    "sku": "NAV049",
+    "title": "Pure Pearl Millet Bajra Flour 1kg",
+    "imageUrl": "/products/NAV049.jpg"
   },
   {
     "id": "NAV050",
     "barcode": "890100000050",
-    "name": "MDH Agmark Haldi Turmeric Powder 100g",
-    "brand": "MDH",
+    "name": "Pure Puja Camphor Kapoor 100g",
+    "brand": "Pure",
     "category": "Spices",
     "cost": 32,
     "mrp": 42,
@@ -697,13 +844,16 @@
     "price": 37,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_5/50.png"
+    "image": "/products/NAV050.jpg",
+    "sku": "NAV050",
+    "title": "Pure Puja Camphor Kapoor 100g",
+    "imageUrl": "/products/NAV050.jpg"
   },
   {
     "id": "NAV051",
     "barcode": "890100000051",
-    "name": "MDH Agmark Dhania Coriander Powder 100g",
-    "brand": "MDH",
+    "name": "Desi Treats Pani Puri Magic Treat Kit 220g",
+    "brand": "Desi",
     "category": "Spices",
     "cost": 33,
     "mrp": 44,
@@ -711,13 +861,16 @@
     "price": 39,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_6/51.png"
+    "image": "/products/NAV051.jpg",
+    "sku": "NAV051",
+    "title": "Desi Treats Pani Puri Magic Treat Kit 220g",
+    "imageUrl": "/products/NAV051.jpg"
   },
   {
     "id": "NAV052",
     "barcode": "890100000052",
-    "name": "MDH Special Garam Masala Blend 100g",
-    "brand": "MDH",
+    "name": "Volt Energy Drink Can 250ml",
+    "brand": "Volt",
     "category": "Spices",
     "cost": 74,
     "mrp": 98,
@@ -725,13 +878,16 @@
     "price": 86,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_6/52.png"
+    "image": "/products/NAV052.jpg",
+    "sku": "NAV052",
+    "title": "Volt Energy Drink Can 250ml",
+    "imageUrl": "/products/NAV052.jpg"
   },
   {
     "id": "NAV053",
     "barcode": "890100000053",
-    "name": "MDH Chana Masala Seasoning 100g",
-    "brand": "MDH",
+    "name": "Natural Grains Maida Refined All Purpose Flour 1kg",
+    "brand": "Natural",
     "category": "Spices",
     "cost": 66,
     "mrp": 88,
@@ -739,13 +895,16 @@
     "price": 77,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_6/53.png"
+    "image": "/products/NAV053.jpg",
+    "sku": "NAV053",
+    "title": "Natural Grains Maida Refined All Purpose Flour 1kg",
+    "imageUrl": "/products/NAV053.jpg"
   },
   {
     "id": "NAV054",
     "barcode": "890100000054",
-    "name": "MDH Chunky Chat Masala 100g",
-    "brand": "MDH",
+    "name": "Power Up Energy Drink 250ml",
+    "brand": "Power",
     "category": "Spices",
     "cost": 57,
     "mrp": 76,
@@ -753,13 +912,16 @@
     "price": 67,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_6/54.png"
+    "image": "/products/NAV054.jpg",
+    "sku": "NAV054",
+    "title": "Power Up Energy Drink 250ml",
+    "imageUrl": "/products/NAV054.jpg"
   },
   {
     "id": "NAV055",
     "barcode": "890100000055",
-    "name": "MDH Kitchen King All Purpose Sabji Masala 100g",
-    "brand": "MDH",
+    "name": "Premium Rich Chocolate Ice Cream 700ml",
+    "brand": "Premium",
     "category": "Spices",
     "cost": 68,
     "mrp": 90,
@@ -767,13 +929,16 @@
     "price": 79,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_6/55.png"
+    "image": "/products/NAV055.jpg",
+    "sku": "NAV055",
+    "title": "Premium Rich Chocolate Ice Cream 700ml",
+    "imageUrl": "/products/NAV055.jpg"
   },
   {
     "id": "NAV056",
     "barcode": "890100000056",
-    "name": "MDH Shahi Paneer Masala 100g",
-    "brand": "MDH",
+    "name": "Premium Roasted Almonds 250g",
+    "brand": "Premium",
     "category": "Spices",
     "cost": 66,
     "mrp": 88,
@@ -781,13 +946,16 @@
     "price": 77,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_6/56.png"
+    "image": "/products/NAV056.jpg",
+    "sku": "NAV056",
+    "title": "Premium Roasted Almonds 250g",
+    "imageUrl": "/products/NAV056.jpg"
   },
   {
     "id": "NAV057",
     "barcode": "890100000057",
-    "name": "MDH Pav Bhaji Masala 100g",
-    "brand": "MDH",
+    "name": "Roasted Seviyan Vermicelli Fine Cut 400g",
+    "brand": "Roasted",
     "category": "Spices",
     "cost": 63,
     "mrp": 84,
@@ -795,13 +963,16 @@
     "price": 74,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_6/57.png"
+    "image": "/products/NAV057.jpg",
+    "sku": "NAV057",
+    "title": "Roasted Seviyan Vermicelli Fine Cut 400g",
+    "imageUrl": "/products/NAV057.jpg"
   },
   {
     "id": "NAV058",
     "barcode": "890100000058",
-    "name": "MDH Sambhar Masala 100g",
-    "brand": "MDH",
+    "name": "Sendha Namak 100% Natural Rock Salt 1kg",
+    "brand": "Sendha",
     "category": "Spices",
     "cost": 62,
     "mrp": 82,
@@ -809,13 +980,16 @@
     "price": 72,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_6/58.png"
+    "image": "/products/NAV058.jpg",
+    "sku": "NAV058",
+    "title": "Sendha Namak 100% Natural Rock Salt 1kg",
+    "imageUrl": "/products/NAV058.jpg"
   },
   {
     "id": "NAV059",
     "barcode": "890100000059",
-    "name": "MDH Meat Curry Special Masala 100g",
-    "brand": "MDH",
+    "name": "Sacred Gangajal Holy Water 250ml",
+    "brand": "Sacred",
     "category": "Spices",
     "cost": 70,
     "mrp": 94,
@@ -823,13 +997,16 @@
     "price": 83,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_6/59.png"
+    "image": "/products/NAV059.jpg",
+    "sku": "NAV059",
+    "title": "Sacred Gangajal Holy Water 250ml",
+    "imageUrl": "/products/NAV059.jpg"
   },
   {
     "id": "NAV060",
     "barcode": "890100000060",
-    "name": "MDH Kasoori Methi Fenugreek Leaves 100g",
-    "brand": "MDH",
+    "name": "Puja Mauli Kalawa Red & Yellow Cotton Thread",
+    "brand": "Puja",
     "category": "Spices",
     "cost": 51,
     "mrp": 68,
@@ -837,13 +1014,16 @@
     "price": 60,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_6/60.png"
+    "image": "/products/NAV060.jpg",
+    "sku": "NAV060",
+    "title": "Puja Mauli Kalawa Red & Yellow Cotton Thread",
+    "imageUrl": "/products/NAV060.jpg"
   },
   {
     "id": "NAV061",
     "barcode": "890100000061",
-    "name": "Catch Pure Turmeric Powder 200g",
-    "brand": "CATCH",
+    "name": "Earth's Harvest Sorghum Jowar Flour 1kg",
+    "brand": "Earth's",
     "category": "Spices",
     "cost": 49,
     "mrp": 65,
@@ -851,13 +1031,16 @@
     "price": 57,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_7/61.png"
+    "image": "/products/NAV061.jpg",
+    "sku": "NAV061",
+    "title": "Earth's Harvest Sorghum Jowar Flour 1kg",
+    "imageUrl": "/products/NAV061.jpg"
   },
   {
     "id": "NAV062",
     "barcode": "890100000062",
-    "name": "Catch Red Chilli Powder Teja Hot 200g",
-    "brand": "CATCH",
+    "name": "Rasa Authentic South Indian Sambar Masala 100g",
+    "brand": "Rasa",
     "category": "Spices",
     "cost": 74,
     "mrp": 98,
@@ -865,13 +1048,16 @@
     "price": 86,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_7/62.png"
+    "image": "/products/NAV062.jpg",
+    "sku": "NAV062",
+    "title": "Rasa Authentic South Indian Sambar Masala 100g",
+    "imageUrl": "/products/NAV062.jpg"
   },
   {
     "id": "NAV063",
     "barcode": "890100000063",
-    "name": "Catch Coriander Powder Fresh Aroma 200g",
-    "brand": "CATCH",
+    "name": "Natural Harvest Split Green Moong Dal Chilka 1kg",
+    "brand": "Natural",
     "category": "Spices",
     "cost": 51,
     "mrp": 68,
@@ -879,13 +1065,16 @@
     "price": 60,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_7/63.png"
+    "image": "/products/NAV063.jpg",
+    "sku": "NAV063",
+    "title": "Natural Harvest Split Green Moong Dal Chilka 1kg",
+    "imageUrl": "/products/NAV063.jpg"
   },
   {
     "id": "NAV064",
     "barcode": "890100000064",
-    "name": "Catch Table Black Pepper Sprinkler 100g",
-    "brand": "CATCH",
+    "name": "Force Cola Extra Fizz 750ml",
+    "brand": "Force",
     "category": "Spices",
     "cost": 86,
     "mrp": 115,
@@ -893,13 +1082,16 @@
     "price": 101,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_7/64.png"
+    "image": "/products/NAV064.jpg",
+    "sku": "NAV064",
+    "title": "Force Cola Extra Fizz 750ml",
+    "imageUrl": "/products/NAV064.jpg"
   },
   {
     "id": "NAV065",
     "barcode": "890100000065",
-    "name": "Catch Table Rock Salt Sprinkler 100g",
-    "brand": "CATCH",
+    "name": "Royal Heritage Traditional Aromatic Basmati Rice 5kg",
+    "brand": "Royal",
     "category": "Spices",
     "cost": 41,
     "mrp": 55,
@@ -907,13 +1099,16 @@
     "price": 48,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_7/65.png"
+    "image": "/products/NAV065.jpg",
+    "sku": "NAV065",
+    "title": "Royal Heritage Traditional Aromatic Basmati Rice 5kg",
+    "imageUrl": "/products/NAV065.jpg"
   },
   {
     "id": "NAV066",
     "barcode": "890100000066",
-    "name": "Everest Royal Garam Masala 100g",
-    "brand": "EVEREST",
+    "name": "Traditional Herbal Havan Samagri 500g",
+    "brand": "Traditional",
     "category": "Spices",
     "cost": 72,
     "mrp": 96,
@@ -921,13 +1116,16 @@
     "price": 84,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_7/66.png"
+    "image": "/products/NAV066.jpg",
+    "sku": "NAV066",
+    "title": "Traditional Herbal Havan Samagri 500g",
+    "imageUrl": "/products/NAV066.jpg"
   },
   {
     "id": "NAV067",
     "barcode": "890100000067",
-    "name": "Everest Tikhalal Hot Red Chilli Powder 100g",
-    "brand": "EVEREST",
+    "name": "Chandan Natural Sandalwood Agarbatti Incense Sticks",
+    "brand": "Chandan",
     "category": "Spices",
     "cost": 46,
     "mrp": 62,
@@ -935,13 +1133,16 @@
     "price": 55,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_7/67.png"
+    "image": "/products/NAV067.jpg",
+    "sku": "NAV067",
+    "title": "Chandan Natural Sandalwood Agarbatti Incense Sticks",
+    "imageUrl": "/products/NAV067.jpg"
   },
   {
     "id": "NAV068",
     "barcode": "890100000068",
-    "name": "Everest Chhole Special Masala 100g",
-    "brand": "EVEREST",
+    "name": "Traditional Malai Kulfi 4 Pack",
+    "brand": "Traditional",
     "category": "Spices",
     "cost": 64,
     "mrp": 85,
@@ -949,13 +1150,16 @@
     "price": 75,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_7/68.png"
+    "image": "/products/NAV068.jpg",
+    "sku": "NAV068",
+    "title": "Traditional Malai Kulfi 4 Pack",
+    "imageUrl": "/products/NAV068.jpg"
   },
   {
     "id": "NAV069",
     "barcode": "890100000069",
-    "name": "Everest Kastoori Methi Leaves 50g",
-    "brand": "EVEREST",
+    "name": "Traditional Natural Sambrani Dhoop Cups 12 Pieces",
+    "brand": "Traditional",
     "category": "Spices",
     "cost": 32,
     "mrp": 42,
@@ -963,13 +1167,16 @@
     "price": 37,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_7/69.png"
+    "image": "/products/NAV069.jpg",
+    "sku": "NAV069",
+    "title": "Traditional Natural Sambrani Dhoop Cups 12 Pieces",
+    "imageUrl": "/products/NAV069.jpg"
   },
   {
     "id": "NAV070",
     "barcode": "890100000070",
-    "name": "Patanjali Pure Agmark Whole Cumin Jeera 200g",
-    "brand": "PATANJALI",
+    "name": "Premium Traditional Sharbati Wheat Flour 5kg",
+    "brand": "Premium",
     "category": "Spices",
     "cost": 90,
     "mrp": 120,
@@ -977,13 +1184,16 @@
     "price": 106,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_7/70.png"
+    "image": "/products/NAV070.jpg",
+    "sku": "NAV070",
+    "title": "Premium Traditional Sharbati Wheat Flour 5kg",
+    "imageUrl": "/products/NAV070.jpg"
   },
   {
     "id": "NAV071",
     "barcode": "890100000071",
-    "name": "Patanjali Whole Mustard Seeds Rai 200g",
-    "brand": "PATANJALI",
+    "name": "Vanilla Ice Cream Tub 700ml",
+    "brand": "Vanilla",
     "category": "Spices",
     "cost": 34,
     "mrp": 45,
@@ -991,13 +1201,16 @@
     "price": 40,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_8/71.png"
+    "image": "/products/NAV071.jpg",
+    "sku": "NAV071",
+    "title": "Vanilla Ice Cream Tub 700ml",
+    "imageUrl": "/products/NAV071.jpg"
   },
   {
     "id": "NAV072",
     "barcode": "890100000072",
-    "name": "Patanjali Carom Seeds Ajwain 200g",
-    "brand": "PATANJALI",
+    "name": "Pure Cotton Wicks Puja Batti 100 Pcs",
+    "brand": "Pure",
     "category": "Spices",
     "cost": 49,
     "mrp": 65,
@@ -1005,13 +1218,16 @@
     "price": 57,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_8/72.png"
+    "image": "/products/NAV072.jpg",
+    "sku": "NAV072",
+    "title": "Pure Cotton Wicks Puja Batti 100 Pcs",
+    "imageUrl": "/products/NAV072.jpg"
   },
   {
     "id": "NAV073",
     "barcode": "890100000073",
-    "name": "Patanjali Asafoetida Bandhani Hing 25g",
-    "brand": "PATANJALI",
+    "name": "Premium Quality Kabuli Chana White Chickpeas 1kg",
+    "brand": "Premium",
     "category": "Spices",
     "cost": 39,
     "mrp": 52,
@@ -1019,13 +1235,16 @@
     "price": 46,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_8/73.png"
+    "image": "/products/NAV073.jpg",
+    "sku": "NAV073",
+    "title": "Premium Quality Kabuli Chana White Chickpeas 1kg",
+    "imageUrl": "/products/NAV073.jpg"
   },
   {
     "id": "NAV074",
     "barcode": "890100000074",
-    "name": "LG Compounded Natural Asafoetida Powder 50g",
-    "brand": "LG",
+    "name": "Premium Natural Whole Aromatic Cloves Laung 50g",
+    "brand": "Premium",
     "category": "Spices",
     "cost": 66,
     "mrp": 88,
@@ -1033,13 +1252,16 @@
     "price": 77,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_8/74.png"
+    "image": "/products/NAV074.jpg",
+    "sku": "NAV074",
+    "title": "Premium Natural Whole Aromatic Cloves Laung 50g",
+    "imageUrl": "/products/NAV074.jpg"
   },
   {
     "id": "NAV075",
     "barcode": "890100000075",
-    "name": "Keya Authentic Italian Mixed Herbs Seasoning 45g",
-    "brand": "KEYA",
+    "name": "Premium Whole Black Pepper 100g",
+    "brand": "Premium",
     "category": "Spices",
     "cost": 82,
     "mrp": 110,
@@ -1047,13 +1269,16 @@
     "price": 97,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_8/75.png"
+    "image": "/products/NAV075.jpg",
+    "sku": "NAV075",
+    "title": "Premium Whole Black Pepper 100g",
+    "imageUrl": "/products/NAV075.jpg"
   },
   {
     "id": "NAV076",
     "barcode": "890100000076",
-    "name": "Safal Frozen Fresh Tender Green Peas 1kg",
-    "brand": "SAFAL",
+    "name": "Natural Whole Cinnamon Sticks Dalchini 100g",
+    "brand": "Natural",
     "category": "Frozen Foods",
     "cost": 120,
     "mrp": 160,
@@ -1061,13 +1286,16 @@
     "price": 141,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_8/76.png"
+    "image": "/products/NAV076.jpg",
+    "sku": "NAV076",
+    "title": "Natural Whole Cinnamon Sticks Dalchini 100g",
+    "imageUrl": "/products/NAV076.jpg"
   },
   {
     "id": "NAV077",
     "barcode": "890100000077",
-    "name": "Safal Frozen American Sweet Corn Kernels 500g",
-    "brand": "SAFAL",
+    "name": "100% Natural Whole Cumin Seeds Jeera 200g",
+    "brand": "100%",
     "category": "Frozen Foods",
     "cost": 64,
     "mrp": 85,
@@ -1075,13 +1303,16 @@
     "price": 75,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_8/77.png"
+    "image": "/products/NAV077.jpg",
+    "sku": "NAV077",
+    "title": "100% Natural Whole Cumin Seeds Jeera 200g",
+    "imageUrl": "/products/NAV077.jpg"
   },
   {
     "id": "NAV078",
     "barcode": "890100000078",
-    "name": "Safal Frozen Mixed Country Vegetables 500g",
-    "brand": "SAFAL",
+    "name": "Premium Whole Green Cardamom Elaichi 50g",
+    "brand": "Premium",
     "category": "Frozen Foods",
     "cost": 71,
     "mrp": 95,
@@ -1089,13 +1320,16 @@
     "price": 84,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_8/78.png"
+    "image": "/products/NAV078.jpg",
+    "sku": "NAV078",
+    "title": "Premium Whole Green Cardamom Elaichi 50g",
+    "imageUrl": "/products/NAV078.jpg"
   },
   {
     "id": "NAV079",
     "barcode": "890100000079",
-    "name": "Amul Malai Fresh Frozen Paneer Block 500g",
-    "brand": "AMUL",
+    "name": "Natural Grains Yellow Maize Flour Makki Atta 1kg",
+    "brand": "Natural",
     "category": "Frozen Foods",
     "cost": 158,
     "mrp": 210,
@@ -1103,13 +1337,16 @@
     "price": 185,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_8/79.png"
+    "image": "/products/NAV079.jpg",
+    "sku": "NAV079",
+    "title": "Natural Grains Yellow Maize Flour Makki Atta 1kg",
+    "imageUrl": "/products/NAV079.jpg"
   },
   {
     "id": "NAV080",
     "barcode": "890100000080",
-    "name": "Mother Dairy Classic Frozen Paneer Cubes 200g",
-    "brand": "MOTHER DAIRY",
+    "name": "Organic Yellow Moong Dal Washed 1kg",
+    "brand": "Organic",
     "category": "Frozen Foods",
     "cost": 74,
     "mrp": 98,
@@ -1117,13 +1354,16 @@
     "price": 86,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_8/80.png"
+    "image": "/products/NAV080.jpg",
+    "sku": "NAV080",
+    "title": "Organic Yellow Moong Dal Washed 1kg",
+    "imageUrl": "/products/NAV080.jpg"
   },
   {
     "id": "NAV081",
     "barcode": "890100000081",
-    "name": "McCain Crispy French Fries Pack 420g",
-    "brand": "MCCAIN",
+    "name": "Premium Toor Dal Arhar Dal 1kg",
+    "brand": "Premium",
     "category": "Frozen Foods",
     "cost": 94,
     "mrp": 125,
@@ -1131,13 +1371,16 @@
     "price": 110,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_9/81.png"
+    "image": "/products/NAV081.jpg",
+    "sku": "NAV081",
+    "title": "Premium Toor Dal Arhar Dal 1kg",
+    "imageUrl": "/products/NAV081.jpg"
   },
   {
     "id": "NAV082",
     "barcode": "890100000082",
-    "name": "McCain Crunchy Aloo Tikki Patty 400g",
-    "brand": "MCCAIN",
+    "name": "Frozen Green Peas 100% Natural 500g",
+    "brand": "Frozen",
     "category": "Frozen Foods",
     "cost": 98,
     "mrp": 130,
@@ -1145,13 +1388,16 @@
     "price": 114,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_9/82.png"
+    "image": "/products/NAV082.jpg",
+    "sku": "NAV082",
+    "title": "Frozen Green Peas 100% Natural 500g",
+    "imageUrl": "/products/NAV082.jpg"
   },
   {
     "id": "NAV083",
     "barcode": "890100000083",
-    "name": "McCain Veggie Burger Patty 360g",
-    "brand": "MCCAIN",
+    "name": "Aashirvaad Select Sharbati Atta 5kg Pack A",
+    "brand": "Aashirvaad",
     "category": "Frozen Foods",
     "cost": 109,
     "mrp": 145,
@@ -1159,13 +1405,16 @@
     "price": 128,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_9/83.png"
+    "image": "/products/NAV083.jpg",
+    "sku": "NAV083",
+    "title": "Aashirvaad Select Sharbati Atta 5kg Pack A",
+    "imageUrl": "/products/NAV083.jpg"
   },
   {
     "id": "NAV084",
     "barcode": "890100000084",
-    "name": "McCain Golden Smiles Mashed Potato Shapes 375g",
-    "brand": "MCCAIN",
+    "name": "Aashirvaad Select Sharbati Atta 5kg Pack B",
+    "brand": "Aashirvaad",
     "category": "Frozen Foods",
     "cost": 101,
     "mrp": 135,
@@ -1173,13 +1422,16 @@
     "price": 119,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_9/84.png"
+    "image": "/products/NAV084.jpg",
+    "sku": "NAV084",
+    "title": "Aashirvaad Select Sharbati Atta 5kg Pack B",
+    "imageUrl": "/products/NAV084.jpg"
   },
   {
     "id": "NAV085",
     "barcode": "890100000085",
-    "name": "Safal Frozen Soya Chaap Sticks 500g",
-    "brand": "SAFAL",
+    "name": "Aashirvaad Multigrain Atta Nine Natural Grains 5kg",
+    "brand": "Aashirvaad",
     "category": "Frozen Foods",
     "cost": 82,
     "mrp": 110,
@@ -1187,13 +1439,16 @@
     "price": 97,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_9/85.png"
+    "image": "/products/NAV085.jpg",
+    "sku": "NAV085",
+    "title": "Aashirvaad Multigrain Atta Nine Natural Grains 5kg",
+    "imageUrl": "/products/NAV085.jpg"
   },
   {
     "id": "NAV086",
     "barcode": "890100000086",
-    "name": "Madhur Pure Hygienic Sparkling Sugar 5kg",
-    "brand": "MADHUR",
+    "name": "Aashirvaad Chakki Fresh Multigrain Atta 5kg",
+    "brand": "Aashirvaad",
     "category": "Grocery & Staples",
     "cost": 195,
     "mrp": 260,
@@ -1201,13 +1456,16 @@
     "price": 229,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_9/86.png"
+    "image": "/products/NAV086.jpg",
+    "sku": "NAV086",
+    "title": "Aashirvaad Chakki Fresh Multigrain Atta 5kg",
+    "imageUrl": "/products/NAV086.jpg"
   },
   {
     "id": "NAV087",
     "barcode": "890100000087",
-    "name": "Madhur Refined Sulphur Free Sugar 1kg",
-    "brand": "MADHUR",
+    "name": "Amul Pure Ghee Tin 1 Litre",
+    "brand": "Amul",
     "category": "Grocery & Staples",
     "cost": 40,
     "mrp": 54,
@@ -1215,13 +1473,16 @@
     "price": 48,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_9/87.png"
+    "image": "/products/NAV087.jpg",
+    "sku": "NAV087",
+    "title": "Amul Pure Ghee Tin 1 Litre",
+    "imageUrl": "/products/NAV087.jpg"
   },
   {
     "id": "NAV088",
     "barcode": "890100000088",
-    "name": "Tata Tea Gold Rich Taste Leaves 500g",
-    "brand": "TATA",
+    "name": "Amul Pure Ghee Jar 1L",
+    "brand": "Amul",
     "category": "Grocery & Staples",
     "cost": 232,
     "mrp": 310,
@@ -1229,13 +1490,16 @@
     "price": 273,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_9/88.png"
+    "image": "/products/NAV088.jpg",
+    "sku": "NAV088",
+    "title": "Amul Pure Ghee Jar 1L",
+    "imageUrl": "/products/NAV088.jpg"
   },
   {
     "id": "NAV089",
     "barcode": "890100000089",
-    "name": "Tata Tea Premium Desh Ki Chai 500g",
-    "brand": "TATA",
+    "name": "Amul Malai Paneer Pouch 200g",
+    "brand": "Amul",
     "category": "Grocery & Staples",
     "cost": 210,
     "mrp": 280,
@@ -1243,13 +1507,16 @@
     "price": 246,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_9/89.png"
+    "image": "/products/NAV089.jpg",
+    "sku": "NAV089",
+    "title": "Amul Malai Paneer Pouch 200g",
+    "imageUrl": "/products/NAV089.jpg"
   },
   {
     "id": "NAV090",
     "barcode": "890100000090",
-    "name": "Brooke Bond Red Label Strong CTC Tea 500g",
-    "brand": "RED LABEL",
+    "name": "Amul Malai Paneer Fresh Soft Cheese Cubes Pack 200g",
+    "brand": "Amul",
     "category": "Grocery & Staples",
     "cost": 221,
     "mrp": 295,
@@ -1257,13 +1524,16 @@
     "price": 260,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_9/90.png"
+    "image": "/products/NAV090.jpg",
+    "sku": "NAV090",
+    "title": "Amul Malai Paneer Fresh Soft Cheese Cubes Pack 200g",
+    "imageUrl": "/products/NAV090.jpg"
   },
   {
     "id": "NAV091",
     "barcode": "890100000091",
-    "name": "Brooke Bond Red Label Natural Care Cardamom Ginger 500g",
-    "brand": "RED LABEL",
+    "name": "Amul Taaza Milk Tetra Pack 1 Litre Pack A",
+    "brand": "Amul",
     "category": "Grocery & Staples",
     "cost": 255,
     "mrp": 340,
@@ -1271,13 +1541,16 @@
     "price": 299,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_10/91.png"
+    "image": "/products/NAV091.jpg",
+    "sku": "NAV091",
+    "title": "Amul Taaza Milk Tetra Pack 1 Litre Pack A",
+    "imageUrl": "/products/NAV091.jpg"
   },
   {
     "id": "NAV092",
     "barcode": "890100000092",
-    "name": "Brooke Bond Taj Mahal Rich Fresh Tea 500g",
-    "brand": "TAJ MAHAL",
+    "name": "Amul Taaza Toned Milk Tetra Pack 1L Pack B",
+    "brand": "Amul",
     "category": "Grocery & Staples",
     "cost": 292,
     "mrp": 390,
@@ -1285,13 +1558,16 @@
     "price": 343,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_10/92.png"
+    "image": "/products/NAV092.jpg",
+    "sku": "NAV092",
+    "title": "Amul Taaza Toned Milk Tetra Pack 1L Pack B",
+    "imageUrl": "/products/NAV092.jpg"
   },
   {
     "id": "NAV093",
     "barcode": "890100000093",
-    "name": "Wagh Bakri Strong Premium Leaf Tea 500g",
-    "brand": "WAGH BAKRI",
+    "name": "Amul Gold Full Cream Milk Tetra Pack 1 Litre Pack A",
+    "brand": "Amul",
     "category": "Grocery & Staples",
     "cost": 202,
     "mrp": 270,
@@ -1299,13 +1575,16 @@
     "price": 238,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_10/93.png"
+    "image": "/products/NAV093.jpg",
+    "sku": "NAV093",
+    "title": "Amul Gold Full Cream Milk Tetra Pack 1 Litre Pack A",
+    "imageUrl": "/products/NAV093.jpg"
   },
   {
     "id": "NAV094",
     "barcode": "890100000094",
-    "name": "Nescafe Classic Pure Instant Coffee Jar 100g",
-    "brand": "NESCAFE",
+    "name": "Amul Gold Full Cream Milk Tetra Pack 1L Pack B",
+    "brand": "Amul",
     "category": "Grocery & Staples",
     "cost": 270,
     "mrp": 360,
@@ -1313,13 +1592,16 @@
     "price": 317,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_10/94.png"
+    "image": "/products/NAV094.jpg",
+    "sku": "NAV094",
+    "title": "Amul Gold Full Cream Milk Tetra Pack 1L Pack B",
+    "imageUrl": "/products/NAV094.jpg"
   },
   {
     "id": "NAV095",
     "barcode": "890100000095",
-    "name": "Bru Instant Roasted Coffee Chicory Blend Jar 100g",
-    "brand": "BRU",
+    "name": "Amul Pasteurised Butter Carton 500g Pack A",
+    "brand": "Amul",
     "category": "Grocery & Staples",
     "cost": 172,
     "mrp": 230,
@@ -1327,13 +1609,16 @@
     "price": 202,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_10/95.png"
+    "image": "/products/NAV095.jpg",
+    "sku": "NAV095",
+    "title": "Amul Pasteurised Butter Carton 500g Pack A",
+    "imageUrl": "/products/NAV095.jpg"
   },
   {
     "id": "NAV096",
     "barcode": "890100000096",
-    "name": "Bournvita Chocolate Nutrition Health Drink 1kg",
-    "brand": "CADBURY",
+    "name": "Amul Pasteurised Butter Carton 500g Pack B",
+    "brand": "Amul",
     "category": "Grocery & Staples",
     "cost": 330,
     "mrp": 440,
@@ -1341,13 +1626,16 @@
     "price": 387,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_10/96.png"
+    "image": "/products/NAV096.jpg",
+    "sku": "NAV096",
+    "title": "Amul Pasteurised Butter Carton 500g Pack B",
+    "imageUrl": "/products/NAV096.jpg"
   },
   {
     "id": "NAV097",
     "barcode": "890100000097",
-    "name": "Horlicks Classic Malt Health Nutrition Jar 1kg",
-    "brand": "HORLICKS",
+    "name": "Amul Salted Pasteurised Butter Pack 100g Pack A",
+    "brand": "Amul",
     "category": "Grocery & Staples",
     "cost": 338,
     "mrp": 450,
@@ -1355,13 +1643,16 @@
     "price": 396,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_10/97.png"
+    "image": "/products/NAV097.jpg",
+    "sku": "NAV097",
+    "title": "Amul Salted Pasteurised Butter Pack 100g Pack A",
+    "imageUrl": "/products/NAV097.jpg"
   },
   {
     "id": "NAV098",
     "barcode": "890100000098",
-    "name": "Boost Energy Chocolate Sports Health Drink 500g",
-    "brand": "BOOST",
+    "name": "Amul Salted Pasteurised Butter Pack 100g Pack B",
+    "brand": "Amul",
     "category": "Grocery & Staples",
     "cost": 199,
     "mrp": 265,
@@ -1369,13 +1660,16 @@
     "price": 233,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_10/98.png"
+    "image": "/products/NAV098.jpg",
+    "sku": "NAV098",
+    "title": "Amul Salted Pasteurised Butter Pack 100g Pack B",
+    "imageUrl": "/products/NAV098.jpg"
   },
   {
     "id": "NAV099",
     "barcode": "890100000099",
-    "name": "Rooh Afza Herbal Concentrated Syrup Sharbat 750ml",
-    "brand": "HAMDARD",
+    "name": "Amul Masti Dahi Cup 400g Pack A",
+    "brand": "Amul",
     "category": "Grocery & Staples",
     "cost": 139,
     "mrp": 185,
@@ -1383,13 +1677,16 @@
     "price": 163,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_10/99.png"
+    "image": "/products/NAV099.jpg",
+    "sku": "NAV099",
+    "title": "Amul Masti Dahi Cup 400g Pack A",
+    "imageUrl": "/products/NAV099.jpg"
   },
   {
     "id": "NAV100",
     "barcode": "890100000100",
-    "name": "Kissan Fresh Tomato Ketchup Bottle 1kg",
-    "brand": "KISSAN",
+    "name": "Amul Masti Dahi Premium Curd Tub 400g Pack B",
+    "brand": "Amul",
     "category": "Grocery & Staples",
     "cost": 109,
     "mrp": 145,
@@ -1397,13 +1694,16 @@
     "price": 128,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_10/100.png"
+    "image": "/products/NAV100.jpg",
+    "sku": "NAV100",
+    "title": "Amul Masti Dahi Premium Curd Tub 400g Pack B",
+    "imageUrl": "/products/NAV100.jpg"
   },
   {
     "id": "NAV101",
     "barcode": "890100000101",
-    "name": "Maggi Rich Tomato Sauce Pitcher Bottle 1kg",
-    "brand": "MAGGI",
+    "name": "Amul Lassi Mango 250ml",
+    "brand": "Amul",
     "category": "Grocery & Staples",
     "cost": 116,
     "mrp": 155,
@@ -1411,13 +1711,16 @@
     "price": 136,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_11/101.png"
+    "image": "/products/NAV101.jpg",
+    "sku": "NAV101",
+    "title": "Amul Lassi Mango 250ml",
+    "imageUrl": "/products/NAV101.jpg"
   },
   {
     "id": "NAV102",
     "barcode": "890100000102",
-    "name": "Kissan Mixed Fruit Sweet Jam Glass Jar 500g",
-    "brand": "KISSAN",
+    "name": "Amul Lassi Mango & Rose 250ml",
+    "brand": "Amul",
     "category": "Grocery & Staples",
     "cost": 128,
     "mrp": 170,
@@ -1425,13 +1728,16 @@
     "price": 150,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_11/102.png"
+    "image": "/products/NAV102.jpg",
+    "sku": "NAV102",
+    "title": "Amul Lassi Mango & Rose 250ml",
+    "imageUrl": "/products/NAV102.jpg"
   },
   {
     "id": "NAV103",
     "barcode": "890100000103",
-    "name": "Nutella Hazelnut Cocoa Creamy Bread Spread 350g",
-    "brand": "NUTELLA",
+    "name": "Amul Mithai Mate 400g Pack A",
+    "brand": "Amul",
     "category": "Grocery & Staples",
     "cost": 308,
     "mrp": 410,
@@ -1439,13 +1745,16 @@
     "price": 361,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_11/103.png"
+    "image": "/products/NAV103.jpg",
+    "sku": "NAV103",
+    "title": "Amul Mithai Mate 400g Pack A",
+    "imageUrl": "/products/NAV103.jpg"
   },
   {
     "id": "NAV104",
     "barcode": "890100000104",
-    "name": "Pintola All Natural Creamy Peanut Butter 1kg",
-    "brand": "PINTOLA",
+    "name": "Amul Mithai Mate Sweetened Condensed Milk 400g Pack B",
+    "brand": "Amul",
     "category": "Grocery & Staples",
     "cost": 299,
     "mrp": 399,
@@ -1453,13 +1762,16 @@
     "price": 351,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_11/104.png"
+    "image": "/products/NAV104.jpg",
+    "sku": "NAV104",
+    "title": "Amul Mithai Mate Sweetened Condensed Milk 400g Pack B",
+    "imageUrl": "/products/NAV104.jpg"
   },
   {
     "id": "NAV105",
     "barcode": "890100000105",
-    "name": "Dabur 100 Percent Pure Squeezy Honey 500g",
-    "brand": "DABUR",
+    "name": "Daawat Basmati Rice Premium 5kg",
+    "brand": "Daawat",
     "category": "Grocery & Staples",
     "cost": 176,
     "mrp": 235,
@@ -1467,13 +1779,16 @@
     "price": 207,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_11/105.png"
+    "image": "/products/NAV105.jpg",
+    "sku": "NAV105",
+    "title": "Daawat Basmati Rice Premium 5kg",
+    "imageUrl": "/products/NAV105.jpg"
   },
   {
     "id": "NAV106",
     "barcode": "890100000106",
-    "name": "Maggi 2 Minute Masala Instant Noodles 12 Pack 840g",
-    "brand": "MAGGI",
+    "name": "Royal Harvest Premium Basmati Rice 5kg",
+    "brand": "Royal",
     "category": "Grocery & Staples",
     "cost": 126,
     "mrp": 168,
@@ -1481,13 +1796,16 @@
     "price": 148,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_11/106.png"
+    "image": "/products/NAV106.jpg",
+    "sku": "NAV106",
+    "title": "Royal Harvest Premium Basmati Rice 5kg",
+    "imageUrl": "/products/NAV106.jpg"
   },
   {
     "id": "NAV107",
     "barcode": "890100000107",
-    "name": "Yippee Mood Masala Instant Noodles 4 Pack 280g",
-    "brand": "SUNFEAST",
+    "name": "Cadbury Bournvita 500g Pack A",
+    "brand": "Cadbury",
     "category": "Grocery & Staples",
     "cost": 45,
     "mrp": 60,
@@ -1495,13 +1813,16 @@
     "price": 53,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_11/107.png"
+    "image": "/products/NAV107.jpg",
+    "sku": "NAV107",
+    "title": "Cadbury Bournvita 500g Pack A",
+    "imageUrl": "/products/NAV107.jpg"
   },
   {
     "id": "NAV108",
     "barcode": "890100000108",
-    "name": "Chings Secret Schezwan Noodles 4 Pack 240g",
-    "brand": "CHINGS",
+    "name": "Cadbury Bournvita Chocolate Malt Drink 500g Pack B",
+    "brand": "Cadbury",
     "category": "Grocery & Staples",
     "cost": 41,
     "mrp": 55,
@@ -1509,13 +1830,16 @@
     "price": 48,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_11/108.png"
+    "image": "/products/NAV108.jpg",
+    "sku": "NAV108",
+    "title": "Cadbury Bournvita Chocolate Malt Drink 500g Pack B",
+    "imageUrl": "/products/NAV108.jpg"
   },
   {
     "id": "NAV109",
     "barcode": "890100000109",
-    "name": "Parle G Original Glucose Biscuits Value Pack 800g",
-    "brand": "PARLE",
+    "name": "Bisleri Packaged Drinking Water 1 Litre Pack A",
+    "brand": "Bisleri",
     "category": "Grocery & Staples",
     "cost": 68,
     "mrp": 90,
@@ -1523,13 +1847,16 @@
     "price": 79,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_11/109.png"
+    "image": "/products/NAV109.jpg",
+    "sku": "NAV109",
+    "title": "Bisleri Packaged Drinking Water 1 Litre Pack A",
+    "imageUrl": "/products/NAV109.jpg"
   },
   {
     "id": "NAV110",
     "barcode": "890100000110",
-    "name": "Britannia Good Day Butter Cookies Multipack 600g",
-    "brand": "BRITANNIA",
+    "name": "Bisleri Packaged Drinking Water 1L Pack B",
+    "brand": "Bisleri",
     "category": "Grocery & Staples",
     "cost": 105,
     "mrp": 140,
@@ -1537,13 +1864,16 @@
     "price": 123,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_11/110.png"
+    "image": "/products/NAV110.jpg",
+    "sku": "NAV110",
+    "title": "Bisleri Packaged Drinking Water 1L Pack B",
+    "imageUrl": "/products/NAV110.jpg"
   },
   {
     "id": "NAV111",
     "barcode": "890100000111",
-    "name": "Britannia Good Day Cashew Almond Cookies 600g",
-    "brand": "BRITANNIA",
+    "name": "Britannia Good Day Cashew 600g Pack A",
+    "brand": "Britannia",
     "category": "Grocery & Staples",
     "cost": 112,
     "mrp": 150,
@@ -1551,13 +1881,16 @@
     "price": 132,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_12/111.png"
+    "image": "/products/NAV111.jpg",
+    "sku": "NAV111",
+    "title": "Britannia Good Day Cashew 600g Pack A",
+    "imageUrl": "/products/NAV111.jpg"
   },
   {
     "id": "NAV112",
     "barcode": "890100000112",
-    "name": "Britannia Marie Gold Crisp Tea Biscuits 1kg",
-    "brand": "BRITANNIA",
+    "name": "Britannia Good Day Cashew Butter Cookies 600g Pack B",
+    "brand": "Britannia",
     "category": "Grocery & Staples",
     "cost": 109,
     "mrp": 145,
@@ -1565,13 +1898,16 @@
     "price": 128,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_12/112.png"
+    "image": "/products/NAV112.jpg",
+    "sku": "NAV112",
+    "title": "Britannia Good Day Cashew Butter Cookies 600g Pack B",
+    "imageUrl": "/products/NAV112.jpg"
   },
   {
     "id": "NAV113",
     "barcode": "890100000113",
-    "name": "Sunfeast Dark Fantasy Choco Fills Multipack 300g",
-    "brand": "SUNFEAST",
+    "name": "Britannia Milk Bikis 500g Pack A",
+    "brand": "Britannia",
     "category": "Grocery & Staples",
     "cost": 120,
     "mrp": 160,
@@ -1579,13 +1915,16 @@
     "price": 141,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_12/113.png"
+    "image": "/products/NAV113.jpg",
+    "sku": "NAV113",
+    "title": "Britannia Milk Bikis 500g Pack A",
+    "imageUrl": "/products/NAV113.jpg"
   },
   {
     "id": "NAV114",
     "barcode": "890100000114",
-    "name": "Oreo Original Vanilla Creme Sandwich Biscuits 300g",
-    "brand": "CADBURY",
+    "name": "Britannia Milk Bikis 500g Pack B",
+    "brand": "Britannia",
     "category": "Grocery & Staples",
     "cost": 71,
     "mrp": 95,
@@ -1593,13 +1932,16 @@
     "price": 84,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_12/114.png"
+    "image": "/products/NAV114.jpg",
+    "sku": "NAV114",
+    "title": "Britannia Milk Bikis 500g Pack B",
+    "imageUrl": "/products/NAV114.jpg"
   },
   {
     "id": "NAV115",
     "barcode": "890100000115",
-    "name": "Britannia Bourbon Chocolate Cream Biscuits 300g",
-    "brand": "BRITANNIA",
+    "name": "Britannia Milk Bikis 500g Pack C",
+    "brand": "Britannia",
     "category": "Grocery & Staples",
     "cost": 56,
     "mrp": 75,
@@ -1607,13 +1949,16 @@
     "price": 66,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_12/115.png"
+    "image": "/products/NAV115.jpg",
+    "sku": "NAV115",
+    "title": "Britannia Milk Bikis 500g Pack C",
+    "imageUrl": "/products/NAV115.jpg"
   },
   {
     "id": "NAV116",
     "barcode": "890100000116",
-    "name": "Britannia Milk Bikis Creamy Calcium Biscuits 400g",
-    "brand": "BRITANNIA",
+    "name": "Bikano Bhujia Namkeen 1kg Pack A",
+    "brand": "Bikano",
     "category": "Grocery & Staples",
     "cost": 64,
     "mrp": 85,
@@ -1621,13 +1966,16 @@
     "price": 75,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_12/116.png"
+    "image": "/products/NAV116.jpg",
+    "sku": "NAV116",
+    "title": "Bikano Bhujia Namkeen 1kg Pack A",
+    "imageUrl": "/products/NAV116.jpg"
   },
   {
     "id": "NAV117",
     "barcode": "890100000117",
-    "name": "Haldirams Nagpur Aloo Bhujia Namkeen 1kg",
-    "brand": "HALDIRAMS",
+    "name": "Bikano Bhujia Fine Crispy Savoury Mixture 1kg Pack B",
+    "brand": "Bikano",
     "category": "Grocery & Staples",
     "cost": 202,
     "mrp": 270,
@@ -1635,13 +1983,16 @@
     "price": 238,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_12/117.png"
+    "image": "/products/NAV117.jpg",
+    "sku": "NAV117",
+    "title": "Bikano Bhujia Fine Crispy Savoury Mixture 1kg Pack B",
+    "imageUrl": "/products/NAV117.jpg"
   },
   {
     "id": "NAV118",
     "barcode": "890100000118",
-    "name": "Haldirams Bhujia Sev Crispy Snack 1kg",
-    "brand": "HALDIRAMS",
+    "name": "Bikano Bhujia Fine Crispy Savoury Mixture 1kg Pack C",
+    "brand": "Bikano",
     "category": "Grocery & Staples",
     "cost": 195,
     "mrp": 260,
@@ -1649,13 +2000,16 @@
     "price": 229,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_12/118.png"
+    "image": "/products/NAV118.jpg",
+    "sku": "NAV118",
+    "title": "Bikano Bhujia Fine Crispy Savoury Mixture 1kg Pack C",
+    "imageUrl": "/products/NAV118.jpg"
   },
   {
     "id": "NAV119",
     "barcode": "890100000119",
-    "name": "Haldirams All In One Mixture Spicy Snack 1kg",
-    "brand": "HALDIRAMS",
+    "name": "Brooke Bond Red Label Tea 500g",
+    "brand": "Brooke",
     "category": "Grocery & Staples",
     "cost": 206,
     "mrp": 275,
@@ -1663,13 +2017,16 @@
     "price": 242,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_12/119.png"
+    "image": "/products/NAV119.jpg",
+    "sku": "NAV119",
+    "title": "Brooke Bond Red Label Tea 500g",
+    "imageUrl": "/products/NAV119.jpg"
   },
   {
     "id": "NAV120",
     "barcode": "890100000120",
-    "name": "Haldirams Moong Dal Salted Fried Lentil 400g",
-    "brand": "HALDIRAMS",
+    "name": "Brooke Bond Red Label Natural Care Tea 500g",
+    "brand": "Brooke",
     "category": "Grocery & Staples",
     "cost": 109,
     "mrp": 145,
@@ -1677,13 +2034,16 @@
     "price": 128,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_12/120.png"
+    "image": "/products/NAV120.jpg",
+    "sku": "NAV120",
+    "title": "Brooke Bond Red Label Natural Care Tea 500g",
+    "imageUrl": "/products/NAV120.jpg"
   },
   {
     "id": "NAV121",
     "barcode": "890100000121",
-    "name": "Haldirams Khatta Meetha Sweet Sour Mixture 400g",
-    "brand": "HALDIRAMS",
+    "name": "Bay Leaves Tej Patta 100g Pack A",
+    "brand": "Bay",
     "category": "Grocery & Staples",
     "cost": 86,
     "mrp": 115,
@@ -1691,13 +2051,16 @@
     "price": 101,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_13/121.png"
+    "image": "/products/NAV121.jpg",
+    "sku": "NAV121",
+    "title": "Bay Leaves Tej Patta 100g Pack A",
+    "imageUrl": "/products/NAV121.jpg"
   },
   {
     "id": "NAV122",
     "barcode": "890100000122",
-    "name": "Lays India Magic Masala Potato Chips Party Pack 115g",
-    "brand": "LAYS",
+    "name": "Bay Leaves Tej Patta 100g Pack B",
+    "brand": "Bay",
     "category": "Grocery & Staples",
     "cost": 38,
     "mrp": 50,
@@ -1705,13 +2068,16 @@
     "price": 44,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_13/122.png"
+    "image": "/products/NAV122.jpg",
+    "sku": "NAV122",
+    "title": "Bay Leaves Tej Patta 100g Pack B",
+    "imageUrl": "/products/NAV122.jpg"
   },
   {
     "id": "NAV123",
     "barcode": "890100000123",
-    "name": "Kurkure Masala Munch Crunchy Spicy Snack 115g",
-    "brand": "KURKURE",
+    "name": "Bay Leaves Tej Patta 100g Pack C",
+    "brand": "Bay",
     "category": "Grocery & Staples",
     "cost": 38,
     "mrp": 50,
@@ -1719,13 +2085,16 @@
     "price": 44,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_13/123.png"
+    "image": "/products/NAV123.jpg",
+    "sku": "NAV123",
+    "title": "Bay Leaves Tej Patta 100g Pack C",
+    "imageUrl": "/products/NAV123.jpg"
   },
   {
     "id": "NAV124",
     "barcode": "890100000124",
-    "name": "Uncle Chipps Spicy Treat Salted Potato Chips 100g",
-    "brand": "UNCLE CHIPPS",
+    "name": "Catch Baking Soda Meetha Soda 100g",
+    "brand": "Catch",
     "category": "Grocery & Staples",
     "cost": 38,
     "mrp": 50,
@@ -1733,13 +2102,16 @@
     "price": 44,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_13/124.png"
+    "image": "/products/NAV124.jpg",
+    "sku": "NAV124",
+    "title": "Catch Baking Soda Meetha Soda 100g",
+    "imageUrl": "/products/NAV124.jpg"
   },
   {
     "id": "NAV125",
     "barcode": "890100000125",
-    "name": "Cadbury Dairy Milk Silk Chocolate Bar 150g",
-    "brand": "CADBURY",
+    "name": "Baking Soda Premium Quality 100g Pack A",
+    "brand": "Baking",
     "category": "Grocery & Staples",
     "cost": 146,
     "mrp": 195,
@@ -1747,13 +2119,16 @@
     "price": 172,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_13/125.png"
+    "image": "/products/NAV125.jpg",
+    "sku": "NAV125",
+    "title": "Baking Soda Premium Quality 100g Pack A",
+    "imageUrl": "/products/NAV125.jpg"
   },
   {
     "id": "NAV126",
     "barcode": "890100000126",
-    "name": "Surf Excel Easy Wash Detergent Powder Bag 5kg",
-    "brand": "SURF EXCEL",
+    "name": "Baking Soda Premium Quality 100g Pack B",
+    "brand": "Baking",
     "category": "Grocery & Staples",
     "cost": 510,
     "mrp": 680,
@@ -1761,13 +2136,16 @@
     "price": 598,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_13/126.png"
+    "image": "/products/NAV126.jpg",
+    "sku": "NAV126",
+    "title": "Baking Soda Premium Quality 100g Pack B",
+    "imageUrl": "/products/NAV126.jpg"
   },
   {
     "id": "NAV127",
     "barcode": "890100000127",
-    "name": "Surf Excel Matic Front Load Liquid Detergent 2L",
-    "brand": "SURF EXCEL",
+    "name": "Chana Dal Bengal Gram Split 1kg",
+    "brand": "Chana",
     "category": "Grocery & Staples",
     "cost": 371,
     "mrp": 495,
@@ -1775,13 +2153,16 @@
     "price": 436,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_13/127.png"
+    "image": "/products/NAV127.jpg",
+    "sku": "NAV127",
+    "title": "Chana Dal Bengal Gram Split 1kg",
+    "imageUrl": "/products/NAV127.jpg"
   },
   {
     "id": "NAV128",
     "barcode": "890100000128",
-    "name": "Ariel Complete Floral Fragrance Detergent Powder 4kg",
-    "brand": "ARIEL",
+    "name": "Annapurna Chana Dal Split Gram Lentils 1kg",
+    "brand": "Annapurna",
     "category": "Grocery & Staples",
     "cost": 480,
     "mrp": 640,
@@ -1789,13 +2170,16 @@
     "price": 563,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_13/128.png"
+    "image": "/products/NAV128.jpg",
+    "sku": "NAV128",
+    "title": "Annapurna Chana Dal Split Gram Lentils 1kg",
+    "imageUrl": "/products/NAV128.jpg"
   },
   {
     "id": "NAV129",
     "barcode": "890100000129",
-    "name": "Tide Plus Extra Power Lemon Mint Detergent 5kg",
-    "brand": "TIDE",
+    "name": "Catch Turmeric Powder Haldi Powder 200g Pack A",
+    "brand": "Catch",
     "category": "Grocery & Staples",
     "cost": 435,
     "mrp": 580,
@@ -1803,13 +2187,16 @@
     "price": 510,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_13/129.png"
+    "image": "/products/NAV129.jpg",
+    "sku": "NAV129",
+    "title": "Catch Turmeric Powder Haldi Powder 200g Pack A",
+    "imageUrl": "/products/NAV129.jpg"
   },
   {
     "id": "NAV130",
     "barcode": "890100000130",
-    "name": "Rin Advanced Fresh Crisp Detergent Powder 4kg",
-    "brand": "RIN",
+    "name": "Catch Turmeric Powder Haldi Powder 200g Pack B",
+    "brand": "Catch",
     "category": "Grocery & Staples",
     "cost": 292,
     "mrp": 390,
@@ -1817,13 +2204,16 @@
     "price": 343,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_13/130.png"
+    "image": "/products/NAV130.jpg",
+    "sku": "NAV130",
+    "title": "Catch Turmeric Powder Haldi Powder 200g Pack B",
+    "imageUrl": "/products/NAV130.jpg"
   },
   {
     "id": "NAV131",
     "barcode": "890100000131",
-    "name": "Comfort After Wash Fabric Softener Lily Blue 2L",
-    "brand": "COMFORT",
+    "name": "Catch Turmeric Powder Haldi Powder 200g Pack C",
+    "brand": "Catch",
     "category": "Grocery & Staples",
     "cost": 330,
     "mrp": 440,
@@ -1831,13 +2221,16 @@
     "price": 387,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_14/131.png"
+    "image": "/products/NAV131.jpg",
+    "sku": "NAV131",
+    "title": "Catch Turmeric Powder Haldi Powder 200g Pack C",
+    "imageUrl": "/products/NAV131.jpg"
   },
   {
     "id": "NAV132",
     "barcode": "890100000132",
-    "name": "Vim Dishwash Liquid Gel Lemon Concentrate 2L",
-    "brand": "VIM",
+    "name": "Catch Red Chilli Powder Lal Mirch 200g Pack A",
+    "brand": "Catch",
     "category": "Grocery & Staples",
     "cost": 299,
     "mrp": 399,
@@ -1845,13 +2238,16 @@
     "price": 351,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_14/132.png"
+    "image": "/products/NAV132.jpg",
+    "sku": "NAV132",
+    "title": "Catch Red Chilli Powder Lal Mirch 200g Pack A",
+    "imageUrl": "/products/NAV132.jpg"
   },
   {
     "id": "NAV133",
     "barcode": "890100000133",
-    "name": "Vim Dishwash Lemon Fragrance Bar Tub 500g",
-    "brand": "VIM",
+    "name": "Catch Finest Quality Red Chilli Powder 200g Pack B",
+    "brand": "Catch",
     "category": "Grocery & Staples",
     "cost": 30,
     "mrp": 40,
@@ -1859,13 +2255,16 @@
     "price": 35,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_14/133.png"
+    "image": "/products/NAV133.jpg",
+    "sku": "NAV133",
+    "title": "Catch Finest Quality Red Chilli Powder 200g Pack B",
+    "imageUrl": "/products/NAV133.jpg"
   },
   {
     "id": "NAV134",
     "barcode": "890100000134",
-    "name": "Exo Round Anti Bacterial Touch Dishwash Bar 500g",
-    "brand": "EXO",
+    "name": "Catch Finest Quality Red Chilli Powder 200g Pack C",
+    "brand": "Catch",
     "category": "Grocery & Staples",
     "cost": 32,
     "mrp": 42,
@@ -1873,13 +2272,16 @@
     "price": 37,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_14/134.png"
+    "image": "/products/NAV134.jpg",
+    "sku": "NAV134",
+    "title": "Catch Finest Quality Red Chilli Powder 200g Pack C",
+    "imageUrl": "/products/NAV134.jpg"
   },
   {
     "id": "NAV135",
     "barcode": "890100000135",
-    "name": "Pril Kraft Concentrated Dishwash Liquid Green Lime 750ml",
-    "brand": "PRIL",
+    "name": "Catch Coriander Powder Dhaniya 200g Pack A",
+    "brand": "Catch",
     "category": "Grocery & Staples",
     "cost": 142,
     "mrp": 190,
@@ -1887,13 +2289,16 @@
     "price": 167,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_14/135.png"
+    "image": "/products/NAV135.jpg",
+    "sku": "NAV135",
+    "title": "Catch Coriander Powder Dhaniya 200g Pack A",
+    "imageUrl": "/products/NAV135.jpg"
   },
   {
     "id": "NAV136",
     "barcode": "890100000136",
-    "name": "Harpic Power Plus Disinfectant Toilet Cleaner Original 1L",
-    "brand": "HARPIC",
+    "name": "Catch Coriander Powder Ground Spices Jar 200g Pack B",
+    "brand": "Catch",
     "category": "Grocery & Staples",
     "cost": 165,
     "mrp": 220,
@@ -1901,13 +2306,16 @@
     "price": 194,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_14/136.png"
+    "image": "/products/NAV136.jpg",
+    "sku": "NAV136",
+    "title": "Catch Coriander Powder Ground Spices Jar 200g Pack B",
+    "imageUrl": "/products/NAV136.jpg"
   },
   {
     "id": "NAV137",
     "barcode": "890100000137",
-    "name": "Lizol Disinfectant Surface Cleaner Citrus Floral 2L",
-    "brand": "LIZOL",
+    "name": "Catch Coriander Powder Ground Spices Jar 200g Pack C",
+    "brand": "Catch",
     "category": "Grocery & Staples",
     "cost": 296,
     "mrp": 395,
@@ -1915,13 +2323,16 @@
     "price": 348,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_14/137.png"
+    "image": "/products/NAV137.jpg",
+    "sku": "NAV137",
+    "title": "Catch Coriander Powder Ground Spices Jar 200g Pack C",
+    "imageUrl": "/products/NAV137.jpg"
   },
   {
     "id": "NAV138",
     "barcode": "890100000138",
-    "name": "Colin Glass and Appliance Shine Surface Cleaner 1L",
-    "brand": "COLIN",
+    "name": "Catch Expert Garam Masala 100g Pack A",
+    "brand": "Catch",
     "category": "Grocery & Staples",
     "cost": 139,
     "mrp": 185,
@@ -1929,13 +2340,16 @@
     "price": 163,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_14/138.png"
+    "image": "/products/NAV138.jpg",
+    "sku": "NAV138",
+    "title": "Catch Expert Garam Masala 100g Pack A",
+    "imageUrl": "/products/NAV138.jpg"
   },
   {
     "id": "NAV139",
     "barcode": "890100000139",
-    "name": "Dettol Original Anti Bacterial Liquid Antiseptic 1L",
-    "brand": "DETTOL",
+    "name": "Catch Garam Masala Authentic Indian Spice Blend 100g Pack B",
+    "brand": "Catch",
     "category": "Grocery & Staples",
     "cost": 299,
     "mrp": 399,
@@ -1943,13 +2357,16 @@
     "price": 351,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_14/139.png"
+    "image": "/products/NAV139.jpg",
+    "sku": "NAV139",
+    "title": "Catch Garam Masala Authentic Indian Spice Blend 100g Pack B",
+    "imageUrl": "/products/NAV139.jpg"
   },
   {
     "id": "NAV140",
     "barcode": "890100000140",
-    "name": "Savlon Moisture Shield Anti Bacterial Liquid 1L",
-    "brand": "SAVLON",
+    "name": "Catch Garam Masala Authentic Indian Spice Blend 100g Pack C",
+    "brand": "Catch",
     "category": "Grocery & Staples",
     "cost": 255,
     "mrp": 340,
@@ -1957,13 +2374,16 @@
     "price": 299,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_14/140.png"
+    "image": "/products/NAV140.jpg",
+    "sku": "NAV140",
+    "title": "Catch Garam Masala Authentic Indian Spice Blend 100g Pack C",
+    "imageUrl": "/products/NAV140.jpg"
   },
   {
     "id": "NAV141",
     "barcode": "890100000141",
-    "name": "Dettol Original Germ Protection Bathing Soap 4x125g",
-    "brand": "DETTOL",
+    "name": "Colgate Strong Teeth Toothpaste 500g Pack A",
+    "brand": "Colgate",
     "category": "Grocery & Staples",
     "cost": 180,
     "mrp": 240,
@@ -1971,13 +2391,16 @@
     "price": 211,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_15/141.png"
+    "image": "/products/NAV141.jpg",
+    "sku": "NAV141",
+    "title": "Colgate Strong Teeth Toothpaste 500g Pack A",
+    "imageUrl": "/products/NAV141.jpg"
   },
   {
     "id": "NAV142",
     "barcode": "890100000142",
-    "name": "Lifebuoy Total 10 Infection Defense Bathing Soap 4x125g",
-    "brand": "LIFEBUOY",
+    "name": "Colgate Strong Teeth Fluoride + Calcium Boost 500g Pack B",
+    "brand": "Colgate",
     "category": "Grocery & Staples",
     "cost": 142,
     "mrp": 190,
@@ -1985,13 +2408,16 @@
     "price": 167,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_15/142.png"
+    "image": "/products/NAV142.jpg",
+    "sku": "NAV142",
+    "title": "Colgate Strong Teeth Fluoride + Calcium Boost 500g Pack B",
+    "imageUrl": "/products/NAV142.jpg"
   },
   {
     "id": "NAV143",
     "barcode": "890100000143",
-    "name": "Dove Cream Beauty Bathing Bar Moisturizing Soap 3x125g",
-    "brand": "DOVE",
+    "name": "Colgate Strong Teeth Fluoride + Calcium Boost 500g Pack C",
+    "brand": "Colgate",
     "category": "Grocery & Staples",
     "cost": 218,
     "mrp": 290,
@@ -1999,13 +2425,16 @@
     "price": 255,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_15/143.png"
+    "image": "/products/NAV143.jpg",
+    "sku": "NAV143",
+    "title": "Colgate Strong Teeth Fluoride + Calcium Boost 500g Pack C",
+    "imageUrl": "/products/NAV143.jpg"
   },
   {
     "id": "NAV144",
     "barcode": "890100000144",
-    "name": "Pears Pure and Gentle Glycerine Bathing Soap 3x125g",
-    "brand": "PEARS",
+    "name": "Comfort Fabric Conditioner 860ml Pack A",
+    "brand": "Comfort",
     "category": "Grocery & Staples",
     "cost": 214,
     "mrp": 285,
@@ -2013,13 +2442,16 @@
     "price": 251,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_15/144.png"
+    "image": "/products/NAV144.jpg",
+    "sku": "NAV144",
+    "title": "Comfort Fabric Conditioner 860ml Pack A",
+    "imageUrl": "/products/NAV144.jpg"
   },
   {
     "id": "NAV145",
     "barcode": "890100000145",
-    "name": "Lux Velvet Glow Jasmine Sweet Almond Oil Soap 4x125g",
-    "brand": "LUX",
+    "name": "Comfort After Wash Fabric Conditioner 860ml Pack B",
+    "brand": "Comfort",
     "category": "Grocery & Staples",
     "cost": 158,
     "mrp": 210,
@@ -2027,13 +2459,16 @@
     "price": 185,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_15/145.png"
+    "image": "/products/NAV145.jpg",
+    "sku": "NAV145",
+    "title": "Comfort After Wash Fabric Conditioner 860ml Pack B",
+    "imageUrl": "/products/NAV145.jpg"
   },
   {
     "id": "NAV146",
     "barcode": "890100000146",
-    "name": "Santoor Sandalwood & Turmeric Nourishing Soap 4x125g",
-    "brand": "SANTOOR",
+    "name": "Cadbury Dairy Milk Silk 150g Pack A",
+    "brand": "Cadbury",
     "category": "Grocery & Staples",
     "cost": 146,
     "mrp": 195,
@@ -2041,13 +2476,16 @@
     "price": 172,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_15/146.png"
+    "image": "/products/NAV146.jpg",
+    "sku": "NAV146",
+    "title": "Cadbury Dairy Milk Silk 150g Pack A",
+    "imageUrl": "/products/NAV146.jpg"
   },
   {
     "id": "NAV147",
     "barcode": "890100000147",
-    "name": "Medimix 18 Herbs Ayurvedic Herbal Protection Soap 4x125g",
-    "brand": "MEDIMIX",
+    "name": "Cadbury Dairy Milk Silk 150g Pack B",
+    "brand": "Cadbury",
     "category": "Grocery & Staples",
     "cost": 165,
     "mrp": 220,
@@ -2055,13 +2493,16 @@
     "price": 194,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_15/147.png"
+    "image": "/products/NAV147.jpg",
+    "sku": "NAV147",
+    "title": "Cadbury Dairy Milk Silk 150g Pack B",
+    "imageUrl": "/products/NAV147.jpg"
   },
   {
     "id": "NAV148",
     "barcode": "890100000148",
-    "name": "Godrej No 1 Grade 1 Lime Aloe Vera Soap 4x125g",
-    "brand": "GODREJ",
+    "name": "Coca-Cola Bottle 1 Litre Pack A",
+    "brand": "Coca-Cola",
     "category": "Grocery & Staples",
     "cost": 112,
     "mrp": 150,
@@ -2069,13 +2510,16 @@
     "price": 132,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_15/148.png"
+    "image": "/products/NAV148.jpg",
+    "sku": "NAV148",
+    "title": "Coca-Cola Bottle 1 Litre Pack A",
+    "imageUrl": "/products/NAV148.jpg"
   },
   {
     "id": "NAV149",
     "barcode": "890100000149",
-    "name": "Colgate Strong Teeth Calcium Dental Cream Toothpaste 500g",
-    "brand": "COLGATE",
+    "name": "Coca-Cola Original Taste Bottle 1 Litre Pack B",
+    "brand": "Coca-Cola",
     "category": "Grocery & Staples",
     "cost": 195,
     "mrp": 260,
@@ -2083,13 +2527,16 @@
     "price": 229,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_15/149.png"
+    "image": "/products/NAV149.jpg",
+    "sku": "NAV149",
+    "title": "Coca-Cola Original Taste Bottle 1 Litre Pack B",
+    "imageUrl": "/products/NAV149.jpg"
   },
   {
     "id": "NAV150",
     "barcode": "890100000150",
-    "name": "Colgate MaxFresh Peppermint Cooling Crystals Toothpaste 300g",
-    "brand": "COLGATE",
+    "name": "Dettol Antiseptic Liquid 550ml Pack A",
+    "brand": "Dettol",
     "category": "Grocery & Staples",
     "cost": 158,
     "mrp": 210,
@@ -2097,13 +2544,16 @@
     "price": 185,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_15/150.png"
+    "image": "/products/NAV150.jpg",
+    "sku": "NAV150",
+    "title": "Dettol Antiseptic Liquid 550ml Pack A",
+    "imageUrl": "/products/NAV150.jpg"
   },
   {
     "id": "NAV151",
     "barcode": "890100000151",
-    "name": "Close Up Everfresh Red Hot Gel Toothpaste 300g",
-    "brand": "CLOSE UP",
+    "name": "Dettol Antiseptic Liquid 550ml Pack B",
+    "brand": "Dettol",
     "category": "Grocery & Staples",
     "cost": 146,
     "mrp": 195,
@@ -2111,13 +2561,16 @@
     "price": 172,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_16/151.png"
+    "image": "/products/NAV151.jpg",
+    "sku": "NAV151",
+    "title": "Dettol Antiseptic Liquid 550ml Pack B",
+    "imageUrl": "/products/NAV151.jpg"
   },
   {
     "id": "NAV152",
     "barcode": "890100000152",
-    "name": "Pepsodent Germi Check 12 Hour Cavity Protection 300g",
-    "brand": "PEPSODENT",
+    "name": "Dettol Original Soap 125g",
+    "brand": "Dettol",
     "category": "Grocery & Staples",
     "cost": 131,
     "mrp": 175,
@@ -2125,13 +2578,16 @@
     "price": 154,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_16/152.png"
+    "image": "/products/NAV152.jpg",
+    "sku": "NAV152",
+    "title": "Dettol Original Soap 125g",
+    "imageUrl": "/products/NAV152.jpg"
   },
   {
     "id": "NAV153",
     "barcode": "890100000153",
-    "name": "Sensodyne Daily Fresh Sensitive Teeth Toothpaste 150g",
-    "brand": "SENSODYNE",
+    "name": "Dettol Original Germ Protection Soap Multipack 3x125g",
+    "brand": "Dettol",
     "category": "Grocery & Staples",
     "cost": 180,
     "mrp": 240,
@@ -2139,13 +2595,16 @@
     "price": 211,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_16/153.png"
+    "image": "/products/NAV153.jpg",
+    "sku": "NAV153",
+    "title": "Dettol Original Germ Protection Soap Multipack 3x125g",
+    "imageUrl": "/products/NAV153.jpg"
   },
   {
     "id": "NAV154",
     "barcode": "890100000154",
-    "name": "Dabur Red Ayurvedic Herbs Toothpaste 300g",
-    "brand": "DABUR",
+    "name": "Dabur Red Ayurvedic Toothpaste 300g Pack A",
+    "brand": "Dabur",
     "category": "Grocery & Staples",
     "cost": 135,
     "mrp": 180,
@@ -2153,13 +2612,16 @@
     "price": 158,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_16/154.png"
+    "image": "/products/NAV154.jpg",
+    "sku": "NAV154",
+    "title": "Dabur Red Ayurvedic Toothpaste 300g Pack A",
+    "imageUrl": "/products/NAV154.jpg"
   },
   {
     "id": "NAV155",
     "barcode": "890100000155",
-    "name": "Head & Shoulders Anti Dandruff Smooth Silky Shampoo 650ml",
-    "brand": "HEAD SHOULDERS",
+    "name": "Dabur Red Ayurvedic Toothpaste Gel 300g Pack B",
+    "brand": "Dabur",
     "category": "Grocery & Staples",
     "cost": 449,
     "mrp": 599,
@@ -2167,13 +2629,16 @@
     "price": 527,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_16/155.png"
+    "image": "/products/NAV155.jpg",
+    "sku": "NAV155",
+    "title": "Dabur Red Ayurvedic Toothpaste Gel 300g Pack B",
+    "imageUrl": "/products/NAV155.jpg"
   },
   {
     "id": "NAV156",
     "barcode": "890100000156",
-    "name": "Clinic Plus Strong & Long Health Shampoo Milk Protein 650ml",
-    "brand": "CLINIC PLUS",
+    "name": "Dabur Pure Honey 500g Pack A",
+    "brand": "Dabur",
     "category": "Grocery & Staples",
     "cost": 299,
     "mrp": 399,
@@ -2181,13 +2646,16 @@
     "price": 351,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_16/156.png"
+    "image": "/products/NAV156.jpg",
+    "sku": "NAV156",
+    "title": "Dabur Pure Honey 500g Pack A",
+    "imageUrl": "/products/NAV156.jpg"
   },
   {
     "id": "NAV157",
     "barcode": "890100000157",
-    "name": "Sunsilk Black Shine Amla Pearl Extract Shampoo 650ml",
-    "brand": "SUNSILK",
+    "name": "Dabur Honey Purest & Finest 500g Pack B",
+    "brand": "Dabur",
     "category": "Grocery & Staples",
     "cost": 330,
     "mrp": 440,
@@ -2195,13 +2663,16 @@
     "price": 387,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_16/157.png"
+    "image": "/products/NAV157.jpg",
+    "sku": "NAV157",
+    "title": "Dabur Honey Purest & Finest 500g Pack B",
+    "imageUrl": "/products/NAV157.jpg"
   },
   {
     "id": "NAV158",
     "barcode": "890100000158",
-    "name": "Pantene Pro V Advanced Hairfall Control Shampoo 650ml",
-    "brand": "PANTENE",
+    "name": "Dabur Chyawanprash Ayurvedic Health Supplement 1kg Pack A",
+    "brand": "Dabur",
     "category": "Grocery & Staples",
     "cost": 420,
     "mrp": 560,
@@ -2209,13 +2680,16 @@
     "price": 493,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_16/158.png"
+    "image": "/products/NAV158.jpg",
+    "sku": "NAV158",
+    "title": "Dabur Chyawanprash Ayurvedic Health Supplement 1kg Pack A",
+    "imageUrl": "/products/NAV158.jpg"
   },
   {
     "id": "NAV159",
     "barcode": "890100000159",
-    "name": "Dove Intense Repair Keratin Actives Shampoo 650ml",
-    "brand": "DOVE",
+    "name": "Dabur Chyawanprash Immunity Booster 1kg Pack B",
+    "brand": "Dabur",
     "category": "Grocery & Staples",
     "cost": 435,
     "mrp": 580,
@@ -2223,13 +2697,16 @@
     "price": 510,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_16/159.png"
+    "image": "/products/NAV159.jpg",
+    "sku": "NAV159",
+    "title": "Dabur Chyawanprash Immunity Booster 1kg Pack B",
+    "imageUrl": "/products/NAV159.jpg"
   },
   {
     "id": "NAV160",
     "barcode": "890100000160",
-    "name": "Parachute 100 Percent Pure Coconut Edible Hair Oil 500ml",
-    "brand": "PARACHUTE",
+    "name": "Dabur Amla Hair Oil 275ml Pack A",
+    "brand": "Dabur",
     "category": "Grocery & Staples",
     "cost": 158,
     "mrp": 210,
@@ -2237,13 +2714,16 @@
     "price": 185,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_16/160.png"
+    "image": "/products/NAV160.jpg",
+    "sku": "NAV160",
+    "title": "Dabur Amla Hair Oil 275ml Pack A",
+    "imageUrl": "/products/NAV160.jpg"
   },
   {
     "id": "NAV161",
     "barcode": "890100000161",
-    "name": "Bajaj Almond Drops Non Sticky Vitamin E Hair Oil 500ml",
-    "brand": "BAJAJ",
+    "name": "Dabur Amla Hair Oil Strengthens & Nourishes 275ml Pack B",
+    "brand": "Dabur",
     "category": "Grocery & Staples",
     "cost": 255,
     "mrp": 340,
@@ -2251,13 +2731,16 @@
     "price": 299,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_17/161.png"
+    "image": "/products/NAV161.jpg",
+    "sku": "NAV161",
+    "title": "Dabur Amla Hair Oil Strengthens & Nourishes 275ml Pack B",
+    "imageUrl": "/products/NAV161.jpg"
   },
   {
     "id": "NAV162",
     "barcode": "890100000162",
-    "name": "Dabur Amla Pure Vitamin C Nourishing Hair Oil 450ml",
-    "brand": "DABUR",
+    "name": "Disano Extra Virgin Olive Oil Bottle 1 Litre Pack A",
+    "brand": "Disano",
     "category": "Grocery & Staples",
     "cost": 172,
     "mrp": 230,
@@ -2265,13 +2748,16 @@
     "price": 202,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_17/162.png"
+    "image": "/products/NAV162.jpg",
+    "sku": "NAV162",
+    "title": "Disano Extra Virgin Olive Oil Bottle 1 Litre Pack A",
+    "imageUrl": "/products/NAV162.jpg"
   },
   {
     "id": "NAV163",
     "barcode": "890100000163",
-    "name": "Nivea Soft Light Moisturizing Refreshing Cream Tub 300ml",
-    "brand": "NIVEA",
+    "name": "Disano Extra Virgin Olive Oil 1L Pack B",
+    "brand": "Disano",
     "category": "Grocery & Staples",
     "cost": 299,
     "mrp": 399,
@@ -2279,13 +2765,16 @@
     "price": 351,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_17/163.png"
+    "image": "/products/NAV163.jpg",
+    "sku": "NAV163",
+    "title": "Disano Extra Virgin Olive Oil 1L Pack B",
+    "imageUrl": "/products/NAV163.jpg"
   },
   {
     "id": "NAV164",
     "barcode": "890100000164",
-    "name": "Vaseline Intensive Care Deep Moisture Body Lotion 400ml",
-    "brand": "VASELINE",
+    "name": "Sunfeast Dark Fantasy Choco Filled 300g Pack A",
+    "brand": "Sunfeast",
     "category": "Grocery & Staples",
     "cost": 285,
     "mrp": 380,
@@ -2293,13 +2782,16 @@
     "price": 334,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_17/164.png"
+    "image": "/products/NAV164.jpg",
+    "sku": "NAV164",
+    "title": "Sunfeast Dark Fantasy Choco Filled 300g Pack A",
+    "imageUrl": "/products/NAV164.jpg"
   },
   {
     "id": "NAV165",
     "barcode": "890100000165",
-    "name": "Ponds Cold Cream Moisturizing Soft Glowing Skin 200g",
-    "brand": "PONDS",
+    "name": "Sunfeast Dark Fantasy Choco Fills 300g Pack B",
+    "brand": "Sunfeast",
     "category": "Grocery & Staples",
     "cost": 180,
     "mrp": 240,
@@ -2307,13 +2799,16 @@
     "price": 211,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_17/165.png"
+    "image": "/products/NAV165.jpg",
+    "sku": "NAV165",
+    "title": "Sunfeast Dark Fantasy Choco Fills 300g Pack B",
+    "imageUrl": "/products/NAV165.jpg"
   },
   {
     "id": "NAV166",
     "barcode": "890100000166",
-    "name": "Aashirvaad Superior MP Sharbati Atta 10kg Value Pack",
-    "brand": "AASHIRVAAD",
+    "name": "Dove Intense Repair Shampoo 650ml Pack A",
+    "brand": "Dove",
     "category": "Atta & Dals",
     "cost": 702,
     "mrp": 936,
@@ -2321,13 +2816,16 @@
     "price": 824,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_17/166.png"
+    "image": "/products/NAV166.jpg",
+    "sku": "NAV166",
+    "title": "Dove Intense Repair Shampoo 650ml Pack A",
+    "imageUrl": "/products/NAV166.jpg"
   },
   {
     "id": "NAV167",
     "barcode": "890100000167",
-    "name": "Fortune Chakki Fresh Atta 10kg Value Pack",
-    "brand": "FORTUNE",
+    "name": "Dove Intense Repair Shampoo With Keratin Repair Actives 650ml Pack B",
+    "brand": "Dove",
     "category": "Atta & Dals",
     "cost": 621,
     "mrp": 828,
@@ -2335,13 +2833,16 @@
     "price": 729,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_17/167.png"
+    "image": "/products/NAV167.jpg",
+    "sku": "NAV167",
+    "title": "Dove Intense Repair Shampoo With Keratin Repair Actives 650ml Pack B",
+    "imageUrl": "/products/NAV167.jpg"
   },
   {
     "id": "NAV168",
     "barcode": "890100000168",
-    "name": "Patanjali Whole Wheat Chakki Atta 10kg Value Pack",
-    "brand": "PATANJALI",
+    "name": "Domex Toilet Cleaner 1 Litre Pack A",
+    "brand": "Domex",
     "category": "Atta & Dals",
     "cost": 594,
     "mrp": 792,
@@ -2349,13 +2850,16 @@
     "price": 697,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_17/168.png"
+    "image": "/products/NAV168.jpg",
+    "sku": "NAV168",
+    "title": "Domex Toilet Cleaner 1 Litre Pack A",
+    "imageUrl": "/products/NAV168.jpg"
   },
   {
     "id": "NAV169",
     "barcode": "890100000169",
-    "name": "Nature Fresh Sampoorna Chakki Atta 10kg Value Pack",
-    "brand": "NATURE FRESH",
+    "name": "Domex Toilet Cleaner Hygienic Clean & Shine 1L Pack B",
+    "brand": "Domex",
     "category": "Atta & Dals",
     "cost": 580,
     "mrp": 774,
@@ -2363,13 +2867,16 @@
     "price": 681,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_17/169.png"
+    "image": "/products/NAV169.jpg",
+    "sku": "NAV169",
+    "title": "Domex Toilet Cleaner Hygienic Clean & Shine 1L Pack B",
+    "imageUrl": "/products/NAV169.jpg"
   },
   {
     "id": "NAV170",
     "barcode": "890100000170",
-    "name": "India Gate Feast Rozzana Basmati Rice 5kg Value Pack",
-    "brand": "INDIA GATE",
+    "name": "Everyuth Naturals Purifying Neem Face Wash 150g Pack A",
+    "brand": "Everyuth",
     "category": "Atta & Dals",
     "cost": 668,
     "mrp": 891,
@@ -2377,13 +2884,16 @@
     "price": 784,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_17/170.png"
+    "image": "/products/NAV170.jpg",
+    "sku": "NAV170",
+    "title": "Everyuth Naturals Purifying Neem Face Wash 150g Pack A",
+    "imageUrl": "/products/NAV170.jpg"
   },
   {
     "id": "NAV171",
     "barcode": "890100000171",
-    "name": "Fortune Everyday Full Grain Basmati Rice 5kg Value Pack",
-    "brand": "FORTUNE",
+    "name": "Everyuth Naturals Purifying Neem Face Wash Soap-Free 150g Pack B",
+    "brand": "Everyuth",
     "category": "Atta & Dals",
     "cost": 608,
     "mrp": 810,
@@ -2391,13 +2901,16 @@
     "price": 713,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_18/171.png"
+    "image": "/products/NAV171.jpg",
+    "sku": "NAV171",
+    "title": "Everyuth Naturals Purifying Neem Face Wash Soap-Free 150g Pack B",
+    "imageUrl": "/products/NAV171.jpg"
   },
   {
     "id": "NAV172",
     "barcode": "890100000172",
-    "name": "Daawat Super Long Grain Basmati Rice 5kg Value Pack",
-    "brand": "DAAWAT",
+    "name": "Eno Fruit Salt Antacid 100g Pack A",
+    "brand": "Eno",
     "category": "Atta & Dals",
     "cost": 837,
     "mrp": 1116,
@@ -2405,13 +2918,16 @@
     "price": 982,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_18/172.png"
+    "image": "/products/NAV172.jpg",
+    "sku": "NAV172",
+    "title": "Eno Fruit Salt Antacid 100g Pack A",
+    "imageUrl": "/products/NAV172.jpg"
   },
   {
     "id": "NAV173",
     "barcode": "890100000173",
-    "name": "Daawat Rozana Gold Basmati Rice 5kg Value Pack",
-    "brand": "DAAWAT",
+    "name": "Eno Fruit Salt Antacid Powder Regular 100g Pack B",
+    "brand": "Eno",
     "category": "Atta & Dals",
     "cost": 554,
     "mrp": 738,
@@ -2419,13 +2935,16 @@
     "price": 649,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_18/173.png"
+    "image": "/products/NAV173.jpg",
+    "sku": "NAV173",
+    "title": "Eno Fruit Salt Antacid Powder Regular 100g Pack B",
+    "imageUrl": "/products/NAV173.jpg"
   },
   {
     "id": "NAV174",
     "barcode": "890100000174",
-    "name": "Rajdhani Pure Gram Flour Besan 1kg Value Pack",
-    "brand": "RAJDHANI",
+    "name": "Everest Garam Masala Blended Spices 100g Pack A",
+    "brand": "Everest",
     "category": "Atta & Dals",
     "cost": 169,
     "mrp": 225,
@@ -2433,13 +2952,16 @@
     "price": 198,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_18/174.png"
+    "image": "/products/NAV174.jpg",
+    "sku": "NAV174",
+    "title": "Everest Garam Masala Blended Spices 100g Pack A",
+    "imageUrl": "/products/NAV174.jpg"
   },
   {
     "id": "NAV175",
     "barcode": "890100000175",
-    "name": "Fortune Fine Besan 1kg Value Pack",
-    "brand": "FORTUNE",
+    "name": "Everest Garam Masala 100g Pack B",
+    "brand": "Everest",
     "category": "Atta & Dals",
     "cost": 176,
     "mrp": 234,
@@ -2447,13 +2969,16 @@
     "price": 206,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_18/175.png"
+    "image": "/products/NAV175.jpg",
+    "sku": "NAV175",
+    "title": "Everest Garam Masala 100g Pack B",
+    "imageUrl": "/products/NAV175.jpg"
   },
   {
     "id": "NAV176",
     "barcode": "890100000176",
-    "name": "Rajdhani Sooji Fine Semolina 500g Value Pack",
-    "brand": "RAJDHANI",
+    "name": "Everest Chhole Masala 100g Pack A",
+    "brand": "Everest",
     "category": "Atta & Dals",
     "cost": 61,
     "mrp": 81,
@@ -2461,13 +2986,16 @@
     "price": 71,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_18/176.png"
+    "image": "/products/NAV176.jpg",
+    "sku": "NAV176",
+    "title": "Everest Chhole Masala 100g Pack A",
+    "imageUrl": "/products/NAV176.jpg"
   },
   {
     "id": "NAV177",
     "barcode": "890100000177",
-    "name": "Rajdhani Fresh Maida 500g Value Pack",
-    "brand": "RAJDHANI",
+    "name": "Everest Chhole Masala Blended Spices 100g Pack B",
+    "brand": "Everest",
     "category": "Atta & Dals",
     "cost": 54,
     "mrp": 72,
@@ -2475,13 +3003,16 @@
     "price": 63,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_18/177.png"
+    "image": "/products/NAV177.jpg",
+    "sku": "NAV177",
+    "title": "Everest Chhole Masala Blended Spices 100g Pack B",
+    "imageUrl": "/products/NAV177.jpg"
   },
   {
     "id": "NAV178",
     "barcode": "890100000178",
-    "name": "Patanjali Roasted Daliya Porridge 500g Value Pack",
-    "brand": "PATANJALI",
+    "name": "Everest Kitchen King Masala 100g Pack A",
+    "brand": "Everest",
     "category": "Atta & Dals",
     "cost": 64,
     "mrp": 86,
@@ -2489,13 +3020,16 @@
     "price": 76,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_18/178.png"
+    "image": "/products/NAV178.jpg",
+    "sku": "NAV178",
+    "title": "Everest Kitchen King Masala 100g Pack A",
+    "imageUrl": "/products/NAV178.jpg"
   },
   {
     "id": "NAV179",
     "barcode": "890100000179",
-    "name": "Quaker Whole Grain Rolled White Oats 1kg Value Pack",
-    "brand": "QUAKER",
+    "name": "Everest Meat Masala 100g Pack A",
+    "brand": "Everest",
     "category": "Atta & Dals",
     "cost": 268,
     "mrp": 358,
@@ -2503,13 +3037,16 @@
     "price": 315,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_18/179.png"
+    "image": "/products/NAV179.jpg",
+    "sku": "NAV179",
+    "title": "Everest Meat Masala 100g Pack A",
+    "imageUrl": "/products/NAV179.jpg"
   },
   {
     "id": "NAV180",
     "barcode": "890100000180",
-    "name": "Kelloggs Corn Flakes Real Almond Honey 1kg Value Pack",
-    "brand": "KELLOGGS",
+    "name": "Everest Kitchen King Masala The Ultimate Blend 100g Pack B",
+    "brand": "Everest",
     "category": "Atta & Dals",
     "cost": 520,
     "mrp": 693,
@@ -2517,13 +3054,16 @@
     "price": 610,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_18/180.png"
+    "image": "/products/NAV180.jpg",
+    "sku": "NAV180",
+    "title": "Everest Kitchen King Masala The Ultimate Blend 100g Pack B",
+    "imageUrl": "/products/NAV180.jpg"
   },
   {
     "id": "NAV181",
     "barcode": "890100000181",
-    "name": "Tata Sampann Unpolished Toor Arhar Dal 1kg Value Pack",
-    "brand": "TATA",
+    "name": "Everest Meat Masala Spice Mix 100g Pack B",
+    "brand": "Everest",
     "category": "Atta & Dals",
     "cost": 250,
     "mrp": 333,
@@ -2531,13 +3071,16 @@
     "price": 293,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_19/181.png"
+    "image": "/products/NAV181.jpg",
+    "sku": "NAV181",
+    "title": "Everest Meat Masala Spice Mix 100g Pack B",
+    "imageUrl": "/products/NAV181.jpg"
   },
   {
     "id": "NAV182",
     "barcode": "890100000182",
-    "name": "Tata Sampann Premium Chana Dal 1kg Value Pack",
-    "brand": "TATA",
+    "name": "Everest Kasuri Methi Dried Fenugreek Leaves 50g Pack A",
+    "brand": "Everest",
     "category": "Atta & Dals",
     "cost": 189,
     "mrp": 252,
@@ -2545,13 +3088,16 @@
     "price": 222,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_19/182.png"
+    "image": "/products/NAV182.jpg",
+    "sku": "NAV182",
+    "title": "Everest Kasuri Methi Dried Fenugreek Leaves 50g Pack A",
+    "imageUrl": "/products/NAV182.jpg"
   },
   {
     "id": "NAV183",
     "barcode": "890100000183",
-    "name": "Tata Sampann High Protein Moong Dal Dhuli 1kg Value Pack",
-    "brand": "TATA",
+    "name": "Everest Kasuri Methi Dried Fenugreek Leaves 50g Pack B",
+    "brand": "Everest",
     "category": "Atta & Dals",
     "cost": 236,
     "mrp": 315,
@@ -2559,13 +3105,16 @@
     "price": 277,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_19/183.png"
+    "image": "/products/NAV183.jpg",
+    "sku": "NAV183",
+    "title": "Everest Kasuri Methi Dried Fenugreek Leaves 50g Pack B",
+    "imageUrl": "/products/NAV183.jpg"
   },
   {
     "id": "NAV184",
     "barcode": "890100000184",
-    "name": "Tata Sampann Whole Green Moong Sabut 1kg Value Pack",
-    "brand": "TATA",
+    "name": "Elite Fruit Cake 250g Pack A",
+    "brand": "Elite",
     "category": "Atta & Dals",
     "cost": 223,
     "mrp": 297,
@@ -2573,13 +3122,16 @@
     "price": 261,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_19/184.png"
+    "image": "/products/NAV184.jpg",
+    "sku": "NAV184",
+    "title": "Elite Fruit Cake 250g Pack A",
+    "imageUrl": "/products/NAV184.jpg"
   },
   {
     "id": "NAV185",
     "barcode": "890100000185",
-    "name": "Tata Sampann Urad Dal Split Chilka 1kg Value Pack",
-    "brand": "TATA",
+    "name": "Elite Fruit Cake Rich Plum Cake 250g Pack B",
+    "brand": "Elite",
     "category": "Atta & Dals",
     "cost": 243,
     "mrp": 324,
@@ -2587,13 +3139,16 @@
     "price": 285,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_19/185.png"
+    "image": "/products/NAV185.jpg",
+    "sku": "NAV185",
+    "title": "Elite Fruit Cake Rich Plum Cake 250g Pack B",
+    "imageUrl": "/products/NAV185.jpg"
   },
   {
     "id": "NAV186",
     "barcode": "890100000186",
-    "name": "Tata Sampann Urad Sabut Whole Black Dal 1kg Value Pack",
-    "brand": "TATA",
+    "name": "Fortune Sunlite Refined Sunflower Oil 1L Pack A",
+    "brand": "Fortune",
     "category": "Atta & Dals",
     "cost": 256,
     "mrp": 342,
@@ -2601,13 +3156,16 @@
     "price": 301,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_19/186.png"
+    "image": "/products/NAV186.jpg",
+    "sku": "NAV186",
+    "title": "Fortune Sunlite Refined Sunflower Oil 1L Pack A",
+    "imageUrl": "/products/NAV186.jpg"
   },
   {
     "id": "NAV187",
     "barcode": "890100000187",
-    "name": "Tata Sampann Red Masoor Malka Dal 1kg Value Pack",
-    "brand": "TATA",
+    "name": "Fortune Sunlite Refined Sunflower Oil 1 Litre Pack B",
+    "brand": "Fortune",
     "category": "Atta & Dals",
     "cost": 182,
     "mrp": 243,
@@ -2615,13 +3173,16 @@
     "price": 214,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_19/187.png"
+    "image": "/products/NAV187.jpg",
+    "sku": "NAV187",
+    "title": "Fortune Sunlite Refined Sunflower Oil 1 Litre Pack B",
+    "imageUrl": "/products/NAV187.jpg"
   },
   {
     "id": "NAV188",
     "barcode": "890100000188",
-    "name": "Tata Sampann Premium Kabuli Chana Chickpeas 1kg Value Pack",
-    "brand": "TATA",
+    "name": "Fortune Kachi Ghani Mustard Oil Bottle 1 Litre Pack A",
+    "brand": "Fortune",
     "category": "Atta & Dals",
     "cost": 263,
     "mrp": 351,
@@ -2629,13 +3190,16 @@
     "price": 309,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_19/188.png"
+    "image": "/products/NAV188.jpg",
+    "sku": "NAV188",
+    "title": "Fortune Kachi Ghani Mustard Oil Bottle 1 Litre Pack A",
+    "imageUrl": "/products/NAV188.jpg"
   },
   {
     "id": "NAV189",
     "barcode": "890100000189",
-    "name": "Tata Sampann Natural Kala Chana 1kg Value Pack",
-    "brand": "TATA",
+    "name": "Fortune Kachi Ghani Mustard Oil 1 Litre Pack B",
+    "brand": "Fortune",
     "category": "Atta & Dals",
     "cost": 176,
     "mrp": 234,
@@ -2643,13 +3207,16 @@
     "price": 206,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_19/189.png"
+    "image": "/products/NAV189.jpg",
+    "sku": "NAV189",
+    "title": "Fortune Kachi Ghani Mustard Oil 1 Litre Pack B",
+    "imageUrl": "/products/NAV189.jpg"
   },
   {
     "id": "NAV190",
     "barcode": "890100000190",
-    "name": "Tata Sampann Kashmiri Rajma Red Kidney Beans 1kg Value Pack",
-    "brand": "TATA",
+    "name": "Fortune Arhar Dal 1kg Pack A",
+    "brand": "Fortune",
     "category": "Atta & Dals",
     "cost": 284,
     "mrp": 378,
@@ -2657,13 +3224,16 @@
     "price": 333,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_19/190.png"
+    "image": "/products/NAV190.jpg",
+    "sku": "NAV190",
+    "title": "Fortune Arhar Dal 1kg Pack A",
+    "imageUrl": "/products/NAV190.jpg"
   },
   {
     "id": "NAV191",
     "barcode": "890100000191",
-    "name": "Tata Sampann Premium Chitra Rajma 1kg Value Pack",
-    "brand": "TATA",
+    "name": "Fortune Arhar Dal Toor Dal 1kg Pack B",
+    "brand": "Fortune",
     "category": "Atta & Dals",
     "cost": 304,
     "mrp": 405,
@@ -2671,13 +3241,16 @@
     "price": 356,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_20/191.png"
+    "image": "/products/NAV191.jpg",
+    "sku": "NAV191",
+    "title": "Fortune Arhar Dal Toor Dal 1kg Pack B",
+    "imageUrl": "/products/NAV191.jpg"
   },
   {
     "id": "NAV192",
     "barcode": "890100000192",
-    "name": "Rajdhani Pure Kabuli Chana 1kg Value Pack",
-    "brand": "RAJDHANI",
+    "name": "Fortune Besan Gram Flour 1kg Pack A",
+    "brand": "Fortune",
     "category": "Atta & Dals",
     "cost": 243,
     "mrp": 324,
@@ -2685,13 +3258,16 @@
     "price": 285,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_20/192.png"
+    "image": "/products/NAV192.jpg",
+    "sku": "NAV192",
+    "title": "Fortune Besan Gram Flour 1kg Pack A",
+    "imageUrl": "/products/NAV192.jpg"
   },
   {
     "id": "NAV193",
     "barcode": "890100000193",
-    "name": "Rajdhani Green Moong Dal Split 1kg Value Pack",
-    "brand": "RAJDHANI",
+    "name": "Fortune Besan Gram Flour 1kg Pack B",
+    "brand": "Fortune",
     "category": "Atta & Dals",
     "cost": 216,
     "mrp": 288,
@@ -2699,13 +3275,16 @@
     "price": 253,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_20/193.png"
+    "image": "/products/NAV193.jpg",
+    "sku": "NAV193",
+    "title": "Fortune Besan Gram Flour 1kg Pack B",
+    "imageUrl": "/products/NAV193.jpg"
   },
   {
     "id": "NAV194",
     "barcode": "890100000194",
-    "name": "Rajdhani Roasted Chana Salted 500g Value Pack",
-    "brand": "RAJDHANI",
+    "name": "Fortune Refined Soyabean Oil Pouch 1L Pack A",
+    "brand": "Fortune",
     "category": "Atta & Dals",
     "cost": 148,
     "mrp": 198,
@@ -2713,13 +3292,16 @@
     "price": 174,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_20/194.png"
+    "image": "/products/NAV194.jpg",
+    "sku": "NAV194",
+    "title": "Fortune Refined Soyabean Oil Pouch 1L Pack A",
+    "imageUrl": "/products/NAV194.jpg"
   },
   {
     "id": "NAV195",
     "barcode": "890100000195",
-    "name": "Patanjali Unpolished Yellow Moong Dal 1kg Value Pack",
-    "brand": "PATANJALI",
+    "name": "Fortune Refined Soyabean Oil 1 Litre Pack B",
+    "brand": "Fortune",
     "category": "Atta & Dals",
     "cost": 226,
     "mrp": 302,
@@ -2727,13 +3309,16 @@
     "price": 266,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_20/195.png"
+    "image": "/products/NAV195.jpg",
+    "sku": "NAV195",
+    "title": "Fortune Refined Soyabean Oil 1 Litre Pack B",
+    "imageUrl": "/products/NAV195.jpg"
   },
   {
     "id": "NAV196",
     "barcode": "890100000196",
-    "name": "Verka Pure Desi Ghee Tin 1L Value Pack",
-    "brand": "VERKA",
+    "name": "Fiama Shower Gel + Beads 250ml",
+    "brand": "Fiama",
     "category": "Desi Ghee & Oils",
     "cost": 864,
     "mrp": 1152,
@@ -2741,13 +3326,16 @@
     "price": 1014,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_20/196.png"
+    "image": "/products/NAV196.jpg",
+    "sku": "NAV196",
+    "title": "Fiama Shower Gel + Beads 250ml",
+    "imageUrl": "/products/NAV196.jpg"
   },
   {
     "id": "NAV197",
     "barcode": "890100000197",
-    "name": "Amul Pure Milk Desi Ghee Carton 1L Value Pack",
-    "brand": "AMUL",
+    "name": "Fiama Shower Gel Peach & Avocado 250ml",
+    "brand": "Fiama",
     "category": "Desi Ghee & Oils",
     "cost": 850,
     "mrp": 1134,
@@ -2755,13 +3343,16 @@
     "price": 998,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_20/197.png"
+    "image": "/products/NAV197.jpg",
+    "sku": "NAV197",
+    "title": "Fiama Shower Gel Peach & Avocado 250ml",
+    "imageUrl": "/products/NAV197.jpg"
   },
   {
     "id": "NAV198",
     "barcode": "890100000198",
-    "name": "Mother Dairy Pure Cow Desi Ghee 1L Value Pack",
-    "brand": "MOTHER DAIRY",
+    "name": "Frooti Mango Drink Tetra Pack 1L Pack A",
+    "brand": "Frooti",
     "category": "Desi Ghee & Oils",
     "cost": 878,
     "mrp": 1170,
@@ -2769,13 +3360,16 @@
     "price": 1030,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_20/198.png"
+    "image": "/products/NAV198.jpg",
+    "sku": "NAV198",
+    "title": "Frooti Mango Drink Tetra Pack 1L Pack A",
+    "imageUrl": "/products/NAV198.jpg"
   },
   {
     "id": "NAV199",
     "barcode": "890100000199",
-    "name": "Patanjali Pure Cow Desi Ghee Tin 1L Value Pack",
-    "brand": "PATANJALI",
+    "name": "Frooti Mango Drink 1 Litre Pack B",
+    "brand": "Frooti",
     "category": "Desi Ghee & Oils",
     "cost": 891,
     "mrp": 1188,
@@ -2783,13 +3377,16 @@
     "price": 1045,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_20/199.png"
+    "image": "/products/NAV199.jpg",
+    "sku": "NAV199",
+    "title": "Frooti Mango Drink 1 Litre Pack B",
+    "imageUrl": "/products/NAV199.jpg"
   },
   {
     "id": "NAV200",
     "barcode": "890100000200",
-    "name": "Verka Special Cow Desi Ghee 1L Value Pack",
-    "brand": "VERKA",
+    "name": "Gharwal Desi Ghee 1L",
+    "brand": "Gharwal",
     "category": "Desi Ghee & Oils",
     "cost": 878,
     "mrp": 1170,
@@ -2797,13 +3394,16 @@
     "price": 1030,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_20/200.png"
+    "image": "/products/NAV200.jpg",
+    "sku": "NAV200",
+    "title": "Gharwal Desi Ghee 1L",
+    "imageUrl": "/products/NAV200.jpg"
   },
   {
     "id": "NAV201",
     "barcode": "890100000201",
-    "name": "Fortune Kachi Ghani Pure Mustard Oil Pouch 1L Value Pack",
-    "brand": "FORTUNE",
+    "name": "Gharwal Pure Cow Desi Ghee 1 Litre",
+    "brand": "Gharwal",
     "category": "Desi Ghee & Oils",
     "cost": 223,
     "mrp": 297,
@@ -2811,13 +3411,16 @@
     "price": 261,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_21/201.png"
+    "image": "/products/NAV201.jpg",
+    "sku": "NAV201",
+    "title": "Gharwal Pure Cow Desi Ghee 1 Litre",
+    "imageUrl": "/products/NAV201.jpg"
   },
   {
     "id": "NAV202",
     "barcode": "890100000202",
-    "name": "Fortune Sunlite Refined Sunflower Oil Pouch 1L Value Pack",
-    "brand": "FORTUNE",
+    "name": "Gillette Guard Single Blade Shaving System Razor 1 Razor Pack A",
+    "brand": "Gillette",
     "category": "Desi Ghee & Oils",
     "cost": 209,
     "mrp": 279,
@@ -2825,13 +3428,16 @@
     "price": 246,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_21/202.png"
+    "image": "/products/NAV202.jpg",
+    "sku": "NAV202",
+    "title": "Gillette Guard Single Blade Shaving System Razor 1 Razor Pack A",
+    "imageUrl": "/products/NAV202.jpg"
   },
   {
     "id": "NAV203",
     "barcode": "890100000203",
-    "name": "Fortune Plus Refined Soyabean Oil Pouch 1L Value Pack",
-    "brand": "FORTUNE",
+    "name": "Gillette Guard Razor 1 Razor Pack B",
+    "brand": "Gillette",
     "category": "Desi Ghee & Oils",
     "cost": 196,
     "mrp": 261,
@@ -2839,13 +3445,16 @@
     "price": 230,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_21/203.png"
+    "image": "/products/NAV203.jpg",
+    "sku": "NAV203",
+    "title": "Gillette Guard Razor 1 Razor Pack B",
+    "imageUrl": "/products/NAV203.jpg"
   },
   {
     "id": "NAV204",
     "barcode": "890100000204",
-    "name": "Engine Brand Pure Mustard Oil Bottle 1L Value Pack",
-    "brand": "ENGINE",
+    "name": "Gillette Classic Shaving Foam Regular 200g Pack A",
+    "brand": "Gillette",
     "category": "Desi Ghee & Oils",
     "cost": 250,
     "mrp": 333,
@@ -2853,13 +3462,16 @@
     "price": 293,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_21/204.png"
+    "image": "/products/NAV204.jpg",
+    "sku": "NAV204",
+    "title": "Gillette Classic Shaving Foam Regular 200g Pack A",
+    "imageUrl": "/products/NAV204.jpg"
   },
   {
     "id": "NAV205",
     "barcode": "890100000205",
-    "name": "Dhara Kachi Ghani Mustard Oil Pouch 1L Value Pack",
-    "brand": "DHARA",
+    "name": "Gillette Shaving Foam Regular 200g Pack B",
+    "brand": "Gillette",
     "category": "Desi Ghee & Oils",
     "cost": 216,
     "mrp": 288,
@@ -2867,13 +3479,16 @@
     "price": 253,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_21/205.png"
+    "image": "/products/NAV205.jpg",
+    "sku": "NAV205",
+    "title": "Gillette Shaving Foam Regular 200g Pack B",
+    "imageUrl": "/products/NAV205.jpg"
   },
   {
     "id": "NAV206",
     "barcode": "890100000206",
-    "name": "Dhara Refined Sunflower Oil Pouch 1L Value Pack",
-    "brand": "DHARA",
+    "name": "Godrej No.1 Sandalwood & Turmeric Soap Multipack 4x100g",
+    "brand": "Godrej",
     "category": "Desi Ghee & Oils",
     "cost": 202,
     "mrp": 270,
@@ -2881,13 +3496,16 @@
     "price": 238,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_21/206.png"
+    "image": "/products/NAV206.jpg",
+    "sku": "NAV206",
+    "title": "Godrej No.1 Sandalwood & Turmeric Soap Multipack 4x100g",
+    "imageUrl": "/products/NAV206.jpg"
   },
   {
     "id": "NAV207",
     "barcode": "890100000207",
-    "name": "Saffola Gold Pro Healthy Lifestyle Blended Oil 1L Value Pack",
-    "brand": "SAFFOLA",
+    "name": "Godrej No.1 Neem & Aloe Vera Soap Pack of 4",
+    "brand": "Godrej",
     "category": "Desi Ghee & Oils",
     "cost": 256,
     "mrp": 342,
@@ -2895,13 +3513,16 @@
     "price": 301,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_21/207.png"
+    "image": "/products/NAV207.jpg",
+    "sku": "NAV207",
+    "title": "Godrej No.1 Neem & Aloe Vera Soap Pack of 4",
+    "imageUrl": "/products/NAV207.jpg"
   },
   {
     "id": "NAV208",
     "barcode": "890100000208",
-    "name": "Saffola Total Pro Heart Care Edible Oil 1L Value Pack",
-    "brand": "SAFFOLA",
+    "name": "Good Knight Gold Flash Mosquito Repellent Liquid Refill 45ml Pack A",
+    "brand": "Good",
     "category": "Desi Ghee & Oils",
     "cost": 290,
     "mrp": 387,
@@ -2909,13 +3530,16 @@
     "price": 341,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_21/208.png"
+    "image": "/products/NAV208.jpg",
+    "sku": "NAV208",
+    "title": "Good Knight Gold Flash Mosquito Repellent Liquid Refill 45ml Pack A",
+    "imageUrl": "/products/NAV208.jpg"
   },
   {
     "id": "NAV209",
     "barcode": "890100000209",
-    "name": "Fortune Cottonseed Refined Cooking Oil 1L Value Pack",
-    "brand": "FORTUNE",
+    "name": "Good Knight Gold Flash Liquid Vaporiser Refill 45ml Pack B",
+    "brand": "Good",
     "category": "Desi Ghee & Oils",
     "cost": 189,
     "mrp": 252,
@@ -2923,13 +3547,16 @@
     "price": 222,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_21/209.png"
+    "image": "/products/NAV209.jpg",
+    "sku": "NAV209",
+    "title": "Good Knight Gold Flash Liquid Vaporiser Refill 45ml Pack B",
+    "imageUrl": "/products/NAV209.jpg"
   },
   {
     "id": "NAV210",
     "barcode": "890100000210",
-    "name": "Dalda Pure Vanaspati Ghee Pouch 1L Value Pack",
-    "brand": "DALDA",
+    "name": "Gullak Premium Quality Refined Sugar 5kg Pack A",
+    "brand": "Gullak",
     "category": "Desi Ghee & Oils",
     "cost": 176,
     "mrp": 234,
@@ -2937,13 +3564,16 @@
     "price": 206,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_21/210.png"
+    "image": "/products/NAV210.jpg",
+    "sku": "NAV210",
+    "title": "Gullak Premium Quality Refined Sugar 5kg Pack A",
+    "imageUrl": "/products/NAV210.jpg"
   },
   {
     "id": "NAV211",
     "barcode": "890100000211",
-    "name": "Tata Salt Vacuum Evaporated Iodized 1kg Value Pack",
-    "brand": "TATA",
+    "name": "Gullak Refined Sulphurless Sugar 5kg Pack B",
+    "brand": "Gullak",
     "category": "Spices",
     "cost": 38,
     "mrp": 50,
@@ -2951,13 +3581,16 @@
     "price": 44,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_22/211.png"
+    "image": "/products/NAV211.jpg",
+    "sku": "NAV211",
+    "title": "Gullak Refined Sulphurless Sugar 5kg Pack B",
+    "imageUrl": "/products/NAV211.jpg"
   },
   {
     "id": "NAV212",
     "barcode": "890100000212",
-    "name": "Tata Salt Lite Low Sodium 1kg Value Pack",
-    "brand": "TATA",
+    "name": "Garlic Powder Lehsun Powder 100g Pack A",
+    "brand": "Garlic",
     "category": "Spices",
     "cost": 61,
     "mrp": 81,
@@ -2965,13 +3598,16 @@
     "price": 71,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_22/212.png"
+    "image": "/products/NAV212.jpg",
+    "sku": "NAV212",
+    "title": "Garlic Powder Lehsun Powder 100g Pack A",
+    "imageUrl": "/products/NAV212.jpg"
   },
   {
     "id": "NAV213",
     "barcode": "890100000213",
-    "name": "Tata Salt Himalayan Pink Rock Salt 1kg Value Pack",
-    "brand": "TATA",
+    "name": "Garlic Powder Lehsun Powder 100g Pack B",
+    "brand": "Garlic",
     "category": "Spices",
     "cost": 134,
     "mrp": 178,
@@ -2979,13 +3615,16 @@
     "price": 157,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_22/213.png"
+    "image": "/products/NAV213.jpg",
+    "sku": "NAV213",
+    "title": "Garlic Powder Lehsun Powder 100g Pack B",
+    "imageUrl": "/products/NAV213.jpg"
   },
   {
     "id": "NAV214",
     "barcode": "890100000214",
-    "name": "MDH Deggi Mirch Kashmiri Red Chilli Powder 100g Value Pack",
-    "brand": "MDH",
+    "name": "Dabur Ginger Garlic Paste 200g Pack A",
+    "brand": "Dabur",
     "category": "Spices",
     "cost": 124,
     "mrp": 166,
@@ -2993,13 +3632,16 @@
     "price": 146,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_22/214.png"
+    "image": "/products/NAV214.jpg",
+    "sku": "NAV214",
+    "title": "Dabur Ginger Garlic Paste 200g Pack A",
+    "imageUrl": "/products/NAV214.jpg"
   },
   {
     "id": "NAV215",
     "barcode": "890100000215",
-    "name": "MDH Agmark Haldi Turmeric Powder 100g Value Pack",
-    "brand": "MDH",
+    "name": "Dabur Ginger Garlic Paste Ready to Cook 200g Pack B",
+    "brand": "Dabur",
     "category": "Spices",
     "cost": 57,
     "mrp": 76,
@@ -3007,13 +3649,16 @@
     "price": 67,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_22/215.png"
+    "image": "/products/NAV215.jpg",
+    "sku": "NAV215",
+    "title": "Dabur Ginger Garlic Paste Ready to Cook 200g Pack B",
+    "imageUrl": "/products/NAV215.jpg"
   },
   {
     "id": "NAV216",
     "barcode": "890100000216",
-    "name": "MDH Agmark Dhania Coriander Powder 100g Value Pack",
-    "brand": "MDH",
+    "name": "Haldiram's Nagpur Bhujia Sev Namkeen 1kg Pack A",
+    "brand": "Haldiram's",
     "category": "Spices",
     "cost": 59,
     "mrp": 79,
@@ -3021,13 +3666,16 @@
     "price": 70,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_22/216.png"
+    "image": "/products/NAV216.jpg",
+    "sku": "NAV216",
+    "title": "Haldiram's Nagpur Bhujia Sev Namkeen 1kg Pack A",
+    "imageUrl": "/products/NAV216.jpg"
   },
   {
     "id": "NAV217",
     "barcode": "890100000217",
-    "name": "MDH Special Garam Masala Blend 100g Value Pack",
-    "brand": "MDH",
+    "name": "Haldiram's Bhujia Sev Namkeen 1kg Pack B",
+    "brand": "Haldiram's",
     "category": "Spices",
     "cost": 132,
     "mrp": 176,
@@ -3035,13 +3683,16 @@
     "price": 155,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_22/217.png"
+    "image": "/products/NAV217.jpg",
+    "sku": "NAV217",
+    "title": "Haldiram's Bhujia Sev Namkeen 1kg Pack B",
+    "imageUrl": "/products/NAV217.jpg"
   },
   {
     "id": "NAV218",
     "barcode": "890100000218",
-    "name": "MDH Chana Masala Seasoning 100g Value Pack",
-    "brand": "MDH",
+    "name": "Haldiram's Nagpur Rasgulla 1kg Pack A",
+    "brand": "Haldiram's",
     "category": "Spices",
     "cost": 118,
     "mrp": 158,
@@ -3049,13 +3700,16 @@
     "price": 139,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_22/218.png"
+    "image": "/products/NAV218.jpg",
+    "sku": "NAV218",
+    "title": "Haldiram's Nagpur Rasgulla 1kg Pack A",
+    "imageUrl": "/products/NAV218.jpg"
   },
   {
     "id": "NAV219",
     "barcode": "890100000219",
-    "name": "MDH Chunky Chat Masala 100g Value Pack",
-    "brand": "MDH",
+    "name": "Haldiram's Rasgulla Cottage Cheese Balls in Syrup 1kg Pack B",
+    "brand": "Haldiram's",
     "category": "Spices",
     "cost": 103,
     "mrp": 137,
@@ -3063,13 +3717,16 @@
     "price": 121,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_22/219.png"
+    "image": "/products/NAV219.jpg",
+    "sku": "NAV219",
+    "title": "Haldiram's Rasgulla Cottage Cheese Balls in Syrup 1kg Pack B",
+    "imageUrl": "/products/NAV219.jpg"
   },
   {
     "id": "NAV220",
     "barcode": "890100000220",
-    "name": "MDH Kitchen King All Purpose Sabji Masala 100g Value Pack",
-    "brand": "MDH",
+    "name": "Haldiram's Gulab Jamun Ready to Eat Sweet 1kg Pack A",
+    "brand": "Haldiram's",
     "category": "Spices",
     "cost": 122,
     "mrp": 162,
@@ -3077,13 +3734,16 @@
     "price": 143,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_22/220.png"
+    "image": "/products/NAV220.jpg",
+    "sku": "NAV220",
+    "title": "Haldiram's Gulab Jamun Ready to Eat Sweet 1kg Pack A",
+    "imageUrl": "/products/NAV220.jpg"
   },
   {
     "id": "NAV221",
     "barcode": "890100000221",
-    "name": "MDH Shahi Paneer Masala 100g Value Pack",
-    "brand": "MDH",
+    "name": "Haldiram's Gulab Jamun in Sugar Syrup 1kg Pack B",
+    "brand": "Haldiram's",
     "category": "Spices",
     "cost": 118,
     "mrp": 158,
@@ -3091,13 +3751,16 @@
     "price": 139,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_23/221.png"
+    "image": "/products/NAV221.jpg",
+    "sku": "NAV221",
+    "title": "Haldiram's Gulab Jamun in Sugar Syrup 1kg Pack B",
+    "imageUrl": "/products/NAV221.jpg"
   },
   {
     "id": "NAV222",
     "barcode": "890100000222",
-    "name": "MDH Pav Bhaji Masala 100g Value Pack",
-    "brand": "MDH",
+    "name": "Haldiram's Nagpur Soan Papdi Traditional Indian Sweet 500g Pack A",
+    "brand": "Haldiram's",
     "category": "Spices",
     "cost": 113,
     "mrp": 151,
@@ -3105,13 +3768,16 @@
     "price": 133,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_23/222.png"
+    "image": "/products/NAV222.jpg",
+    "sku": "NAV222",
+    "title": "Haldiram's Nagpur Soan Papdi Traditional Indian Sweet 500g Pack A",
+    "imageUrl": "/products/NAV222.jpg"
   },
   {
     "id": "NAV223",
     "barcode": "890100000223",
-    "name": "MDH Sambhar Masala 100g Value Pack",
-    "brand": "MDH",
+    "name": "Haldiram's Soan Papdi Made with Desi Ghee 500g Pack B",
+    "brand": "Haldiram's",
     "category": "Spices",
     "cost": 111,
     "mrp": 148,
@@ -3119,13 +3785,16 @@
     "price": 130,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_23/223.png"
+    "image": "/products/NAV223.jpg",
+    "sku": "NAV223",
+    "title": "Haldiram's Soan Papdi Made with Desi Ghee 500g Pack B",
+    "imageUrl": "/products/NAV223.jpg"
   },
   {
     "id": "NAV224",
     "barcode": "890100000224",
-    "name": "MDH Meat Curry Special Masala 100g Value Pack",
-    "brand": "MDH",
+    "name": "Haldiram's All in One Namkeen 1kg Pack A",
+    "brand": "Haldiram's",
     "category": "Spices",
     "cost": 127,
     "mrp": 169,
@@ -3133,13 +3802,16 @@
     "price": 149,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_23/224.png"
+    "image": "/products/NAV224.jpg",
+    "sku": "NAV224",
+    "title": "Haldiram's All in One Namkeen 1kg Pack A",
+    "imageUrl": "/products/NAV224.jpg"
   },
   {
     "id": "NAV225",
     "barcode": "890100000225",
-    "name": "MDH Kasoori Methi Fenugreek Leaves 100g Value Pack",
-    "brand": "MDH",
+    "name": "Haldiram's All in One Mixture 1kg Pack B",
+    "brand": "Haldiram's",
     "category": "Spices",
     "cost": 92,
     "mrp": 122,
@@ -3147,13 +3819,16 @@
     "price": 107,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_23/225.png"
+    "image": "/products/NAV225.jpg",
+    "sku": "NAV225",
+    "title": "Haldiram's All in One Mixture 1kg Pack B",
+    "imageUrl": "/products/NAV225.jpg"
   },
   {
     "id": "NAV226",
     "barcode": "890100000226",
-    "name": "Catch Pure Turmeric Powder 200g Value Pack",
-    "brand": "CATCH",
+    "name": "Harpic Toilet Cleaner Active Fresh Original 1L",
+    "brand": "Harpic",
     "category": "Spices",
     "cost": 88,
     "mrp": 117,
@@ -3161,13 +3836,16 @@
     "price": 103,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_23/226.png"
+    "image": "/products/NAV226.jpg",
+    "sku": "NAV226",
+    "title": "Harpic Toilet Cleaner Active Fresh Original 1L",
+    "imageUrl": "/products/NAV226.jpg"
   },
   {
     "id": "NAV227",
     "barcode": "890100000227",
-    "name": "Catch Red Chilli Powder Teja Hot 200g Value Pack",
-    "brand": "CATCH",
+    "name": "Harpic Toilet Cleaner Power Plus 1 Litre",
+    "brand": "Harpic",
     "category": "Spices",
     "cost": 132,
     "mrp": 176,
@@ -3175,13 +3853,16 @@
     "price": 155,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_23/227.png"
+    "image": "/products/NAV227.jpg",
+    "sku": "NAV227",
+    "title": "Harpic Toilet Cleaner Power Plus 1 Litre",
+    "imageUrl": "/products/NAV227.jpg"
   },
   {
     "id": "NAV228",
     "barcode": "890100000228",
-    "name": "Catch Coriander Powder Fresh Aroma 200g Value Pack",
-    "brand": "CATCH",
+    "name": "Head & Shoulders Anti-Dandruff Shampoo Classic Clean 650ml",
+    "brand": "Head",
     "category": "Spices",
     "cost": 92,
     "mrp": 122,
@@ -3189,13 +3870,16 @@
     "price": 107,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_23/228.png"
+    "image": "/products/NAV228.jpg",
+    "sku": "NAV228",
+    "title": "Head & Shoulders Anti-Dandruff Shampoo Classic Clean 650ml",
+    "imageUrl": "/products/NAV228.jpg"
   },
   {
     "id": "NAV229",
     "barcode": "890100000229",
-    "name": "Catch Table Black Pepper Sprinkler 100g Value Pack",
-    "brand": "CATCH",
+    "name": "Head & Shoulders Anti-Dandruff Shampoo Cool Menthol 650ml",
+    "brand": "Head",
     "category": "Spices",
     "cost": 155,
     "mrp": 207,
@@ -3203,13 +3887,16 @@
     "price": 182,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_23/229.png"
+    "image": "/products/NAV229.jpg",
+    "sku": "NAV229",
+    "title": "Head & Shoulders Anti-Dandruff Shampoo Cool Menthol 650ml",
+    "imageUrl": "/products/NAV229.jpg"
   },
   {
     "id": "NAV230",
     "barcode": "890100000230",
-    "name": "Catch Table Rock Salt Sprinkler 100g Value Pack",
-    "brand": "CATCH",
+    "name": "Himalaya Purifying Neem Face Wash 150ml Pack A",
+    "brand": "Himalaya",
     "category": "Spices",
     "cost": 74,
     "mrp": 99,
@@ -3217,13 +3904,16 @@
     "price": 87,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_23/230.png"
+    "image": "/products/NAV230.jpg",
+    "sku": "NAV230",
+    "title": "Himalaya Purifying Neem Face Wash 150ml Pack A",
+    "imageUrl": "/products/NAV230.jpg"
   },
   {
     "id": "NAV231",
     "barcode": "890100000231",
-    "name": "Everest Royal Garam Masala 100g Value Pack",
-    "brand": "EVEREST",
+    "name": "Himalaya Purifying Neem Face Wash 150ml Pack B",
+    "brand": "Himalaya",
     "category": "Spices",
     "cost": 130,
     "mrp": 173,
@@ -3231,13 +3921,16 @@
     "price": 152,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_24/231.png"
+    "image": "/products/NAV231.jpg",
+    "sku": "NAV231",
+    "title": "Himalaya Purifying Neem Face Wash 150ml Pack B",
+    "imageUrl": "/products/NAV231.jpg"
   },
   {
     "id": "NAV232",
     "barcode": "890100000232",
-    "name": "Everest Tikhalal Hot Red Chilli Powder 100g Value Pack",
-    "brand": "EVEREST",
+    "name": "Horlicks Health Drink Classic Malt 500g Pack A",
+    "brand": "Horlicks",
     "category": "Spices",
     "cost": 84,
     "mrp": 112,
@@ -3245,13 +3938,16 @@
     "price": 99,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_24/232.png"
+    "image": "/products/NAV232.jpg",
+    "sku": "NAV232",
+    "title": "Horlicks Health Drink Classic Malt 500g Pack A",
+    "imageUrl": "/products/NAV232.jpg"
   },
   {
     "id": "NAV233",
     "barcode": "890100000233",
-    "name": "Everest Chhole Special Masala 100g Value Pack",
-    "brand": "EVEREST",
+    "name": "Horlicks Health Drink Malt-based Nutrition 500g Pack B",
+    "brand": "Horlicks",
     "category": "Spices",
     "cost": 115,
     "mrp": 153,
@@ -3259,13 +3955,16 @@
     "price": 135,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_24/233.png"
+    "image": "/products/NAV233.jpg",
+    "sku": "NAV233",
+    "title": "Horlicks Health Drink Malt-based Nutrition 500g Pack B",
+    "imageUrl": "/products/NAV233.jpg"
   },
   {
     "id": "NAV234",
     "barcode": "890100000234",
-    "name": "Everest Kastoori Methi Leaves 50g Value Pack",
-    "brand": "EVEREST",
+    "name": "Himalaya Baby Soap Extra Moisturizing 125g",
+    "brand": "Himalaya",
     "category": "Spices",
     "cost": 57,
     "mrp": 76,
@@ -3273,13 +3972,16 @@
     "price": 67,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_24/234.png"
+    "image": "/products/NAV234.jpg",
+    "sku": "NAV234",
+    "title": "Himalaya Baby Soap Extra Moisturizing 125g",
+    "imageUrl": "/products/NAV234.jpg"
   },
   {
     "id": "NAV235",
     "barcode": "890100000235",
-    "name": "Patanjali Pure Agmark Whole Cumin Jeera 200g Value Pack",
-    "brand": "PATANJALI",
+    "name": "India Gate Feast Rozzana Basmati Rice 5kg Pack A",
+    "brand": "India",
     "category": "Spices",
     "cost": 162,
     "mrp": 216,
@@ -3287,13 +3989,16 @@
     "price": 190,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_24/235.png"
+    "image": "/products/NAV235.jpg",
+    "sku": "NAV235",
+    "title": "India Gate Feast Rozzana Basmati Rice 5kg Pack A",
+    "imageUrl": "/products/NAV235.jpg"
   },
   {
     "id": "NAV236",
     "barcode": "890100000236",
-    "name": "Patanjali Whole Mustard Seeds Rai 200g Value Pack",
-    "brand": "PATANJALI",
+    "name": "India Gate Feast Rozzana Basmati Rice 5kg Pack B",
+    "brand": "India",
     "category": "Spices",
     "cost": 61,
     "mrp": 81,
@@ -3301,13 +4006,16 @@
     "price": 71,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_24/236.png"
+    "image": "/products/NAV236.jpg",
+    "sku": "NAV236",
+    "title": "India Gate Feast Rozzana Basmati Rice 5kg Pack B",
+    "imageUrl": "/products/NAV236.jpg"
   },
   {
     "id": "NAV237",
     "barcode": "890100000237",
-    "name": "Patanjali Carom Seeds Ajwain 200g Value Pack",
-    "brand": "PATANJALI",
+    "name": "India Gate Dubar Rice 5kg",
+    "brand": "India",
     "category": "Spices",
     "cost": 88,
     "mrp": 117,
@@ -3315,13 +4023,16 @@
     "price": 103,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_24/237.png"
+    "image": "/products/NAV237.jpg",
+    "sku": "NAV237",
+    "title": "India Gate Dubar Rice 5kg",
+    "imageUrl": "/products/NAV237.jpg"
   },
   {
     "id": "NAV238",
     "barcode": "890100000238",
-    "name": "Patanjali Asafoetida Bandhani Hing 25g Value Pack",
-    "brand": "PATANJALI",
+    "name": "India Gate Tibar Select Basmati Rice 5kg",
+    "brand": "India",
     "category": "Spices",
     "cost": 70,
     "mrp": 94,
@@ -3329,13 +4040,16 @@
     "price": 83,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_24/238.png"
+    "image": "/products/NAV238.jpg",
+    "sku": "NAV238",
+    "title": "India Gate Tibar Select Basmati Rice 5kg",
+    "imageUrl": "/products/NAV238.jpg"
   },
   {
     "id": "NAV239",
     "barcode": "890100000239",
-    "name": "LG Compounded Natural Asafoetida Powder 50g Value Pack",
-    "brand": "LG",
+    "name": "Tata Salt Iodized Salt 1kg",
+    "brand": "Tata",
     "category": "Spices",
     "cost": 118,
     "mrp": 158,
@@ -3343,13 +4057,16 @@
     "price": 139,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_24/239.png"
+    "image": "/products/NAV239.jpg",
+    "sku": "NAV239",
+    "title": "Tata Salt Iodized Salt 1kg",
+    "imageUrl": "/products/NAV239.jpg"
   },
   {
     "id": "NAV240",
     "barcode": "890100000240",
-    "name": "Keya Authentic Italian Mixed Herbs Seasoning 45g Value Pack",
-    "brand": "KEYA",
+    "name": "Imperial Leather Classic Original Bath Soap Multipack 3x100g",
+    "brand": "Imperial",
     "category": "Spices",
     "cost": 148,
     "mrp": 198,
@@ -3357,13 +4074,16 @@
     "price": 174,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_24/240.png"
+    "image": "/products/NAV240.jpg",
+    "sku": "NAV240",
+    "title": "Imperial Leather Classic Original Bath Soap Multipack 3x100g",
+    "imageUrl": "/products/NAV240.jpg"
   },
   {
     "id": "NAV241",
     "barcode": "890100000241",
-    "name": "Safal Frozen Fresh Tender Green Peas 1kg Value Pack",
-    "brand": "SAFAL",
+    "name": "Iodex Pain Relief Balm 40g",
+    "brand": "Iodex",
     "category": "Frozen Foods",
     "cost": 216,
     "mrp": 288,
@@ -3371,13 +4091,16 @@
     "price": 253,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_25/241.png"
+    "image": "/products/NAV241.jpg",
+    "sku": "NAV241",
+    "title": "Iodex Pain Relief Balm 40g",
+    "imageUrl": "/products/NAV241.jpg"
   },
   {
     "id": "NAV242",
     "barcode": "890100000242",
-    "name": "Safal Frozen American Sweet Corn Kernels 500g Value Pack",
-    "brand": "SAFAL",
+    "name": "Organic Jaggery Gur 1kg",
+    "brand": "Organic",
     "category": "Frozen Foods",
     "cost": 115,
     "mrp": 153,
@@ -3385,13 +4108,16 @@
     "price": 135,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_25/242.png"
+    "image": "/products/NAV242.jpg",
+    "sku": "NAV242",
+    "title": "Organic Jaggery Gur 1kg",
+    "imageUrl": "/products/NAV242.jpg"
   },
   {
     "id": "NAV243",
     "barcode": "890100000243",
-    "name": "Safal Frozen Mixed Country Vegetables 500g Value Pack",
-    "brand": "SAFAL",
+    "name": "Bajaj Jasmine Hair Oil 200ml",
+    "brand": "Bajaj",
     "category": "Frozen Foods",
     "cost": 128,
     "mrp": 171,
@@ -3399,13 +4125,16 @@
     "price": 150,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_25/243.png"
+    "image": "/products/NAV243.jpg",
+    "sku": "NAV243",
+    "title": "Bajaj Jasmine Hair Oil 200ml",
+    "imageUrl": "/products/NAV243.jpg"
   },
   {
     "id": "NAV244",
     "barcode": "890100000244",
-    "name": "Amul Malai Fresh Frozen Paneer Block 500g Value Pack",
-    "brand": "AMUL",
+    "name": "Johnson's Baby Powder 200g",
+    "brand": "Johnson's",
     "category": "Frozen Foods",
     "cost": 284,
     "mrp": 378,
@@ -3413,13 +4142,16 @@
     "price": 333,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_25/244.png"
+    "image": "/products/NAV244.jpg",
+    "sku": "NAV244",
+    "title": "Johnson's Baby Powder 200g",
+    "imageUrl": "/products/NAV244.jpg"
   },
   {
     "id": "NAV245",
     "barcode": "890100000245",
-    "name": "Mother Dairy Classic Frozen Paneer Cubes 200g Value Pack",
-    "brand": "MOTHER DAIRY",
+    "name": "Johnson's Baby Soap 100g",
+    "brand": "Johnson's",
     "category": "Frozen Foods",
     "cost": 132,
     "mrp": 176,
@@ -3427,13 +4159,16 @@
     "price": 155,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_25/245.png"
+    "image": "/products/NAV245.jpg",
+    "sku": "NAV245",
+    "title": "Johnson's Baby Soap 100g",
+    "imageUrl": "/products/NAV245.jpg"
   },
   {
     "id": "NAV246",
     "barcode": "890100000246",
-    "name": "McCain Crispy French Fries Pack 420g Value Pack",
-    "brand": "MCCAIN",
+    "name": "Jiwa Whole Wheat Atta 5kg",
+    "brand": "Jiwa",
     "category": "Frozen Foods",
     "cost": 169,
     "mrp": 225,
@@ -3441,13 +4176,16 @@
     "price": 198,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_25/246.png"
+    "image": "/products/NAV246.jpg",
+    "sku": "NAV246",
+    "title": "Jiwa Whole Wheat Atta 5kg",
+    "imageUrl": "/products/NAV246.jpg"
   },
   {
     "id": "NAV247",
     "barcode": "890100000247",
-    "name": "McCain Crunchy Aloo Tikki Patty 400g Value Pack",
-    "brand": "MCCAIN",
+    "name": "Kissan Tomato Ketchup 1kg",
+    "brand": "Kissan",
     "category": "Frozen Foods",
     "cost": 176,
     "mrp": 234,
@@ -3455,13 +4193,16 @@
     "price": 206,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_25/247.png"
+    "image": "/products/NAV247.jpg",
+    "sku": "NAV247",
+    "title": "Kissan Tomato Ketchup 1kg",
+    "imageUrl": "/products/NAV247.jpg"
   },
   {
     "id": "NAV248",
     "barcode": "890100000248",
-    "name": "McCain Veggie Burger Patty 360g Value Pack",
-    "brand": "MCCAIN",
+    "name": "Kissan Mixed Fruit Jam 500g",
+    "brand": "Kissan",
     "category": "Frozen Foods",
     "cost": 196,
     "mrp": 261,
@@ -3469,13 +4210,16 @@
     "price": 230,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_25/248.png"
+    "image": "/products/NAV248.jpg",
+    "sku": "NAV248",
+    "title": "Kissan Mixed Fruit Jam 500g",
+    "imageUrl": "/products/NAV248.jpg"
   },
   {
     "id": "NAV249",
     "barcode": "890100000249",
-    "name": "McCain Golden Smiles Mashed Potato Shapes 375g Value Pack",
-    "brand": "MCCAIN",
+    "name": "Kellogg's Corn Flakes Golden Toasted 875g",
+    "brand": "Kellogg's",
     "category": "Frozen Foods",
     "cost": 182,
     "mrp": 243,
@@ -3483,13 +4227,16 @@
     "price": 214,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_25/249.png"
+    "image": "/products/NAV249.jpg",
+    "sku": "NAV249",
+    "title": "Kellogg's Corn Flakes Golden Toasted 875g",
+    "imageUrl": "/products/NAV249.jpg"
   },
   {
     "id": "NAV250",
     "barcode": "890100000250",
-    "name": "Safal Frozen Soya Chaap Sticks 500g Value Pack",
-    "brand": "SAFAL",
+    "name": "Kurkure Masala Munch 100g",
+    "brand": "Kurkure",
     "category": "Frozen Foods",
     "cost": 148,
     "mrp": 198,
@@ -3497,13 +4244,16 @@
     "price": 174,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_25/250.png"
+    "image": "/products/NAV250.jpg",
+    "sku": "NAV250",
+    "title": "Kurkure Masala Munch 100g",
+    "imageUrl": "/products/NAV250.jpg"
   },
   {
     "id": "NAV251",
     "barcode": "890100000251",
-    "name": "Madhur Pure Hygienic Sparkling Sugar 5kg Value Pack",
-    "brand": "MADHUR",
+    "name": "Knorr Classic Cream of Tomato Soup",
+    "brand": "Knorr",
     "category": "Grocery & Staples",
     "cost": 351,
     "mrp": 468,
@@ -3511,13 +4261,16 @@
     "price": 412,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_26/251.png"
+    "image": "/products/NAV251.jpg",
+    "sku": "NAV251",
+    "title": "Knorr Classic Cream of Tomato Soup",
+    "imageUrl": "/products/NAV251.jpg"
   },
   {
     "id": "NAV252",
     "barcode": "890100000252",
-    "name": "Madhur Refined Sulphur Free Sugar 1kg Value Pack",
-    "brand": "MADHUR",
+    "name": "Kasturi Turmeric Powder Haldi Powder 100g",
+    "brand": "Kasturi",
     "category": "Grocery & Staples",
     "cost": 73,
     "mrp": 97,
@@ -3525,13 +4278,16 @@
     "price": 85,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_26/252.png"
+    "image": "/products/NAV252.jpg",
+    "sku": "NAV252",
+    "title": "Kasturi Turmeric Powder Haldi Powder 100g",
+    "imageUrl": "/products/NAV252.jpg"
   },
   {
     "id": "NAV253",
     "barcode": "890100000253",
-    "name": "Tata Tea Gold Rich Taste Leaves 500g Value Pack",
-    "brand": "TATA",
+    "name": "Nature's Harvest Kala Chana Whole Brown Chickpeas 1kg",
+    "brand": "Nature's",
     "category": "Grocery & Staples",
     "cost": 418,
     "mrp": 558,
@@ -3539,13 +4295,16 @@
     "price": 491,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_26/253.png"
+    "image": "/products/NAV253.jpg",
+    "sku": "NAV253",
+    "title": "Nature's Harvest Kala Chana Whole Brown Chickpeas 1kg",
+    "imageUrl": "/products/NAV253.jpg"
   },
   {
     "id": "NAV254",
     "barcode": "890100000254",
-    "name": "Tata Tea Premium Desh Ki Chai 500g Value Pack",
-    "brand": "TATA",
+    "name": "Lay's India's Magic Masala Potato Chips 100g",
+    "brand": "Lay's",
     "category": "Grocery & Staples",
     "cost": 378,
     "mrp": 504,
@@ -3553,13 +4312,16 @@
     "price": 444,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_26/254.png"
+    "image": "/products/NAV254.jpg",
+    "sku": "NAV254",
+    "title": "Lay's India's Magic Masala Potato Chips 100g",
+    "imageUrl": "/products/NAV254.jpg"
   },
   {
     "id": "NAV255",
     "barcode": "890100000255",
-    "name": "Brooke Bond Red Label Strong CTC Tea 500g Value Pack",
-    "brand": "RED LABEL",
+    "name": "Lay's Cream & Onion Potato Chips 100g",
+    "brand": "Lay's",
     "category": "Grocery & Staples",
     "cost": 398,
     "mrp": 531,
@@ -3567,13 +4329,16 @@
     "price": 467,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_26/255.png"
+    "image": "/products/NAV255.jpg",
+    "sku": "NAV255",
+    "title": "Lay's Cream & Onion Potato Chips 100g",
+    "imageUrl": "/products/NAV255.jpg"
   },
   {
     "id": "NAV256",
     "barcode": "890100000256",
-    "name": "Brooke Bond Red Label Natural Care Cardamom Ginger 500g Value Pack",
-    "brand": "RED LABEL",
+    "name": "Lux Soft Touch French Rose & Almond Oil Soap Bars 4x100g",
+    "brand": "Lux",
     "category": "Grocery & Staples",
     "cost": 459,
     "mrp": 612,
@@ -3581,13 +4346,16 @@
     "price": 539,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_26/256.png"
+    "image": "/products/NAV256.jpg",
+    "sku": "NAV256",
+    "title": "Lux Soft Touch French Rose & Almond Oil Soap Bars 4x100g",
+    "imageUrl": "/products/NAV256.jpg"
   },
   {
     "id": "NAV257",
     "barcode": "890100000257",
-    "name": "Brooke Bond Taj Mahal Rich Fresh Tea 500g Value Pack",
-    "brand": "TAJ MAHAL",
+    "name": "Liril Lime & Mint Soap 125g",
+    "brand": "Liril",
     "category": "Grocery & Staples",
     "cost": 526,
     "mrp": 702,
@@ -3595,13 +4363,16 @@
     "price": 618,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_26/257.png"
+    "image": "/products/NAV257.jpg",
+    "sku": "NAV257",
+    "title": "Liril Lime & Mint Soap 125g",
+    "imageUrl": "/products/NAV257.jpg"
   },
   {
     "id": "NAV258",
     "barcode": "890100000258",
-    "name": "Wagh Bakri Strong Premium Leaf Tea 500g Value Pack",
-    "brand": "WAGH BAKRI",
+    "name": "Lipton Pure & Light Green Tea 100 Tea Bags",
+    "brand": "Lipton",
     "category": "Grocery & Staples",
     "cost": 364,
     "mrp": 486,
@@ -3609,13 +4380,16 @@
     "price": 428,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_26/258.png"
+    "image": "/products/NAV258.jpg",
+    "sku": "NAV258",
+    "title": "Lipton Pure & Light Green Tea 100 Tea Bags",
+    "imageUrl": "/products/NAV258.jpg"
   },
   {
     "id": "NAV259",
     "barcode": "890100000259",
-    "name": "Nescafe Classic Pure Instant Coffee Jar 100g Value Pack",
-    "brand": "NESCAFE",
+    "name": "Lizol Floor Cleaner Pine & Lemon 1L",
+    "brand": "Lizol",
     "category": "Grocery & Staples",
     "cost": 486,
     "mrp": 648,
@@ -3623,13 +4397,16 @@
     "price": 570,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_26/259.png"
+    "image": "/products/NAV259.jpg",
+    "sku": "NAV259",
+    "title": "Lizol Floor Cleaner Pine & Lemon 1L",
+    "imageUrl": "/products/NAV259.jpg"
   },
   {
     "id": "NAV260",
     "barcode": "890100000260",
-    "name": "Bru Instant Roasted Coffee Chicory Blend Jar 100g Value Pack",
-    "brand": "BRU",
+    "name": "Lifebuoy Total Protect Hand Wash Refill Pouch 750ml",
+    "brand": "Lifebuoy",
     "category": "Grocery & Staples",
     "cost": 310,
     "mrp": 414,
@@ -3637,13 +4414,16 @@
     "price": 364,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_26/260.png"
+    "image": "/products/NAV260.jpg",
+    "sku": "NAV260",
+    "title": "Lifebuoy Total Protect Hand Wash Refill Pouch 750ml",
+    "imageUrl": "/products/NAV260.jpg"
   },
   {
     "id": "NAV261",
     "barcode": "890100000261",
-    "name": "Bournvita Chocolate Nutrition Health Drink 1kg Value Pack",
-    "brand": "CADBURY",
+    "name": "Maggi 2-Minute Masala Noodles Family Pack 560g",
+    "brand": "Maggi",
     "category": "Grocery & Staples",
     "cost": 594,
     "mrp": 792,
@@ -3651,13 +4431,16 @@
     "price": 697,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_27/261.png"
+    "image": "/products/NAV261.jpg",
+    "sku": "NAV261",
+    "title": "Maggi 2-Minute Masala Noodles Family Pack 560g",
+    "imageUrl": "/products/NAV261.jpg"
   },
   {
     "id": "NAV262",
     "barcode": "890100000262",
-    "name": "Horlicks Classic Malt Health Nutrition Jar 1kg Value Pack",
-    "brand": "HORLICKS",
+    "name": "MDH Degi Mirch Chilli Powder 100g",
+    "brand": "MDH",
     "category": "Grocery & Staples",
     "cost": 608,
     "mrp": 810,
@@ -3665,13 +4448,16 @@
     "price": 713,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_27/262.png"
+    "image": "/products/NAV262.jpg",
+    "sku": "NAV262",
+    "title": "MDH Degi Mirch Chilli Powder 100g",
+    "imageUrl": "/products/NAV262.jpg"
   },
   {
     "id": "NAV263",
     "barcode": "890100000263",
-    "name": "Boost Energy Chocolate Sports Health Drink 500g Value Pack",
-    "brand": "BOOST",
+    "name": "MDH Chunky Chat Masala 100g",
+    "brand": "MDH",
     "category": "Grocery & Staples",
     "cost": 358,
     "mrp": 477,
@@ -3679,13 +4465,16 @@
     "price": 420,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_27/263.png"
+    "image": "/products/NAV263.jpg",
+    "sku": "NAV263",
+    "title": "MDH Chunky Chat Masala 100g",
+    "imageUrl": "/products/NAV263.jpg"
   },
   {
     "id": "NAV264",
     "barcode": "890100000264",
-    "name": "Rooh Afza Herbal Concentrated Syrup Sharbat 750ml Value Pack",
-    "brand": "HAMDARD",
+    "name": "MDH Kitchen King Sabzi Masala 100g",
+    "brand": "MDH",
     "category": "Grocery & Staples",
     "cost": 250,
     "mrp": 333,
@@ -3693,13 +4482,16 @@
     "price": 293,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_27/264.png"
+    "image": "/products/NAV264.jpg",
+    "sku": "NAV264",
+    "title": "MDH Kitchen King Sabzi Masala 100g",
+    "imageUrl": "/products/NAV264.jpg"
   },
   {
     "id": "NAV265",
     "barcode": "890100000265",
-    "name": "Kissan Fresh Tomato Ketchup Bottle 1kg Value Pack",
-    "brand": "KISSAN",
+    "name": "MDH Garam Masala 100g",
+    "brand": "MDH",
     "category": "Grocery & Staples",
     "cost": 196,
     "mrp": 261,
@@ -3707,13 +4499,16 @@
     "price": 230,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_27/265.png"
+    "image": "/products/NAV265.jpg",
+    "sku": "NAV265",
+    "title": "MDH Garam Masala 100g",
+    "imageUrl": "/products/NAV265.jpg"
   },
   {
     "id": "NAV266",
     "barcode": "890100000266",
-    "name": "Maggi Rich Tomato Sauce Pitcher Bottle 1kg Value Pack",
-    "brand": "MAGGI",
+    "name": "Mother Dairy Pure Ghee 1 Litre",
+    "brand": "Mother",
     "category": "Grocery & Staples",
     "cost": 209,
     "mrp": 279,
@@ -3721,13 +4516,16 @@
     "price": 246,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_27/266.png"
+    "image": "/products/NAV266.jpg",
+    "sku": "NAV266",
+    "title": "Mother Dairy Pure Ghee 1 Litre",
+    "imageUrl": "/products/NAV266.jpg"
   },
   {
     "id": "NAV267",
     "barcode": "890100000267",
-    "name": "Kissan Mixed Fruit Sweet Jam Glass Jar 500g Value Pack",
-    "brand": "KISSAN",
+    "name": "Mother Dairy Fresh Paneer 200g",
+    "brand": "Mother",
     "category": "Grocery & Staples",
     "cost": 230,
     "mrp": 306,
@@ -3735,13 +4533,16 @@
     "price": 269,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_27/267.png"
+    "image": "/products/NAV267.jpg",
+    "sku": "NAV267",
+    "title": "Mother Dairy Fresh Paneer 200g",
+    "imageUrl": "/products/NAV267.jpg"
   },
   {
     "id": "NAV268",
     "barcode": "890100000268",
-    "name": "Nutella Hazelnut Cocoa Creamy Bread Spread 350g Value Pack",
-    "brand": "NUTELLA",
+    "name": "Harvest Gold Yellow Split Moong Dal 1kg",
+    "brand": "Harvest",
     "category": "Grocery & Staples",
     "cost": 554,
     "mrp": 738,
@@ -3749,13 +4550,16 @@
     "price": 649,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_27/268.png"
+    "image": "/products/NAV268.jpg",
+    "sku": "NAV268",
+    "title": "Harvest Gold Yellow Split Moong Dal 1kg",
+    "imageUrl": "/products/NAV268.jpg"
   },
   {
     "id": "NAV269",
     "barcode": "890100000269",
-    "name": "Pintola All Natural Creamy Peanut Butter 1kg Value Pack",
-    "brand": "PINTOLA",
+    "name": "Organic Harvest Moong Whole Green Mung Beans 1kg",
+    "brand": "Organic",
     "category": "Grocery & Staples",
     "cost": 538,
     "mrp": 718,
@@ -3763,13 +4567,16 @@
     "price": 632,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_27/269.png"
+    "image": "/products/NAV269.jpg",
+    "sku": "NAV269",
+    "title": "Organic Harvest Moong Whole Green Mung Beans 1kg",
+    "imageUrl": "/products/NAV269.jpg"
   },
   {
     "id": "NAV270",
     "barcode": "890100000270",
-    "name": "Dabur 100 Percent Pure Squeezy Honey 500g Value Pack",
-    "brand": "DABUR",
+    "name": "Royal Harvest Masoor Dal Red Lentils Split 1kg",
+    "brand": "Royal",
     "category": "Grocery & Staples",
     "cost": 317,
     "mrp": 423,
@@ -3777,13 +4584,16 @@
     "price": 372,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_27/270.png"
+    "image": "/products/NAV270.jpg",
+    "sku": "NAV270",
+    "title": "Royal Harvest Masoor Dal Red Lentils Split 1kg",
+    "imageUrl": "/products/NAV270.jpg"
   },
   {
     "id": "NAV271",
     "barcode": "890100000271",
-    "name": "Maggi 2 Minute Masala Instant Noodles 12 Pack 840g Value Pack",
-    "brand": "MAGGI",
+    "name": "Navratna Ayurvedic Cool Hair Oil 300ml",
+    "brand": "Navratna",
     "category": "Grocery & Staples",
     "cost": 226,
     "mrp": 302,
@@ -3791,13 +4601,16 @@
     "price": 266,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_28/271.png"
+    "image": "/products/NAV271.jpg",
+    "sku": "NAV271",
+    "title": "Navratna Ayurvedic Cool Hair Oil 300ml",
+    "imageUrl": "/products/NAV271.jpg"
   },
   {
     "id": "NAV272",
     "barcode": "890100000272",
-    "name": "Yippee Mood Masala Instant Noodles 4 Pack 280g Value Pack",
-    "brand": "SUNFEAST",
+    "name": "Nivea Soft Moisturising Cream 200ml",
+    "brand": "Nivea",
     "category": "Grocery & Staples",
     "cost": 81,
     "mrp": 108,
@@ -3805,13 +4618,16 @@
     "price": 95,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_28/272.png"
+    "image": "/products/NAV272.jpg",
+    "sku": "NAV272",
+    "title": "Nivea Soft Moisturising Cream 200ml",
+    "imageUrl": "/products/NAV272.jpg"
   },
   {
     "id": "NAV273",
     "barcode": "890100000273",
-    "name": "Chings Secret Schezwan Noodles 4 Pack 240g Value Pack",
-    "brand": "CHINGS",
+    "name": "Nivea Body Lotion Deep Moisture Serum 400ml",
+    "brand": "Nivea",
     "category": "Grocery & Staples",
     "cost": 74,
     "mrp": 99,
@@ -3819,13 +4635,16 @@
     "price": 87,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_28/273.png"
+    "image": "/products/NAV273.jpg",
+    "sku": "NAV273",
+    "title": "Nivea Body Lotion Deep Moisture Serum 400ml",
+    "imageUrl": "/products/NAV273.jpg"
   },
   {
     "id": "NAV274",
     "barcode": "890100000274",
-    "name": "Parle G Original Glucose Biscuits Value Pack 800g Value Pack",
-    "brand": "PARLE",
+    "name": "Nirma Washing Powder Super Whitening Power 1kg",
+    "brand": "Nirma",
     "category": "Grocery & Staples",
     "cost": 122,
     "mrp": 162,
@@ -3833,13 +4652,16 @@
     "price": 143,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_28/274.png"
+    "image": "/products/NAV274.jpg",
+    "sku": "NAV274",
+    "title": "Nirma Washing Powder Super Whitening Power 1kg",
+    "imageUrl": "/products/NAV274.jpg"
   },
   {
     "id": "NAV275",
     "barcode": "890100000275",
-    "name": "Britannia Good Day Butter Cookies Multipack 600g Value Pack",
-    "brand": "BRITANNIA",
+    "name": "Nescafe Classic Instant Coffee 100g",
+    "brand": "Nescafe",
     "category": "Grocery & Staples",
     "cost": 189,
     "mrp": 252,
@@ -3847,13 +4669,16 @@
     "price": 222,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_28/275.png"
+    "image": "/products/NAV275.jpg",
+    "sku": "NAV275",
+    "title": "Nescafe Classic Instant Coffee 100g",
+    "imageUrl": "/products/NAV275.jpg"
   },
   {
     "id": "NAV276",
     "barcode": "890100000276",
-    "name": "Britannia Good Day Cashew Almond Cookies 600g Value Pack",
-    "brand": "BRITANNIA",
+    "name": "Nestle Everyday Dairy Whitener 400g",
+    "brand": "Nestle",
     "category": "Grocery & Staples",
     "cost": 202,
     "mrp": 270,
@@ -3861,13 +4686,16 @@
     "price": 238,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_28/276.png"
+    "image": "/products/NAV276.jpg",
+    "sku": "NAV276",
+    "title": "Nestle Everyday Dairy Whitener 400g",
+    "imageUrl": "/products/NAV276.jpg"
   },
   {
     "id": "NAV277",
     "barcode": "890100000277",
-    "name": "Britannia Marie Gold Crisp Tea Biscuits 1kg Value Pack",
-    "brand": "BRITANNIA",
+    "name": "Nutrela Soya Chunks High Protein 1kg",
+    "brand": "Nutrela",
     "category": "Grocery & Staples",
     "cost": 196,
     "mrp": 261,
@@ -3875,13 +4703,16 @@
     "price": 230,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_28/277.png"
+    "image": "/products/NAV277.jpg",
+    "sku": "NAV277",
+    "title": "Nutrela Soya Chunks High Protein 1kg",
+    "imageUrl": "/products/NAV277.jpg"
   },
   {
     "id": "NAV278",
     "barcode": "890100000278",
-    "name": "Sunfeast Dark Fantasy Choco Fills Multipack 300g Value Pack",
-    "brand": "SUNFEAST",
+    "name": "Swaad Nylon Sabudana Tapioca Sago 500g",
+    "brand": "Swaad",
     "category": "Grocery & Staples",
     "cost": 216,
     "mrp": 288,
@@ -3889,13 +4720,16 @@
     "price": 253,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_28/278.png"
+    "image": "/products/NAV278.jpg",
+    "sku": "NAV278",
+    "title": "Swaad Nylon Sabudana Tapioca Sago 500g",
+    "imageUrl": "/products/NAV278.jpg"
   },
   {
     "id": "NAV279",
     "barcode": "890100000279",
-    "name": "Oreo Original Vanilla Creme Sandwich Biscuits 300g Value Pack",
-    "brand": "CADBURY",
+    "name": "Saffola Real Oats Whole Grain 1kg",
+    "brand": "Saffola",
     "category": "Grocery & Staples",
     "cost": 128,
     "mrp": 171,
@@ -3903,13 +4737,16 @@
     "price": 150,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_28/279.png"
+    "image": "/products/NAV279.jpg",
+    "sku": "NAV279",
+    "title": "Saffola Real Oats Whole Grain 1kg",
+    "imageUrl": "/products/NAV279.jpg"
   },
   {
     "id": "NAV280",
     "barcode": "890100000280",
-    "name": "Britannia Bourbon Chocolate Cream Biscuits 300g Value Pack",
-    "brand": "BRITANNIA",
+    "name": "Kellogg's Whole Grain Rolled Oats 1kg",
+    "brand": "Kellogg's",
     "category": "Grocery & Staples",
     "cost": 101,
     "mrp": 135,
@@ -3917,13 +4754,16 @@
     "price": 119,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_28/280.png"
+    "image": "/products/NAV280.jpg",
+    "sku": "NAV280",
+    "title": "Kellogg's Whole Grain Rolled Oats 1kg",
+    "imageUrl": "/products/NAV280.jpg"
   },
   {
     "id": "NAV281",
     "barcode": "890100000281",
-    "name": "Britannia Milk Bikis Creamy Calcium Biscuits 400g Value Pack",
-    "brand": "BRITANNIA",
+    "name": "Odonil Room Air Freshener Block Floral Bouquet 75g",
+    "brand": "Odonil",
     "category": "Grocery & Staples",
     "cost": 115,
     "mrp": 153,
@@ -3931,13 +4771,16 @@
     "price": 135,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_29/281.png"
+    "image": "/products/NAV281.jpg",
+    "sku": "NAV281",
+    "title": "Odonil Room Air Freshener Block Floral Bouquet 75g",
+    "imageUrl": "/products/NAV281.jpg"
   },
   {
     "id": "NAV282",
     "barcode": "890100000282",
-    "name": "Haldirams Nagpur Aloo Bhujia Namkeen 1kg Value Pack",
-    "brand": "HALDIRAMS",
+    "name": "Oral-B CrossAction Medium Toothbrushes 2 Pack",
+    "brand": "Oral-B",
     "category": "Grocery & Staples",
     "cost": 364,
     "mrp": 486,
@@ -3945,13 +4788,16 @@
     "price": 428,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_29/282.png"
+    "image": "/products/NAV282.jpg",
+    "sku": "NAV282",
+    "title": "Oral-B CrossAction Medium Toothbrushes 2 Pack",
+    "imageUrl": "/products/NAV282.jpg"
   },
   {
     "id": "NAV283",
     "barcode": "890100000283",
-    "name": "Haldirams Bhujia Sev Crispy Snack 1kg Value Pack",
-    "brand": "HALDIRAMS",
+    "name": "Oreo Chocolate Creme Sandwich Biscuits 300g",
+    "brand": "Oreo",
     "category": "Grocery & Staples",
     "cost": 351,
     "mrp": 468,
@@ -3959,13 +4805,16 @@
     "price": 412,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_29/283.png"
+    "image": "/products/NAV283.jpg",
+    "sku": "NAV283",
+    "title": "Oreo Chocolate Creme Sandwich Biscuits 300g",
+    "imageUrl": "/products/NAV283.jpg"
   },
   {
     "id": "NAV284",
     "barcode": "890100000284",
-    "name": "Haldirams All In One Mixture Spicy Snack 1kg Value Pack",
-    "brand": "HALDIRAMS",
+    "name": "The Spice Merchant Onion Powder 100g",
+    "brand": "The",
     "category": "Grocery & Staples",
     "cost": 371,
     "mrp": 495,
@@ -3973,13 +4822,16 @@
     "price": 436,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_29/284.png"
+    "image": "/products/NAV284.jpg",
+    "sku": "NAV284",
+    "title": "The Spice Merchant Onion Powder 100g",
+    "imageUrl": "/products/NAV284.jpg"
   },
   {
     "id": "NAV285",
     "barcode": "890100000285",
-    "name": "Haldirams Moong Dal Salted Fried Lentil 400g Value Pack",
-    "brand": "HALDIRAMS",
+    "name": "Parle-G Original Glucose Biscuits 800g",
+    "brand": "Parle-G",
     "category": "Grocery & Staples",
     "cost": 196,
     "mrp": 261,
@@ -3987,13 +4839,16 @@
     "price": 230,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_29/285.png"
+    "image": "/products/NAV285.jpg",
+    "sku": "NAV285",
+    "title": "Parle-G Original Glucose Biscuits 800g",
+    "imageUrl": "/products/NAV285.jpg"
   },
   {
     "id": "NAV286",
     "barcode": "890100000286",
-    "name": "Haldirams Khatta Meetha Sweet Sour Mixture 400g Value Pack",
-    "brand": "HALDIRAMS",
+    "name": "Parachute Advansed 100% Pure Coconut Oil 600ml",
+    "brand": "Parachute",
     "category": "Grocery & Staples",
     "cost": 155,
     "mrp": 207,
@@ -4001,13 +4856,16 @@
     "price": 182,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_29/286.png"
+    "image": "/products/NAV286.jpg",
+    "sku": "NAV286",
+    "title": "Parachute Advansed 100% Pure Coconut Oil 600ml",
+    "imageUrl": "/products/NAV286.jpg"
   },
   {
     "id": "NAV287",
     "barcode": "890100000287",
-    "name": "Lays India Magic Masala Potato Chips Party Pack 115g Value Pack",
-    "brand": "LAYS",
+    "name": "Patanjali Dant Kanti Dental Cream Toothpaste 200g",
+    "brand": "Patanjali",
     "category": "Grocery & Staples",
     "cost": 68,
     "mrp": 90,
@@ -4015,13 +4873,16 @@
     "price": 79,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_29/287.png"
+    "image": "/products/NAV287.jpg",
+    "sku": "NAV287",
+    "title": "Patanjali Dant Kanti Dental Cream Toothpaste 200g",
+    "imageUrl": "/products/NAV287.jpg"
   },
   {
     "id": "NAV288",
     "barcode": "890100000288",
-    "name": "Kurkure Masala Munch Crunchy Spicy Snack 115g Value Pack",
-    "brand": "KURKURE",
+    "name": "Patanjali Pure Cow Ghee 1 Litre",
+    "brand": "Patanjali",
     "category": "Grocery & Staples",
     "cost": 68,
     "mrp": 90,
@@ -4029,13 +4890,16 @@
     "price": 79,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_29/288.png"
+    "image": "/products/NAV288.jpg",
+    "sku": "NAV288",
+    "title": "Patanjali Pure Cow Ghee 1 Litre",
+    "imageUrl": "/products/NAV288.jpg"
   },
   {
     "id": "NAV289",
     "barcode": "890100000289",
-    "name": "Uncle Chipps Spicy Treat Salted Potato Chips 100g Value Pack",
-    "brand": "UNCLE CHIPPS",
+    "name": "Pears Pure & Gentle Transparent Soap Multipack 4x125g",
+    "brand": "Pears",
     "category": "Grocery & Staples",
     "cost": 68,
     "mrp": 90,
@@ -4043,13 +4907,16 @@
     "price": 79,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_29/289.png"
+    "image": "/products/NAV289.jpg",
+    "sku": "NAV289",
+    "title": "Pears Pure & Gentle Transparent Soap Multipack 4x125g",
+    "imageUrl": "/products/NAV289.jpg"
   },
   {
     "id": "NAV290",
     "barcode": "890100000290",
-    "name": "Cadbury Dairy Milk Silk Chocolate Bar 150g Value Pack",
-    "brand": "CADBURY",
+    "name": "Pepsodent Germicheck Toothpaste 300g",
+    "brand": "Pepsodent",
     "category": "Grocery & Staples",
     "cost": 263,
     "mrp": 351,
@@ -4057,13 +4924,16 @@
     "price": 309,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_29/290.png"
+    "image": "/products/NAV290.jpg",
+    "sku": "NAV290",
+    "title": "Pepsodent Germicheck Toothpaste 300g",
+    "imageUrl": "/products/NAV290.jpg"
   },
   {
     "id": "NAV291",
     "barcode": "890100000291",
-    "name": "Surf Excel Easy Wash Detergent Powder Bag 5kg Value Pack",
-    "brand": "SURF EXCEL",
+    "name": "Pampers All Round Protection Baby Diapers Large 64 Count",
+    "brand": "Pampers",
     "category": "Grocery & Staples",
     "cost": 918,
     "mrp": 1224,
@@ -4071,13 +4941,16 @@
     "price": 1077,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_30/291.png"
+    "image": "/products/NAV291.jpg",
+    "sku": "NAV291",
+    "title": "Pampers All Round Protection Baby Diapers Large 64 Count",
+    "imageUrl": "/products/NAV291.jpg"
   },
   {
     "id": "NAV292",
     "barcode": "890100000292",
-    "name": "Surf Excel Matic Front Load Liquid Detergent 2L Value Pack",
-    "brand": "SURF EXCEL",
+    "name": "Pril Kraft-Gel Dishwash Liquid 500ml",
+    "brand": "Pril",
     "category": "Grocery & Staples",
     "cost": 668,
     "mrp": 891,
@@ -4085,13 +4958,16 @@
     "price": 784,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_30/292.png"
+    "image": "/products/NAV292.jpg",
+    "sku": "NAV292",
+    "title": "Pril Kraft-Gel Dishwash Liquid 500ml",
+    "imageUrl": "/products/NAV292.jpg"
   },
   {
     "id": "NAV293",
     "barcode": "890100000293",
-    "name": "Ariel Complete Floral Fragrance Detergent Powder 4kg Value Pack",
-    "brand": "ARIEL",
+    "name": "Sri Dharma Pooja Lamp Oil 1 Litre",
+    "brand": "Sri",
     "category": "Grocery & Staples",
     "cost": 864,
     "mrp": 1152,
@@ -4099,13 +4975,16 @@
     "price": 1014,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_30/293.png"
+    "image": "/products/NAV293.jpg",
+    "sku": "NAV293",
+    "title": "Sri Dharma Pooja Lamp Oil 1 Litre",
+    "imageUrl": "/products/NAV293.jpg"
   },
   {
     "id": "NAV294",
     "barcode": "890100000294",
-    "name": "Tide Plus Extra Power Lemon Mint Detergent 5kg Value Pack",
-    "brand": "TIDE",
+    "name": "Tradition Harvest Premium Thick Poha Flattened Rice 1kg",
+    "brand": "Tradition",
     "category": "Grocery & Staples",
     "cost": 783,
     "mrp": 1044,
@@ -4113,13 +4992,16 @@
     "price": 919,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_30/294.png"
+    "image": "/products/NAV294.jpg",
+    "sku": "NAV294",
+    "title": "Tradition Harvest Premium Thick Poha Flattened Rice 1kg",
+    "imageUrl": "/products/NAV294.jpg"
   },
   {
     "id": "NAV295",
     "barcode": "890100000295",
-    "name": "Rin Advanced Fresh Crisp Detergent Powder 4kg Value Pack",
-    "brand": "RIN",
+    "name": "Quaker Whole Grain Rolled Oats 1kg",
+    "brand": "Quaker",
     "category": "Grocery & Staples",
     "cost": 526,
     "mrp": 702,
@@ -4127,13 +5009,16 @@
     "price": 618,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_30/295.png"
+    "image": "/products/NAV295.jpg",
+    "sku": "NAV295",
+    "title": "Quaker Whole Grain Rolled Oats 1kg",
+    "imageUrl": "/products/NAV295.jpg"
   },
   {
     "id": "NAV296",
     "barcode": "890100000296",
-    "name": "Comfort After Wash Fabric Softener Lily Blue 2L Value Pack",
-    "brand": "COMFORT",
+    "name": "Quick Tatkal CTC Black Tea 500g",
+    "brand": "Quick",
     "category": "Grocery & Staples",
     "cost": 594,
     "mrp": 792,
@@ -4141,13 +5026,16 @@
     "price": 697,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_30/296.png"
+    "image": "/products/NAV296.jpg",
+    "sku": "NAV296",
+    "title": "Quick Tatkal CTC Black Tea 500g",
+    "imageUrl": "/products/NAV296.jpg"
   },
   {
     "id": "NAV297",
     "barcode": "890100000297",
-    "name": "Vim Dishwash Liquid Gel Lemon Concentrate 2L Value Pack",
-    "brand": "VIM",
+    "name": "Swadist Whole Cumin Seeds Jeera 100g",
+    "brand": "Swadist",
     "category": "Grocery & Staples",
     "cost": 538,
     "mrp": 718,
@@ -4155,13 +5043,16 @@
     "price": 632,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_30/297.png"
+    "image": "/products/NAV297.jpg",
+    "sku": "NAV297",
+    "title": "Swadist Whole Cumin Seeds Jeera 100g",
+    "imageUrl": "/products/NAV297.jpg"
   },
   {
     "id": "NAV298",
     "barcode": "890100000298",
-    "name": "Vim Dishwash Lemon Fragrance Bar Tub 500g Value Pack",
-    "brand": "VIM",
+    "name": "Navratna Spices Premium Red Chitra Rajma Kidney Beans 1kg",
+    "brand": "Navratna",
     "category": "Grocery & Staples",
     "cost": 54,
     "mrp": 72,
@@ -4169,13 +5060,16 @@
     "price": 63,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_30/298.png"
+    "image": "/products/NAV298.jpg",
+    "sku": "NAV298",
+    "title": "Navratna Spices Premium Red Chitra Rajma Kidney Beans 1kg",
+    "imageUrl": "/products/NAV298.jpg"
   },
   {
     "id": "NAV299",
     "barcode": "890100000299",
-    "name": "Exo Round Anti Bacterial Touch Dishwash Bar 500g Value Pack",
-    "brand": "EXO",
+    "name": "Jammu Rajma Dark Red Kidney Beans 1kg",
+    "brand": "Jammu",
     "category": "Grocery & Staples",
     "cost": 57,
     "mrp": 76,
@@ -4183,13 +5077,16 @@
     "price": 67,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_30/299.png"
+    "image": "/products/NAV299.jpg",
+    "sku": "NAV299",
+    "title": "Jammu Rajma Dark Red Kidney Beans 1kg",
+    "imageUrl": "/products/NAV299.jpg"
   },
   {
     "id": "NAV300",
     "barcode": "890100000300",
-    "name": "Pril Kraft Concentrated Dishwash Liquid Green Lime 750ml Value Pack",
-    "brand": "PRIL",
+    "name": "Rin Detergent Powder New Brightness Formula 1kg",
+    "brand": "Rin",
     "category": "Grocery & Staples",
     "cost": 256,
     "mrp": 342,
@@ -4197,13 +5094,16 @@
     "price": 301,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_30/300.png"
+    "image": "/products/NAV300.jpg",
+    "sku": "NAV300",
+    "title": "Rin Detergent Powder New Brightness Formula 1kg",
+    "imageUrl": "/products/NAV300.jpg"
   },
   {
     "id": "NAV301",
     "barcode": "890100000301",
-    "name": "Harpic Power Plus Disinfectant Toilet Cleaner Original 1L Value Pack",
-    "brand": "HARPIC",
+    "name": "Rin Detergent Bar Power White 250g",
+    "brand": "Rin",
     "category": "Grocery & Staples",
     "cost": 297,
     "mrp": 396,
@@ -4211,13 +5111,16 @@
     "price": 348,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_31/301.png"
+    "image": "/products/NAV301.jpg",
+    "sku": "NAV301",
+    "title": "Rin Detergent Bar Power White 250g",
+    "imageUrl": "/products/NAV301.jpg"
   },
   {
     "id": "NAV302",
     "barcode": "890100000302",
-    "name": "Lizol Disinfectant Surface Cleaner Citrus Floral 2L Value Pack",
-    "brand": "LIZOL",
+    "name": "Brooke Bond Red Label Natural Care Tea with Ayurvedic Actives 500g",
+    "brand": "Brooke",
     "category": "Grocery & Staples",
     "cost": 533,
     "mrp": 711,
@@ -4225,13 +5128,16 @@
     "price": 626,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_31/302.png"
+    "image": "/products/NAV302.jpg",
+    "sku": "NAV302",
+    "title": "Brooke Bond Red Label Natural Care Tea with Ayurvedic Actives 500g",
+    "imageUrl": "/products/NAV302.jpg"
   },
   {
     "id": "NAV303",
     "barcode": "890100000303",
-    "name": "Colin Glass and Appliance Shine Surface Cleaner 1L Value Pack",
-    "brand": "COLIN",
+    "name": "Real Activ Mixed Fruit Juice No Added Sugar 1 Litre",
+    "brand": "Real",
     "category": "Grocery & Staples",
     "cost": 250,
     "mrp": 333,
@@ -4239,13 +5145,16 @@
     "price": 293,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_31/303.png"
+    "image": "/products/NAV303.jpg",
+    "sku": "NAV303",
+    "title": "Real Activ Mixed Fruit Juice No Added Sugar 1 Litre",
+    "imageUrl": "/products/NAV303.jpg"
   },
   {
     "id": "NAV304",
     "barcode": "890100000304",
-    "name": "Dettol Original Anti Bacterial Liquid Antiseptic 1L Value Pack",
-    "brand": "DETTOL",
+    "name": "Annapurna Rice Flour Chawal Ka Atta 1kg",
+    "brand": "Annapurna",
     "category": "Grocery & Staples",
     "cost": 538,
     "mrp": 718,
@@ -4253,13 +5162,16 @@
     "price": 632,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_31/304.png"
+    "image": "/products/NAV304.jpg",
+    "sku": "NAV304",
+    "title": "Annapurna Rice Flour Chawal Ka Atta 1kg",
+    "imageUrl": "/products/NAV304.jpg"
   },
   {
     "id": "NAV305",
     "barcode": "890100000305",
-    "name": "Savlon Moisture Shield Anti Bacterial Liquid 1L Value Pack",
-    "brand": "SAVLON",
+    "name": "Hamdard Rooh Afza Sharbat Concentrate 750ml",
+    "brand": "Hamdard",
     "category": "Grocery & Staples",
     "cost": 459,
     "mrp": 612,
@@ -4267,13 +5179,16 @@
     "price": 539,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_31/305.png"
+    "image": "/products/NAV305.jpg",
+    "sku": "NAV305",
+    "title": "Hamdard Rooh Afza Sharbat Concentrate 750ml",
+    "imageUrl": "/products/NAV305.jpg"
   },
   {
     "id": "NAV306",
     "barcode": "890100000306",
-    "name": "Dettol Original Germ Protection Bathing Soap 4x125g Value Pack",
-    "brand": "DETTOL",
+    "name": "Surf Excel Easy Wash Detergent Powder 1kg",
+    "brand": "Surf",
     "category": "Grocery & Staples",
     "cost": 324,
     "mrp": 432,
@@ -4281,13 +5196,16 @@
     "price": 380,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_31/306.png"
+    "image": "/products/NAV306.jpg",
+    "sku": "NAV306",
+    "title": "Surf Excel Easy Wash Detergent Powder 1kg",
+    "imageUrl": "/products/NAV306.jpg"
   },
   {
     "id": "NAV307",
     "barcode": "890100000307",
-    "name": "Lifebuoy Total 10 Infection Defense Bathing Soap 4x125g Value Pack",
-    "brand": "LIFEBUOY",
+    "name": "Surf Excel Matic Front Load Washing Powder 1kg",
+    "brand": "Surf",
     "category": "Grocery & Staples",
     "cost": 256,
     "mrp": 342,
@@ -4295,13 +5213,16 @@
     "price": 301,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_31/307.png"
+    "image": "/products/NAV307.jpg",
+    "sku": "NAV307",
+    "title": "Surf Excel Matic Front Load Washing Powder 1kg",
+    "imageUrl": "/products/NAV307.jpg"
   },
   {
     "id": "NAV308",
     "barcode": "890100000308",
-    "name": "Dove Cream Beauty Bathing Bar Moisturizing Soap 3x125g Value Pack",
-    "brand": "DOVE",
+    "name": "Saffola Gold Multisource Edible Oil Pouch 1 Litre",
+    "brand": "Saffola",
     "category": "Grocery & Staples",
     "cost": 392,
     "mrp": 522,
@@ -4309,6 +5230,9 @@
     "price": 459,
     "gst": "5%",
     "stock": 25,
-    "image": "images/batch_31/308.png"
+    "image": "/products/NAV308.jpg",
+    "sku": "NAV308",
+    "title": "Saffola Gold Multisource Edible Oil Pouch 1 Litre",
+    "imageUrl": "/products/NAV308.jpg"
   }
 ]
