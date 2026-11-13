@@ -8,3 +8,6 @@ coverage/
 !.env.example
 
 saved_scripts/
+
+saved_scripts/
+31_PDF_Batches/
