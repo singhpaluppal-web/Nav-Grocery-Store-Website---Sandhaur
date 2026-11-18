@@ -67,7 +67,7 @@ import {
   saveOperatorId,
 } from '../../utils/activityLog';
 
-const ADMIN_PIN = 'DEVICE_LOCKED';
+const ADMIN_PIN = '148020';
 const ADMIN_SESSION_KEY = 'nav_admin_unlocked_v2';
 const CUSTOM_CATEGORIES_STORAGE_KEY = 'nav_admin_custom_categories_v1';
 const PRESET_CATEGORIES = [
@@ -260,7 +260,7 @@ export const AdminControlCenter: React.FC = () => {
   const [logsLoading, setLogsLoading] = useState<boolean>(false);
   const [operatorId, setOperatorId] = useState<string>(() => getSavedOperatorId());
 
-  // Live photo link probe status per SKU (/products/001.jpgâ€“308.jpg & /products/NAV001.jpgâ€“NAV308.jpg)
+  // Live photo link probe status per SKU (/products/001.jpg–308.jpg & /products/NAV001.jpg–NAV308.jpg)
   const [photoLinkStatus, setPhotoLinkStatus] = useState<Record<string, PhotoLinkInfo>>({});
   const probedSigRef = useRef<Map<string, string>>(new Map());
 
@@ -445,7 +445,7 @@ export const AdminControlCenter: React.FC = () => {
   const totalPages = Math.max(1, Math.ceil(filteredProducts.length / PAGE_SIZE));
   const pagedProducts = filteredProducts.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
-  // Automatically check /products/001.jpgâ€“308.jpg and /products/NAV001.jpgâ€“NAV308.jpg for visible rows
+  // Automatically check /products/001.jpg–308.jpg and /products/NAV001.jpg–NAV308.jpg for visible rows
   useEffect(() => {
     if (!unlocked || loading || activeTab !== 'catalog' || pagedProducts.length === 0) return;
     let cancelled = false;
@@ -586,8 +586,8 @@ export const AdminControlCenter: React.FC = () => {
       void logProductActivity({
         actionType: 'stock_toggle',
         sku: product.id,
-        summary: `${nextStock > 0 ? 'Marked In Stock' : 'Marked Out of Stock'} Â· ${product.name}`,
-        details: `Stock qty: ${prevStock} â†’ ${nextStock}`,
+        summary: `${nextStock > 0 ? 'Marked In Stock' : 'Marked Out of Stock'} · ${product.name}`,
+        details: `Stock qty: ${prevStock} → ${nextStock}`,
       });
       notify('ok', `${product.id}: Stock set to ${nextStock > 0 ? `${nextStock} units (In Stock)` : '0 (Out of Stock)'}.`);
     } else {
@@ -901,13 +901,13 @@ export const AdminControlCenter: React.FC = () => {
         void logProductActivity({
           actionType: 'category_edit',
           sku: `${affectedIds.length} SKUs`,
-          summary: `Renamed category "${oldCategory}" â†’ "${cleanNew}"`,
+          summary: `Renamed category "${oldCategory}" → "${cleanNew}"`,
           details: `Updated ${affectedIds.length} product(s)`,
         });
       }
       notify(
         'ok',
-        `Renamed category "${oldCategory}" â†’ "${cleanNew}" across ${affectedIds.length} product(s).`
+        `Renamed category "${oldCategory}" → "${cleanNew}" across ${affectedIds.length} product(s).`
       );
     } else {
       notify('err', `Failed to rename category "${oldCategory}" in Firebase.`);
@@ -961,19 +961,19 @@ export const AdminControlCenter: React.FC = () => {
 
       const diffs: string[] = [];
       if (original && original.mrp !== updated.mrp) {
-        diffs.push(`MRP: â‚¹${original.mrp} â†’ â‚¹${updated.mrp} (Sale â‚¹${sale})`);
+        diffs.push(`MRP: ₹${original.mrp} → ₹${updated.mrp} (Sale ₹${sale})`);
       }
       if (original && Number(original.stock) !== Number(updated.stock)) {
-        diffs.push(`Stock: ${original.stock} â†’ ${updated.stock}`);
+        diffs.push(`Stock: ${original.stock} → ${updated.stock}`);
       }
       if (original && original.name !== updated.name) {
         diffs.push(`Title updated`);
       }
       if (original && original.brand !== updated.brand) {
-        diffs.push(`Brand: ${original.brand} â†’ ${updated.brand}`);
+        diffs.push(`Brand: ${original.brand} → ${updated.brand}`);
       }
       if (original && original.category !== updated.category) {
-        diffs.push(`Category: ${original.category} â†’ ${updated.category}`);
+        diffs.push(`Category: ${original.category} → ${updated.category}`);
       }
 
       void logProductActivity({
@@ -986,12 +986,12 @@ export const AdminControlCenter: React.FC = () => {
         sku: updated.id,
         summary:
           original && original.mrp !== updated.mrp
-            ? `Updated MRP for ${updated.name} (â‚¹${original.mrp} â†’ â‚¹${updated.mrp})`
+            ? `Updated MRP for ${updated.name} (₹${original.mrp} → ₹${updated.mrp})`
             : `Updated product details for ${updated.name}`,
-        details: diffs.length > 0 ? diffs.join(' Â· ') : `MRP â‚¹${mrp} Â· Stock ${updated.stock}`,
+        details: diffs.length > 0 ? diffs.join(' · ') : `MRP ₹${mrp} · Stock ${updated.stock}`,
       });
 
-      notify('ok', `Saved ${updated.id} (MRP â‚¹${mrp} â†’ Wholesale â‚¹${sale}) across all channels.`);
+      notify('ok', `Saved ${updated.id} (MRP ₹${mrp} → Wholesale ₹${sale}) across all channels.`);
     } else {
       notify('err', `Failed to save changes for ${updated.id}.`);
     }
@@ -1031,11 +1031,11 @@ export const AdminControlCenter: React.FC = () => {
           actionType: 'photo_update',
           sku: target.id,
           summary: `Uploaded custom photo for ${target.name}`,
-          details: `Compressed ${formatKb(compressed.beforeBytes)} â†’ ${formatKb(compressed.afterBytes)}`,
+          details: `Compressed ${formatKb(compressed.beforeBytes)} → ${formatKb(compressed.afterBytes)}`,
         });
         notify(
           'ok',
-          `${target.id}: Custom photo compressed (${formatKb(compressed.beforeBytes)} â†’ ${formatKb(
+          `${target.id}: Custom photo compressed (${formatKb(compressed.beforeBytes)} → ${formatKb(
             compressed.afterBytes
           )}) & synced live to Firebase.`
         );
@@ -1089,7 +1089,7 @@ export const AdminControlCenter: React.FC = () => {
       const compressed = await compressImageFileToDataUrl(file, 800, 0.82);
       setNewPhotoDataUrl(compressed.dataUrl);
       setNewPhotoInfo(
-        `Compressed ${formatKb(compressed.beforeBytes)} â†’ ${formatKb(compressed.afterBytes)}`
+        `Compressed ${formatKb(compressed.beforeBytes)} → ${formatKb(compressed.afterBytes)}`
       );
     } catch {
       notify('err', 'Could not process selected photo.');
@@ -1141,8 +1141,8 @@ export const AdminControlCenter: React.FC = () => {
       void logProductActivity({
         actionType: 'sku_create',
         sku: cleanSku,
-        summary: `${exists ? 'Updated' : 'Published'} SKU ${created.name} (MRP â‚¹${mrpVal}, 12% Off â‚¹${saleVal})`,
-        details: `Dept: ${created.department} Â· Opening stock: ${stockVal}`,
+        summary: `${exists ? 'Updated' : 'Published'} SKU ${created.name} (MRP ₹${mrpVal}, 12% Off ₹${saleVal})`,
+        details: `Dept: ${created.department} · Opening stock: ${stockVal}`,
       });
       setNewSku('');
       setNewName('');
@@ -1206,7 +1206,7 @@ export const AdminControlCenter: React.FC = () => {
     if (valid.length === 0) {
       notify(
         'err',
-        'Add images with valid SKU filenames (e.g. 001.jpgâ€“308.jpg or NAV001.jpgâ€“NAV308.jpg) first.'
+        'Add images with valid SKU filenames (e.g. 001.jpg–308.jpg or NAV001.jpg–NAV308.jpg) first.'
       );
       return;
     }
@@ -1415,13 +1415,13 @@ export const AdminControlCenter: React.FC = () => {
       setProducts(combined);
       void logProductActivity({
         actionType: 'bulk_sync',
-        sku: 'NAV001â€“NAV308',
+        sku: 'NAV001–NAV308',
         summary: `Synced all ${synced308.length} verified SKUs (+${customSkusToKeep.length} custom) to Firebase`,
         details: `Preserve custom photos: ${preserveCustomPhotosOnSync ? 'Yes' : 'No'}`,
       });
       notify(
         'ok',
-        `One-Click Sync complete: All ${synced308.length} verified SKUs (/products/001.jpgâ€“308.jpg) synced to Firebase & Android JSON Feed.`
+        `One-Click Sync complete: All ${synced308.length} verified SKUs (/products/001.jpg–308.jpg) synced to Firebase & Android JSON Feed.`
       );
     } else {
       notify('err', 'Firebase bulk sync failed. Check network connection.');
@@ -1604,7 +1604,7 @@ export const AdminControlCenter: React.FC = () => {
                   Nav Admin Center
                 </h1>
                 <p className="text-[11px] text-[#D4AF37] truncate">
-                  Sandhaur DEVICE_LOCKED Â· Unified Sync
+                  Sandhaur 148020 · Unified Sync
                 </p>
               </div>
             </div>
@@ -1725,7 +1725,7 @@ export const AdminControlCenter: React.FC = () => {
                 <span className="text-sm font-normal text-[#526058]"> / 308</span>
               </div>
               <div className="text-[11px] text-[#526058] mt-1">
-                Bound to `/products/001.jpgâ€“308.jpg` &amp; `NAV001â€“NAV308`
+                Bound to `/products/001.jpg–308.jpg` &amp; `NAV001–NAV308`
               </div>
             </div>
             <div className="bg-white rounded-xl border border-[#0B3B24]/12 p-4">
@@ -1821,7 +1821,7 @@ export const AdminControlCenter: React.FC = () => {
                     >
                       <option value="">
                         {selectedSkus.size > 0
-                          ? `Update Selected (${selectedSkus.size}) â–¾`
+                          ? `Update Selected (${selectedSkus.size}) ▾`
                           : 'Update Selected (0)'}
                       </option>
                       <option value="mark_in_stock">Set In Stock (25 units)</option>
@@ -1962,7 +1962,7 @@ export const AdminControlCenter: React.FC = () => {
                         {selectedSkus.size} SKU(s) selected for bulk edit
                       </div>
                       <div className="text-[11px] text-[#526058] font-mono-num">
-                        {selectedStockSummary.inStockCount} In Stock Â· {selectedStockSummary.outOfStockCount} Out of Stock
+                        {selectedStockSummary.inStockCount} In Stock · {selectedStockSummary.outOfStockCount} Out of Stock
                       </div>
                     </div>
 
@@ -1994,8 +1994,8 @@ export const AdminControlCenter: React.FC = () => {
                         </span>
                         <span className="whitespace-nowrap">
                           {selectedStockSummary.allInStock
-                            ? 'In Stock (Toggle â†’ Out of Stock)'
-                            : 'Out of Stock (Toggle â†’ In Stock)'}
+                            ? 'In Stock (Toggle → Out of Stock)'
+                            : 'Out of Stock (Toggle → In Stock)'}
                         </span>
                       </button>
 
@@ -2212,7 +2212,7 @@ export const AdminControlCenter: React.FC = () => {
                                 </span>
                                 {!isVerifiedSkuFormat(product.id) && (
                                   <span className="text-[10px] font-bold text-amber-700">
-                                    Â· Custom / Non-308
+                                    · Custom / Non-308
                                   </span>
                                 )}
                               </div>
@@ -2220,16 +2220,16 @@ export const AdminControlCenter: React.FC = () => {
                                 {product.name}
                               </div>
                               <div className="text-[11px] text-[#526058]">
-                                {product.brand} Â· {product.department} Â· {product.category}
+                                {product.brand} · {product.department} · {product.category}
                               </div>
                             </td>
 
                             <td className="py-2.5 px-3 text-right font-mono-num whitespace-nowrap">
                               <div className="font-bold text-[#0B3B24] text-sm">
-                                â‚¹{product.sale}
+                                ₹{product.sale}
                               </div>
                               <div className="text-[11px] text-[#526058]">
-                                MRP â‚¹{product.mrp}
+                                MRP ₹{product.mrp}
                               </div>
                             </td>
 
@@ -2328,7 +2328,7 @@ export const AdminControlCenter: React.FC = () => {
                                   <button
                                     type="button"
                                     onClick={() => handleResetProductPhoto(product)}
-                                    title="Revert to /products/001â€“308.jpg"
+                                    title="Revert to /products/001–308.jpg"
                                     className="p-1.5 rounded-lg border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-800 cursor-pointer"
                                   >
                                     <RotateCcw className="w-3.5 h-3.5" />
@@ -2395,7 +2395,7 @@ export const AdminControlCenter: React.FC = () => {
               {totalPages > 1 && (
                 <div className="px-4 py-3 border-t border-[#0B3B24]/10 flex items-center justify-between text-xs">
                   <span className="text-[#526058] font-mono-num">
-                    Showing {(page - 1) * PAGE_SIZE + 1}â€“
+                    Showing {(page - 1) * PAGE_SIZE + 1}–
                     {Math.min(page * PAGE_SIZE, filteredProducts.length)} of{' '}
                     {filteredProducts.length}
                   </span>
@@ -2433,7 +2433,7 @@ export const AdminControlCenter: React.FC = () => {
                   Add New Custom SKU &amp; Publish Across Channels
                 </h2>
                 <p className="text-xs text-[#526058] mt-0.5">
-                  Flat 12% Wholesale Discount (Sale = round(MRP Ã— 0.88)) is calculated automatically.
+                  Flat 12% Wholesale Discount (Sale = round(MRP × 0.88)) is calculated automatically.
                 </p>
               </div>
 
@@ -2527,7 +2527,7 @@ export const AdminControlCenter: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div>
                     <label className="block text-xs font-bold text-[#526058] mb-1">
-                      MRP (â‚¹) *
+                      MRP (₹) *
                     </label>
                     <input
                       type="number"
@@ -2538,7 +2538,7 @@ export const AdminControlCenter: React.FC = () => {
                       className="w-full px-3 py-2 rounded-lg border border-[#0B3B24]/25 font-mono-num focus:outline-none focus:border-[#0B3B24]"
                     />
                     <p className="text-[11px] font-semibold text-[#0B3B24] mt-1 font-mono-num">
-                      12% Off Sale Price: â‚¹
+                      12% Off Sale Price: ₹
                       {Math.round(Math.max(1, Number(newMrp) || 0) * 0.88)}
                     </p>
                   </div>
@@ -2660,11 +2660,11 @@ export const AdminControlCenter: React.FC = () => {
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[#0B3B24]/10">
                 <div>
                   <h2 className="font-display text-lg font-bold text-[#0B3B24]">
-                    Bulk Photo Uploader by SKU ID (001â€“308 / NAV001â€“NAV308)
+                    Bulk Photo Uploader by SKU ID (001–308 / NAV001–NAV308)
                   </h2>
                   <p className="text-xs text-[#526058] mt-0.5">
-                    Select photos named e.g. <span className="font-mono-num">001.jpgâ€“308.jpg</span> or{' '}
-                    <span className="font-mono-num">NAV001.jpgâ€“NAV308.jpg</span>. Resizes client-side to max 800px width (82% JPEG) and syncs cleanly to Firebase RTDB.
+                    Select photos named e.g. <span className="font-mono-num">001.jpg–308.jpg</span> or{' '}
+                    <span className="font-mono-num">NAV001.jpg–NAV308.jpg</span>. Resizes client-side to max 800px width (82% JPEG) and syncs cleanly to Firebase RTDB.
                   </p>
                 </div>
 
@@ -2715,7 +2715,7 @@ export const AdminControlCenter: React.FC = () => {
                   Drop SKU product photos here or click to browse
                 </p>
                 <p className="text-xs text-[#526058] mt-1">
-                  Auto-matches both <span className="font-mono-num">001.jpgâ€“308.jpg</span> &amp; <span className="font-mono-num">NAV001.jpgâ€“NAV308.jpg</span> Â· Client-side resize (max 800px width, 82% JPEG)
+                  Auto-matches both <span className="font-mono-num">001.jpg–308.jpg</span> &amp; <span className="font-mono-num">NAV001.jpg–NAV308.jpg</span> · Client-side resize (max 800px width, 82% JPEG)
                 </p>
               </div>
 
@@ -2808,7 +2808,7 @@ export const AdminControlCenter: React.FC = () => {
                               {matchedProduct ? matchedProduct.name : item.fileName}
                             </p>
                             <p className="text-[10px] font-mono-num text-[#526058]">
-                              {formatKb(item.beforeBytes)} â†’ {formatKb(item.afterBytes)}
+                              {formatKb(item.beforeBytes)} → {formatKb(item.afterBytes)}
                             </p>
                           </div>
                         </div>
@@ -2841,7 +2841,7 @@ export const AdminControlCenter: React.FC = () => {
                     One-Click 308 Verified SKU Sync &amp; Cleanup
                   </h2>
                   <p className="text-xs text-[#526058] mt-1">
-                    Pushes all 308 verified SKUs (NAV001â€“NAV308) bound to `/products/001.jpg`â€“`/products/308.jpg` (with automatic `/products/NAV001.jpg`â€“`NAV308.jpg` fallback) and flat 12% MRP wholesale pricing simultaneously to Firebase RTDB and the Android JSON Feed.
+                    Pushes all 308 verified SKUs (NAV001–NAV308) bound to `/products/001.jpg`–`/products/308.jpg` (with automatic `/products/NAV001.jpg`–`NAV308.jpg` fallback) and flat 12% MRP wholesale pricing simultaneously to Firebase RTDB and the Android JSON Feed.
                   </p>
                 </div>
 
@@ -2856,7 +2856,7 @@ export const AdminControlCenter: React.FC = () => {
                     <strong className="block text-[#0B3B24]">
                       Preserve custom Admin replacement photos during 308 Sync
                     </strong>
-                    Uncheck if you want to clear all custom uploaded images and force every SKU back to `/products/001.jpg`â€“`/products/308.jpg`.
+                    Uncheck if you want to clear all custom uploaded images and force every SKU back to `/products/001.jpg`–`/products/308.jpg`.
                   </span>
                 </label>
 
@@ -3078,7 +3078,7 @@ export const AdminControlCenter: React.FC = () => {
           >
             <div className="px-5 py-3.5 bg-[#0B3B24] text-white flex items-center justify-between">
               <div className="text-sm font-bold font-mono-num">
-                Edit SKU Â· {editingProduct.id}
+                Edit SKU · {editingProduct.id}
               </div>
               <button
                 type="button"
@@ -3145,7 +3145,7 @@ export const AdminControlCenter: React.FC = () => {
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="block text-xs font-bold text-[#526058] mb-1">
-                    MRP (â‚¹)
+                    MRP (₹)
                   </label>
                   <input
                     type="number"
@@ -3164,7 +3164,7 @@ export const AdminControlCenter: React.FC = () => {
                     className="w-full px-3 py-2 rounded-lg border border-[#0B3B24]/25 font-mono-num focus:outline-none focus:border-[#0B3B24]"
                   />
                   <p className="text-[11px] font-bold text-[#0B3B24] mt-1 font-mono-num">
-                    12% Off Sale: â‚¹{Math.round((Number(editingProduct.mrp) || 1) * 0.88)}
+                    12% Off Sale: ₹{Math.round((Number(editingProduct.mrp) || 1) * 0.88)}
                   </p>
                 </div>
                 <div>

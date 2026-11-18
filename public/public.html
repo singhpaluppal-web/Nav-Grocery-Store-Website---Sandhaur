@@ -1916,207 +1916,35 @@
           </div>`;
       }
 
-      const NAV_FB_CFG = { apiKey: 'AIzaSyDUaToRs_hhQNvI4-qSj61luN_stjUr1-o', authDomain: 'nav-grocery-store.firebaseapp.com', databaseURL: FIREBASE_RTDB_BASE, projectId: 'nav-grocery-store' };
-let navVerifiedEmail = '';
-let navVerifiedName = '';
+      function openAuthModal() {
+        const m = document.getElementById('auth-modal');
+        m.classList.remove('hidden');
+        m.innerHTML = `
+          <div class="bg-white rounded-2xl max-w-sm w-full p-6 space-y-3" onclick="event.stopPropagation()">
+            <h3 class="font-display font-bold text-lg text-[#0F3D28]">WhatsApp Quick Sign-In</h3>
+            <input id="auth-name" type="text" value="${esc(session?.name||'')}" placeholder="Your Name" class="w-full px-3 py-2 rounded-lg border text-sm" />
+            <input id="auth-phone" type="tel" value="${esc(session?.phone||'')}" placeholder="10-digit WhatsApp Number" class="w-full px-3 py-2 rounded-lg border text-sm font-mono-num" />
+            <input id="auth-addr" type="text" value="${esc(session?.address||'')}" placeholder="Sandhaur Address / Village" class="w-full px-3 py-2 rounded-lg border text-sm" />
+            <p id="auth-err" class="hidden text-xs font-semibold text-red-600"></p>
+            <button type="button" onclick="saveAuth()" class="w-full py-2.5 rounded-xl bg-[#0F3D28] text-white font-bold text-sm cursor-pointer">Save &amp; Sign In</button>
+          </div>`;
+        m.onclick = () => m.classList.add('hidden');
+      }
 
-function ensureFirebaseAuth() {
-  return new Promise((resolve, reject) => {
-    if (window.firebase && window.firebase.auth) {
-      if (!window.firebase.apps.length) window.firebase.initializeApp(NAV_FB_CFG);
-      return resolve(window.firebase.auth());
-    }
-    const s1 = document.createElement('script');
-    s1.src = 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js';
-    s1.onload = () => {
-      const s2 = document.createElement('script');
-      s2.src = 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js';
-      s2.onload = () => {
-        if (!window.firebase.apps.length) window.firebase.initializeApp(NAV_FB_CFG);
-        resolve(window.firebase.auth());
-      };
-      s2.onerror = reject;
-      document.head.appendChild(s2);
-    };
-    s1.onerror = reject;
-    document.head.appendChild(s1);
-  });
-}
+      function saveAuth() {
+        const phone = document.getElementById('auth-phone').value.replace(/\D/g,'').slice(-10);
+        const err = document.getElementById('auth-err');
+        if (phone.length !== 10) {
+          if (err) { err.textContent = 'Enter valid 10-digit mobile number.'; err.classList.remove('hidden'); }
+          return;
+        }
+        session = { phone, name: document.getElementById('auth-name').value.trim() || 'Sandhaur Shopper', address: document.getElementById('auth-addr').value.trim() || 'Sandhaur 148020', verifiedAt: Date.now() };
+        localStorage.setItem('nav_customer_session_v2', JSON.stringify(session));
+        document.getElementById('btn-auth').textContent = session.name.split(' ')[0];
+        document.getElementById('auth-modal').classList.add('hidden');
+      }
 
-function openAuthModal() {
-  const m = document.getElementById('auth-modal');
-  if (!m) return;
-  m.classList.remove('hidden');
-  let session = null;
-  try { session = JSON.parse(localStorage.getItem('nav_customer_session_v2') || 'null'); } catch (e) {}
-  navVerifiedEmail = session?.email || '';
-  navVerifiedName = session?.name || '';
-
-  m.innerHTML = `
-    <div class="bg-white rounded-2xl max-w-sm w-full p-6 space-y-4 shadow-2xl border border-[#0F3D28]/15" onclick="event.stopPropagation()">
-      <div class="flex items-center justify-between border-b border-[#0F3D28]/10 pb-3">
-        <div>
-          <h3 class="font-display font-bold text-lg text-[#0F3D28]">Nav Grocery Store Sign-In</h3>
-          <p class="text-[11px] text-[#526858]">Free Instant Login • Sandhaur 148020</p>
-        </div>
-        <button type="button" onclick="document.getElementById('auth-modal').classList.add('hidden')" class="text-[#526858] hover:text-[#0F3D28] text-lg font-bold px-2 cursor-pointer">&times;</button>
-      </div>
-
-      <div id="auth-step-login" class="space-y-3">
-        <button type="button" id="btn-google-signin" onclick="signInWithGoogleNav()" class="w-full py-2.5 px-4 rounded-xl border border-[#0F3D28]/25 bg-white hover:bg-[#F8F7F2] text-[#142218] font-bold text-sm flex items-center justify-center gap-2.5 shadow-sm cursor-pointer">
-          <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17Z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.11-6.72-4.96H1.29v3.14C3.26 21.3 7.31 24 12 24Z"/><path fill="#FBBC05" d="M5.28 14.24c-.24-.72-.38-1.49-.38-2.24s.14-1.52.38-2.24V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.99-3.14Z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.99 3.14c.95-2.85 3.6-4.96 6.72-4.96Z"/></svg>
-          <span>Continue with Google (1-Click)</span>
-        </button>
-
-        <div class="flex items-center gap-2 text-[11px] text-[#526858]">
-          <div class="h-px bg-[#0F3D28]/15 flex-1"></div>
-          <span>OR GMAIL 6-DIGIT OTP</span>
-          <div class="h-px bg-[#0F3D28]/15 flex-1"></div>
-        </div>
-
-        <div class="space-y-2">
-          <input id="auth-email" type="email" value="${esc(session?.email || '')}" placeholder="Enter your Gmail address" class="w-full px-3 py-2 rounded-lg border border-[#0F3D28]/25 text-sm focus:outline-none focus:border-[#0F3D28]" />
-          <button type="button" id="btn-send-otp" onclick="sendGmailOtpNav()" class="w-full py-2.5 rounded-xl bg-[#0F3D28] hover:bg-[#0A2A1B] text-white font-bold text-sm cursor-pointer">Send 6-Digit Gmail OTP</button>
-        </div>
-
-        <div id="auth-otp-box" class="hidden space-y-2 pt-1">
-          <input id="auth-otp-code" type="text" maxlength="6" inputmode="numeric" placeholder="Enter 6-digit OTP from Gmail" class="w-full px-3 py-2 rounded-lg border border-[#0F3D28]/25 text-sm tracking-widest text-center font-bold focus:outline-none focus:border-[#0F3D28]" />
-          <button type="button" id="btn-verify-otp" onclick="verifyGmailOtpNav()" class="w-full py-2.5 rounded-xl bg-[#E6A817] text-[#142218] font-bold text-sm cursor-pointer">Verify OTP & Continue</button>
-        </div>
-      </div>
-
-      <div id="auth-step-profile" class="hidden space-y-2.5">
-        <p class="text-xs font-semibold text-[#0F3D28] bg-[#0F3D28]/5 p-2 rounded-lg">Verified: <span id="auth-verified-label"></span></p>
-        <div>
-          <label class="block text-xs font-semibold text-[#142218] mb-1">Full Name</label>
-          <input id="auth-name" type="text" value="${esc(session?.name || '')}" placeholder="e.g. Gurpreet Singh" class="w-full px-3 py-2 rounded-lg border border-[#0F3D28]/25 text-sm" />
-        </div>
-        <div>
-          <label class="block text-xs font-semibold text-[#142218] mb-1">10-Digit Mobile / WhatsApp (For Delivery)</label>
-          <input id="auth-phone" type="tel" maxlength="10" value="${esc(session?.phone || '')}" placeholder="10-digit mobile number" class="w-full px-3 py-2 rounded-lg border border-[#0F3D28]/25 text-sm" />
-        </div>
-        <div>
-          <label class="block text-xs font-semibold text-[#142218] mb-1">Delivery Address / Village (Sandhaur 148020)</label>
-          <input id="auth-addr" type="text" value="${esc(session?.address || '')}" placeholder="House / Street / Village" class="w-full px-3 py-2 rounded-lg border border-[#0F3D28]/25 text-sm" />
-        </div>
-        <button type="button" onclick="saveAuth()" class="w-full py-2.5 rounded-xl bg-[#0F3D28] text-white font-bold text-sm cursor-pointer">Save & Complete Sign-In</button>
-      </div>
-
-      <p id="auth-err" class="hidden text-xs font-semibold text-red-600"></p>
-    </div>`;
-  m.onclick = () => m.classList.add('hidden');
-}
-
-function showAuthErr(msg) {
-  const err = document.getElementById('auth-err');
-  if (!err) return;
-  if (!msg) { err.classList.add('hidden'); err.textContent = ''; }
-  else { err.textContent = msg; err.classList.remove('hidden'); }
-}
-
-function proceedToProfileStep(email, name) {
-  navVerifiedEmail = email || '';
-  navVerifiedName = name || '';
-  showAuthErr('');
-  let existing = null;
-  try { existing = JSON.parse(localStorage.getItem('nav_customer_session_v2') || 'null'); } catch (e) {}
-  if (existing && existing.phone && existing.phone.length === 10 && existing.address) {
-    const session = { ...existing, email: navVerifiedEmail || existing.email, name: navVerifiedName || existing.name, verifiedAt: Date.now() };
-    localStorage.setItem('nav_customer_session_v2', JSON.stringify(session));
-    const btn = document.getElementById('btn-auth');
-    if (btn) btn.textContent = (session.name || 'Account').split(' ')[0];
-    document.getElementById('auth-modal').classList.add('hidden');
-    return;
-  }
-  document.getElementById('auth-step-login').classList.add('hidden');
-  document.getElementById('auth-step-profile').classList.remove('hidden');
-  document.getElementById('auth-verified-label').textContent = navVerifiedEmail;
-  if (navVerifiedName && !document.getElementById('auth-name').value) {
-    document.getElementById('auth-name').value = navVerifiedName;
-  }
-}
-
-async function signInWithGoogleNav() {
-  const btn = document.getElementById('btn-google-signin');
-  showAuthErr('');
-  if (btn) btn.disabled = true;
-  try {
-    const auth = await ensureFirebaseAuth();
-    const provider = new window.firebase.auth.GoogleAuthProvider();
-    const res = await auth.signInWithPopup(provider);
-    const u = res.user || {};
-    proceedToProfileStep(u.email || '', u.displayName || '');
-  } catch (e) {
-    showAuthErr(e?.message || 'Google sign-in failed. Please try Gmail OTP.');
-  } finally {
-    if (btn) btn.disabled = false;
-  }
-}
-
-async function sendGmailOtpNav() {
-  const email = (document.getElementById('auth-email')?.value || '').trim().toLowerCase();
-  if (!email || !email.includes('@')) {
-    return showAuthErr('Please enter a valid Gmail address.');
-  }
-  const btn = document.getElementById('btn-send-otp');
-  showAuthErr('');
-  if (btn) { btn.disabled = true; btn.textContent = 'Sending OTP...'; }
-  try {
-    const res = await fetch('/api/auth/send-email-otp', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email })
-    });
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok) throw new Error(data.error || 'Failed to send OTP');
-    document.getElementById('auth-otp-box').classList.remove('hidden');
-    if (btn) btn.textContent = 'Resend OTP';
-  } catch (e) {
-    showAuthErr(e?.message || 'Could not send Gmail OTP.');
-    if (btn) btn.textContent = 'Send 6-Digit Gmail OTP';
-  } finally {
-    if (btn) btn.disabled = false;
-  }
-}
-
-async function verifyGmailOtpNav() {
-  const email = (document.getElementById('auth-email')?.value || '').trim().toLowerCase();
-  const otp = (document.getElementById('auth-otp-code')?.value || '').trim();
-  if (otp.length !== 6) return showAuthErr('Enter the 6-digit OTP sent to your Gmail.');
-  const btn = document.getElementById('btn-verify-otp');
-  showAuthErr('');
-  if (btn) { btn.disabled = true; btn.textContent = 'Verifying...'; }
-  try {
-    const res = await fetch('/api/auth/verify-email-otp', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, otp, code: otp })
-    });
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok) throw new Error(data.error || 'Invalid or expired OTP');
-    proceedToProfileStep(email, email.split('@')[0]);
-  } catch (e) {
-    showAuthErr(e?.message || 'OTP verification failed.');
-  } finally {
-    if (btn) { btn.disabled = false; btn.textContent = 'Verify OTP & Continue'; }
-  }
-}
-
-function saveAuth() {
-  const phone = (document.getElementById('auth-phone')?.value || '').replace(/\D/g, '').slice(-10);
-  if (phone.length !== 10) {
-    return showAuthErr('Enter a valid 10-digit mobile number for order delivery.');
-  }
-  const name = (document.getElementById('auth-name')?.value || '').trim() || navVerifiedName || 'Sandhaur Shopper';
-  const address = (document.getElementById('auth-addr')?.value || '').trim() || 'Sandhaur 148020';
-  const session = { phone, name, email: navVerifiedEmail, address, verifiedAt: Date.now() };
-  localStorage.setItem('nav_customer_session_v2', JSON.stringify(session));
-  const btn = document.getElementById('btn-auth');
-  if (btn) btn.textContent = session.name.split(' ')[0];
-  document.getElementById('auth-modal').classList.add('hidden');
-}
-
-function downloadStoreVCard() {
+      function downloadStoreVCard() {
         const vcard = [
           'BEGIN:VCARD',
           'VERSION:3.0',

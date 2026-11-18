@@ -6,17 +6,4 @@ coverage/
 *.log
 .env*
 !.env.example
-
 saved_scripts/
-
-node_modules/
-.vercel/
-dist/
-*.zip
-*.mp4
-
-node_modules/
-.vercel/
-dist/
-*.zip
-*.mp4
