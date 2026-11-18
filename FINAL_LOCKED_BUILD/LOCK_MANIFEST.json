@@ -1,0 +1,21 @@
+{
+  "store": "Nav Grocery Store, Sandhaur, Punjab 148020",
+  "locked_at": "2026-11-13 21:10:13",
+  "total_skus": 616,
+  "live_store_url": "https://www.navgrocerystore.com",
+  "admin_portal_url": "https://www.navgrocerystore.com/admin",
+  "files": {
+    "locked_golden_308_catalog.json": "02083648912dc784878197fef7d5bb2299ceaf8643b3cace9a201f556b902926",
+    "public.html": "ede97f6f3d63c9a377f3e5508c2fdcb33fd9f805ffa619f3562ffdd32d104651",
+    "index.html": "15f9327fa5ab4b8b17a1747d367b7c521a68a255daed0fa1056d7b240b5b6fab",
+    "admin.html": "6dc9a506f4a79110935d1ecd5568cc2fbe802ad1434c154e8eb953ceb2bc0a16",
+    "vercel.json": "8d63d7d931c87fff30cdf0fb00876fb2ca21d05a253d9c2ea08c1d07e4839535",
+    "catalog.json": "02083648912dc784878197fef7d5bb2299ceaf8643b3cace9a201f556b902926",
+    "build_public.py": "55c185c27be45939b112c0bd31899c61e04ff49b3d0e2b3d1ce1ebea433a1760",
+    "build_admin.py": "68d0413b70ff01b6ce6c403ee1adc1448493cfec1aa257fd7779ce50d5b59bd9",
+    "ocr_match_308.py": "ef8675231f115c1fdad1a9b0bcdb862b890eaba22313c42c232416bceedbf30c",
+    "verify_and_finalize.py": "c0e4f08a2d22d8a9aa64dfed4f150292067646c0794821c15f742339c3c8dfa0",
+    "lock_final_build.py": "b79fd516031f47b57f26c85a3d0b64023dc90304d80752411f604b54e983941f"
+  },
+  "verified_photos_locked": 0
+}
