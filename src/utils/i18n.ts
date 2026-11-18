@@ -14,7 +14,8 @@ export interface StoreTranslations {
   favoritesLabel: string;
   trackOrderLabel: string;
   accountLabel: string;
-  whatsappLoginLabel: string;
+  googleSignInLabel: string;
+  signOutLabel: string;
   basketLabel: string;
   verticals: {
     store: { label: string; badge: string };
@@ -122,7 +123,8 @@ const TRANSLATIONS: Record<StoreLang, StoreTranslations> = {
     favoritesLabel: 'Wishlist',
     trackOrderLabel: 'Orders',
     accountLabel: 'Account',
-    whatsappLoginLabel: 'WhatsApp Sign In',
+    googleSignInLabel: 'Continue with Google',
+    signOutLabel: 'Sign Out',
     basketLabel: 'Cart',
     verticals: {
       store: { label: 'Store (Grocery)', badge: '308 SKUs' },
@@ -268,7 +270,8 @@ const TRANSLATIONS: Record<StoreLang, StoreTranslations> = {
     favoritesLabel: 'ਪਸੰਦੀਦਾ',
     trackOrderLabel: 'ਆਰਡਰ',
     accountLabel: 'ਖਾਤਾ',
-    whatsappLoginLabel: 'ਵਟਸਐਪ ਲਾਗਇਨ',
+    googleSignInLabel: 'ਗੂਗਲ ਨਾਲ ਜਾਰੀ ਰੱਖੋ',
+    signOutLabel: 'ਸਾਈਨ ਆਊਟ',
     basketLabel: 'ਟੋਕਰੀ',
     verticals: {
       store: { label: 'ਸਟੋਰ (ਕਰਿਆਨਾ)', badge: '308 ਚੀਜ਼ਾਂ' },

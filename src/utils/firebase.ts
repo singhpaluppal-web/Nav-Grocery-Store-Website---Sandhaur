@@ -1,10 +1,13 @@
+import { get, onValue, ref, set } from 'firebase/database';
 import {
   BrandingSettings,
+  CustomerSession,
   OrderRecord,
   PaymentSettings,
   Product,
   ReturnRequest,
 } from '../types';
+import { FIREBASE_DATABASE_URL, firebaseDb } from '../firebase';
 import {
   isAllowedRetailProduct,
   isStrictlyGrocery308,
@@ -13,7 +16,19 @@ import {
 import { NAVKART_SUPERMALL_SKUS } from '../data/navKartSupermall';
 import { getCanonicalSkuImagePath, resolveProductImage } from './brandPhotos';
 
-export const FIREBASE_RTDB_BASE = 'https://nav-grocery-store-default-rtdb.firebaseio.com';
+export const FIREBASE_RTDB_BASE = FIREBASE_DATABASE_URL;
+
+export const INDIAN_PHONE_REGEX = /^[6-9]\d{9}$/;
+
+export function isCustomerProfileComplete(
+  profile?: Partial<CustomerSession> | null
+): boolean {
+  if (!profile) return false;
+  const phone = String(profile.phone || '').replace(/\D/g, '');
+  const address = String(profile.address || '').trim();
+  const name = String(profile.name || '').trim();
+  return INDIAN_PHONE_REGEX.test(phone) && address.length >= 5 && name.length >= 2;
+}
 
 const LOCAL_KEYS = {
   GROCERY: 'nav_public_grocery_308_v3',
@@ -686,4 +701,177 @@ export async function submitReturnRequest(req: ReturnRequest): Promise<{ ok: boo
   } catch {
     return { ok: false };
   }
+}
+
+/**
+ * Reads customer profile from Firebase RTDB at /customers/{uid}.json
+ * (uses Firebase Database SDK when initialized, with direct REST fallback).
+ */
+export async function fetchCustomerProfile(
+  uid: string
+): Promise<Partial<CustomerSession> | null> {
+  const cleanUid = String(uid || '').trim();
+  if (!cleanUid) return null;
+
+  if (firebaseDb) {
+    try {
+      const snap = await get(ref(firebaseDb, `customers/${cleanUid}`));
+      if (snap.exists()) {
+        return snap.val() as Partial<CustomerSession>;
+      }
+    } catch {
+      // fall through to REST read
+    }
+  }
+
+  try {
+    const remote = await fetchJsonWithTimeout(
+      `${FIREBASE_RTDB_BASE}/customers/${encodeURIComponent(cleanUid)}.json`,
+      5500
+    );
+    if (remote && typeof remote === 'object') {
+      return remote as Partial<CustomerSession>;
+    }
+  } catch {
+    // offline or empty node
+  }
+
+  return null;
+}
+
+/**
+ * Persists customer profile to Firebase RTDB at /customers/{uid}.json.
+ */
+export async function saveCustomerProfile(
+  uid: string,
+  profile: CustomerSession
+): Promise<{ ok: boolean }> {
+  const cleanUid = String(uid || '').trim();
+  if (!cleanUid) return { ok: false };
+
+  const cleanPhone = String(profile.phone || '').replace(/\D/g, '').slice(-10);
+  const payload: CustomerSession = {
+    ...profile,
+    uid: cleanUid,
+    phone: cleanPhone,
+    name: profile.name.trim(),
+    address: profile.address.trim(),
+    villageArea: profile.villageArea?.trim() || 'Main Bazaar, Sandhaur 148020',
+    profileComplete: isCustomerProfileComplete({ ...profile, phone: cleanPhone }),
+    updatedAt: new Date().toISOString(),
+  };
+
+  if (firebaseDb) {
+    try {
+      await set(ref(firebaseDb, `customers/${cleanUid}`), payload);
+      return { ok: true };
+    } catch {
+      // fallback to REST PUT
+    }
+  }
+
+  try {
+    const res = await fetch(
+      `${FIREBASE_RTDB_BASE}/customers/${encodeURIComponent(cleanUid)}.json`,
+      {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      }
+    );
+    return { ok: res.ok };
+  } catch {
+    return { ok: false };
+  }
+}
+
+/**
+ * Real-time subscription to /orders filtered strictly by the signed-in user's uid,
+ * sorted newest first. Uses Firebase RTDB onValue when available, plus live polling fallback
+ * so Admin status updates appear automatically without page refresh.
+ */
+export function subscribeToCustomerOrders(
+  uid: string,
+  onUpdate: (orders: OrderRecord[], connected: boolean) => void
+): () => void {
+  const cleanUid = String(uid || '').trim();
+  if (!cleanUid) {
+    onUpdate([], false);
+    return () => {};
+  }
+
+  const filterAndSort = (raw: unknown): OrderRecord[] => {
+    const remoteOrders = parseOrdersResponse(raw).filter((o) => o.uid === cleanUid);
+    const localOrders = getLocalOrders().filter((o) => o.uid === cleanUid);
+    const byId = new Map<string, OrderRecord>();
+
+    for (const lo of localOrders) {
+      byId.set(lo.orderId, lo);
+    }
+    for (const ro of remoteOrders) {
+      // Remote status always wins over stale local cache
+      byId.set(ro.orderId, ro);
+    }
+
+    return Array.from(byId.values()).sort(
+      (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    );
+  };
+
+  let active = true;
+  let unsubscribeSdk: (() => void) | null = null;
+  let pollTimer: ReturnType<typeof setInterval> | null = null;
+
+  const pollOnce = async () => {
+    if (!active) return;
+    try {
+      const remote = await fetchJsonWithTimeout(`${FIREBASE_RTDB_BASE}/orders.json`, 6500);
+      if (!active) return;
+      onUpdate(filterAndSort(remote), true);
+    } catch {
+      if (!active) return;
+      const localOnly = getLocalOrders()
+        .filter((o) => o.uid === cleanUid)
+        .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+      onUpdate(localOnly, false);
+    }
+  };
+
+  if (firebaseDb) {
+    try {
+      const ordersRef = ref(firebaseDb, 'orders');
+      unsubscribeSdk = onValue(
+        ordersRef,
+        (snapshot) => {
+          if (!active) return;
+          onUpdate(filterAndSort(snapshot.val()), true);
+        },
+        () => {
+          // If SDK listener fails (e.g., rules/offline), fall back to live polling
+          if (active && !pollTimer) {
+            void pollOnce();
+            pollTimer = setInterval(() => {
+              void pollOnce();
+            }, 6000);
+          }
+        }
+      );
+    } catch {
+      void pollOnce();
+      pollTimer = setInterval(() => {
+        void pollOnce();
+      }, 6000);
+    }
+  } else {
+    void pollOnce();
+    pollTimer = setInterval(() => {
+      void pollOnce();
+    }, 6000);
+  }
+
+  return () => {
+    active = false;
+    if (unsubscribeSdk) unsubscribeSdk();
+    if (pollTimer) clearInterval(pollTimer);
+  };
 }

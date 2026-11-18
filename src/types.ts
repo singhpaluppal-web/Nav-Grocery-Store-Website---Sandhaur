@@ -90,10 +90,16 @@ export interface SavedAddress {
 }
 
 export interface CustomerSession {
+  uid: string;
+  email: string;
+  photoURL?: string;
   phone: string;
   name: string;
+  villageArea?: string;
   address: string;
+  profileComplete?: boolean;
   verifiedAt: number;
+  updatedAt?: string;
   membershipTier?: 'Nav Pass Wholesale' | 'Standard Member';
   savedAddresses?: SavedAddress[];
   preferredPayment?: PaymentMethod;
@@ -122,6 +128,9 @@ export type OrderStatus =
 
 export interface OrderRecord {
   orderId: string;
+  uid?: string;
+  customerEmail?: string;
+  customerPhoto?: string;
   createdAt: string;
   updatedAt?: string;
   customerName: string;

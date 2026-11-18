@@ -3,7 +3,7 @@ import {
   Search,
   MapPin,
   ShoppingBasket,
-  UserCheck,
+  LogOut,
   ArrowUpDown,
   Phone,
   Mail,
@@ -54,7 +54,7 @@ import { HeroCarousel } from './HeroCarousel';
 import { ProductCard } from './ProductCard';
 import { QuickViewModal } from './QuickViewModal';
 import { CartCheckoutDrawer } from './CartCheckoutDrawer';
-import { WhatsAppAuthModal } from './WhatsAppAuthModal';
+import { GoogleSignInButton } from './GoogleSignInButton';
 import { StoreAICopilot } from './StoreAICopilot';
 import { DigitalVisitingCard } from './DigitalVisitingCard';
 import { OrderTrackerModal } from './OrderTrackerModal';
@@ -79,6 +79,11 @@ interface StorefrontViewProps {
   customerSession: CustomerSession | null;
   onUpdateSession: (session: CustomerSession | null) => void;
   onOpenAccount: () => void;
+  authLoading: boolean;
+  authError: string;
+  onSignInWithGoogle: () => Promise<void>;
+  onSignOut: () => Promise<void>;
+  onClearAuthError: () => void;
 }
 
 const BATCH_SIZE = 24;
@@ -107,6 +112,11 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
   customerSession,
   onUpdateSession,
   onOpenAccount,
+  authLoading,
+  authError,
+  onSignInWithGoogle,
+  onSignOut,
+  onClearAuthError,
 }) => {
   const [activeVertical, setActiveVertical] = useState<ServiceVertical>('store');
   const [shippingZone, setShippingZone] = useState<string>(SHIPPING_ZONES[0]);
@@ -120,7 +130,6 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
 
   const [fulfillment, setFulfillment] = useState<FulfillmentMode>('delivery');
   const [cartOpen, setCartOpen] = useState<boolean>(false);
-  const [authOpen, setAuthOpen] = useState<boolean>(false);
   const [trackerOpen, setTrackerOpen] = useState<boolean>(false);
   const [scannerOpen, setScannerOpen] = useState<boolean>(false);
   const [trackerOrderId, setTrackerOrderId] = useState<string>('');
@@ -519,9 +528,19 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
             <button
               type="button"
               onClick={onOpenAccount}
+              title={customerSession ? `${customerSession.name} (${customerSession.email})` : t.accountLabel}
               className="px-2.5 sm:px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-semibold inline-flex items-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer"
             >
-              <User className="w-3.5 h-3.5 text-[#E6A817]" />
+              {customerSession?.photoURL ? (
+                <img
+                  src={customerSession.photoURL}
+                  alt={customerSession.name}
+                  referrerPolicy="no-referrer"
+                  className="w-4 h-4 rounded-full object-cover border border-[#E6A817]"
+                />
+              ) : (
+                <User className="w-3.5 h-3.5 text-[#E6A817]" />
+              )}
               <span className="hidden sm:inline">
                 {customerSession ? customerSession.name.split(' ')[0] : t.accountLabel}
               </span>
@@ -575,18 +594,66 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
               })}
             </div>
 
-            <button
-              type="button"
-              onClick={() => setAuthOpen(true)}
-              className="hidden md:inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#E6A817] hover:underline whitespace-nowrap shrink-0 cursor-pointer"
-            >
-              <UserCheck className="w-3.5 h-3.5" />
-              <span>
-                {customerSession ? `Verified: +91 ${customerSession.phone}` : t.whatsappLoginLabel}
-              </span>
-            </button>
+            {customerSession ? (
+              <div className="hidden md:flex items-center gap-2.5 shrink-0">
+                <button
+                  type="button"
+                  onClick={onOpenAccount}
+                  className="inline-flex items-center gap-2 text-left cursor-pointer group"
+                >
+                  {customerSession.photoURL ? (
+                    <img
+                      src={customerSession.photoURL}
+                      alt={customerSession.name}
+                      referrerPolicy="no-referrer"
+                      className="w-6 h-6 rounded-full border border-[#E6A817] object-cover"
+                    />
+                  ) : (
+                    <span className="w-6 h-6 rounded-full bg-[#E6A817] text-[#14221B] text-[10px] font-bold inline-flex items-center justify-center">
+                      {customerSession.name.slice(0, 1).toUpperCase()}
+                    </span>
+                  )}
+                  <span className="text-[11px] leading-tight">
+                    <span className="block font-bold text-white group-hover:text-[#E6A817]">
+                      {customerSession.name}
+                    </span>
+                    <span className="block text-[10px] text-white/70">{customerSession.email}</span>
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => void onSignOut()}
+                  className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-[11px] font-semibold text-[#E6A817] inline-flex items-center gap-1 whitespace-nowrap cursor-pointer"
+                >
+                  <LogOut className="w-3 h-3" />
+                  <span>{t.signOutLabel}</span>
+                </button>
+              </div>
+            ) : (
+              <GoogleSignInButton
+                onClick={() => void onSignInWithGoogle()}
+                loading={authLoading}
+                label={t.googleSignInLabel}
+                variant="compact"
+                className="hidden md:inline-flex shrink-0"
+              />
+            )}
           </div>
         </div>
+
+        {authError && (
+          <div className="bg-amber-50 text-[#78350F] border-t border-amber-200 px-4 py-2 text-xs flex items-center justify-between gap-3">
+            <span className="font-semibold">{authError}</span>
+            <button
+              type="button"
+              onClick={onClearAuthError}
+              aria-label="Dismiss auth notice"
+              className="p-0.5 hover:bg-amber-200/60 rounded cursor-pointer shrink-0"
+            >
+              <X className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        )}
       </header>
 
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 space-y-8">
@@ -1297,6 +1364,10 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
         shippingZone={shippingZone}
         paymentSettings={paymentSettings}
         customerSession={customerSession}
+        authLoading={authLoading}
+        authError={authError}
+        onSignInWithGoogle={onSignInWithGoogle}
+        onUpdateSession={(updated) => onUpdateSession(updated)}
         onClose={() => setCartOpen(false)}
         onUpdateQty={onUpdateCartQty}
         onRemoveItem={onRemoveCartItem}
@@ -1314,20 +1385,6 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
         initialOrderId={trackerOrderId}
         lang={lang}
         onClose={() => setTrackerOpen(false)}
-      />
-
-      <WhatsAppAuthModal
-        isOpen={authOpen}
-        existingSession={customerSession}
-        onClose={() => setAuthOpen(false)}
-        onVerified={(session) => {
-          localStorage.setItem('nav_customer_session_v2', JSON.stringify(session));
-          onUpdateSession(session);
-        }}
-        onLogout={() => {
-          localStorage.removeItem('nav_customer_session_v2');
-          onUpdateSession(null);
-        }}
       />
 
       <StoreAICopilot

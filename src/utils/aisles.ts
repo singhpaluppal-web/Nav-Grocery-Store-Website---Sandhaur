@@ -182,14 +182,29 @@ export function matchesGroceryAisle(product: Product, aisleId: string): boolean 
   return true;
 }
 
-const BANNED_FRESH_TERMS = [
-  'fresh fruit', 'fresh vegetable', 'fresh tomato', 'fresh onion', 'fresh potato',
-  'fresh apple', 'fresh banana', 'fresh mango', 'sabzi', 'fresh produce',
+const PACKAGED_CONDIMENT_SAFE =
+  /\b(ketchup|sauce|puree|paste|chutney|jam|pickle|juice|soup|masala|powder|chips|crisps|noodles|biscuit|candy|toffee|squash|syrup)\b/i;
+
+const BANNED_FRESH_PATTERNS: RegExp[] = [
+  /\bfresh\s+fruits?\b/i,
+  /\bfresh\s+vegetables?\b/i,
+  /\bfresh\s+produce\b/i,
+  /\bfresh\s+(?:tomato|tomatoes|onion|onions|potato|potatoes|apple|apples|banana|bananas|mango|mangoes|spinach|coriander|okra|bhindi|cauliflower|cabbage|carrot|carrots|peas)\b/i,
+  /\bsabzi\b/i,
 ];
 
 export function hasZeroFreshProduce(product: Product): boolean {
-  const hay = `${product.name || ''} ${product.category || ''} ${product.department || ''}`.toLowerCase();
-  return !BANNED_FRESH_TERMS.some((term) => hay.includes(term));
+  const deptCat = `${product.category || ''} ${product.department || ''}`.toLowerCase();
+  if (/\bfresh\s+(?:fruits?|vegetables?|produce)\b|\bsabzi\b/i.test(deptCat)) {
+    return false;
+  }
+
+  const hay = `${product.name || ''} ${deptCat}`.toLowerCase();
+  if (PACKAGED_CONDIMENT_SAFE.test(hay)) {
+    return true;
+  }
+
+  return !BANNED_FRESH_PATTERNS.some((pattern) => pattern.test(hay));
 }
 
 export function isStrictlyGrocery308(product: Product): boolean {

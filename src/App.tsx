@@ -1,4 +1,5 @@
 import React, { Suspense, useCallback, useEffect, useState } from 'react';
+import type { User as FirebaseUser } from 'firebase/auth';
 import {
   BrandingSettings,
   CartItem,
@@ -7,16 +8,25 @@ import {
   Product,
 } from './types';
 import {
+  consumeGoogleRedirectResult,
+  signInWithGoogle,
+  signOutFromGoogle,
+  subscribeToAuthState,
+} from './firebase';
+import {
   DEFAULT_BRANDING,
   DEFAULT_PAYMENTS,
   fetchBrandingSettings,
+  fetchCustomerProfile,
   fetchPaymentSettings,
   fetchUnifiedCatalogProducts,
+  isCustomerProfileComplete,
+  saveCustomerProfile,
 } from './utils/firebase';
 import { StoreLang } from './utils/i18n';
 import { StorefrontView } from './components/StorefrontView';
 import { AccountPageView } from './components/AccountPageView';
-import { WhatsAppAuthModal } from './components/WhatsAppAuthModal';
+import { ProfileCompletionModal } from './components/ProfileCompletionModal';
 
 const LazyAdminControlCenter = React.lazy(() =>
   import('./components/admin/AdminControlCenter').then((m) => ({
@@ -50,7 +60,11 @@ export default function App() {
   const [branding, setBranding] = useState<BrandingSettings>(DEFAULT_BRANDING);
   const [paymentSettings, setPaymentSettings] = useState<PaymentSettings>(DEFAULT_PAYMENTS);
   const [loading, setLoading] = useState<boolean>(true);
-  const [authModalOpen, setAuthModalOpen] = useState<boolean>(false);
+
+  const [customerSession, setCustomerSession] = useState<CustomerSession | null>(null);
+  const [authLoading, setAuthLoading] = useState<boolean>(false);
+  const [authError, setAuthError] = useState<string>('');
+  const [profileModalOpen, setProfileModalOpen] = useState<boolean>(false);
 
   const [lang, setLang] = useState<StoreLang>(() => {
     try {
@@ -78,14 +92,72 @@ export default function App() {
     }
   });
 
-  const [customerSession, setCustomerSession] = useState<CustomerSession | null>(() => {
-    try {
-      const raw = localStorage.getItem('nav_customer_session_v2');
-      return raw ? (JSON.parse(raw) as CustomerSession) : null;
-    } catch {
-      return null;
+  const hydrateCustomerFromFirebaseUser = useCallback(async (user: FirebaseUser | null) => {
+    if (!user) {
+      setCustomerSession(null);
+      setProfileModalOpen(false);
+      return;
     }
-  });
+
+    const remoteProfile = await fetchCustomerProfile(user.uid);
+    const merged: CustomerSession = {
+      uid: user.uid,
+      email: user.email || remoteProfile?.email || '',
+      photoURL: user.photoURL || remoteProfile?.photoURL || undefined,
+      name: remoteProfile?.name || user.displayName || 'Sandhaur Customer',
+      phone: String(remoteProfile?.phone || '').replace(/\D/g, '').slice(-10),
+      villageArea: remoteProfile?.villageArea || 'Main Bazaar, Sandhaur 148020',
+      address: remoteProfile?.address || '',
+      verifiedAt: remoteProfile?.verifiedAt || Date.now(),
+      updatedAt: remoteProfile?.updatedAt,
+      membershipTier: remoteProfile?.membershipTier || 'Nav Pass Wholesale',
+      savedAddresses: remoteProfile?.savedAddresses,
+      preferredPayment: remoteProfile?.preferredPayment || 'upi',
+    };
+
+    const complete = isCustomerProfileComplete(merged);
+    merged.profileComplete = complete;
+
+    setCustomerSession(merged);
+    setAuthError('');
+
+    if (!complete) {
+      setProfileModalOpen(true);
+    } else if (!remoteProfile?.email || !remoteProfile?.photoURL) {
+      // Keep Google email/photo fresh in /customers/{uid}.json
+      void saveCustomerProfile(user.uid, merged);
+    }
+  }, []);
+
+  useEffect(() => {
+    void consumeGoogleRedirectResult();
+    const unsubscribe = subscribeToAuthState((user) => {
+      void hydrateCustomerFromFirebaseUser(user);
+    });
+    return unsubscribe;
+  }, [hydrateCustomerFromFirebaseUser]);
+
+  const handleGoogleSignIn = useCallback(async () => {
+    setAuthError('');
+    setAuthLoading(true);
+    const res = await signInWithGoogle();
+    setAuthLoading(false);
+
+    if (res.error) {
+      setAuthError(res.error);
+      return;
+    }
+    if (res.user) {
+      await hydrateCustomerFromFirebaseUser(res.user);
+    }
+  }, [hydrateCustomerFromFirebaseUser]);
+
+  const handleSignOut = useCallback(async () => {
+    await signOutFromGoogle();
+    setCustomerSession(null);
+    setProfileModalOpen(false);
+    setAuthError('');
+  }, []);
 
   useEffect(() => {
     try {
@@ -194,9 +266,9 @@ export default function App() {
     );
   }
 
-  if (route === 'account') {
-    return (
-      <>
+  return (
+    <>
+      {route === 'account' ? (
         <AccountPageView
           logoUrl={branding.logoUrl}
           products={products}
@@ -204,48 +276,49 @@ export default function App() {
           customerSession={customerSession}
           paymentSettings={paymentSettings}
           lang={lang}
+          authLoading={authLoading}
+          authError={authError}
           onChangeLang={setLang}
           onUpdateSession={setCustomerSession}
           onToggleFavorite={toggleFavorite}
-          onAddToCart={(p) => addToCart(p, 1)}
+          onAddToCart={(p, qty) => addToCart(p, qty ?? 1)}
           onNavigateHome={() => navigateTo('/')}
-          onOpenWhatsAppAuth={() => setAuthModalOpen(true)}
+          onSignInWithGoogle={handleGoogleSignIn}
+          onSignOut={handleSignOut}
+          onClearAuthError={() => setAuthError('')}
         />
-        <WhatsAppAuthModal
-          isOpen={authModalOpen}
-          existingSession={customerSession}
-          onClose={() => setAuthModalOpen(false)}
-          onVerified={(session) => {
-            localStorage.setItem('nav_customer_session_v2', JSON.stringify(session));
-            setCustomerSession(session);
-          }}
-          onLogout={() => {
-            localStorage.removeItem('nav_customer_session_v2');
-            setCustomerSession(null);
-          }}
+      ) : (
+        <StorefrontView
+          products={products}
+          loading={loading}
+          branding={branding}
+          paymentSettings={paymentSettings}
+          lang={lang}
+          onChangeLang={setLang}
+          favoriteIds={favoriteIds}
+          onToggleFavorite={toggleFavorite}
+          cart={cart}
+          onAddToCart={addToCart}
+          onUpdateCartQty={updateCartQty}
+          onRemoveCartItem={(id) => setCart((prev) => prev.filter((i) => i.product.id !== id))}
+          onClearCart={() => setCart([])}
+          customerSession={customerSession}
+          onUpdateSession={setCustomerSession}
+          onOpenAccount={() => navigateTo('/account')}
+          authLoading={authLoading}
+          authError={authError}
+          onSignInWithGoogle={handleGoogleSignIn}
+          onSignOut={handleSignOut}
+          onClearAuthError={() => setAuthError('')}
         />
-      </>
-    );
-  }
+      )}
 
-  return (
-    <StorefrontView
-      products={products}
-      loading={loading}
-      branding={branding}
-      paymentSettings={paymentSettings}
-      lang={lang}
-      onChangeLang={setLang}
-      favoriteIds={favoriteIds}
-      onToggleFavorite={toggleFavorite}
-      cart={cart}
-      onAddToCart={addToCart}
-      onUpdateCartQty={updateCartQty}
-      onRemoveCartItem={(id) => setCart((prev) => prev.filter((i) => i.product.id !== id))}
-      onClearCart={() => setCart([])}
-      customerSession={customerSession}
-      onUpdateSession={setCustomerSession}
-      onOpenAccount={() => navigateTo('/account')}
-    />
+      <ProfileCompletionModal
+        isOpen={profileModalOpen}
+        session={customerSession}
+        onClose={() => setProfileModalOpen(false)}
+        onSaved={(updated) => setCustomerSession(updated)}
+      />
+    </>
   );
 }

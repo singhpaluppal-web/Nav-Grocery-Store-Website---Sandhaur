@@ -29,7 +29,12 @@ import {
   PaymentSettings,
 } from '../types';
 import { StoreLogo } from './StoreLogo';
-import { saveOrder } from '../utils/firebase';
+import { GoogleSignInButton } from './GoogleSignInButton';
+import {
+  INDIAN_PHONE_REGEX,
+  saveCustomerProfile,
+  saveOrder,
+} from '../utils/firebase';
 
 interface CartCheckoutDrawerProps {
   isOpen: boolean;
@@ -39,6 +44,10 @@ interface CartCheckoutDrawerProps {
   shippingZone?: string;
   paymentSettings: PaymentSettings;
   customerSession: CustomerSession | null;
+  authLoading?: boolean;
+  authError?: string;
+  onSignInWithGoogle: () => Promise<void>;
+  onUpdateSession?: (session: CustomerSession) => void;
   onClose: () => void;
   onUpdateQty: (productId: string, qty: number) => void;
   onRemoveItem: (productId: string) => void;
@@ -75,9 +84,13 @@ export const CartCheckoutDrawer: React.FC<CartCheckoutDrawerProps> = ({
   logoUrl,
   items,
   fulfillment,
-  shippingZone = 'Sandhaur 148020 Local',
+  shippingZone = 'Main Bazaar, Sandhaur 148020',
   paymentSettings,
   customerSession,
+  authLoading = false,
+  authError = '',
+  onSignInWithGoogle,
+  onUpdateSession,
   onClose,
   onUpdateQty,
   onRemoveItem,
@@ -104,11 +117,19 @@ export const CartCheckoutDrawer: React.FC<CartCheckoutDrawerProps> = ({
 
   useEffect(() => {
     if (customerSession) {
-      if (!customerName) setCustomerName(customerSession.name);
-      if (!customerPhone) setCustomerPhone(customerSession.phone);
-      if (!address) setAddress(customerSession.address);
+      if (customerSession.name) setCustomerName((prev) => prev || customerSession.name);
+      if (customerSession.phone) setCustomerPhone((prev) => prev || customerSession.phone);
+      const fullAddr = customerSession.address
+        ? customerSession.villageArea && !customerSession.address.includes(customerSession.villageArea)
+          ? `${customerSession.address}, ${customerSession.villageArea}`
+          : customerSession.address
+        : '';
+      if (fullAddr) setAddress((prev) => prev || fullAddr);
+      if (customerSession.preferredPayment) {
+        setPaymentMethod(customerSession.preferredPayment);
+      }
     }
-  }, [customerSession, customerName, customerPhone, address]);
+  }, [customerSession]);
 
   const subtotalMrp = items.reduce((acc, i) => acc + i.product.mrp * i.quantity, 0);
   const subtotalSale = items.reduce((acc, i) => acc + i.product.sale * i.quantity, 0);
@@ -158,6 +179,9 @@ export const CartCheckoutDrawer: React.FC<CartCheckoutDrawerProps> = ({
     const finalMethod = overrideMethod || paymentMethod;
     return {
       orderId,
+      uid: customerSession?.uid,
+      customerEmail: customerSession?.email,
+      customerPhoto: customerSession?.photoURL,
       createdAt: new Date().toISOString(),
       customerName: customerName.trim(),
       customerPhone: customerPhone.replace(/\D/g, '').slice(-10),
@@ -196,9 +220,33 @@ export const CartCheckoutDrawer: React.FC<CartCheckoutDrawerProps> = ({
     overrideMethod?: PaymentMethod,
     razorpayPaymentId?: string
   ) => {
+    if (!customerSession?.uid) {
+      setErrorMsg('Please sign in with Google before placing your order.');
+      return;
+    }
     setSubmitting(true);
     const order = buildOrderRecord(statusLabel, overrideMethod, razorpayPaymentId);
     await saveOrder(order);
+
+    const cleanPhone = customerPhone.replace(/\D/g, '').slice(-10);
+    if (
+      INDIAN_PHONE_REGEX.test(cleanPhone) &&
+      (customerSession.phone !== cleanPhone ||
+        customerSession.name !== customerName.trim() ||
+        (fulfillment === 'delivery' && address.trim() && customerSession.address !== address.trim()))
+    ) {
+      const updatedSession: CustomerSession = {
+        ...customerSession,
+        name: customerName.trim() || customerSession.name,
+        phone: cleanPhone,
+        address: fulfillment === 'delivery' && address.trim() ? address.trim() : customerSession.address,
+        profileComplete: true,
+        updatedAt: new Date().toISOString(),
+      };
+      void saveCustomerProfile(customerSession.uid, updatedSession);
+      onUpdateSession?.(updatedSession);
+    }
+
     setConfirmedOrder(order);
     onClearCart();
     setSubmitting(false);
@@ -207,6 +255,10 @@ export const CartCheckoutDrawer: React.FC<CartCheckoutDrawerProps> = ({
 
   const handleConfirmOrder = async () => {
     setErrorMsg('');
+    if (!customerSession?.uid) {
+      setErrorMsg('Google Sign-In is required to submit your order.');
+      return;
+    }
     if ((paymentMethod === 'upi' || paymentMethod === 'bank_transfer') && utrRef.trim().length < 6) {
       setErrorMsg(
         paymentMethod === 'upi'
@@ -441,94 +493,147 @@ export const CartCheckoutDrawer: React.FC<CartCheckoutDrawerProps> = ({
 
           {step === 'details' && (
             <div className="space-y-4">
-              <div className="grid grid-cols-2 gap-2.5">
-                <button
-                  type="button"
-                  onClick={() => onChangeFulfillment('delivery')}
-                  className={`p-3 rounded-xl border text-left flex items-center gap-2.5 cursor-pointer ${
-                    fulfillment === 'delivery'
-                      ? 'bg-[#0F3D28] text-white border-[#0F3D28]'
-                      : 'bg-white text-[#14221B] border-[#0F3D28]/15'
-                  }`}
-                >
-                  <Truck className="w-4 h-4 text-[#E6A817] shrink-0" />
-                  <div>
-                    <p className="text-xs font-bold">Express / Local Delivery</p>
-                    <p className="text-[11px] opacity-80">{shippingZone}</p>
+              {!customerSession ? (
+                <div className="bg-white rounded-2xl p-6 border border-[#0F3D28]/15 text-center space-y-4">
+                  <div className="space-y-1.5">
+                    <span className="inline-block px-2.5 py-1 rounded-md bg-[#E6A817]/20 text-[#0F3D28] text-[11px] font-bold uppercase tracking-wider">
+                      Google Sign-In Required for Checkout
+                    </span>
+                    <h3 className="font-display text-lg font-bold text-[#14221B]">
+                      Sign in with Google to Complete Your Order
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#526058]">
+                      Your basket ({items.reduce((a, b) => a + b.quantity, 0)} items · ₹{totalPayable}) stays saved. Sign in to auto-fill your Sandhaur 148020 delivery details and unlock live order tracking.
+                    </p>
                   </div>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => onChangeFulfillment('pickup')}
-                  className={`p-3 rounded-xl border text-left flex items-center gap-2.5 cursor-pointer ${
-                    fulfillment === 'pickup'
-                      ? 'bg-[#0F3D28] text-white border-[#0F3D28]'
-                      : 'bg-white text-[#14221B] border-[#0F3D28]/15'
-                  }`}
-                >
-                  <Store className="w-4 h-4 text-[#E6A817] shrink-0" />
-                  <div>
-                    <p className="text-xs font-bold">30-Min Store Pickup</p>
-                    <p className="text-[11px] opacity-80">Main Bazaar · Free</p>
+                  <GoogleSignInButton
+                    onClick={() => void onSignInWithGoogle()}
+                    loading={authLoading}
+                    variant="gold"
+                    className="w-full"
+                  />
+                  {authError && (
+                    <p className="text-xs font-semibold text-red-600 bg-red-50 border border-red-200 rounded-lg px-3 py-2 text-left">
+                      {authError}
+                    </p>
+                  )}
+                </div>
+              ) : (
+                <>
+                  <div className="bg-[#0F3D28] text-white rounded-xl p-3 flex items-center gap-3">
+                    {customerSession.photoURL ? (
+                      <img
+                        src={customerSession.photoURL}
+                        alt={customerSession.name}
+                        referrerPolicy="no-referrer"
+                        className="w-9 h-9 rounded-full border border-[#E6A817] object-cover shrink-0"
+                      />
+                    ) : (
+                      <div className="w-9 h-9 rounded-full bg-[#E6A817] text-[#14221B] font-bold text-xs flex items-center justify-center shrink-0">
+                        {customerSession.name.slice(0, 1).toUpperCase()}
+                      </div>
+                    )}
+                    <div className="min-w-0">
+                      <p className="text-xs font-bold truncate">{customerSession.name}</p>
+                      <p className="text-[11px] text-[#E6A817] truncate">
+                        Signed in · {customerSession.email}
+                      </p>
+                    </div>
                   </div>
-                </button>
-              </div>
 
-              <div className="bg-white rounded-xl p-4 border border-[#0F3D28]/10 space-y-3">
-                <div>
-                  <label className="block text-xs font-semibold text-[#526058] mb-1">Full Name *</label>
-                  <input
-                    type="text"
-                    value={customerName}
-                    onChange={(e) => setCustomerName(e.target.value)}
-                    placeholder="Customer full name"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#0F3D28]/20 text-sm focus:outline-none focus:border-[#0F3D28]"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-[#526058] mb-1">
-                    WhatsApp Mobile (+91) *
-                  </label>
-                  <input
-                    type="tel"
-                    value={customerPhone}
-                    onChange={(e) => setCustomerPhone(e.target.value)}
-                    placeholder="10-digit mobile number"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#0F3D28]/20 text-sm font-mono-num focus:outline-none focus:border-[#0F3D28]"
-                  />
-                </div>
-                {fulfillment === 'delivery' && (
-                  <div>
-                    <label className="block text-xs font-semibold text-[#526058] mb-1">
-                      Delivery Address / Village *
-                    </label>
-                    <textarea
-                      rows={2}
-                      value={address}
-                      onChange={(e) => setAddress(e.target.value)}
-                      placeholder="House No, Street, Main Bazaar / Village, Sandhaur 148020"
-                      className="w-full px-3.5 py-2 rounded-xl border border-[#0F3D28]/20 text-sm focus:outline-none focus:border-[#0F3D28]"
-                    />
+                  <div className="grid grid-cols-2 gap-2.5">
+                    <button
+                      type="button"
+                      onClick={() => onChangeFulfillment('delivery')}
+                      className={`p-3 rounded-xl border text-left flex items-center gap-2.5 cursor-pointer ${
+                        fulfillment === 'delivery'
+                          ? 'bg-[#0F3D28] text-white border-[#0F3D28]'
+                          : 'bg-white text-[#14221B] border-[#0F3D28]/15'
+                      }`}
+                    >
+                      <Truck className="w-4 h-4 text-[#E6A817] shrink-0" />
+                      <div>
+                        <p className="text-xs font-bold">Express / Local Delivery</p>
+                        <p className="text-[11px] opacity-80">{shippingZone}</p>
+                      </div>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => onChangeFulfillment('pickup')}
+                      className={`p-3 rounded-xl border text-left flex items-center gap-2.5 cursor-pointer ${
+                        fulfillment === 'pickup'
+                          ? 'bg-[#0F3D28] text-white border-[#0F3D28]'
+                          : 'bg-white text-[#14221B] border-[#0F3D28]/15'
+                      }`}
+                    >
+                      <Store className="w-4 h-4 text-[#E6A817] shrink-0" />
+                      <div>
+                        <p className="text-xs font-bold">30-Min Store Pickup</p>
+                        <p className="text-[11px] opacity-80">Main Bazaar · Free</p>
+                      </div>
+                    </button>
                   </div>
-                )}
-                <div>
-                  <label className="block text-xs font-semibold text-[#526058] mb-1">
-                    Preferred Delivery / Pickup Window
-                  </label>
-                  <select
-                    value={slot}
-                    onChange={(e) => setSlot(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#0F3D28]/20 text-sm bg-white focus:outline-none focus:border-[#0F3D28]"
-                  >
-                    {paymentSettings.pickupSlots.map((s) => (
-                      <option key={s} value={s}>
-                        {s}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-              {errorMsg && <p className="text-xs font-semibold text-red-600">{errorMsg}</p>}
+
+                  <div className="bg-white rounded-xl p-4 border border-[#0F3D28]/10 space-y-3">
+                    <div>
+                      <label className="block text-xs font-semibold text-[#526058] mb-1">Full Name *</label>
+                      <input
+                        type="text"
+                        value={customerName}
+                        onChange={(e) => setCustomerName(e.target.value)}
+                        placeholder="Customer full name"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-[#0F3D28]/20 text-sm focus:outline-none focus:border-[#0F3D28]"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-[#526058] mb-1">
+                        10-Digit Indian Mobile Number (+91) *
+                      </label>
+                      <input
+                        type="tel"
+                        maxLength={10}
+                        value={customerPhone}
+                        onChange={(e) =>
+                          setCustomerPhone(e.target.value.replace(/\D/g, '').slice(0, 10))
+                        }
+                        placeholder="10-digit mobile number (e.g. 9876543210)"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-[#0F3D28]/20 text-sm font-mono-num focus:outline-none focus:border-[#0F3D28]"
+                      />
+                    </div>
+                    {fulfillment === 'delivery' && (
+                      <div>
+                        <label className="block text-xs font-semibold text-[#526058] mb-1">
+                          Delivery Address / Village (Sandhaur 148020) *
+                        </label>
+                        <textarea
+                          rows={2}
+                          value={address}
+                          onChange={(e) => setAddress(e.target.value)}
+                          placeholder="House No, Street, Main Bazaar / Village, Sandhaur 148020"
+                          className="w-full px-3.5 py-2 rounded-xl border border-[#0F3D28]/20 text-sm focus:outline-none focus:border-[#0F3D28]"
+                        />
+                      </div>
+                    )}
+                    <div>
+                      <label className="block text-xs font-semibold text-[#526058] mb-1">
+                        Preferred Delivery / Pickup Window
+                      </label>
+                      <select
+                        value={slot}
+                        onChange={(e) => setSlot(e.target.value)}
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-[#0F3D28]/20 text-sm bg-white focus:outline-none focus:border-[#0F3D28]"
+                      >
+                        {paymentSettings.pickupSlots.map((s) => (
+                          <option key={s} value={s}>
+                            {s}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                  {errorMsg && <p className="text-xs font-semibold text-red-600">{errorMsg}</p>}
+                </>
+              )}
             </div>
           )}
 
@@ -922,21 +1027,28 @@ export const CartCheckoutDrawer: React.FC<CartCheckoutDrawerProps> = ({
                   }}
                   className="flex-1 py-3 px-5 rounded-xl bg-[#0F3D28] text-white font-semibold text-sm hover:bg-[#0A2A1B] inline-flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <span>Proceed to Delivery &amp; Slot</span>
+                  <span>
+                    {customerSession
+                      ? 'Proceed to Delivery & Slot'
+                      : 'Sign In with Google & Checkout'}
+                  </span>
                   <ArrowRight className="w-4 h-4 text-[#E6A817]" />
                 </button>
               )}
 
-              {step === 'details' && (
+              {step === 'details' && customerSession && (
                 <button
                   type="button"
                   onClick={() => {
-                    if (!customerName.trim() || customerPhone.replace(/\D/g, '').length < 10) {
-                      setErrorMsg('Please enter your name and valid 10-digit WhatsApp number.');
+                    const cleanPhone = customerPhone.replace(/\D/g, '').slice(-10);
+                    if (!customerName.trim() || !INDIAN_PHONE_REGEX.test(cleanPhone)) {
+                      setErrorMsg(
+                        'Please enter your full name and a valid 10-digit Indian mobile number (starting with 6-9).'
+                      );
                       return;
                     }
-                    if (fulfillment === 'delivery' && !address.trim()) {
-                      setErrorMsg('Please enter your delivery address in Sandhaur / nearby village.');
+                    if (fulfillment === 'delivery' && address.trim().length < 5) {
+                      setErrorMsg('Please enter your delivery address in Sandhaur 148020.');
                       return;
                     }
                     setErrorMsg('');
@@ -952,7 +1064,7 @@ export const CartCheckoutDrawer: React.FC<CartCheckoutDrawerProps> = ({
               {step === 'payment' && (
                 <button
                   type="button"
-                  disabled={submitting}
+                  disabled={submitting || !customerSession}
                   onClick={handleConfirmOrder}
                   className="flex-1 py-3 px-5 rounded-xl bg-[#E6A817] text-[#14221B] font-bold text-sm hover:bg-[#f0b72b] inline-flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
                 >

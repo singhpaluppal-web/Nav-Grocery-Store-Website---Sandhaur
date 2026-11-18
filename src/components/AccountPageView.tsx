@@ -3,15 +3,20 @@ import {
   ArrowLeft,
   CheckCircle2,
   CreditCard,
+  Edit3,
   Heart,
+  LogOut,
   MapPin,
   PackageCheck,
+  Phone,
   Plus,
+  Radio,
   RotateCcw,
+  Save,
   ShieldCheck,
-  ShoppingBasket,
   Trash2,
-  UserCheck,
+  User,
+  X,
 } from 'lucide-react';
 import {
   CustomerSession,
@@ -23,15 +28,20 @@ import {
   SavedAddress,
 } from '../types';
 import {
+  INDIAN_PHONE_REGEX,
   fetchOrderById,
-  getLocalOrders,
   getLocalReturnRequests,
+  saveCustomerProfile,
   submitReturnRequest,
+  subscribeToCustomerOrders,
 } from '../utils/firebase';
 import { resolveProductImage, getNextFallbackImage } from '../utils/brandPhotos';
 import { StoreLang } from '../utils/i18n';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { StoreLogo } from './StoreLogo';
+import { GoogleSignInButton } from './GoogleSignInButton';
+import { LiveOrderTrackerCard } from './LiveOrderTrackerCard';
+import { SANDHAUR_VILLAGE_AREAS } from './ProfileCompletionModal';
 
 interface AccountPageViewProps {
   logoUrl: string;
@@ -40,15 +50,19 @@ interface AccountPageViewProps {
   customerSession: CustomerSession | null;
   paymentSettings: PaymentSettings;
   lang: StoreLang;
+  authLoading: boolean;
+  authError: string;
   onChangeLang: (lang: StoreLang) => void;
   onUpdateSession: (session: CustomerSession | null) => void;
   onToggleFavorite: (productId: string) => void;
-  onAddToCart: (product: Product) => void;
+  onAddToCart: (product: Product, qty?: number) => void;
   onNavigateHome: () => void;
-  onOpenWhatsAppAuth: () => void;
+  onSignInWithGoogle: () => Promise<void>;
+  onSignOut: () => Promise<void>;
+  onClearAuthError: () => void;
 }
 
-type AccountSection = 'orders' | 'wishlist' | 'addresses' | 'payments' | 'returns';
+type AccountSection = 'orders' | 'profile' | 'wishlist' | 'addresses' | 'payments' | 'returns';
 
 const DEFAULT_SAVED_ADDRESS: SavedAddress = {
   id: 'addr-sandhaur',
@@ -67,18 +81,37 @@ export const AccountPageView: React.FC<AccountPageViewProps> = ({
   customerSession,
   paymentSettings,
   lang,
+  authLoading,
+  authError,
   onChangeLang,
   onUpdateSession,
   onToggleFavorite,
   onAddToCart,
   onNavigateHome,
-  onOpenWhatsAppAuth,
+  onSignInWithGoogle,
+  onSignOut,
+  onClearAuthError,
 }) => {
   const [section, setSection] = useState<AccountSection>('orders');
-  const [orders, setOrders] = useState<OrderRecord[]>(() => getLocalOrders());
+
+  // Real-time orders filtered strictly by customerSession.uid
+  const [orders, setOrders] = useState<OrderRecord[]>([]);
+  const [ordersLoading, setOrdersLoading] = useState<boolean>(false);
+  const [liveSynced, setLiveSynced] = useState<boolean>(false);
   const [lookupId, setLookupId] = useState('');
   const [lookupBusy, setLookupBusy] = useState(false);
   const [lookupStatus, setLookupStatus] = useState('');
+  const [reorderToast, setReorderToast] = useState('');
+
+  // Inline Edit Profile state synced to /customers/{uid}.json
+  const [profileName, setProfileName] = useState(customerSession?.name || '');
+  const [profilePhone, setProfilePhone] = useState(customerSession?.phone || '');
+  const [profileVillage, setProfileVillage] = useState(
+    customerSession?.villageArea || SANDHAUR_VILLAGE_AREAS[0]
+  );
+  const [profileAddress, setProfileAddress] = useState(customerSession?.address || '');
+  const [profileSaving, setProfileSaving] = useState(false);
+  const [profileMsg, setProfileMsg] = useState<{ type: 'ok' | 'err'; text: string } | null>(null);
 
   const [addresses, setAddresses] = useState<SavedAddress[]>(() => {
     if (customerSession?.savedAddresses && customerSession.savedAddresses.length > 0) {
@@ -100,15 +133,110 @@ export const AccountPageView: React.FC<AccountPageViewProps> = ({
   const [returnNotes, setReturnNotes] = useState('');
   const [returnMsg, setReturnMsg] = useState('');
 
+  // Keep profile form & addresses synced whenever customerSession updates
   useEffect(() => {
-    setOrders(getLocalOrders());
-  }, []);
+    if (!customerSession) {
+      setProfileName('');
+      setProfilePhone('');
+      setProfileVillage(SANDHAUR_VILLAGE_AREAS[0]);
+      setProfileAddress('');
+      setAddresses([DEFAULT_SAVED_ADDRESS]);
+      return;
+    }
+    setProfileName(customerSession.name || '');
+    setProfilePhone(customerSession.phone || '');
+    setProfileVillage(customerSession.villageArea || SANDHAUR_VILLAGE_AREAS[0]);
+    setProfileAddress(customerSession.address || '');
+    if (customerSession.preferredPayment) {
+      setPreferredPay(customerSession.preferredPayment);
+    }
+    if (customerSession.savedAddresses && customerSession.savedAddresses.length > 0) {
+      setAddresses(customerSession.savedAddresses);
+    }
+  }, [customerSession]);
+
+  // Live Firebase RTDB subscription to /orders filtered by signed-in uid
+  useEffect(() => {
+    if (!customerSession?.uid) {
+      setOrders([]);
+      setOrdersLoading(false);
+      setLiveSynced(false);
+      return;
+    }
+
+    setOrdersLoading(true);
+    const unsubscribe = subscribeToCustomerOrders(customerSession.uid, (nextOrders, connected) => {
+      setOrders(nextOrders);
+      setLiveSynced(connected);
+      setOrdersLoading(false);
+    });
+    return unsubscribe;
+  }, [customerSession?.uid]);
 
   const favoriteSet = useMemo(() => new Set(favoriteIds), [favoriteIds]);
   const wishlistProducts = useMemo(
     () => products.filter((p) => favoriteSet.has(p.id)),
     [products, favoriteSet]
   );
+
+  const persistProfileToFirebase = async (nextSession: CustomerSession) => {
+    onUpdateSession(nextSession);
+    return saveCustomerProfile(nextSession.uid, nextSession);
+  };
+
+  const handleSaveInlineProfile = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!customerSession?.uid) return;
+    setProfileMsg(null);
+
+    const cleanName = profileName.trim();
+    const cleanPhone = profilePhone.replace(/\D/g, '').slice(-10);
+    const cleanAddr = profileAddress.trim();
+
+    if (cleanName.length < 2) {
+      setProfileMsg({ type: 'err', text: 'Please enter your full name.' });
+      return;
+    }
+    if (!INDIAN_PHONE_REGEX.test(cleanPhone)) {
+      setProfileMsg({
+        type: 'err',
+        text: 'Please enter a valid 10-digit Indian mobile number starting with 6, 7, 8, or 9.',
+      });
+      return;
+    }
+    if (cleanAddr.length < 5) {
+      setProfileMsg({
+        type: 'err',
+        text: 'Please enter your complete street address in Sandhaur 148020.',
+      });
+      return;
+    }
+
+    setProfileSaving(true);
+    const updated: CustomerSession = {
+      ...customerSession,
+      name: cleanName,
+      phone: cleanPhone,
+      villageArea: profileVillage,
+      address: cleanAddr,
+      profileComplete: true,
+      updatedAt: new Date().toISOString(),
+    };
+    const res = await persistProfileToFirebase(updated);
+    setProfileSaving(false);
+
+    if (res.ok) {
+      setProfileMsg({
+        type: 'ok',
+        text: 'Profile saved to Firebase Realtime Database (/customers/' + customerSession.uid.slice(0, 8) + '…).',
+      });
+    } else {
+      setProfileMsg({
+        type: 'err',
+        text: 'Updated locally, but Firebase RTDB sync failed. Please retry.',
+      });
+    }
+  };
 
   const persistAddresses = (next: SavedAddress[]) => {
     setAddresses(next);
@@ -117,9 +245,9 @@ export const AccountPageView: React.FC<AccountPageViewProps> = ({
         ...customerSession,
         address: next.find((a) => a.isDefault)?.line1 || customerSession.address,
         savedAddresses: next,
+        updatedAt: new Date().toISOString(),
       };
-      localStorage.setItem('nav_customer_session_v2', JSON.stringify(updated));
-      onUpdateSession(updated);
+      void persistProfileToFirebase(updated);
     }
   };
 
@@ -136,6 +264,24 @@ export const AccountPageView: React.FC<AccountPageViewProps> = ({
       setLookupStatus(`Synced latest status for ${found.orderId}: ${found.status}`);
     } else {
       setLookupStatus(`Order ID "${id}" not found in Firebase RTDB.`);
+    }
+  };
+
+  const handleReorder = (order: OrderRecord) => {
+    let totalUnits = 0;
+    order.items.forEach((it) => {
+      const match = products.find((p) => p.id === it.id);
+      if (match) {
+        const qty = Math.max(1, Math.floor(Number(it.qty) || 1));
+        onAddToCart(match, qty);
+        totalUnits += qty;
+      }
+    });
+    if (totalUnits > 0) {
+      setReorderToast(`Added ${totalUnits} unit${totalUnits === 1 ? '' : 's'} from ${order.orderId} to your cart.`);
+      setTimeout(() => {
+        onNavigateHome();
+      }, 450);
     }
   };
 
@@ -162,9 +308,9 @@ export const AccountPageView: React.FC<AccountPageViewProps> = ({
       const updated: CustomerSession = {
         ...customerSession,
         preferredPayment: method,
+        updatedAt: new Date().toISOString(),
       };
-      localStorage.setItem('nav_customer_session_v2', JSON.stringify(updated));
-      onUpdateSession(updated);
+      void persistProfileToFirebase(updated);
     }
   };
 
@@ -185,15 +331,42 @@ export const AccountPageView: React.FC<AccountPageViewProps> = ({
     setReturns((prev) => [req, ...prev]);
     setReturnOrderId('');
     setReturnNotes('');
-    setReturnMsg(`Claim ${req.requestId} submitted for order ${req.orderId}. Our Sandhaur support desk will follow up on WhatsApp.`);
+    setReturnMsg(
+      `Claim ${req.requestId} submitted for order ${req.orderId}. Our Sandhaur support desk will follow up shortly.`
+    );
   };
 
   const navTabs: Array<{ id: AccountSection; label: string; icon: React.ReactNode }> = [
-    { id: 'orders', label: lang === 'pa' ? 'ਆਰਡਰ ਤੇ ਟ੍ਰੈਕਿੰਗ' : 'Orders & Tracking', icon: <PackageCheck className="w-4 h-4" /> },
-    { id: 'wishlist', label: `${lang === 'pa' ? 'ਪਸੰਦੀਦਾ' : 'Wishlist'} (${wishlistProducts.length})`, icon: <Heart className="w-4 h-4" /> },
-    { id: 'addresses', label: lang === 'pa' ? 'ਸੇਵ ਪਤੇ' : 'Saved Addresses', icon: <MapPin className="w-4 h-4" /> },
-    { id: 'payments', label: lang === 'pa' ? 'ਭੁਗਤਾਨ ਢੰਗ' : 'Payment Methods', icon: <CreditCard className="w-4 h-4" /> },
-    { id: 'returns', label: lang === 'pa' ? 'ਵਾਪਸੀ ਤੇ ਵਾਰੰਟੀ' : 'Returns & Warranty', icon: <RotateCcw className="w-4 h-4" /> },
+    {
+      id: 'orders',
+      label: `${lang === 'pa' ? 'ਆਰਡਰ ਤੇ ਲਾਈਵ ਟ੍ਰੈਕਿੰਗ' : 'Live Orders & Tracking'} (${orders.length})`,
+      icon: <PackageCheck className="w-4 h-4" />,
+    },
+    {
+      id: 'profile',
+      label: lang === 'pa' ? 'ਪ੍ਰੋਫਾਈਲ ਸੰਪਾਦਿਤ ਕਰੋ' : 'Edit Profile',
+      icon: <Edit3 className="w-4 h-4" />,
+    },
+    {
+      id: 'wishlist',
+      label: `${lang === 'pa' ? 'ਪਸੰਦੀਦਾ' : 'Wishlist'} (${wishlistProducts.length})`,
+      icon: <Heart className="w-4 h-4" />,
+    },
+    {
+      id: 'addresses',
+      label: lang === 'pa' ? 'ਸੇਵ ਪਤੇ' : 'Saved Addresses',
+      icon: <MapPin className="w-4 h-4" />,
+    },
+    {
+      id: 'payments',
+      label: lang === 'pa' ? 'ਭੁਗਤਾਨ ਢੰਗ' : 'Payment Methods',
+      icon: <CreditCard className="w-4 h-4" />,
+    },
+    {
+      id: 'returns',
+      label: lang === 'pa' ? 'ਵਾਪਸੀ ਤੇ ਵਾਰੰਟੀ' : 'Returns & Warranty',
+      icon: <RotateCcw className="w-4 h-4" />,
+    },
   ];
 
   return (
@@ -216,55 +389,122 @@ export const AccountPageView: React.FC<AccountPageViewProps> = ({
                 <p className="font-display font-bold text-sm leading-tight">
                   {lang === 'pa' ? 'ਮੇਰਾ ਖਾਤਾ' : 'Customer Account'}
                 </p>
-                <p className="text-[11px] text-[#E6A817]">Nav Grocery &amp; Nav Kart · 148020</p>
+                <p className="text-[11px] text-[#E6A817]">
+                  Nav Grocery &amp; Nav Kart · Main Bazaar, Sandhaur 148020
+                </p>
               </div>
             </div>
           </div>
 
           <div className="flex items-center gap-2">
             <LanguageSwitcher lang={lang} onChange={onChangeLang} />
-            <button
-              type="button"
-              onClick={onOpenWhatsAppAuth}
-              className="px-3 py-2 rounded-lg bg-[#E6A817] text-[#14221B] text-xs font-bold inline-flex items-center gap-1.5 whitespace-nowrap cursor-pointer"
-            >
-              <UserCheck className="w-3.5 h-3.5" />
-              <span>{customerSession ? 'Switch Profile' : 'WhatsApp Sign In'}</span>
-            </button>
+            {customerSession ? (
+              <button
+                type="button"
+                onClick={() => void onSignOut()}
+                className="px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-[#E6A817] text-xs font-bold inline-flex items-center gap-1.5 whitespace-nowrap cursor-pointer"
+              >
+                <LogOut className="w-3.5 h-3.5" />
+                <span>{lang === 'pa' ? 'ਸਾਈਨ ਆਊਟ' : 'Sign Out'}</span>
+              </button>
+            ) : (
+              <GoogleSignInButton
+                onClick={() => void onSignInWithGoogle()}
+                loading={authLoading}
+                label={lang === 'pa' ? 'ਗੂਗਲ ਨਾਲ ਜਾਰੀ ਰੱਖੋ' : 'Continue with Google'}
+                variant="gold"
+                className="py-2! px-3! text-xs!"
+              />
+            )}
           </div>
         </div>
+
+        {authError && (
+          <div className="bg-amber-50 text-[#78350F] border-t border-amber-200 px-4 py-2 text-xs flex items-center justify-between gap-3">
+            <span className="font-semibold">{authError}</span>
+            <button
+              type="button"
+              onClick={onClearAuthError}
+              aria-label="Dismiss error"
+              className="p-0.5 hover:bg-amber-200/60 rounded cursor-pointer shrink-0"
+            >
+              <X className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        )}
       </header>
 
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 space-y-6">
         {/* Profile Membership Banner */}
         <section className="bg-[#0F3D28] text-white rounded-2xl p-6 border border-[#E6A817]/30 flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div className="space-y-1.5">
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#E6A817]">
-              <ShieldCheck className="w-4 h-4" />
-              <span>Nav Pass Wholesale Membership · Active</span>
+          <div className="flex items-start gap-4 min-w-0">
+            {customerSession?.photoURL ? (
+              <img
+                src={customerSession.photoURL}
+                alt={customerSession.name}
+                referrerPolicy="no-referrer"
+                className="w-14 h-14 rounded-full border-2 border-[#E6A817] object-cover shrink-0"
+              />
+            ) : (
+              <div className="w-14 h-14 rounded-full bg-[#E6A817] text-[#14221B] font-display font-bold text-xl flex items-center justify-center shrink-0">
+                {customerSession ? customerSession.name.slice(0, 1).toUpperCase() : 'N'}
+              </div>
+            )}
+
+            <div className="space-y-1 min-w-0">
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#E6A817]">
+                <ShieldCheck className="w-4 h-4 shrink-0" />
+                <span>Nav Pass Wholesale Membership · Flat 12% Off MRP</span>
+              </div>
+              <h1 className="font-display text-2xl font-bold truncate">
+                {customerSession ? customerSession.name : 'Welcome, Sandhaur Shopper'}
+              </h1>
+              {customerSession ? (
+                <div className="text-xs sm:text-sm text-white/85 space-y-0.5">
+                  <p className="truncate">{customerSession.email}</p>
+                  <p className="text-white/75">
+                    {customerSession.phone ? `+91 ${customerSession.phone}` : 'Mobile not set'}
+                    {' · '}
+                    {customerSession.address
+                      ? `${customerSession.address}${
+                          customerSession.villageArea &&
+                          !customerSession.address.includes(customerSession.villageArea)
+                            ? `, ${customerSession.villageArea}`
+                            : ''
+                        }`
+                      : 'Complete your Sandhaur 148020 delivery address in Edit Profile'}
+                  </p>
+                </div>
+              ) : (
+                <p className="text-xs sm:text-sm text-white/80">
+                  Sign in with Google to save your Sandhaur 148020 delivery profile and track orders live in real time.
+                </p>
+              )}
             </div>
-            <h1 className="font-display text-2xl font-bold">
-              {customerSession ? customerSession.name : 'Welcome, Sandhaur Shopper'}
-            </h1>
-            <p className="text-xs sm:text-sm text-white/80">
-              {customerSession
-                ? `WhatsApp Verified: +91 ${customerSession.phone} · ${customerSession.address}`
-                : 'Sign in with WhatsApp OTP to sync your saved Sandhaur 148020 addresses & wholesale invoices.'}
-            </p>
           </div>
 
-          <div className="grid grid-cols-3 gap-3 shrink-0 text-center bg-[#0A2A1B] p-3.5 rounded-xl border border-white/10">
-            <div>
-              <p className="text-[11px] text-white/70">Wholesale Tier</p>
-              <p className="font-bold text-sm text-[#E6A817]">Flat 12% Off</p>
-            </div>
-            <div>
-              <p className="text-[11px] text-white/70">Orders</p>
-              <p className="font-bold text-sm font-mono-num">{orders.length}</p>
-            </div>
-            <div>
-              <p className="text-[11px] text-white/70">Wishlist</p>
-              <p className="font-bold text-sm font-mono-num">{wishlistProducts.length}</p>
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
+            {!customerSession && (
+              <GoogleSignInButton
+                onClick={() => void onSignInWithGoogle()}
+                loading={authLoading}
+                label={lang === 'pa' ? 'ਗੂਗਲ ਨਾਲ ਜਾਰੀ ਰੱਖੋ' : 'Continue with Google'}
+                variant="gold"
+              />
+            )}
+            <div className="grid grid-cols-3 gap-3 text-center bg-[#0A2A1B] p-3.5 rounded-xl border border-white/10">
+              <div>
+                <p className="text-[11px] text-white/70">Discount</p>
+                <p className="font-bold text-sm text-[#E6A817]">12% Off</p>
+              </div>
+              <div>
+                <p className="text-[11px] text-white/70">Orders</p>
+                <p className="font-bold text-sm font-mono-num">{orders.length}</p>
+              </div>
+              <div>
+                <p className="text-[11px] text-white/70">Wishlist</p>
+                <p className="font-bold text-sm font-mono-num">{wishlistProducts.length}</p>
+              </div>
             </div>
           </div>
         </section>
@@ -291,104 +531,239 @@ export const AccountPageView: React.FC<AccountPageViewProps> = ({
           })}
         </div>
 
-        {/* SECTION: ORDERS & TRACKING */}
+        {reorderToast && (
+          <div className="bg-[#0F3D28] text-white px-4 py-3 rounded-xl text-xs font-bold flex items-center justify-between gap-2">
+            <span>{reorderToast}</span>
+            <button
+              type="button"
+              onClick={() => setReorderToast('')}
+              className="text-[#E6A817] hover:underline cursor-pointer"
+            >
+              Dismiss
+            </button>
+          </div>
+        )}
+
+        {/* SECTION: REAL-TIME ORDERS & TRACKING */}
         {section === 'orders' && (
           <section className="space-y-4">
-            <form
-              onSubmit={handleLookupOrder}
-              className="bg-white rounded-xl p-4 border border-[#0F3D28]/12 flex flex-col sm:flex-row gap-2.5"
-            >
-              <input
-                type="text"
-                value={lookupId}
-                onChange={(e) => setLookupId(e.target.value)}
-                placeholder="Track any Order ID from Firebase RTDB (e.g. NGS-261116-4821)"
-                className="flex-1 px-3.5 py-2.5 rounded-lg border border-[#0F3D28]/20 text-xs sm:text-sm font-mono-num focus:outline-none focus:border-[#0F3D28]"
-              />
-              <button
-                type="submit"
-                disabled={lookupBusy}
-                className="px-5 py-2.5 rounded-lg bg-[#0F3D28] text-white text-xs font-bold whitespace-nowrap cursor-pointer disabled:opacity-50"
-              >
-                {lookupBusy ? 'Syncing...' : 'Refresh Order Status'}
-              </button>
-            </form>
-            {lookupStatus && (
-              <p className="text-xs font-semibold text-[#0F3D28] px-1">{lookupStatus}</p>
-            )}
+            {/* Live Sync Header + Manual Order ID Lookup */}
+            <div className="bg-white rounded-xl p-4 border border-[#0F3D28]/12 space-y-3">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <Radio
+                    className={`w-4 h-4 ${
+                      customerSession && liveSynced ? 'text-[#0F3D28] animate-pulse' : 'text-[#526058]'
+                    }`}
+                  />
+                  <h2 className="font-display font-bold text-base text-[#14221B]">
+                    Real-Time Sandhaur 148020 Order Tracker
+                  </h2>
+                </div>
+                {customerSession && (
+                  <span className="text-[11px] font-semibold text-[#0F3D28] bg-[#F8F7F2] px-2.5 py-1 rounded-lg border border-[#0F3D28]/15">
+                    {liveSynced
+                      ? 'Auto-syncing live from Firebase RTDB'
+                      : 'Syncing orders for your Google account'}
+                  </span>
+                )}
+              </div>
 
-            {orders.length === 0 ? (
+              <form onSubmit={handleLookupOrder} className="flex flex-col sm:flex-row gap-2.5">
+                <input
+                  type="text"
+                  value={lookupId}
+                  onChange={(e) => setLookupId(e.target.value)}
+                  placeholder="Or look up any Order ID directly (e.g. NGS-261118-4821)"
+                  className="flex-1 px-3.5 py-2.5 rounded-lg border border-[#0F3D28]/20 text-xs sm:text-sm font-mono-num focus:outline-none focus:border-[#0F3D28]"
+                />
+                <button
+                  type="submit"
+                  disabled={lookupBusy}
+                  className="px-5 py-2.5 rounded-lg bg-[#0F3D28] text-white text-xs font-bold whitespace-nowrap cursor-pointer disabled:opacity-50"
+                >
+                  {lookupBusy ? 'Checking...' : 'Track by Order ID'}
+                </button>
+              </form>
+              {lookupStatus && (
+                <p className="text-xs font-semibold text-[#0F3D28]">{lookupStatus}</p>
+              )}
+            </div>
+
+            {!customerSession ? (
+              <div className="bg-white rounded-2xl p-10 text-center border border-[#0F3D28]/12 space-y-4">
+                <p className="font-display text-lg font-bold text-[#14221B]">
+                  Sign in with Google to View Your Live Orders
+                </p>
+                <p className="text-xs sm:text-sm text-[#526058] max-w-md mx-auto">
+                  Every order placed with your Google account automatically updates here in real time — from Order Placed to Packed &amp; Sealed, Out for Delivery in Sandhaur 148020, and Delivered.
+                </p>
+                <div className="flex justify-center">
+                  <GoogleSignInButton
+                    onClick={() => void onSignInWithGoogle()}
+                    loading={authLoading}
+                    variant="gold"
+                  />
+                </div>
+              </div>
+            ) : ordersLoading ? (
+              <div className="bg-white rounded-2xl p-8 text-center border border-[#0F3D28]/10 text-xs sm:text-sm text-[#526058]">
+                Connecting to Firebase Realtime Database for your orders...
+              </div>
+            ) : orders.length === 0 ? (
               <div className="bg-white rounded-2xl p-10 text-center border border-[#0F3D28]/10 space-y-3">
-                <p className="font-display text-lg font-bold">No orders placed on this device yet</p>
+                <p className="font-display text-lg font-bold">No orders found for {customerSession.email}</p>
                 <p className="text-xs sm:text-sm text-[#526058]">
-                  Every basket checkout generates a live GST bill synced to Firebase RTDB with Sandhaur 148020 delivery or 30-min store pickup.
+                  Place an order on Nav Grocery Store or Nav Kart to watch live 4-stage Sandhaur 148020 delivery updates here.
                 </p>
                 <button
                   type="button"
                   onClick={onNavigateHome}
                   className="px-5 py-2.5 rounded-xl bg-[#0F3D28] text-white text-xs font-bold cursor-pointer"
                 >
-                  Browse 320+ Sealed Items
+                  Browse 308+ Sealed Items
                 </button>
               </div>
             ) : (
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {orders.map((order) => (
-                  <div
+                  <LiveOrderTrackerCard
                     key={order.orderId}
-                    className="bg-white rounded-xl p-4 sm:p-5 border border-[#0F3D28]/12 space-y-3"
-                  >
-                    <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#0F3D28]/10 pb-3">
-                      <div>
-                        <p className="font-mono-num font-bold text-sm text-[#0F3D28]">
-                          {order.orderId}
-                        </p>
-                        <p className="text-xs text-[#526058]">
-                          {new Date(order.createdAt).toLocaleString()} · {order.slot}
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-2 text-xs">
-                        <span className="px-2.5 py-1 rounded-md bg-[#E6A817]/20 text-[#14221B] font-bold">
-                          {order.status}
-                        </span>
-                        <span className="font-mono-num font-bold text-sm text-[#0F3D28]">
-                          ₹{order.totalPayable}
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="text-xs text-[#526058] flex flex-wrap justify-between gap-2">
-                      <span>
-                        Payment: <strong className="text-[#14221B]">{order.paymentMethod.toUpperCase()}</strong> ({order.paymentStatus})
-                        {order.utrRef ? ` · UTR: ${order.utrRef}` : ''}
-                      </span>
-                      <span className="text-[#0F3D28] font-semibold">
-                        12% Savings: ₹{order.savings}
-                      </span>
-                    </div>
-
-                    <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
-                      <p className="text-xs text-[#14221B]">
-                        {order.items.map((it) => `${it.name} ×${it.qty}`).join(', ')}
-                      </p>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          order.items.forEach((it) => {
-                            const match = products.find((p) => p.id === it.id);
-                            if (match) onAddToCart(match);
-                          });
-                          onNavigateHome();
-                        }}
-                        className="px-3 py-1.5 rounded-lg bg-[#0F3D28] text-white text-xs font-bold inline-flex items-center gap-1.5 cursor-pointer shrink-0"
-                      >
-                        <ShoppingBasket className="w-3.5 h-3.5 text-[#E6A817]" />
-                        <span>Reorder Items</span>
-                      </button>
-                    </div>
-                  </div>
+                    order={order}
+                    onReorder={handleReorder}
+                  />
                 ))}
               </div>
+            )}
+          </section>
+        )}
+
+        {/* SECTION: EDIT CUSTOMER PROFILE (/customers/{uid}.json) */}
+        {section === 'profile' && (
+          <section className="max-w-2xl">
+            {!customerSession ? (
+              <div className="bg-white rounded-2xl p-8 text-center border border-[#0F3D28]/12 space-y-4">
+                <p className="font-display text-lg font-bold">Sign in with Google to Edit Your Profile</p>
+                <p className="text-xs sm:text-sm text-[#526058]">
+                  Your Name, 10-digit Indian mobile number, and Sandhaur 148020 delivery address are stored securely under your Google account in Firebase RTDB.
+                </p>
+                <div className="flex justify-center">
+                  <GoogleSignInButton
+                    onClick={() => void onSignInWithGoogle()}
+                    loading={authLoading}
+                    variant="gold"
+                  />
+                </div>
+              </div>
+            ) : (
+              <form
+                onSubmit={handleSaveInlineProfile}
+                className="bg-white rounded-2xl p-6 border border-[#0F3D28]/12 space-y-4"
+              >
+                <div className="flex items-center justify-between gap-3 border-b border-[#0F3D28]/10 pb-3">
+                  <div>
+                    <h2 className="font-display font-bold text-lg text-[#14221B]">
+                      Edit Sandhaur 148020 Delivery Profile
+                    </h2>
+                    <p className="text-xs text-[#526058]">
+                      Google Account: <strong>{customerSession.email}</strong>
+                    </p>
+                  </div>
+                  <span className="text-[11px] font-mono-num text-[#0F3D28] bg-[#F8F7F2] px-2.5 py-1 rounded-lg border border-[#0F3D28]/15">
+                    PIN 148020
+                  </span>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-[#526058] mb-1">
+                    <span className="inline-flex items-center gap-1">
+                      <User className="w-3.5 h-3.5 text-[#0F3D28]" />
+                      Full Name *
+                    </span>
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={profileName}
+                    onChange={(e) => setProfileName(e.target.value)}
+                    placeholder="Customer full name"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#0F3D28]/20 text-sm focus:outline-none focus:border-[#0F3D28]"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-[#526058] mb-1">
+                    <span className="inline-flex items-center gap-1">
+                      <Phone className="w-3.5 h-3.5 text-[#0F3D28]" />
+                      10-Digit Indian Mobile Number (+91) *
+                    </span>
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    maxLength={10}
+                    value={profilePhone}
+                    onChange={(e) => setProfilePhone(e.target.value.replace(/\D/g, '').slice(0, 10))}
+                    placeholder="e.g. 9876543210"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#0F3D28]/20 text-sm font-mono-num focus:outline-none focus:border-[#0F3D28]"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-[#526058] mb-1">
+                    <span className="inline-flex items-center gap-1">
+                      <MapPin className="w-3.5 h-3.5 text-[#0F3D28]" />
+                      Village / Area in Sandhaur 148020 *
+                    </span>
+                  </label>
+                  <select
+                    value={profileVillage}
+                    onChange={(e) => setProfileVillage(e.target.value)}
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#0F3D28]/20 text-sm bg-white focus:outline-none focus:border-[#0F3D28]"
+                  >
+                    {SANDHAUR_VILLAGE_AREAS.map((area) => (
+                      <option key={area} value={area}>
+                        {area}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-[#526058] mb-1">
+                    Full Street Address / Landmark (Sandhaur 148020) *
+                  </label>
+                  <textarea
+                    rows={3}
+                    required
+                    value={profileAddress}
+                    onChange={(e) => setProfileAddress(e.target.value)}
+                    placeholder="House No., Street / Mohalla, Near Landmark, Sandhaur 148020"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#0F3D28]/20 text-sm focus:outline-none focus:border-[#0F3D28]"
+                  />
+                </div>
+
+                {profileMsg && (
+                  <p
+                    className={`text-xs font-semibold px-3 py-2 rounded-lg border ${
+                      profileMsg.type === 'ok'
+                        ? 'bg-[#0F3D28]/8 text-[#0F3D28] border-[#0F3D28]/20'
+                        : 'bg-red-50 text-red-700 border-red-200'
+                    }`}
+                  >
+                    {profileMsg.text}
+                  </p>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={profileSaving}
+                  className="px-5 py-2.5 rounded-xl bg-[#0F3D28] text-white text-xs sm:text-sm font-bold inline-flex items-center gap-2 hover:bg-[#0A2A1B] cursor-pointer disabled:opacity-60"
+                >
+                  <Save className="w-4 h-4 text-[#E6A817]" />
+                  <span>{profileSaving ? 'Saving to Firebase...' : 'Save Profile Changes'}</span>
+                </button>
+              </form>
             )}
           </section>
         )}
@@ -442,7 +817,7 @@ export const AccountPageView: React.FC<AccountPageViewProps> = ({
                       <div className="flex items-center gap-2 pt-1">
                         <button
                           type="button"
-                          onClick={() => onAddToCart(item)}
+                          onClick={() => onAddToCart(item, 1)}
                           className="px-2.5 py-1 rounded-lg bg-[#0F3D28] text-white text-[11px] font-bold inline-flex items-center gap-1 cursor-pointer"
                         >
                           <Plus className="w-3 h-3 text-[#E6A817]" />
@@ -629,7 +1004,7 @@ export const AccountPageView: React.FC<AccountPageViewProps> = ({
                 required
                 value={returnOrderId}
                 onChange={(e) => setReturnOrderId(e.target.value)}
-                placeholder="Order ID (e.g. NGS-261116-4821)"
+                placeholder="Order ID (e.g. NGS-261118-4821)"
                 className="w-full px-3 py-2 rounded-lg border border-[#0F3D28]/20 text-xs sm:text-sm font-mono-num"
               />
               <select
