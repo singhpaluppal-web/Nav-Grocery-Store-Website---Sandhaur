@@ -1,0 +1,306 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global fail-closed safety net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() >= 1 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isValidUserAccount(data, userId) {
+      return data.uid is string && data.uid == userId && data.uid.size() <= 128 &&
+        data.email is string && data.email.size() <= 120 &&
+        data.displayName is string && data.displayName.size() <= 80 &&
+        (!('photoUrl' in data) || (data.photoUrl is string && data.photoUrl.size() <= 500)) &&
+        (!('phone' in data) || (data.phone is string && data.phone.size() <= 20)) &&
+        (!('referralCode' in data) || (data.referralCode is string && data.referralCode.size() <= 24)) &&
+        (!('referredBy' in data) || (data.referredBy is string && data.referredBy.size() <= 24)) &&
+        (!('walletBalanceRupees' in data) || (data.walletBalanceRupees is int && data.walletBalanceRupees >= 0 && data.walletBalanceRupees <= 100000)) &&
+        (!('walletSpentRupees' in data) || (data.walletSpentRupees is int && data.walletSpentRupees >= 0 && data.walletSpentRupees <= 100000)) &&
+        (!('fcmToken' in data) || (data.fcmToken is string && data.fcmToken.size() <= 512)) &&
+        (!('fcmTokenUpdatedAtMs' in data) || (data.fcmTokenUpdatedAtMs is int && data.fcmTokenUpdatedAtMs >= 0)) &&
+        data.navCoins is int && data.navCoins >= 0 && data.navCoins <= 50000 &&
+        data.lastSpinAtMs is int && data.lastSpinAtMs >= 0 &&
+        data.spinCount is int && data.spinCount >= 0 && data.spinCount <= 10000 &&
+        data.activeSpinCouponCode is string && data.activeSpinCouponCode.size() <= 40 &&
+        data.activeSpinCouponLabel is string && data.activeSpinCouponLabel.size() <= 120 &&
+        data.activeSpinCouponDiscountRupees is int && data.activeSpinCouponDiscountRupees >= 0 && data.activeSpinCouponDiscountRupees <= 250 &&
+        data.activeSpinFreeExpress is bool &&
+        data.activeSpinFreeLocal is bool &&
+        data.activeSpinUsed is bool &&
+        data.hasOrderedGrocery is bool &&
+        data.hasOrderedElectronics is bool &&
+        data.coldChainStaplesCount is int && data.coldChainStaplesCount >= 0 && data.coldChainStaplesCount <= 1000 &&
+        data.weeklyOrdersCount is int && data.weeklyOrdersCount >= 0 && data.weeklyOrdersCount <= 1000 &&
+        data.weeklyWindowStartMs is int && data.weeklyWindowStartMs >= 0 &&
+        data.totalOrdersCount is int && data.totalOrdersCount >= 0 && data.totalOrdersCount <= 10000 &&
+        data.createdAt is timestamp && data.createdAt <= request.time &&
+        (!('updatedAt' in data) || (data.updatedAt is timestamp && data.updatedAt <= request.time));
+    }
+
+    function isSpinWindowAllowed() {
+      return !incoming().diff(existing()).affectedKeys().hasAny(['lastSpinAtMs', 'spinCount']) || (
+        (existing().lastSpinAtMs == 0 || (request.time.toMillis() - existing().lastSpinAtMs) >= 86400000) &&
+        incoming().spinCount == existing().spinCount + 1 &&
+        incoming().lastSpinAtMs >= request.time.toMillis() - 120000 &&
+        incoming().lastSpinAtMs <= request.time.toMillis() + 60000
+      );
+    }
+
+    function isValidSavedAddress(data, userId) {
+      return data.uid is string && data.uid == userId &&
+        data.fullName is string && data.fullName.size() >= 2 && data.fullName.size() <= 80 &&
+        data.mobile is string && data.mobile.matches('^[6-9][0-9]{9}$') &&
+        data.streetAddress is string && data.streetAddress.size() >= 4 && data.streetAddress.size() <= 200 &&
+        (!('landmark' in data) || (data.landmark is string && data.landmark.size() <= 120)) &&
+        data.villageOrCity is string && data.villageOrCity.size() >= 2 && data.villageOrCity.size() <= 120 &&
+        data.pinCode is string && data.pinCode.matches('^[0-9]{6}$') &&
+        data.defaultAddress is bool &&
+        data.createdAt is timestamp && data.createdAt <= request.time &&
+        (!('updatedAt' in data) || (data.updatedAt is timestamp && data.updatedAt <= request.time));
+    }
+
+    function isValidOrderRecord(data, userId) {
+      let isAnon = data.get('anonymized', false) == true;
+      return data.uid is string && data.uid == userId &&
+        data.orderId is string && data.orderId.size() >= 4 && data.orderId.size() <= 64 &&
+        (!('anonymized' in data) || (data.anonymized is bool)) &&
+        (!('pinCode' in data) || (data.pinCode is string && (data.pinCode == '' || data.pinCode.matches('^[0-9]{6}$')))) &&
+        (
+          (isAnon &&
+            data.customerName == 'Deleted Customer' &&
+            data.customerPhone == '' &&
+            data.get('customerEmail', '') == '' &&
+            data.get('nriBuyerEmail', '') == '' &&
+            data.addressSnapshot == 'Redacted (DPDP 2023)'
+          ) ||
+          (!isAnon &&
+            data.customerName is string && data.customerName.size() >= 2 && data.customerName.size() <= 80 &&
+            data.customerPhone is string && data.customerPhone.matches('^[6-9][0-9]{9}$') &&
+            (!('customerEmail' in data) || (data.customerEmail is string && data.customerEmail.size() <= 120)) &&
+            (!('nriBuyerEmail' in data) || (data.nriBuyerEmail is string && data.nriBuyerEmail.size() <= 120)) &&
+            data.addressSnapshot is string && data.addressSnapshot.size() >= 4 && data.addressSnapshot.size() <= 300
+          )
+        ) &&
+        data.deliveryTier in ['EXPRESS_15_MIN', 'LOCAL_2_HR', 'HOME_DELIVERY', 'STORE_PICKUP', 'PIND_SCHEDULED'] &&
+        (!('dispatchSlot' in data) || (data.dispatchSlot is string && data.dispatchSlot.size() <= 60)) &&
+        (!('isNriOrder' in data) || (data.isNriOrder is bool)) &&
+        (!('deliveryProofUrl' in data) || (data.deliveryProofUrl is string && data.deliveryProofUrl.size() <= 2000)) &&
+        data.paymentMethod is string && data.paymentMethod.size() >= 2 && data.paymentMethod.size() <= 60 &&
+        data.status in ['Order Placed', 'Placed', 'Pending', 'Confirmed', 'Packing', 'Packed', 'Out for Delivery', 'Delivered', 'Cancelled'] &&
+        data.totalMrp is int && data.totalMrp > 0 && data.totalMrp <= 500000 &&
+        data.wholesaleDiscount is int && data.wholesaleDiscount >= 0 && data.wholesaleDiscount <= data.totalMrp &&
+        (!('petiDiscountRupees' in data) || (data.petiDiscountRupees is int && data.petiDiscountRupees >= 0 && data.petiDiscountRupees <= data.totalMrp)) &&
+        data.spinCouponDiscountRupees is int && data.spinCouponDiscountRupees >= 0 && data.spinCouponDiscountRupees <= 250 &&
+        (!('spinCouponCode' in data) || (data.spinCouponCode is string && data.spinCouponCode.size() <= 40)) &&
+        data.coinsRedeemed is int && data.coinsRedeemed >= 0 && data.coinsRedeemed <= 500 &&
+        (!('walletDeductedRupees' in data) || (data.walletDeductedRupees is int && data.walletDeductedRupees >= 0 && data.walletDeductedRupees <= 100000)) &&
+        data.deliveryFee is int && data.deliveryFee >= 0 && data.deliveryFee <= 200 &&
+        data.finalTotal is int && data.finalTotal >= 0 && data.finalTotal <= data.totalMrp + data.deliveryFee &&
+        data.coinsEarned is int && data.coinsEarned >= 0 && data.coinsEarned <= 500 &&
+        data.integrityDigest is string && data.integrityDigest.size() >= 16 && data.integrityDigest.size() <= 128 &&
+        data.items is list && data.items.size() >= 1 && data.items.size() <= 50 &&
+        data.createdAt is timestamp && data.createdAt <= request.time &&
+        (!('updatedAt' in data) || (data.updatedAt is timestamp && data.updatedAt <= request.time));
+    }
+
+    function isValidQuestRecord(data, userId) {
+      return data.uid is string && data.uid == userId &&
+        data.questId in ['QUEST_PROFILE_ADDRESS', 'QUEST_FIRST_ORDER', 'QUEST_CROSS_CATEGORY', 'QUEST_STAPLES_FROZEN', 'QUEST_WEEKLY_STREAK'] &&
+        data.progress is int && data.progress >= 0 && data.progress <= 100 &&
+        data.target is int && data.target >= 1 && data.target <= 100 &&
+        data.rewardCoins is int && data.rewardCoins >= 10 && data.rewardCoins <= 200 &&
+        data.claimed is bool &&
+        data.createdAt is timestamp && data.createdAt <= request.time &&
+        (!('updatedAt' in data) || (data.updatedAt is timestamp && data.updatedAt <= request.time));
+    }
+
+    match /users/{userId} {
+      allow get: if isValidId(userId) && isOwner(userId);
+      allow list: if isOwner(userId);
+
+      allow create: if isValidId(userId) &&
+        isOwner(userId) &&
+        incoming().keys().hasAll([
+          'uid', 'email', 'displayName', 'navCoins', 'lastSpinAtMs', 'spinCount',
+          'activeSpinCouponCode', 'activeSpinCouponLabel', 'activeSpinCouponDiscountRupees',
+          'activeSpinFreeExpress', 'activeSpinFreeLocal', 'activeSpinUsed',
+          'hasOrderedGrocery', 'hasOrderedElectronics', 'coldChainStaplesCount',
+          'weeklyOrdersCount', 'weeklyWindowStartMs', 'totalOrdersCount', 'createdAt'
+        ]) &&
+        incoming().keys().hasOnly([
+          'uid', 'email', 'displayName', 'photoUrl', 'phone', 'referralCode', 'referredBy',
+          'walletBalanceRupees', 'walletSpentRupees', 'fcmToken', 'fcmTokenUpdatedAtMs',
+          'navCoins', 'lastSpinAtMs', 'spinCount', 'activeSpinCouponCode', 'activeSpinCouponLabel',
+          'activeSpinCouponDiscountRupees', 'activeSpinFreeExpress', 'activeSpinFreeLocal',
+          'activeSpinUsed', 'hasOrderedGrocery', 'hasOrderedElectronics',
+          'coldChainStaplesCount', 'weeklyOrdersCount', 'weeklyWindowStartMs',
+          'totalOrdersCount', 'createdAt', 'updatedAt'
+        ]) &&
+        incoming().lastSpinAtMs == 0 &&
+        incoming().spinCount == 0 &&
+        incoming().navCoins <= 50 &&
+        (!('walletBalanceRupees' in incoming()) || incoming().walletBalanceRupees == 0) &&
+        (!('walletSpentRupees' in incoming()) || incoming().walletSpentRupees == 0) &&
+        isValidUserAccount(incoming(), userId);
+
+      allow update: if isValidId(userId) &&
+        isOwner(userId) &&
+        incoming().uid == existing().uid &&
+        incoming().createdAt == existing().createdAt &&
+        (!('walletBalanceRupees' in incoming()) || incoming().walletBalanceRupees <= existing().get('walletBalanceRupees', 0)) &&
+        (!('walletSpentRupees' in incoming()) || incoming().walletSpentRupees >= existing().get('walletSpentRupees', 0)) &&
+        isValidUserAccount(incoming(), userId) &&
+        incoming().navCoins <= existing().navCoins + 250 &&
+        isSpinWindowAllowed() &&
+        incoming().diff(existing()).affectedKeys().hasOnly([
+          'displayName', 'photoUrl', 'phone', 'referralCode', 'referredBy',
+          'walletBalanceRupees', 'walletSpentRupees', 'fcmToken', 'fcmTokenUpdatedAtMs',
+          'navCoins', 'lastSpinAtMs', 'spinCount',
+          'activeSpinCouponCode', 'activeSpinCouponLabel', 'activeSpinCouponDiscountRupees',
+          'activeSpinFreeExpress', 'activeSpinFreeLocal', 'activeSpinUsed',
+          'hasOrderedGrocery', 'hasOrderedElectronics', 'coldChainStaplesCount',
+          'weeklyOrdersCount', 'weeklyWindowStartMs', 'totalOrdersCount', 'updatedAt'
+        ]);
+
+      allow delete: if isValidId(userId) && isOwner(userId);
+
+      match /addresses/{addressId} {
+        allow get: if isValidId(userId) && isValidId(addressId) && isOwner(userId);
+        allow list: if isValidId(userId) && isOwner(userId);
+
+        allow create: if isValidId(userId) &&
+          isValidId(addressId) &&
+          isOwner(userId) &&
+          incoming().keys().hasAll([
+            'uid', 'fullName', 'mobile', 'streetAddress', 'villageOrCity',
+            'pinCode', 'defaultAddress', 'createdAt'
+          ]) &&
+          incoming().keys().hasOnly([
+            'uid', 'fullName', 'mobile', 'streetAddress', 'landmark',
+            'villageOrCity', 'pinCode', 'defaultAddress', 'createdAt', 'updatedAt'
+          ]) &&
+          isValidSavedAddress(incoming(), userId);
+
+        allow update: if isValidId(userId) &&
+          isValidId(addressId) &&
+          isOwner(userId) &&
+          incoming().uid == existing().uid &&
+          incoming().createdAt == existing().createdAt &&
+          isValidSavedAddress(incoming(), userId) &&
+          incoming().diff(existing()).affectedKeys().hasOnly([
+            'fullName', 'mobile', 'streetAddress', 'landmark',
+            'villageOrCity', 'pinCode', 'defaultAddress', 'updatedAt'
+          ]);
+
+        allow delete: if isValidId(userId) && isValidId(addressId) && isOwner(userId);
+      }
+
+      match /orders/{orderId} {
+        allow get: if isValidId(userId) && isValidId(orderId) && isOwner(userId);
+        allow list: if isValidId(userId) && isOwner(userId);
+
+        allow create: if isValidId(userId) &&
+          isValidId(orderId) &&
+          isOwner(userId) &&
+          incoming().keys().hasAll([
+            'orderId', 'uid', 'customerName', 'customerPhone', 'deliveryTier',
+            'addressSnapshot', 'paymentMethod', 'status', 'totalMrp', 'wholesaleDiscount',
+            'spinCouponDiscountRupees', 'coinsRedeemed', 'deliveryFee', 'finalTotal',
+            'coinsEarned', 'integrityDigest', 'items', 'createdAt'
+          ]) &&
+          incoming().keys().hasOnly([
+            'orderId', 'uid', 'customerName', 'customerPhone', 'customerEmail', 'pinCode', 'anonymized',
+            'deliveryTier', 'dispatchSlot', 'isNriOrder', 'nriBuyerEmail', 'deliveryProofUrl',
+            'addressSnapshot', 'paymentMethod', 'status', 'totalMrp',
+            'wholesaleDiscount', 'petiDiscountRupees', 'spinCouponDiscountRupees', 'spinCouponCode',
+            'coinsRedeemed', 'walletDeductedRupees', 'deliveryFee', 'finalTotal', 'coinsEarned',
+            'integrityDigest', 'items', 'createdAt', 'updatedAt'
+          ]) &&
+          incoming().status in ['Order Placed', 'Placed'] &&
+          incoming().get('anonymized', false) == false &&
+          isValidOrderRecord(incoming(), userId);
+
+        allow update: if isValidId(userId) &&
+          isValidId(orderId) &&
+          isOwner(userId) &&
+          incoming().uid == existing().uid &&
+          incoming().orderId == existing().orderId &&
+          incoming().createdAt == existing().createdAt &&
+          isValidOrderRecord(incoming(), userId) && (
+            (
+              existing().status in ['Order Placed', 'Placed', 'Pending', 'Confirmed'] &&
+              incoming().status == 'Cancelled' &&
+              incoming().diff(existing()).affectedKeys().hasOnly(['status', 'updatedAt'])
+            ) ||
+            (
+              incoming().get('anonymized', false) == true &&
+              incoming().diff(existing()).affectedKeys().hasOnly([
+                'customerName', 'customerPhone', 'customerEmail', 'nriBuyerEmail',
+                'addressSnapshot', 'anonymized', 'updatedAt'
+              ])
+            )
+          );
+
+        allow delete: if false;
+      }
+
+      match /quests/{questId} {
+        allow get: if isValidId(userId) && isValidId(questId) && isOwner(userId);
+        allow list: if isValidId(userId) && isOwner(userId);
+
+        allow create: if isValidId(userId) &&
+          isValidId(questId) &&
+          isOwner(userId) &&
+          incoming().keys().hasAll([
+            'uid', 'questId', 'progress', 'target', 'rewardCoins', 'claimed', 'createdAt'
+          ]) &&
+          incoming().keys().hasOnly([
+            'uid', 'questId', 'progress', 'target', 'rewardCoins', 'claimed', 'createdAt', 'updatedAt'
+          ]) &&
+          isValidQuestRecord(incoming(), userId);
+
+        allow update: if isValidId(userId) &&
+          isValidId(questId) &&
+          isOwner(userId) &&
+          incoming().uid == existing().uid &&
+          incoming().questId == existing().questId &&
+          incoming().createdAt == existing().createdAt &&
+          isValidQuestRecord(incoming(), userId) &&
+          incoming().diff(existing()).affectedKeys().hasOnly([
+            'progress', 'claimed', 'updatedAt'
+          ]);
+
+        allow delete: if isValidId(userId) && isValidId(questId) && isOwner(userId);
+      }
+
+      match /rashan_box/{boxId} {
+        allow read, write: if isValidId(userId) && isValidId(boxId) && isOwner(userId);
+      }
+
+      match /parchi_requests/{reqId} {
+        allow read, write: if isValidId(userId) && isValidId(reqId) && isOwner(userId);
+      }
+    }
+  }
+}

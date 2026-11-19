@@ -1,0 +1,182 @@
+{
+  "entities": {
+    "UserAccount": {
+      "title": "UserAccount",
+      "description": "Owner-isolated Gmail customer profile, Nav Coins wallet, 24h Spin-the-Wheel lock, and quest telemetry.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth UID matching path userId" },
+        "email": { "type": "string", "description": "Authenticated Gmail address" },
+        "displayName": { "type": "string", "description": "Customer display name" },
+        "photoUrl": { "type": "string", "description": "Optional Google avatar URL" },
+        "phone": { "type": "string", "description": "Optional 10-digit Indian mobile" },
+        "fcmToken": { "type": "string", "description": "Firebase Cloud Messaging device token for order notifications" },
+        "fcmTokenUpdatedAtMs": { "type": "integer", "description": "Epoch millis when FCM token was synced" },
+        "navCoins": { "type": "integer", "description": "Earned Nav Coins loyalty balance" },
+        "lastSpinAtMs": { "type": "integer", "description": "Epoch millis of last Spin the Wheel award" },
+        "spinCount": { "type": "integer", "description": "Total completed spins" },
+        "activeSpinCouponCode": { "type": "string", "description": "Active unredeemed spin coupon code" },
+        "activeSpinCouponLabel": { "type": "string", "description": "Human-readable reward label" },
+        "activeSpinCouponDiscountRupees": { "type": "integer", "description": "Rupee discount from spin coupon" },
+        "activeSpinFreeExpress": { "type": "boolean", "description": "Whether 15-min Express delivery fee waiver is active" },
+        "activeSpinFreeLocal": { "type": "boolean", "description": "Whether 2-hr local delivery reward is active" },
+        "activeSpinUsed": { "type": "boolean", "description": "Whether current spin reward has been redeemed" },
+        "hasOrderedGrocery": { "type": "boolean", "description": "Cross-category quest flag for Nav Grocery" },
+        "hasOrderedElectronics": { "type": "boolean", "description": "Cross-category quest flag for NavKart Electronics" },
+        "coldChainStaplesCount": { "type": "integer", "description": "Count of cold-chain frozen or pantry staple items ordered" },
+        "weeklyOrdersCount": { "type": "integer", "description": "Orders placed within current 7-day quest window" },
+        "weeklyWindowStartMs": { "type": "integer", "description": "Epoch millis when current weekly window started" },
+        "totalOrdersCount": { "type": "integer", "description": "Lifetime confirmed order count" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Server timestamp on creation" },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Server timestamp on update" }
+      },
+      "required": [
+        "uid",
+        "email",
+        "displayName",
+        "navCoins",
+        "lastSpinAtMs",
+        "spinCount",
+        "activeSpinCouponCode",
+        "activeSpinCouponLabel",
+        "activeSpinCouponDiscountRupees",
+        "activeSpinFreeExpress",
+        "activeSpinFreeLocal",
+        "activeSpinUsed",
+        "hasOrderedGrocery",
+        "hasOrderedElectronics",
+        "coldChainStaplesCount",
+        "weeklyOrdersCount",
+        "weeklyWindowStartMs",
+        "totalOrdersCount",
+        "createdAt"
+      ]
+    },
+    "SavedAddress": {
+      "title": "SavedAddress",
+      "description": "Customer delivery address scoped strictly under the owning UID.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Owning customer UID" },
+        "fullName": { "type": "string", "description": "Recipient full name" },
+        "mobile": { "type": "string", "description": "10-digit Indian mobile number" },
+        "streetAddress": { "type": "string", "description": "House or street address" },
+        "landmark": { "type": "string", "description": "Nearby landmark" },
+        "villageOrCity": { "type": "string", "description": "Village or city defaulting to Sandhaur, District Malerkotla, Punjab" },
+        "pinCode": { "type": "string", "description": "6-digit postal PIN code (148020)" },
+        "defaultAddress": { "type": "boolean", "description": "Whether this is the default checkout address" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Server creation timestamp" },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Server update timestamp" }
+      },
+      "required": [
+        "uid",
+        "fullName",
+        "mobile",
+        "streetAddress",
+        "villageOrCity",
+        "pinCode",
+        "defaultAddress",
+        "createdAt"
+      ]
+    },
+    "OrderRecord": {
+      "title": "OrderRecord",
+      "description": "Verified customer order with master-catalog wholesale breakdown and 4-step fulfillment status.",
+      "type": "object",
+      "properties": {
+        "orderId": { "type": "string", "description": "Human-readable order ID" },
+        "uid": { "type": "string", "description": "Owning customer UID" },
+        "customerName": { "type": "string", "description": "Recipient name" },
+        "customerPhone": { "type": "string", "description": "10-digit mobile number" },
+        "customerEmail": { "type": "string", "description": "Authenticated customer email" },
+        "pinCode": { "type": "string", "description": "6-digit delivery PIN code" },
+        "anonymized": { "type": "boolean", "description": "Whether personal contact fields were redacted on DPDP account deletion" },
+        "deliveryTier": {
+          "type": "string",
+          "enum": ["EXPRESS_15_MIN", "LOCAL_2_HR", "HOME_DELIVERY", "STORE_PICKUP"]
+        },
+        "addressSnapshot": { "type": "string", "description": "Immutable delivery address snapshot at order time" },
+        "paymentMethod": { "type": "string", "description": "Selected payment method" },
+        "status": {
+          "type": "string",
+          "enum": ["Order Placed", "Placed", "Pending", "Confirmed", "Packing", "Packed", "Out for Delivery", "Delivered", "Cancelled"]
+        },
+        "totalMrp": { "type": "integer", "description": "Recomputed sum of catalog MRPs" },
+        "wholesaleDiscount": { "type": "integer", "description": "Flat 12% wholesale savings" },
+        "spinCouponDiscountRupees": { "type": "integer", "description": "Applied spin coupon deduction" },
+        "spinCouponCode": { "type": "string", "description": "Redeemed coupon code" },
+        "coinsRedeemed": { "type": "integer", "description": "Redeemed Nav Coins" },
+        "deliveryFee": { "type": "integer", "description": "Delivery surcharge after waivers" },
+        "finalTotal": { "type": "integer", "description": "Verified final payable total" },
+        "coinsEarned": { "type": "integer", "description": "Nav Coins awarded for order" },
+        "integrityDigest": { "type": "string", "description": "SHA-256 checkout pricing digest" },
+        "items": { "type": "array", "description": "Bounded order line items (max 50)" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Server creation timestamp" },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Server update timestamp" }
+      },
+      "required": [
+        "orderId",
+        "uid",
+        "customerName",
+        "customerPhone",
+        "deliveryTier",
+        "addressSnapshot",
+        "paymentMethod",
+        "status",
+        "totalMrp",
+        "wholesaleDiscount",
+        "spinCouponDiscountRupees",
+        "coinsRedeemed",
+        "deliveryFee",
+        "finalTotal",
+        "coinsEarned",
+        "integrityDigest",
+        "items",
+        "createdAt"
+      ]
+    },
+    "QuestRecord": {
+      "title": "QuestRecord",
+      "description": "Shopping quest progress and reward claim state scoped under the owning UID.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Owning customer UID" },
+        "questId": {
+          "type": "string",
+          "enum": [
+            "QUEST_PROFILE_ADDRESS",
+            "QUEST_FIRST_ORDER",
+            "QUEST_CROSS_CATEGORY",
+            "QUEST_STAPLES_FROZEN",
+            "QUEST_WEEKLY_STREAK"
+          ]
+        },
+        "progress": { "type": "integer", "description": "Current numeric quest progress" },
+        "target": { "type": "integer", "description": "Required milestone target" },
+        "rewardCoins": { "type": "integer", "description": "Nav Coins reward upon claim" },
+        "claimed": { "type": "boolean", "description": "Whether reward coins were claimed" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Server creation timestamp" },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Server update timestamp" }
+      },
+      "required": ["uid", "questId", "progress", "target", "rewardCoins", "claimed", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserAccount" },
+      "description": "Owner-only customer profile, Nav Coins wallet, and 24-hour Spin-the-Wheel lock."
+    },
+    "/users/{userId}/addresses/{addressId}": {
+      "schema": { "$ref": "#/entities/SavedAddress" },
+      "description": "Owner-only saved delivery addresses for Sandhaur 148020 and local zones."
+    },
+    "/users/{userId}/orders/{orderId}": {
+      "schema": { "$ref": "#/entities/OrderRecord" },
+      "description": "Owner-only order history and live 4-stage delivery status tracker."
+    },
+    "/users/{userId}/quests/{questId}": {
+      "schema": { "$ref": "#/entities/QuestRecord" },
+      "description": "Owner-only daily & weekly shopping quest progress and claim records."
+    }
+  }
+}

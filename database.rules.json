@@ -1,1 +1,157 @@
-﻿{"rules":{".read":false,".write":false,"products":{".read":true,".write":"auth != null && auth.token.admin === true","$sku":{".validate":"newData.hasChildren(['id','name','mrp','sale','category']) && newData.child('category').val() != 'Fresh Fruits' && newData.child('category').val() != 'Fresh Vegetables'"}},"orders":{".read":"auth != null && auth.token.admin === true","$orderId":{".write":"(!data.exists() && newData.exists()) || (auth != null && auth.token.admin === true)"}},"user_orders":{"$uid":{".read":"auth != null && (auth.uid === $uid || auth.token.admin === true)",".write":"auth != null && auth.token.admin === true"}},"users":{".read":"auth != null && auth.token.admin === true",".write":"auth != null && auth.token.admin === true"},"customers":{".read":"auth != null && auth.token.admin === true",".write":"auth != null && auth.token.admin === true"}}}
+{
+  "rules": {
+    "products": {
+      ".read": true,
+      ".write": "auth != null && auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true"
+    },
+    "categories": {
+      ".read": true,
+      ".write": "auth != null && auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true"
+    },
+    "storeConfig": {
+      ".read": true,
+      ".write": "auth != null && auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true"
+    },
+    "hero_banners": {
+      ".read": true,
+      ".write": "auth != null && auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true"
+    },
+    "system_locks": {
+      ".read": true,
+      ".write": "auth != null && auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true"
+    },
+    "customers": {
+      ".read": "auth != null && auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true",
+      "$uid": {
+        ".read": "auth != null && (auth.uid === $uid || (auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true))",
+        ".write": "auth != null && (auth.uid === $uid || (auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true))",
+        "loyalty": {
+          "lastSpinAtMs": {
+            ".validate": "newData.isNumber() && (data.val() == null || data.val() == 0 || (now - data.val()) >= 86400000) && newData.val() <= (now + 60000)"
+          }
+        }
+      }
+    },
+    "users": {
+      ".read": "auth != null && auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true",
+      "$uid": {
+        ".read": "auth != null && (auth.uid === $uid || (auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true))",
+        ".write": "auth != null && (auth.uid === $uid || (auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true))",
+        "walletBalanceRupees": {
+          ".write": "auth != null && auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true",
+          ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 100000"
+        },
+        "addresses": {
+          "$addressId": {
+            ".validate": "newData.hasChildren(['fullName', 'mobile', 'streetAddress', 'villageOrCity', 'pinCode']) && newData.child('mobile').isString() && newData.child('mobile').val().matches(/^[6-9][0-9]{9}$/) && newData.child('pinCode').isString() && newData.child('pinCode').val().matches(/^[0-9]{6}$/)"
+          }
+        },
+        "orders": {
+          "$orderId": {
+            ".validate": "newData.hasChildren(['orderId', 'uid', 'finalTotal', 'status']) && newData.child('uid').val() === $uid && newData.child('finalTotal').isNumber() && newData.child('finalTotal').val() >= 0"
+          }
+        },
+        "spinState": {
+          "lastSpinAtMs": {
+            ".validate": "newData.isNumber() && (data.val() == null || data.val() == 0 || (now - data.val()) >= 86400000) && newData.val() <= (now + 60000)"
+          }
+        },
+        "lastSpinAtMs": {
+          ".validate": "newData.isNumber() && (data.val() == null || data.val() == 0 || (now - data.val()) >= 86400000) && newData.val() <= (now + 60000)"
+        }
+      }
+    },
+    "carts": {
+      ".read": "auth != null && auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true",
+      "$uid": {
+        ".read": "auth != null && (auth.uid === $uid || (auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true))",
+        ".write": "auth != null && auth.uid === $uid",
+        "$cartItemId": {
+          ".validate": "newData.hasChildren(['productId', 'quantity']) && newData.child('productId').isString() && newData.child('quantity').isNumber() && newData.child('quantity').val() >= 1 && newData.child('quantity').val() <= 100"
+        }
+      }
+    },
+    "coins": {
+      ".read": "auth != null && auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true",
+      "$uid": {
+        ".read": "auth != null && (auth.uid === $uid || (auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true))",
+        ".write": "auth != null && auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true"
+      }
+    },
+    "orders": {
+      ".indexOn": ["uid"],
+      ".read": "auth != null && ((query.orderByChild === 'uid' && query.equalTo === auth.uid) || (auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true))",
+      "$orderId": {
+        ".read": "auth != null && (data.child('uid').val() === auth.uid || (auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true))",
+        ".write": "auth != null && ((newData.exists() && newData.child('uid').val() === auth.uid && (!data.exists() || (data.child('uid').val() === auth.uid && ((newData.child('status').val() === 'Cancelled' && (data.child('status').val() === 'Order Placed' || data.child('status').val() === 'Placed' || data.child('status').val() === 'Pending' || data.child('status').val() === 'Confirmed')) || newData.child('anonymized').val() === true)))) || (auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true))",
+        ".validate": "newData.hasChildren(['orderId', 'uid', 'finalTotal', 'status']) && newData.child('finalTotal').isNumber() && newData.child('finalTotal').val() >= 0"
+      }
+    },
+    "customer_orders": {
+      "$uid": {
+        ".read": "auth != null && (auth.uid === $uid || (auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true))",
+        "$orderId": {
+          ".write": "auth != null && ((newData.exists() && newData.child('uid').val() === auth.uid && auth.uid === $uid && (!data.exists() || (data.child('uid').val() === auth.uid && ((newData.child('status').val() === 'Cancelled' && (data.child('status').val() === 'Order Placed' || data.child('status').val() === 'Placed' || data.child('status').val() === 'Pending' || data.child('status').val() === 'Confirmed')) || newData.child('anonymized').val() === true)))) || (auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true))",
+          ".validate": "newData.hasChildren(['orderId', 'uid', 'finalTotal', 'status']) && newData.child('uid').val() === $uid && newData.child('finalTotal').isNumber() && newData.child('finalTotal').val() >= 0"
+        }
+      }
+    },
+    "parchi_requests": {
+      ".read": "auth != null && auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true",
+      "$reqId": {
+        ".read": "auth != null && (data.child('uid').val() === auth.uid || (auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true))",
+        ".write": "auth != null && ((newData.exists() && newData.child('uid').val() === auth.uid) || (auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true))",
+        ".validate": "newData.hasChildren(['requestId', 'uid', 'status'])"
+      }
+    },
+    "customer_parchi": {
+      "$uid": {
+        ".read": "auth != null && (auth.uid === $uid || (auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true))",
+        "$reqId": {
+          ".write": "auth != null && ((newData.exists() && newData.child('uid').val() === auth.uid && auth.uid === $uid) || (auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true))",
+          ".validate": "newData.hasChildren(['requestId', 'uid', 'status']) && newData.child('uid').val() === $uid"
+        }
+      }
+    },
+    "rashan_subscriptions": {
+      ".read": "auth != null && auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true",
+      "$uid": {
+        ".read": "auth != null && (auth.uid === $uid || (auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true))",
+        ".write": "auth != null && (auth.uid === $uid || (auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true))"
+      }
+    },
+    "wallet_requests": {
+      ".read": "auth != null && auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true",
+      "$reqId": {
+        ".read": "auth != null && (data.child('uid').val() === auth.uid || (auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true))",
+        ".write": "auth != null && ((newData.exists() && newData.child('uid').val() === auth.uid && !data.exists()) || (auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true))",
+        ".validate": "newData.hasChildren(['requestId', 'uid', 'amountRupees', 'status']) && newData.child('amountRupees').isNumber() && newData.child('amountRupees').val() >= 100 && newData.child('amountRupees').val() <= 25000"
+      }
+    },
+    "referrals": {
+      ".read": "auth != null",
+      "$code": {
+        ".write": "auth != null && (newData.child('ownerUid').val() === auth.uid || newData.child('referredUid').val() === auth.uid || (auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true))"
+      }
+    },
+    "quest_milestones": {
+      ".read": "auth != null && auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true",
+      "$uid": {
+        ".read": "auth != null && (auth.uid === $uid || (auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true))",
+        ".write": "auth != null && (auth.uid === $uid || (auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true))"
+      }
+    },
+    "featured_deals": {
+      ".read": true,
+      ".write": "auth != null && auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true"
+    },
+    "social_campaigns": {
+      ".read": "auth != null && auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true",
+      ".write": "auth != null && auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true"
+    },
+    "business_statements": {
+      ".read": "auth != null && auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true",
+      ".write": "auth != null && auth.token.email === 'singhpaluppal@gmail.com' && auth.token.email_verified === true"
+    }
+  }
+}
