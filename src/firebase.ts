@@ -17,14 +17,14 @@ export const FIREBASE_DATABASE_URL =
   'https://nav-grocery-store-default-rtdb.firebaseio.com';
 
 const firebaseConfig = {
-  apiKey: (import.meta.env.VITE_FIREBASE_API_KEY as string | undefined)?.trim() || '',
+  apiKey: (import.meta.env.VITE_FIREBASE_API_KEY as string | undefined)?.trim() || 'AIzaSyDUaToRs_hhQNvI4-q5J611uN_stjUr1-o',
   authDomain:
     (import.meta.env.VITE_FIREBASE_AUTH_DOMAIN as string | undefined)?.trim() ||
     'nav-grocery-store.firebaseapp.com',
   projectId:
     (import.meta.env.VITE_FIREBASE_PROJECT_ID as string | undefined)?.trim() ||
     'nav-grocery-store',
-  appId: (import.meta.env.VITE_FIREBASE_APP_ID as string | undefined)?.trim() || '',
+  appId: (import.meta.env.VITE_FIREBASE_APP_ID as string | undefined)?.trim() || '1:272584690336:web:76c20bd0cce7cfe34997c5',
   databaseURL: FIREBASE_DATABASE_URL,
 };
 
