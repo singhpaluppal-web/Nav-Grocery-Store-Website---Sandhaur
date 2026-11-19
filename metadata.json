@@ -1,6 +1,6 @@
 {
-  "name": "NavKart",
-  "description": "NavKart — Official A-to-Z public marketplace for Nav Grocery Store & Sandhaur retail. Sealed packaged & frozen groceries, electronics, fashion, footwear & household.",
+  "name": "Nav Grocery Store — Sandhaur 148020",
+  "description": "Nav Grocery Store (Main Bazaar, Sandhaur, Distt. Malerkotla, Punjab 148020) — 308 verified sealed packaged groceries and -18°C cold-chain frozen essentials at flat 12% off MRP.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": []
 }

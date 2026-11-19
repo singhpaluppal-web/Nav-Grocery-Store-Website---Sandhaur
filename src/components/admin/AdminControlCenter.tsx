@@ -23,6 +23,7 @@ import {
   Store,
   Trash2,
   Upload,
+  Wand2,
   Globe,
   X,
 } from 'lucide-react';
@@ -42,6 +43,7 @@ import {
   FIREBASE_RTDB_BASE,
   patchProductsInFirebase,
   replaceAllProductsInFirebase,
+  subscribeToAdminProductsRaw,
   syncAndroidFeedSnapshot,
   upsertProductInFirebase,
 } from '../../utils/firebase';
@@ -54,6 +56,7 @@ import { BatchCsvImportPanel } from './BatchCsvImportPanel';
 import { ActivityLogPanel } from './ActivityLogPanel';
 import { CategoryManagerPanel } from './CategoryManagerPanel';
 import { OrdersReconciliationPanel } from './OrdersReconciliationPanel';
+import { PhotoRefinerTab } from './PhotoRefinerTab';
 import { SkuQrLabelsPanel } from './SkuQrLabelsPanel';
 import { SkuQrModal } from './SkuQrModal';
 import { exportCatalogToCsv } from '../../utils/csvCatalog';
@@ -89,6 +92,7 @@ type AdminTab =
   | 'orders'
   | 'categories'
   | 'add'
+  | 'photoRefiner'
   | 'bulkPhotos'
   | 'batchImport'
   | 'qrLabels'
@@ -317,9 +321,20 @@ export const AdminControlCenter: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (unlocked) {
-      loadAdminData();
-    }
+    if (!unlocked) return;
+    void loadAdminData();
+
+    const unsubscribeLiveProducts = subscribeToAdminProductsRaw((liveItems, connected) => {
+      setFirebaseConnected(connected);
+      if (connected && liveItems.length > 0) {
+        setProducts(liveItems);
+        setLoading(false);
+      }
+    });
+
+    return () => {
+      unsubscribeLiveProducts();
+    };
   }, [unlocked, loadAdminData]);
 
   useEffect(() => {
@@ -353,11 +368,15 @@ export const AdminControlCenter: React.FC = () => {
     }
   }, [unlocked, loading, pendingDeepLinkSku, products, notify]);
 
-  const handleUnlock = () => {
+  const handleUnlock = (operatorEmail?: string) => {
     try {
       sessionStorage.setItem(ADMIN_SESSION_KEY, '1');
     } catch {
       // ignore
+    }
+    if (operatorEmail) {
+      setOperatorId(operatorEmail);
+      saveOperatorId(operatorEmail);
     }
     setUnlocked(true);
   };
@@ -1571,6 +1590,7 @@ export const AdminControlCenter: React.FC = () => {
     { id: 'orders', label: 'Orders & Payments', icon: <IndianRupee className="w-4 h-4" /> },
     { id: 'categories', label: 'Categories', icon: <FolderKanban className="w-4 h-4" /> },
     { id: 'add', label: 'Add Custom SKU', icon: <Plus className="w-4 h-4" /> },
+    { id: 'photoRefiner', label: 'Photo Refiner (#FFF)', icon: <Wand2 className="w-4 h-4" /> },
     { id: 'bulkPhotos', label: 'Bulk Photo Uploader', icon: <Upload className="w-4 h-4" /> },
     { id: 'batchImport', label: 'Batch CSV Import', icon: <FileSpreadsheet className="w-4 h-4" /> },
     { id: 'qrLabels', label: 'SKU QR Codes', icon: <QrCode className="w-4 h-4" /> },
@@ -2818,6 +2838,20 @@ export const AdminControlCenter: React.FC = () => {
                 </div>
               )}
             </section>
+          )}
+
+          {/* TAB 3B: STUDIO PHOTO REFINER (#FFFFFF SINGLE-CAN EXTRACTION) */}
+          {activeTab === 'photoRefiner' && (
+            <PhotoRefinerTab
+              products={products}
+              onSyncedProduct={(updated) =>
+                setProducts((prev) =>
+                  prev.map((p) => (p.id === updated.id ? updated : p))
+                )
+              }
+              onNotify={notify}
+              onLogActivity={logProductActivity}
+            />
           )}
 
           {/* TAB 4: BATCH CSV IMPORT */}

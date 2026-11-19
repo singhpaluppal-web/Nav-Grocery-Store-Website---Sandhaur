@@ -1,14 +1,19 @@
-import { get, onValue, ref, set } from 'firebase/database';
+import { get, onValue, ref, set, update } from 'firebase/database';
 import {
   BrandingSettings,
   CustomerSession,
+  OrderItemSummary,
   OrderRecord,
+  PaymentMethod,
   PaymentSettings,
   Product,
   ReturnRequest,
+  StoreConfig,
+  StoreStatusSettings,
 } from '../types';
 import { FIREBASE_DATABASE_URL, firebaseDb } from '../firebase';
 import {
+  hasZeroFreshProduce,
   isAllowedRetailProduct,
   isStrictlyGrocery308,
   normalizeWholesalePricing,
@@ -35,15 +40,48 @@ const LOCAL_KEYS = {
   UNIFIED: 'nav_unified_catalog_v1',
   BRANDING: 'nav_public_branding_v3',
   PAYMENTS: 'nav_public_payments_v4',
+  STORE_STATUS: 'nav_public_store_status_v1',
+  STORE_CONFIG: 'nav_public_store_config_v1',
   ORDERS: 'nav_public_orders_v3',
   RETURNS: 'nav_public_returns_v1',
 };
 
+export const DEFAULT_STORE_CONFIG: StoreConfig = {
+  storeName: 'Nav Grocery Store',
+  isOpen: true,
+  hoursLabel: '8:00 AM – 9:30 PM',
+  address: 'Main Bazaar, Sandhaur, District Malerkotla, Punjab 148020',
+  phones: ['+91 8847370905', '+91 9915752905'],
+  announcementText:
+    'Nav Grocery Store · Main Bazaar, Sandhaur 148020 · Flat 12% Off MRP · Open 8:00 AM – 9:30 PM',
+  deliveryFee: 30,
+  freeDeliveryAbove: 499,
+  codMinOrder: 199,
+  expressDeliveryEnabled: true,
+  pickupEnabled: true,
+  deliveryZones: [
+    'Main Bazaar, Sandhaur 148020 (15-Min Express / 2-Hr)',
+    'Malerkotla / Ludhiana Hub (Same-Day)',
+    'All-India Parcel Courier (3–5 Days)',
+    'International NRI Gift Dispatch',
+  ],
+};
+
+export const DEFAULT_STORE_STATUS: StoreStatusSettings = {
+  storeName: DEFAULT_STORE_CONFIG.storeName,
+  isOpen: DEFAULT_STORE_CONFIG.isOpen,
+  hoursLabel: DEFAULT_STORE_CONFIG.hoursLabel,
+  address: DEFAULT_STORE_CONFIG.address,
+  phones: DEFAULT_STORE_CONFIG.phones,
+  dispatchNotice: '15-Min Express & 2-Hr Delivery in Sandhaur 148020 · 30-Min Store Pickup',
+};
+
 export const DEFAULT_BRANDING: BrandingSettings = {
   logoUrl: '/images/logo.png',
-  storeTagline: 'Nav Grocery Store & Nav Kart · Main Bazaar, Sandhaur 148020',
+  storeTagline:
+    'Nav Grocery Store & Nav Kart · Main Bazaar, Sandhaur, District Malerkotla, Punjab 148020',
   announcementText:
-    'Nav Grocery & Nav Kart · Flat 12% Off MRP on 320+ Verified SKUs · 15-Min Express & 2-Hr Delivery in Sandhaur 148020',
+    'Nav Grocery Store · Main Bazaar, Sandhaur 148020 · Flat 12% Off MRP · Open 8:00 AM – 9:30 PM',
   banners: [
     {
       id: 'banner-1',
@@ -112,23 +150,143 @@ export const DEFAULT_PAYMENTS: PaymentSettings = {
 function parseArrayResponse(raw: unknown): Product[] {
   if (!raw) return [];
   if (Array.isArray(raw)) {
-    return raw.filter((item): item is Product => Boolean(item && item.id));
+    return raw.filter((item): item is Product => Boolean(item && typeof item === 'object' && item.id));
   }
   if (typeof raw === 'object') {
-    return Object.values(raw as Record<string, Product>).filter((item): item is Product => Boolean(item && item.id));
+    const out: Product[] = [];
+    for (const [key, val] of Object.entries(raw as Record<string, unknown>)) {
+      if (!val || typeof val !== 'object') continue;
+      const rec = val as Partial<Product>;
+      const id = String(rec.id || key || '').trim().toUpperCase();
+      if (!id) continue;
+      out.push({ ...(rec as Product), id });
+    }
+    return out;
   }
   return [];
+}
+
+function normalizeIncomingOrder(rawItem: unknown, fallbackKey?: string): OrderRecord | null {
+  if (!rawItem || typeof rawItem !== 'object') return null;
+  const obj = rawItem as Record<string, unknown>;
+  const orderId = String(obj.orderId || obj.id || fallbackKey || '').trim();
+  if (!orderId) return null;
+
+  const rawSource = String(obj.source || obj.platform || obj.channel || '').trim().toLowerCase();
+  const inferredSource: 'web' | 'android' =
+    rawSource.includes('android') ||
+    rawSource.includes('navkart') ||
+    rawSource.includes('mobile') ||
+    rawSource.includes('app') ||
+    /^nk[-_]/i.test(orderId)
+      ? 'android'
+      : 'web';
+
+  const rawPaymentMethod = String(obj.paymentMethod || obj.paymentMode || 'cod')
+    .trim()
+    .toLowerCase();
+  const paymentMethod: PaymentMethod =
+    rawPaymentMethod === 'upi' ||
+    rawPaymentMethod === 'razorpay' ||
+    rawPaymentMethod === 'bank_transfer' ||
+    rawPaymentMethod === 'cod'
+      ? (rawPaymentMethod as PaymentMethod)
+      : rawPaymentMethod.includes('upi')
+      ? 'upi'
+      : rawPaymentMethod.includes('razor')
+      ? 'razorpay'
+      : rawPaymentMethod.includes('bank') || rawPaymentMethod.includes('neft')
+      ? 'bank_transfer'
+      : 'cod';
+
+  const rawItems = Array.isArray(obj.items)
+    ? obj.items
+    : obj.items && typeof obj.items === 'object'
+    ? Object.values(obj.items as Record<string, unknown>)
+    : [];
+
+  const items: OrderItemSummary[] = rawItems
+    .filter((it): it is Record<string, unknown> => Boolean(it && typeof it === 'object'))
+    .map((it) => {
+      const mrp = Math.max(1, Math.round(Number(it.mrp ?? it.price ?? 0) || 1));
+      const sale = Math.round(mrp * 0.88);
+      return {
+        id: String(it.id || it.sku || 'SKU').toUpperCase(),
+        name: String(it.name || it.title || 'Packaged Grocery Item'),
+        brand: String(it.brand || 'Nav Grocery'),
+        qty: Math.max(1, Number(it.qty ?? it.quantity ?? 1) || 1),
+        mrp,
+        sale: Number(it.sale) > 0 ? Math.round(Number(it.sale)) : sale,
+        gst: String(it.gst || '5%'),
+      };
+    });
+
+  const computedSale = items.reduce((sum, i) => sum + i.sale * i.qty, 0);
+  const computedMrp = items.reduce((sum, i) => sum + i.mrp * i.qty, 0);
+  const totalPayable = Number(
+    obj.totalPayable ?? obj.totalAmount ?? obj.total ?? obj.grandTotal ?? computedSale
+  ) || 0;
+
+  const createdRaw = obj.createdAt ?? obj.timestamp ?? obj.date;
+  const createdAt =
+    typeof createdRaw === 'number'
+      ? new Date(createdRaw).toISOString()
+      : typeof createdRaw === 'string' && createdRaw.trim()
+      ? createdRaw
+      : new Date().toISOString();
+
+  const paymentStatusRaw = String(obj.paymentStatus || '').trim();
+  const paymentStatus: OrderRecord['paymentStatus'] =
+    paymentStatusRaw === 'Paid / UTR Submitted' ||
+    paymentStatusRaw === 'UTR Verified' ||
+    paymentStatusRaw === 'Pay on Delivery' ||
+    paymentStatusRaw === 'Pay at Pickup' ||
+    paymentStatusRaw === 'Gateway Paid' ||
+    paymentStatusRaw === 'Bank Transfer / UTR Submitted'
+      ? paymentStatusRaw
+      : paymentMethod === 'cod'
+      ? 'Pay on Delivery'
+      : 'Paid / UTR Submitted';
+
+  return {
+    ...(obj as unknown as OrderRecord),
+    orderId,
+    source: inferredSource,
+    uid: obj.uid ? String(obj.uid) : obj.userId ? String(obj.userId) : undefined,
+    customerEmail: obj.customerEmail ? String(obj.customerEmail) : undefined,
+    createdAt,
+    updatedAt: obj.updatedAt ? String(obj.updatedAt) : undefined,
+    customerName: String(obj.customerName || obj.userName || obj.name || 'Sandhaur Customer'),
+    customerPhone: String(obj.customerPhone || obj.phone || obj.mobile || '').replace(/\D/g, '').slice(-10),
+    address: String(obj.address || obj.deliveryAddress || 'Main Bazaar, Sandhaur 148020'),
+    fulfillment: obj.fulfillment === 'pickup' ? 'pickup' : 'delivery',
+    slot: String(obj.slot || obj.deliverySlot || '2-Hour Local Delivery (Sandhaur 148020)'),
+    paymentMethod,
+    paymentStatus,
+    subtotalMrp: Number(obj.subtotalMrp ?? computedMrp) || computedMrp,
+    subtotalSale: Number(obj.subtotalSale ?? computedSale) || computedSale,
+    savings: Number(obj.savings ?? Math.max(0, computedMrp - computedSale)) || 0,
+    deliveryFee: Number(obj.deliveryFee ?? 0) || 0,
+    totalPayable,
+    status: String(obj.status || 'Pending'),
+    items,
+  };
 }
 
 function parseOrdersResponse(raw: unknown): OrderRecord[] {
   if (!raw) return [];
   if (Array.isArray(raw)) {
-    return raw.filter((item): item is OrderRecord => Boolean(item && item.orderId));
+    return raw
+      .map((item) => normalizeIncomingOrder(item))
+      .filter((item): item is OrderRecord => Boolean(item));
   }
   if (typeof raw === 'object') {
-    return Object.values(raw as Record<string, OrderRecord>).filter(
-      (item): item is OrderRecord => Boolean(item && typeof item === 'object' && item.orderId)
-    );
+    const out: OrderRecord[] = [];
+    for (const [key, val] of Object.entries(raw as Record<string, unknown>)) {
+      const normalized = normalizeIncomingOrder(val, key);
+      if (normalized) out.push(normalized);
+    }
+    return out;
   }
   return [];
 }
@@ -143,6 +301,74 @@ async function fetchJsonWithTimeout(url: string, timeoutMs = 6000): Promise<unkn
   } finally {
     clearTimeout(timer);
   }
+}
+
+/**
+ * Reads a Firebase RTDB path via the initialized Firebase Database SDK first,
+ * falling back gracefully to REST JSON fetch if SDK rules or network fail.
+ */
+async function readRtdbPath(path: string, timeoutMs = 6000): Promise<unknown> {
+  const cleanPath = path.replace(/^\/+/, '');
+  if (firebaseDb) {
+    try {
+      const snap = await Promise.race([
+        get(ref(firebaseDb, cleanPath)),
+        new Promise<never>((_, reject) =>
+          setTimeout(() => reject(new Error('RTDB SDK timeout')), timeoutMs)
+        ),
+      ]);
+      return snap.exists() ? snap.val() : null;
+    } catch {
+      // Gracefully fall back to REST endpoint if restricted or timed out
+    }
+  }
+  return await fetchJsonWithTimeout(`${FIREBASE_RTDB_BASE}/${cleanPath}.json`, timeoutMs);
+}
+
+/**
+ * Writes a Firebase RTDB path via the initialized Firebase Database SDK first,
+ * falling back gracefully to REST PUT/PATCH if needed.
+ */
+async function writeRtdbPath(
+  path: string,
+  payload: unknown,
+  method: 'PUT' | 'PATCH' = 'PUT'
+): Promise<boolean> {
+  const cleanPath = path.replace(/^\/+/, '');
+  if (firebaseDb) {
+    try {
+      const nodeRef = ref(firebaseDb, cleanPath);
+      if (method === 'PATCH' && payload && typeof payload === 'object') {
+        await update(nodeRef, payload as Record<string, unknown>);
+      } else {
+        await set(nodeRef, payload);
+      }
+      return true;
+    } catch {
+      // Gracefully fall back to REST write
+    }
+  }
+
+  try {
+    const res = await fetch(`${FIREBASE_RTDB_BASE}/${cleanPath}.json`, {
+      method,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
+
+function isBannerFreeOfFreshProduce(banner: { title?: string; subtitle?: string; badge?: string }): boolean {
+  const text = `${banner.title || ''} ${banner.subtitle || ''} ${banner.badge || ''}`.toLowerCase();
+  if (text.includes('zero fresh') || text.includes('no fresh') || text.includes('frozen')) {
+    return !/\bfresh\s+(?:fruits?|vegetables?|produce|sabzi|greens?)\b/i.test(
+      text.replace(/(?:zero|no)\s+fresh\s+(?:fruits?|vegetables?|produce|sabzi)/gi, '')
+    );
+  }
+  return !/\bfresh\s+(?:fruits?|vegetables?|produce|sabzi|greens?)\b/i.test(text);
 }
 
 function isPlaceholderProductName(name?: string): boolean {
@@ -235,9 +461,48 @@ export async function fetchGroceryProducts(): Promise<Product[]> {
   return [];
 }
 
+function mergeRemoteProductsWithSeeds(
+  remote: unknown,
+  baseSeeds: Map<string, Product>
+): Product[] {
+  const mergedMap = new Map<string, Product>(baseSeeds);
+  const remoteList = parseArrayResponse(remote);
+
+  for (const rawItem of remoteList) {
+    const seed = mergedMap.get(rawItem.id);
+    // Merge remote patch (e.g. Nav AI Media Studio publishing imageUrl & mrp) onto verified seed
+    const candidate: Product = {
+      ...(seed || ({} as Product)),
+      ...rawItem,
+      id: rawItem.id,
+      name: !isPlaceholderProductName(rawItem.name)
+        ? rawItem.name
+        : seed?.name || rawItem.name || '',
+      brand: rawItem.brand || seed?.brand || 'Nav Grocery',
+      category: rawItem.category || seed?.category || 'Grocery & Staples',
+      department: rawItem.department || seed?.department || 'Packaged Groceries',
+      mrp: Number(rawItem.mrp) > 0 ? Number(rawItem.mrp) : seed?.mrp || 1,
+      imageUrl: rawItem.imageUrl || seed?.imageUrl,
+    };
+
+    if (!candidate.name || isPlaceholderProductName(candidate.name)) continue;
+    if (!isAllowedRetailProduct(candidate) || !hasZeroFreshProduce(candidate)) continue;
+
+    const normalized = normalizeWholesalePricing({
+      ...candidate,
+      image: resolveProductImage(candidate),
+    });
+    mergedMap.set(normalized.id, normalized);
+  }
+
+  return Array.from(mergedMap.values()).sort((a, b) =>
+    a.id.localeCompare(b.id, undefined, { numeric: true })
+  );
+}
+
 /**
  * Fetches unified Nav Grocery (308 SKUs) + Nav Kart Supermall (Electronics, Kitchen Appliances, Apparel)
- * strictly filtering out any banned fresh produce items.
+ * strictly filtering out any banned fresh produce items and applying Math.round(mrp * 0.88).
  */
 export async function fetchUnifiedCatalogProducts(): Promise<Product[]> {
   const localGrocery = await fetchStaticCatalogJson();
@@ -250,31 +515,18 @@ export async function fetchUnifiedCatalogProducts(): Promise<Product[]> {
     baseById.set(sm.id, { ...sm, image: resolveProductImage(sm) });
   }
 
-  try {
-    const remote = await fetchJsonWithTimeout(`${FIREBASE_RTDB_BASE}/products.json`);
-    const remoteList = parseArrayResponse(remote)
-      .filter((p) => isAllowedRetailProduct(p) && !isPlaceholderProductName(p.name))
-      .map(normalizeWholesalePricing);
-
-    if (remoteList.length > 0) {
-      for (const item of remoteList) {
-        const seed = baseById.get(item.id);
-        const merged: Product = {
-          ...(seed || {}),
-          ...item,
-          name: !isPlaceholderProductName(item.name) ? item.name : (seed?.name || item.name),
-          image: resolveProductImage({ ...(seed || {}), ...item }),
-        };
-        baseById.set(item.id, merged);
-      }
-    }
-  } catch {
-    // Offline fallback uses verified static + supermall catalog seamlessly
-  }
-
-  const unified = Array.from(baseById.values()).sort((a, b) =>
+  let unified = Array.from(baseById.values()).sort((a, b) =>
     a.id.localeCompare(b.id, undefined, { numeric: true })
   );
+
+  try {
+    const remote = await readRtdbPath('products', 6500);
+    if (remote) {
+      unified = mergeRemoteProductsWithSeeds(remote, baseById);
+    }
+  } catch {
+    // Graceful fallback uses verified static + supermall catalog seamlessly
+  }
 
   try {
     localStorage.setItem(LOCAL_KEYS.UNIFIED, JSON.stringify(unified.slice(0, 340)));
@@ -283,6 +535,177 @@ export async function fetchUnifiedCatalogProducts(): Promise<Product[]> {
   }
 
   return unified;
+}
+
+/**
+ * Subscribes live to /products in Firebase Realtime Database so any new photo (`imageUrl`)
+ * or MRP update published from Nav AI Media Studio reflects immediately on the storefront
+ * with flat 12% wholesale pricing (`Math.round(mrp * 0.88)`) and strict zero-fresh-produce rules.
+ */
+export function subscribeToLiveProducts(
+  onUpdate: (products: Product[], connected: boolean) => void
+): () => void {
+  let active = true;
+  let unsubscribeSdk: (() => void) | null = null;
+  let pollTimer: ReturnType<typeof setInterval> | null = null;
+  const baseById = new Map<string, Product>();
+
+  const emitFromRemote = (remote: unknown, connected: boolean) => {
+    if (!active) return;
+    const merged = remote
+      ? mergeRemoteProductsWithSeeds(remote, baseById)
+      : Array.from(baseById.values()).sort((a, b) =>
+          a.id.localeCompare(b.id, undefined, { numeric: true })
+        );
+    try {
+      localStorage.setItem(LOCAL_KEYS.UNIFIED, JSON.stringify(merged.slice(0, 340)));
+    } catch {
+      // ignore storage quota errors
+    }
+    onUpdate(merged, connected);
+  };
+
+  const pollOnce = async () => {
+    if (!active) return;
+    try {
+      const remote = await fetchJsonWithTimeout(`${FIREBASE_RTDB_BASE}/products.json`, 6500);
+      emitFromRemote(remote, true);
+    } catch {
+      emitFromRemote(null, false);
+    }
+  };
+
+  const init = async () => {
+    const localGrocery = await fetchStaticCatalogJson();
+    for (const p of localGrocery) {
+      baseById.set(p.id, { ...p, image: resolveProductImage(p) });
+    }
+    for (const sm of NAVKART_SUPERMALL_SKUS) {
+      baseById.set(sm.id, { ...sm, image: resolveProductImage(sm) });
+    }
+
+    if (!active) return;
+
+    if (firebaseDb) {
+      try {
+        const productsRef = ref(firebaseDb, 'products');
+        unsubscribeSdk = onValue(
+          productsRef,
+          (snapshot) => {
+            if (!active) return;
+            emitFromRemote(snapshot.val(), true);
+          },
+          () => {
+            if (active && !pollTimer) {
+              void pollOnce();
+              pollTimer = setInterval(() => void pollOnce(), 12000);
+            }
+          }
+        );
+        return;
+      } catch {
+        // fallback to REST polling
+      }
+    }
+
+    void pollOnce();
+    pollTimer = setInterval(() => void pollOnce(), 12000);
+  };
+
+  void init();
+
+  return () => {
+    active = false;
+    if (unsubscribeSdk) unsubscribeSdk();
+    if (pollTimer) clearInterval(pollTimer);
+  };
+}
+
+function normalizeRawAdminProducts(remote: unknown): Product[] {
+  return parseArrayResponse(remote)
+    .filter((item) => !isPlaceholderProductName(item.name) && hasZeroFreshProduce(item))
+    .map((item) => {
+      const sku = String(item.id || '').trim().toUpperCase();
+      const mrp = Math.max(1, Math.round(Number(item.mrp) || 0));
+      const sale = Math.round(mrp * 0.88);
+      const rawCat = String(item.category || '').trim();
+      const safeCategory =
+        rawCat && !/^-?\d+(?:\.\d+)?%?$/.test(rawCat)
+          ? rawCat
+          : String(item.department || '').toLowerCase().includes('frozen')
+          ? 'Frozen Foods'
+          : 'Grocery & Staples';
+      return {
+        ...item,
+        id: sku,
+        category: safeCategory,
+        mrp,
+        sale,
+        price: sale,
+        stock: Number.isFinite(Number(item.stock)) ? Number(item.stock) : 25,
+        channels: item.channels || {
+          navGroceryWeb: true,
+          navKartWeb: true,
+          androidApps: true,
+        },
+        image: resolveProductImage({ ...item, id: sku }),
+      };
+    })
+    .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
+}
+
+/**
+ * Live Admin RTDB subscription to /products so Nav AI Media Studio updates appear
+ * instantaneously inside the Website Admin Catalog.
+ */
+export function subscribeToAdminProductsRaw(
+  onUpdate: (products: Product[], connected: boolean) => void
+): () => void {
+  let active = true;
+  let unsubscribeSdk: (() => void) | null = null;
+  let pollTimer: ReturnType<typeof setInterval> | null = null;
+
+  const pollOnce = async () => {
+    if (!active) return;
+    try {
+      const remote = await fetchJsonWithTimeout(`${FIREBASE_RTDB_BASE}/products.json`, 9000);
+      if (!active) return;
+      onUpdate(normalizeRawAdminProducts(remote), true);
+    } catch {
+      if (!active) return;
+      onUpdate([], false);
+    }
+  };
+
+  if (firebaseDb) {
+    try {
+      unsubscribeSdk = onValue(
+        ref(firebaseDb, 'products'),
+        (snapshot) => {
+          if (!active) return;
+          onUpdate(normalizeRawAdminProducts(snapshot.val()), true);
+        },
+        () => {
+          if (active && !pollTimer) {
+            void pollOnce();
+            pollTimer = setInterval(() => void pollOnce(), 12000);
+          }
+        }
+      );
+    } catch {
+      void pollOnce();
+      pollTimer = setInterval(() => void pollOnce(), 12000);
+    }
+  } else {
+    void pollOnce();
+    pollTimer = setInterval(() => void pollOnce(), 12000);
+  }
+
+  return () => {
+    active = false;
+    if (unsubscribeSdk) unsubscribeSdk();
+    if (pollTimer) clearInterval(pollTimer);
+  };
 }
 
 export async function fetchVerified308Catalog(): Promise<Product[]> {
@@ -396,13 +819,15 @@ export async function upsertProductInFirebase(product: Product): Promise<{ ok: b
   if (!cleanSku) return { ok: false };
   const mrp = Math.max(1, Math.round(Number(product.mrp) || 0));
   const sale = Math.round(mrp * 0.88);
+  const resolvedImage = resolveProductImage({ ...product, id: cleanSku });
   const payload: Product = {
     ...product,
     id: cleanSku,
     mrp,
     sale,
     price: sale,
-    image: resolveProductImage({ ...product, id: cleanSku }),
+    image: resolvedImage,
+    imageUrl: product.imageUrl || product.customImage || resolvedImage,
     channels: product.channels || {
       navGroceryWeb: true,
       navKartWeb: true,
@@ -411,16 +836,8 @@ export async function upsertProductInFirebase(product: Product): Promise<{ ok: b
     updatedAt: new Date().toISOString(),
   };
 
-  try {
-    const res = await fetch(`${FIREBASE_RTDB_BASE}/products/${encodeURIComponent(cleanSku)}.json`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    });
-    return { ok: res.ok };
-  } catch {
-    return { ok: false };
-  }
+  const ok = await writeRtdbPath(`products/${encodeURIComponent(cleanSku)}`, payload, 'PUT');
+  return { ok };
 }
 
 export async function deleteProductFromFirebase(productId: string): Promise<{ ok: boolean }> {
@@ -503,37 +920,125 @@ export async function replaceAllProductsInFirebase(products: Product[]): Promise
 
 export async function fetchBrandingSettings(): Promise<BrandingSettings> {
   try {
-    const remote = (await fetchJsonWithTimeout(`${FIREBASE_RTDB_BASE}/settings/branding.json`, 4500)) as Partial<BrandingSettings> | null;
+    const remote = (await readRtdbPath('settings/branding', 4500)) as Partial<BrandingSettings> | null;
     if (remote && typeof remote === 'object') {
       const safeBanners = Array.isArray(remote.banners)
-        ? remote.banners.filter((b) => b.active !== false)
+        ? remote.banners.filter((b) => b.active !== false && isBannerFreeOfFreshProduce(b))
         : [];
       const merged: BrandingSettings = {
         ...DEFAULT_BRANDING,
         ...remote,
         banners: safeBanners.length > 0 ? safeBanners : DEFAULT_BRANDING.banners,
       };
-      localStorage.setItem(LOCAL_KEYS.BRANDING, JSON.stringify(merged));
+      try {
+        localStorage.setItem(LOCAL_KEYS.BRANDING, JSON.stringify(merged));
+      } catch {
+        // ignore storage quota errors
+      }
       return merged;
     }
   } catch {
-    // fallback
+    // Graceful fallback to cached or default branding
+  }
+  try {
+    const cached = localStorage.getItem(LOCAL_KEYS.BRANDING);
+    if (cached) {
+      const parsed = JSON.parse(cached) as Partial<BrandingSettings>;
+      return {
+        ...DEFAULT_BRANDING,
+        ...parsed,
+        banners:
+          Array.isArray(parsed.banners) && parsed.banners.length > 0
+            ? parsed.banners.filter((b) => b.active !== false && isBannerFreeOfFreshProduce(b))
+            : DEFAULT_BRANDING.banners,
+      };
+    }
+  } catch {
+    // ignore parse failure
   }
   return DEFAULT_BRANDING;
 }
 
 export async function fetchPaymentSettings(): Promise<PaymentSettings> {
   try {
-    const remote = (await fetchJsonWithTimeout(`${FIREBASE_RTDB_BASE}/settings/payments.json`, 4500)) as Partial<PaymentSettings> | null;
+    const remote = (await readRtdbPath('settings/payments', 4500)) as Partial<PaymentSettings> | null;
     if (remote && typeof remote === 'object') {
       const merged = { ...DEFAULT_PAYMENTS, ...remote };
-      localStorage.setItem(LOCAL_KEYS.PAYMENTS, JSON.stringify(merged));
+      try {
+        localStorage.setItem(LOCAL_KEYS.PAYMENTS, JSON.stringify(merged));
+      } catch {
+        // ignore storage quota errors
+      }
       return merged;
     }
   } catch {
-    // fallback
+    // Graceful fallback to cached or default payment settings
+  }
+  try {
+    const cached = localStorage.getItem(LOCAL_KEYS.PAYMENTS);
+    if (cached) {
+      return { ...DEFAULT_PAYMENTS, ...(JSON.parse(cached) as Partial<PaymentSettings>) };
+    }
+  } catch {
+    // ignore parse failure
   }
   return DEFAULT_PAYMENTS;
+}
+
+export async function fetchStoreStatusSettings(): Promise<StoreStatusSettings> {
+  try {
+    const remote = (await readRtdbPath(
+      'settings/storeStatus',
+      4500
+    )) as Partial<StoreStatusSettings> | null;
+    if (remote && typeof remote === 'object') {
+      const merged: StoreStatusSettings = {
+        ...DEFAULT_STORE_STATUS,
+        ...remote,
+        hoursLabel: remote.hoursLabel?.trim() || DEFAULT_STORE_STATUS.hoursLabel,
+        address: remote.address?.trim() || DEFAULT_STORE_STATUS.address,
+        phones:
+          Array.isArray(remote.phones) && remote.phones.length > 0
+            ? remote.phones
+            : DEFAULT_STORE_STATUS.phones,
+      };
+      try {
+        localStorage.setItem(LOCAL_KEYS.STORE_STATUS, JSON.stringify(merged));
+      } catch {
+        // ignore storage quota errors
+      }
+      return merged;
+    }
+  } catch {
+    // Graceful fallback to local cache or defaults
+  }
+
+  try {
+    const cached = localStorage.getItem(LOCAL_KEYS.STORE_STATUS);
+    if (cached) {
+      return { ...DEFAULT_STORE_STATUS, ...(JSON.parse(cached) as Partial<StoreStatusSettings>) };
+    }
+  } catch {
+    // ignore parse error
+  }
+  return DEFAULT_STORE_STATUS;
+}
+
+export async function saveStoreStatusSettings(
+  status: StoreStatusSettings
+): Promise<{ ok: boolean }> {
+  const payload: StoreStatusSettings = {
+    ...DEFAULT_STORE_STATUS,
+    ...status,
+    updatedAt: new Date().toISOString(),
+  };
+  try {
+    localStorage.setItem(LOCAL_KEYS.STORE_STATUS, JSON.stringify(payload));
+  } catch {
+    // ignore storage errors
+  }
+  const ok = await writeRtdbPath('settings/storeStatus', payload, 'PUT');
+  return { ok };
 }
 
 export async function savePaymentSettingsToFirebase(settings: PaymentSettings): Promise<{ ok: boolean }> {
@@ -542,38 +1047,274 @@ export async function savePaymentSettingsToFirebase(settings: PaymentSettings): 
   } catch {
     // ignore storage errors
   }
-  try {
-    const res = await fetch(`${FIREBASE_RTDB_BASE}/settings/payments.json`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(settings),
-    });
-    return { ok: res.ok };
-  } catch {
-    return { ok: false };
+  const ok = await writeRtdbPath('settings/payments', settings, 'PUT');
+  return { ok };
+}
+
+function sanitizeStoreAnnouncement(raw?: string): string {
+  const clean = String(raw || '').trim();
+  if (!clean) return DEFAULT_STORE_CONFIG.announcementText;
+  if (!isBannerFreeOfFreshProduce({ title: clean })) {
+    return DEFAULT_STORE_CONFIG.announcementText;
   }
+  return clean;
+}
+
+function normalizeStoreConfig(raw: unknown): StoreConfig {
+  if (!raw || typeof raw !== 'object') return DEFAULT_STORE_CONFIG;
+  const obj = raw as Partial<StoreConfig>;
+  return {
+    storeName: obj.storeName?.trim() || DEFAULT_STORE_CONFIG.storeName,
+    isOpen: typeof obj.isOpen === 'boolean' ? obj.isOpen : DEFAULT_STORE_CONFIG.isOpen,
+    hoursLabel: obj.hoursLabel?.trim() || DEFAULT_STORE_CONFIG.hoursLabel,
+    address: obj.address?.trim() || DEFAULT_STORE_CONFIG.address,
+    phones:
+      Array.isArray(obj.phones) && obj.phones.length > 0
+        ? obj.phones.map((p) => String(p))
+        : DEFAULT_STORE_CONFIG.phones,
+    announcementText: sanitizeStoreAnnouncement(obj.announcementText),
+    deliveryFee:
+      Number.isFinite(Number(obj.deliveryFee)) && Number(obj.deliveryFee) >= 0
+        ? Math.round(Number(obj.deliveryFee))
+        : DEFAULT_STORE_CONFIG.deliveryFee,
+    freeDeliveryAbove:
+      Number.isFinite(Number(obj.freeDeliveryAbove)) && Number(obj.freeDeliveryAbove) >= 0
+        ? Math.round(Number(obj.freeDeliveryAbove))
+        : DEFAULT_STORE_CONFIG.freeDeliveryAbove,
+    codMinOrder:
+      Number.isFinite(Number(obj.codMinOrder)) && Number(obj.codMinOrder) >= 0
+        ? Math.round(Number(obj.codMinOrder))
+        : DEFAULT_STORE_CONFIG.codMinOrder,
+    expressDeliveryEnabled:
+      typeof obj.expressDeliveryEnabled === 'boolean'
+        ? obj.expressDeliveryEnabled
+        : DEFAULT_STORE_CONFIG.expressDeliveryEnabled,
+    pickupEnabled:
+      typeof obj.pickupEnabled === 'boolean'
+        ? obj.pickupEnabled
+        : DEFAULT_STORE_CONFIG.pickupEnabled,
+    deliveryZones:
+      Array.isArray(obj.deliveryZones) && obj.deliveryZones.length > 0
+        ? obj.deliveryZones.map((z) => String(z))
+        : DEFAULT_STORE_CONFIG.deliveryZones,
+    updatedAt: obj.updatedAt,
+  };
+}
+
+export async function fetchStoreConfig(): Promise<StoreConfig> {
+  try {
+    const remote = await readRtdbPath('storeConfig', 4500);
+    if (remote && typeof remote === 'object') {
+      const merged = normalizeStoreConfig(remote);
+      try {
+        localStorage.setItem(LOCAL_KEYS.STORE_CONFIG, JSON.stringify(merged));
+      } catch {
+        // ignore storage quota
+      }
+      return merged;
+    }
+  } catch {
+    // Graceful fallback
+  }
+
+  try {
+    const cached = localStorage.getItem(LOCAL_KEYS.STORE_CONFIG);
+    if (cached) {
+      return normalizeStoreConfig(JSON.parse(cached));
+    }
+  } catch {
+    // ignore parse failure
+  }
+  return DEFAULT_STORE_CONFIG;
+}
+
+export async function saveStoreConfigToFirebase(config: StoreConfig): Promise<{ ok: boolean }> {
+  const payload: StoreConfig = {
+    ...normalizeStoreConfig(config),
+    updatedAt: new Date().toISOString(),
+  };
+
+  try {
+    localStorage.setItem(LOCAL_KEYS.STORE_CONFIG, JSON.stringify(payload));
+  } catch {
+    // ignore storage errors
+  }
+
+  const ok = await writeRtdbPath('storeConfig', payload, 'PUT');
+  // Also mirror store status node so legacy readers remain consistent
+  void writeRtdbPath(
+    'settings/storeStatus',
+    {
+      storeName: payload.storeName,
+      isOpen: payload.isOpen,
+      hoursLabel: payload.hoursLabel,
+      address: payload.address,
+      phones: payload.phones,
+      dispatchNotice: payload.announcementText,
+      updatedAt: payload.updatedAt,
+    },
+    'PUT'
+  );
+  return { ok };
+}
+
+/**
+ * Live Firebase RTDB subscription to /storeConfig for store open/close status,
+ * delivery rules, and announcement banner across Web & Navkart Android app.
+ */
+export function subscribeToStoreConfig(
+  onUpdate: (config: StoreConfig, connected: boolean) => void
+): () => void {
+  let active = true;
+  let unsubscribeSdk: (() => void) | null = null;
+  let pollTimer: ReturnType<typeof setInterval> | null = null;
+
+  const emit = (raw: unknown, connected: boolean) => {
+    if (!active) return;
+    const normalized = normalizeStoreConfig(raw);
+    try {
+      localStorage.setItem(LOCAL_KEYS.STORE_CONFIG, JSON.stringify(normalized));
+    } catch {
+      // ignore storage quota
+    }
+    onUpdate(normalized, connected);
+  };
+
+  const pollOnce = async () => {
+    if (!active) return;
+    try {
+      const remote = await fetchJsonWithTimeout(`${FIREBASE_RTDB_BASE}/storeConfig.json`, 4500);
+      emit(remote, true);
+    } catch {
+      const fallback = await fetchStoreConfig();
+      if (active) onUpdate(fallback, false);
+    }
+  };
+
+  if (firebaseDb) {
+    try {
+      unsubscribeSdk = onValue(
+        ref(firebaseDb, 'storeConfig'),
+        (snapshot) => {
+          if (!active) return;
+          if (snapshot.exists()) {
+            emit(snapshot.val(), true);
+          } else {
+            onUpdate(DEFAULT_STORE_CONFIG, true);
+          }
+        },
+        () => {
+          if (active && !pollTimer) {
+            void pollOnce();
+            pollTimer = setInterval(() => void pollOnce(), 15000);
+          }
+        }
+      );
+    } catch {
+      void pollOnce();
+      pollTimer = setInterval(() => void pollOnce(), 15000);
+    }
+  } else {
+    void pollOnce();
+    pollTimer = setInterval(() => void pollOnce(), 15000);
+  }
+
+  return () => {
+    active = false;
+    if (unsubscribeSdk) unsubscribeSdk();
+    if (pollTimer) clearInterval(pollTimer);
+  };
 }
 
 export async function saveOrder(order: OrderRecord): Promise<{ ok: boolean }> {
+  const taggedOrder: OrderRecord = {
+    ...order,
+    source: order.source || 'web',
+  };
   try {
     const existingRaw = localStorage.getItem(LOCAL_KEYS.ORDERS);
     const existing: OrderRecord[] = existingRaw ? JSON.parse(existingRaw) : [];
-    const next = [order, ...existing.filter((o) => o.orderId !== order.orderId)];
+    const next = [taggedOrder, ...existing.filter((o) => o.orderId !== taggedOrder.orderId)];
     localStorage.setItem(LOCAL_KEYS.ORDERS, JSON.stringify(next));
   } catch {
     // ignore
   }
 
-  try {
-    const res = await fetch(`${FIREBASE_RTDB_BASE}/orders/${encodeURIComponent(order.orderId)}.json`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(order),
-    });
-    return { ok: res.ok };
-  } catch {
-    return { ok: false };
+  const ok = await writeRtdbPath(
+    `orders/${encodeURIComponent(taggedOrder.orderId)}`,
+    taggedOrder,
+    'PUT'
+  );
+  return { ok };
+}
+
+/**
+ * Live unified subscription to /orders for Website Admin dashboard so orders from
+ * both www.navgrocerystore.com AND the Navkart Android app appear immediately.
+ */
+export function subscribeToAllOrders(
+  onUpdate: (orders: OrderRecord[], connected: boolean) => void
+): () => void {
+  let active = true;
+  let unsubscribeSdk: (() => void) | null = null;
+  let pollTimer: ReturnType<typeof setInterval> | null = null;
+
+  const mergeAndSort = (raw: unknown): OrderRecord[] => {
+    const remoteOrders = parseOrdersResponse(raw);
+    const localOrders = getLocalOrders();
+    const byId = new Map<string, OrderRecord>();
+    for (const lo of localOrders) {
+      byId.set(lo.orderId, lo);
+    }
+    for (const ro of remoteOrders) {
+      byId.set(ro.orderId, ro);
+    }
+    return Array.from(byId.values()).sort(
+      (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    );
+  };
+
+  const pollOnce = async () => {
+    if (!active) return;
+    try {
+      const remote = await fetchJsonWithTimeout(`${FIREBASE_RTDB_BASE}/orders.json`, 7000);
+      if (!active) return;
+      onUpdate(mergeAndSort(remote), true);
+    } catch {
+      if (!active) return;
+      onUpdate(getLocalOrders(), false);
+    }
+  };
+
+  if (firebaseDb) {
+    try {
+      unsubscribeSdk = onValue(
+        ref(firebaseDb, 'orders'),
+        (snapshot) => {
+          if (!active) return;
+          onUpdate(mergeAndSort(snapshot.val()), true);
+        },
+        () => {
+          if (active && !pollTimer) {
+            void pollOnce();
+            pollTimer = setInterval(() => void pollOnce(), 6000);
+          }
+        }
+      );
+    } catch {
+      void pollOnce();
+      pollTimer = setInterval(() => void pollOnce(), 6000);
+    }
+  } else {
+    void pollOnce();
+    pollTimer = setInterval(() => void pollOnce(), 6000);
   }
+
+  return () => {
+    active = false;
+    if (unsubscribeSdk) unsubscribeSdk();
+    if (pollTimer) clearInterval(pollTimer);
+  };
 }
 
 export function getLocalOrders(): OrderRecord[] {
@@ -631,16 +1372,8 @@ export async function updateOrderInFirebase(
     // ignore storage errors
   }
 
-  try {
-    const res = await fetch(`${FIREBASE_RTDB_BASE}/orders/${encodeURIComponent(cleanId)}.json`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    });
-    return { ok: res.ok };
-  } catch {
-    return { ok: false };
-  }
+  const ok = await writeRtdbPath(`orders/${encodeURIComponent(cleanId)}`, payload, 'PATCH');
+  return { ok };
 }
 
 export async function fetchOrderById(orderId: string): Promise<OrderRecord | null> {

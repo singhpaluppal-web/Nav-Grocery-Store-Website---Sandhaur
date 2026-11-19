@@ -1,11 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Bot, X, Send, Plus, MessageCircle } from 'lucide-react';
 import { Product } from '../types';
 import { StoreLang } from '../utils/i18n';
+import { hasZeroFreshProduce, normalizeWholesalePricing } from '../utils/aisles';
 
 interface StoreAICopilotProps {
   products: Product[];
   lang?: StoreLang;
+  hoursLabel?: string;
   onChangeLang?: (lang: StoreLang) => void;
   onAddToCart: (product: Product) => void;
   onSelectAisle: (aisleId: string) => void;
@@ -75,6 +77,7 @@ const UI_COPY: Record<
 export const StoreAICopilot: React.FC<StoreAICopilotProps> = ({
   products,
   lang: externalLang,
+  hoursLabel = '8:00 AM – 9:30 PM',
   onChangeLang,
   onAddToCart,
   onSelectAisle,
@@ -86,9 +89,14 @@ export const StoreAICopilot: React.FC<StoreAICopilotProps> = ({
     {
       id: 'welcome',
       sender: 'ai',
-      text: 'Sat Sri Akal! Ask me about item availability, stock & wholesale prices, delivery/pickup, return policy, or store hours in English or ਪੰਜਾਬੀ.',
+      text: 'Sat Sri Akal! Ask me about sealed grocery stock, -18°C frozen foods, flat 12% off MRP prices, delivery/pickup, return policy, or store hours (8:00 AM – 9:30 PM) in English or ਪੰਜਾਬੀ.',
     },
   ]);
+
+  const safeProducts = useMemo(
+    () => products.filter(hasZeroFreshProduce).map(normalizeWholesalePricing),
+    [products]
+  );
 
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const copy = UI_COPY[lang];
@@ -146,13 +154,13 @@ export const StoreAICopilot: React.FC<StoreAICopilotProps> = ({
     } else if (/hour|open|close|timing|time|address|location|helpline|contact|ਸਮਾਂ|ਖੁੱਲ੍ਹਾ|ਪਤਾ|ਸੰਪਰਕ/i.test(lower)) {
       replyText =
         lang === 'pa'
-          ? 'ਸਟੋਰ ਦਾ ਪਤਾ ਅਤੇ ਸਮਾਂ: ਨਵ ਗ੍ਰੋਸਰੀ ਸਟੋਰ, ਮੇਨ ਬਾਜ਼ਾਰ, ਸੰਧੌੜ, ਜ਼ਿਲ੍ਹਾ ਮਲੇਰਕੋਟਲਾ, ਪੰਜਾਬ 148020। ਰੋਜ਼ਾਨਾ ਸਵੇਰੇ 8:00 ਤੋਂ ਰਾਤ 9:00 ਵਜੇ ਤੱਕ ਖੁੱਲ੍ਹਾ। ਹੈਲਪਲਾਈਨ: +91 8847370905 / +91 9915752905'
-          : 'Store Location & Hours: Nav Grocery Store, Main Bazaar, Sandhaur, Distt. Malerkotla, Punjab 148020. Open daily 8:00 AM – 9:00 PM. Helpline: +91 8847370905 / +91 9915752905.';
+          ? `ਸਟੋਰ ਦਾ ਪਤਾ ਅਤੇ ਸਮਾਂ: ਨਵ ਗ੍ਰੋਸਰੀ ਸਟੋਰ, ਮੇਨ ਬਾਜ਼ਾਰ, ਸੰਧੌੜ, ਜ਼ਿਲ੍ਹਾ ਮਲੇਰਕੋਟਲਾ, ਪੰਜਾਬ 148020। ਰੋਜ਼ਾਨਾ ਸਮਾਂ: ${hoursLabel}। ਸੰਪਰਕ: +91 8847370905 / +91 9915752905`
+          : `Store Location & Hours: Nav Grocery Store, Main Bazaar, Sandhaur, District Malerkotla, Punjab 148020. Open daily ${hoursLabel}. Contact: +91 8847370905 / +91 9915752905.`;
     } else if (/discount|wholesale|mrp|12%|gst|bill|invoice|ਛੋਟ|ਥੋਕ|ਬਿੱਲ/i.test(lower)) {
       replyText =
         lang === 'pa'
           ? 'ਥੋਕ ਕੀਮਤ ਨੀਤੀ: ਸਾਰੀਆਂ 308 ਪ੍ਰਮਾਣਿਤ ਵਸਤੂਆਂ ’ਤੇ MRP ਤੋਂ ਫਲੈਟ 12% ਛੋਟ ਮਿਲਦੀ ਹੈ, ਅਤੇ ਹਰ ਆਰਡਰ ਤੋਂ ਬਾਅਦ GST ਡਿਜੀਟਲ ਬਿੱਲ ਤਿਆਰ ਹੁੰਦਾ ਹੈ।'
-          : 'Wholesale Pricing Policy: Flat 12% off MRP on all 308 verified SKUs automatically (Sale = round(MRP × 0.88)), with an itemized post-order digital GST receipt.';
+          : 'Wholesale Pricing Policy: Flat 12% off MRP on all 308 verified SKUs automatically (Sale = Math.round(MRP × 0.88)), with an itemized post-order digital GST receipt.';
     } else if (
       lower.includes('delivery') ||
       lower.includes('pickup') ||
@@ -176,7 +184,7 @@ export const StoreAICopilot: React.FC<StoreAICopilotProps> = ({
       lower.includes('paneer') ||
       lower.includes('ਫਰੋਜ਼ਨ')
     ) {
-      matchedProducts = products
+      matchedProducts = safeProducts
         .filter(
           (p) =>
             (p.department + p.category + p.name).toLowerCase().includes('frozen') ||
@@ -197,7 +205,7 @@ export const StoreAICopilot: React.FC<StoreAICopilotProps> = ({
 
       const tokens = cleanedTokens.length > 0 ? cleanedTokens : lower.split(/\s+/).filter((t) => t.length >= 2);
 
-      matchedProducts = products
+      matchedProducts = safeProducts
         .filter((p) => {
           const hay = `${p.id} ${p.brand} ${p.name} ${p.category}`.toLowerCase();
           return tokens.every((tk) => hay.includes(tk));
@@ -205,7 +213,7 @@ export const StoreAICopilot: React.FC<StoreAICopilotProps> = ({
         .slice(0, 4);
 
       if (matchedProducts.length === 0 && tokens.length > 0) {
-        matchedProducts = products
+        matchedProducts = safeProducts
           .filter((p) => {
             const hay = `${p.id} ${p.brand} ${p.name} ${p.category}`.toLowerCase();
             return tokens.some((tk) => hay.includes(tk));

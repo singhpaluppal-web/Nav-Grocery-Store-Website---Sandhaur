@@ -12,20 +12,26 @@ import {
 } from 'firebase/auth';
 import { Database, getDatabase } from 'firebase/database';
 
+function readEnv(key: string): string {
+  try {
+    const env = import.meta.env as Record<string, string | undefined>;
+    return (env?.[key] || '').trim();
+  } catch {
+    return '';
+  }
+}
+
 export const FIREBASE_DATABASE_URL =
-  (import.meta.env.VITE_FIREBASE_DATABASE_URL as string | undefined)?.trim() ||
+  readEnv('VITE_FIREBASE_DATABASE_URL') ||
   'https://nav-grocery-store-default-rtdb.firebaseio.com';
 
-const firebaseConfig = {
-  apiKey: (import.meta.env.VITE_FIREBASE_API_KEY as string | undefined)?.trim() || 'AIzaSyDUaToRs_hhQNvI4-q5J611uN_stjUr1-o',
+export const firebaseConfig = {
+  apiKey: readEnv('VITE_FIREBASE_API_KEY'),
   authDomain:
-    (import.meta.env.VITE_FIREBASE_AUTH_DOMAIN as string | undefined)?.trim() ||
-    'nav-grocery-store.firebaseapp.com',
-  projectId:
-    (import.meta.env.VITE_FIREBASE_PROJECT_ID as string | undefined)?.trim() ||
-    'nav-grocery-store',
-  appId: (import.meta.env.VITE_FIREBASE_APP_ID as string | undefined)?.trim() || '1:272584690336:web:76c20bd0cce7cfe34997c5',
+    readEnv('VITE_FIREBASE_AUTH_DOMAIN') || 'nav-grocery-store.firebaseapp.com',
   databaseURL: FIREBASE_DATABASE_URL,
+  projectId: readEnv('VITE_FIREBASE_PROJECT_ID') || 'nav-grocery-store',
+  appId: readEnv('VITE_FIREBASE_APP_ID'),
 };
 
 export const isFirebaseAuthConfigured = Boolean(
@@ -37,21 +43,32 @@ let firebaseAuth: Auth | null = null;
 let firebaseDb: Database | null = null;
 let googleProvider: GoogleAuthProvider | null = null;
 
-try {
-  if (isFirebaseAuthConfigured) {
+if (isFirebaseAuthConfigured) {
+  try {
     firebaseApp = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
-    firebaseAuth = getAuth(firebaseApp);
-    googleProvider = new GoogleAuthProvider();
-    googleProvider.setCustomParameters({ prompt: 'select_account' });
-    firebaseDb = getDatabase(firebaseApp, FIREBASE_DATABASE_URL);
+  } catch {
+    firebaseApp = null;
   }
-} catch (err) {
-  console.warn('[Firebase] Safe initialization fallback active:', err);
-  firebaseApp = null;
-  firebaseAuth = null;
-  firebaseDb = null;
-  googleProvider = null;
+
+  if (firebaseApp) {
+    try {
+      firebaseAuth = getAuth(firebaseApp);
+      googleProvider = new GoogleAuthProvider();
+      googleProvider.setCustomParameters({ prompt: 'select_account' });
+    } catch {
+      firebaseAuth = null;
+      googleProvider = null;
+    }
+
+    try {
+      firebaseDb = getDatabase(firebaseApp, FIREBASE_DATABASE_URL);
+    } catch {
+      firebaseDb = null;
+    }
+  }
 }
+
+export const isFirebaseDbReady = Boolean(firebaseDb);
 
 export { firebaseApp, firebaseAuth, firebaseDb, googleProvider };
 

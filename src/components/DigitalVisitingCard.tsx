@@ -10,6 +10,7 @@ import {
   Instagram,
   Youtube,
   Check,
+  Clock,
 } from 'lucide-react';
 import { StoreLogo } from './StoreLogo';
 import { getStoreTranslations, StoreLang } from '../utils/i18n';
@@ -17,11 +18,13 @@ import { getStoreTranslations, StoreLang } from '../utils/i18n';
 interface DigitalVisitingCardProps {
   logoUrl?: string;
   lang?: StoreLang;
+  hoursLabel?: string;
 }
 
 export const DigitalVisitingCard: React.FC<DigitalVisitingCardProps> = ({
   logoUrl = '/images/logo.png',
   lang = 'en',
+  hoursLabel = '8:00 AM – 9:30 PM',
 }) => {
   const t = getStoreTranslations(lang);
   const [sharedStatus, setSharedStatus] = useState<'idle' | 'copied'>('idle');
@@ -36,8 +39,8 @@ export const DigitalVisitingCard: React.FC<DigitalVisitingCardProps> = ({
       'TEL;TYPE=CELL:+919915752905',
       'EMAIL:orders@navgrocerystore.com',
       'URL:https://www.navgrocerystore.com',
-      'ADR;TYPE=WORK:;;Main Bazaar, Sandhaur;Distt. Malerkotla;Punjab;148020;India',
-      'NOTE:100% Sealed Branded Groceries & Cold-Chain Frozen Foods (-18C). Flat 12% Off MRP.',
+      'ADR;TYPE=WORK:;;Main Bazaar, Sandhaur;District Malerkotla;Punjab;148020;India',
+      `NOTE:Hours: ${hoursLabel}. 100% Sealed Branded Groceries & Cold-Chain Frozen Foods (-18C). Flat 12% Off MRP.`,
       'END:VCARD',
     ].join('\r\n');
 
@@ -53,8 +56,7 @@ export const DigitalVisitingCard: React.FC<DigitalVisitingCardProps> = ({
   };
 
   const handleShareCard = async () => {
-    const shareText =
-      'Nav Grocery Store — Main Bazaar, Sandhaur, Distt. Malerkotla, Punjab 148020. Flat 12% Off MRP on 308 Sealed Groceries & -18°C Frozen Essentials. Helpline: +91 8847370905 · https://www.navgrocerystore.com';
+    const shareText = `Nav Grocery Store — Main Bazaar, Sandhaur, District Malerkotla, Punjab 148020. Hours: ${hoursLabel}. Flat 12% Off MRP on 308 Sealed Groceries & -18°C Frozen Essentials. Contact: +91 8847370905 / +91 9915752905 · https://www.navgrocerystore.com`;
 
     if (navigator.share) {
       try {
@@ -138,6 +140,12 @@ export const DigitalVisitingCard: React.FC<DigitalVisitingCardProps> = ({
               >
                 www.navgrocerystore.com
               </a>
+            </div>
+            <div className="flex items-center gap-2.5 sm:col-span-2">
+              <Clock className="w-4 h-4 text-[#E6A817] shrink-0" />
+              <span>
+                {lang === 'pa' ? `ਸਟੋਰ ਸਮਾਂ: ${hoursLabel} (ਰੋਜ਼ਾਨਾ)` : `Hours: ${hoursLabel} (Open Daily)`}
+              </span>
             </div>
           </div>
 

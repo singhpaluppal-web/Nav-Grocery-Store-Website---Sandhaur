@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "272584690336",
+    "firebase_url": "https://nav-grocery-store-default-rtdb.firebaseio.com",
+    "project_id": "nav-grocery-store",
+    "storage_bucket": "nav-grocery-store.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272584690336:android:011ef120b713ff9a4997c5",
+        "android_client_info": {
+          "package_name": "com.navgrocerystore.navkart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "272584690336-dd00nsve9hpsgiai1oo1pfkk6g8a9p5b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.navgrocerystore.navkart",
+            "certificate_hash": "1582d92d876e141de6c14fc47734758723dea58d"
+          }
+        },
+        {
+          "client_id": "272584690336-2hbsuhgqi3358reet18mkklvr5m903nr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBukA_HA4RaUzH3fHCRsYIbShbzuHI4lvQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "272584690336-2hbsuhgqi3358reet18mkklvr5m903nr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -6,6 +6,8 @@ import {
   CustomerSession,
   PaymentSettings,
   Product,
+  StoreConfig,
+  StoreStatusSettings,
 } from './types';
 import {
   consumeGoogleRedirectResult,
@@ -16,12 +18,15 @@ import {
 import {
   DEFAULT_BRANDING,
   DEFAULT_PAYMENTS,
+  DEFAULT_STORE_CONFIG,
+  DEFAULT_STORE_STATUS,
   fetchBrandingSettings,
   fetchCustomerProfile,
   fetchPaymentSettings,
-  fetchUnifiedCatalogProducts,
   isCustomerProfileComplete,
   saveCustomerProfile,
+  subscribeToLiveProducts,
+  subscribeToStoreConfig,
 } from './utils/firebase';
 import { StoreLang } from './utils/i18n';
 import { StorefrontView } from './components/StorefrontView';
@@ -59,6 +64,7 @@ export default function App() {
   const [products, setProducts] = useState<Product[]>([]);
   const [branding, setBranding] = useState<BrandingSettings>(DEFAULT_BRANDING);
   const [paymentSettings, setPaymentSettings] = useState<PaymentSettings>(DEFAULT_PAYMENTS);
+  const [storeConfig, setStoreConfig] = useState<StoreConfig>(DEFAULT_STORE_CONFIG);
   const [loading, setLoading] = useState<boolean>(true);
 
   const [customerSession, setCustomerSession] = useState<CustomerSession | null>(null);
@@ -204,24 +210,57 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
-  const loadStorefront = useCallback(async () => {
-    setLoading(true);
-    const [items, bCfg, pCfg] = await Promise.all([
-      fetchUnifiedCatalogProducts(),
-      fetchBrandingSettings(),
-      fetchPaymentSettings(),
-    ]);
-    setProducts(items);
-    setBranding(bCfg);
-    setPaymentSettings(pCfg);
-    setLoading(false);
-  }, []);
-
   useEffect(() => {
-    if (route !== 'admin') {
-      loadStorefront();
-    }
-  }, [route, loadStorefront]);
+    if (route === 'admin') return;
+    let active = true;
+    setLoading(true);
+
+    void Promise.all([fetchBrandingSettings(), fetchPaymentSettings()]).then(([bCfg, pCfg]) => {
+      if (!active) return;
+      setBranding(bCfg);
+      setPaymentSettings(pCfg);
+    });
+
+    const unsubProducts = subscribeToLiveProducts((liveItems) => {
+      if (!active) return;
+      setProducts(liveItems);
+      setLoading(false);
+    });
+
+    const unsubStoreConfig = subscribeToStoreConfig((liveCfg) => {
+      if (!active) return;
+      setStoreConfig(liveCfg);
+    });
+
+    return () => {
+      active = false;
+      unsubProducts();
+      unsubStoreConfig();
+    };
+  }, [route]);
+
+  const effectiveBranding: BrandingSettings = {
+    ...branding,
+    announcementText: storeConfig.announcementText || branding.announcementText,
+  };
+
+  const effectivePaymentSettings: PaymentSettings = {
+    ...paymentSettings,
+    deliveryFee: storeConfig.deliveryFee,
+    freeDeliveryAbove: storeConfig.freeDeliveryAbove,
+    codMinOrder: storeConfig.codMinOrder,
+  };
+
+  const effectiveStoreStatus: StoreStatusSettings = {
+    ...DEFAULT_STORE_STATUS,
+    storeName: storeConfig.storeName,
+    isOpen: storeConfig.isOpen,
+    hoursLabel: storeConfig.hoursLabel,
+    address: storeConfig.address,
+    phones: storeConfig.phones,
+    dispatchNotice: storeConfig.announcementText,
+    updatedAt: storeConfig.updatedAt,
+  };
 
   const toggleFavorite = (productId: string) => {
     setFavoriteIds((prev) =>
@@ -270,11 +309,11 @@ export default function App() {
     <>
       {route === 'account' ? (
         <AccountPageView
-          logoUrl={branding.logoUrl}
+          logoUrl={effectiveBranding.logoUrl}
           products={products}
           favoriteIds={favoriteIds}
           customerSession={customerSession}
-          paymentSettings={paymentSettings}
+          paymentSettings={effectivePaymentSettings}
           lang={lang}
           authLoading={authLoading}
           authError={authError}
@@ -291,8 +330,9 @@ export default function App() {
         <StorefrontView
           products={products}
           loading={loading}
-          branding={branding}
-          paymentSettings={paymentSettings}
+          branding={effectiveBranding}
+          paymentSettings={effectivePaymentSettings}
+          storeStatus={effectiveStoreStatus}
           lang={lang}
           onChangeLang={setLang}
           favoriteIds={favoriteIds}

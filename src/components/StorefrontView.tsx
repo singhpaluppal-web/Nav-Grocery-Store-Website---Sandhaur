@@ -25,6 +25,7 @@ import {
   Shirt,
   User,
   ArrowRight,
+  Clock,
 } from 'lucide-react';
 import {
   BrandingSettings,
@@ -35,12 +36,15 @@ import {
   PaymentSettings,
   Product,
   ServiceVertical,
+  StoreStatusSettings,
 } from '../types';
 import {
   DepartmentFilter,
   GROCERY_AISLES,
+  hasZeroFreshProduce,
   isApparelProduct,
   isElectronicsOrHomeProduct,
+  isFreshProduceSearchQuery,
   isFrozenProduct,
   isGeneralRetailProduct,
   isGroceryCoreProduct,
@@ -61,12 +65,14 @@ import { OrderTrackerModal } from './OrderTrackerModal';
 import { BarcodeScannerModal } from './BarcodeScannerModal';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { getStoreTranslations, StoreLang } from '../utils/i18n';
+import { computeExpectedDeliveryInfo } from '../utils/deliveryTime';
 
 interface StorefrontViewProps {
   products: Product[];
   loading: boolean;
   branding: BrandingSettings;
   paymentSettings: PaymentSettings;
+  storeStatus?: StoreStatusSettings;
   lang: StoreLang;
   onChangeLang: (lang: StoreLang) => void;
   favoriteIds: string[];
@@ -100,6 +106,7 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
   loading,
   branding,
   paymentSettings,
+  storeStatus,
   lang,
   onChangeLang,
   favoriteIds,
@@ -135,6 +142,24 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
   const [trackerOrderId, setTrackerOrderId] = useState<string>('');
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
   const [showFavoritesOnly, setShowFavoritesOnly] = useState<boolean>(false);
+  const [currentTime, setCurrentTime] = useState<Date>(() => new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 30000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const expectedDelivery = useMemo(
+    () =>
+      computeExpectedDeliveryInfo(
+        currentTime,
+        storeStatus?.hoursLabel || '8:00 AM – 9:30 PM',
+        storeStatus?.isOpen !== false
+      ),
+    [currentTime, storeStatus?.hoursLabel, storeStatus?.isOpen]
+  );
 
   const t = useMemo(() => getStoreTranslations(lang), [lang]);
 
@@ -161,7 +186,7 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
   const favoriteSet = useMemo(() => new Set(favoriteIds), [favoriteIds]);
 
   const verticalScopedProducts = useMemo(
-    () => products.filter((p) => matchesServiceVertical(p, activeVertical)),
+    () => products.filter((p) => hasZeroFreshProduce(p) && matchesServiceVertical(p, activeVertical)),
     [products, activeVertical]
   );
 
@@ -200,17 +225,32 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
     return GROCERY_AISLES.filter((aisle) => allowedIds.has(aisle.id));
   }, [activeVertical]);
 
+  const isBlockedFreshQuery = useMemo(
+    () => isFreshProduceSearchQuery(searchQuery),
+    [searchQuery]
+  );
+
   const productsMatchingNonCategoryFilters = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
+    if (q && isBlockedFreshQuery) return [];
     return verticalScopedProducts.filter((p) => {
+      if (!hasZeroFreshProduce(p)) return false;
       if (showFavoritesOnly && !favoriteSet.has(p.id)) return false;
       if (!matchesDepartmentCategory(p, departmentFilter)) return false;
       if (!matchesGroceryAisle(p, selectedAisle)) return false;
       if (!q) return true;
-      const hay = `${p.id} ${p.brand} ${p.name} ${p.category} ${p.department} ${p.barcode || ''}`.toLowerCase();
+      const hay = `${p.name} ${p.category} ${p.brand} ${p.id} ${p.department} ${p.barcode || ''}`.toLowerCase();
       return q.split(/\s+/).every((token) => hay.includes(token));
     });
-  }, [verticalScopedProducts, showFavoritesOnly, favoriteSet, departmentFilter, selectedAisle, searchQuery]);
+  }, [
+    verticalScopedProducts,
+    showFavoritesOnly,
+    favoriteSet,
+    departmentFilter,
+    selectedAisle,
+    searchQuery,
+    isBlockedFreshQuery,
+  ]);
 
   const categoryOptions = useMemo(() => {
     const counts = new Map<string, number>();
@@ -236,12 +276,13 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
   }, [productsMatchingNonCategoryFilters, selectedCategory]);
 
   const filteredProducts = useMemo(() => {
-    const list =
+    const list = (
       selectedCategory === 'all'
         ? productsMatchingNonCategoryFilters
         : productsMatchingNonCategoryFilters.filter(
             (p) => String(p.category || '').trim() === selectedCategory
-          );
+          )
+    ).filter(hasZeroFreshProduce);
 
     if (sortBy === 'price_asc') return [...list].sort((a, b) => a.sale - b.sale);
     if (sortBy === 'price_desc') return [...list].sort((a, b) => b.sale - a.sale);
@@ -249,16 +290,37 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
     return list;
   }, [productsMatchingNonCategoryFilters, selectedCategory, sortBy]);
 
+  const matchingSearchCategories = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
+    if (q.length < 2 || isBlockedFreshQuery) return [];
+    const counts = new Map<string, { count: number; isSupermall: boolean }>();
+    for (const p of products) {
+      if (!hasZeroFreshProduce(p)) continue;
+      const cat = String(p.category || '').trim();
+      if (!cat) continue;
+      const localized = (t.categoryLabels[cat] || cat).toLowerCase();
+      if (cat.toLowerCase().includes(q) || localized.includes(q)) {
+        const prev = counts.get(cat) || { count: 0, isSupermall: !isGroceryCoreProduct(p) };
+        counts.set(cat, { count: prev.count + 1, isSupermall: prev.isSupermall });
+      }
+    }
+    return Array.from(counts.entries())
+      .map(([category, info]) => ({ category, ...info }))
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 4);
+  }, [products, searchQuery, isBlockedFreshQuery, t.categoryLabels]);
+
   const predictiveSuggestions = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
-    if (q.length < 2) return [];
+    if (q.length < 2 || isBlockedFreshQuery) return [];
     return products
       .filter((p) => {
-        const hay = `${p.id} ${p.brand} ${p.name} ${p.category} ${p.barcode || ''}`.toLowerCase();
+        if (!hasZeroFreshProduce(p)) return false;
+        const hay = `${p.name} ${p.category} ${p.brand} ${p.id} ${p.barcode || ''}`.toLowerCase();
         return q.split(/\s+/).every((tk) => hay.includes(tk));
       })
       .slice(0, 6);
-  }, [products, searchQuery]);
+  }, [products, searchQuery, isBlockedFreshQuery]);
 
   useEffect(() => {
     setVisibleCount(BATCH_SIZE);
@@ -360,6 +422,11 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
     <div className="min-h-screen flex flex-col bg-[#F8F7F2] text-[#14221B]">
       {/* Announcement Strip */}
       <div className="bg-[#0A2A1B] text-[#F8F7F2] text-[11px] sm:text-xs py-1.5 px-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-0.5 font-medium">
+        {storeStatus?.isOpen === false && (
+          <span className="px-2 py-0.5 rounded bg-amber-400 text-[#14221B] font-bold">
+            Store Currently Closed · Next Dispatch {storeStatus.hoursLabel || '8:00 AM – 9:30 PM'}
+          </span>
+        )}
         <span>{lang === 'en' ? branding.announcementText : t.announcementFallback}</span>
         <span className="hidden md:inline text-[#E6A817]">
           · {t.helplineLabel} +91 8847370905 / +91 9915752905
@@ -384,6 +451,37 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
               </div>
             </a>
 
+            <button
+              type="button"
+              onClick={() => {
+                if (expectedDelivery.isExpress) {
+                  handleSelectVertical('express');
+                }
+                catalogRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+              title={expectedDelivery.tooltip}
+              aria-live="polite"
+              className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl border text-left transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
+                expectedDelivery.isExpress
+                  ? 'bg-[#E6A817]/15 border-[#E6A817]/50 text-white hover:bg-[#E6A817]/25'
+                  : 'bg-[#0A2A1B] border-white/20 text-[#F8F7F2] hover:border-white/35'
+              }`}
+            >
+              {expectedDelivery.isExpress ? (
+                <Zap className="w-3.5 h-3.5 text-[#E6A817] shrink-0" />
+              ) : (
+                <Clock className="w-3.5 h-3.5 text-[#E6A817] shrink-0" />
+              )}
+              <span className="leading-tight">
+                <span className="hidden sm:block text-[9px] uppercase tracking-wider text-white/75 font-semibold">
+                  {lang === 'pa' ? expectedDelivery.eyebrowPa : expectedDelivery.eyebrowEn}
+                </span>
+                <span className="block text-[11px] sm:text-xs font-bold text-[#E6A817]">
+                  {lang === 'pa' ? expectedDelivery.labelPa : expectedDelivery.labelEn}
+                </span>
+              </span>
+            </button>
+
             <select
               aria-label="Select Shipping Zone"
               value={shippingZone}
@@ -398,12 +496,22 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
             </select>
           </div>
 
-          {/* Global Predictive Search Bar + Barcode Scanner Trigger */}
-          <div className="relative flex-1 min-w-[220px] max-w-xl order-last lg:order-none w-full lg:w-auto">
-            <div className="flex items-center bg-white rounded-xl overflow-hidden text-[#14221B] border border-white/20">
+          {/* Global Predictive Search Bar (Filters by Name or Category · Strictly Zero Fresh Produce) */}
+          <form
+            role="search"
+            aria-label="Search packaged groceries and supermall products by name or category"
+            onSubmit={(e) => {
+              e.preventDefault();
+              setSearchOpen(false);
+              catalogRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+            className="relative flex-1 min-w-[220px] max-w-xl order-last lg:order-none w-full lg:w-auto"
+          >
+            <div className="flex items-center bg-white rounded-xl overflow-hidden text-[#14221B] border border-white/20 focus-within:ring-2 focus-within:ring-[#E6A817]">
               <Search className="w-4 h-4 text-[#526058] ml-3 shrink-0" />
               <input
                 type="search"
+                aria-label="Search products by name or category"
                 value={searchQuery}
                 onFocus={() => setSearchOpen(true)}
                 onBlur={() => setTimeout(() => setSearchOpen(false), 180)}
@@ -417,7 +525,10 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
               {searchQuery && (
                 <button
                   type="button"
-                  onClick={() => setSearchQuery('')}
+                  onClick={() => {
+                    setSearchQuery('');
+                    setSearchOpen(false);
+                  }}
                   className="px-2 text-xs font-semibold text-[#526058] hover:text-[#14221B] cursor-pointer"
                 >
                   {t.clearLabel}
@@ -434,52 +545,119 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
               </button>
             </div>
 
-            {searchOpen && predictiveSuggestions.length > 0 && (
-              <div className="absolute left-0 right-0 top-full mt-1.5 bg-white text-[#14221B] rounded-xl shadow-2xl border border-[#0F3D28]/15 overflow-hidden z-40">
-                {predictiveSuggestions.map((item) => (
-                  <button
-                    key={item.id}
-                    type="button"
-                    onMouseDown={() => {
-                      setQuickViewProduct(item);
-                      setSearchOpen(false);
-                    }}
-                    className="w-full px-3.5 py-2.5 flex items-center justify-between gap-3 hover:bg-[#F8F7F2] text-left border-b border-[#0F3D28]/8 last:border-b-0 cursor-pointer"
-                  >
-                    <div className="flex items-center gap-2.5 min-w-0">
-                      <img
-                        src={resolveProductImage(item)}
-                        alt={item.name}
-                        className="w-9 h-9 rounded-lg object-contain bg-[#F8F7F2] shrink-0"
-                        referrerPolicy="no-referrer"
-                        onError={(e) => {
-                          const el = e.currentTarget;
-                          if (el.src.startsWith('data:image/svg+xml')) {
-                            el.onerror = null;
-                            return;
-                          }
-                          const nextSrc = getNextFallbackImage(item, el.getAttribute('src') || el.src);
-                          if (nextSrc.startsWith('data:image/svg+xml')) {
-                            el.onerror = null;
-                          }
-                          el.src = nextSrc;
-                        }}
-                      />
-                      <div className="min-w-0">
-                        <p className="text-xs font-semibold truncate">{item.name}</p>
-                        <p className="text-[11px] text-[#526058] truncate">
-                          {item.brand} · {item.category} · {item.id}
-                        </p>
-                      </div>
-                    </div>
-                    <span className="text-xs font-bold text-[#0F3D28] tabular-nums shrink-0">
-                      ₹{item.sale}
-                    </span>
-                  </button>
-                ))}
+            {searchOpen && isBlockedFreshQuery && (
+              <div className="absolute left-0 right-0 top-full mt-1.5 bg-white text-[#14221B] rounded-xl shadow-2xl border border-[#0F3D28]/20 p-3.5 z-40 space-y-2.5">
+                <div className="flex items-start gap-2.5">
+                  <ShieldCheck className="w-4 h-4 text-[#0F3D28] shrink-0 mt-0.5" />
+                  <div className="text-xs leading-relaxed">
+                    <p className="font-bold text-[#0F3D28]">
+                      {lang === 'pa'
+                        ? 'ਜ਼ੀਰੋ ਫਰੈਸ਼ ਪ੍ਰੋਡਿਊਸ ਨੀਤੀ'
+                        : 'Zero Fresh Produce Policy'}
+                    </p>
+                    <p className="text-[#526058] mt-0.5">
+                      {lang === 'pa'
+                        ? 'ਨਵ ਗ੍ਰੋਸਰੀ ਸਟੋਰ ਸਿਰਫ਼ 100% ਸੀਲਬੰਦ ਕਰਿਆਨਾ ਅਤੇ -18°C ਫਰੋਜ਼ਨ ਫੂਡ ਵੇਚਦਾ ਹੈ — ਕੋਈ ਤਾਜ਼ੇ ਫਲ ਜਾਂ ਸਬਜ਼ੀਆਂ ਨਹੀਂ।'
+                        : 'Nav Grocery Store stocks strictly 100% factory-sealed groceries and -18°C cold-chain frozen foods — zero fresh fruits or fresh vegetables.'}
+                    </p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onMouseDown={() => {
+                    setSearchQuery('');
+                    setSearchOpen(false);
+                    setActiveVertical('store');
+                    handleSelectAisle('frozen');
+                    catalogRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                  className="w-full px-3 py-2 rounded-lg bg-[#0F3D28] text-white text-xs font-bold inline-flex items-center justify-center gap-1.5 hover:bg-[#0A2A1B] cursor-pointer"
+                >
+                  <Snowflake className="w-3.5 h-3.5 text-[#E6A817]" />
+                  <span>
+                    {lang === 'pa'
+                      ? '-18°C ਫਰੋਜ਼ਨ ਸਬਜ਼ੀਆਂ ਤੇ ਸਨੈਕਸ ਵੇਖੋ'
+                      : 'Browse -18°C Cold-Chain Frozen Foods Instead'}
+                  </span>
+                </button>
               </div>
             )}
-          </div>
+
+            {searchOpen &&
+              !isBlockedFreshQuery &&
+              (matchingSearchCategories.length > 0 || predictiveSuggestions.length > 0) && (
+                <div className="absolute left-0 right-0 top-full mt-1.5 bg-white text-[#14221B] rounded-xl shadow-2xl border border-[#0F3D28]/15 overflow-hidden z-40">
+                  {matchingSearchCategories.length > 0 && (
+                    <div className="px-3.5 py-2 bg-[#F8F7F2] border-b border-[#0F3D28]/10 flex flex-wrap items-center gap-1.5">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#526058] mr-1">
+                        {lang === 'pa' ? 'ਸ਼੍ਰੇਣੀਆਂ:' : 'Categories:'}
+                      </span>
+                      {matchingSearchCategories.map(({ category, count, isSupermall }) => (
+                        <button
+                          key={category}
+                          type="button"
+                          onMouseDown={() => {
+                            setActiveVertical(isSupermall ? 'supermall' : 'store');
+                            setDepartmentFilter('all');
+                            setSelectedAisle('all');
+                            setSelectedCategory(category);
+                            setSearchQuery('');
+                            setSearchOpen(false);
+                            catalogRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                          }}
+                          className="px-2.5 py-1 rounded-lg bg-white hover:bg-[#0F3D28] hover:text-white border border-[#0F3D28]/15 text-[11px] font-bold text-[#0F3D28] inline-flex items-center gap-1 cursor-pointer transition-colors"
+                        >
+                          <span>{t.categoryLabels[category] || category}</span>
+                          <span className="text-[10px] font-mono-num opacity-75">({count})</span>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+
+                  {predictiveSuggestions.map((item) => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onMouseDown={() => {
+                        setQuickViewProduct(item);
+                        setSearchOpen(false);
+                      }}
+                      className="w-full px-3.5 py-2.5 flex items-center justify-between gap-3 hover:bg-[#F8F7F2] text-left border-b border-[#0F3D28]/8 last:border-b-0 cursor-pointer"
+                    >
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        <img
+                          src={resolveProductImage(item)}
+                          alt={item.name}
+                          className="w-9 h-9 rounded-lg object-contain bg-[#F8F7F2] shrink-0"
+                          referrerPolicy="no-referrer"
+                          onError={(e) => {
+                            const el = e.currentTarget;
+                            if (el.src.startsWith('data:image/svg+xml')) {
+                              el.onerror = null;
+                              return;
+                            }
+                            const nextSrc = getNextFallbackImage(item, el.getAttribute('src') || el.src);
+                            if (nextSrc.startsWith('data:image/svg+xml')) {
+                              el.onerror = null;
+                            }
+                            el.src = nextSrc;
+                          }}
+                        />
+                        <div className="min-w-0">
+                          <p className="text-xs font-semibold truncate">{item.name}</p>
+                          <p className="text-[11px] text-[#526058] truncate">
+                            {item.brand} · {item.category} · {item.id}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-xs font-bold text-[#0F3D28] tabular-nums shrink-0">
+                        ₹{item.sale}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              )}
+          </form>
 
           {/* Right Action Controls (Strict Single-Line Integrity) */}
           <div className="flex items-center gap-2 shrink-0">
@@ -1125,29 +1303,57 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
           ) : filteredProducts.length === 0 ? (
             <div className="bg-white rounded-2xl p-10 text-center border border-[#0F3D28]/12 space-y-3">
               <p className="font-display text-xl font-bold text-[#14221B]">
-                {showFavoritesOnly && departmentCounts.favorites === 0
+                {isBlockedFreshQuery
+                  ? lang === 'pa'
+                    ? 'ਜ਼ੀਰੋ ਫਰੈਸ਼ ਪ੍ਰੋਡਿਊਸ ਨੀਤੀ'
+                    : 'Zero Fresh Produce Policy'
+                  : showFavoritesOnly && departmentCounts.favorites === 0
                   ? t.noFavoritesTitle
                   : t.noMatchTitle}
               </p>
-              <p className="text-sm text-[#526058]">
-                {showFavoritesOnly && departmentCounts.favorites === 0
+              <p className="text-sm text-[#526058] max-w-lg mx-auto">
+                {isBlockedFreshQuery
+                  ? lang === 'pa'
+                    ? 'ਨਵ ਗ੍ਰੋਸਰੀ ਸਟੋਰ ਸਿਰਫ਼ 100% ਸੀਲਬੰਦ ਕਰਿਆਨਾ ਅਤੇ -18°C ਕੋਲਡ-ਚੇਨ ਫਰੋਜ਼ਨ ਫੂਡ ਵੇਚਦਾ ਹੈ — ਤਾਜ਼ੇ ਫਲ ਜਾਂ ਖੁੱਲ੍ਹੀਆਂ ਸਬਜ਼ੀਆਂ ਨਹੀਂ।'
+                    : 'Nav Grocery Store strictly sells 100% factory-sealed groceries and -18°C cold-chain frozen foods — zero fresh fruits or fresh vegetables.'
+                  : showFavoritesOnly && departmentCounts.favorites === 0
                   ? t.noFavoritesDesc
                   : t.noMatchDesc}
               </p>
-              <button
-                type="button"
-                onClick={() => {
-                  setActiveVertical('store');
-                  setShowFavoritesOnly(false);
-                  setSearchQuery('');
-                  setDepartmentFilter('all');
-                  setSelectedAisle('all');
-                  setSelectedCategory('all');
-                }}
-                className="px-5 py-2.5 rounded-xl bg-[#0F3D28] text-white text-sm font-semibold cursor-pointer"
-              >
-                {t.showAllBtn}
-              </button>
+              <div className="flex flex-wrap items-center justify-center gap-2.5 pt-1">
+                {isBlockedFreshQuery && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setActiveVertical('store');
+                      setShowFavoritesOnly(false);
+                      setSearchQuery('');
+                      setDepartmentFilter('all');
+                      handleSelectAisle('frozen');
+                    }}
+                    className="px-5 py-2.5 rounded-xl bg-[#0369A1] text-white text-sm font-semibold inline-flex items-center gap-2 cursor-pointer"
+                  >
+                    <Snowflake className="w-4 h-4" />
+                    <span>
+                      {lang === 'pa' ? '-18°C ਫਰੋਜ਼ਨ ਫੂਡ ਵੇਖੋ' : 'Browse -18°C Frozen Foods'}
+                    </span>
+                  </button>
+                )}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActiveVertical('store');
+                    setShowFavoritesOnly(false);
+                    setSearchQuery('');
+                    setDepartmentFilter('all');
+                    setSelectedAisle('all');
+                    setSelectedCategory('all');
+                  }}
+                  className="px-5 py-2.5 rounded-xl bg-[#0F3D28] text-white text-sm font-semibold cursor-pointer"
+                >
+                  {t.showAllBtn}
+                </button>
+              </div>
             </div>
           ) : (
             <>
@@ -1234,7 +1440,11 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
         </section>
 
         {/* Official Interactive Digital Visiting Card */}
-        <DigitalVisitingCard logoUrl={branding.logoUrl} lang={lang} />
+        <DigitalVisitingCard
+          logoUrl={branding.logoUrl}
+          lang={lang}
+          hoursLabel={storeStatus?.hoursLabel || '8:00 AM – 9:30 PM'}
+        />
       </main>
 
       {/* Footer */}
@@ -1253,6 +1463,10 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
             <p className="text-xs text-white/80 leading-relaxed">
               {lang === 'en' ? branding.storeTagline : t.footerTagline}
             </p>
+            <p className="flex items-center gap-2 text-xs text-white/90 font-medium">
+              <Clock className="w-3.5 h-3.5 text-[#E6A817] shrink-0" />
+              <span>Hours: {storeStatus?.hoursLabel || '8:00 AM – 9:30 PM'}</span>
+            </p>
           </div>
 
           <div className="space-y-2 text-xs">
@@ -1261,7 +1475,7 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
               <Phone className="w-3.5 h-3.5 text-[#E6A817] shrink-0" />
               <span>
                 <a href="tel:+918847370905" className="hover:underline">+91 8847370905</a>
-                {' · '}
+                {' / '}
                 <a href="tel:+919915752905" className="hover:underline">+91 9915752905</a>
               </span>
             </p>
@@ -1390,6 +1604,7 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
       <StoreAICopilot
         products={products}
         lang={lang}
+        hoursLabel={storeStatus?.hoursLabel || '8:00 AM – 9:30 PM'}
         onChangeLang={onChangeLang}
         onAddToCart={onAddToCart}
         onSelectAisle={(aisleId) => {

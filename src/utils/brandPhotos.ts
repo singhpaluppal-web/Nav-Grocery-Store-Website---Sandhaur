@@ -27,44 +27,35 @@ export function getCanonicalSkuImagePath(skuId: string): string {
 }
 
 export function hasCustomAdminPhoto(
-  product: Partial<Pick<Product, 'customImage' | 'image'>>
+  product: Partial<Pick<Product, 'imageUrl' | 'customImage' | 'image'>>
 ): boolean {
-  const custom = String(product.customImage || '').trim();
-  if (
-    custom &&
-    !isLegacyPlaceholder(custom) &&
-    (custom.startsWith('data:image/') ||
-      custom.startsWith('https://') ||
-      custom.startsWith('http://'))
-  ) {
-    return true;
+  for (const field of [product.imageUrl, product.customImage, product.image]) {
+    const val = String(field || '').trim();
+    if (
+      val &&
+      !isLegacyPlaceholder(val) &&
+      (val.startsWith('data:image/') ||
+        val.startsWith('https://') ||
+        val.startsWith('http://'))
+    ) {
+      return true;
+    }
   }
-
-  const img = String(product.image || '').trim();
-  if (
-    img &&
-    !isLegacyPlaceholder(img) &&
-    (img.startsWith('data:image/') ||
-      img.startsWith('https://') ||
-      img.startsWith('http://'))
-  ) {
-    return true;
-  }
-
   return false;
 }
 
 /**
  * Builds the ordered deduplicated list of real photo candidates for any SKU:
- * 1) Admin customImage (data URI / HTTPS / explicit /products/...)
- * 2) Product.image (data URI / HTTPS / explicit /products/...)
- * 3) /products/001.jpg–/products/308.jpg (for NAV001–NAV308) or /products/{SKU}.jpg
- * 4) /products/NAV001.jpg–/products/NAV308.jpg
- * 5) .png variants (/products/001.png, /products/NAV001.png)
+ * 1) Nav AI Media Studio live `imageUrl` (HTTPS / data URI / explicit /products/...)
+ * 2) Admin `customImage` (data URI / HTTPS / explicit /products/...)
+ * 3) Product `image` (data URI / HTTPS / explicit /products/...)
+ * 4) /products/001.jpg–/products/308.jpg (for NAV001–NAV308) or /products/{SKU}.jpg
+ * 5) /products/NAV001.jpg–/products/NAV308.jpg
+ * 6) .png variants (/products/001.png, /products/NAV001.png)
  */
 export function getProductImageCandidates(
   product: Pick<Product, 'id'> &
-    Partial<Pick<Product, 'customImage' | 'image'>>
+    Partial<Pick<Product, 'imageUrl' | 'customImage' | 'image'>>
 ): string[] {
   const candidates: string[] = [];
   const add = (val?: string) => {
@@ -84,6 +75,7 @@ export function getProductImageCandidates(
     }
   };
 
+  add(product.imageUrl);
   add(product.customImage);
   add(product.image);
 
@@ -113,14 +105,14 @@ export function getProductImageCandidates(
  */
 export function resolveProductImage(
   product: Pick<Product, 'id' | 'brand' | 'name' | 'category' | 'department'> &
-    Partial<Pick<Product, 'customImage' | 'image'>>
+    Partial<Pick<Product, 'imageUrl' | 'customImage' | 'image'>>
 ): string {
   const candidates = getProductImageCandidates(product);
   if (candidates.length > 0) {
     return candidates[0];
   }
 
-  const current = String(product.image || '').trim();
+  const current = String(product.imageUrl || product.image || '').trim();
   if (current && !isLegacyPlaceholder(current)) {
     return current;
   }
@@ -203,7 +195,7 @@ export function getSkuNumericStem(skuId: string): string | null {
 
 export function getProductFallbackChain(
   product: Pick<Product, 'id' | 'brand' | 'name' | 'category' | 'department'> &
-    Partial<Pick<Product, 'customImage' | 'image'>>
+    Partial<Pick<Product, 'imageUrl' | 'customImage' | 'image'>>
 ): string[] {
   const candidates = getProductImageCandidates(product);
   candidates.push(buildBrandPackageSvg(product));
@@ -212,7 +204,7 @@ export function getProductFallbackChain(
 
 export function getNextFallbackImage(
   product: Pick<Product, 'id' | 'brand' | 'name' | 'category' | 'department'> &
-    Partial<Pick<Product, 'customImage' | 'image'>>,
+    Partial<Pick<Product, 'imageUrl' | 'customImage' | 'image'>>,
   currentFailedSrc: string
 ): string {
   const svgFallback = buildBrandPackageSvg(product);

@@ -183,19 +183,38 @@ export function matchesGroceryAisle(product: Product, aisleId: string): boolean 
 }
 
 const PACKAGED_CONDIMENT_SAFE =
-  /\b(ketchup|sauce|puree|paste|chutney|jam|pickle|juice|soup|masala|powder|chips|crisps|noodles|biscuit|candy|toffee|squash|syrup)\b/i;
+  /\b(ketchup|sauce|puree|paste|chutney|jam|pickle|juice|soup|masala|powder|chips|crisps|noodles|biscuit|candy|toffee|squash|syrup|frozen)\b/i;
 
 const BANNED_FRESH_PATTERNS: RegExp[] = [
   /\bfresh\s+fruits?\b/i,
   /\bfresh\s+vegetables?\b/i,
   /\bfresh\s+produce\b/i,
-  /\bfresh\s+(?:tomato|tomatoes|onion|onions|potato|potatoes|apple|apples|banana|bananas|mango|mangoes|spinach|coriander|okra|bhindi|cauliflower|cabbage|carrot|carrots|peas)\b/i,
+  /\bunpackaged\s+produce\b/i,
+  /\bfresh\s+(?:tomato|tomatoes|onion|onions|potato|potatoes|apple|apples|banana|bananas|mango|mangoes|orange|oranges|grapes?|spinach|coriander|okra|bhindi|cauliflower|cabbage|carrot|carrots|peas|greens?|salad)\b/i,
   /\bsabzi\b/i,
 ];
 
+const BANNED_FRESH_CATEGORY_EXACT =
+  /^(?:fruits?|vegetables?|produce|fresh\s+fruits?|fresh\s+vegetables?|fresh\s+produce|fruits?\s*&\s*vegetables?|sabzi)$/i;
+
+export function isFreshProduceSearchQuery(query: string): boolean {
+  const clean = String(query || '').trim().toLowerCase();
+  if (!clean) return false;
+  if (PACKAGED_CONDIMENT_SAFE.test(clean)) return false;
+  if (BANNED_FRESH_CATEGORY_EXACT.test(clean)) return true;
+  return BANNED_FRESH_PATTERNS.some((pattern) => pattern.test(clean));
+}
+
 export function hasZeroFreshProduce(product: Product): boolean {
-  const deptCat = `${product.category || ''} ${product.department || ''}`.toLowerCase();
-  if (/\bfresh\s+(?:fruits?|vegetables?|produce)\b|\bsabzi\b/i.test(deptCat)) {
+  const rawCat = String(product.category || '').trim();
+  const rawDept = String(product.department || '').trim();
+  const deptCat = `${rawCat} ${rawDept}`.toLowerCase();
+
+  if (
+    BANNED_FRESH_CATEGORY_EXACT.test(rawCat) ||
+    BANNED_FRESH_CATEGORY_EXACT.test(rawDept) ||
+    /\bfresh\s+(?:fruits?|vegetables?|produce)\b|\bunpackaged\s+produce\b|\bsabzi\b/i.test(deptCat)
+  ) {
     return false;
   }
 

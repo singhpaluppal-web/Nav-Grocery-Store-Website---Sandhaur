@@ -111,9 +111,9 @@ const TRANSLATIONS: Record<StoreLang, StoreTranslations> = {
   en: {
     storeName: 'Nav Grocery & Nav Kart',
     headerLocation: 'Main Bazaar, Sandhaur 148020',
-    fullAddress: 'Main Bazaar, Sandhaur, Distt. Malerkotla, Punjab 148020',
+    fullAddress: 'Main Bazaar, Sandhaur, District Malerkotla, Punjab 148020',
     announcementFallback:
-      'Flat 12% Off MRP on all 308+ Items · 15-Min Express & 2-Hr Delivery in Sandhaur 148020 · 30-Min Store Pickup',
+      'Flat 12% Off MRP on all 308+ Items · Open 8:00 AM – 9:30 PM · 15-Min Express & 2-Hr Delivery in Sandhaur 148020',
     helplineLabel: 'Helpline:',
     searchPlaceholder: 'Search 320+ SKUs: Aashirvaad, Verka, boAt, Philips, Monte Carlo...',
     clearLabel: 'Clear',
@@ -196,7 +196,7 @@ const TRANSLATIONS: Record<StoreLang, StoreTranslations> = {
     outOfStock: 'Out of Stock',
     savePrefix: 'Save',
     quickViewLabel: 'Quick View',
-    showcaseEyebrow: 'Main Bazaar · Sandhaur · Distt. Malerkotla · Punjab 148020',
+    showcaseEyebrow: 'Main Bazaar · Sandhaur · District Malerkotla · Punjab 148020 · 8:00 AM – 9:30 PM',
     showcaseHeading: 'Trusted Local Supermarket & Nav Kart Multi-Category Hub',
     showcaseDesc:
       'Every product is factory-sealed and stocked cleanly on our Main Bazaar shelves—offered at flat 12% wholesale savings off MRP with 15-min express dispatch, 2-hour local delivery, and 30-minute store pickup.',
@@ -210,13 +210,14 @@ const TRANSLATIONS: Record<StoreLang, StoreTranslations> = {
     vcardShareCard: 'Share Store Card',
     vcardCopied: 'Details Copied',
     vcardHoursNote:
-      'Open daily at Main Bazaar, Sandhaur · Free local delivery on orders above ₹499 or 30-min express pickup.',
+      'Hours: 8:00 AM – 9:30 PM daily at Main Bazaar, Sandhaur · Free local delivery on orders above ₹499 or 30-min express pickup.',
     footerTagline: 'Nav Grocery Store & Nav Kart · Main Bazaar, Sandhaur 148020',
     footerCareTitle: 'Helpline & Customer Care',
     footerTrackOrder: 'Track Order Status',
     footerConnectTitle: 'Connect With Nav Grocery & Nav Kart',
     footerWhatsAppHelp: 'WhatsApp Order Help',
-    footerDeliveryNote: '15-Min Express & 2-Hr Delivery in Sandhaur 148020 · 30-Min Main Bazaar Pickup',
+    footerDeliveryNote:
+      'Hours: 8:00 AM – 9:30 PM · 15-Min Express & 2-Hr Delivery in Sandhaur 148020 · 30-Min Main Bazaar Pickup',
     trackerTitle: 'Order Status Tracker',
     trackerSubtitle: 'Live delivery & 30-minute pickup tracking · Nav Grocery Store & Nav Kart',
     trackerInputLabel: 'Enter Your Order ID',
@@ -357,13 +358,14 @@ const TRANSLATIONS: Record<StoreLang, StoreTranslations> = {
     vcardShareCard: 'ਕਾਰਡ ਸਾਂਝਾ ਕਰੋ',
     vcardCopied: 'ਵੇਰਵੇ ਕਾਪੀ ਹੋਏ',
     vcardHoursNote:
-      'ਮੇਨ ਬਾਜ਼ਾਰ, ਸੰਧੌੜ ਵਿਖੇ ਰੋਜ਼ਾਨਾ ਖੁੱਲ੍ਹਾ · ₹499 ਤੋਂ ਵੱਧ ਆਰਡਰ ’ਤੇ ਮੁਫ਼ਤ ਲੋਕਲ ਡਿਲੀਵਰੀ ਜਾਂ 30-ਮਿੰਟ ਪਿਕਅੱਪ।',
+      'ਸਮਾਂ: ਰੋਜ਼ਾਨਾ ਸਵੇਰੇ 8:00 – ਰਾਤ 9:30 ਵਜੇ · ਮੇਨ ਬਾਜ਼ਾਰ, ਸੰਧੌੜ · ₹499 ਤੋਂ ਵੱਧ ਆਰਡਰ ’ਤੇ ਮੁਫ਼ਤ ਡਿਲੀਵਰੀ ਜਾਂ 30-ਮਿੰਟ ਪਿਕਅੱਪ।',
     footerTagline: 'ਨਵ ਗ੍ਰੋਸਰੀ ਸਟੋਰ ਤੇ ਨਵ ਕਾਰਟ · ਮੇਨ ਬਾਜ਼ਾਰ, ਸੰਧੌੜ 148020',
     footerCareTitle: 'ਹੈਲਪਲਾਈਨ ਅਤੇ ਗਾਹਕ ਸੇਵਾ',
     footerTrackOrder: 'ਆਰਡਰ ਸਟੇਟਸ ਟ੍ਰੈਕ ਕਰੋ',
     footerConnectTitle: 'ਨਵ ਗ੍ਰੋਸਰੀ ਅਤੇ ਨਵ ਕਾਰਟ ਨਾਲ ਜੁੜੋ',
     footerWhatsAppHelp: 'ਵਟਸਐਪ ਆਰਡਰ ਮਦਦ',
-    footerDeliveryNote: 'ਸੰਧੌੜ 148020 ਵਿੱਚ 15-ਮਿੰਟ ਐਕਸਪ੍ਰੈੱਸ ਤੇ 2-ਘੰਟੇ ਡਿਲੀਵਰੀ · 30-ਮਿੰਟ ਪਿਕਅੱਪ',
+    footerDeliveryNote:
+      'ਸਮਾਂ: 8:00 AM – 9:30 PM · ਸੰਧੌੜ 148020 ਵਿੱਚ 15-ਮਿੰਟ ਐਕਸਪ੍ਰੈੱਸ ਤੇ 2-ਘੰਟੇ ਡਿਲੀਵਰੀ · 30-ਮਿੰਟ ਪਿਕਅੱਪ',
     trackerTitle: 'ਆਰਡਰ ਸਟੇਟਸ ਟ੍ਰੈਕਰ',
     trackerSubtitle: 'ਲਾਈਵ ਡਿਲੀਵਰੀ ਅਤੇ 30-ਮਿੰਟ ਪਿਕਅੱਪ ਜਾਣਕਾਰੀ · ਨਵ ਗ੍ਰੋਸਰੀ ਸਟੋਰ',
     trackerInputLabel: 'ਆਪਣਾ ਆਰਡਰ ID ਦਰਜ ਕਰੋ',

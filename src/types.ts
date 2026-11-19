@@ -25,6 +25,7 @@ export interface Product {
   rating?: number;
   reviewCount?: number;
   image: string;
+  imageUrl?: string;
   customImage?: string;
   description?: string;
   channels?: PublishingChannels;
@@ -79,6 +80,32 @@ export interface PaymentSettings {
   pickupSlots: string[];
 }
 
+export interface StoreStatusSettings {
+  storeName: string;
+  isOpen: boolean;
+  hoursLabel: string;
+  address: string;
+  phones: string[];
+  dispatchNotice?: string;
+  updatedAt?: string;
+}
+
+export interface StoreConfig {
+  storeName: string;
+  isOpen: boolean;
+  hoursLabel: string;
+  address: string;
+  phones: string[];
+  announcementText: string;
+  deliveryFee: number;
+  freeDeliveryAbove: number;
+  codMinOrder: number;
+  expressDeliveryEnabled: boolean;
+  pickupEnabled: boolean;
+  deliveryZones: string[];
+  updatedAt?: string;
+}
+
 export interface SavedAddress {
   id: string;
   label: string;
@@ -128,6 +155,7 @@ export type OrderStatus =
 
 export interface OrderRecord {
   orderId: string;
+  source?: 'web' | 'android' | string;
   uid?: string;
   customerEmail?: string;
   customerPhoto?: string;
