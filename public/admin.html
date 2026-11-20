@@ -1454,7 +1454,7 @@
             throw mobileErr;
           }
         } else {
-          await fbAuth.signInWithRedirect(provider); return;
+          const cred = await fbAuth.signInWithPopup(provider);
           if (cred && cred.user) {
             currentUser = cred.user;
             if ((cred.user?.email || "").toLowerCase() !== "singhpaluppal@gmail.com") { await fbAuth.signOut(); alert("Access Denied: Only singhpaluppal@gmail.com is authorized!"); return; } await onUserAuthenticated(cred.user);
