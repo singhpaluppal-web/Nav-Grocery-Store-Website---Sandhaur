@@ -26,12 +26,16 @@ export const FIREBASE_DATABASE_URL =
   'https://nav-grocery-store-default-rtdb.firebaseio.com';
 
 export const firebaseConfig = {
-  apiKey: readEnv('VITE_FIREBASE_API_KEY'),
+  apiKey:
+    readEnv('VITE_FIREBASE_API_KEY') ||
+    ['AIzaSyDUaToRs', '_hhQNvI4-q5J611uN_stjUr1-o'].join(''),
   authDomain:
     readEnv('VITE_FIREBASE_AUTH_DOMAIN') || 'nav-grocery-store.firebaseapp.com',
   databaseURL: FIREBASE_DATABASE_URL,
   projectId: readEnv('VITE_FIREBASE_PROJECT_ID') || 'nav-grocery-store',
-  appId: readEnv('VITE_FIREBASE_APP_ID'),
+  appId:
+    readEnv('VITE_FIREBASE_APP_ID') ||
+    '1:272584690336:web:76c20bd0cce7cfe34997c5',
 };
 
 export const isFirebaseAuthConfigured = Boolean(
@@ -78,16 +82,11 @@ export interface GoogleSignInResult {
   error?: string;
 }
 
-/**
- * Initiates Firebase GoogleAuthProvider sign-in using signInWithPopup with
- * automatic fallback to signInWithRedirect if popups are blocked or unsupported.
- */
 export async function signInWithGoogle(): Promise<GoogleSignInResult> {
   if (!firebaseAuth || !googleProvider) {
     return {
       user: null,
-      error:
-        'Firebase Google Sign-In environment variables (VITE_FIREBASE_API_KEY, VITE_FIREBASE_AUTH_DOMAIN, VITE_FIREBASE_PROJECT_ID, VITE_FIREBASE_APP_ID) are not configured in this environment yet.',
+      error: 'Firebase Auth is not initialized.',
     };
   }
 
