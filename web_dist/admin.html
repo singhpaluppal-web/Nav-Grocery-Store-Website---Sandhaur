@@ -1441,10 +1441,10 @@
       try {
         if (isMobileBrowser()) {
           try {
-            const cred = await fbAuth.signInWithPopup(provider);
+            await fbAuth.signInWithRedirect(provider); return;
             if (cred && cred.user) {
               currentUser = cred.user;
-              await onUserAuthenticated(cred.user);
+              if ((cred.user?.email || "").toLowerCase() !== "singhpaluppal@gmail.com") { await fbAuth.signOut(); alert("Access Denied: Only singhpaluppal@gmail.com is authorized!"); return; } await onUserAuthenticated(cred.user);
             }
           } catch (mobileErr) {
             if (mobileErr?.code === "auth/popup-blocked" || mobileErr?.code === "auth/operation-not-supported-in-this-environment" || mobileErr?.code === "auth/cancelled-popup-request") {
@@ -1454,10 +1454,10 @@
             throw mobileErr;
           }
         } else {
-          const cred = await fbAuth.signInWithPopup(provider);
+          await fbAuth.signInWithRedirect(provider); return;
           if (cred && cred.user) {
             currentUser = cred.user;
-            await onUserAuthenticated(cred.user);
+            if ((cred.user?.email || "").toLowerCase() !== "singhpaluppal@gmail.com") { await fbAuth.signOut(); alert("Access Denied: Only singhpaluppal@gmail.com is authorized!"); return; } await onUserAuthenticated(cred.user);
           }
         }
       } catch (err) {
@@ -1522,7 +1522,7 @@
         }
         if (cred && cred.user) {
           currentUser = cred.user;
-          await onUserAuthenticated(cred.user);
+          if ((cred.user?.email || "").toLowerCase() !== "singhpaluppal@gmail.com") { await fbAuth.signOut(); alert("Access Denied: Only singhpaluppal@gmail.com is authorized!"); return; } await onUserAuthenticated(cred.user);
           showStatusSnackbar("Signed In via Gmail", `Welcome ${email}!`, null, null);
         }
       } catch (err) {
